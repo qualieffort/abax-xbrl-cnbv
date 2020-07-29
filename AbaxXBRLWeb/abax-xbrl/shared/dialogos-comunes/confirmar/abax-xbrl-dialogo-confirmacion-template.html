@@ -1,0 +1,14 @@
+﻿<div class="{{configuracion.claseTitulo}}">
+    <div class="modal-header panel-heading">
+        <button type="button" class="close" aria-hidden="true" ng-click="cancelar()">×</button>
+        <h4 class="modal-title">
+            <i class="{{configuracion.claseIconoTitulo}}"></i>
+            {{configuracion.textoTititulo}}
+        </h4>
+    </div>
+    <div class="modal-body" style="white-space: pre;">{{configuracion.texto}}</div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="confirmar(false)">{{'ETIQUETA_BOTON_NO' | translate}}</button>
+        <button type="button" class="btn btn-primary" ng-click="confirmar(true)">{{'ETIQUETA_BOTON_SI' | translate}}</button>
+    </div>
+</div>

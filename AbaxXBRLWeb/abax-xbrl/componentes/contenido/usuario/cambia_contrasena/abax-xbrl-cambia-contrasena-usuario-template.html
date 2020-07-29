@@ -1,0 +1,62 @@
+﻿<section class="row m-b-md">
+    <div class="col-sm-6">
+        <h3 class="m-b-xs text-black">{{'ETIQUETA_CAMBIAR_CONTRASENA' | translate}}</h3>
+    </div>
+</section>
+<section class="panel panel-default">
+    <header class="panel-heading font-bold">
+        {{'ETIQUETA_CAMBIAR_CONTRASENA' | translate}}
+    </header>
+    <form class="form-horizontal">
+        <div class="panel-body">
+            <div class="line line-dashed b-b line-lg pull-in"></div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">{{'PLACE_HOLDER_CONTRASEÑA_ANTERIOR' | translate}}</label>
+                <div class="col-sm-10">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <input type="password" name="passwordAnterior" placeholder="{{'PLACE_HOLDER_CONTRASEÑA_ANTERIOR' | translate}}" class="form-control" ng-model="cambioPassword.PasswordActual">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="line line-dashed b-b line-lg pull-in"></div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">{{'PLACE_HOLDER_CONTRASEÑA_NUEVA' | translate}}</label>
+                <div class="col-sm-10">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <input type="password" name="passwordNuevo" placeholder="{{'PLACE_HOLDER_CONTRASEÑA_NUEVA' | translate}}" class="form-control" ng-model="cambioPassword.PasswordNuevo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="line line-dashed b-b line-lg pull-in"></div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">{{'PLACE_HOLDER_CONTRASEÑA_CONFIRMACION' | translate}}</label>
+                <div class="col-sm-10">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <input type="password" name="passwordConfirmar" placeholder="{{'PLACE_HOLDER_CONTRASEÑA_CONFIRMACION' | translate}}" class="form-control" ng-model="cambioPassword.PasswordNuevoConfirmacion">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="panel-footer">
+            <div class="row wrapper">
+                <div class="col-lg-6"></div>
+
+                <div class="col-sm-6 text-right">
+                    <a ui-sref="inicio.panelControl" class="btn btn-default">{{'ETIQUETA_BOTON_CANCELAR' | translate}}</a>
+                    <input type="submit" value="{{'ETIQUETA_BOTON_GUARDAR' | translate}}" class="btn btn-primary" ng-hide="guardando" ng-click="cambiarPassword()">
+                    <button type="button" class="btn btn-primary" disabled ng-if="guardando">
+                        <i class="fa fa-refresh fa-spin"></i> {{'MENSAJE_INFO_GUARDANDO' | translate}} ...
+                    </button>
+                </div>
+            </div>
+        </footer>
+    </form>
+</section>

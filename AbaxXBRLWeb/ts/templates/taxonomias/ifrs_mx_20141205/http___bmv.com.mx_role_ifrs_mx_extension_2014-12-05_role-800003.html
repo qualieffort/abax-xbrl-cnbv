@@ -1,0 +1,89 @@
+<xbrl-contenedor-formato xbrl:rol-uri="{{xbrlRol.Uri}}" orientacion="landscape" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+<div id="contenedorTablaExcel" class="table-responsive">
+    
+    <table style="width: 100%">
+        <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+            <td>
+                <div class="etiquetaConceptoTitulo">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                xbrl:id-concepto="ifrs_mx-cor_20141205_InformacionARevelarSobrePosicionMonetariaEnMonedaExtranjeraBloqueDeTexto"
+                                                xbrl:nivel-indentacion="0">:
+                    </b>
+                </div>
+                <div class="bloqueTexto">
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="CC6241a5d-937b-4a83-b132-8d7cfee81666"></xbrl:campo-captura>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;
+            </td>
+        </tr>
+    </table>
+    
+    <table class="table table-striped b-t b-light" xbrl:tabla-excel xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" selector="td:not(:first-child)" selector-contenedor-x="#contenedorTablaExcel" selector-contenedor-y="#contenedorFormatos" tab-index="1" on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)" on-after-paste="onAfterPaste(valorPegado, x, y)" on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)">
+        <thead>
+            <tr>
+                <th style="width:30%; text-align:center; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd;" rowspan="2">
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                            xbrl:id-concepto="ifrs_mx-cor_20141205_PosicionEnMonedaExtranjeraSinopsis" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;"></th>
+                <th style="width:25%; text-align:center; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd;" colspan="2">{{documentoInstancia.xbrlIdioma.ClaveIdioma == 'en' ? 'Dollars' : 'D&oacute;lares'}}</th>
+                <th style="width:25%; text-align:center; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd;" colspan="2">{{documentoInstancia.xbrlIdioma.ClaveIdioma == 'en' ? 'Other currencies' : 'Otras monedas'}}</th>
+                <th style="width:20%; text-align:center; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd;" rowspan="2">
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                            xbrl:id-concepto="ifrs_mx-cor_20141205_TotalDePesosMiembro" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;"></th>
+            </tr>
+            <tr>
+                <th style="text-align:center; vertical-align:bottom; background-color: #f9f9f9; border-right: 1px solid #dddddd;">
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                            xbrl:id-concepto="ifrs_mx-cor_20141205_DolaresMiembro" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;"></th>
+                <th style="text-align:center; vertical-align:bottom; background-color: #f9f9f9; border-right: 1px solid #dddddd;">
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                            xbrl:id-concepto="ifrs_mx-cor_20141205_DolaresContravalorPesosMiembro" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;"></th>
+                <th style="text-align:center; vertical-align:bottom; background-color: #f9f9f9; border-right: 1px solid #dddddd;">
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                            xbrl:id-concepto="ifrs_mx-cor_20141205_OtrasMonedasContravalorDolaresMiembro" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;"></th>
+                <th style="text-align:center; vertical-align:bottom; background-color: #f9f9f9; border-right: 1px solid #dddddd;">
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                            xbrl:id-concepto="ifrs_mx-cor_20141205_OtrasMonedasContravalorPesosMiembro" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--<tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" ><td><xbrl:etiqueta-concepto  xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_InformacionARevelarSobrePosicionMonetariaEnMonedaExtranjeraBloqueDeTexto" xbrl:nivel-indentacion="0"></td>	<td>&nbsp;</td>                                                                                                   <td>&nbsp;</td>                                                                                                   <td>&nbsp;</td>                                                                                                   <td>&nbsp;</td>                                                                                                   <td>&nbsp;</td>                                                                                                                      </tr>-->
+            
+            <tr>
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                            xbrl:id-concepto="ifrs_mx-cor_20141205_ActivoMonetarioSinopsis" xbrl:nivel-indentacion="3" xbrl:style="font-weight:800;"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"><td><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_ActivoMonetarioCirculante" xbrl:nivel-indentacion="4"></td>													<td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A438efa31-fc2e-4b67-9b9f-8a3413d4d065"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Af75ca9fa-211e-4b84-8a48-2e32d84d36c4"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A99519914-fa6c-44ad-bc55-ecd050d3b8b1"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A93de0b61-d99c-44f1-872c-08a63934108c"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A9cfce979-6de7-4992-9b65-79d42abce653"></xbrl:campo-captura></td>                   </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"><td><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_ActivoMonetarioNoCirculante" xbrl:nivel-indentacion="4"></td>												<td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Af53f483e-b78c-4f5c-bc52-89df605eece7"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Af1dd79bc-c9cf-4046-83b2-440753ed93e3"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A22d7ec75-25a8-4196-a1d4-b8edd0065eeb"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A4ba0ab92-2f34-4a16-8770-3637e95afe67"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A6604bb24-9073-4bb3-ad61-c4bd18c6197e"></xbrl:campo-captura></td>                   </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"><td><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_TotalActivoMonetario" xbrl:nivel-indentacion="4"></td>														<td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A4f8b61ce-4fa3-429e-ac3f-0003fb3c8c31"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A8e77fd11-b99a-4deb-8a3c-d7792497a97a"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A2fcdc3be-f9eb-4454-a5e7-ab830fe0823a"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A132aac42-0370-4c74-98f9-362a0a6e0df5"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A01cf43a0-3581-4bee-8704-04c86c1c54bc"></xbrl:campo-captura></td>                   </tr>
+            
+            <tr>
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                            xbrl:id-concepto="ifrs_mx-cor_20141205_PasivoMonetarioSinopsis" xbrl:nivel-indentacion="3" xbrl:style="font-weight:800;"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"><td><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_PasivoMonetarioCirculante" xbrl:nivel-indentacion="4"></td>													<td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A8a602a05-4a3c-422b-b2bc-ffd8e20a2f43"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A9aab2052-7e94-4000-aa9c-9f004aebf62b"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Afb259d5c-0c44-46cb-9bbe-cb1a906931a6"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A3ad5513d-9257-4289-9c61-6fb9f9a968f3"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A0ce21a5f-0d92-4e64-9b4f-f6c5b6ca2d87"></xbrl:campo-captura></td>                   </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"><td><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_PasivoMonetarioNoCirculante" xbrl:nivel-indentacion="4"></td>												<td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A72e0c466-2d6b-4041-ae51-ca384d00afa0"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A272bfca2-4d17-407c-8583-c9e23114cdf2"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Abf28c4ff-e18f-4e58-a8ce-87394bce1292"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ad19b79c4-d783-4ac0-be5f-e679c0ceb289"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A6295683d-8951-4b65-899b-72f26d1c61eb"></xbrl:campo-captura></td>                   </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"><td><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_TotalPasivoMonetario" xbrl:nivel-indentacion="4"></td>														<td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A4c32c39f-4472-4412-8d4e-df114233a9c6"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A8e67e292-3151-4519-851b-f37cb9aa3446"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aabad5bc5-43a8-4613-9cad-a895683e9007"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ac2c57d6e-4a5f-42a1-80fa-8a84a226af02"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A99ce0e8b-7e61-4451-893c-2da4ede5a8a9"></xbrl:campo-captura></td>                   </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"><td><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_MonetarioActivoPasivoNeto" xbrl:nivel-indentacion="3"></td>													<td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Adb51f27c-c243-40df-8fa0-14cb7c10d52a"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ab30c8755-9d2a-4603-bb30-4376887acddc"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A18d7a810-51a7-4c26-b7bf-5a441754638d"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aadbc3590-e73a-4514-b416-3072ff32f01e"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A226c1c38-6043-4d8e-8e63-f1d4f6202b7f" xbrl:ultimo="true"></xbrl:campo-captura></td></tr>
+        </tbody>
+    </table>
+</div>
+</xbrl-contenedor-formato>

@@ -1,0 +1,50 @@
+﻿<form name="guardarDocumentoForm" ng-submit="guardarDocumento(guardarDocumentoForm.$valid)" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true" ng-click="cerrarDialogo()">&times;</button>
+        <div class="row m-t-sm">
+            <div class="col-sm-10 m-b-xs">
+                <h4 class="modal-title"> {{'EDITOR_XBRL_GUARDAR_VERSION_DOCUMENTO'|translate}} </h4>
+            </div>
+        </div>
+    </div>
+    <div class="modal-body">
+        <div ng-if="!guardado">
+            <p>{{'EDITOR_XBRL_VERSION_PROPORCIONE_COMENTARIO' | translate}}</p>
+            <div class="form-group" ng-class="{ 'has-error' : guardarDocumentoForm.textTitulo.$invalid && !guardarDocumentoForm.textTitulo.$pristine }">
+                <label>{{ 'ETIQUETA_TITULO' | translate }}</label>
+                <input name="textTitulo" type="text" class="form-control rounded" ng-model="documentoInstancia.Titulo" required ng-minlength="3" ng-maxlength="250" ng-pattern="regExpGuardarDocumento">
+                <p ng-show="guardarDocumentoForm.textTitulo.$invalid && !guardarDocumentoForm.textTitulo.$pristine" class="help-block">{{'ETIQUETA_TITULO_REQUERIDO' | translate}}</p>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error' : guardarDocumentoForm.textComentarios.$invalid && !guardarDocumentoForm.textComentarios.$pristine }">
+                <label>{{'ETIQUETA_COMENTARIOS'|translate}}</label>
+                <textarea name="textComentarios" class="form-control" rows="6" placeholder="{{'EDITOR_XBRL_TECLEA_COMENTARIO' | translate}}" ng-model="documentoInstancia.Comentarios" required></textarea>
+                <p ng-show="guardarDocumentoForm.textComentarios.$invalid && !guardarDocumentoForm.textComentarios.$pristine" class="help-block">{{'ETIQUETA_COMENTARIO_REQUERIDO'|translate}}</p>
+            </div>
+        </div>
+        <div ng-if="guardado && resultadoOperacion.Resultado">
+            <p>{{ 'EDITOR_XBRL_VERSION_GENERADA' | translate }}</p><p>
+                <span class="font-bold">
+                   {{ 'ETIQUETA_VERSION' | translate }}: {{resultadoOperacion.InformacionExtra.version}}
+                </span>
+            </p>
+            <p>
+                {{'EDITOR_XBRL_COMENTARIOS_VERSION'| translate }}: <span class="font-bold">
+                    {{documentoInstancia.Comentarios}}
+                </span>
+            </p>
+        </div>
+        <div ng-if="guardado && !resultadoOperacion.Resultado">
+            <p>{{'EDITOR_XBRL_VERSION_NO_GENERADA'|translate}}: {{resultadoOperacion.Mensaje}}</p>
+            <p>{{'EDITOR_XBRL_INTENTELO_NUEVAMENTE' | translate}}</p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div ng-if="!guardado">
+            <button type="button" class="btn btn-default" ng-click="cerrarDialogo()">{{'ETIQUETA_BOTON_CANCELAR'|translate}}</button>
+            <button type="submit" class="btn btn-s-md btn-warning" ng-disabled="guardarDocumentoForm.$invalid">{{'EDITOR_XBRL_GUARDAR_VERSION'|translate}}</button>
+        </div>
+        <div ng-if="guardado">
+            <button type="button" class="btn btn-default" ng-click="cerrarDialogo()">{{ 'ETIQUETA_BOTON_CERRAR' | translate }}</button>
+        </div>
+    </div>
+</form>

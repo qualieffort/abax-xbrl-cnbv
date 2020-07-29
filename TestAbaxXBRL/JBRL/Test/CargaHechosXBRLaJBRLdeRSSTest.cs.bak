@@ -1,0 +1,136 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Xml;
+using System.ServiceModel.Syndication;
+using System.IO;
+using TestAbaxXBRL.JBRL.Util;
+using AbaxXBRLCore.Viewer.Application.Dto;
+using AbaxXBRLCore.XPE;
+using AbaxXBRLCore.XPE.impl;
+using TestAbaxXBRL.JBRL.Modelo;
+using AbaxXBRLCore.Common.Util;
+using AbaxXBRLCore.CellStore.Services.Impl;
+using System.Net;
+using System.Text.RegularExpressions;
+
+namespace TestAbaxXBRL.JBRL.Test
+{
+    /// <summary>
+    /// Carga los documentos XBRL del RSS de CNBV a la base de datos de Mongo.
+    /// </summary>
+    [TestClass]
+    public class CargaHechosXBRLaJBRLdeRSSTest
+    {
+
+        private IList<Task> taskList { get; set; }
+
+        private AbaxXBRLCellStoreMongo abaxXBRLCellStoreMongo { get; set; }
+
+        public CargaHechosXBRLaJBRLdeRSSTest()
+        {
+            abaxXBRLCellStoreMongo = new AbaxXBRLCellStoreMongo();
+            abaxXBRLCellStoreMongo.JSONOutDirectory = @"..\..\TestOutput\";
+            abaxXBRLCellStoreMongo.ConnectionString = "mongodb://localhost/jbrl";
+            abaxXBRLCellStoreMongo.DataBaseName = "jbrl";
+            abaxXBRLCellStoreMongo.Init();
+            taskList = new List<Task>();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [TestMethod]
+        public void GetFactsByXBRL()
+        {
+            LogUtil.LogDirPath = @"..\..\TestOutput\";
+            LogUtil.Inicializa();
+            var outDirectoryPath = @"C:\CNBVDownloads\";
+            var uri = @"file:///C:/2HSoftware/Notas/55_Documentaci%C3%B3nCNBV/02/02_Documentos/Respaldo/20181030/GetRSSWalmexAnual.xml";
+            var reader = XmlReader.Create(uri);
+            var feed = SyndicationFeed.Load(reader);
+            var regEntity 
+                = new Regex("^(.+?)\\s", RegexOptions.Compiled | RegexOptions.Multiline);
+            reader.Close();
+            foreach (SyndicationItem item in feed.Items)
+            {
+                String subject = item.Title.Text;
+                String summary = item.Summary.Text;
+                if (item.Links.Count > 0)
+                {
+                    var link = item.Links.First();
+                    var linkUri = link.Uri.ToString();
+                    var downloadUri = new Uri(linkUri);
+                    var cnbvId = item.Id;
+                    var documentName = item.Title.Text;
+                    var receptionDate = item.LastUpdatedTime.DateTime;
+                    var description = item.Summary.Text;
+                    var entity = String.Empty;
+                    var outPath = outDirectoryPath;
+                    if (regEntity.IsMatch(description))
+                    {
+                        var match = regEntity.Match(description);
+                        if (match.Groups.Count > 1)
+                        {
+                            entity = match.Groups[1].Value;
+                            outPath = outPath + "\\" + entity + "\\";
+                            Directory.CreateDirectory(outPath);
+                        }
+                    }
+                    var fileName = "id_" + cnbvId + "_" + documentName.Replace(".xbrl", String.Empty) + ".zip";
+                    outPath = outPath + fileName;
+                    if (!File.Exists(outPath))
+                    {
+                        using (WebClient webClient = new WebClient())
+                        {
+                            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
+                            webClient.DownloadFile(linkUri, outPath);
+                            File.SetLastWriteTime(outPath, receptionDate);
+                        }
+                    }   
+                    ProcessFile(outPath, cnbvId, downloadUri.Host,receptionDate);
+                }
+            }
+            Task.WaitAll(taskList.ToArray());
+        }
+
+        public void ProcessFile(
+            string rutaArchivo,
+            string downloadId,
+            string downloadPage,
+            DateTime registrationDate)
+        {
+            try
+            {
+                XPEService xpeService = XPEServiceImpl.GetInstance(true);
+                var fileName = Path.GetFileName(rutaArchivo);
+                using (var reader = File.OpenRead(rutaArchivo))
+                {
+                    var reportParams = new Dictionary<String, String>();
+                    reportParams["downloadId"] = downloadId;
+                    reportParams["downloadPage"] = downloadPage;
+                    var factsList = new List<FactJBRL>();
+                    DocumentoInstanciaXbrlDto documentoInstanciXbrlDto = xpeService.CargaInstanciaXBRLStreamFile(reader, fileName);
+                    if (documentoInstanciXbrlDto.Taxonomia == null)
+                    {
+                        JBRLUtils.ObtenerTaxonomia(documentoInstanciXbrlDto);
+                    }
+                    JBRLUtils.InsertFacts(
+                        documentoInstanciXbrlDto,
+                        reportParams,
+                        factsList,
+                        taskList,
+                        registrationDate,
+                        abaxXBRLCellStoreMongo);
+                }
+                System.GC.Collect();
+            }
+            catch (Exception ex)
+            {
+                LogUtil.Error(ex);
+            }
+        }
+    }
+}

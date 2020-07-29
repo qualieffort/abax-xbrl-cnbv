@@ -1,0 +1,40 @@
+{
+	"ContextosPlantillaPorId" : {
+  "ctx": {
+    "Id": "ctx",
+    "Periodo": {
+      "Tipo": 1,
+      "FechaInstante": "#fecha_2014_12_31",
+      "FechaInicio": "",
+      "FechaFin": ""
+    },
+    "Entidad": {
+      "Id": "#nombreEntidad",
+      "EsquemaId": "#esquemaEntidad",
+      "ContieneInformacionDimensional": false,
+      "Segmento": null,
+      "ValoresDimension": []
+    },
+    "ContieneInformacionDimensional": false,
+    "Escenario": null,
+    "ValoresDimension": []
+  }
+},
+	
+	"UnidadesPlantillaPorId" : {},
+            
+	"HechosPlantillaPorId" : {
+  "ar_pros_NameAndPositionsOfResponsiblePersonsPdf_52992248-c7a3-4f3e-8403-e32b2b4dac66": {
+    "Id": "ar_pros_NameAndPositionsOfResponsiblePersonsPdf_52992248-c7a3-4f3e-8403-e32b2b4dac66",
+    "IdConcepto": "ar_pros_NameAndPositionsOfResponsiblePersonsPdf",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  }
+}
+}

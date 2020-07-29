@@ -1,0 +1,452 @@
+<xbrl-contenedor-formato xbrl:rol-uri="{{xbrlRol.Uri}}" orientacion="landscape" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+    <table class="tablaAnchoFijo" cellspacing="5">
+        <tbody>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_AdministrationAbstract" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ExternalAuditorsAdministration" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label>
+                        <b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_ExternalAuditorsAdministration_0f51c9b2-17a1-4aed-8656-a25207bfb1c0"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_KeyOfficials" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label>
+                        <b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_KeyOfficials_d68ef855-c918-4746-bfec-531e7d629041" xbrl:ultimo="true"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br />
+
+    <!--Inicia Hipercubo Administradores de la Entidad o Municipio-->
+    <div>
+        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_CompanyAdministratorsAbstract" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+    </div>
+    <br />
+    <xbrl:tabla-hipercubo xbrl:id-tabla-hipercubo="hiperCuboAdministradoresDeLaEmpresa"
+                          xbrl:dependencias="['ts/templates/taxonomias/ra_prospecto/O/extensiones/433003_D_ConfiguracionHipercubos.js']"
+                          xbrl:configuracion="http___www_cnbv_gob_mx_2016_08_22_ar_prospectus_roles_433003_D_ar_pros_CompanyAdministratorsTableO">
+          <div id="contenedorTablaExcel" class="dinamicTable dinamic-table-master-container">
+            <table class="dinamic-table-master-table">
+                <thead class="dinamic-table-master-head">
+                    <tr class="dinamic-table-master-head-tr" xbrl:no-filtrar="true">
+                        <td class="celdaFija dinamic-table-master-head-td0 hipercubo estiloB" xbrl:dt-column="TitulosIzquierda" xbrl:dt-column-id-fijo="true">
+                            <table style="height:100%; margin: 0;" class="hipercubo table table-striped b-t b-light">
+                                <thead class="bg-gris">
+                                    <tr xbrl:dt-row="dtHRwo0">
+                                        <th>&nbsp;</th>
+                                    </tr>
+                                    <tr xbrl:dt-row="dtHRwo1">
+                                        <th>&nbsp;</th>
+                                    </tr>
+                                    <tr xbrl:dt-row="dtHRwo2">
+                                        <th class="border-right-top">
+                                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_AdministratorName" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto>
+                                        </th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </td>
+                        <td class="dinamic-table-master-head-td1">
+                            <div class="scrollableXHidden">
+                                <table style="height:100%; margin: 0;" class="hipercubo table table-striped b-t b-light">
+                                    <thead class="bg-gris">  
+                                        <tr xbrl:dt-row="dtHRwo0">
+                                            <th colspan="12">
+                                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_CompanyAdministratorsTable" xbrl:nivel-indentacion="3" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                            </th>
+                                        </tr>
+                                        <tr xbrl:dt-row="dtHRwo1">
+                                            <th colspan="12" class="border-right-top">
+                                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_AdministratorsLineItems" xbrl:nivel-indentacion="3" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                            </th>
+                                        </tr>
+                                        <tr xbrl:dt-row="dtHRwo2">
+                                            <th class="border-right-top">
+                                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_AdministratorFirstName" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto>
+                                            </th>
+                                            <th class="border-right-top">
+                                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_AdministratorSecondName" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto>
+                                            </th>
+                                            <th class="border-right-top">
+                                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_AdministratorPosition" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto>
+                                            </th>
+                                            <th class="border-right-top">
+                                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_AdministratorAge" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto>
+                                            </th>
+                                            <th class="border-right-top">
+                                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_AdministratorMaximumStudiesDegree" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto>
+                                            </th>
+                                            <th class="border-right-top">
+                                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_AdministratorMainResponsabilities" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto>
+                                            </th>
+                                            <th class="border-right-top">
+                                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_AdministratorRelationship" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto>
+                                            </th>
+                                        </tr> 
+                                    </thead>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody class="dinamic-table-master-body">
+                    <tr xbrl:no-filtrar="true" class="dinamic-table-master-body-tr">
+                        <td xbrl:dt-column="TitulosIzquierda" class="dinamic-table-master-body-td0 hipercubo estiloB" xbrl:dt-column-id-fijo="true">
+                            <div class="scrollableYHidden">
+                                <table style="height:100%; margin: 0;" class="hipercubo table table-striped b-t b-light">
+                                    <tbody class="estiloA"> 
+                                          <tr>
+                                            <td class="no-padder">
+                                                <div class="table">
+                                                    <div class="row">
+                                                        <div class="cell-concepto">
+                                                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_GovernorMember" xbrl:nivel-indentacion="5" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                                        </div>
+                                                        <div class="cell-button-agregar-dimension">
+                                                            <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura" xbrl:agregar-miembro-dimension="ar_pros_CompanyAdministratorsSecuenceTypedAxis"
+                                                                    xbrl:agrupar-por="{'ar_pros_TypeOfCompanyAdministratorsAxis':'GovernorMember'}">
+                                                                <i class="fa fa-plus"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td> 
+                                            </tr>
+                                             <tr xbrl:repite-miembros-dimension="ar_pros_CompanyAdministratorsSecuenceTypedAxis" xbrl:agrupar-por="{'ar_pros_TypeOfCompanyAdministratorsAxis':'GovernorMember'}">
+                                                <td class="no-padder">
+                                                    <div class="table">
+                                                        <div class="row">
+                                                            <div class="cell-campo-captura cortar-texto-200px">
+                                                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorName" xbrl:contexto-plantilla="GovernorMember"
+                                                                                                    xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                            </div>
+                                                            <div class="cell-button-eliminar-dimension">
+                                                                <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_CompanyAdministratorsSecuenceTypedAxis"
+                                                                        xbrl:alias-miembro="$aliasMiembroRepeat">
+                                                                    <i class="fa fa-minus"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td> 
+                                                </tr>  
+                                                 <tr>
+                                                    <td class="no-padder">
+                                                        <div class="table">
+                                                            <div class="row">
+                                                                <div class="cell-concepto">
+                                                                    <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_FinancialSecretaryMember" xbrl:nivel-indentacion="5" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                                                </div>
+                                                                <div class="cell-button-agregar-dimension">
+                                                                    <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura" xbrl:agregar-miembro-dimension="ar_pros_CompanyAdministratorsSecuenceTypedAxis"
+                                                                            xbrl:agrupar-por="{'ar_pros_TypeOfCompanyAdministratorsAxis':'FinancialSecretaryMember'}">
+                                                                        <i class="fa fa-plus"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td> 
+                                                    <tr xbrl:repite-miembros-dimension="ar_pros_CompanyAdministratorsSecuenceTypedAxis" xbrl:agrupar-por="{'ar_pros_TypeOfCompanyAdministratorsAxis':'FinancialSecretaryMember'}">
+                                                        <td class="no-padder">
+                                                            <div class="table">
+                                                                <div class="row">
+                                                                    <div class="cell-campo-captura cortar-texto-200px">
+                                                                        <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorName" xbrl:contexto-plantilla="FinancialSecretaryMember"
+                                                                                                            xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                    </div>
+                                                                    <div class="cell-button-eliminar-dimension">
+                                                                        <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_CompanyAdministratorsSecuenceTypedAxis"
+                                                                                xbrl:alias-miembro="$aliasMiembroRepeat">
+                                                                            <i class="fa fa-minus"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td> 
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="no-padder">
+                                                                <div class="table">
+                                                                    <div class="row">
+                                                                        <div class="cell-concepto">
+                                                                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_TreasurerMember" xbrl:nivel-indentacion="5" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                                                        </div>
+                                                                        <div class="cell-button-agregar-dimension">
+                                                                            <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura" xbrl:agregar-miembro-dimension="ar_pros_CompanyAdministratorsSecuenceTypedAxis"
+                                                                                    xbrl:agrupar-por="{'ar_pros_TypeOfCompanyAdministratorsAxis':'TreasurerMember'}">
+                                                                                <i class="fa fa-plus"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td> 
+                                                         </tr>
+                                                          <tr xbrl:repite-miembros-dimension="ar_pros_CompanyAdministratorsSecuenceTypedAxis" xbrl:agrupar-por="{'ar_pros_TypeOfCompanyAdministratorsAxis':'TreasurerMember'}">
+                                                                <td class="no-padder">
+                                                                    <div class="table">
+                                                                        <div class="row">
+                                                                            <div class="cell-campo-captura cortar-texto-200px">
+                                                                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorName" xbrl:contexto-plantilla="TreasurerMember"
+                                                                                                                    xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                            </div>
+                                                                            <div class="cell-button-eliminar-dimension">
+                                                                                <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_CompanyAdministratorsSecuenceTypedAxis"
+                                                                                        xbrl:alias-miembro="$aliasMiembroRepeat">
+                                                                                    <i class="fa fa-minus"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr> 
+                                                            <tr>
+                                                                <td class="no-padder">
+                                                                    <div class="table">
+                                                                        <div class="row">
+                                                                            <div class="cell-concepto">
+                                                                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_TopOfficialsMember" xbrl:nivel-indentacion="5" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                                                            </div>
+                                                                            <div class="cell-button-agregar-dimension">
+                                                                                <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura" xbrl:agregar-miembro-dimension="ar_pros_CompanyAdministratorsSecuenceTypedAxis"
+                                                                                        xbrl:agrupar-por="{'ar_pros_TypeOfCompanyAdministratorsAxis':'TopOfficialsMember'}">
+                                                                                    <i class="fa fa-plus"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td> 
+                                                            </tr>
+                                                             <tr xbrl:repite-miembros-dimension="ar_pros_CompanyAdministratorsSecuenceTypedAxis" xbrl:agrupar-por="{'ar_pros_TypeOfCompanyAdministratorsAxis':'TopOfficialsMember'}">
+                                                                <td class="no-padder">
+                                                                    <div class="table">
+                                                                        <div class="row">
+                                                                            <div class="cell-campo-captura cortar-texto-200px">
+                                                                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorName" xbrl:contexto-plantilla="TopOfficialsMember"
+                                                                                                                    xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                            </div>
+                                                                            <div class="cell-button-eliminar-dimension">
+                                                                                <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_CompanyAdministratorsSecuenceTypedAxis"
+                                                                                        xbrl:alias-miembro="$aliasMiembroRepeat">
+                                                                                    <i class="fa fa-minus"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>   
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </td>
+                                            <td class="dinamic-table-master-body-td1">
+                                                <div id="hiperCuboAdministradoresDeLaEmpresa_scrollableXYAuto" class="scrollableXYAuto">
+                                                    <table class="hipercubo table table-striped b-t b-light"
+                                                           xbrl:tabla-excel selector="td"
+                                                           selector-contenedor-x="#hiperCuboAdministradoresDeLaEmpresa_scrollableXYAuto"
+                                                           selector-contenedor-y="#hiperCuboAdministradoresDeLaEmpresa_scrollableXYAuto"
+                                                           tab-index="1"
+                                                           on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)"
+                                                           on-after-paste="onAfterPaste(valorPegado, x, y)"
+                                                           on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)"
+                                                           cellpadding="0" cellspacing="0">
+                                                        <tbody class="estiloA slimTextBlocks">
+                                                            <tr>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr xbrl:repite-miembros-dimension="ar_pros_CompanyAdministratorsSecuenceTypedAxis" xbrl:agrupar-por="{'ar_pros_TypeOfCompanyAdministratorsAxis':'GovernorMember'}">
+                                                                <td class="cortar-texto-200px">
+                                                                    <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorFirstName" xbrl:contexto-plantilla="GovernorMember"
+                                                                                                        xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                </td>
+                                                                <td class="cortar-texto-200px">
+                                                                    <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorSecondName" xbrl:contexto-plantilla="GovernorMember"
+                                                                                                        xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                </td>
+                                                                <td class="cortar-texto-200px">
+                                                                    <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorPosition" xbrl:contexto-plantilla="GovernorMember"
+                                                                                                        xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                </td>
+                                                                <td class="cortar-texto-200px">
+                                                                    <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorAge" xbrl:contexto-plantilla="GovernorMember"
+                                                                                                        xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                </td>
+                                                                <td class="cortar-texto-200px">
+                                                                    <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorMaximumStudiesDegree" xbrl:contexto-plantilla="GovernorMember"
+                                                                                                        xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                </td>
+                                                                <td class="cortar-texto-200px">
+                                                                    <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorMainResponsabilities" xbrl:contexto-plantilla="GovernorMember"
+                                                                                                        xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                </td>
+                                                                <td class="cortar-texto-200px">
+                                                                    <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorRelationship" xbrl:contexto-plantilla="GovernorMember"
+                                                                                                        xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr xbrl:repite-miembros-dimension="ar_pros_CompanyAdministratorsSecuenceTypedAxis" xbrl:agrupar-por="{'ar_pros_TypeOfCompanyAdministratorsAxis':'FinancialSecretaryMember'}">
+                                                                <td class="cortar-texto-200px">
+                                                                    <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorFirstName" xbrl:contexto-plantilla="FinancialSecretaryMember"
+                                                                                                        xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                </td>
+                                                                <td class="cortar-texto-200px">
+                                                                    <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorSecondName" xbrl:contexto-plantilla="FinancialSecretaryMember"
+                                                                                                        xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                </td>
+                                                                <td class="cortar-texto-200px">
+                                                                    <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorPosition" xbrl:contexto-plantilla="FinancialSecretaryMember"
+                                                                                                        xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                </td>
+                                                                <td class="cortar-texto-200px">
+                                                                    <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorAge" xbrl:contexto-plantilla="FinancialSecretaryMember"
+                                                                                                        xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                </td>
+                                                                <td class="cortar-texto-200px">
+                                                                    <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorMaximumStudiesDegree" xbrl:contexto-plantilla="FinancialSecretaryMember"
+                                                                                                        xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                </td>
+                                                                <td class="cortar-texto-200px">
+                                                                    <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorMainResponsabilities" xbrl:contexto-plantilla="FinancialSecretaryMember"
+                                                                                                        xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                </td>
+                                                                <td class="cortar-texto-200px">
+                                                                    <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorRelationship" xbrl:contexto-plantilla="FinancialSecretaryMember"
+                                                                                                        xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr xbrl:repite-miembros-dimension="ar_pros_CompanyAdministratorsSecuenceTypedAxis" xbrl:agrupar-por="{'ar_pros_TypeOfCompanyAdministratorsAxis':'TreasurerMember'}">
+                                                                <td class="cortar-texto-200px">
+                                                                    <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorFirstName" xbrl:contexto-plantilla="TreasurerMember"
+                                                                                                        xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                </td>
+                                                                <td class="cortar-texto-200px">
+                                                                    <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorSecondName" xbrl:contexto-plantilla="TreasurerMember"
+                                                                                                        xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                </td>
+                                                                <td class="cortar-texto-200px">
+                                                                    <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorPosition" xbrl:contexto-plantilla="TreasurerMember"
+                                                                                                        xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                </td>
+                                                                <td class="cortar-texto-200px">
+                                                                    <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorAge" xbrl:contexto-plantilla="TreasurerMember"
+                                                                                                        xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                </td>
+                                                                <td class="cortar-texto-200px">
+                                                                    <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorMaximumStudiesDegree" xbrl:contexto-plantilla="TreasurerMember"
+                                                                                                        xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                </td>
+                                                                <td class="cortar-texto-200px">
+                                                                    <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorMainResponsabilities" xbrl:contexto-plantilla="TreasurerMember"
+                                                                                                        xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                </td>
+                                                                <td class="cortar-texto-200px">
+                                                                    <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorRelationship" xbrl:contexto-plantilla="TreasurerMember"
+                                                                                                        xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                </td>
+                                                            </tr>
+                                                            <tr> 
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr xbrl:repite-miembros-dimension="ar_pros_CompanyAdministratorsSecuenceTypedAxis" xbrl:agrupar-por="{'ar_pros_TypeOfCompanyAdministratorsAxis':'TopOfficialsMember'}">
+                                                                <td class="cortar-texto-200px">
+                                                                    <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorFirstName" xbrl:contexto-plantilla="TopOfficialsMember"
+                                                                                                        xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                </td>
+                                                                <td class="cortar-texto-200px">
+                                                                    <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorSecondName" xbrl:contexto-plantilla="TopOfficialsMember"
+                                                                                                        xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                </td>
+                                                                <td class="cortar-texto-200px">
+                                                                    <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorPosition" xbrl:contexto-plantilla="TopOfficialsMember"
+                                                                                                        xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                </td>
+                                                                <td class="cortar-texto-200px">
+                                                                    <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorAge" xbrl:contexto-plantilla="TopOfficialsMember"
+                                                                                                        xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                </td>
+                                                                <td class="cortar-texto-200px">
+                                                                    <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorMaximumStudiesDegree" xbrl:contexto-plantilla="TopOfficialsMember"
+                                                                                                        xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                </td>
+                                                                <td class="cortar-texto-200px">
+                                                                    <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorMainResponsabilities" xbrl:contexto-plantilla="TopOfficialsMember"
+                                                                                                        xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                </td>
+                                                                <td class="cortar-texto-200px">
+                                                                    <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_AdministratorRelationship" xbrl:contexto-plantilla="TopOfficialsMember"
+                                                                                                        xbrl:contexto-miembros-dimension="{'ar_pros_CompanyAdministratorsSecuenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                                                </td>
+                                                            </tr>                     
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                  <button type="button" xbrl:dt-boton-maximizar="" class="btn btn-sm btn-icon btn-default tdButton">
+                                      <i class="fa fa-expand rotar90"></i>
+                                  </button>
+                                  <button type="button" xbrl:dt-boton-restaurar="" class="btn btn-sm btn-icon btn-default tdButton" style="display:none;">
+                                      <i class="fa fa-compress rotar90"></i>
+                                  </button>
+                            </div>
+                        </xbrl:tabla-hipercubo>
+            
+    <!--Termina Hipercubo Administradores de la Entidad o Municipio-->
+   
+</xbrl-contenedor-formato>

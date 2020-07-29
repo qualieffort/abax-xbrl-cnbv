@@ -1,0 +1,237 @@
+﻿
+
+<section>
+    <section class="vbox">
+        <section class="scrollable padder">
+            <section class="panel panel-default">
+                <header class="panel-heading">
+                    {{'TITULO_BITACORA_PROCESAMIENTO_DOCUMENTOS' | translate}}
+                </header>
+                <div class="row wrapper">
+                    <div class="col-sm-4">
+                        <button type="button"
+                                class="btn btn-sm btn-default"
+                                ng-click="exportaAExcel()"
+                                ng-if="puedeExportarExcel"
+                                ng-hide="estaExportandoExcel">
+                            <i class="i i-file-excel"></i>  
+                            {{'ETIQUETA_EXPORTAR' | translate}}
+                        </button>
+                        <button type="button" class="btn btn-sm btn-default" ng-if="estaExportandoExcel" disabled>
+                            <i class="fa fa-refresh fa-spin"></i>
+                            {{'MENSAJE_INFO_EXPORTANDO' | translate}} ...
+                        </button>
+                    </div>
+                        <div class="col-sm-7 m-b-xs text-center">
+                            <div class="row">
+                                <label for="filtroEstadoBitacora" class="col-sm-2">
+                                    {{'ETIQUETA_ESTADO' | translate}}
+                                </label>
+                                <select name="filtroEstadoBitacora"
+                                        ng-model="filtroEstadoBitacora"
+                                        ng-change="onChangeFiltroEstado()"
+                                        ng-options="opcion as opcion.Etiqueta for opcion in opcionesFiltroEstado"
+                                        class="col-sm-3 m-b"></select>
+                            </div>
+                        </div>
+                        <div class="col-sm-1 m-b-xs text-right" id="botonesDerechaBitacoraVersionDocumentos">
+                            <button type="button"
+                                    name="create"
+                                    class="btn btn-sm btn-default"
+                                    ng-click="reprocesarElementosSeleccionados()"
+                                    ng-if="puedeReprocesarDocumentos"
+                                    ng-hide="estaReprocesandoElementos || estaReprocesandoTodosDocumentosPendientes">
+                                <i class="fa fa-gear"></i>
+                                {{'ETOQIETA_BOTON_REPROCESAR_DOCUMENTOS' | translate}}
+                            </button>
+                            <button type="button"
+                                    class="btn btn-sm btn-default"
+                                    ng-hide="!estaReprocesandoElementos || estaReprocesandoTodosDocumentosPendientes"
+                                    disabled="disabled">
+                                <i class="fa fa-gear fa-spin"></i>
+                                {{'MENSAJE_INFO_REPROCESANDO' | translate}} ...
+                            </button>
+                            <button type="button"
+                                    name="create"
+                                    class="btn btn-sm btn-default debajo"
+                                    ng-click="onChangeFiltroEstado()"
+                                    ng-if="puedeReprocesarDocumentos"
+                                    ng-hide="estaCargandoListadoElementos">
+                                <i class="fa fa-refresh"></i>
+                                {{'ETIQUETA_BOTON_REFRESCAR_DATOS' | translate}}
+                            </button>
+                            <button type="button"
+                                    class="btn btn-sm btn-default debajo"
+                                    ng-hide="!estaCargandoListadoElementos"
+                                    disabled="disabled">
+                                <i class="fa fa-refresh fa-spin"></i>
+                                {{'MENSAJE_INFO_CARGANDO_DATOS' | translate}} ...
+                            </button>
+                        </div>
+                </div>
+            </section>
+            <section class="panel panel-default">
+                <header class="panel-heading bg-light">
+                    {{'ETIQUETA_LISTADO_ENVIOS' | translate}}
+                </header>
+
+                <div class="panel-body font-bold" style="background: #eeeeee; padding-left: 30px" ng-if="estaCargandoListadoElementos">
+                    <i class="fa fa-refresh fa-spin"></i>
+                    {{'MENSAJE_INFO_CARGANDO_ELEMENTOS' | translate}} ...
+                </div>
+                <div class="panel-body font-bold text-danger" style=" background: #eeeeee; padding-left: 30px" ng-if="!estaCargandoListadoElementos && !existenElementos">
+                    <i class="fa fa-warning"></i>
+                    {{'MENSAJE_WARNING_NO_EXISTEN_ELEMENTOS_LISTAR' | translate}}
+                </div>
+                <div ng-if="!estaCargandoListadoElementos && existenElementos">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="dataTables_length" id="DataTables_Table_0_length">
+                                <label>
+                                    {{'ETIQUETA_MOSTRAR' | translate}}
+                                    <select class="" ng-model="paginacion.RegistrosPorPagina" ng-change="obtenerListadoElementos()">
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                    </select> 
+                                    {{'ETIQUETA_MINUSCULAS_REGISTROS' | translate}}
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6" />
+                    </div>
+                    <table id="listadoElementos" class="table table-striped b-t b-light fila-por-tbody">
+                        <thead>
+                            <tr>
+                                <th class="th-sortable" data-toggle="class">&nbsp;</th>
+                                <th class="th-sortable" data-toggle="class">{{'TITULO_DISTRIBUCIONES' | translate }}</th>
+                                <th class="th-sortable" data-toggle="class">{{'ETIQUETA_DOCUMENTO' | translate }}</th>
+                                <th class="th-sortable" data-toggle="class">{{'ETIQUETA_VERSION' | translate }}</th>
+                                <th class="th-sortable" data-toggle="class">{{'ETIQUETA_ESTADO' | translate }}</th>
+                                <th class="th-sortable" data-toggle="class">{{'ETIQUETA_CVE_PIZARRA'|translate}}</th>
+                                <th class="th-sortable" data-toggle="class">{{'ETIQUETA_USUARIO' | translate }}</th>
+                                <th class="th-sortable" data-toggle="class">{{'ETIQUETA_MENSAJE_ERROR' | translate }}</th>
+                                <th class="th-sortable" data-toggle="class">{{'ETIQUETA_FECHA_CREACION' | translate }}</th>
+                                <th class="th-sortable" data-toggle="class">{{'ETIQUETA_FECHA_ULTIMA_MODIFICACION' | translate }}</th>
+                                <th class="th-sortable" data-toggle="class">{{'TITULO_DETALLE' | translate }}</th>
+                            </tr>
+                        </thead>
+                        <tbody dir-paginate="elemento in listadoElementos | itemsPerPage: paginacion.RegistrosPorPagina"
+                               total-items="paginacion.TotalRregistros"
+                               current-page="paginacion.PaginaActual"
+                               ng-class="{'seleccionado':elemento.Seleccionado,'sin-seleccionar':elemento.Seleccionado}">
+                            <tr class="documento">
+                                <td style="width:57px; text-align:center;">
+                                    <a href="javascript:void(0);" ng-click="seleccionarToggle(elemento)" class="boton-icono" ng-if="elemento.PuedeReprocesar">
+                                        <i ng-hide="!elemento.Seleccionado" class="fa fa-check-square-o icono-form"></i>
+                                        <i ng-hide="elemento.Seleccionado" class="fa fa-square-o icono-form"></i>
+                                    </a>
+                                    <span ng-if="!elemento.PuedeReprocesar">--</span>
+                                </td>
+                                <td style="text-align:center;">
+                                    <a ng-if="elemento.TieneDistribuciones" href="javascript:void(0);" ng-click="mostrarOcultarDistribucion(elemento)" class="boton-icono">
+                                        <i ng-hide="!elemento.MostrarDistribuciones" class="fa fa-toggle-up icono-form"></i>
+                                        <i ng-hide="elemento.MostrarDistribuciones" class="fa fa-toggle-down icono-form"></i>
+                                        <span ng-hide="elemento.MostrarDistribuciones" class="badge badge-sm up bg-comision count" style="display: inline-block;">{{elemento.CatindadDistribuciones}}</span>
+                                    </a>
+                                    &nbsp;
+                                    <span ng-if="!elemento.TieneDistribuciones">--</span>
+                                </td>
+                                <td style="text-align:center;">{{elemento.Documento|abaxCut:30}}</td>
+                                <td style="text-align:center;">{{elemento.Version}}</td>
+                                <td style="text-align:center;">
+                                    <a href="javascript:void(0);" title="{{elemento.DescripcionEstado | translate}}" class="marcador-icono">
+                                        <i ng-if="elemento.Estatus == 0" class="fa fa-exclamation-circle text-warning icono"></i>
+                                        <i ng-if="elemento.Estatus == 1" class="fa fa-check-circle text-success icono"></i>
+                                        <i ng-if="elemento.Estatus == 2" class="fa fa-times-circle text-danger icono"></i>
+                                        <i ng-if="elemento.Estatus != 0 && elemento.Estatus != 1 && elemento.Estatus != 2" class="fa fa-question-circle text-danger icono"></i>
+                                    </a>
+                                </td>
+                                <td style="text-align:center;">{{elemento.Empresa}}</td>
+                                <td style="text-align:center;">{{elemento.Usuario|abaxCut:30}}</td>
+                                <td style="text-align:center;">{{elemento.MensajeError|abaxCut:30}}</td>
+                                <td style="text-align:center;">{{elemento.FechaRegistro}}</td>
+                                <td style="text-align:center;">{{elemento.FechaUltimaModificacion}}</td>
+                                <td class="text-center">
+                                    <a title="{{'TITULO_DETALLE' | translate}}" href="javascript:void(0);" ng-click="mostrarDetalle(elemento)" class="btn btn-rounded btn-sm btn-icon btn-default">
+                                        <i class="fa fa-eye"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="fila-con-sublista" ng-hide="!elemento.MostrarDistribuciones">
+                                <td></td>
+                                <td colspan="12">                                    
+                                    <table class="table table-striped b-t b-light sublista-elementos">
+                                        <thead>
+                                            <tr>
+                                                <th class="th-sortable" data-toggle="class">&nbsp;</th>
+                                                <th class="th-sortable" data-toggle="class">{{'TITULO_CLAVE_DISTRIBUCION' | translate }}</th>
+                                                <th class="th-sortable" data-toggle="class">{{'ETIQUETA_ESTADO' | translate }}</th>
+                                                <th class="th-sortable" data-toggle="class">{{'ETIQUETA_MENSAJE_ERROR' | translate }}</th>
+                                                <th class="th-sortable" data-toggle="class">{{'ETIQUETA_FECHA_CREACION' | translate }}</th>
+                                                <th class="th-sortable" data-toggle="class">{{'ETIQUETA_FECHA_ULTIMA_MODIFICACION' | translate }}</th>
+                                                <th class="th-sortable" data-toggle="class">{{'TITULO_DETALLE' | translate }}</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="distribucion in elemento.Distribuciones">
+                                                <td style="width:57px; text-align:center;">
+                                                    <a href="javascript:void(0);" ng-click="seleccionarDistribucionToggle(elemento,distribucion)" class="boton-icono">
+                                                        <i ng-hide="!distribucion.Seleccionado" class="fa fa-check-square-o icono-form"></i>
+                                                        <i ng-hide="distribucion.Seleccionado" class="fa fa-square-o icono-form"></i>
+                                                    </a>
+                                                </td>
+                                                <td>{{distribucion.CveDistribucion|abaxCut:30}}</td>
+                                                <td style="text-align:center;">
+                                                    <a href="javascript:void(0);" title="{{distribucion.DescripcionEstado | translate}}" class="marcador-icono">
+                                                        <i ng-if="distribucion.Estatus == 0" class="fa fa-exclamation-circle text-warning icono"></i>
+                                                        <i ng-if="distribucion.Estatus == 1" class="fa fa-check-circle text-success icono"></i>
+                                                        <i ng-if="distribucion.Estatus == 2" class="fa fa-times-circle text-danger icono"></i>
+                                                        <i ng-if="distribucion.Estatus != 0 && distribucion.Estatus != 1 && distribucion.Estatus != 2" class="fa fa-question-circle text-danger icono"></i>
+                                                    </a>
+                                                </td>
+                                                <td>{{distribucion.MensajeError|abaxCut:30}}</td>
+                                                <td>{{distribucion.FechaRegistro}}</td>
+                                                <td>{{distribucion.FechaUltimaModificacion}}</td>
+                                                <td class="text-center">
+                                                    <a title="{{'TITULO_DETALLE' | translate}}" href="javascript:void(0);" ng-click="mostrarDetalleDistribucion(distribucion)" class="btn btn-rounded btn-sm btn-icon btn-default">
+                                                        <i class="fa fa-eye"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <dir-pagination-controls on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
+                </div>
+                <footer class="panel-footer ">
+                    <div class="row">
+                        <div class="col-sm-4 hidden-xs">
+                            <button type="button"
+                                    class="btn btn-sm btn-default"
+                                    ng-click="exportaAExcel()"
+                                    ng-if="puedeExportarExcel"
+                                    ng-hide="estaExportandoExcel">
+                                <i class="i i-file-excel"></i>
+                                {{'ETIQUETA_EXPORTAR' | translate}}
+                            </button>
+                            <button type="button" class="btn btn-sm btn-default" ng-if="estaExportandoExcel" disabled>
+                                <i class="fa fa-refresh fa-spin"></i>
+                                {{'MENSAJE_INFO_EXPORTANDO' | translate}} ...
+                            </button>
+                        </div>
+                        <div class="col-sm-4 text-center">
+                            <small class="text-muted inline m-t-sm m-b-sm"></small>
+                        </div>
+                        <div class="col-sm-4 text-right text-center-xs"></div>
+                    </div>
+                </footer>
+            </section>
+        </section>
+    </section>
+</section>

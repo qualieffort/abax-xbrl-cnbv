@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+  <!--<object id="BlockStoreConsulta" type="AbaxXBRLBlockStore.BlockStore.BlockStoreConsulta">
+    <constructor-arg ref="Conexion"/>
+  </object>
+
+  <object id="BlockStoreDocumentoInstancia" type="AbaxXBRLBlockStore.BlockStore.BlockStoreDocumentoInstancia">
+    <constructor-arg ref="Conexion"/>
+  </object>
+
+  --><!-- Detalle de servicios --><!--
+
+  <object id="BlockStoreHechoService" type="AbaxXBRLBlockStore.Services.BlockStoreHechoService">
+    <property name="BlockStoreDocumentoInstancia" ref="BlockStoreDocumentoInstancia"/>
+    <property name="BlockStoreConsulta" ref="BlockStoreConsulta"/>
+    <property name="GrupoEmpresaService" ref="GrupoEmpresaService"/>
+
+
+    <property name="Collection" value="${BlockStoreHecho}"/>
+    <property name="CollectionDimension" value="${BlockStoreDimension}"/>
+    <property name="CollectionEmpresas" value="${BlockStoreEmpresa}"/>
+    <property name="CollectionUnidades" value="${BlockStoreUnidad}"/>
+    <property name="CollectionConcepto" value="${BlockStoreConcepto}"/>
+    <property name="ConsumerFactoryTaskHecho" ref="ConsumerFactoryTaskHecho"/> 
+    
+
+  </object>
+
+
+  <object id="ConsumerFactoryTaskHecho" type="AbaxXBRLCore.MongoDB.Services.Impl.ConsumerFactoryTaskHechoImpl">
+    <property name="numeroMaximoConsumidores" value="${NumeroMaximoConsumidores}"/>
+    <property name="con" ref="Conexion"/>
+    <property name="VersionDocumentoInstanciaRepository" ref="VersionDocumentoInstanciaRepository"/>
+    <property name="BitacoraVersionDocumentoRepository" ref="BitacoraVersionDocumentoRepository"/>
+    <property name="BitacoraDistribucionDocumentoRepository" ref="BitacoraDistribucionDocumentoRepository"/>
+  </object> -->
+  
+ <object id="AbaxXBRLCellStoreMongo" type="AbaxXBRLCore.CellStore.Services.Impl.AbaxXBRLCellStoreMongo" init-method="init">
+    <property name="ConnectionString" value="${connectionStringBigDataCellStroe}"/>
+    <property name="DataBaseName" value="${cellStoreDataBase}"/>
+    <property name="JSONOutDirectory" value="..\JsonError\" />
+    <property name="ParametrosSpotfire">
+          <list element-type="string">
+						<value>Trimestre</value>
+            <value>NumeroFideicomiso</value>
+					</list>
+    </property>
+    <property name="RolesSpotfire">
+          <list element-type="string">
+						<value>Rol_105000</value>           <value>Rol_413000-NBIS2</value>  <value>Rol_424000-N</value>      <value>Rol_431000-NBIS3</value>  <value>Rol_700000</value>
+            <value>Rol_110000</value>           <value>Rol_413000-NBIS3</value>  <value>Rol_425000-NBIS1</value>  <value>Rol_431000-NBIS4</value>  <value>Rol_700002</value>
+            <value>Rol_210000</value>           <value>Rol_413000-NBIS4</value>  <value>Rol_425000-NBIS2</value>  <value>Rol_431000-NBIS5</value>  <value>Rol_700003</value>
+            <value>Rol_310000</value>           <value>Rol_413000-NBIS5</value>  <value>Rol_425000-NBIS3</value>  <value>Rol_432000-N</value>      <value>Rol_700004</value>
+            <value>Rol_410000</value>           <value>Rol_415000-NBIS1</value>  <value>Rol_425000-NBIS4</value>  <value>Rol_432000-NBIS1</value>  <value>Rol_800001</value>
+            <value>Rol_411000-AR</value>        <value>Rol_416000-NBIS2</value>  <value>Rol_425000-NBIS5</value>  <value>Rol_432000-NBIS2</value>  <value>Rol_800003</value>
+            <value>Rol_411000-AR-NBIS3</value>  <value>Rol_416000-NBIS5</value>  <value>Rol_426000-NBIS2</value>  <value>Rol_432000-NBIS3</value>  <value>Rol_800005</value>
+            <value>Rol_412000-N</value>         <value>Rol_417000-N</value>      <value>Rol_427000-N</value>      <value>Rol_432000-NBIS4</value>  <value>Rol_800007</value>
+            <value>Rol_412000-NBIS1</value>     <value>Rol_420000-NBIS2</value>  <value>Rol_427000-NBIS1</value>  <value>Rol_432000-NBIS5</value>  <value>Rol_800100</value>
+            <value>Rol_412000-NBIS2</value>     <value>Rol_420000-NBIS5</value>  <value>Rol_428000-NBIS3</value>  <value>Rol_510000</value>        <value>Rol_800200</value>
+            <value>Rol_412000-NBIS3</value>     <value>Rol_421000-NBIS3</value>  <value>Rol_429000-N</value>      <value>Rol_510000_2</value>      <value>Rol_800201</value>
+            <value>Rol_412000-NBIS4</value>     <value>Rol_421000-NBIS4</value>  <value>Rol_430000-N</value>      <value>Rol_520000</value>        <value>Rol_800500</value>
+            <value>Rol_412000-NBIS5</value>     <value>Rol_422000-NBIS3</value>  <value>Rol_431000-N</value>      <value>Rol_520000_2</value>      <value>Rol_800600</value>
+            <value>Rol_413000-N</value>         <value>Rol_422000-NBIS5</value>  <value>Rol_431000-NBIS1</value>  <value>Rol_610000</value>        <value>Rol_813000</value>
+            <value>Rol_413000-NBIS1</value>     <value>Rol_423000-NBIS4</value>  <value>Rol_431000-NBIS2</value>  <value>Rol_610000_2</value>
+					</list>
+    </property>
+    <property name="DimensionesSpotfire">
+          <list element-type="string">
+						<value>ar_pros_CompanyAdministratorsSecuenceTypedAxis</value>                    <value>ar_pros_TypeOfCompanyShareholdersAxis_Etiqueta</value>
+            <value>ar_pros_CompanyAdministratorsSecuenceTypedAxis_Etiqueta</value>           <value>ar_pros_TypeOfResponsibleFigureAxis</value>
+            <value>ar_pros_CompanyShareholdersSequenceTypedAxis</value>                      <value>ar_pros_TypeOfResponsibleFigureAxis_Etiqueta</value>
+            <value>ar_pros_CompanyShareholdersSequenceTypedAxis_Etiqueta</value>             <value>ifrs-full_ClassesOfOrdinarySharesAxis</value>
+            <value>ar_pros_DebtSeriesTypedAxis</value>                                       <value>ifrs-full_ClassesOfOrdinarySharesAxis_Etiqueta</value>
+            <value>ar_pros_DebtSeriesTypedAxis_Etiqueta</value>                              <value>ifrs-full_ComponentsOfEquityAxis</value>
+            <value>ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis</value>            <value>ifrs-full_ComponentsOfEquityAxis_Etiqueta</value>
+            <value>ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis_Etiqueta</value>   <value>ifrs-full_RetrospectiveApplicationAndRetrospectiveRestatementAxis</value>
+            <value>ar_pros_ResponsiblePersonsSequenceTypedAxis</value>                       <value>ifrs-full_RetrospectiveApplicationAndRetrospectiveRestatementAxis_Etiqueta</value>
+            <value>ar_pros_ResponsiblePersonsSequenceTypedAxis_Etiqueta</value>              <value>ifrs_mx-cor_20141205_DenominacionEje</value>
+            <value>ar_pros_SecuritiesRatingAxis</value>                                      <value>ifrs_mx-cor_20141205_DenominacionEje_Etiqueta</value>
+            <value>ar_pros_SecuritiesRatingAxis_Etiqueta</value>                             <value>ifrs_mx-cor_20141205_InstitucionEje</value>
+            <value>ar_pros_SeriesTypedAxis</value>                                           <value>ifrs_mx-cor_20141205_InstitucionEje_Etiqueta</value>
+            <value>ar_pros_SeriesTypedAxis_Etiqueta</value>                                  <value>ifrs_mx-cor_20141205_IntervaloDeTiempoEje</value>
+            <value>ar_pros_StructuredSeriesTypedAxis</value>                                 <value>ifrs_mx-cor_20141205_IntervaloDeTiempoEje_Etiqueta</value>
+            <value>ar_pros_StructuredSeriesTypedAxis_Etiqueta</value>                        <value>ifrs_mx-cor_20141205_MonedasEje</value>
+            <value>ar_pros_SubcommitteesSequenceAxis</value>                                 <value>ifrs_mx-cor_20141205_MonedasEje_Etiqueta</value>
+            <value>ar_pros_SubcommitteesSequenceAxis_Etiqueta</value>                        <value>ifrs_mx-cor_20141205_PrincipalesMarcasEje</value>
+            <value>ar_pros_SubcommitteesTypeOfSubcommitteesAxis</value>                      <value>ifrs_mx-cor_20141205_PrincipalesMarcasEje_Etiqueta</value>
+            <value>ar_pros_SubcommitteesTypeOfSubcommitteesAxis_Etiqueta</value>             <value>ifrs_mx-cor_20141205_PrincipalesProductosOLineaDeProductosEje</value>
+            <value>ar_pros_TypeOfCompanyAdministratorsAxis</value>                           <value>ifrs_mx-cor_20141205_PrincipalesProductosOLineaDeProductosEje_Etiqueta</value>
+            <value>ar_pros_TypeOfCompanyAdministratorsAxis_Etiqueta</value>                  <value>ifrs_mx-cor_20141205_TipoDeIngresoEje</value>
+            <value>ar_pros_TypeOfCompanyShareholdersAxis</value>                             <value>ifrs_mx-cor_20141205_TipoDeIngresoEje_Etiqueta</value>
+					</list>
+    </property>
+  </object>
+
+  <object id="AbaxXBRLCellStoreService" type="AbaxXBRLCore.CellStore.Services.Impl.AbaxXBRLCellStoreService">
+    <property name="AbaxXBRLCellStoreMongo" ref="AbaxXBRLCellStoreMongo"/>
+    <property name="GrupoEmpresaService" ref="GrupoEmpresaService"/>
+    <property name="DocumentoInstanciaRepository" ref="DocumentoInstanciaRepository"/>
+  </object>
+
+  <object id="ConsultaPersonasResponsablesRepository" type="AbaxXBRLCore.Repository.Implementation.ConsultaPersonasResponsablesRepository">
+    <property name="AbaxXBRLCellStoreMongo" ref="AbaxXBRLCellStoreMongo"/>
+  </object>
+
+  <object id="ReporteFichaTecnicaCellStoreMongoService" type="AbaxXBRLCore.Services.Implementation.ReporteFichaTecnicaCellStoreMongoService">
+    <property name="AbaxXBRLCellStoreMongo" ref="AbaxXBRLCellStoreMongo"/>
+  </object>
+
+  <object id="ReporteFichaAdministrativaService" type="AbaxXBRLCore.Services.Implementation.ReporteFichaAdministrativaService">
+    <property name="AbaxXBRLCellStoreMongo" ref="AbaxXBRLCellStoreMongo"/>
+  </object>
+
+  <object id="ReporteCellStoreMongoService" type="AbaxXBRLCore.Services.Implementation.ReporteCellStoreMongoService">
+    <property name="AbaxXBRLCellStoreMongo" ref="AbaxXBRLCellStoreMongo"/>
+    <property name="SectorRepository" ref="SectorRepository"/>
+    <property name="SubSectorRepository" ref="SubSectorRepository"/>
+    <property name="RamoRepository" ref="RamoRepository"/>
+    <property name="EmpresaRepository" ref="EmpresaRepository"/>
+  </object>
+
+  <!-- Fin de detalle de servicios -->
+</objects>

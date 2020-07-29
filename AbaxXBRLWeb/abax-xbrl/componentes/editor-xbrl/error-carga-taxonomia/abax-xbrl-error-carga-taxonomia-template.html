@@ -1,0 +1,39 @@
+﻿<div class="panel-danger">
+    <div class="modal-header panel-heading">
+        <button type="button" class="close" aria-hidden="true" ng-click="aceptar()">×</button>
+        <h4 class="modal-title">
+            <i class="fa fa-exclamation-triangle"></i>
+            {{'TITULO_PROMPT_ERROR_CARGAR_TAXONOMIA' | translate}}
+        </h4>
+    </div>
+    <div class="modal-body">
+        <header class="panel-heading">{{'MENSAJE_ERROR_PROCESAR_TAXONOMIAS' | translate}}</header>
+        <table class="table table-striped m-b-none">
+            <thead>
+                <tr>
+                    <th>{{'ETIQUETA_DOCUMENTO' | translate}}</th>
+                    <th>{{'ETIQUETA_ERROR' | translate}}</th>
+                    <th>{{'ETIQUETA_SEVERIDAD' | translate}}</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr ng-repeat="error in errores">
+
+                    <td>
+                        {{error.UriArchivo}}
+                    </td>
+                    <td>{{error.Mensaje}}</td>
+                    <td>
+                        <p class="text-danger" ng-if="error.Severidad == severidadError">{{'ETIQUETA_ERROR' | translate}}</p>
+                        <p class="text-warning" ng-if="error.Severidad == severidadAdvertencia">{{'ETIQUETA_ADVERTENCIA' | translate}}</p>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="aceptar()" translate="ETIQUETA_BOTON_ACEPTAR"></button>
+    </div>
+</div>

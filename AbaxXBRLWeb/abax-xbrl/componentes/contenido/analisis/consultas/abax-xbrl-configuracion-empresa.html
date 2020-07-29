@@ -1,0 +1,60 @@
+﻿<form name="guardarConsultaForm" ng-submit="guardarConsulta(guardarConsultaForm.$valid)" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true" ng-click="cerrarDialogo()">&times;</button>
+        <div class="row m-t-sm">
+            <div class="col-sm-10 m-b-xs">
+                <h4 class="modal-title"> {{ 'ETIQUETA_EMISORAS_ACONSULTAR' | translate}} </h4>
+            </div>
+        </div>
+    </div>
+    <div class="modal-body">
+        <div>
+            <div>
+                <p>{{'ETIQUETA_SELECCIONE_EMISORA' | translate}}:</p>
+                <div style="width:50%;float:left;">
+                    <select chosen width="'100%'"
+                            data-placeholder="{{'PLACE_HOLDER_SELECCIONE_EMISORA' | translate}}"
+                            ng-model="entidadSeleccionada"
+                            class="form-control"
+                            ng-options="emisora as emisora.NombreCorto for emisora in emisoras"
+                            style="display: none;">
+                        <option value="">{{'ETIQUETA_SELECCIONAR_OPCION' | translate}}</option>
+                    </select>
+                </div>
+
+                <div style="float:left;width:35%;margin-left:50px;">
+                    <input type="button" class="btn btn-sm btn-default" value="{{'CONSULTA_ANALISIS_AGREGAR' | translate}}" ng-click="agregarElementoEntidad()" />
+                </div>
+                <p>&nbsp;</p>
+            </div>
+            <div style="height:{{alturaModal}}px; overflow-y: auto;">
+                <center>
+                    <table class="table table-striped b-t b-light " tabindex="1" style="-webkit-user-select: none;width:100%">
+                        <thead>
+                            <tr>
+                                <th>{{'ETIQUETA_EMISORA'|translate}}</th>
+                                <th width="10%">{{'ETIQUETA_ELIMINAR' | translate}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="entidad in consultaAnalisis.ConsultaAnalisisEntidad">
+                                <td>{{entidad.NombreEntidad}}</td>
+                                <td><a href="javascript:void(0)" class="btn btn-rounded btn-sm btn-icon btn-danger" ng-click="eliminarEntidad(entidad.IdEmpresa)"><i class="fa fa-trash-o"></i></a></td>
+                            </tr>
+                            <tr ng-if="consultaAnalisis.ConsultaAnalisisEntidad.length==0"><td colspan="2"><p class="help-block">{{'CONSULTA_ANALISIS_CONFIG_ENTIDADES_SIN_RESULTADOS' | translate}}</p></td></tr>
+
+                        </tbody>
+                    </table>
+                </center>
+            </div>
+
+
+           
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div>
+            <button type="button" class="btn btn-default" ng-click="cerrarDialogo()">{{'ETIQUETA_BOTON_CERRAR'|translate}}</button>
+        </div>
+    </div>
+</form>

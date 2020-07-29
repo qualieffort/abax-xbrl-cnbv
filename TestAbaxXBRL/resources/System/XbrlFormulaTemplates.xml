@@ -1,0 +1,1294 @@
+<?xml version="1.0"?>
+
+<!--
+Project: Xbrl Processing Engine
+Copyright (c) 2011  EDGAR(r) Online, Inc.
+
+EDGAR(r) is a federally registered trademark of the U.S. Securities and Exchange Commission. EDGAR 
+Online is not affiliated with or approved by the U.S. Securities and Exchange Commission.
+-->
+
+<TemplateDictionary
+    name="XBRL Formula Templates"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xsi:noNamespaceSchemaLocation="TemplateDictionary.xsd">
+
+    <!-- Please don't use this, and don't create an implementation!
+         The goal here is to provide "root" level methods -->
+    <DomainTemplate
+        classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract"
+        implementationUri="[AbstractXbrlDomain]">
+    </DomainTemplate>
+    
+<!-- Extended Link objects -->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/generic#link"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.src.ExtendedLink">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <!-- http://xbrl.org/2008/variable objects -->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/variable#variableSet"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.variable.src.VariableSet">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#variable" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/variable#parameter"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.variable.src.Parameter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#variable" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/variable#function"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.variable.src.Function">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/variable#variable"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.variable.src.Variable">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/variable#generalVariable"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.variable.src.GeneralVariable">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#variable" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/variable#factVariable"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.variable.src.FactVariable">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#variable" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/variable#filter"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.src.Filter">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/variable#precondition"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.variable.src.Precondition">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <!-- http://xbrl.org/2008/formula objects -->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#formula"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.src.Formula">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#variableSet" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#formula" />
+        <Inheritance classificationUri="production" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#aspects"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.src.Aspects">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#aspect"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.src.AspectRule">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+	<DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#all"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.src.AllAspectRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+    </DomainTemplate>
+    
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#concept"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.src.ConceptAspectRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#location"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.src.LocationAspectRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#entityIdentifier"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.src.EntityIdentifierAspectRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#period"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.src.PeriodAspectRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#unit"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.src.UnitAspectRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#value"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.src.ValueAspectRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#decimals"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.src.DecimalsAccuracyRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#precision"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.src.PrecisionAccuracyRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#abstract.occ.aspect"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.src.OccRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#occFragments"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.src.OccFragmentsRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#abstract.occ.aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#occEmpty"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.src.OccEmptyRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#abstract.occ.aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#occXpath"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.src.OccXPathRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#abstract.occ.aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#explicitDimension"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.src.ExplicitDimensionRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#abstract.occ.aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#typedDimension"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.src.TypedDimensionRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#abstract.occ.aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+<!--  Custom aspect tests  -->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/variable#equalityDefinition"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.variable.aspect.test.custom.src.EqualityDefinitionAspectTest">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspectTest" />
+    </DomainTemplate>
+
+<!-- Characterizers -->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/characterizer#concept"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.characterizer.src.ConceptCharacterizer">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#concept" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/characterizer#entityIdentifier"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.characterizer.src.EntityIdentifierCharacterizer">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#entityIdentifier" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/characterizer#period"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.characterizer.src.PeriodCharacterizer">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#period" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/characterizer#unit"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.characterizer.src.UnitCharacterizer">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#unit" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/characterizer#completeScenario"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.characterizer.src.CompleteScenarioCharacterizer">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#completeScenario" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/characterizer#completeSegment"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.characterizer.src.CompleteSegmentCharacterizer">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#completeSegment" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+<!-- obsolete: segment dimension/scenario dimension => dimensional
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/characterizer#segmentDimension"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.characterizer.src.SegmentDimensionCharacterizer">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#segmentDimension" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+-->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/characterizer#dimensional"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.characterizer.src.DimensionalCharacterizer">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#dimensional" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+<!-- obsolete: segment dimension/scenario dimension => dimensional
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/characterizer#scenarioDimension"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.characterizer.src.ScenarioDimensionCharacterizer">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#scenrioDimension" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+-->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/characterizer#nonXDTSegment"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.characterizer.src.NonXdtSegmentCharacterizer">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#nonXDTSegment" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/characterizer#nonXDTScenario"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.characterizer.src.NonXdtScenarioCharacterizer">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#nonXDTSecnario" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+<!-- Characterizers Single -->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/characterizer/single#concept"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.characterizer.single.src.ConceptCharacterizerSingle">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#concept" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/characterizer/single#entityIdentifier"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.characterizer.single.src.EntityIdentifierCharacterizerSingle">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#entityIdentifier" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/characterizer/single#period"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.characterizer.single.src.PeriodCharacterizerSingle">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#period" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/characterizer/single#unit"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.characterizer.single.src.UnitCharacterizerSingle">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#unit" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/characterizer/single#completeScenario"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.characterizer.single.src.CompleteScenarioCharacterizerSingle">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#completeScenario" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/characterizer/single#completeSegment"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.characterizer.single.src.CompleteSegmentCharacterizerSingle">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#completeSegment" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+<!-- obsolete: segment dimension/scenario dimension => dimensional
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/characterizer/single#segmentDimension"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.characterizer.single.src.SegmentDimensionCharacterizerSingle">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#segmentDimension" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+-->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/characterizer/single#dimensional"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.characterizer.single.src.DimensionalCharacterizerSingle">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#dimensional" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+<!-- obsolete: segment dimension/scenario dimension => dimensional
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/characterizer/single#scenarioDimension"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.characterizer.single.src.ScenarioDimensionCharacterizerSingle">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#scenrioDimension" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+-->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/characterizer/single#nonXDTSegment"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.characterizer.single.src.NonXdtSegmentCharacterizerSingle">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#nonXDTSegment" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/characterizer/single#nonXDTScenario"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.characterizer.single.src.NonXdtScenarioCharacterizerSingle">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#nonXDTSecnario" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+<!-- Equalizers -->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/equalizer#concept"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.equalizer.src.ConceptEqualizer">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#concept" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/equalizer#entityIdentifier"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.equalizer.src.EntityIdentifierEqualizer">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#entityIdentifier" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/equalizer#period"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.equalizer.src.PeriodEqualizer">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#period" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/equalizer#unit"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.equalizer.src.UnitEqualizer">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#unit" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/equalizer#completeScenario"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.equalizer.src.CompleteScenarioEqualizer">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#completeScenario" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/equalizer#completeSegment"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.equalizer.src.CompleteSegmentEqualizer">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#completeSegment" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+<!-- obsolete: segment dimension/scenario dimension => dimensional
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/equalizer#segmentDimension"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.equalizer.src.SegmentDimensionEqualizer">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#segmentDimension" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+-->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/equalizer#dimensional"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.equalizer.src.DimensionalEqualizer">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#dimensional" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+<!-- obsolete: segment dimension/scenario dimension => dimensional
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/equalizer#scenarioDimension"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.equalizer.src.ScenarioDimensionEqualizer">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#scenrioDimension" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+-->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/equalizer#nonXDTSegment"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.equalizer.src.NonXdtSegmentEqualizer">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#nonXDTSegment" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/equalizer#nonXDTScenario"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.equalizer.src.NonXdtScenarioEqualizer">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#nonXDTSecnario" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+<!-- Default aspect rules -->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/default#precision"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.def.src.DefaultPrecisionAccuracyAspectRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#precision" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/default#decimals"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.def.src.DefaultDecimalsAccuracyAspectRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#decimals" />
+    </DomainTemplate>
+ 
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/default#concept"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.def.src.DefaultConceptAspectRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#concept" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/default#location"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.def.src.DefaultLocationAspectRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#location" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/default#entityIdentifier"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.def.src.DefaultEntityIdentifierAspectRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#entityIdentifier" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/default#period"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.def.src.DefaultPeriodAspectRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#period" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/default#unit"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.def.src.DefaultUnitAspectRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#unit" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/default#completeScenario"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.def.src.DefaultCompleteScenarioAspectRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#completeScenario" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/default#completeSegment"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.def.src.DefaultCompleteSegmentAspectRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#completeSegment" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+<!-- obsolete: segment dimension/scenario dimension => dimensional
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/default#segmentDimension"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.def.src.DefaultSegmentDimensionAspectRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#segmentDimension" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+-->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/default#dimensional"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.def.src.DefaultDimensionalAspectRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#dimensional" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+<!-- obsolete: segment dimension/scenario dimension => dimensional
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/default#scenarioDimension"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.def.src.DefaultScenarioDimensionAspectRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#scenrioDimension" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+-->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/default#nonXDTSegment"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.def.src.DefaultNonXdtSegmentAspectRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#nonXDTSegment" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/default#nonXDTScenario"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.def.src.DefaultNonXdtScenarioAspectRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#nonXDTSecnario" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#context" />
+    </DomainTemplate>
+
+<!-- http://xbrl.org/2008/validation objects -->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/validation#assertion"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.assertion.src.Assertion">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/validation#assertionSet"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.assertion.src.AssertionSet">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+<!-- http://xbrl.org/2008/assertion/consistency objects -->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/assertion/consistency#consistencyAssertion"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.assertion.src.ConsistencyAssertion">
+        <Inheritance classificationUri="http://xbrl.org/2008/validation#assertion" />
+    </DomainTemplate>
+
+<!-- http://xbrl.org/2008/assertion/existence objects -->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/assertion/existence#existenceAssertion"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.assertion.src.ExistanceAssertion">
+        <Inheritance classificationUri="http://xbrl.org/2008/validation#variableSetAssertion" />
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#variableSet" />
+    </DomainTemplate>
+
+<!-- http://xbrl.org/2008/assertion/value objects -->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/assertion/value#valueAssertion"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.assertion.src.ValueAssertion">
+        <Inheritance classificationUri="http://xbrl.org/2008/validation#variableSetAssertion" />
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#variableSet" />
+    </DomainTemplate>
+
+<!-- Message objects -->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/label#label"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.assertion.src.Message">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+<!-- http://xbrl.org/2008/filter/boolean objects -->
+
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/boolean#andFilter"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.booleanFilter.src.AndFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/boolean#orFilter"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.booleanFilter.src.OrFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+<!-- http://xbrl.org/2008/filter/concept objects -->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/concept#conceptName"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.conceptFilter.src.ConceptNameFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/concept#conceptPeriodType"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.conceptFilter.src.ConceptPeriodTypeFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/concept#conceptBalance"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.conceptFilter.src.ConceptBalanceFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/concept#conceptCustomAttribute"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.conceptFilter.src.ConceptCustomAttributeFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/concept#conceptDataType"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.conceptFilter.src.ConceptDataTypeFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/concept#conceptSubstitutionGroup"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.conceptFilter.src.ConceptSubstitutionGroupFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+<!-- http://xbrl.org/2008/filter/dimension objects -->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/dimension#explicitDimension"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.dimensionFilter.src.ExplicitDimensionFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/dimension#typedDimension"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.dimensionFilter.src.TypedDimensionFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+<!-- http://xbrl.org/2008/filter/entity objects -->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/entity#identifier"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.entityFilter.src.EntityIdentifierFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/entity#specificScheme"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.entityFilter.src.SpecificEntitySchemeFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/entity#regexpScheme"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.entityFilter.src.RegularExpressionEntitySchemeFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/entity#specificIdentifier"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.entityFilter.src.SpecificEntityIdentifierFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/entity#regexpIdentifier"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.entityFilter.src.RegularExpressionEntityIdentifierFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+<!-- http://xbrl.org/2008/filter/general objects -->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/general#general"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.src.GeneralFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+<!-- http://xbrl.org/2008/filter/match objects -->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/match#match"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.matchFilter.src.matchFilter.src.MatchFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/match#matchConcept"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.matchFilter.src.matchFilter.src.ConceptMatchingFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/filter/match#match" />
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/implicitfilter/match#matchConcept"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.matchFilter.src.matchFilter.src.ConceptMatchingFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/filter/match#match" />
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/match#matchLocation"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.matchFilter.src.matchFilter.src.LocationMatchingFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/filter/match#match" />
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/match#matchUnit"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.matchFilter.src.matchFilter.src.UnitMatchingFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/filter/match#match" />
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/match#matchEntityIdentifier"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.matchFilter.src.matchFilter.src.EntityIdentifierMatchingFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/filter/match#match" />
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/match#matchPeriod"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.matchFilter.src.matchFilter.src.PeriodMatchingFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/filter/match#match" />
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/match#matchSegment"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.matchFilter.src.matchFilter.src.CompleteSegmentMatchingFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/filter/match#match" />
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/match#matchScenario"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.matchFilter.src.matchFilter.src.CompleteScenarioMatchingFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/filter/match#match" />
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/match#matchNonXDTSegment"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.matchFilter.src.matchFilter.src.NonXdtSegmentMatchingFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/filter/match#match" />
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/match#matchNonXDTScenario"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.matchFilter.src.matchFilter.src.NonXdtScenarioMatchingFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/filter/match#match" />
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+<!-- obsolete: segment dimension/scenario dimension => dimensional
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/match#matchSegmentDimension"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.matchFilter.src.matchFilter.src.SegmentDimensionMatchingFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/filter/match#match" />
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+-->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/match#matchDimension"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.matchFilter.src.matchFilter.src.DimensionalMatchingFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/filter/match#match" />
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+<!-- obsolete: segment dimension/scenario dimension => dimensional
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/match#matchScenarioDimension"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.matchFilter.src.matchFilter.src.ScenarioDimensionMatchingFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/filter/match#match" />
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+-->
+        
+<!-- http://xbrl.org/2008/filter/period objects -->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/period#period"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.periodFilter.src.PeriodFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/period#periodStart"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.periodFilter.src.PeriodStartFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/period#periodEnd"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.periodFilter.src.PeriodEndFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/period#periodInstant"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.periodFilter.src.PeriodInstantFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/period#forever"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.periodFilter.src.PeriodForeverFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/period#instantDuration"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.periodFilter.src.PeriodInstantDurationFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/period#instantDuration"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.periodFilter.src.PeriodInstantDurationFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+<!-- http://xbrl.org/2008/filter/relative objects -->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/relative#relativeFilter"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.relativeFilter.src.RelativeFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+<!-- http://xbrl.org/2008/filter/segment-scenario objects -->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/segment-scenario#segment"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.segmentScenarioFilter.src.SegmentFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/segment-scenario#scenario"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.segmentScenarioFilter.src.ScenarioFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+<!-- http://xbrl.org/2008/filter/tuple objects -->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/tuple#parentFilter"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.tupleFilter.src.ParentFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/tuple#ancestorFilter"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.tupleFilter.src.AncestorFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/tuple#siblingFilter"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.tupleFilter.src.SiblingFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/tuple#locationFilter"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.tupleFilter.src.LocationFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+<!-- http://xbrl.org/2008/filter/unit objects -->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/unit#singleMeasure"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.unitFilter.src.SingleMeasureUnitFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/unit#generalMeasures"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.unitFilter.src.GeneralUnitFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+<!-- http://xbrl.org/2008/filter/value objects -->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/value#nil"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.valueFilter.src.NilFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/value#precision"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.valueFilter.src.PrecisionFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/filter/value#decimals"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.valueFilter.src.DecimalsFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+<!-- 2010 extension function module objects -->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2010/filter/concept-relation#conceptRelation"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.conceptRelationsFilter.src.ConceptRelationsFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#concept" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2010/filter/aspect-cover#aspectCover"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.aspectCoverFilter.src.AspectCoverFilter">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filter" />
+    </DomainTemplate>
+
+
+<!-- Object model -->
+
+    <DomainTemplate
+        classificationUri="relationship://ubmatrix.com/Xbrl/Formula#Compiler"
+        implementationUri="ubmatrix.xbrl.formula.impl.src.XbrlFormulaCompiler">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="relationship://ubmatrix.com/Xbrl/Formula#Modeler"
+        implementationUri="ubmatrix.xbrl.formula.impl.src.XbrlFormulaModeler">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="relationship://ubmatrix.com/Xbrl/Formula#Validator"
+        implementationUri="ubmatrix.xbrl.formula.impl.src.XbrlFormulaValidator">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="relationship://ubmatrix.com/Xbrl/Formula#Processor"
+        implementationUri="ubmatrix.xbrl.formula.impl.src.XbrlFormulaProcessor">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="relationship://ubmatrix.com/Xbrl/Formula#Debugger"
+        implementationUri="ubmatrix.xbrl.formula.impl.src.XbrlFormulaDebugger">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#xpathExpression"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.src.FormulaXPathExpression">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#xpathValuedExpression"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.src.FormulaValuedXPathExpression">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#embeddedXPathExpression"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.src.EmbeddedFormulaXPathExpression">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#xqueryExpression"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.src.FormulaXQueryExpression">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#xqueryValuedExpression"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.src.FormulaValuedXQueryExpression">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#embeddedXQueryExpression"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.src.EmbeddedFormulaXQueryExpression">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/variable#filterSequence"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.src.FilterSequence">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/variable#implicitFilterSequence"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.filter.src.ImplicitFilterSequence">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#filterSequence" />
+    </DomainTemplate>
+
+    <!-- Variable graph specific objects -->
+    <RelationshipTemplate
+        classificationUri="relationship://ubmatrix.com/Xbrl/VariableGraph#VariableSetEntryRelationship"
+        implementationUri="implementation://ubmatrix.com/Xbrl#SimpleRelationship">
+        <Inheritance classificationUri="relationship://ubmatrix.com/Xbrl/VariableGraph#VariableSetEdge" />
+    </RelationshipTemplate>
+
+    <RelationshipTemplate
+        classificationUri="relationship://ubmatrix.com/Xbrl/VariableGraph#VariableSetEdge"
+        implementationUri="implementation://ubmatrix.com/Xbrl#SimpleRelationship">
+        <!-- Inheritance classificationUri="relationship://ubmatrix.com/Xbrl#BaseRelationship" / -->
+    </RelationshipTemplate>
+
+    <RelationshipTemplate
+        classificationUri="relationship://ubmatrix.com/Xbrl/VariableGraph#CoveringVariableSetEdge"
+        implementationUri="implementation://ubmatrix.com/Xbrl#SimpleRelationship">
+        <Inheritance classificationUri="relationship://ubmatrix.com/Xbrl/VariableGraph#VariableSetEdge" />
+    </RelationshipTemplate>
+
+    <RelationshipTemplate
+        classificationUri="relationship://ubmatrix.com/Xbrl/VariableGraph#NonCoveringVariableSetEdge"
+        implementationUri="implementation://ubmatrix.com/Xbrl#SimpleRelationship">
+        <Inheritance classificationUri="relationship://ubmatrix.com/Xbrl/VariableGraph#VariableSetEdge" />
+    </RelationshipTemplate>
+
+	<!-- Redundancy aspect rules -->
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#aspectRedundancyRuleEngine"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.redundancy.src.RedundancyAspectRuleEngine">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#aspectRedundancyRule1"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.redundancy.src.RedundantContextAspectRule">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#aspectRedundancyRule2"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.redundancy.src.RedundantUnitAspectRule">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+	<!-- Post processing rules -->
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#postProcessingAspectRuleEngine"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.post.src.PostProcessingAspectRuleEngine">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+    
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#postProcessingAspectRule1"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.post.src.DimensionalPostProcessingAspectRule">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <!-- Conflicting aspect rules -->
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#aspectConflictingRuleEngine"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.conflict.src.ConflictingAspectRuleEngine">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+    
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#aspectConflictingRule1"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.conflict.src.MultipleConceptConflictingAspectRule">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#aspectConflictingRule2"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.conflict.src.PeriodTypeConflictingAspectRule">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#aspectConflictingRule3"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.conflict.src.MissingConceptAspectRule">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#aspectConflictingRule4"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.conflict.src.MissingEntityIdentifierAspectRule">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#aspectConflictingRule5"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.conflict.src.MissingUnitAspectRule">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#aspectConflictingRule6"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.conflict.src.MissingPeriodAspectRule">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#aspectConflictingRule7"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.conflict.src.MultipleLocationConflictingAspectRule">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#aspectConflictingRule8"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.conflict.src.MultiplePeriodConflictingAspectRule">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula#aspectConflictingRule9"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.conflict.src.UnitConflictingAspectRule">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <!-- Instance specific objects -->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2010/variable/instance#instance"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.variable.src.Instance">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#parameter" />
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#variable" />
+    </DomainTemplate>
+
+    <RelationshipTemplate
+        classificationUri="relationship://ubmatrix.com/Xbrl/InstanceGraph#Edge"
+        implementationUri="implementation://ubmatrix.com/Xbrl#SimpleRelationship">
+        <!-- Inheritance classificationUri="relationship://ubmatrix.com/Xbrl#BaseRelationship" / -->
+    </RelationshipTemplate>
+
+    <RelationshipTemplate
+        classificationUri="relationship://ubmatrix.com/Xbrl/InstanceGraph#SourceEdge"
+        implementationUri="implementation://ubmatrix.com/Xbrl#SimpleRelationship">
+        <Inheritance classificationUri="relationship://ubmatrix.com/Xbrl/InstanceGraph#Edge" />
+    </RelationshipTemplate>
+
+    <RelationshipTemplate
+        classificationUri="relationship://ubmatrix.com/Xbrl/InstanceGraph#ProductionEdge"
+        implementationUri="implementation://ubmatrix.com/Xbrl#SimpleRelationship">
+        <Inheritance classificationUri="relationship://ubmatrix.com/Xbrl/InstanceGraph#Edge" />
+    </RelationshipTemplate>
+
+	<!--  Tuple production specific objects -->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/tuple#tuple"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.src.TupleFormula">
+        <Inheritance classificationUri="http://xbrl.org/2008/variable#variableSet" />
+        <Inheritance classificationUri="http://xbrl.org/2008/formula/tuple" />
+        <Inheritance classificationUri="production" />
+    </DomainTemplate>
+
+    <RelationshipTemplate
+        classificationUri="relationship://ubmatrix.com/Xbrl/TupleGraph#Edge"
+        implementationUri="implementation://ubmatrix.com/Xbrl#SimpleRelationship">
+        <!-- Inheritance classificationUri="relationship://ubmatrix.com/Xbrl#BaseRelationship" / -->
+    </RelationshipTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/tuple#location"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.formula.aspectRule.src.LocationAspectRule">
+        <Inheritance classificationUri="http://xbrl.org/2008/formula#aspect" />
+    </DomainTemplate>
+
+    <!-- XPath Function (deprecated) specific objects -->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2008/formula/function-implementation#function"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.variable.src.XPathFunction">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+	<!-- Custom Function Implementation specific objects (supercedes XPath Function) -->
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2010/custom-function#implementation"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.function.xpath20.src.XPathFunctionImplementation">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2010/custom-function#alt-implementation"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.function.xpath20.src.XQueryFunctionImplementation">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2010/custom-function#input"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.function.xpath20.src.XmlInput">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2010/custom-function#output"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.function.xpath20.src.XmlOutput">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+    <DomainTemplate
+        classificationUri="http://xbrl.org/2010/custom-function#step"
+        implementationUri="ubmatrix.xbrl.formula.impl.engine.resource.function.xpath20.src.XmlStep">
+        <Inheritance classificationUri="domain://ubmatrix.com/Xbrl/Formula#Abstract" />
+    </DomainTemplate>
+
+</TemplateDictionary>
+
+<!--
+The contents of this file are subject to the End-User Software License Agreement (the "License"). You may not use this 
+file except in compliance with the License. A current copy of the License is available by contacting product support.
+
+Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights and limitations under the License.
+-->

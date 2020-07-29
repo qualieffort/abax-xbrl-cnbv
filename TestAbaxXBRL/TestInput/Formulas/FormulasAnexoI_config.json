@@ -1,0 +1,320 @@
+{
+	"Datos generales":{
+		"No_Vacios_Datos_Generales": {
+			"NombreFormula": "No_Vacios_Datos_Generales",
+			"Variables":[
+					{"Concepto": "ar_pros_PlacementProspectus"},
+					{"Concepto": "ar_pros_ProspectusLegend"},
+					{"Concepto": "ar_pros_LimitedPublicOffering"},
+					{"Concepto": "ar_pros_OnlyEmission"},
+					{"Concepto": "ar_pros_RecentEvents"},
+					{"Concepto": "ar_pros_ForeingIssuer"}
+				]
+		}
+	},
+	"Portada":{
+		"No_Vacios_Datos_Generales": {
+			"NombreFormula": "No_Vacios_Datos_Generales",
+			"Variables":[
+					{"Concepto": "ar_pros_MentionOfBeOptionalTitlesEitherBuyingOrSelling"},
+					{"Concepto": "ar_pros_TheMentionOfBeingPublicOffering"},
+					{"Concepto": "ar_pros_DenominationOfTheIssuer"},
+					{"Concepto": "ar_pros_NumberAndCharacteristicsOfTheTitles"},
+					{"Concepto": "ar_pros_ValueOfTheWarrants"},
+					{"Concepto": "ar_pros_TotalAmountOfTheOffer"},
+					{"Concepto": "ar_pros_PeriodOrDateOfTheOffer"},
+					{"Concepto": "ar_pros_DateOfRegisterInTheStockExchange"},
+					{"Concepto": "ar_pros_SerieIssuanceDate"},
+					{"Concepto": "ar_pros_NetResourceThatWillGetTheIssuerWithThePlacement"},
+					{"Concepto": "ar_pros_SettlementDate"},
+					{"Concepto": "ar_pros_PlaceOfIssue"},
+					{"Concepto": "ar_pros_NumberOfLicensedTitlesToCirculate"},
+					{"Concepto": "ar_pros_TermOfTheIssue"},
+					{"Concepto": "ar_pros_TypeOfExercise"},
+					{"Concepto": "ar_pros_ExerciseDate"},
+					{"Concepto": "ar_pros_ReferenceValues"},
+					{"Concepto": "ar_pros_MinimumNumberOfWarrantsToExercise"},
+					{"Concepto": "ar_pros_SerieTicker"},
+					{"Concepto": "ar_pros_GenericListOfPossibleAcquirersAndPotentialLimitations"},
+					{"Concepto": "ar_pros_LegalBasisOfTheTaxRegimeApplicable"},
+					{"Concepto": "ar_pros_PlaceAndFormOfSettlement"},
+					{"Concepto": "ar_pros_NumberAndTickerSymbolOfTheSame"},
+					{"Concepto": "ar_pros_PricePerBatch"},
+					{"Concepto": "ar_pros_InCaseIntrinsicValue"},
+					{"Concepto": "ar_pros_NumberOfTitlesInTheSeries"},
+                    {"Concepto": "ar_pros_DescriptionOfTheRightsGrantedToHoldersOfWarrants"},
+                    {"Concepto": "ar_pros_TheEffectsOfTheReferenceValuesOnOptionalTitles"},
+                    {"Concepto": "ar_pros_TheMentionOfTheSecuritiesAreRegisteredInTheRNV"},
+					{"Concepto": "ar_pros_LegendArticle86OfTheLMV"},
+                    {"Concepto": "ar_pros_NumberOfRegister"},
+                    {"Concepto": "ar_pros_PlaceAndDateOfPublicationOfTheProspectusSupplementProspectus"},
+                    {"Concepto": "ar_pros_OfficeNumberAndDateOfAuthorizationOfTheCommission"},
+					{"Concepto": "ar_pros_LegendDocumentAvailableWithTheUnderwriter"},
+                    {"Concepto": "ar_pros_ProspectusSupplementBrochure"},
+                    {"Concepto": "ar_pros_LegendProspectusSupplementBrochure"},
+                    {"Concepto": "ar_pros_IssuanceUnderArt13OfTheCUELegend"},
+                    {"Concepto": "ar_pros_TypeOfOffer"}
+
+				]
+		}
+	},
+	"Informacion General": {
+		"Obligatorio_Incorporación_por_Referencia": {
+			"NombreFormula": "Obligatorio_Incorporación_por_Referencia",
+			"Precondition": "NO",
+			"Variables":[
+					{"Concepto": "ar_pros_ReferenceIncorporationGeneralInformation"},
+					{"Concepto": "ar_pros_ExecutiveSummary"},
+					{"concepto": "ar_pros_OtherValues"},
+					{"Concepto": "ar_pros_RiskFactors"},					
+					{"Concepto": "ar_pros_PublicDocuments"}
+				]
+		},
+		"Obligatorio_Glosario_Términos_Definiciones": {
+			"NombreFormula": "Obligatorio_Glosario_Términos_Definiciones",
+			"Variables":[
+				{"Concepto": "ar_pros_GlossaryOfTermsAndDefinitions"}
+			]
+		}
+	},
+	"La_Oferta":{
+		"Obligatorio_Oferta_no_vacios": {
+			"NombreFormula": "Obligatorio_Oferta_no_vacios",
+			"Variables":[
+				{"Concepto": "ar_pros_TranscriptOfTheRelevantProvisionsOfTheIndenture"},
+				{"Concepto": "ar_pros_IssuanceOfWarrants"},
+				{"Concepto": "ar_pros_IssueFee"},
+				{"Concepto": "ar_pros_ExercisePrice"},
+				{"Concepto": "ar_pros_GlobalTitle"},
+				{"Concepto": "ar_pros_PeriodOfValidity"},
+				{"Concepto": "ar_pros_ExercisePeriod"},
+				{"Concepto": "ar_pros_ExerciseRights"},
+				{"Concepto": "ar_pros_ExtraordinaryEvents"},
+				{"Concepto": "ar_pros_CoverageAndPlanRequirement"},
+				{"Concepto": "ar_pros_MechanicalExerciseAndSettlement"},
+				{"Concepto": "ar_pros_DesignationOfCommonRepresentative"},
+				{"Concepto": "ar_pros_PowersOfTheCommonRepresentative"},
+				{"Concepto": "ar_pros_MeetingOfHoldersOfTheWarrants"},
+				{"Concepto": "ar_pros_TechnicalAdjustments"},
+				{"Concepto": "ar_pros_ExerciseOfCorporateAndEconomicRights"},
+				{"Concepto": "ar_pros_TitleObligations"},
+				{"Concepto": "ar_pros_CompetentCourts"},
+				{"Concepto": "ar_pros_UseOfFunds"},
+				{"Concepto": "ar_pros_DistributionPlan"},
+				{"Concepto": "ar_pros_Hedges"},
+				{"Concepto": "ar_pros_AuthorizationAndRegistration"},
+				{"Concepto": "ar_pros_PublicDocumentsOfTheOffer"},
+				{"Concepto": "ar_pros_NamesOfPersonsWithRelevantParticipationInTheOffer"}
+
+			]
+		},
+		"Obligatorio_Posibles_Adquirentes": {
+			"NombreFormula": "Obligatorio_Posibles_Adquirentes",
+			"Precondition": "NO",
+			"Variables":[
+					{"Concepto": "ar_pros_LimitedPublicOffering"},		
+					{"Concepto": "ar_pros_PossiblePurchasers"}
+				]
+				
+		},
+		"obligatorio_condicional_posibles_limitantes": {
+			"NombreFormula": "obligatorio_condicional_posibles_limitantes",
+			"Precondition": "NO",
+			"Variables":[
+				        {"Concepto": "ar_pros_LimitedPublicOffering"},
+						{"Concepto": "ar_pros_PossibleLimitations"}	
+						
+				]
+		},
+		"obligatorio_Oferta_tipo_de_inversionista": {
+			"NombreFormula": "obligatorio_condicional_posibles_limitantes",
+			"Precondition": "SI",
+			"Variables":[
+				        {"Concepto": "ar_pros_LimitedPublicOffering"},
+						{"Concepto": "ar_pros_TypeOfInvestorToWhichItIsAddressed"}	
+						
+				]
+		},
+		"LA_OFERTA_obligatorio_renglon_tabla_participantes_en_la_oferta": {
+				"NombreFormula": "LA_OFERTA_obligatorio_renglon_tabla_participantes_en_la_oferta",
+				"Variables":[
+					{"Concepto": "ar_pros_ParticipantName"},
+					{"Concepto": "ar_pros_SignificantParticipationInTheOffer"},			
+					{"Concepto": "ar_pros_AmountOfferCost"},
+					{"Concepto": "ar_pros_IvaOfferCost"},
+					{"Concepto": "ar_pros_TotalOfferCost"}
+				]
+			
+		},
+		"LA_OFERTA_obligatorio_renglon_tabla_Relacion_con_inversionistas": {
+			"NombreFormula": "LA_OFERTA_obligatorio_renglon_tabla_Relacion_con_inversionistas",
+			"Variables":[
+				{"Concepto": "ar_pros_InvestorName"},
+				{"Concepto": "ar_pros_InvestorAdress"},
+				{"Concepto": "ar_pros_InvestorPhone"},
+				{"Concepto": "ar_pros_InvestorMail"}
+			]
+		},
+		"LA_OFERTA_obligatorio_renglon_otros_miembros_tabla_Pasticipantes_en_la_oferta": {
+				"NombreFormula": "LA_OFERTA_obligatorio_renglon_otros_miembros_tabla_Pasticipantes_en_la_oferta",
+				"Variables":[
+					{"Concepto": "ar_pros_ParticipantName"},		
+					{"Concepto": "ar_pros_AmountOfferCost"},
+					{"Concepto": "ar_pros_IvaOfferCost"},
+					{"Concepto": "ar_pros_TotalOfferCost"}
+				]
+			
+		}
+	},
+	"La Emisora": {
+		"Obligatorio_La_Emisora_Incorporación_por_Referencia_Informacion_Financiera_del_Fideicomiso": {
+			"NombreFormula": "Obligatorio:_La_Emisora_Incorporación_por_Referencia_Informacion_Financiera_del_Fideicomiso",
+			"Precondition": "NO",
+			"Variables":[
+					{"Concepto": "ar_pros_ReferenceIncorporationTheIssuer"},
+					{"Concepto": "ar_pros_BusinessOverview"},
+					{"Concepto": "ar_pros_MainActivity"},
+					{"Concepto": "ar_pros_DistributionChannels"},
+					{"Concepto": "ar_pros_PatentsLicensesTrademarksAndOtherContracts"},
+					{"Concepto": "ar_pros_MainCustomers"},
+					{"Concepto": "ar_pros_ApplicableLawAndTaxSituation"},
+					{"Concepto": "ar_pros_HumanResources"},
+					{"Concepto": "ar_pros_EnvironmentalPerformance"},
+					{"Concepto": "ar_pros_IssuerMarketInformation"},
+					{"Concepto": "ar_pros_CorporateStructure"},
+					{"Concepto": "ar_pros_DescriptionOfKeyAssets"},
+					{"Concepto": "ar_pros_JudicialAdministrativeOrArbitrationProceedings"}
+				]
+		}
+
+	},
+	"La_Emisora de los valores de referencia": {
+		"LA_EMISORA_obligatorio_historia_y_desarrollo_de_la_emisora": {
+			"NombreFormula": "LA_EMISORA_obligatorio_historia_y_desarrollo_de_la_emisora",
+			"Variables":[
+				{"Concepto": "ar_pros_GeneralDataIssuerOfTheReferenceValues"}
+			]
+		},
+		"LA_EMISORA_VALORES_información_bursatil": {
+			"NombreFormula": "LA_EMISORA_DE_REFERENCIA_información_bursatil",
+			"Variables":[
+				{"Concepto": "ar_pros_StockMarketInformation"}
+			]
+		}
+
+	},
+	"Informacion Financiera":{
+		"LA_EMISORA_DE_LOS_VALORES_DE_REFERENCIA_información_Financiera": {
+			"NombreFormula": "LA_EMISORA_DE_LOS_VALORES_DE_REFERENCIA_información_Financiera",
+			"Variables":[
+				{"Concepto": "ar_pros_SelectedFinancialInformation"}
+			]
+		},
+    	"Obligatorio_Incorporación_por_Referencia_Informacion_Financiera_del_Fideicomiso": {
+			"NombreFormula": "Obligatorio_Incorporación_por_Referencia_Informacion_Financiera_del_Fideicomiso",
+			"Precondition": "NO",
+			"Variables":[
+				{"Concepto": "ar_pros_ReferenceIncorporationFinancialInformation"},
+				{"Concepto": "ar_pros_FinancialInformationByBusinessLine"},
+				{"Concepto": "ar_pros_RelevantCreditReport"},
+				{"Concepto": "ar_pros_CommentsAndManagementAnalysisOnOperatingResults"},
+				{"Concepto": "ar_pros_OperationResults"},
+				{"Concepto": "ar_pros_InternalControl"},
+				{"Concepto": "ar_pros_EstimatesCriticalAccountingProvisionsOrReserves"},
+				{"Concepto": "ar_pros_FinancialPositionLiquidityAndCapitalResources"}	
+			]
+				
+		}
+
+	},
+	"Administracion":{
+	    "Obligatorio_Incorporación_por_Referencia_Administracion": {
+			"NombreFormula": "Obligatorio_Incorporación_por_Referencia_Administracion",
+			"Precondition": "NO",
+			"Variables":[
+						{"Concepto": "ar_pros_ReferenceIncorporationAdministration"},
+						{"Concepto": "ar_pros_AdministratorsAndShareholders"},
+						{"Concepto": "ar_pros_AdministratorName"},
+						{"Concepto": "ar_pros_ShareholderNameCorporateName"},						
+						{"Concepto": "ar_pros_TransactionsWithRelatedParties"}		
+					]
+		},
+		"La_ADMINISTRACION_obligatorio_renglos_tabla_administradores_de_la_empresa": {
+						"NombreFormula": "La_Fideicomitente_obligatorio_renglos_tabla_administradores_de_la_empresa",
+						"Variables":[
+					{"Concepto": "ar_pros_AdministratorName"},
+					{"Concepto": "ar_pros_AdministratorFirstName"},
+					{"Concepto": "ar_pros_AdministratorSecondName"},
+					{"Concepto": "ar_pros_AdministratorDirectorshipType"},
+					{"Concepto": "ar_pros_AdministratorParticipateInCommittees"},
+					{"Concepto": "ar_pros_AdministratorDesignationDate"},
+					{"Concepto": "ar_pros_AdministratorAssemblyType"},
+					{"Concepto": "ar_pros_AdministratorPeriodForWhichTheyWereElected"},
+					{"Concepto": "ar_pros_AdministratorPosition"},
+					{"Concepto": "ar_pros_AdministratorTimeWorkedInTheIssuer"},
+					{"Concepto": "ar_pros_AdministratorShareholding"},
+					{"Concepto": "ar_pros_AdministratorAdditionalInformation"}
+				]
+		},
+		"La_ADMINISTRACION_obligatorio_renglon_tabla_accionistas_de_la_empresa": {
+				"NombreFormula": "ADMINISTRACION_obligatorio_renglon_tabla_accionistas_de_la_empresa",
+				"Variables":[
+						{"Concepto": "ar_pros_ShareholderNameCorporateName"},
+						{"Concepto": "ar_pros_ShareholderFirstName"},
+						{"Concepto": "ar_pros_ShareholderSecondName"},
+						{"Concepto": "ar_pros_ShareholderShareholding"},
+						{"Concepto": "ar_pros_ShareholderAdditionalInformation"}
+					]
+		},
+		"La_ADMINISTRACION_auditores_externos": {
+				"NombreFormula": "ADMINISTRACION_auditores_externos",
+				"Variables":[
+						{"Concepto": "ar_pros_ExternalAuditors"},
+					]
+		}
+		
+	},
+	"Personas_Responsalbes":{
+		"VA_PERSONAS_RESPONSABLES_obligatorio_renglon_tabla_personas_responsables": {
+			"NombreFormula": "VA_PERSONAS_RESPONSABLES_obligatorio_renglon_tabla_personas_responsables",
+			"Variables":[
+				{"Concepto": "ar_pros_ResponsiblePersonName"},
+				{"Concepto": "ar_pros_ResponsiblePersonPosition"},
+				{"Concepto": "ar_pros_ResponsiblePersonInstitution"},
+				{"Concepto": "ar_pros_ResponsiblePersonLegend"}
+			]
+		},
+		"VA_PERSONAS_RESPONSABLES_obligatorio_nombre_y_cargo_de_personas_responsables_pdf": {
+			"NombreFormula": "VA_PERSONAS_RESPONSABLES_obligatorio_nombre_y_cargo_de_personas_responsables_pdf",
+			"Variables":[
+				{"Concepto": "ar_pros_NameAndPositionsOfResponsiblePersonsPdf"}
+			]
+		}
+	},
+	"Anexos": {
+			"ANEXOS__obligatorios_SinIncorporacionReferencia_": {
+				"NombreFormula": "ANEXOS__obligatorios_SinIncorporacionReferencia_",
+				"Expresion":'(squeeze(size(variable1)) > 0) or not(variable2 == "NO")',
+				"MensajeExito":"El hecho {variable1} es obligatorio en caso de no utilizar incorporación por referencia.",
+				"MensajeError":"El hecho {variable1} es obligatorio en caso de no utilizar incorporación por referencia.",
+				"VariablesPrecondicion":[
+					{"IdConcepto": "ar_pros_ReferenceIncorporationAnnex", "ValorFallback":"INF"}
+				],
+				"VariablesIteracion":[
+					{"IdConcepto": "ar_pros_IndenturePdf", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_LegalOpinionPdf", "ValorFallback":""}
+			
+				]
+			},
+			"ANEXOS_obligatorio_estados_financieros_pdf": {
+				"NombreFormula": "ANEXOS_obligatorio_estados_financieros_pdf",
+				"Variables":[
+					{"Concepto": "ar_pros_FinancialStatementsPdf"}
+				]
+		    }
+	}
+
+
+}
+
+	

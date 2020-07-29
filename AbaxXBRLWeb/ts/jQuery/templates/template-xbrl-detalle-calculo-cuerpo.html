@@ -1,0 +1,17 @@
+﻿<p>{{'MENSAJE_DETALLE_VALIDACION' | translate}} <span class="font-bold etiquetaConceptoXbrl">{{descripcionConcepto}}</span>.</p>
+
+<div style="height:{{alturaModal}}px; overflow-y: auto;">
+    <table class="table table-striped b-t b-light overflow-y">
+        <thead>
+            <tr>
+                <th>{{'EDITOR_XBRL_DESCRIPCION_CONCEPTO' | translate}}</th>
+                <th style="min-width:50px; width:50px;">{{'ETIQUETA_PESO' | translate}}</th>
+                <th style="min-width:200px; width:200px;">{{'ETIQUETA_VALOR_CALCULADO' | translate}}</th>
+                <th style="min-width:200px; width:200px;">{{'ETIQUETA_VALOR' | translate}}</th>
+            </tr>
+        </thead>
+        <tbody id="detalleOperaciones_{{idDetalleValidacion}}"></tbody>
+        <tfoot id="operacioFooter_{{idDetalleValidacion}}"></tfoot>
+
+    </table>
+</div>

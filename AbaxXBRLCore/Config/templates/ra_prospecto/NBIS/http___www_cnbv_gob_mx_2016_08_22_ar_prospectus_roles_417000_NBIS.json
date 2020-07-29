@@ -1,0 +1,244 @@
+{
+	"ContextosPlantillaPorId" : {
+  "ctx_2014": {
+    "Id": "ctx_2014",
+    "Periodo": {
+      "Tipo": 1,
+      "FechaInstante": "#fecha_2014_12_31",
+      "FechaInicio": "",
+      "FechaFin": ""
+    },
+    "Entidad": {
+      "Id": "#nombreEntidad",
+      "EsquemaId": "#esquemaEntidad",
+      "ContieneInformacionDimensional": false,
+      "Segmento": null,
+      "ValoresDimension": []
+    },
+    "ContieneInformacionDimensional": false,
+    "Escenario": null,
+    "ValoresDimension": []
+  }
+},
+	
+	"UnidadesPlantillaPorId" : {},
+            
+	"HechosPlantillaPorId" : {
+  "ar_pros_ReferenceIncorporationTheIssuer_bef597e0-e0a0-4c15-b058-b6b4d84e2006": {
+    "Id": "ar_pros_ReferenceIncorporationTheIssuer_bef597e0-e0a0-4c15-b058-b6b4d84e2006",
+    "IdConcepto": "ar_pros_ReferenceIncorporationTheIssuer",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_HistoryAndDevelopmentOfTheIssuer_7b58719e-11f6-4b3f-91b3-e89bf0e42d5f": {
+    "Id": "ar_pros_HistoryAndDevelopmentOfTheIssuer_7b58719e-11f6-4b3f-91b3-e89bf0e42d5f",
+    "IdConcepto": "ar_pros_HistoryAndDevelopmentOfTheIssuer",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_BusinessOverview_19bb61a3-03a6-4f3d-bd10-acb903cd26dd": {
+    "Id": "ar_pros_BusinessOverview_19bb61a3-03a6-4f3d-bd10-acb903cd26dd",
+    "IdConcepto": "ar_pros_BusinessOverview",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_MainActivity_fdbc7069-9b5f-4ff1-ad8d-dcac136f7c8a": {
+    "Id": "ar_pros_MainActivity_fdbc7069-9b5f-4ff1-ad8d-dcac136f7c8a",
+    "IdConcepto": "ar_pros_MainActivity",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_DistributionChannels_eb898236-863c-4379-8910-8af78a53115e": {
+    "Id": "ar_pros_DistributionChannels_eb898236-863c-4379-8910-8af78a53115e",
+    "IdConcepto": "ar_pros_DistributionChannels",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_PatentsLicensesTrademarksAndOtherContracts_f89a3f11-51e0-4847-b85c-2a419f3f1a36": {
+    "Id": "ar_pros_PatentsLicensesTrademarksAndOtherContracts_f89a3f11-51e0-4847-b85c-2a419f3f1a36",
+    "IdConcepto": "ar_pros_PatentsLicensesTrademarksAndOtherContracts",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_MainCustomers_5a132774-af91-42af-bb9c-5a7dcb18c71a": {
+    "Id": "ar_pros_MainCustomers_5a132774-af91-42af-bb9c-5a7dcb18c71a",
+    "IdConcepto": "ar_pros_MainCustomers",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_ApplicableLawAndTaxSituation_fd4e0324-d20b-4356-b20e-2820cc4a3d90": {
+    "Id": "ar_pros_ApplicableLawAndTaxSituation_fd4e0324-d20b-4356-b20e-2820cc4a3d90",
+    "IdConcepto": "ar_pros_ApplicableLawAndTaxSituation",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_HumanResources_c2852088-81b2-4426-8ddc-84f760ca07db": {
+    "Id": "ar_pros_HumanResources_c2852088-81b2-4426-8ddc-84f760ca07db",
+    "IdConcepto": "ar_pros_HumanResources",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_EnvironmentalPerformance_87211105-ea01-4e55-96c9-95ec124ae4ef": {
+    "Id": "ar_pros_EnvironmentalPerformance_87211105-ea01-4e55-96c9-95ec124ae4ef",
+    "IdConcepto": "ar_pros_EnvironmentalPerformance",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_IssuerMarketInformation_dd561c9d-91d6-48f4-9d0f-4016a70b11ad": {
+    "Id": "ar_pros_IssuerMarketInformation_dd561c9d-91d6-48f4-9d0f-4016a70b11ad",
+    "IdConcepto": "ar_pros_IssuerMarketInformation",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_CorporateStructure_170028a8-5db5-46ac-a6f5-7ac5e7650302": {
+    "Id": "ar_pros_CorporateStructure_170028a8-5db5-46ac-a6f5-7ac5e7650302",
+    "IdConcepto": "ar_pros_CorporateStructure",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_DescriptionOfKeyAssets_2ba9382e-8247-41e6-9b15-dac74783c511": {
+    "Id": "ar_pros_DescriptionOfKeyAssets_2ba9382e-8247-41e6-9b15-dac74783c511",
+    "IdConcepto": "ar_pros_DescriptionOfKeyAssets",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_JudicialAdministrativeOrArbitrationProceedings_182dd0bc-4149-4bd6-b0d7-60afc55a5c62": {
+    "Id": "ar_pros_JudicialAdministrativeOrArbitrationProceedings_182dd0bc-4149-4bd6-b0d7-60afc55a5c62",
+    "IdConcepto": "ar_pros_JudicialAdministrativeOrArbitrationProceedings",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_CapitalShares_c038809e-a892-41cf-9f05-abb5845241e0": {
+    "Id": "ar_pros_CapitalShares_c038809e-a892-41cf-9f05-abb5845241e0",
+    "IdConcepto": "ar_pros_CapitalShares",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_Dividends_7e837f4f-48af-40c9-b8f5-d8aaf84e5561": {
+    "Id": "ar_pros_Dividends_7e837f4f-48af-40c9-b8f5-d8aaf84e5561",
+    "IdConcepto": "ar_pros_Dividends",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_CorporateRestructuringsIfAny_e2d9edb1-5519-4804-9e69-77d902850595": {
+    "Id": "ar_pros_CorporateRestructuringsIfAny_e2d9edb1-5519-4804-9e69-77d902850595",
+    "IdConcepto": "ar_pros_CorporateRestructuringsIfAny",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_AdoptionProgramToTheRegimeOfCorporateStock_82232c0b-77cf-414b-ac44-022ea6b235d8": {
+    "Id": "ar_pros_AdoptionProgramToTheRegimeOfCorporateStock_82232c0b-77cf-414b-ac44-022ea6b235d8",
+    "IdConcepto": "ar_pros_AdoptionProgramToTheRegimeOfCorporateStock",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  }
+}
+}

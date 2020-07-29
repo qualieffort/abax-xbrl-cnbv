@@ -1,0 +1,12 @@
+﻿<div class="{{modoVistaFormato}}" ng-class="{'portrait':esOrientacionPortrait() && modoVistaFormato=='formato', 'landscape':esOrientacionLandscape() && modoVistaFormato=='formato','noselect':visualizarDocumentoSoloLectura}">
+
+
+
+    <br ng-if="!ocultarTituloRol()" />
+    <br ng-if="!ocultarTituloRol()" />
+    <h4 ng-if="!ocultarTituloRol()">{{rol.Nombre}}</h4>
+    <h5 ng-if="!ocultarTituloRol()">{{subtitulo || ''}}</h5>
+    <br ng-if="!ocultarTituloRol()" />
+    <div ng-transclude>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="5797ff3c-1cbd-4705-85a8-d5abff8da3c2" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="2459807e-788d-4fee-8fe4-412bd06c2db0" name="AbaxXBRLCore&#xD;&#xA;">
+      <childLayers>
+        <layer Id="b1443f43-5eaa-4fe3-a2e9-7fc88c1aa1b2" name="Model&#xD;&#xA;">
+          <childLayers>
+            <layer Id="331a59f8-758c-414e-978b-857aaad0006f" name="Entities&#xD;&#xA;" />
+            <layer Id="3ee274d4-e0f3-40e7-9fee-f43c2a045168" name="Contexto&#xD;&#xA;" />
+          </childLayers>
+        </layer>
+        <layer Id="6a7b8590-0039-4eb1-ad31-156fedcf7cb3" name="Repository">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="64fb8bd8-3c0e-4c4e-80a7-fc545d67f52a" direction="Forward">
+              <layerMoniker Id="b1443f43-5eaa-4fe3-a2e9-7fc88c1aa1b2" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <childLayers>
+            <layer Id="3cd15084-6765-4e64-b209-6ee319f0a2f5" name="BaseRepository" />
+            <layer Id="9e9151a6-e0f5-478e-b636-6c5e47c691af" name="Repository Entities" />
+          </childLayers>
+        </layer>
+        <layer Id="88d88cfc-879b-4dcf-98c2-e197c8ed183d" name="Services&#xD;&#xA;">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="5f7ba48f-33bb-4dcc-8fbc-419576668b64" direction="Forward">
+              <layerMoniker Id="6a7b8590-0039-4eb1-ad31-156fedcf7cb3" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+      </childLayers>
+    </layer>
+    <layer Id="14957160-d4d7-4259-849c-efe1d8ce1b8d" name="AbaxXBRLWeb">
+      <childLayers>
+        <layer Id="cf7bd6d0-ea06-4bee-9e43-2285b75feafe" name="Views&#xD;&#xA;" />
+        <layer Id="036666ed-fbe8-4a02-bc0b-eaa0a510e4e5" name="Controllers&#xD;&#xA;">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="d057bec5-25d8-4393-8f32-11968bc9150a" direction="Bidirectional">
+              <layerMoniker Id="cf7bd6d0-ea06-4bee-9e43-2285b75feafe" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="8cdad724-315b-4349-a5bc-45d9957e741f" direction="Forward">
+              <layerMoniker Id="88d88cfc-879b-4dcf-98c2-e197c8ed183d" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+      </childLayers>
+    </layer>
+  </layers>
+</layerModel>

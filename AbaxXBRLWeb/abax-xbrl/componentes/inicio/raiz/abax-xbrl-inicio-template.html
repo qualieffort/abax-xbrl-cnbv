@@ -1,0 +1,27 @@
+﻿<div oc-lazy-load="abaxXBRL.inicio">
+    <!--Cabecera-->
+    <abax:xbrl-cabecera-inicio ng-if="!enEditorXBRL"></abax:xbrl-cabecera-inicio>
+    <!--Cuerpo-->
+    <section xbrl:resize>
+        <section class="hbox stretch">
+            <!--Barra de Navegacion-->
+            <abax:xbrl-barra-navegacion-inicio></abax:xbrl-barra-navegacion-inicio>
+
+            <!--Contenido Administracion-->
+            <section ng-if="!enEditorXBRL">
+                <!--Alertas de bootrap-->
+                <section ng-show="alertasBootstrap.length > 0" class="alert-container">
+                    &nbsp;
+                    <div ng-repeat="alerta in alertasBootstrap" class="alert-toggle" ng-class="alerta.Hide? 'alert-hide': 'alert-show'"><alert type="{{alerta.Tipo}}" close="cerrarAlertaBootstrap($index)">{{alerta.Mensaje}}</alert></div>
+                </section>
+                <!--vista-->
+                <section ui-view="contenido" class="hbox stretch"></section>
+
+            </section>
+
+            <!--Contenido Editor Generico-->
+            <section id="content" ng-if="enEditorXBRL" ui-view="contenido"></section>
+
+        </section>
+    </section>
+</div>

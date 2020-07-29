@@ -1,0 +1,152 @@
+﻿{
+  "IdConceptos": [
+    "ar_pros_MemberOfAuxiliaryCommitteeLineItems",
+    "ar_pros_CommiteeName",
+    "ar_pros_CommiteeFirstName",
+    "ar_pros_CommiteeSecondName",
+    "ar_pros_CommiteeMemberOfTheBoardOfDirectors",
+    "ar_pros_CommiteeFinancialExpert",
+    "ar_pros_CommiteeParticipateInCommitteesAbstract",
+    "ar_pros_CommiteeParticipateInCommitteesAudit",
+    "ar_pros_CommiteeParticipateInCommitteesCorporatePractices",
+    "ar_pros_CommiteeParticipateInCommitteesEvaluationAndCompensation",
+    "ar_pros_CommiteeParticipateInCommitteesInvestors",
+    "ar_pros_CommiteeArticipateInCommitteesOthers",
+    "ar_pros_CommiteeDesignationDate",
+    "ar_pros_CommiteeTypeOfAssembly",
+    "ar_pros_CommiteePeriodForWhichTheyWereElected",
+    "ar_pros_CommiteeGender",
+    "ar_pros_CommiteeAdditionalInformation"
+  ],
+  "PlantillasContextos": {
+    "ar_pros_CommitteeIndependentMember": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfCommitteeMemberAxis",
+          "IdItemMiembro": "ar_pros_CommitteeIndependentMember",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfCommitteeMemberAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:CommitteeIndependentMember"
+        }
+      ]
+    },
+    "ar_pros_CommitteeNotIndependentMember": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfCommitteeMemberAxis",
+          "IdItemMiembro": "ar_pros_CommitteeNotIndependentMember",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfCommitteeMemberAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:CommitteeNotIndependentMember"
+        }
+      ]
+    }
+  },
+  "PlantillaDimensiones": {
+    "ar_pros_AuxiliaryCommitteesToTheBoardOfDirectorsSequenceTypedAxis": {
+      "PrefijoValor": "<ar_pros:CommitteesAuxiliarySequenceDomain xmlns:ar_pros=\"http://www.cnbv.gob.mx/2016-08-22/ar_prospectus\">",
+      "SubfijoValor": "</ar_pros:CommitteesAuxiliarySequenceDomain>",
+      "EtiquetaNuevoElemento": "1",
+      "Explicita": false,
+      "IdDimension": "ar_pros_AuxiliaryCommitteesToTheBoardOfDirectorsSequenceTypedAxis",
+      "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:AuxiliaryCommitteesToTheBoardOfDirectorsSequenceTypedAxis"
+    },
+    "ar_pros_TypeOfCommitteeMemberAxis": {
+      "PrefijoValor": "http:",
+      "SubfijoValor": "",
+      "EtiquetaNuevoElemento": "",
+      "Explicita": true,
+      "IdDimension": "ar_pros_TypeOfCommitteeMemberAxis",
+      "IdItemMiembro": "ar_pros_CommitteeIndependentMember",
+      "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfCommitteeMemberAxis",
+      "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:CommitteeIndependentMember"
+    }
+  },
+  "DimensionesDinamicas": [
+    "ar_pros_AuxiliaryCommitteesToTheBoardOfDirectorsSequenceTypedAxis"
+  ],
+  "MaxColumnasVertical": 6,
+  "MaxColumnasHorizontal": 0,
+  "TamanoHoja": "Letter",
+  "ConfiguracionPresentacion": {
+    "Default": {
+
+      "Tipo": "Tarjeta",
+      "Filas": [
+        {
+          "Tipo": "UnaFila",
+          "Celdas": [
+            {
+              "SoloValor": true,
+              "EsTitulo": true,
+              "ConcatenarValores": true,
+              "IdsConceptos": [ "ar_pros_CommiteeName", "ar_pros_CommiteeFirstName", "ar_pros_CommiteeSecondName" ],
+              "Colspan": 4
+            }
+          ]
+        },
+        {
+          "Tipo": "DosFilas",
+          "Celdas": [
+            {
+              "IdConcepto": "ar_pros_CommiteeMemberOfTheBoardOfDirectors",
+              "Colspan": 2
+            },
+            {
+              "IdConcepto": "ar_pros_CommiteeFinancialExpert",
+              "Colspan": 2
+            }
+          ]
+        },
+        {
+          "Tipo": "DosFilas",
+          "Celdas": [
+            { "IdConcepto": "ar_pros_CommiteeParticipateInCommitteesAudit" },
+            { "IdConcepto": "ar_pros_CommiteeParticipateInCommitteesCorporatePractices" },
+            { "IdConcepto": "ar_pros_CommiteeParticipateInCommitteesEvaluationAndCompensation" },
+            { "IdConcepto": "ar_pros_CommiteeParticipateInCommitteesInvestors" }
+          ]
+        },
+        {
+          "Tipo": "DosFilas",
+          "Celdas": [
+            {
+              "IdConcepto": "ar_pros_CommiteeArticipateInCommitteesOthers",
+              "Colspan": 4
+            }
+          ]
+        },
+        {
+          "Tipo": "DosFilas",
+          "Celdas": [
+            { "IdConcepto": "ar_pros_CommiteeDesignationDate" },
+            { "IdConcepto": "ar_pros_CommiteeTypeOfAssembly" },
+            { "IdConcepto": "ar_pros_CommiteePeriodForWhichTheyWereElected" },
+            { "IdConcepto": "ar_pros_CommiteeGender" }
+          ]
+        },
+        {
+          "Tipo": "DosFilas",
+          "Celdas": [
+            {
+              "IdConcepto": "ar_pros_CommiteeAdditionalInformation",
+              "Colspan": 4
+            }
+          ]
+        }
+      ]
+
+    }
+  }
+
+}

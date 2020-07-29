@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<!--
+Project: Xbrl Processing Engine
+Copyright (c) 2011  EDGAR(r) Online, Inc.
+
+EDGAR(r) is a federally registered trademark of the U.S. Securities and Exchange Commission. EDGAR 
+Online is not affiliated with or approved by the U.S. Securities and Exchange Commission.
+-->
+
+
+<!DOCTYPE dimensions [
+
+           <!-- Used to control the namespaceUri of memos -->
+
+           <!ENTITY genSpecUri "http://xbrl.org/2008/generic/error">
+	   
+]>
+
+<!-- Generic Linkbase validation patterns --> 
+<PatternSet
+    name="Generic Linkbase Validation Patterns"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ValidationPatterns.xsd" >
+
+	<!-- 
+		It is an error for the link:loc to bring something into the DTS
+		that is not an XBRL Document
+	[complete]
+	 -->
+	<Pattern id="xbrlgene_discoveryNonXbrlDocument"
+			 name="xbrlgene_discoveryNonXbrlDocument"
+			 method="DtsXPath"
+			 value="/'domain://ubmatrix.com/Xbrl/Linkbase#Locator'validateDiscoveryNonXbrlDocument()">
+          <Failure severity="error">
+                <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Load/Linkbase#NonXBRLDocumentMustNotBeInDTS" />
+          </Failure>
+	</Pattern>
+	
+	<!-- 
+	The value, V, of the @xlink:role attribute on a generic link MUST be an absolute URI. 
+	Error code xbrlgene:nonAbsoluteLinkRoleURI   MUST be thrown if V is not an absolute URI. 
+
+	[complete]
+	 -->
+	<Pattern id="xbrlgene_nonAbsoluteLinkRoleURI"
+			 name="xbrlgene_nonAbsoluteLinkRoleURI"
+			 method="DtsXPath"
+			 value="/'domain://ubmatrix.com/Xbrl/Linkbase#Link'[is-in-substitution-group('http://xbrl.org/2008/generic#link')]/-'relationship://ubmatrix.com/Xbrl/Relationship#RoleClassifies'/'domain://ubmatrix.com/Xbrl/Taxonomy#Role'!IsAbsoluteUri(roleURI)">
+          <Failure severity="error">
+                <Action saveDO="memo" method="CreateErrorMemo" uri="&genSpecUri;#nonAbsoluteLinkRoleURI" />
+          </Failure>
+	</Pattern>
+
+	<!-- 
+	If the value V is not the standard extended link role (http://www.xbrl.org/2003/role/link), 
+	then the ancestor <link:linkbase> element of the generic link MUST have a child <link:roleRef> 
+	element with V as the value of its @roleURI attribute. 
+
+	Error code xbrlgene:missingRoleRefForLinkRole   MUST be thrown if the ancestor <link:linkbase> 
+	element of the generic link does not have a child <link:roleRef> element with V as the value of its @roleURI attribute. 
+
+	[complete]
+	 -->
+	<Pattern id="xbrlgene_missingRoleRefForLinkRole"
+			 name="xbrlgene_missingRoleRefForLinkRole"
+			 method="DtsXPath"
+			 value="/'domain://ubmatrix.com/Xbrl/Linkbase#Link'[is-in-substitution-group('http://xbrl.org/2008/generic#link')]/-'relationship://ubmatrix.com/Xbrl/Relationship#RoleClassifies'/'domain://ubmatrix.com/Xbrl/Taxonomy#Role'!IsStandardRole()/.[not(hasPath(/+'relationship://ubmatrix.com/Xbrl/Relationship#RoleReferencedWith'/'domain://ubmatrix.com/Xbrl/Linkbase#RoleRef'))]">
+          <Failure severity="error">
+                <Action saveDO="memo" method="CreateErrorMemo" uri="&genSpecUri;#missingRoleRefForLinkRole" />
+          </Failure>
+	</Pattern>
+
+	<Pattern id="xbrlgene_missingRoleRefForLinkRole2"
+			 name="xbrlgene_missingRoleRefForLinkRole2"
+			 method="DtsXPath"
+			 value="/'domain://ubmatrix.com/Xbrl/Linkbase#Link'[(is-in-substitution-group('http://xbrl.org/2008/generic#link')) and ((attr('http://www.w3.org/1999/xlink#role') != 'http://www.xbrl.org/2003/role/link') and (not(hasPath(/-'relationship://ubmatrix.com/Xbrl/Relationship#RoleClassifies'))))]">
+          <Failure severity="error">
+                <Action saveDO="memo" method="CreateErrorMemo" uri="&genSpecUri;#missingRoleRefForLinkRole" />
+          </Failure>
+	</Pattern>
+
+	<!-- 
+	The <link:roleType> element pointed to by the <link:roleRef> element with @roleURI 
+	attribute equal to V MUST contain a <link:usedOn> child element with a QName value 
+	that has namespace equal to the namespace of the generic link and that has local 
+	name equal to the local name of the generic link. 
+
+	Error code xbrlgene:missingLinkRoleUsedOnValue   MUST be thrown if the <link:roleType> 
+	element pointed to by the <link:roleRef> element with @roleURI attribute equal to V 
+	does not contain a <link:usedOn> child element with a QName value that has 
+	namespace equal to the namespace of the generic link and that has local name equal 
+	to the local name of the generic link. 
+
+	[complete]
+	 -->
+	<Pattern id="xbrlgene_missingLinkRoleUsedOnValue"
+			 name="xbrlgene_missingLinkRoleUsedOnValue"
+			 method="DtsXPath"
+			 value="/'domain://ubmatrix.com/Xbrl/Linkbase#Link'[(is-in-substitution-group('http://xbrl.org/2008/generic#link')) and (let('ns', namespace-uri())) and (let('ln', name()))]/-'relationship://ubmatrix.com/Xbrl/Relationship#RoleClassifies'/'domain://ubmatrix.com/Xbrl/Taxonomy#Role'[(hasPath(/+'relationship://ubmatrix.com/Xbrl/Relationship#RoleReferencedWith'/'domain://ubmatrix.com/Xbrl/Linkbase#RoleRef')) and (not(hasPath(/+'relationship://ubmatrix.com/Xbrl/Relationship#RoleSupports'/'domain://ubmatrix.com/Xbrl/Taxonomy#UsedOn'[(namespace-uri-value() == get('ns')) and (name-value() == get('ln'))])))]">
+          <Failure severity="error">
+                <Action saveDO="memo" method="CreateErrorMemo" uri="&genSpecUri;#missingLinkRoleUsedOnValue" />
+          </Failure>
+	</Pattern>
+
+	<!-- 
+	If a resource in a generic link has a @xlink:role attribute, then the value, V, 
+	of that @xlink:role attribute MUST be an absolute URI. 
+
+	Error code xbrlgene:nonAbsoluteResourceRoleURI   MUST be thrown if V 
+	is not an absolute URI. 
+
+	[complete]
+	 -->
+	<Pattern id="xbrlgene_nonAbsoluteResourceRoleURI"
+			 name="xbrlgene_nonAbsoluteResourceRoleURI"
+			 method="DtsXPath"
+			 value="/'domain://ubmatrix.com/Xbrl/Linkbase#Resource'/-'relationship://ubmatrix.com/Xbrl/Relationship#RoleClassifies'/'domain://ubmatrix.com/Xbrl/Taxonomy#Role'!IsAbsoluteUri(roleURI)">
+          <Failure severity="error">
+                <Action saveDO="memo" method="CreateErrorMemo" uri="&genSpecUri;#nonAbsoluteResourceRoleURI" />
+          </Failure>
+	</Pattern>
+
+	<!-- 
+	The ancestor <link:linkbase> element of the resource MUST have a child <link:roleRef> 
+	element with V as the value of its @roleURI attribute. 
+
+	Error code xbrlgene:missingRoleRefForResourceRole   MUST be thrown if the ancestor 
+	<link:linkbase> element of the resource does not have a child <link:roleRef> 
+	element with V as the value of its @roleURI attribute. 
+
+	[complete]
+	 -->
+	<Pattern id="xbrlgene_missingRoleRefForResourceRole"
+			 name="xbrlgene_missingRoleRefForResourceRole"
+			 method="DtsXPath"
+			 value="/'domain://ubmatrix.com/Xbrl/Linkbase#Resource'/-'relationship://ubmatrix.com/Xbrl/Relationship#RoleClassifies'/'domain://ubmatrix.com/Xbrl/Taxonomy#Role'!IsStandardResourceRole()/.[not(hasPath(/+'relationship://ubmatrix.com/Xbrl/Relationship#RoleReferencedWith'/'domain://ubmatrix.com/Xbrl/Linkbase#RoleRef'))]">
+          <Failure severity="error">
+                <Action saveDO="memo" method="CreateErrorMemo" uri="&genSpecUri;#missingRoleRefForResourceRole" />
+          </Failure>
+	</Pattern>
+
+	<Pattern id="xbrlgene_missingRoleRefForResourceRole2"
+			 name="xbrlgene_missingRoleRefForResourceRole2"
+			 method="DtsXPath"
+			 value="/'domain://ubmatrix.com/Xbrl/Linkbase#Resource'[(attr('http://www.w3.org/1999/xlink#role') != 'http://www.xbrl.org/2003/role/link') and (not(hasPath(/-'relationship://ubmatrix.com/Xbrl/Relationship#RoleClassifies')))]">
+          <Failure severity="error">
+                <Action saveDO="memo" method="CreateErrorMemo" uri="&genSpecUri;#missingRoleRefForResourceRole" />
+          </Failure>
+	</Pattern>
+
+	<!-- 
+	The <link:roleType> element pointed to by the <link:roleRef> element with @roleURI 
+	attribute equal to V MUST contain a <link:usedOn> child element with a QName 
+	value with a namespace equal to the namespace of the resource and with a local 
+	name equal to the local name of the resource. 
+
+	Error code xbrlgene:missingResourceRoleUsedOnValue   MUST be thrown if the <link:roleType> 
+	element pointed to by the <link:roleRef> element with @roleURI attribute equal to 
+	V does not contain a <link:usedOn> child element with a QName value that has 
+	namespace equal to the namespace of the resource and that has local name equal 
+	to the local name of the resource. slow
+
+	[complete]
+	 -->
+	<Pattern id="xbrlgene_missingResourceRoleUsedOnValue"
+			 name="xbrlgene_missingResourceRoleUsedOnValue"
+			 method="DtsXPath"
+			 value="validateGenericRoleUsedOnElements()">
+          <Failure severity="error">
+                <Action saveDO="memo" method="CreateErrorMemo" uri="&genSpecUri;#missingResourceRoleUsedOnValue" />
+          </Failure>
+	</Pattern>
+
+	<!-- 
+	The value, V, of the @xlink:arcrole attribute on an generic arc 
+	MUST be an absolute URI. 
+
+	Error code xbrlgene:nonAbsoluteArcRoleURI   MUST be thrown if V is not an 
+	absolute URI. 
+
+	[complete]
+	 -->
+	<Pattern id="xbrlgene_nonAbsoluteArcRoleURI"
+			 name="xbrlgene_nonAbsoluteArcRoleURI"
+			 method="DtsXPath"
+			 value="/'relationship://ubmatrix.com/Xbrl/Linkbase/Relationship#Arc'[is-in-substitution-group('http://xbrl.org/2008/generic#arc')]/^-'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/'domain://ubmatrix.com/Xbrl/Taxonomy#Arcrole'!IsAbsoluteUri(arcroleURI)">
+          <Failure severity="error">
+                <Action saveDO="memo" method="CreateErrorMemo" uri="&genSpecUri;#nonAbsoluteArcRoleURI" />
+          </Failure>
+	</Pattern>
+
+	<!-- 
+	The ancestor <link:linkbase> element of the generic arc MUST have a child <link:arcroleRef> 
+	element with V as the value of its @arcroleURI attribute. 
+
+	Error code xbrlgene:missingRoleRefForArcRole   MUST be thrown if the ancestor 
+	<link:linkbase> element of the generic arc does not have a 
+	child <link:arcroleRef> element with V as the value 
+	of its @arcroleURI attribute. 
+
+	[complete]
+	 -->
+	<Pattern id="xbrlgene_missingRoleRefForArcRole"
+			 name="xbrlgene_missingRoleRefForArcRole"
+			 method="DtsXPath"
+			 value="/'relationship://ubmatrix.com/Xbrl/Linkbase/Relationship#Arc'[is-in-substitution-group('http://xbrl.org/2008/generic#arc')]/^-'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/'domain://ubmatrix.com/Xbrl/Taxonomy#Arcrole'!IsStandardArcRole()/.[not(hasPath(/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleReferencedWith'/'domain://ubmatrix.com/Xbrl/Linkbase#ArcroleRef'))]">
+          <Failure severity="error">
+                <Action saveDO="memo" method="CreateErrorMemo" uri="&genSpecUri;#missingRoleRefForArcRole" />
+          </Failure>
+	</Pattern>
+
+<!-- 
+	<Pattern id="xbrlgene_missingRoleRefForArcRole2"
+			 name="xbrlgene_missingRoleRefForArcRole2"
+			 method="DtsXPath"
+			 value="/'http://xbrl.org/2008/generic#arc'[(not(attr('http://www.w3.org/1999/xlink#arcrole') == 'http://www.xbrl.org/2003/role/link')) and (not(hasPath(/^-'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies')))]">
+          <Failure severity="error">
+                <Action saveDO="memo" method="CreateErrorMemo" uri="&genSpecUri;#missingRoleRefForArcRole" />
+          </Failure>
+	</Pattern>
+-->
+
+	<!-- 
+	The <link:arcroleType> element pointed to by the <link:arcroleRef> element with 
+	@arcroleURI attribute equal to V MUST contain a <link:usedOn> child element with 
+	a QName value that has namespace equal to the namespace of the generic arc 
+	and that has local name equal to the local name of the generic arc. 
+
+	Error code xbrlgene:missingArcRoleUsedOnValue   MUST be thrown if the <link:arcroleType> 
+	element pointed to by the <link:arcroleRef> element with @arcroleURI attribute equal 
+	to V does not contain a <link:usedOn> child element with a QName value that has namespace 
+	equal to the namespace of the generic arc and that has local name equal to the local name 
+	of the generic arc. slow
+
+	[complete]
+	 -->
+	<Pattern id="xbrlgene_missingArcRoleUsedOnValue"
+			 name="xbrlgene_missingArcRoleUsedOnValue"
+			 method="DtsXPath"
+			 value="validateGenericArcRoleUsedOnElements()">
+          <Failure severity="error">
+                <Action saveDO="memo" method="CreateErrorMemo" uri="&genSpecUri;#missingArcRoleUsedOnValue" />
+          </Failure>
+	</Pattern>
+
+	<!-- 
+	The constraints implied by the @cyclesAllowed attribute on the <link:arcroleType> 
+	element MUST be enforced (according to the rules of [XBRL 5.1.4.3]) for 
+	all networks of relationships in the DTS that have arcrole V. 
+
+	Error code xbrlgene:violatedCyclesConstraint   MUST be thrown if the constraints 
+	implied by the @cyclesAllowed attribute on the <link:arcroleType> element are 
+	not satisfied (according to the rules of [XBRL 5.1.4.3]) for all networks of 
+	relationships in the DTS that have arcrole V. 
+	 -->
+	<Pattern id="xbrlgene_violatedCyclesConstraint"
+			 name="xbrlgene_violatedCyclesConstraint"
+			 method="DtsXPath"
+			 value="/'domain://ubmatrix.com/Xbrl/Linkbase#Link'[is-in-substitution-group('http://xbrl.org/2008/generic#link')]/-'relationship://ubmatrix.com/Xbrl/Relationship#RoleClassifies'/'domain://ubmatrix.com/Xbrl/Taxonomy#Role'HasInvalidGenericLinkCycle()">
+          <Failure severity="error">
+                <Action saveDO="memo" method="CreateErrorMemo" uri="&genSpecUri;#violatedCyclesConstraint" />
+          </Failure>
+	</Pattern>
+	
+	<!-- 
+		An element-label relationship is a relationship between an XML element and a generic label expressed by an XLink arc. 
+
+		To declare an element-label relationship an XLink arc MUST: 
+
+		have an arcrole value equal to http://xbrl.org/arcrole/2008/element-label 
+		have an XML element [XML] at the starting resource of the arc 
+		have the generic label at the ending resource of the arc 
+		The arcrole value, http://xbrl.org/arcrole/2008/element-label, is declared in the normative schema for generic labels. 
+
+		Element-label relationships MUST be expressed by generic arcs as indicated by the restrictions imposed by the arcrole declaration in the normative schema. 
+	 -->
+	<Pattern id="xbrlgene_violatedLabelArcConstraint" 
+   			name="violatedLabelArcConstraint" 
+   			method="DtsXPath" 
+   			value="/'http://xbrl.org/arcrole/2008/element-label'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/+'http://xbrl.org/2008/generic#arc'/'*'Exclude(http://xbrl.org/2008/label#label)"
+   			processOverrides="false">		
+            <Failure severity="error">
+                       <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#violatedLabelArcConstraint" />
+            </Failure>
+    </Pattern>      
+	
+	<!-- 
+	An element-reference relationship is a relationship between an XML element and a generic reference expressed by an XLink arc. 
+
+	To declare an element-reference relationship an XLink arc MUST: 
+
+	have an arcrole value equal to http://xbrl.org/arcrole/2008/element-reference 
+	have an XML element [XML] at the starting resource of the arc 
+	have the generic reference at the ending resource of the arc 
+	The arcrole value, http://xbrl.org/arcrole/2008/element-reference, is declared in the normative schema for generic references. 
+
+	Element-reference relationships MUST be expressed by generic arcs as indicated by the restrictions imposed by the arcrole declaration in the normative schema. 
+	
+	 -->
+	<Pattern id="xbrlgene_violatedReferenceArcConstraint" 
+   			name="violatedReferenceArcConstraint" 
+   			method="DtsXPath" 
+   			value="/'http://xbrl.org/arcrole/2008/element-reference'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/+'http://xbrl.org/2008/generic#arc'/'*'Exclude(http://xbrl.org/2008/reference#reference)"
+   			processOverrides="false">		
+            <Failure severity="error">
+                       <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#violatedReferenceArcConstraint" />
+            </Failure>
+    </Pattern>      
+
+</PatternSet>
+
+<!--
+The contents of this file are subject to the End-User Software License Agreement (the "License"). You may not use this 
+file except in compliance with the License. A current copy of the License is available by contacting product support.
+
+Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights and limitations under the License.
+-->

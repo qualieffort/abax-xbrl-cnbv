@@ -1,0 +1,210 @@
+{
+  "ContextosPlantillaPorId": {
+    "ctx": {
+      "Id": "ctx",
+      "Periodo": {
+        "Tipo": 1,
+        "FechaInstante": "#fecha_2014_12_31",
+        "FechaInicio": "",
+        "FechaFin": ""
+      },
+      "Entidad": {
+        "Id": "#nombreEntidad",
+        "EsquemaId": "#esquemaEntidad",
+        "ContieneInformacionDimensional": false,
+        "Segmento": null,
+        "ValoresDimension": []
+      },
+      "ContieneInformacionDimensional": false,
+      "Escenario": null,
+      "ValoresDimension": []
+    }
+  },
+
+  "UnidadesPlantillaPorId": {
+
+    "PURE": {
+      "Id": "PURE",
+      "Tipo": 1,
+      "Medidas": [
+        {
+          "Nombre": "#medida_pure",
+          "EspacioNombres": "#medida_http___www_xbrl_org_2003_instance"
+        }
+      ],
+      "MedidasDenominador": [],
+      "MedidasNumerador": []
+    }
+  },
+
+  "HechosPlantillaPorId": {
+    "ar_pros_ReferenceIncorporationSettlorOrPromoter_edb26cec-0d73-434a-b707-7834d94e7b60": {
+      "Id": "ar_pros_ReferenceIncorporationSettlorOrPromoter_edb26cec-0d73-434a-b707-7834d94e7b60",
+      "IdConcepto": "ar_pros_ReferenceIncorporationSettlorOrPromoter",
+      "IdContextoPlantilla": "ctx",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "ar_pros_HistoryAndDevelopmentOfTheSettlorOrPromoter_961acf78-c8e8-460f-8335-2310772cc9ca": {
+      "Id": "ar_pros_HistoryAndDevelopmentOfTheSettlorOrPromoter_961acf78-c8e8-460f-8335-2310772cc9ca",
+      "IdConcepto": "ar_pros_HistoryAndDevelopmentOfTheSettlorOrPromoter",
+      "IdContextoPlantilla": "ctx",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "ar_pros_BusinessOverview_4a98a011-a426-4e8b-b860-a7bf8ff03c40": {
+      "Id": "ar_pros_BusinessOverview_4a98a011-a426-4e8b-b860-a7bf8ff03c40",
+      "IdConcepto": "ar_pros_BusinessOverview",
+      "IdContextoPlantilla": "ctx",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "ar_pros_MainActivity_3b59ee0c-0822-4897-b4af-820b8a79ddec": {
+      "Id": "ar_pros_MainActivity_3b59ee0c-0822-4897-b4af-820b8a79ddec",
+      "IdConcepto": "ar_pros_MainActivity",
+      "IdContextoPlantilla": "ctx",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "ar_pros_HumanResourcesSettlor_10c63f6e-e81a-4b3f-9aea-08f4517d465b": {
+      "Id": "ar_pros_HumanResourcesSettlor_10c63f6e-e81a-4b3f-9aea-08f4517d465b",
+      "IdConcepto": "ar_pros_HumanResourcesSettlor",
+      "IdContextoPlantilla": "ctx",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "ar_pros_CorporateStructure_c2b1368b-f476-4c8c-bf37-2657ff43d262": {
+      "Id": "ar_pros_CorporateStructure_c2b1368b-f476-4c8c-bf37-2657ff43d262",
+      "IdConcepto": "ar_pros_CorporateStructure",
+      "IdContextoPlantilla": "ctx",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "ar_pros_JudicialAdministrativeOrArbitrationProceedingsSettlor_a7ff15e0-fe7d-43a6-8f1d-02310910060b": {
+      "Id": "ar_pros_JudicialAdministrativeOrArbitrationProceedingsSettlor_a7ff15e0-fe7d-43a6-8f1d-02310910060b",
+      "IdConcepto": "ar_pros_JudicialAdministrativeOrArbitrationProceedingsSettlor",
+      "IdContextoPlantilla": "ctx",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "ar_pros_AdministratorsAndShareholders_95a4a475-48f7-49e9-b426-ae4bfa353986": {
+      "Id": "ar_pros_AdministratorsAndShareholders_95a4a475-48f7-49e9-b426-ae4bfa353986",
+      "IdConcepto": "ar_pros_AdministratorsAndShareholders",
+      "IdContextoPlantilla": "ctx",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "TotalPercentageOfMenAsRelevantDirectors_0000-0000-0000-0000-20180116": {
+      "Id": "TotalPercentageOfMenAsRelevantDirectors_0000-0000-0000-0000-20180116",
+      "IdConcepto": "ar_pros_TotalPercentageOfMenAsRelevantDirectors",
+      "IdContextoPlantilla": "ctx",
+      "Hechos": [],
+      "IdUnidadPlantilla": "PURE",
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": "2",
+      "Valor": "#valorDefaultNumerico"
+    },
+    "TotalPercentageOfWomenAsRelevantDirectors_0000-0000-0000-0000-20180116": {
+      "Id": "TotalPercentageOfWomenAsRelevantDirectors_0000-0000-0000-0000-20180116",
+      "IdConcepto": "ar_pros_TotalPercentageOfWomenAsRelevantDirectors",
+      "IdContextoPlantilla": "ctx",
+      "Hechos": [],
+      "IdUnidadPlantilla": "PURE",
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": "2",
+      "Valor": "#valorDefaultNumerico"
+    },
+    "TotalPercentageOfMenAsCounselors_0000-0000-0000-0000-20180116": {
+      "Id": "TotalPercentageOfMenAsCounselors_0000-0000-0000-0000-20180116",
+      "IdConcepto": "ar_pros_TotalPercentageOfMenAsCounselors",
+      "IdContextoPlantilla": "ctx",
+      "Hechos": [],
+      "IdUnidadPlantilla": "PURE",
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": "2",
+      "Valor": "#valorDefaultNumerico"
+    },
+    "TotalPercentageOfWomenAsCounselors_0000-0000-0000-0000-20180116": {
+      "Id": "TotalPercentageOfWomenAsCounselors_0000-0000-0000-0000-20180116",
+      "IdConcepto": "ar_pros_TotalPercentageOfWomenAsCounselors",
+      "IdContextoPlantilla": "ctx",
+      "Hechos": [],
+      "IdUnidadPlantilla": "PURE",
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": "2",
+      "Valor": "#valorDefaultNumerico"
+    },
+    "HasAPolicyOrProgramOfLaborInclusion_0000-0000-0000-0000-20180116": {
+      "Id": "HasAPolicyOrProgramOfLaborInclusion_0000-0000-0000-0000-20180116",
+      "IdConcepto": "ar_pros_HasAPolicyOrProgramOfLaborInclusion",
+      "IdContextoPlantilla": "ctx",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultHasAPolicyOrProgramOfLaborInclusion"
+    },
+    "DescriptionOfThePolicyOrProgramOfLaborInclusion_0000-0000-0000-0000-20180116": {
+      "Id": "DescriptionOfThePolicyOrProgramOfLaborInclusion_0000-0000-0000-0000-20180116",
+      "IdConcepto": "ar_pros_DescriptionOfThePolicyOrProgramOfLaborInclusion",
+      "IdContextoPlantilla": "ctx",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    }
+  }
+}

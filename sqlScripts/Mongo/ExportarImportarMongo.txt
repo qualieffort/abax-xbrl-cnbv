@@ -1,0 +1,34 @@
+#Exportar (BD actual)
+
+mongoexport --db repositorioAbaxXbrl --collection BlockStoreHecho --out ./BlockStoreHecho.json
+mongoexport --db repositorioAbaxXbrl --collection BlockStoreConcepto --out ./BlockStoreConcepto.json
+mongoexport --db repositorioAbaxXbrl --collection BlockStoreDimension --out ./BlockStoreDimension.json
+mongoexport --db repositorioAbaxXbrl --collection BlockStoreEmpresa --out ./BlockStoreEmpresa.json
+mongoexport --db repositorioAbaxXbrl --collection BlockStoreUnidad --out ./BlockStoreUnidad.json
+
+
+
+mongoexport --db repositorioAbaxXbrl --collection Envio --out ./Envio.json
+mongoexport --db repositorioAbaxXbrl --collection Hecho --out ./Hecho.json
+mongoexport --db repositorioAbaxXbrl --collection RolPresentacion --out ./RolPresentacion.json
+
+mongoexport --db repositorioAbaxXbrl --collection fs.chunks --out ./fs_chunks.json
+mongoexport --db repositorioAbaxXbrl --collection fs.files --out ./fs_files.json
+
+#Importar (En la nueva BD)
+
+mongoimport --db abaxxbrl --collection BlockStoreHecho --file ./BlockStoreHecho.json
+mongoimport --db abaxxbrl --collection BlockStoreConcepto --file ./BlockStoreConcepto.json
+mongoimport --db abaxxbrl --collection BlockStoreDimension --file ./BlockStoreDimension.json
+mongoimport --db abaxxbrl --collection BlockStoreEmpresa --file C./BlockStoreEmpresa.json
+mongoimport --db abaxxbrl --collection BlockStoreUnidad --file ./BlockStoreUnidad.json
+
+mongoimport --db abaxxbrl_cellstore --collection Envio --file ./Envio.json
+mongoimport --db abaxxbrl_cellstore --collection Hecho --file ./Hecho.json
+mongoimport --db abaxxbrl_cellstore --collection RolPresentacion --file ./RolPresentacion.json
+
+mongoimport --db abaxxbrl_cellstore --collection fs.chunks --file ./fs_chunks.json
+mongoimport --db abaxxbrl_cellstore --collection fs.files --file ./fs_files.json
+
+
+mongo "mongodb://abaxxbrl-shard-00-00-dk4sr.azure.mongodb.net:27017,abaxxbrl-shard-00-01-dk4sr.azure.mongodb.net:27017,abaxxbrl-shard-00-02-dk4sr.azure.mongodb.net:27017/test?replicaSet=AbaxXBRL-shard-0" --ssl --authenticationDatabase xbrl --username oscarloyola --password &oscar.loyola.2h

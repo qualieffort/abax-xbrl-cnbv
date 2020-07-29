@@ -1,0 +1,105 @@
+{
+  "ContextosPlantillaPorId": {
+    "trimestre_actual": {
+        "Id": "trimestre_actual",
+        "Periodo": {
+            "Tipo": 2,
+            "FechaInicio": "#fecha_2015_07_01",
+            "FechaFin": "#fecha_2015_09_30",
+            "FechaInstante": ""
+        },
+        "Entidad": {
+            "Id": "#nombreEntidad",
+            "EsquemaId": "#esquemaEntidad",
+            "ContieneInformacionDimensional": false,
+            "Segmento": null,
+            "ValoresDimension": [ ]
+        },
+        "ContieneInformacionDimensional": false,
+        "Escenario": null,
+        "ValoresDimension": [ ]
+    },
+    "acumulado_ejercicio_actual": {
+      "Id": "acumulado_ejercicio_actual",
+      "Periodo": {
+          "Tipo": 2,
+          "FechaInicio": "#fecha_2015_01_01",
+          "FechaFin": "#fecha_2015_09_30",
+          "FechaInstante": ""
+      },
+      "Entidad": {
+          "Id": "#nombreEntidad",
+          "EsquemaId": "#esquemaEntidad",
+          "ContieneInformacionDimensional": false,
+          "Segmento": null,
+          "ValoresDimension": []
+      },
+      "ContieneInformacionDimensional": false,
+      "Escenario": null,
+      "ValoresDimension": []
+  }
+  },
+  "UnidadesPlantillaPorId": {},
+  "HechosPlantillaPorId": {
+    "A75775caf-f939-4670-83f4-1a8fb9f31af0": {
+      "Id": "A75775caf-f939-4670-83f4-1a8fb9f31af0",
+      "IdConcepto": "ifrs_mx-cor_20141205_DiscusionDeLaAdministracionSobreLasPoliticasDeUsoDeInstrumentosFinancierosDerivadosExplicandoSiDichasPoliticasPermitenQueSeanUtilizadosUnicamenteConFinesDeCoberturaOConOtroFinesTalesComoNegociacionBloqueDeTexto",
+      "IdContextoPlantilla": "acumulado_ejercicio_actual",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "A6e95836f-7bdc-4bdb-a8f4-577dc2319d1b": {
+      "Id": "A6e95836f-7bdc-4bdb-a8f4-577dc2319d1b",
+      "IdConcepto": "ifrs_mx-cor_20141205_DescripcionGenericaSobreLasTecnicasDeValuacionDistinguiendoLosInstrumentosQueSeanValuadosACostoOAValorRazonableAsiComoLosMetodosYTecnicasDeValuacionBloqueDeTexto",
+      "IdContextoPlantilla": "acumulado_ejercicio_actual",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "A4914aa6c-20ba-4893-9e3d-de6f86e99b9a": {
+      "Id": "A4914aa6c-20ba-4893-9e3d-de6f86e99b9a",
+      "IdConcepto": "ifrs_mx-cor_20141205_DiscusionDeLaAdministracionSobreLasFuentesInternasYExternasDeLiquidezQuePudieranSerUtilizadasParaAtenderRequerimientosRelacionadosConInstrumentosFinancierosDerivadosBloqueDeTexto",
+      "IdContextoPlantilla": "acumulado_ejercicio_actual",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "A9d4c7ab9-df5e-4e79-912c-db5849954f7a": {
+      "Id": "A9d4c7ab9-df5e-4e79-912c-db5849954f7a",
+      "IdConcepto": "ifrs_mx-cor_20141205_ExplicacionDeLosCambiosEnLaExposicionALosPrincipalesRiesgosIdentificadosYEnLaAdministracionDeLosMismosAsiComoContingenciasYEventosConocidosOEsperadosPorLaAdministracionQuePuedanAfectarEnLosFuturosReportesBloqueDeTexto",
+      "IdContextoPlantilla": "acumulado_ejercicio_actual",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "A67b319d5-5e6f-4b89-86fa-ec50eca1d92e": {
+      "Id": "A67b319d5-5e6f-4b89-86fa-ec50eca1d92e",
+      "IdConcepto": "ifrs_mx-cor_20141205_InformacionCuantitativaARevelarBloqueDeTexto",
+      "IdContextoPlantilla": "acumulado_ejercicio_actual",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    }
+  }
+}

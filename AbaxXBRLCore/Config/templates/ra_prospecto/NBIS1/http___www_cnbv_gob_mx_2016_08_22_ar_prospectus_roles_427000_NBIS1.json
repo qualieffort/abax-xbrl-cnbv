@@ -1,0 +1,76 @@
+{
+	"ContextosPlantillaPorId" : {
+  "ctx": {
+    "Id": "ctx",
+    "Periodo": {
+      "Tipo": 1,
+      "FechaInstante": "#fecha_2014_12_31",
+      "FechaInicio": "",
+      "FechaFin": ""
+    },
+    "Entidad": {
+      "Id": "#nombreEntidad",
+      "EsquemaId": "#esquemaEntidad",
+      "ContieneInformacionDimensional": false,
+      "Segmento": null,
+      "ValoresDimension": []
+    },
+    "ContieneInformacionDimensional": false,
+    "Escenario": null,
+    "ValoresDimension": []
+  }
+},
+	
+	"UnidadesPlantillaPorId" : {},
+            
+	"HechosPlantillaPorId" : {
+  "ar_pros_ReferenceIncorporationAdministration_6a7c25da-ce50-4ad3-951c-901ea641ce00": {
+    "Id": "ar_pros_ReferenceIncorporationAdministration_6a7c25da-ce50-4ad3-951c-901ea641ce00",
+    "IdConcepto": "ar_pros_ReferenceIncorporationAdministration",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_ExternalAuditorsAdministration_77c573e4-6d09-44f9-b85f-8bb48443c6b8": {
+    "Id": "ar_pros_ExternalAuditorsAdministration_77c573e4-6d09-44f9-b85f-8bb48443c6b8",
+    "IdConcepto": "ar_pros_ExternalAuditorsAdministration",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_TransactionsWithRelatedParties_3ee78277-f281-4ff3-90dd-0ee33ab966f3": {
+    "Id": "ar_pros_TransactionsWithRelatedParties_3ee78277-f281-4ff3-90dd-0ee33ab966f3",
+    "IdConcepto": "ar_pros_TransactionsWithRelatedParties",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_MeetingsOfHolders_d358fefb-8235-4c45-97a7-55702ab3b97a": {
+    "Id": "ar_pros_MeetingsOfHolders_d358fefb-8235-4c45-97a7-55702ab3b97a",
+    "IdConcepto": "ar_pros_MeetingsOfHolders",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  }
+}
+}

@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<!--
+Project: Xbrl Processing Engine
+Copyright (c) 2011  EDGAR(r) Online, Inc.
+
+EDGAR(r) is a federally registered trademark of the U.S. Securities and Exchange Commission. EDGAR 
+Online is not affiliated with or approved by the U.S. Securities and Exchange Commission.
+-->
+
+
+<PatternSet
+    name="FrtaValidationPatterns"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ValidationPatterns.xsd" >       
+
+
+
+    
+    <!-- Concepts validation rule pattern (200) -->       
+
+    <!-- 2.1.5: Element definitions for concepts MUST contain an *id* attribute whose value begins with the recommended namespace prefix of the taxonomy followed by an underscore. -->
+    <Pattern id="ValidateConceptHasIDAttribute" 
+      			name="ValidateHasConceptIDAttribute" 
+      			method="DtsXPath" 
+      			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#Concept'[not(hasAttr('id'))]">      			      
+               <Failure severity="error">
+                          <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#ConceptDoesNotHaveIDAttribute" />
+               </Failure>
+    </Pattern>
+
+    <Pattern id="ValidateConceptIDAttribute" 
+      			name="ValidateConceptIDAttribute" 
+      			method="DtsXPath" 
+      			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#Taxonomy'ValidateConceptIDAttribute()">      			      
+               <Failure severity="error">
+                          <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#InvalidElementID" />
+               </Failure>
+    </Pattern>
+    
+    
+
+    <!-- 2.1.9: All documentation of a concept MUST be contained in XBRL linkbases. -->
+    <!-- changed from: Taxonomy element declarations SHOULD NOT use the XML Schema documentation element. -->
+    <Pattern id="ValidateSchemaDocumentation" 
+          			name="ValidateSchemaDocumentation" 
+          			method="DtsXPath"       			      			
+          			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#Concept'/+'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#ConceptHasSchemaDocumentation'">  
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#ConceptHasSchemaDocumentation" />
+                   </Failure>
+    </Pattern>
+
+
+    <!-- 2.1.10: A concept MUST have a label with the standard label role. -->    
+    <Pattern id="ValidateConceptHasStandardLabelRole" 
+      			name="ValidateConceptHasStandardLabelRole" 
+      			method="DtsXPath"       			
+      			value="/'http://www.xbrl.org/2003/linkbase#label'ValidateConceptHasStandardLabelRole()">      			
+               <Failure severity="error">
+                          <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#ConceptDoesNotHaveStandardLabelRole" />
+               </Failure>
+    </Pattern>
+    
+
+    <!-- 2.1.11	All concepts within a taxonomy schema SHOULD have a unique label for the standard or verbose role in each language used. -->
+    <Pattern id="ValidateUniqueLabel" 
+      			name="ValidateUniqueLabel" 
+      			method="DtsXPath"       			
+      			value="/'http://www.xbrl.org/2003/linkbase#labelArc'ValidateUniqueLabel()">
+               <Failure severity="error">
+                          <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#DTSHasNonUniqueLabel" />
+               </Failure>
+    </Pattern>
+
+
+
+    <!-- 2.1.12  Each concept MUST have documentation in either the label or reference linkbase. -->
+    <Pattern id="ValidateConceptHasDocumentation" 
+      			name="ValidateConceptHasDocumentation" 
+      			method="DtsXPath"       			      			
+    			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept'ValidateConceptHasDocumentation()">
+    		<Failure severity="error">
+		        <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#ConceptDoesNotHaveDocumentation" />
+               </Failure>
+    </Pattern>          
+
+
+
+    <!-- 2.1.18: A concept MUST NOT have more than one label in a base set for each combination of language and label role in the DTS whose starting point is the schema defining that concept. -->
+    <!-- Changed From: A concept MUST NOT have more than one label for each combination of language and role in the DTS whose starting point is the schema defining that concept. -->
+    <Pattern id="ValidateDuplicateLabel" 
+      			name="ValidateDuplicateLabel" 
+      			method="DtsXPath"       			
+      			value="ValidateDuplicateLabel()">      			      
+               <Failure severity="error">
+                          <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#ConceptHasDuplicateLabel" />
+               </Failure>
+    </Pattern>
+    
+  
+    <!-- 2.1.21: References MUST use elements in the substitution group of the XBRL linkbase *part* element from the namespace http://www.xbrl.org/2004/ref. -->
+    <Pattern id="ValidateUseOfStandardReferenceParts" 
+      			name="ValidateUseOfStandardReferenceParts" 
+      			method="DtsXPath"       			
+      			value="/'http://www.xbrl.org/2003/linkbase#reference'/+'relationship://ubmatrix.com/Xbrl/Linkbase/Relationship#ResourceHasDescendant'/'domain://ubmatrix.com/Xbrl/Linkbase#ResourceDescendant'ValidateReferenceParts()">
+               <Failure severity="error">
+                          <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#InvalidUseOfStandardReferenceParts" />
+               </Failure>
+    </Pattern>
+
+    
+    <!-- The default value of the XML Schema *nillable* attribute is true for items. -->
+    <Pattern id="ValidateNillableAttributeOnItemConcept" 
+      			name="ValidateNillableAttributeOnItemConcept" 
+      			method="DtsXPath"       			
+      			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept'[attr('nillable') != 'true']">
+               <Failure severity="error">
+                          <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#InvalidNillableAttributeOnItemConcept" />
+               </Failure>
+    </Pattern>
+
+
+    <!-- 2.3.6	The content model of a tuple SHOULD NOT contain a reference to itself nor any possible ancestor. -->    
+    <Pattern id="ValidateTupleCycle" 
+      			name="ValidateTupleCycle" 
+      			method="DtsXPath"       			
+      			value="/'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#TupleContainsConcept'ValidateTupleCycle()">
+               <Failure severity="error">
+                          <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#TupleContainsReferenceToItself" />
+               </Failure>
+    </Pattern>
+    
+    
+    
+    
+    
+    
+    
+    <!-- Relationships validation rule pattern (300) -->
+    
+    <!-- 3.1.1:	A linkbase MUST NOT include any link elements (simple, resource, extended, or arc) not in an XBRL module or in the XBRL 2.1 Specification. -->    
+    <Pattern id="FRTA-3.1.1-ValidateUseOfLinkElements" 
+          			name="FRTA 3.1.1 ValidateUseOfLinkElements" 
+          			method="DtsXPath"           			
+          			value="/'domain://ubmatrix.com/Xbrl/Linkbase#Linkbase'ValidateLinkbaseElements_3_1_1()">
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#InvalidUseOfLinkElements" />
+                   </Failure>
+    </Pattern>
+
+
+    <!-- 3.1.2	An arc MUST have only its standard or LRR approved arc role. -->
+    <Pattern id="ValidateApprovedArcRoles" 
+          			name="ValidateApprovedArcRoles" 
+          			method="DtsXPath"           			
+          			value="/-'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/'domain://ubmatrix.com/Xbrl/Taxonomy#Arcrole'ValidateApprovedArcRoles()">
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#NotApprovedArcRoles" />
+                   </Failure>
+    </Pattern>
+
+
+    <!-- 3.1.3	The label and reference elements MUST have only their standard or LRR approved resource roles. -->
+    <Pattern id="ValidateApprovedLabelResourceRoles" 
+          			name="ValidateApprovedLabelResourceRoles" 
+          			method="DtsXPath"           			
+          			value="/'http://www.xbrl.org/2003/linkbase#label'/-'relationship://ubmatrix.com/Xbrl/Relationship#RoleClassifies'/'domain://ubmatrix.com/Xbrl/Taxonomy#Role'ValidateApprovedResourceRoles(label)">
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#NotApprovedLabelResourceRoles" />
+                   </Failure>
+    </Pattern>
+
+
+    <Pattern id="ValidateApprovedRefernceResourceRoles" 
+          			name="ValidateApprovedReferenceResourceRoles" 
+          			method="DtsXPath"           			
+          			value="/'http://www.xbrl.org/2003/linkbase#reference'/-'relationship://ubmatrix.com/Xbrl/Relationship#RoleClassifies'/'domain://ubmatrix.com/Xbrl/Taxonomy#Role'ValidateApprovedResourceRoles(reference)">
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#NotApprovedRefernceResourceRoles" />
+                   </Failure>
+    </Pattern>
+   
+
+     <!-- 3.1.5	A schema MUST NOT define role types that duplicate definitions in the DTS whose starting point is the schema defining that role type. -->     
+     <Pattern id="ValidateUniqueRoleTypeInDTS" 
+          			name="ValidateUniqueRoleTypeInDTS" 
+          			method="DtsXPath"           			
+          			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#Role'ValidateUniqueRoleTypeInDTS()">
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#DuplicateRoleTypeFoundInDTS" />
+                   </Failure>
+    </Pattern>
+    
+       
+    <!-- 3.1.7: All arcs within an extended-type link MUST have the same arc role. -->
+    <Pattern id="ValidateArcsWithDuplicateArcroles" 
+          			name="ValidateArcsWithDuplicateArcroles" 
+          			method="DtsXPath"           			
+          			value="/'domain://ubmatrix.com/Xbrl/Linkbase#Link'[hasPath(/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#LinkContainsArc'/'relationship://ubmatrix.com/Xbrl/Linkbase/Relationship#Arc'/-'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/'domain://ubmatrix.com/Xbrl/Taxonomy#Arcrole')]ValidateArcsWithDuplicateArcroles()">
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#ArcsWithDuplicateArcroles" />
+                   </Failure>
+    </Pattern>
+
+
+    <!-- 3.1.8: Each extended-type link MUST have a nonempty role attribute. -->
+    <Pattern id="ValidateNonEmptyRoleAttribute" 
+          			name="ValidateNonEmptyRoleAttribute" 
+          			method="DtsXPath"           			
+          			value="/'domain://ubmatrix.com/Xbrl/Linkbase#Link'[/-'relationship://ubmatrix.com/Xbrl/Relationship#RoleClassifies'/'domain://ubmatrix.com/Xbrl/Taxonomy#Role'[value() == '']]">
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#LinkhasEmptyRoleAttribute" />
+                   </Failure>
+    </Pattern>
+    
+     
+    <!-- part II : checks if the definition element is empty or not -->    
+    <Pattern id="ValidateHumanReadableRoleDefinition_2" 
+          			name="ValidateHumanReadableRoleDefinition_2" 
+          			method="DtsXPath"           			
+          			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#Role'[hasPath(/+'relationship://ubmatrix.com/Xbrl/Relationship#DocumentedBy'/'domain://ubmatrix.com/Xbrl/Taxonomy#Definition'[not(value() != '')])">
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#EmptyDefinitionElement" />
+                   </Failure>
+    </Pattern>
+   
+   
+    <!-- 3.1.11: The role URI in a roleType element MUST be an LRR approved role or begin with the same scheme and authority parts as the target namespace of the taxonomy schema where it appears.-->
+    <Pattern id="ValidateApprovedRoles" 
+    				name="ValidateApprovedRoles" 
+            			method="DtsXPath"           			
+            			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#Taxonomy'ValidateApprovedRoles()">
+                     <Failure severity="error">
+                                <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#UnapprovedRole" />
+                     </Failure>
+    </Pattern>
+
+   
+    <!-- 3.1.13: All arcs whose source and target both refer to concepts MUST specify an order attribute. -->
+    <!-- calculationArc -->
+    <Pattern id="ValidateCalculationArcHasOrderAttribute" 
+          			name="ValidateCalculationArcHasOrderAttribute" 
+          			method="DtsXPath"           			
+          			value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#LinkContainsArc'/'http://www.xbrl.org/2003/linkbase#calculationArc'[not(hasAttr('order'))]">
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#CalculationArcDoesNotHaveOrderAttribute" />
+                   </Failure>
+    </Pattern>
+
+    <!-- presentationArc -->
+    <Pattern id="ValidatePresentationArcHasOrderAttribute" 
+          			name="ValidatePresentationArcHasOrderAttribute" 
+          			method="DtsXPath"           			
+          			value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#LinkContainsArc'/'http://www.xbrl.org/2003/linkbase#presentationArc'[not(hasAttr('order'))]">
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#PresentationArcDoesNotHaveOrderAttribute" />
+                   </Failure>
+    </Pattern>
+
+    <!-- DefinitionArc -->
+    <Pattern id="ValidateDefinitionArcHasOrderAttribute" 
+          			name="ValidateDefinitionArcHasOrderAttribute" 
+          			method="DtsXPath"           			
+          			value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#LinkContainsArc'/'http://www.xbrl.org/2003/linkbase#definitionArc'[not(hasAttr('order'))]">
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#DefinitionArcDoesNotHaveOrderAttribute" />
+                   </Failure>
+    </Pattern>
+    
+    
+    <!-- 3.1.14 Two arcs sharing the same from concept  having the same arc type and arc role within extended-type links having the same role SHOULD have distinct values for the order attribute. -->
+    <Pattern id="ValidateDistinctOrderAttribute" 
+          			name="ValidateDistinctOrderAttribute" 
+          			method="DtsXPath"           			
+          			value="/'domain://ubmatrix.com/Xbrl/Linkbase#Link'ValidateDistinctOrderAttribute()"
+          			processOverrides="false" >
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#ArcsDoNotHaveDistinctOrderAttribute" />
+                   </Failure>
+    </Pattern>
+    
+
+    <!-- 3.2.3	Presentation parent-child relationships having the same parent and child in extended links with the same role SHOULD provide preferred labels. -->
+    <Pattern id="ValidatePreferredLabel" 
+            			name="ValidatePreferredLabel" 
+            			method="DtsXPath"           			
+            			value="/'http://www.xbrl.org/2003/arcrole/parent-child'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/'http://www.xbrl.org/2003/linkbase#presentationArc'ValidatePreferredLabel()"
+            			processOverrides="false">
+                     <Failure severity="error">
+                                <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#DuplicatePresentationArcWithoutPreferredLabel" />
+                     </Failure>
+    </Pattern>
+    
+    
+    <!-- 3.2.4:	A DTS SHOULD provide parent-child presentation relationships intended for users of the taxonomy. -->    
+    <Pattern id="ValidatePresentationArcHasParentChildArcrole" 
+          			name="ValidatePresentationArcHasParentChildArcrole" 
+          			method="DtsXPath"           			
+          			value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#LinkContainsArc'/'http://www.xbrl.org/2003/linkbase#presentationArc'[attr('http://www.w3.org/1999/xlink#arcrole') != 'http://www.xbrl.org/2003/arcrole/parent-child']">          			
+                   <Failure severity="warning">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#PresentationArcDoesNotHaveParentChildArcrole" />
+                   </Failure>
+    </Pattern>
+    
+
+    <!-- 3.2.6 is a SHOULD pattern and will be looked into once teh specification and wording are stabilized -->
+    <!-- 3.2.6: The default presentation link base set MUST have parent-child arcs from each tuple to all and only the concepts appearing in its content model. -->
+    
+    <Pattern id="ValidateConsistentPresentationAndTuple_a" 
+            			name="ValidateConsistentPresentationAndTuple_a" 
+            			method="DtsXPath"           			
+            			value="ValidateConsistentPresentationAndTuple()">
+                     <Failure severity="error">
+                                <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#InconsistentPresentationAndTuple" />
+                     </Failure>
+    </Pattern>
+   
+
+    <!-- 3.3.5	The declarations of the source and target concepts of a summation-item arc MUST have identical values of the periodType attribute. -->
+    <Pattern id="ValidateSummationItemArcConceptsHaveSamePeriodType" 
+            			name="ValidateSummationItemArcConceptsHaveSamePeriodType" 
+            			method="DtsXPath"           			
+            			value="/'http://www.xbrl.org/2003/arcrole/summation-item'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/'*'ValidateSummationItemArcConceptsHaveSamePeriodType()"
+            			processOverrides="false" >
+                     <Failure severity="error">
+                                <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#SummationItemArcConceptsDoNotHaveSamePeriodType" />
+                     </Failure>
+    </Pattern>
+    
+    
+  				
+    <!-- 3.3.6	The source and target concepts of a summation-item relationship MUST be distinct. -->
+    <Pattern id="ValidateSummationItemArcMustHaveDistinctSourceTargetConcepts" 
+    				name="ValidateSummationItemArcMustHaveDistinctSourceTargetConcepts" 
+            			method="DtsXPath"           			
+            			value="/'http://www.xbrl.org/2003/arcrole/summation-item'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/'relationship://ubmatrix.com/Xbrl/Linkbase/Relationship#Arc'ValidateSummationItemSourceTargetConcepts()"
+            			processOverrides="false" >
+                     <Failure severity="error">
+                                <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#SummationItemArcsDoNotHaveDistinctSourceTargetConcepts" />
+                     </Failure>
+    </Pattern>
+
+
+
+
+
+    
+
+
+    
+    <!-- DTS validation rule patterns  (400) -->
+    
+    <!-- 4.2.1	A schema document MUST contain either definitions of reference parts, or of concepts, data types for concepts, roles and arc roles, OR neither. -->    
+    <Pattern id="ValidateUseOfAppropriateSchema" 
+          			name="ValidateUseOfAppropriateSchema" 
+          			method="DtsXPath"           			
+          			value="ValidateUseOfAppropriateSchema()">
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#InvalidUseOfAppropriateSchema" />
+                   </Failure>
+    </Pattern>
+
+    <!-- 4.2.2	Taxonomy schemas MUST be defined in XML documents in which the XML Schema 'schema' element appears once only as the root element -->
+    
+    <Pattern id="ValidateMultipleSchemaDeclaration" 
+          			name="ValidateMultipleSchemaDeclaration" 
+          			method="DtsXPath"           			
+          			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#Taxonomy'ValidateMultipleSchemaDeclaration()">      			      
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#SchemaIsNotRoot" />
+                   </Failure>
+    </Pattern>   
+
+
+    <!-- 4.2.3: Taxonomy schemas MUST NOT contain embedded linkbases. -->
+    <Pattern id="ValidateUseOfEmbeddedLinkbases" 
+          			name="ValidateUseOfEmbeddedLinkbases" 
+          			method="DtsXPath"           			
+          			value="/'domain://ubmatrix.com/Xbrl/Linkbase#InternalLinkbase'[not(hasPath(/+'relationship://ubmatrix.com/Xbrl/Relationship#LinkbaseContainsLink'/'http://www.xbrl.org/2003/linkbase#footnoteLink'))]!HasCount(0)">
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#TaxonomyHasEmbeddedLinkbase" />
+                   </Failure>
+    </Pattern>
+
+
+   
+    <!-- Taxonomy schemas MUST NOT contain elements that are not part of that taxonomy schema. -->
+    <!-- This rule is removed from FRTA -->
+    <!--
+    <Pattern id="ValidateSchemasPartOfTaxonomySchema" 
+          			name="ValidateSchemasPartOfTaxonomySchema" 
+          			method="DtsXPath"           			
+          			value="ValidateSchemasPartOfTaxonomySchema()">
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#TaxonomyHasElementsNotPartOfThatTaxonomySchema" />
+                   </Failure>
+    </Pattern>
+    -->
+ 
+ 
+    <!-- Taxonomy schemas MUST declare elementFormDefault to be *qualified* and attributeFormDefault to be *unqualified*. : The rule changed - see BELOW -->
+    <!-- 4.2.4	Taxonomy schemas MUST declare elementFormDefault to be 'qualified', attributeFormDefault MUST have the value 'unqualified', and the 'form' attribute MUST NOT appear on element and attribute declarations. -->
+      
+    <!-- part 1: MUST declare elementFormDefault -->
+    <Pattern id="ValidateElementFormDefaultDecalared" 
+          			name="ValidateElementFormDefaultDeclared" 
+          			method="DtsXPath"           			
+          			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#Taxonomy'[not(hasAttr('elementFormDefault'))]Exclude(http://www.xbrl.org/2003/linkbase#)Exclude(http://www.xbrl.org/2003/instance#)Exclude(&amp;http://www.w3.org/1999/xlink#)">
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#ElementFormDefaultNotDeclared" />
+                   </Failure>
+    </Pattern>
+    
+    <!-- part 2: MUST be *qualified* -->
+    <Pattern id="ValidateElementFormDefault" 
+          			name="ValidateElementFormDefault" 
+          			method="DtsXPath"           			
+          			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#Taxonomy'[(hasAttr('elementFormDefault')) and (attr('elementFormDefault') != 'qualified')]">
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#InvalidElementFormDefault" />
+                   </Failure>
+    </Pattern>
+
+    
+    <!-- part 3: MUST declare attributeFormDefault - no longer a rule. -->
+    <!--
+    <Pattern id="ValidateAttributeFormDefaultDeclared" 
+          			name="ValidateAttributeFormDefaultDeclared" 
+          			method="DtsXPath"           			
+          			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#Taxonomy'[not(hasAttr('attributeFormDefault'))]Exclude(http://www.xbrl.org/2003/linkbase#)Exclude(http://www.xbrl.org/2003/instance#)Exclude(&amp;http://www.w3.org/1999/xlink#)">
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#AttributeFormDefaultNotDeclared" />
+                   </Failure>
+    </Pattern>
+    -->
+
+    <!-- part 4: MUST be *unqualified* -->
+    <Pattern id="ValidateAttributeFormDefault" 
+          			name="ValidateAttributeFormDefault" 
+          			method="DtsXPath"           			
+          			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#Taxonomy'[(hasAttr('attributeFormDefault')) and (attr('attributeFormDefault') != 'unqualified')]Exclude(&amp;http://www.w3.org/1999/xlink#)">
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#InvalidAttributeFormDefault" />
+                   </Failure>
+    </Pattern>
+
+    <!-- part 5: form attribute should not appear -->
+    <Pattern id="ValidateFormAttribute" 
+            			name="ValidateFormAttribute" 
+            			method="DtsXPath"           			
+            			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#Taxonomy'ValidateFormAttribute()">      			      
+                     <Failure severity="error">
+                                <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#FormAttributeFound" />
+                     </Failure>
+    </Pattern>   
+
+            
+    <!-- 4.2.5	A linkbaseRef element MUST have an xlink:role attribute value -->
+    <Pattern id="ValidateLinkbaseRefHasLinkbaseRole" 
+          			name="ValidateLinkbaseRefHasLinkbaseRole" 
+          			method="DtsXPath"           			
+          			value="/'relationship://ubmatrix.com/Xbrl/Relationship#LinkbaseReference'[(not(hasAttr('http://www.w3.org/1999/xlink#role'))) and (to()=='domain://ubmatrix.com/Xbrl/Linkbase#ExternalLinkbase')]">
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#LinkbaseRefWithoutLinkbaseRole" />
+                   </Failure>
+    </Pattern>
+
+    <!-- A linkbaseRef element MUST NOT have a null role value. -->    
+    <Pattern id="ValidateNullRoleValue" 
+          			name="ValidateNullRoleValue" 
+          			method="DtsXPath"           			
+          			value="/+'relationship://ubmatrix.com/Xbrl/Relationship#TaxonomyReferencesLinkbase'/^-'relationship://ubmatrix.com/Xbrl/Relationship#RoleClassifies'/'*'HasCount(0)">
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#NullRole" />
+                   </Failure>
+    </Pattern>
+
+    
+    <!-- 4.2.6	Each linkbase can only contain one kind of extended link, such as labelLink, referenceLink, definitionLink, calculationLink or presentationLink. -->
+    <Pattern id="ValidateMultipleExtendedTypeLinks" 
+          			name="ValidateMultipleExtendedTypeLinks" 
+          			method="DtsXPath"           			
+          			value="/'domain://ubmatrix.com/Xbrl/Linkbase#Linkbase'ValidateMultipleExtendedTypeLinks()">
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#LinkbaseElementWithSeveralTypesOfExtendedLinks" />
+                   </Failure>
+    </Pattern>
+   
+        
+    <Pattern id="ValidateOneTypeExtendedLinkOnLinkbase" 
+          			name="ValidateOneTypeExtendedLinkOnLinkbase" 
+          			method="DtsXPath"           			
+          			value="/'domain://ubmatrix.com/Xbrl/Linkbase#Linkbase'[hasPath(/+'relationship://ubmatrix.com/Xbrl/Relationship#LinkbaseContainsLink'/'domain://ubmatrix.com/Xbrl/Linkbase#Link')]ValidateOneTypeExtendedLinkOnLinkbase()">
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#MultipleXBRLExtendedTypeLink" />
+                   </Failure>
+    </Pattern>
+
+
+    <!-- 4.2.12: Every schema in a DTS MUST define a non-empty targetNamespace attribute value. -->    
+    <Pattern id="ValidateTaxonomyHasTargetNamespace" 
+          			name="ValidateTaxonomyHasTargetNamespace" 
+          			method="DtsXPath"           			
+          			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#Taxonomy'/+'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#TaxonomyDefinedByTargetNamespace'/'domain://ubmatrix.com/Xbrl/Namespace#Namespace'HasCount(0)">      			      
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#TaxonomyDoesNotHaveTargetNamespace" />
+                   </Failure>
+    </Pattern>
+
+
+    <Pattern id="ValidateNonEmptyTargetNamespace" 
+          			name="ValidateNonEmptyTargetNamespace" 
+          			method="DtsXPath"           			
+          			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#Taxonomy'/+'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#TaxonomyDefinedByTargetNamespace'/'domain://ubmatrix.com/Xbrl/Namespace#Namespace'[value() == '']">      			      
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#EmptyTargetNamespace" />
+                   </Failure>
+    </Pattern>
+
+   
+    
+    <!-- 4.3.2:	Each unique taxonomy schema target namespace MUST have a namespace prefix of one to twelve characters, which will be its recommended namespace prefix. -->    
+    <Pattern id="ValidateNamespacePrefix" 
+          			name="ValidateNamespacePrefix" 
+          			method="DtsXPath"           			
+          			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#Taxonomy'ValidateNamespacePrefix()">
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#InvalidNamespacePrefix" />
+                   </Failure>
+    </Pattern>
+    
+        
+    <Pattern id="ValidateUniqueNamespace" 
+          			name="ValidateUniqueNamespace" 
+          			method="DtsXPath"   
+          			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#Taxonomy'ValidateUniqueNamespace()"> 
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#NotUniqueNamespace" />
+                   </Failure>
+    </Pattern>   
+     
+
+
+    <!-- 4.2.8	A label linkbase SHOULD only contain labels defined in a single language. -->
+    <Pattern id="ValidateLanguagesInSeparateLinkbase" 
+          			name="ValidateLanguagesInSeparateLinkbase" 
+          			method="DtsXPath"           			
+          			value="/'http://www.xbrl.org/2003/linkbase#label'ValidateLanguagesInSeparateLinkbase()">      			      
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#LanguagesNotInSeparateLinkbase" />
+                   </Failure>
+    </Pattern>   
+    
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- Taxonomy Extensions (500) -->
+    <!-- 5.1.9	When an arc in an extension is equivalent to an arc in the base, the extension arc SHOULD have a higher priority than the base arc. -->
+    <Pattern id="ValidateArcPriority" 
+          			name="ValidateArcPriority" 
+          			method="DtsXPath"           			
+          			value="/'relationship://ubmatrix.com/Xbrl/Linkbase/Relationship#Arc'ValidateArcPriority()"
+          			processOverrides="false" >
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#InvalidArcPresent" />
+                   </Failure>
+    </Pattern> 
+
+
+
+    <!-- 5.1.6:	The concept-label, essence-alias, similar-tuples, concept-reference, and general-special relationships SHOULD NOT be prohibited. -->
+    <!-- labelArc (concept-label) -->
+    <Pattern id="ValidateArcProhibition_1" 
+          			name="ValidateArcPriority" 
+          			method="DtsXPath"           			
+          			value="/'http://www.xbrl.org/2003/arcrole/concept-label'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/+'http://www.xbrl.org/2003/linkbase#labelArc'[attr('use') == 'prohibited']"
+          			processOverrides="false" >
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#InvalidConceptLabelArcProhibition" />
+                   </Failure>
+    </Pattern> 
+
+    <!-- definitionArc (essence-alias) -->
+    <Pattern id="ValidateArcProhibition_2" 
+          			name="ValidateArcPriority" 
+          			method="DtsXPath"           			
+          			value="/'http://www.xbrl.org/2003/arcrole/essence-alias'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/+'http://www.xbrl.org/2003/linkbase#definitionArc'[attr('use') == 'prohibited']"
+          			processOverrides="false" >
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#InvalidEssenceAliasArcProhibition" />
+                   </Failure>
+    </Pattern> 
+
+
+    <!-- definitionArc (similar-tuples) -->
+    <Pattern id="ValidateArcProhibition_3" 
+          			name="ValidateArcPriority" 
+          			method="DtsXPath"           			
+          			value="/'http://www.xbrl.org/2003/arcrole/similar-tuples'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/+'http://www.xbrl.org/2003/linkbase#definitionArc'[attr('use') == 'prohibited']"
+          			processOverrides="false" >
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#InvalidSimilarTuplesArcProhibition" />
+                   </Failure>
+    </Pattern> 
+
+
+    <!-- refernceArc (concept-reference) -->
+    <Pattern id="ValidateArcProhibition_4" 
+          			name="ValidateArcPriority" 
+          			method="DtsXPath"           			
+          			value="/'http://www.xbrl.org/2003/arcrole/concept-reference'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/+'http://www.xbrl.org/2003/linkbase#referenceArc'[attr('use') == 'prohibited']"
+          			processOverrides="false" >
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#InvalidConceptReferenceArcProhibition" />
+                   </Failure>
+    </Pattern> 
+
+
+    <!-- definitionArc (general-special) -->
+    <Pattern id="ValidateArcProhibition_5" 
+          			name="ValidateArcPriority" 
+          			method="DtsXPath"           			
+          			value="/'http://www.xbrl.org/2003/arcrole/general-special'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/+'http://www.xbrl.org/2003/linkbase#definitionArc'[attr('use') == 'prohibited']"
+          			processOverrides="false" >
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#InvalidGeneralSpecialArcProhibition" />
+                   </Failure>
+    </Pattern> 
+
+
+
+    <!-- patterns that require PSVI implementation -->
+    <Pattern id="ValidateItemIDAttribute" 
+      			name="ValidateTupleIDAttribute" 
+      			method="DtsXPath" 
+      			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept'ValidateIDAttribute()">
+               <Failure severity="error">
+                          <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#InvalidConceptIDAttribute" />
+               </Failure>
+    </Pattern>
+       
+
+    <Pattern id="ValidateTupleIDAttribute" 
+      			name="ValidateTupleIDAttribute" 
+      			method="DtsXPath" 
+      			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#TupleConcept'ValidateIDAttribute()">
+               <Failure severity="error">
+                          <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/FRTA#InvalidTupleIDAttribute" />
+               </Failure>
+    </Pattern>
+       
+    
+    <Pattern id="ValidateUseOfAllCompositorOnTuples" 
+        			name="ValidateUseOfAllCompositorOnTuples" 
+        			method="DtsXPath" 
+     			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#TupleConcept'ValidateUseOfAllCompositorOnTuples()"> 
+        			
+                 <Failure>
+                            <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Taxonomy#TuplesMustNotContainAllCompositor" />
+                 </Failure>
+    </Pattern>  
+
+ </PatternSet>
+ 
+<!--
+The contents of this file are subject to the End-User Software License Agreement (the "License"). You may not use this 
+file except in compliance with the License. A current copy of the License is available by contacting product support.
+
+Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights and limitations under the License.
+-->

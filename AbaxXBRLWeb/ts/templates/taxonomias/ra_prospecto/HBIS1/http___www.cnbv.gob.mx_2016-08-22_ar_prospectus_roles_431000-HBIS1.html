@@ -1,0 +1,2390 @@
+<xbrl-contenedor-formato xbrl:rol-uri="{{xbrlRol.Uri}}" orientacion="landscape" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+    <table class="tablaAnchoFijo" cellspacing="5">
+        <tbody>
+            <tr>
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonsAbstract" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonsOfTheReportAbstract" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br />
+
+    <xbrl:tabla-hipercubo xbrl:id-tabla-hipercubo="hiperCuboPersonasResponsables"
+                          xbrl:dependencias="['ts/templates/taxonomias/ra_prospecto/H/extensiones/431000_H_ConfiguracionHipercubos.js']"
+                          xbrl:configuracion="http___www_cnbv_gob_mx_2016_08_22_ar_prospectus_roles_431000_H_ar_pros_ResponsiblePersonsOfTheReportTableH">
+
+        <!-- Comeinza sección de MembersOfTheBoardOfDirectorsA2N1Member -->
+        <table xbrl:evalua-descartar="ar_pros_MembersOfTheBoardOfDirectorsA2N1Member" class="tablaAnchoFijo tipo-persona-responsable" cellspacing="5">
+            <tbody>
+                <tr>
+                    <td class="titulo" colspan="2" style="font-size:14px;">
+                        <div class="cell-concepto">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_MembersOfTheBoardOfDirectorsA2N1Member" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                        </div>
+                        <div class="cell-button-agregar-dimension">
+                            <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura" xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                    xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'MembersOfTheBoardOfDirectorsA2N1Member'}">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div xbrl:evalua-descartar="ar_pros_MembersOfTheBoardOfDirectorsA2N1Member" class="contenedor-persona-responsable"
+             xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+             xbrl:alias-item-miembro="$miembroDimensionInstitucion"
+             xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'MembersOfTheBoardOfDirectorsA2N1Member'}">
+            <br />
+            <br />
+            <table class="tablaAnchoFijo" cellspacing="5">
+                <tbody>
+                    <tr>
+                        <td class="titulo" style="text-align:left; width:50%;">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-eliminar-dimension">
+                                <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                        xbrl:alias-miembro="$miembroDimensionInstitucion">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </td>
+                        <td>
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution"
+                                                                xbrl:contexto-plantilla="MembersOfTheBoardOfDirectorsA2N1Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="etiquetaConceptoTitulo">
+                                <label><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonLegend" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto></b></label><b>:</b>
+                            </div>
+                            <div class="bloqueTexto">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonLegend"
+                                                                    xbrl:contexto-plantilla="MembersOfTheBoardOfDirectorsA2N1Member"
+                                                                    xbrl:valor-default-etiqueta="{'idConcepto':'ar_pros_MembersOfTheBoardOfDirectorsA2N1Member', 'rol':'http://www.xbrl.org/2003/role/documentation'}"
+                                                                    xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-striped b-t b-light responsalbes-partidas">
+                <thead>
+                    <tr>
+                        <th class="border-right-top titulo">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsibleLineItems" xbrl:nivel-indentacion="2" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-agregar-dimension">
+                                <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                        xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'MembersOfTheBoardOfDirectorsA2N1Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </th>
+                        <th>&nbsp;</th>
+                        <th xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">&nbsp;</th>
+                    </tr>
+                    <tr>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonName"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"></xbrl:etiqueta-concepto>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                        xbrl:alias-item-miembro="$miembroPersona"
+                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'MembersOfTheBoardOfDirectorsA2N1Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                        <td class="cortar-texto-200px" style="width:32%;">
+                            <div class="table">
+                                <div class="row">
+                                    <div class="cell-concepto">
+                                        <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonName"
+                                                                            xbrl:contexto-plantilla="MembersOfTheBoardOfDirectorsA2N1Member"
+                                                                            xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                                    </div>
+                                    <div class="cell-button-eliminar-dimension">
+                                        <button type="button" class="btn-danger btn-eliminar-dimension"
+                                                xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                                xbrl:alias-miembro="$miembroPersona">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="cortar-texto-200px">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"
+                                                                xbrl:contexto-plantilla="MembersOfTheBoardOfDirectorsA2N1Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                        <td class="cortar-texto-200px" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"
+                                                                xbrl:contexto-plantilla="MembersOfTheBoardOfDirectorsA2N1Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <br />
+        </div>
+
+        <!-- Comeinza sección de MembersOfTheBoardOfDirectorsAuditCommitteeA2N1Member -->
+        <table xbrl:evalua-descartar="ar_pros_MembersOfTheBoardOfDirectorsAuditCommitteeA2N1Member" class="tablaAnchoFijo tipo-persona-responsable" cellspacing="5">
+            <tbody>
+                <tr>
+                    <td class="titulo" colspan="2" style="font-size:14px;">
+                        <div class="cell-concepto">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_MembersOfTheBoardOfDirectorsAuditCommitteeA2N1Member" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                        </div>
+                        <div class="cell-button-agregar-dimension">
+                            <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura" xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                    xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'MembersOfTheBoardOfDirectorsAuditCommitteeA2N1Member'}">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div xbrl:evalua-descartar="ar_pros_MembersOfTheBoardOfDirectorsAuditCommitteeA2N1Member" class="contenedor-persona-responsable"
+             xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+             xbrl:alias-item-miembro="$miembroDimensionInstitucion"
+             xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'MembersOfTheBoardOfDirectorsAuditCommitteeA2N1Member'}">
+            <br />
+            <br />
+            <table class="tablaAnchoFijo" cellspacing="5">
+                <tbody>
+                    <tr>
+                        <td class="titulo" style="text-align:left; width:50%;">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-eliminar-dimension">
+                                <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                        xbrl:alias-miembro="$miembroDimensionInstitucion">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </td>
+                        <td>
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution"
+                                                                xbrl:contexto-plantilla="MembersOfTheBoardOfDirectorsAuditCommitteeA2N1Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="etiquetaConceptoTitulo">
+                                <label><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonLegend" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto></b></label><b>:</b>
+                            </div>
+                            <div class="bloqueTexto">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonLegend"
+                                                                    xbrl:contexto-plantilla="MembersOfTheBoardOfDirectorsAuditCommitteeA2N1Member"
+                                                                    xbrl:valor-default-etiqueta="{'idConcepto':'ar_pros_MembersOfTheBoardOfDirectorsAuditCommitteeA2N1Member', 'rol':'http://www.xbrl.org/2003/role/documentation'}"
+                                                                    xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-striped b-t b-light responsalbes-partidas">
+                <thead>
+                    <tr>
+                        <th class="border-right-top titulo">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsibleLineItems" xbrl:nivel-indentacion="2" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-agregar-dimension">
+                                <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                        xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'MembersOfTheBoardOfDirectorsAuditCommitteeA2N1Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </th>
+                        <th>&nbsp;</th>
+                        <th xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">&nbsp;</th>
+                    </tr>
+                    <tr>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonName"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"></xbrl:etiqueta-concepto>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                        xbrl:alias-item-miembro="$miembroPersona"
+                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'MembersOfTheBoardOfDirectorsAuditCommitteeA2N1Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                        <td class="cortar-texto-200px">
+                            <div class="table">
+                                <div class="row">
+                                    <div class="cell-concepto">
+                                        <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonName"
+                                                                            xbrl:contexto-plantilla="MembersOfTheBoardOfDirectorsAuditCommitteeA2N1Member"
+                                                                            xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                                    </div>
+                                    <div class="cell-button-eliminar-dimension">
+                                        <button type="button" class="btn-danger btn-eliminar-dimension"
+                                                xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                                xbrl:alias-miembro="$miembroPersona">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="cortar-texto-200px">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"
+                                                                xbrl:contexto-plantilla="MembersOfTheBoardOfDirectorsAuditCommitteeA2N1Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                        <td class="cortar-texto-200px" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"
+                                                                xbrl:contexto-plantilla="MembersOfTheBoardOfDirectorsAuditCommitteeA2N1Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <br />
+        </div>
+
+        <!-- Comeinza sección de CommissionerA2N2Member -->
+        <table xbrl:evalua-descartar="ar_pros_CommissionerA2N2Member" class="tablaAnchoFijo tipo-persona-responsable" cellspacing="5">
+            <tbody>
+                <tr>
+                    <td class="titulo" colspan="2" style="font-size:14px;">
+                        <div class="cell-concepto">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_CommissionerA2N2Member" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                        </div>
+                        <div class="cell-button-agregar-dimension">
+                            <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura" xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                    xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'CommissionerA2N2Member'}">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div xbrl:evalua-descartar="ar_pros_CommissionerA2N2Member" class="contenedor-persona-responsable"
+             xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+             xbrl:alias-item-miembro="$miembroDimensionInstitucion"
+             xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'CommissionerA2N2Member'}">
+            <br />
+            <br />
+            <table class="tablaAnchoFijo" cellspacing="5">
+                <tbody>
+                    <tr>
+                        <td class="titulo" style="text-align:left; width:50%;">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-eliminar-dimension">
+                                <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                        xbrl:alias-miembro="$miembroDimensionInstitucion">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </td>
+                        <td>
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution"
+                                                                xbrl:contexto-plantilla="CommissionerA2N2Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="etiquetaConceptoTitulo">
+                                <label><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonLegend" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto></b></label><b>:</b>
+                            </div>
+                            <div class="bloqueTexto">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonLegend"
+                                                                    xbrl:contexto-plantilla="CommissionerA2N2Member"
+                                                                    xbrl:valor-default-etiqueta="{'idConcepto':'ar_pros_CommissionerA2N2Member', 'rol':'http://www.xbrl.org/2003/role/documentation'}"
+                                                                    xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-striped b-t b-light responsalbes-partidas">
+                <thead>
+                    <tr>
+                        <th class="border-right-top titulo">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsibleLineItems" xbrl:nivel-indentacion="2" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-agregar-dimension">
+                                <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                        xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'CommissionerA2N2Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </th>
+                        <th>&nbsp;</th>
+                        <th xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">&nbsp;</th>
+                    </tr>
+                    <tr>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonName"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"></xbrl:etiqueta-concepto>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                        xbrl:alias-item-miembro="$miembroPersona"
+                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'CommissionerA2N2Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                        <td class="cortar-texto-200px">
+                            <div class="table">
+                                <div class="row">
+                                    <div class="cell-concepto">
+                                        <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonName"
+                                                                            xbrl:contexto-plantilla="CommissionerA2N2Member"
+                                                                            xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                                    </div>
+                                    <div class="cell-button-eliminar-dimension">
+                                        <button type="button" class="btn-danger btn-eliminar-dimension"
+                                                xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                                xbrl:alias-miembro="$miembroPersona">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="cortar-texto-200px">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"
+                                                                xbrl:contexto-plantilla="CommissionerA2N2Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                        <td class="cortar-texto-200px" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"
+                                                                xbrl:contexto-plantilla="CommissionerA2N2Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <br />
+        </div>
+
+        <!-- Comeinza sección de CeoCfoAndGeneralCounselOrTheirEquivalentsA2N3Member -->
+        <table xbrl:evalua-descartar="ar_pros_CeoCfoAndGeneralCounselOrTheirEquivalentsA2N3Member" class="tablaAnchoFijo tipo-persona-responsable" cellspacing="5">
+            <tbody>
+                <tr>
+                    <td class="titulo" colspan="2" style="font-size:14px;">
+                        <div class="cell-concepto">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_CeoCfoAndGeneralCounselOrTheirEquivalentsA2N3Member" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                        </div>
+                        <div class="cell-button-agregar-dimension">
+                            <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura" xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                    xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'CeoCfoAndGeneralCounselOrTheirEquivalentsA2N3Member'}">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div xbrl:evalua-descartar="ar_pros_CeoCfoAndGeneralCounselOrTheirEquivalentsA2N3Member" class="contenedor-persona-responsable"
+             xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+             xbrl:alias-item-miembro="$miembroDimensionInstitucion"
+             xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'CeoCfoAndGeneralCounselOrTheirEquivalentsA2N3Member'}">
+            <br />
+            <br />
+            <table class="tablaAnchoFijo" cellspacing="5">
+                <tbody>
+                    <tr>
+                        <td class="titulo" style="text-align:left; width:50%;">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-eliminar-dimension">
+                                <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                        xbrl:alias-miembro="$miembroDimensionInstitucion">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </td>
+                        <td>
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution"
+                                                                xbrl:contexto-plantilla="CeoCfoAndGeneralCounselOrTheirEquivalentsA2N3Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="etiquetaConceptoTitulo">
+                                <label><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonLegend" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto></b></label><b>:</b>
+                            </div>
+                            <div class="bloqueTexto">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonLegend"
+                                                                    xbrl:contexto-plantilla="CeoCfoAndGeneralCounselOrTheirEquivalentsA2N3Member"
+                                                                    xbrl:valor-default-etiqueta="{'idConcepto':'ar_pros_CeoCfoAndGeneralCounselOrTheirEquivalentsA2N3Member', 'rol':'http://www.xbrl.org/2003/role/documentation'}"
+                                                                    xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-striped b-t b-light responsalbes-partidas">
+                <thead>
+                    <tr>
+                        <th class="border-right-top titulo">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsibleLineItems" xbrl:nivel-indentacion="2" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-agregar-dimension">
+                                <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                        xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'CeoCfoAndGeneralCounselOrTheirEquivalentsA2N3Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </th>
+                        <th>&nbsp;</th>
+                        <th xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">&nbsp;</th>
+                    </tr>
+                    <tr>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonName"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"></xbrl:etiqueta-concepto>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                        xbrl:alias-item-miembro="$miembroPersona"
+                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'CeoCfoAndGeneralCounselOrTheirEquivalentsA2N3Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                        <td class="cortar-texto-200px">
+                            <div class="table">
+                                <div class="row">
+                                    <div class="cell-concepto">
+                                        <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonName"
+                                                                            xbrl:contexto-plantilla="CeoCfoAndGeneralCounselOrTheirEquivalentsA2N3Member"
+                                                                            xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                                    </div>
+                                    <div class="cell-button-eliminar-dimension">
+                                        <button type="button" class="btn-danger btn-eliminar-dimension"
+                                                xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                                xbrl:alias-miembro="$miembroPersona">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="cortar-texto-200px">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"
+                                                                xbrl:contexto-plantilla="CeoCfoAndGeneralCounselOrTheirEquivalentsA2N3Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                        <td class="cortar-texto-200px" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"
+                                                                xbrl:contexto-plantilla="CeoCfoAndGeneralCounselOrTheirEquivalentsA2N3Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <br />
+        </div>
+
+        <!-- Comeinza sección de UnderwriterA2N4Member -->
+        <table xbrl:evalua-descartar="ar_pros_UnderwriterA2N4Member" class="tablaAnchoFijo tipo-persona-responsable" cellspacing="5">
+            <tbody>
+                <tr>
+                    <td class="titulo" colspan="2" style="font-size:14px;">
+                        <div class="cell-concepto">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_UnderwriterA2N4Member" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                        </div>
+                        <div class="cell-button-agregar-dimension">
+                            <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura" xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                    xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'UnderwriterA2N4Member'}">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div xbrl:evalua-descartar="ar_pros_UnderwriterA2N4Member" class="contenedor-persona-responsable"
+             xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+             xbrl:alias-item-miembro="$miembroDimensionInstitucion"
+             xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'UnderwriterA2N4Member'}">
+            <br />
+            <br />
+            <table class="tablaAnchoFijo" cellspacing="5">
+                <tbody>
+                    <tr>
+                        <td class="titulo" style="text-align:left; width:50%;">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-eliminar-dimension">
+                                <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                        xbrl:alias-miembro="$miembroDimensionInstitucion">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </td>
+                        <td>
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution"
+                                                                xbrl:contexto-plantilla="UnderwriterA2N4Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="etiquetaConceptoTitulo">
+                                <label><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonLegend" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto></b></label><b>:</b>
+                            </div>
+                            <div class="bloqueTexto">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonLegend"
+                                                                    xbrl:contexto-plantilla="UnderwriterA2N4Member"
+                                                                    xbrl:valor-default-etiqueta="{'idConcepto':'ar_pros_UnderwriterA2N4Member', 'rol':'http://www.xbrl.org/2003/role/documentation'}"
+                                                                    xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-striped b-t b-light responsalbes-partidas">
+                <thead>
+                    <tr>
+                        <th class="border-right-top titulo">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsibleLineItems" xbrl:nivel-indentacion="2" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-agregar-dimension">
+                                <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                        xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'UnderwriterA2N4Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </th>
+                        <th>&nbsp;</th>
+                        <th xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">&nbsp;</th>
+                    </tr>
+                    <tr>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonName"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"></xbrl:etiqueta-concepto>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                        xbrl:alias-item-miembro="$miembroPersona"
+                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'UnderwriterA2N4Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                        <td class="cortar-texto-200px">
+                            <div class="table">
+                                <div class="row">
+                                    <div class="cell-concepto">
+                                        <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonName"
+                                                                            xbrl:contexto-plantilla="UnderwriterA2N4Member"
+                                                                            xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                                    </div>
+                                    <div class="cell-button-eliminar-dimension">
+                                        <button type="button" class="btn-danger btn-eliminar-dimension"
+                                                xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                                xbrl:alias-miembro="$miembroPersona">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="cortar-texto-200px">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"
+                                                                xbrl:contexto-plantilla="UnderwriterA2N4Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                        <td class="cortar-texto-200px" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"
+                                                                xbrl:contexto-plantilla="UnderwriterA2N4Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <br />
+        </div>
+
+        <!-- Comeinza sección de UnderwriterSharesA2N4Member -->
+        <table xbrl:evalua-descartar="ar_pros_UnderwriterSharesA2N4Member" class="tablaAnchoFijo tipo-persona-responsable" cellspacing="5">
+            <tbody>
+                <tr>
+                    <td class="titulo" colspan="2" style="font-size:14px;">
+                        <div class="cell-concepto">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_UnderwriterSharesA2N4Member" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                        </div>
+                        <div class="cell-button-agregar-dimension">
+                            <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura" xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                    xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'UnderwriterSharesA2N4Member'}">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div xbrl:evalua-descartar="ar_pros_UnderwriterSharesA2N4Member" class="contenedor-persona-responsable"
+             xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+             xbrl:alias-item-miembro="$miembroDimensionInstitucion"
+             xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'UnderwriterSharesA2N4Member'}">
+            <br />
+            <br />
+            <table class="tablaAnchoFijo" cellspacing="5">
+                <tbody>
+                    <tr>
+                        <td class="titulo" style="text-align:left; width:50%;">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-eliminar-dimension">
+                                <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                        xbrl:alias-miembro="$miembroDimensionInstitucion">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </td>
+                        <td>
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution"
+                                                                xbrl:contexto-plantilla="UnderwriterSharesA2N4Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="etiquetaConceptoTitulo">
+                                <label><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonLegend" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto></b></label><b>:</b>
+                            </div>
+                            <div class="bloqueTexto">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonLegend"
+                                                                    xbrl:contexto-plantilla="UnderwriterSharesA2N4Member"
+                                                                    xbrl:valor-default-etiqueta="{'idConcepto':'ar_pros_UnderwriterSharesA2N4Member', 'rol':'http://www.xbrl.org/2003/role/documentation'}"
+                                                                    xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-striped b-t b-light responsalbes-partidas">
+                <thead>
+                    <tr>
+                        <th class="border-right-top titulo">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsibleLineItems" xbrl:nivel-indentacion="2" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-agregar-dimension">
+                                <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                        xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'UnderwriterSharesA2N4Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </th>
+                        <th>&nbsp;</th>
+                        <th xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">&nbsp;</th>
+                    </tr>
+                    <tr>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonName"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"></xbrl:etiqueta-concepto>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                        xbrl:alias-item-miembro="$miembroPersona"
+                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'UnderwriterSharesA2N4Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                        <td class="cortar-texto-200px">
+                            <div class="table">
+                                <div class="row">
+                                    <div class="cell-concepto">
+                                        <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonName"
+                                                                            xbrl:contexto-plantilla="UnderwriterSharesA2N4Member"
+                                                                            xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                                    </div>
+                                    <div class="cell-button-eliminar-dimension">
+                                        <button type="button" class="btn-danger btn-eliminar-dimension"
+                                                xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                                xbrl:alias-miembro="$miembroPersona">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="cortar-texto-200px">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"
+                                                                xbrl:contexto-plantilla="UnderwriterSharesA2N4Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                        <td class="cortar-texto-200px" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"
+                                                                xbrl:contexto-plantilla="UnderwriterSharesA2N4Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <br />
+        </div>
+
+        <!-- Comeinza sección de UnderwriterRestrictedOfferA2N4Member -->
+        <table xbrl:evalua-descartar="ar_pros_UnderwriterRestrictedOfferA2N4Member" class="tablaAnchoFijo tipo-persona-responsable" cellspacing="5">
+            <tbody>
+                <tr>
+                    <td class="titulo" colspan="2" style="font-size:14px;">
+                        <div class="cell-concepto">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_UnderwriterRestrictedOfferA2N4Member" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                        </div>
+                        <div class="cell-button-agregar-dimension">
+                            <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura" xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                    xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'UnderwriterRestrictedOfferA2N4Member'}">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div xbrl:evalua-descartar="ar_pros_UnderwriterRestrictedOfferA2N4Member" class="contenedor-persona-responsable"
+             xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+             xbrl:alias-item-miembro="$miembroDimensionInstitucion"
+             xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'UnderwriterRestrictedOfferA2N4Member'}">
+            <br />
+            <br />
+            <table class="tablaAnchoFijo" cellspacing="5">
+                <tbody>
+                    <tr>
+                        <td class="titulo" style="text-align:left; width:50%;">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-eliminar-dimension">
+                                <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                        xbrl:alias-miembro="$miembroDimensionInstitucion">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </td>
+                        <td>
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution"
+                                                                xbrl:contexto-plantilla="UnderwriterRestrictedOfferA2N4Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="etiquetaConceptoTitulo">
+                                <label><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonLegend" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto></b></label><b>:</b>
+                            </div>
+                            <div class="bloqueTexto">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonLegend"
+                                                                    xbrl:contexto-plantilla="UnderwriterRestrictedOfferA2N4Member"
+                                                                    xbrl:valor-default-etiqueta="{'idConcepto':'ar_pros_UnderwriterRestrictedOfferA2N4Member', 'rol':'http://www.xbrl.org/2003/role/documentation'}"
+                                                                    xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-striped b-t b-light responsalbes-partidas">
+                <thead>
+                    <tr>
+                        <th class="border-right-top titulo">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsibleLineItems" xbrl:nivel-indentacion="2" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-agregar-dimension">
+                                <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                        xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'UnderwriterRestrictedOfferA2N4Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </th>
+                        <th>&nbsp;</th>
+                        <th xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">&nbsp;</th>
+                    </tr>
+                    <tr>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonName"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"></xbrl:etiqueta-concepto>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                        xbrl:alias-item-miembro="$miembroPersona"
+                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'UnderwriterRestrictedOfferA2N4Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                        <td class="cortar-texto-200px">
+                            <div class="table">
+                                <div class="row">
+                                    <div class="cell-concepto">
+                                        <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonName"
+                                                                            xbrl:contexto-plantilla="UnderwriterRestrictedOfferA2N4Member"
+                                                                            xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                                    </div>
+                                    <div class="cell-button-eliminar-dimension">
+                                        <button type="button" class="btn-danger btn-eliminar-dimension"
+                                                xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                                xbrl:alias-miembro="$miembroPersona">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="cortar-texto-200px">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"
+                                                                xbrl:contexto-plantilla="UnderwriterRestrictedOfferA2N4Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                        <td class="cortar-texto-200px" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"
+                                                                xbrl:contexto-plantilla="UnderwriterRestrictedOfferA2N4Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <br />
+        </div>
+
+        <!-- Comeinza sección de UnderwriterPublicOfferSharesAndRestrictedA2N4Member -->
+        <table xbrl:evalua-descartar="ar_pros_UnderwriterPublicOfferSharesAndRestrictedA2N4Member" class="tablaAnchoFijo tipo-persona-responsable" cellspacing="5">
+            <tbody>
+                <tr>
+                    <td class="titulo" colspan="2" style="font-size:14px;">
+                        <div class="cell-concepto">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_UnderwriterPublicOfferSharesAndRestrictedA2N4Member" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                        </div>
+                        <div class="cell-button-agregar-dimension">
+                            <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura" xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                    xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'UnderwriterPublicOfferSharesAndRestrictedA2N4Member'}">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div xbrl:evalua-descartar="ar_pros_UnderwriterPublicOfferSharesAndRestrictedA2N4Member" class="contenedor-persona-responsable"
+             xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+             xbrl:alias-item-miembro="$miembroDimensionInstitucion"
+             xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'UnderwriterPublicOfferSharesAndRestrictedA2N4Member'}">
+            <br />
+            <br />
+            <table class="tablaAnchoFijo" cellspacing="5">
+                <tbody>
+                    <tr>
+                        <td class="titulo" style="text-align:left; width:50%;">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-eliminar-dimension">
+                                <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                        xbrl:alias-miembro="$miembroDimensionInstitucion">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </td>
+                        <td>
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution"
+                                                                xbrl:contexto-plantilla="UnderwriterPublicOfferSharesAndRestrictedA2N4Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="etiquetaConceptoTitulo">
+                                <label><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonLegend" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto></b></label><b>:</b>
+                            </div>
+                            <div class="bloqueTexto">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonLegend"
+                                                                    xbrl:contexto-plantilla="UnderwriterPublicOfferSharesAndRestrictedA2N4Member"
+                                                                    xbrl:valor-default-etiqueta="{'idConcepto':'ar_pros_UnderwriterPublicOfferSharesAndRestrictedA2N4Member', 'rol':'http://www.xbrl.org/2003/role/documentation'}"
+                                                                    xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-striped b-t b-light responsalbes-partidas">
+                <thead>
+                    <tr>
+                        <th class="border-right-top titulo">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsibleLineItems" xbrl:nivel-indentacion="2" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-agregar-dimension">
+                                <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                        xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'UnderwriterPublicOfferSharesAndRestrictedA2N4Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </th>
+                        <th>&nbsp;</th>
+                        <th xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">&nbsp;</th>
+                    </tr>
+                    <tr>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonName"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"></xbrl:etiqueta-concepto>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                        xbrl:alias-item-miembro="$miembroPersona"
+                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'UnderwriterPublicOfferSharesAndRestrictedA2N4Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                        <td class="cortar-texto-200px">
+                            <div class="table">
+                                <div class="row">
+                                    <div class="cell-concepto">
+                                        <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonName"
+                                                                            xbrl:contexto-plantilla="UnderwriterPublicOfferSharesAndRestrictedA2N4Member"
+                                                                            xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                                    </div>
+                                    <div class="cell-button-eliminar-dimension">
+                                        <button type="button" class="btn-danger btn-eliminar-dimension"
+                                                xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                                xbrl:alias-miembro="$miembroPersona">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="cortar-texto-200px">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"
+                                                                xbrl:contexto-plantilla="UnderwriterPublicOfferSharesAndRestrictedA2N4Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                        <td class="cortar-texto-200px" style="width:32%;" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"
+                                                                xbrl:contexto-plantilla="UnderwriterPublicOfferSharesAndRestrictedA2N4Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <br />
+        </div>
+
+        <!-- Comeinza sección de ExternalAuditorRepresentativeAndAuditorA2N5Member -->
+        <table xbrl:evalua-descartar="ar_pros_ExternalAuditorRepresentativeAndAuditorA2N5Member" class="tablaAnchoFijo tipo-persona-responsable" cellspacing="5">
+            <tbody>
+                <tr>
+                    <td class="titulo" colspan="2" style="font-size:14px;">
+                        <div class="cell-concepto">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ExternalAuditorRepresentativeAndAuditorA2N5Member" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                        </div>
+                        <div class="cell-button-agregar-dimension">
+                            <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura" xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                    xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'ExternalAuditorRepresentativeAndAuditorA2N5Member'}">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div xbrl:evalua-descartar="ar_pros_ExternalAuditorRepresentativeAndAuditorA2N5Member" class="contenedor-persona-responsable"
+             xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+             xbrl:alias-item-miembro="$miembroDimensionInstitucion"
+             xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'ExternalAuditorRepresentativeAndAuditorA2N5Member'}">
+            <br />
+            <br />
+            <table class="tablaAnchoFijo" cellspacing="5">
+                <tbody>
+                    <tr>
+                        <td colspan="2" class="titulo" style="text-align:left; width:50%;">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonInstitutionExternalAuditor" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-eliminar-dimension">
+                                <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                        xbrl:alias-miembro="$miembroDimensionInstitucion">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </td>
+                        <td colspan="2">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonInstitutionExternalAuditor"
+                                                                xbrl:contexto-plantilla="ExternalAuditorRepresentativeAndAuditorA2N5Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                    <tr><td colspan="4">&nbsp;</td></tr>
+                    <tr>
+                        <td colspan="2" class="titulo" style="text-align:left; width:50%;">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_OtherInstitutionExternalAuditor" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto>
+                            </div>
+                        </td>
+                        <td colspan="2">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_OtherInstitutionExternalAuditor"
+                                                                xbrl:contexto-plantilla="ExternalAuditorRepresentativeAndAuditorA2N5Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                    <tr><td colspan="4">&nbsp;</td></tr>
+                    <tr>
+                        <td class="titulo" style="text-align:left; width:25%;">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_FirstExerciseSubjectToReview" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto>
+                            </div>
+                        </td>
+                        <td class="concepto-ejercicio-revision">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_FirstExerciseSubjectToReview"
+                                                                xbrl:contexto-plantilla="ExternalAuditorRepresentativeAndAuditorA2N5Member"
+                                                                xbrl:eliminable="true" xbrl:crear-hecho="false" xbrl:crear-hecho-dblclick="true"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                        <td class="titulo tipo-opinion">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_TypeOfOpinionFirstExercise" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto>
+                            </div>
+                        </td>
+                        <td>
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_TypeOfOpinionFirstExercise"
+                                                                xbrl:contexto-plantilla="ExternalAuditorRepresentativeAndAuditorA2N5Member"
+                                                                xbrl:eliminable="true" xbrl:crear-hecho="false" xbrl:crear-hecho-dblclick="true"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                    <tr><td colspan="4">&nbsp;</td></tr>
+                    <tr>
+                        <td class="titulo" style="text-align:left; width:25%;">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SecondExerciseSubjectToReview" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto>
+                            </div>
+                        </td>
+                        <td class="concepto-ejercicio-revision">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_SecondExerciseSubjectToReview"
+                                                                xbrl:contexto-plantilla="ExternalAuditorRepresentativeAndAuditorA2N5Member"
+                                                                xbrl:eliminable="true" xbrl:crear-hecho="false" xbrl:crear-hecho-dblclick="true"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                        <td class="titulo tipo-opinion">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_TypeOfOpinionSecondExercise" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto>
+                            </div>
+                        </td>
+                        <td>
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_TypeOfOpinionSecondExercise"
+                                                                xbrl:contexto-plantilla="ExternalAuditorRepresentativeAndAuditorA2N5Member"
+                                                                xbrl:eliminable="true" xbrl:crear-hecho="false" xbrl:crear-hecho-dblclick="true"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                    <tr><td colspan="4">&nbsp;</td></tr>
+                    <tr>
+                        <td class="titulo" style="text-align:left; width:25%;">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ThirdExerciseSubjectToReview" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto>
+                            </div>
+                        </td>
+                        <td class="concepto-ejercicio-revision">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ThirdExerciseSubjectToReview"
+                                                                xbrl:contexto-plantilla="ExternalAuditorRepresentativeAndAuditorA2N5Member"
+                                                                xbrl:eliminable="true" xbrl:crear-hecho="false" xbrl:crear-hecho-dblclick="true"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                        <td class="titulo tipo-opinion">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_TypeOfOpinionThirdExercise" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto>
+                            </div>
+                        </td>
+                        <td>
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_TypeOfOpinionThirdExercise"
+                                                                xbrl:contexto-plantilla="ExternalAuditorRepresentativeAndAuditorA2N5Member"
+                                                                xbrl:eliminable="true" xbrl:crear-hecho="false" xbrl:crear-hecho-dblclick="true"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                    <tr><td colspan="4">&nbsp;</td></tr>
+                    <tr>
+                        <td class="titulo" style="text-align:left; width:25%;">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_IfIsTheCasePeriodsIntermediatesSubjectsOfRevision" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto>
+                            </div>
+                        </td>
+                        <td class="concepto-ejercicio-revision">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_IfIsTheCasePeriodsIntermediatesSubjectsOfRevision"
+                                                                xbrl:contexto-plantilla="ExternalAuditorRepresentativeAndAuditorA2N5Member"
+                                                                xbrl:eliminable="true" xbrl:crear-hecho="false" xbrl:crear-hecho-dblclick="true"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                        <td class="titulo tipo-opinion">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_TypeOfOpinionPeriodsIntermediates" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto>
+                            </div>
+                        </td>
+                        <td>
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_TypeOfOpinionPeriodsIntermediates"
+                                                                xbrl:contexto-plantilla="ExternalAuditorRepresentativeAndAuditorA2N5Member"
+                                                                xbrl:eliminable="true" xbrl:crear-hecho="false" xbrl:crear-hecho-dblclick="true"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                    <tr><td colspan="4">&nbsp;</td></tr>
+                    <tr>
+                        <td colspan="4">
+                            <div class="etiquetaConceptoTitulo">
+                                <label><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonLegend" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto></b></label><b>:</b>
+                            </div>
+                            <div class="bloqueTexto">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonLegend"
+                                                                    xbrl:contexto-plantilla="ExternalAuditorRepresentativeAndAuditorA2N5Member"
+                                                                    xbrl:valor-default-etiqueta="{'idConcepto':'ar_pros_ExternalAuditorRepresentativeAndAuditorA2N5Member', 'rol':'http://www.xbrl.org/2003/role/documentation'}"
+                                                                    xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-striped b-t b-light responsalbes-partidas">
+                <thead>
+                    <tr>
+                        <th class="border-right-top titulo">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsibleLineItems" xbrl:nivel-indentacion="2" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-agregar-dimension">
+                                <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                        xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'ExternalAuditorRepresentativeAndAuditorA2N5Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </th>
+                        <th>&nbsp;</th>
+                        <th xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">&nbsp;</th>
+                    </tr>
+                    <tr>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonName"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"></xbrl:etiqueta-concepto>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                        xbrl:alias-item-miembro="$miembroPersona"
+                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'ExternalAuditorRepresentativeAndAuditorA2N5Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                        <td class="cortar-texto-200px" style="width:32%;">
+                            <div class="table">
+                                <div class="row">
+                                    <div class="cell-concepto">
+                                        <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonName"
+                                                                            xbrl:contexto-plantilla="ExternalAuditorRepresentativeAndAuditorA2N5Member"
+                                                                            xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                                    </div>
+                                    <div class="cell-button-eliminar-dimension">
+                                        <button type="button" class="btn-danger btn-eliminar-dimension"
+                                                xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                                xbrl:alias-miembro="$miembroPersona">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="cortar-texto-200px" style="width:32%;">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"
+                                                                xbrl:contexto-plantilla="ExternalAuditorRepresentativeAndAuditorA2N5Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                        <td class="cortar-texto-200px" style="width:32%;" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"
+                                                                xbrl:contexto-plantilla="ExternalAuditorRepresentativeAndAuditorA2N5Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <br />
+        </div>
+
+
+        <!-- Comeinza sección de ar_pros_BachelorOfLawsA2N6Member -->
+        <table xbrl:evalua-descartar="ar_pros_BachelorOfLawsA2N6Member" class="tablaAnchoFijo tipo-persona-responsable" cellspacing="5">
+            <tbody>
+                <tr>
+                    <td class="titulo" colspan="2" style="font-size:14px;">
+                        <div class="cell-concepto">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_BachelorOfLawsA2N6Member" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                        </div>
+                        <div class="cell-button-agregar-dimension">
+                            <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura" xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                    xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'BachelorOfLawsA2N6Member'}">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div xbrl:evalua-descartar="ar_pros_BachelorOfLawsA2N6Member" class="contenedor-persona-responsable"
+             xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+             xbrl:alias-item-miembro="$miembroDimensionInstitucion"
+             xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'BachelorOfLawsA2N6Member'}">
+            <br />
+            <br />
+            <table class="tablaAnchoFijo" cellspacing="5">
+                <tbody>
+                    <tr>
+                        <td class="titulo" style="text-align:left; width:50%;">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonInstitutionBacherlorOfLaws" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-eliminar-dimension">
+                                <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                        xbrl:alias-miembro="$miembroDimensionInstitucion">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </td>
+                        <td>
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonInstitutionBacherlorOfLaws"
+                                                                xbrl:contexto-plantilla="BachelorOfLawsA2N6Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="titulo" style="text-align:left; width:50%;">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_OtherInstitutionBacherlorOfLaws" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto>
+                            </div>
+                        </td>
+                        <td>
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_OtherInstitutionBacherlorOfLaws"
+                                                                xbrl:contexto-plantilla="BachelorOfLawsA2N6Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="etiquetaConceptoTitulo">
+                                <label><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonLegend" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto></b></label><b>:</b>
+                            </div>
+                            <div class="bloqueTexto">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonLegend"
+                                                                    xbrl:contexto-plantilla="BachelorOfLawsA2N6Member"
+                                                                    xbrl:valor-default-etiqueta="{'idConcepto':'ar_pros_BachelorOfLawsA2N6Member', 'rol':'http://www.xbrl.org/2003/role/documentation'}"
+                                                                    xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-striped b-t b-light responsalbes-partidas">
+                <thead>
+                    <tr>
+                        <th class="border-right-top titulo">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsibleLineItems" xbrl:nivel-indentacion="2" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-agregar-dimension">
+                                <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                        xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'BachelorOfLawsA2N6Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </th>
+                        <th>&nbsp;</th>
+                        <th xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">&nbsp;</th>
+                    </tr>
+                    <tr>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonName"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"></xbrl:etiqueta-concepto>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                        xbrl:alias-item-miembro="$miembroPersona"
+                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'BachelorOfLawsA2N6Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                        <td class="cortar-texto-200px" style="width:32%;">
+                            <div class="table">
+                                <div class="row">
+                                    <div class="cell-concepto">
+                                        <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonName"
+                                                                            xbrl:contexto-plantilla="BachelorOfLawsA2N6Member"
+                                                                            xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                                    </div>
+                                    <div class="cell-button-eliminar-dimension">
+                                        <button type="button" class="btn-danger btn-eliminar-dimension"
+                                                xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                                xbrl:alias-miembro="$miembroPersona">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="cortar-texto-200px" style="width:32%;">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"
+                                                                xbrl:contexto-plantilla="BachelorOfLawsA2N6Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                        <td class="cortar-texto-200px" style="width:32%;" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"
+                                                                xbrl:contexto-plantilla="BachelorOfLawsA2N6Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <br />
+        </div>
+
+        <!-- Comeinza sección de ar_pros_LegalRepresentativeOrAvalGuarantorA3NEMember -->
+        <table xbrl:evalua-descartar="ar_pros_LegalRepresentativeOrAvalGuarantorA3NEMember" class="tablaAnchoFijo tipo-persona-responsable" cellspacing="5">
+            <tbody>
+                <tr>
+                    <td class="titulo" colspan="2" style="font-size:14px;">
+                        <div class="cell-concepto">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_LegalRepresentativeOrAvalGuarantorA3NEMember" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                        </div>
+                        <div class="cell-button-agregar-dimension">
+                            <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura" xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                    xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'LegalRepresentativeOrAvalGuarantorA3NEMember'}">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div xbrl:evalua-descartar="ar_pros_LegalRepresentativeOrAvalGuarantorA3NEMember" class="contenedor-persona-responsable"
+             xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+             xbrl:alias-item-miembro="$miembroDimensionInstitucion"
+             xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'LegalRepresentativeOrAvalGuarantorA3NEMember'}">
+            <br />
+            <br />
+            <table class="tablaAnchoFijo" cellspacing="5">
+                <tbody>
+                    <tr>
+                        <td class="titulo" style="text-align:left; width:50%;">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-eliminar-dimension">
+                                <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                        xbrl:alias-miembro="$miembroDimensionInstitucion">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </td>
+                        <td>
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution"
+                                                                xbrl:contexto-plantilla="LegalRepresentativeOrAvalGuarantorA3NEMember"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="etiquetaConceptoTitulo">
+                                <label><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonLegend" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto></b></label><b>:</b>
+                            </div>
+                            <div class="bloqueTexto">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonLegend"
+                                                                    xbrl:contexto-plantilla="LegalRepresentativeOrAvalGuarantorA3NEMember"
+                                                                    xbrl:valor-default-etiqueta="{'idConcepto':'ar_pros_LegalRepresentativeOrAvalGuarantorA3NEMember', 'rol':'http://www.xbrl.org/2003/role/documentation'}"
+                                                                    xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-striped b-t b-light responsalbes-partidas">
+                <thead>
+                    <tr>
+                        <th class="border-right-top titulo">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsibleLineItems" xbrl:nivel-indentacion="2" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-agregar-dimension">
+                                <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                        xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'LegalRepresentativeOrAvalGuarantorA3NEMember', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </th>
+                        <th>&nbsp;</th>
+                        <th xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">&nbsp;</th>
+                    </tr>
+                    <tr>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonName"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"></xbrl:etiqueta-concepto>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                        xbrl:alias-item-miembro="$miembroPersona"
+                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'LegalRepresentativeOrAvalGuarantorA3NEMember', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                        <td class="cortar-texto-200px" style="width:32%;">
+                            <div class="table">
+                                <div class="row">
+                                    <div class="cell-concepto">
+                                        <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonName"
+                                                                            xbrl:contexto-plantilla="LegalRepresentativeOrAvalGuarantorA3NEMember"
+                                                                            xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                                    </div>
+                                    <div class="cell-button-eliminar-dimension">
+                                        <button type="button" class="btn-danger btn-eliminar-dimension"
+                                                xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                                xbrl:alias-miembro="$miembroPersona">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="cortar-texto-200px" style="width:32%;">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"
+                                                                xbrl:contexto-plantilla="LegalRepresentativeOrAvalGuarantorA3NEMember"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                        <td class="cortar-texto-200px" style="width:32%;" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"
+                                                                xbrl:contexto-plantilla="LegalRepresentativeOrAvalGuarantorA3NEMember"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <br />
+        </div>
+
+        <!-- Comeinza sección de LegalRepresentativeOfTheTrustA2N8Member -->
+        <table xbrl:evalua-descartar="ar_pros_LegalRepresentativeOfTheTrustA2N8Member" class="tablaAnchoFijo tipo-persona-responsable" cellspacing="5">
+            <tbody>
+                <tr>
+                    <td class="titulo" colspan="2" style="font-size:14px;">
+                        <div class="cell-concepto">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_LegalRepresentativeOfTheTrustA2N8Member" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                        </div>
+                        <div class="cell-button-agregar-dimension">
+                            <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura" xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                    xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'LegalRepresentativeOfTheTrustA2N8Member'}">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div xbrl:evalua-descartar="ar_pros_LegalRepresentativeOfTheTrustA2N8Member" class="contenedor-persona-responsable"
+             xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+             xbrl:alias-item-miembro="$miembroDimensionInstitucion"
+             xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'LegalRepresentativeOfTheTrustA2N8Member'}">
+            <br />
+            <br />
+            <table class="tablaAnchoFijo" cellspacing="5">
+                <tbody>
+                    <tr>
+                        <td class="titulo" style="text-align:left; width:50%;">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-eliminar-dimension">
+                                <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                        xbrl:alias-miembro="$miembroDimensionInstitucion">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </td>
+                        <td>
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution"
+                                                                xbrl:contexto-plantilla="LegalRepresentativeOfTheTrustA2N8Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="etiquetaConceptoTitulo">
+                                <label><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonLegend" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto></b></label><b>:</b>
+                            </div>
+                            <div class="bloqueTexto">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonLegend"
+                                                                    xbrl:contexto-plantilla="LegalRepresentativeOfTheTrustA2N8Member"
+                                                                    xbrl:valor-default-etiqueta="{'idConcepto':'ar_pros_LegalRepresentativeOfTheTrustA2N8Member', 'rol':'http://www.xbrl.org/2003/role/documentation'}"
+                                                                    xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-striped b-t b-light responsalbes-partidas">
+                <thead>
+                    <tr>
+                        <th class="border-right-top titulo">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsibleLineItems" xbrl:nivel-indentacion="2" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-agregar-dimension">
+                                <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                        xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'LegalRepresentativeOfTheTrustA2N8Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </th>
+                        <th>&nbsp;</th>
+                        <th xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">&nbsp;</th>
+                    </tr>
+                    <tr>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonName"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"></xbrl:etiqueta-concepto>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                        xbrl:alias-item-miembro="$miembroPersona"
+                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'LegalRepresentativeOfTheTrustA2N8Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                        <td class="cortar-texto-200px" style="width:32%;">
+                            <div class="table">
+                                <div class="row">
+                                    <div class="cell-concepto">
+                                        <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonName"
+                                                                            xbrl:contexto-plantilla="LegalRepresentativeOfTheTrustA2N8Member"
+                                                                            xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                                    </div>
+                                    <div class="cell-button-eliminar-dimension">
+                                        <button type="button" class="btn-danger btn-eliminar-dimension"
+                                                xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                                xbrl:alias-miembro="$miembroPersona">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="cortar-texto-200px" style="width:32%;">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"
+                                                                xbrl:contexto-plantilla="LegalRepresentativeOfTheTrustA2N8Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                        <td class="cortar-texto-200px" style="width:32%;" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"
+                                                                xbrl:contexto-plantilla="LegalRepresentativeOfTheTrustA2N8Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <br />
+        </div>
+
+        <!-- Comeinza sección de DirectGeneralChiefFinancialOfficerAndGeneralCounselRepresentingTheSettlorOrWhoSupplyGoodsToTheTrustA2N9Member -->
+        <table xbrl:evalua-descartar="ar_pros_DirectGeneralChiefFinancialOfficerAndGeneralCounselRepresentingTheSettlorOrWhoSupplyGoodsToTheTrustA2N9Member" class="tablaAnchoFijo tipo-persona-responsable" cellspacing="5">
+            <tbody>
+                <tr>
+                    <td class="titulo" colspan="2" style="font-size:14px;">
+                        <div class="cell-concepto">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_DirectGeneralChiefFinancialOfficerAndGeneralCounselRepresentingTheSettlorOrWhoSupplyGoodsToTheTrustA2N9Member" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                        </div>
+                        <div class="cell-button-agregar-dimension">
+                            <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura" xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                    xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'DirectGeneralChiefFinancialOfficerAndGeneralCounselRepresentingTheSettlorOrWhoSupplyGoodsToTheTrustA2N9Member'}">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div xbrl:evalua-descartar="ar_pros_DirectGeneralChiefFinancialOfficerAndGeneralCounselRepresentingTheSettlorOrWhoSupplyGoodsToTheTrustA2N9Member" class="contenedor-persona-responsable"
+             xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+             xbrl:alias-item-miembro="$miembroDimensionInstitucion"
+             xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'DirectGeneralChiefFinancialOfficerAndGeneralCounselRepresentingTheSettlorOrWhoSupplyGoodsToTheTrustA2N9Member'}">
+            <br />
+            <br />
+            <table class="tablaAnchoFijo" cellspacing="5">
+                <tbody>
+                    <tr>
+                        <td class="titulo" style="text-align:left; width:50%;">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-eliminar-dimension">
+                                <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                        xbrl:alias-miembro="$miembroDimensionInstitucion">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </td>
+                        <td>
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution"
+                                                                xbrl:contexto-plantilla="DirectGeneralChiefFinancialOfficerAndGeneralCounselRepresentingTheSettlorOrWhoSupplyGoodsToTheTrustA2N9Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="etiquetaConceptoTitulo">
+                                <label><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonLegend" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto></b></label><b>:</b>
+                            </div>
+                            <div class="bloqueTexto">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonLegend"
+                                                                    xbrl:contexto-plantilla="DirectGeneralChiefFinancialOfficerAndGeneralCounselRepresentingTheSettlorOrWhoSupplyGoodsToTheTrustA2N9Member"
+                                                                    xbrl:valor-default-etiqueta="{'idConcepto':'ar_pros_DirectGeneralChiefFinancialOfficerAndGeneralCounselRepresentingTheSettlorOrWhoSupplyGoodsToTheTrustA2N9Member', 'rol':'http://www.xbrl.org/2003/role/documentation'}"
+                                                                    xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-striped b-t b-light responsalbes-partidas">
+                <thead>
+                    <tr>
+                        <th class="border-right-top titulo">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsibleLineItems" xbrl:nivel-indentacion="2" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-agregar-dimension">
+                                <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                        xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'DirectGeneralChiefFinancialOfficerAndGeneralCounselRepresentingTheSettlorOrWhoSupplyGoodsToTheTrustA2N9Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </th>
+                        <th>&nbsp;</th>
+                        <th xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">&nbsp;</th>
+                    </tr>
+                    <tr>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonName"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"></xbrl:etiqueta-concepto>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                        xbrl:alias-item-miembro="$miembroPersona"
+                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'DirectGeneralChiefFinancialOfficerAndGeneralCounselRepresentingTheSettlorOrWhoSupplyGoodsToTheTrustA2N9Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                        <td class="cortar-texto-200px" style="width:32%;">
+                            <div class="table">
+                                <div class="row">
+                                    <div class="cell-concepto">
+                                        <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonName"
+                                                                            xbrl:contexto-plantilla="DirectGeneralChiefFinancialOfficerAndGeneralCounselRepresentingTheSettlorOrWhoSupplyGoodsToTheTrustA2N9Member"
+                                                                            xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                                    </div>
+                                    <div class="cell-button-eliminar-dimension">
+                                        <button type="button" class="btn-danger btn-eliminar-dimension"
+                                                xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                                xbrl:alias-miembro="$miembroPersona">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="cortar-texto-200px" style="width:32%;">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"
+                                                                xbrl:contexto-plantilla="DirectGeneralChiefFinancialOfficerAndGeneralCounselRepresentingTheSettlorOrWhoSupplyGoodsToTheTrustA2N9Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                        <td class="cortar-texto-200px" style="width:32%;" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"
+                                                                xbrl:contexto-plantilla="DirectGeneralChiefFinancialOfficerAndGeneralCounselRepresentingTheSettlorOrWhoSupplyGoodsToTheTrustA2N9Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <br />
+        </div>
+
+        <!-- Comeinza sección de CommonRepresentativeTrustSecuritiesOtherThanSharesA2N10Member -->
+        <table xbrl:evalua-descartar="ar_pros_CommonRepresentativeTrustSecuritiesOtherThanSharesA2N10Member" class="tablaAnchoFijo tipo-persona-responsable" cellspacing="5">
+            <tbody>
+                <tr>
+                    <td class="titulo" colspan="2" style="font-size:14px;">
+                        <div class="cell-concepto">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_CommonRepresentativeTrustSecuritiesOtherThanSharesA2N10Member" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                        </div>
+                        <div class="cell-button-agregar-dimension">
+                            <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura" xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                    xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'CommonRepresentativeTrustSecuritiesOtherThanSharesA2N10Member'}">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div xbrl:evalua-descartar="ar_pros_CommonRepresentativeTrustSecuritiesOtherThanSharesA2N10Member" class="contenedor-persona-responsable"
+             xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+             xbrl:alias-item-miembro="$miembroDimensionInstitucion"
+             xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'CommonRepresentativeTrustSecuritiesOtherThanSharesA2N10Member'}">
+            <br />
+            <br />
+            <table class="tablaAnchoFijo" cellspacing="5">
+                <tbody>
+                    <tr>
+                        <td class="titulo" style="text-align:left; width:50%;">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-eliminar-dimension">
+                                <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                        xbrl:alias-miembro="$miembroDimensionInstitucion">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </td>
+                        <td>
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution"
+                                                                xbrl:contexto-plantilla="CommonRepresentativeTrustSecuritiesOtherThanSharesA2N10Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="etiquetaConceptoTitulo">
+                                <label><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonLegend" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto></b></label><b>:</b>
+                            </div>
+                            <div class="bloqueTexto">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonLegend"
+                                                                    xbrl:contexto-plantilla="CommonRepresentativeTrustSecuritiesOtherThanSharesA2N10Member"
+                                                                    xbrl:valor-default-etiqueta="{'idConcepto':'ar_pros_CommonRepresentativeTrustSecuritiesOtherThanSharesA2N10Member', 'rol':'http://www.xbrl.org/2003/role/documentation'}"
+                                                                    xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-striped b-t b-light responsalbes-partidas">
+                <thead>
+                    <tr>
+                        <th class="border-right-top titulo">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsibleLineItems" xbrl:nivel-indentacion="2" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-agregar-dimension">
+                                <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                        xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'CommonRepresentativeTrustSecuritiesOtherThanSharesA2N10Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </th>
+                        <th>&nbsp;</th>
+                        <th xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">&nbsp;</th>
+                    </tr>
+                    <tr>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonName"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"></xbrl:etiqueta-concepto>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                        xbrl:alias-item-miembro="$miembroPersona"
+                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'CommonRepresentativeTrustSecuritiesOtherThanSharesA2N10Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                        <td class="cortar-texto-200px" style="width:32%;">
+                            <div class="table">
+                                <div class="row">
+                                    <div class="cell-concepto">
+                                        <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonName"
+                                                                            xbrl:contexto-plantilla="CommonRepresentativeTrustSecuritiesOtherThanSharesA2N10Member"
+                                                                            xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                                    </div>
+                                    <div class="cell-button-eliminar-dimension">
+                                        <button type="button" class="btn-danger btn-eliminar-dimension"
+                                                xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                                xbrl:alias-miembro="$miembroPersona">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="cortar-texto-200px" style="width:32%;">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"
+                                                                xbrl:contexto-plantilla="CommonRepresentativeTrustSecuritiesOtherThanSharesA2N10Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                        <td class="cortar-texto-200px" style="width:32%;" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"
+                                                                xbrl:contexto-plantilla="CommonRepresentativeTrustSecuritiesOtherThanSharesA2N10Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <br />
+        </div>
+
+        <!-- Comeinza sección de StructuringAgentA2N12Member -->
+        <table xbrl:evalua-descartar="ar_pros_StructuringAgentA2N12Member" class="tablaAnchoFijo tipo-persona-responsable" cellspacing="5">
+            <tbody>
+                <tr>
+                    <td class="titulo" colspan="2" style="font-size:14px;">
+                        <div class="cell-concepto">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_StructuringAgentA2N12Member" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                        </div>
+                        <div class="cell-button-agregar-dimension">
+                            <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura" xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                    xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'StructuringAgentA2N12Member'}">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div xbrl:evalua-descartar="ar_pros_StructuringAgentA2N12Member" class="contenedor-persona-responsable"
+             xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+             xbrl:alias-item-miembro="$miembroDimensionInstitucion"
+             xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'StructuringAgentA2N12Member'}">
+            <br />
+            <br />
+            <table class="tablaAnchoFijo" cellspacing="5">
+                <tbody>
+                    <tr>
+                        <td class="titulo" style="text-align:left; width:50%;">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-eliminar-dimension">
+                                <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                        xbrl:alias-miembro="$miembroDimensionInstitucion">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </td>
+                        <td>
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution"
+                                                                xbrl:contexto-plantilla="StructuringAgentA2N12Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="etiquetaConceptoTitulo">
+                                <label><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonLegend" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto></b></label><b>:</b>
+                            </div>
+                            <div class="bloqueTexto">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonLegend"
+                                                                    xbrl:contexto-plantilla="StructuringAgentA2N12Member"
+                                                                    xbrl:valor-default-etiqueta="{'idConcepto':'ar_pros_StructuringAgentA2N12Member', 'rol':'http://www.xbrl.org/2003/role/documentation'}"
+                                                                    xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-striped b-t b-light responsalbes-partidas">
+                <thead>
+                    <tr>
+                        <th class="border-right-top titulo">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsibleLineItems" xbrl:nivel-indentacion="2" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-agregar-dimension">
+                                <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                        xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'StructuringAgentA2N12Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </th>
+                        <th>&nbsp;</th>
+                        <th xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">&nbsp;</th>
+                    </tr>
+                    <tr>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonName"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"></xbrl:etiqueta-concepto>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                        xbrl:alias-item-miembro="$miembroPersona"
+                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'StructuringAgentA2N12Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                        <td class="cortar-texto-200px" style="width:32%;">
+                            <div class="table">
+                                <div class="row">
+                                    <div class="cell-concepto">
+                                        <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonName"
+                                                                            xbrl:contexto-plantilla="StructuringAgentA2N12Member"
+                                                                            xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                                    </div>
+                                    <div class="cell-button-eliminar-dimension">
+                                        <button type="button" class="btn-danger btn-eliminar-dimension"
+                                                xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                                xbrl:alias-miembro="$miembroPersona">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="cortar-texto-200px" style="width:32%;">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"
+                                                                xbrl:contexto-plantilla="StructuringAgentA2N12Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                        <td class="cortar-texto-200px" style="width:32%;" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"
+                                                                xbrl:contexto-plantilla="StructuringAgentA2N12Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <br />
+        </div>
+
+        <!-- Comeinza sección de ExternalAuditorCkdsFibersAndFiberCerpisEA2N11Member -->
+        <table xbrl:evalua-descartar="ar_pros_ExternalAuditorCkdsFibersAndFiberCerpisEA2N11Member" class="tablaAnchoFijo tipo-persona-responsable" cellspacing="5">
+            <tbody>
+                <tr>
+                    <td class="titulo" colspan="2" style="font-size:14px;">
+                        <div class="cell-concepto">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ExternalAuditorCkdsFibersAndFiberCerpisEA2N11Member" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                        </div>
+                        <div class="cell-button-agregar-dimension">
+                            <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura" xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                    xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'ExternalAuditorCkdsFibersAndFiberCerpisEA2N11Member'}">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div xbrl:evalua-descartar="ar_pros_ExternalAuditorCkdsFibersAndFiberCerpisEA2N11Member" class="contenedor-persona-responsable"
+             xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+             xbrl:alias-item-miembro="$miembroDimensionInstitucion"
+             xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'ExternalAuditorCkdsFibersAndFiberCerpisEA2N11Member'}">
+            <br />
+            <br />
+            <table class="tablaAnchoFijo" cellspacing="5">
+                <tbody>
+                    <tr>
+                        <td class="titulo" style="text-align:left; width:50%;">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-eliminar-dimension">
+                                <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                        xbrl:alias-miembro="$miembroDimensionInstitucion">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </td>
+                        <td>
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution"
+                                                                xbrl:contexto-plantilla="ExternalAuditorCkdsFibersAndFiberCerpisEA2N11Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="etiquetaConceptoTitulo">
+                                <label><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonLegend" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto></b></label><b>:</b>
+                            </div>
+                            <div class="bloqueTexto">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonLegend"
+                                                                    xbrl:contexto-plantilla="ExternalAuditorCkdsFibersAndFiberCerpisEA2N11Member"
+                                                                    xbrl:valor-default-etiqueta="{'idConcepto':'ar_pros_ExternalAuditorCkdsFibersAndFiberCerpisEA2N11Member', 'rol':'http://www.xbrl.org/2003/role/documentation'}"
+                                                                    xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-striped b-t b-light responsalbes-partidas">
+                <thead>
+                    <tr>
+                        <th class="border-right-top titulo">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsibleLineItems" xbrl:nivel-indentacion="2" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-agregar-dimension">
+                                <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                        xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'ExternalAuditorCkdsFibersAndFiberCerpisEA2N11Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </th>
+                        <th>&nbsp;</th>
+                        <th xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">&nbsp;</th>
+                    </tr>
+                    <tr>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonName"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"></xbrl:etiqueta-concepto>
+                        </th>
+                        <th class="border-right-top" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"></xbrl:etiqueta-concepto>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                        xbrl:alias-item-miembro="$miembroPersona"
+                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'ExternalAuditorCkdsFibersAndFiberCerpisEA2N11Member', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                        <td class="cortar-texto-200px" style="width:32%;">
+                            <div class="table">
+                                <div class="row">
+                                    <div class="cell-concepto">
+                                        <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonName"
+                                                                            xbrl:contexto-plantilla="ExternalAuditorCkdsFibersAndFiberCerpisEA2N11Member"
+                                                                            xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                                    </div>
+                                    <div class="cell-button-eliminar-dimension">
+                                        <button type="button" class="btn-danger btn-eliminar-dimension"
+                                                xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                                xbrl:alias-miembro="$miembroPersona">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="cortar-texto-200px" style="width:32%;">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"
+                                                                xbrl:contexto-plantilla="ExternalAuditorCkdsFibersAndFiberCerpisEA2N11Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                        <td class="cortar-texto-200px" style="width:32%;" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"
+                                                                xbrl:contexto-plantilla="ExternalAuditorCkdsFibersAndFiberCerpisEA2N11Member"
+                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <br />
+        </div>
+            <!-- Comeinza sección de OtherResponsiblePersonMember -->
+            <table xbrl:evalua-descartar="ar_pros_OtherResponsiblePersonMember" class="tablaAnchoFijo tipo-persona-responsable" cellspacing="5">
+                <tbody>
+                    <tr>
+                        <td class="titulo" colspan="2" style="font-size:14px;">
+                            <div class="cell-concepto">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_OtherResponsiblePersonMember" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                            </div>
+                            <div class="cell-button-agregar-dimension">
+                                <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura" xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                        xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'OtherResponsiblePersonMember'}">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div xbrl:evalua-descartar="ar_pros_OtherResponsiblePersonMember" class="contenedor-persona-responsable"
+                 xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                 xbrl:alias-item-miembro="$miembroDimensionInstitucion"
+                 xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'OtherResponsiblePersonMember'}">
+                <br />
+                <br />
+                <table class="tablaAnchoFijo" cellspacing="5">
+                    <tbody>
+                        <tr>
+                            <td class="titulo" style="text-align:left; width:50%;">
+                                <div class="cell-concepto">
+                                    <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto>
+                                </div>
+                                <div class="cell-button-eliminar-dimension">
+                                    <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+                                            xbrl:alias-miembro="$miembroDimensionInstitucion">
+                                        <i class="fa fa-minus"></i>
+                                    </button>
+                                </div>
+                            </td>
+                            <td>
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonInstitution"
+                                                                    xbrl:contexto-plantilla="OtherResponsiblePersonMember"
+                                                                    xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="etiquetaConceptoTitulo">
+                                    <label><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonLegend" xbrl:nivel-indentacion="0"></xbrl:etiqueta-concepto></b></label><b>:</b>
+                                </div>
+                                <div class="bloqueTexto">
+                                    <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonLegend"
+                                                                        xbrl:contexto-plantilla="OtherResponsiblePersonMember"
+                                                                        xbrl:valor-default-etiqueta="{'idConcepto':'ar_pros_OtherResponsiblePersonMember', 'rol':'http://www.xbrl.org/2003/role/documentation'}"
+                                                                        xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis': '$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table table-striped b-t b-light responsalbes-partidas">
+                    <thead>
+                        <tr>
+                            <th class="border-right-top titulo">
+                                <div class="cell-concepto">
+                                    <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsibleLineItems" xbrl:nivel-indentacion="2" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                </div>
+                                <div class="cell-button-agregar-dimension">
+                                    <button type="button" class="btn-info btn-plus" ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                            xbrl:agregar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                            xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'OtherResponsiblePersonMember', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                                        <i class="fa fa-plus"></i>
+                                    </button>
+                                </div>
+                            </th>
+                            <th>&nbsp;</th>
+                            <th xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">&nbsp;</th>
+                        </tr>
+                        <tr>
+                            <th class="border-right-top">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonName"></xbrl:etiqueta-concepto>
+                            </th>
+                            <th class="border-right-top">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"></xbrl:etiqueta-concepto>
+                            </th>
+                            <th class="border-right-top" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"></xbrl:etiqueta-concepto>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr xbrl:repite-miembros-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                            xbrl:alias-item-miembro="$miembroPersona"
+                            xbrl:agrupar-por="{'ar_pros_TypeOfResponsibleFigureAxis':'OtherResponsiblePersonMember', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}">
+                            <td class="cortar-texto-200px" style="width:32%;">
+                                <div class="table">
+                                    <div class="row">
+                                        <div class="cell-concepto">
+                                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonName"
+                                                                                xbrl:contexto-plantilla="OtherResponsiblePersonMember"
+                                                                                xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                                        </div>
+                                        <div class="cell-button-eliminar-dimension">
+                                            <button type="button" class="btn-danger btn-eliminar-dimension"
+                                                    xbrl:eliminar-miembro-dimension="ar_pros_ResponsiblePersonsSequenceTypedAxis"
+                                                    xbrl:alias-miembro="$miembroPersona">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="cortar-texto-200px" style="width:32%;">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ResponsiblePersonPosition"
+                                                                    xbrl:contexto-plantilla="OtherResponsiblePersonMember"
+                                                                    xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                            <td class="cortar-texto-200px" style="width:32%;" xbrl:evalua-descartar="ar_pros_SignIssuanceUnderArt13OfTheCUE">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_SignIssuanceUnderArt13OfTheCUE"
+                                                                    xbrl:contexto-plantilla="OtherResponsiblePersonMember"
+                                                                    xbrl:contexto-miembros-dimension="{'ar_pros_ResponsiblePersonsSequenceTypedAxis': '$miembroPersona', 'ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis':'$miembroDimensionInstitucion'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br />
+                <br />
+
+
+            </div>
+
+</xbrl:tabla-hipercubo>
+
+    <br />
+    <table class="tablaAnchoFijo" cellspacing="5">
+        <tbody>
+            <tr>
+                <td>&nbsp;</td>
+                <td style="text-align:right;">
+                    <button id="botonPlantillaPersonasResponsables" type="button"
+                            class="btn btn-s-md btn-info btn-rounded ng-binding"
+                            ng-click="definicionPlantilla.accionesPlantilla.descargarPlantillaPersonasResponsables();">
+                        {{'ETIQUETA_DESCARGAR_PLANTILLA'|translate}}
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_NameAndPositionsOfResponsiblePersonsPdf" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_NameAndPositionsOfResponsiblePersonsPdf_b27fe595-4c54-4938-9f75-f1edb5741317"
+                                        xbrl:ultimo="true"></xbrl:campo-captura>
+                </td>
+            </tr>
+
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr xbrl:evalua-descartar="ar_pros_IssuanceUnderArt13OfTheCUELegendPDF">
+                <td>&nbsp;</td>
+            </tr>
+            <tr xbrl:evalua-descartar="ar_pros_IssuanceUnderArt13OfTheCUELegendPDF">
+                <td>&nbsp;</td>
+                <td style="text-align:right;">
+                    <button id="botonPlantillaFirmaArticulo13" type="button"
+                            class="btn btn-s-md btn-info btn-rounded ng-binding"
+                            ng-click="definicionPlantilla.accionesPlantilla.descargarPlantillaFirmaArticulo13();">
+                        {{'ETIQUETA_DESCARGAR_PLANTILLA'|translate}}
+                    </button>
+                </td>
+            </tr>
+            <tr xbrl:evalua-descartar="ar_pros_IssuanceUnderArt13OfTheCUELegendPDF">
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr xbrl:evalua-descartar="ar_pros_IssuanceUnderArt13OfTheCUELegendPDF">
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_IssuanceUnderArt13OfTheCUELegendPDF" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_IssuanceUnderArt13OfTheCUELegendPDF_efa2f0ad-6a99-4d32-a0c5-0fc02390bc8b"
+                                        xbrl:ultimo="true"></xbrl:campo-captura>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</xbrl-contenedor-formato>

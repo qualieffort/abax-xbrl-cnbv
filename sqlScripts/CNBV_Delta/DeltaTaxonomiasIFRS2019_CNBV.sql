@@ -1,0 +1,39 @@
+INSERT INTO [dbo].[TaxonomiaXbrl] ([Nombre],[Descripcion],[Anio],[EspacioNombresPrincipal],[IdPeriodicidadReporte]) (SELECT '[2019-01-01] IFRS 2019 para ICS','Taxonomía IFRS 2019 para Empresas Comerciales y de Servicios',2019,'http://www.cnbv.gob.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_ics_entry_point_2019-01-01', 1 WHERE NOT EXISTS (SELECT [IdTaxonomiaXbrl] FROM [dbo].[TaxonomiaXbrl] WHERE [EspacioNombresPrincipal] = 'http://www.cnbv.gob.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_ics_entry_point_2019-01-01' ));
+INSERT INTO [dbo].[TaxonomiaXbrl] ([Nombre],[Descripcion],[Anio],[EspacioNombresPrincipal],[IdPeriodicidadReporte]) (SELECT '[2019-01-01] IFRS 2019 para SAPIB','Taxonomía IFRS 2019 para Empresas de Sociedad Anónima Promotora de Inversión Bursátil',2019,'http://www.cnbv.gob.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_sapib_entry_point_2019-01-01' , 1 WHERE NOT EXISTS (SELECT [IdTaxonomiaXbrl] FROM [dbo].[TaxonomiaXbrl] WHERE [EspacioNombresPrincipal] = 'http://www.cnbv.gob.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_sapib_entry_point_2019-01-01' ));
+INSERT INTO [dbo].[TaxonomiaXbrl] ([Nombre],[Descripcion],[Anio],[EspacioNombresPrincipal],[IdPeriodicidadReporte]) (SELECT '[2019-01-01] IFRS 2019 para Corto Plazo','Taxonomía IFRS 2019 para Empresas de Corto Plazo',2019,'http://www.cnbv.gob.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_cp_entry_point_2019-01-01', 1 WHERE NOT EXISTS (SELECT [IdTaxonomiaXbrl] FROM [dbo].[TaxonomiaXbrl] WHERE [EspacioNombresPrincipal] = 'http://www.cnbv.gob.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_cp_entry_point_2019-01-01' ));
+INSERT INTO [dbo].[TaxonomiaXbrl] ([Nombre],[Descripcion],[Anio],[EspacioNombresPrincipal],[IdPeriodicidadReporte]) (SELECT '[2019-01-01] IFRS 2019 para FIBRAS AA','Taxonomía IFRS 2019 para Fideicomisos de Inversión en Bienes Raíces AA',2019,'http://www.cnbv.gob.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_fibras_aa_entry_point_2019-01-01', 1 WHERE NOT EXISTS (SELECT [IdTaxonomiaXbrl] FROM [dbo].[TaxonomiaXbrl] WHERE [EspacioNombresPrincipal] = 'http://www.cnbv.gob.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_fibras_aa_entry_point_2019-01-01' ));
+GO
+
+INSERT INTO [dbo].[ArchivoTaxonomiaXbrl] ([IdTaxonomiaXbrl] ,[TipoReferencia] ,[Href] ,[Rol] ,[RolUri])(SELECT [IdTaxonomiaXbrl], 1,'https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/mx-ifrs-2019-01-01/full_ifrs_mc_mx_ics_entry_point_2019-01-01.xsd', NULL,NULL FROM [dbo].[TaxonomiaXbrl] TAX WHERE TAX.[EspacioNombresPrincipal] = 'http://www.cnbv.gob.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_ics_entry_point_2019-01-01'   AND NOT EXISTS (SELECT AR.[IdArchivoTaxonomiaXbrl] FROM [ArchivoTaxonomiaXbrl] AR WHERE AR.[Href] = 'https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/mx-ifrs-2019-01-01/full_ifrs_mc_mx_ics_entry_point_2019-01-01.xsd' AND AR.[IdTaxonomiaXbrl] = TAX.[IdTaxonomiaXbrl]));
+INSERT INTO [dbo].[ArchivoTaxonomiaXbrl] ([IdTaxonomiaXbrl] ,[TipoReferencia] ,[Href] ,[Rol] ,[RolUri])(SELECT [IdTaxonomiaXbrl], 1,'https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/mx-ifrs-2019-01-01/full_ifrs_mc_mx_sapib_entry_point_2019-01-01.xsd', NULL,NULL FROM [dbo].[TaxonomiaXbrl] TAX WHERE TAX.[EspacioNombresPrincipal] = 'http://www.cnbv.gob.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_sapib_entry_point_2019-01-01'   AND NOT EXISTS (SELECT AR.[IdArchivoTaxonomiaXbrl] FROM [ArchivoTaxonomiaXbrl] AR WHERE AR.[Href] = 'https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/mx-ifrs-2019-01-01/full_ifrs_mc_mx_sapib_entry_point_2019-01-01.xsd' AND AR.[IdTaxonomiaXbrl] = TAX.[IdTaxonomiaXbrl]));
+INSERT INTO [dbo].[ArchivoTaxonomiaXbrl] ([IdTaxonomiaXbrl] ,[TipoReferencia] ,[Href] ,[Rol] ,[RolUri])(SELECT [IdTaxonomiaXbrl], 1,'https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/mx-ifrs-2019-01-01/full_ifrs_mc_mx_cp_entry_point_2019-01-01.xsd', NULL,NULL FROM [dbo].[TaxonomiaXbrl] TAX WHERE TAX.[EspacioNombresPrincipal] = 'http://www.cnbv.gob.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_cp_entry_point_2019-01-01'   AND NOT EXISTS (SELECT AR.[IdArchivoTaxonomiaXbrl] FROM [ArchivoTaxonomiaXbrl] AR WHERE AR.[Href] = 'https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/mx-ifrs-2019-01-01/full_ifrs_mc_mx_cp_entry_point_2019-01-01.xsd' AND AR.[IdTaxonomiaXbrl] = TAX.[IdTaxonomiaXbrl]));
+INSERT INTO [dbo].[ArchivoTaxonomiaXbrl] ([IdTaxonomiaXbrl] ,[TipoReferencia] ,[Href] ,[Rol] ,[RolUri])(SELECT [IdTaxonomiaXbrl], 1,'https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/mx-ifrs-2019-01-01/full_ifrs_mc_mx_fibras_aa_entry_point_2019-01-01.xsd', NULL,NULL FROM [dbo].[TaxonomiaXbrl] TAX WHERE TAX.[EspacioNombresPrincipal] = 'http://www.cnbv.gob.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_fibras_aa_entry_point_2019-01-01'   AND NOT EXISTS (SELECT AR.[IdArchivoTaxonomiaXbrl] FROM [ArchivoTaxonomiaXbrl] AR WHERE AR.[Href] = 'https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/mx-ifrs-2019-01-01/full_ifrs_mc_mx_fibras_aa_entry_point_2019-01-01.xsd' AND AR.[IdTaxonomiaXbrl] = TAX.[IdTaxonomiaXbrl]));
+GO
+
+
+UPDATE [dbo].[TaxonomiaXbrl] SET [Nombre]='[2013] IFRS BMV' WHERE [Nombre]='IFRS BMV 2013';
+UPDATE [dbo].[TaxonomiaXbrl] SET [Nombre]='[2015] IFRS BMV para ICS' WHERE [Nombre]='IFRS BMV 2015 para ICS';
+UPDATE [dbo].[TaxonomiaXbrl] SET [Nombre]='[2015] IFRS BMV para SAPIB' WHERE [Nombre]='IFRS BMV 2015 para SAPIB';
+UPDATE [dbo].[TaxonomiaXbrl] SET [Nombre]='[2015] IFRS BMV para Corto Plazo' WHERE [Nombre]='IFRS BMV 2015 para Corto Plazo';
+UPDATE [dbo].[TaxonomiaXbrl] SET [Nombre]='[2015] IFRS BMV para FIBRAS' WHERE [Nombre]='IFRS BMV 2015 para FIBRAS';
+UPDATE [dbo].[TaxonomiaXbrl] SET [Nombre]='[2015] Fideicomisos CCD' WHERE [Nombre]='Fideicomisos CCD' OR [Nombre]='Fideicomisos de Certificados de Capital (CCD)';
+UPDATE [dbo].[TaxonomiaXbrl] SET [Nombre]='[2015] Fideicomisos Deuda' WHERE [Nombre]='Fideicomisos Deuda' OR [Nombre]='Fideicomisos de Deuda (DEUDA)';
+UPDATE [dbo].[TaxonomiaXbrl] SET [Nombre]='[2015] Fideicomisos TRACS' WHERE [Nombre]='Fideicomisos Trac' OR [Nombre]='Fideicomisos de Títulos Referenciados (TRACS)';
+UPDATE [dbo].[TaxonomiaXbrl] SET [Nombre]='[2018] Reporte Anual - Anexo N' WHERE [Nombre]='Reporte Anual - Anexo N';
+UPDATE [dbo].[TaxonomiaXbrl] SET [Nombre]='[2018] Reporte Anual - Anexo NBIS' WHERE [Nombre]='Reporte Anual - Anexo NBIS';
+UPDATE [dbo].[TaxonomiaXbrl] SET [Nombre]='[2018] Reporte Anual - Anexo NBIS1' WHERE [Nombre]='Reporte Anual - Anexo NBIS1';
+UPDATE [dbo].[TaxonomiaXbrl] SET [Nombre]='[2018] Reporte Anual - Anexo NBIS2' WHERE [Nombre]='Reporte Anual - Anexo NBIS2';
+UPDATE [dbo].[TaxonomiaXbrl] SET [Nombre]='[2018] Reporte Anual - Anexo NBIS3' WHERE [Nombre]='Reporte Anual - Anexo NBIS3';
+UPDATE [dbo].[TaxonomiaXbrl] SET [Nombre]='[2018] Reporte Anual - Anexo NBIS4' WHERE [Nombre]='Reporte Anual - Anexo NBIS4';
+UPDATE [dbo].[TaxonomiaXbrl] SET [Nombre]='[2018] Reporte Anual - Anexo NBIS5' WHERE [Nombre]='Reporte Anual - Anexo NBIS5';
+UPDATE [dbo].[TaxonomiaXbrl] SET [Nombre]='[2018] Reporte Anual - Anexo O' WHERE [Nombre]='Reporte Anual - Anexo O';
+UPDATE [dbo].[TaxonomiaXbrl] SET [Nombre]='[2018] Eventos Relevantes - Fondos de inversión' WHERE [Nombre]='Eventos relevantes - Fondos de inversión';
+UPDATE [dbo].[TaxonomiaXbrl] SET [Nombre]='[2018] Eventos Relevantes - Emisoras' WHERE [Nombre]='Eventos relevantes - Emisoras';
+UPDATE [dbo].[TaxonomiaXbrl] SET [Nombre]='[2018] Eventos Relevantes - Agencia calificadora' WHERE [Nombre]='Eventos relevantes - Agencia calificadora';
+UPDATE [dbo].[TaxonomiaXbrl] SET [Nombre]='[2018] Eventos Relevantes - Fiduciarios' WHERE [Nombre]='Eventos relevantes - Fiduciarios';
+UPDATE [dbo].[TaxonomiaXbrl] SET [Nombre]='[2018] Eventos Relevantes - Representante común' WHERE [Nombre]='Eventos relevantes - Representante común';
+UPDATE [dbo].[TaxonomiaXbrl] SET [Nombre]='[2018] IFRS BMV para FIBRAS AA' WHERE [Nombre]='IFRS AA FIBRAS';
+UPDATE [dbo].[TaxonomiaXbrl] SET [Nombre]='[2018] Fideicomisos CCD AA' WHERE [Nombre]='Fideicomisos AA CCD';
+UPDATE [dbo].[TaxonomiaXbrl] SET [Nombre]='[2018] Anexo T' WHERE [Nombre]='Anexo T';
+GO
+

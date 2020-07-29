@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<!--
+Project: Xbrl Processing Engine
+Copyright (c) 2011  EDGAR(r) Online, Inc.
+
+EDGAR(r) is a federally registered trademark of the U.S. Securities and Exchange Commission. EDGAR 
+Online is not affiliated with or approved by the U.S. Securities and Exchange Commission.
+-->
+
+
+<PatternSet
+    name="InstanceVOs"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="VOPatterns.xsd">
+
+    <Pattern name="Load Namespace Resolvers" detectionType="Discovery" method="runOnce" value="N/A">
+        <Action method="AddToNamespaceResolver" uri="N/A">
+            <Selector type="Prefix" method="Constant" value="xbrli" />
+            <Selector type="Namespace" method="Constant" value="http://www.xbrl.org/2003/instance" />
+        </Action>
+        <Action method="AddToNamespaceResolver" uri="N/A">
+            <Selector type="Prefix" method="Constant" value="xlink" />
+            <Selector type="Namespace" method="Constant" value="http://www.w3.org/1999/xlink" />
+        </Action>
+        <Action method="AddToNamespaceResolver" uri="N/A">
+            <Selector type="Prefix" method="Constant" value="link" />
+            <Selector type="Namespace" method="Constant" value="http://www.xbrl.org/2003/linkbase" />
+        </Action>
+        <Action method="AddToNamespaceResolver" uri="N/A">
+            <Selector type="Prefix" method="Constant" value="xsi" />
+            <Selector type="Namespace" method="Constant" value="http://www.w3.org/2001/XMLSchema-instance" />
+        </Action>
+    </Pattern>
+
+    <Pattern name="Find Instance" detectionType="Discovery" method="XPath" value="/xbrli:xbrl">
+    <!--
+        <Failure>
+            <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Load/Taxonomy#XbrlElementNotFound" />
+			<Action method="ThrowException" uri="Abort"/>
+        </Failure>
+     -->
+        <Action saveDO="instance" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Instance#Instance">
+            <Selector type="ValueObject" method="XPath" value="."/>
+        </Action>
+    </Pattern>
+
+    <Pattern name="Signal Invalid Instance" detectionType="Discovery" method="XPath" value="/*//xbrli:xbrl">
+        <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Load/Taxonomy#XbrlElementNotFound" />
+	<Action method="ThrowException" uri="Abort"/>
+    </Pattern>
+    
+    <!-- Removed this unused relationship for performance
+    <Pattern name="Load schemas via 'schemaLocation'" detectionType="InitialLoad" method="XPath" value="//@xsi:schemaLocation">
+        <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Relationship#SchemaReference">
+            <Selector type="From" method="DomainObject" value="instance" />
+            <Selector type="To" method="ReferencedDomainObject" value="N/A" />
+        </Action>
+    </Pattern>
+    -->
+    
+    <Pattern name="Discover schemas via 'schemaRef'" detectionType="Discovery" method="XPath" value="/xbrli:xbrl/link:schemaRef">
+        <Failure />
+        <Action method="LoadSchemaFromXmlBase" uri="N/A">
+            <Selector type="XmlBase" method="XmlBase" value="xml:base"/>
+            <Selector type="LogicalUri" method="XPath" value="@xlink:href"/>
+            <Failure>
+                <Action method="LoadSchemaFromLogicalUri" uri="N/A">
+                    <Selector type="LogicalUri" method="XPath" value="@xlink:href"/>
+                    <Failure>
+                        <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Load/Taxonomy#SchemaReferenceFailedWithXmlBase">
+                            <Selector type="ValueObject" method="XPath" value="ancestor-or-self::node()/attribute::xml:base" />
+                            <Selector type="ValueObject" method="XPath" value="@xlink:href"/>
+                            <Failure>
+                                <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Load/Taxonomy#SchemaReferenceFailedWithLogicalUri">
+                                    <Selector type="ValueObject" method="XPath" value="@xlink:href"/>
+                                    <Failure>
+                                        <!-- Unable to get expected selectors, at least say something -->
+                                        <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Load/Taxonomy#SchemaReferenceFailedConfused"/>
+                                    </Failure>
+                                </Action>
+                            </Failure>
+                        </Action>
+                    </Failure>
+                </Action>
+            </Failure>
+        </Action>
+
+        <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Relationship#InstanceReferencesTaxonomy">
+			<Selector type="ValueObject" method="XPath" value="." />         
+			<Selector type="From" method="DomainObject" value="instance" />
+            <Selector type="To" method="ReferencedDomainObject" value="N/A" />
+        </Action>
+    </Pattern>
+    
+    <Pattern name="Discover schemas via 'schemaLocation'" detectionType="Discovery" method="XPath" value="//@xsi:schemaLocation">
+        <Failure />
+        <Action method="LoadSchemasFromSchemaLocation" uri="N/A" >
+            <Selector type="SchemaLocationPairs" method="XPath" value="." />
+            <Failure>
+                <Action saveDO="memo" method="CreateWarningMemo" uri="memo://ubmatrix.com/Load/Taxonomy#UnableToLocateOneOrMoreOfTheXsiSchemaLocationFiles"/>
+            </Failure>
+        </Action>
+    </Pattern>
+
+    <Pattern name="Find Context" detectionType="InitialLoad" method="XPath" value="/xbrli:xbrl/xbrli:context">
+
+        <Action saveDO="context" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Instance#Context">
+            <Selector type="ValueObject" method="XPath" value="."/>
+        </Action>
+
+        <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#InstanceSpecifiesContext">
+            <Selector type="From" method="DomainObject" value="instance" />
+            <Selector type="To" method="DomainObject" value="context" />
+        </Action>
+
+        <Pattern name="Find Entity" detectionType="InitialLoad" method="XPath" value="xbrli:entity">
+            <Action saveDO="entity" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Instance#Entity">
+                <Selector type="ValueObject" method="XPath" value="."/>
+            </Action>
+            
+            <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#ContextSpecifiesEntity">
+                <Selector type="From" method="DomainObject" value="context" />
+                <Selector type="To" method="DomainObject" value="entity" />
+            </Action>
+            
+            <Pattern name="Find Identifiers" detectionType="InitialLoad" method="XPath" value="xbrli:identifier">
+                <Action saveDO="identifier" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Instance#Identifier">
+                    <Selector type="ValueObject" method="XPath" value="."/>
+                </Action>
+                <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#EntitySpecifiesIdentifier">
+                    <Selector type="From" method="DomainObject" value="entity" />
+                    <Selector type="To" method="DomainObject" value="identifier" />
+                </Action>
+			</Pattern>
+			
+            <Pattern name="Find Segment" detectionType="InitialLoad" method="XPath" value="xbrli:segment">
+                <Action saveDO="segment" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Instance#Segment">
+                    <Selector type="ValueObject" method="XPath" value="."/>
+                </Action>
+                <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#EntitySpecifiesSegment">
+                    <Selector type="From" method="DomainObject" value="entity" />
+                    <Selector type="To" method="DomainObject" value="segment" />
+                </Action>
+
+                <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#ContextSpecifiesSegment">
+                    <Selector type="From" method="DomainObject" value="context" />
+                    <Selector type="To" method="DomainObject" value="segment" />
+                </Action>
+
+                <Pattern name="Find Segment Descendants" detectionType="InitialLoad" method="XPath" value=".//*">
+                    <Action saveDO="segmentDescendant" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Instance#SegmentDescendant">
+                        <Selector type="ValueObject" method="XPath" value="."/>
+                    </Action>
+                    <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#SegmentHasDescendant">
+                        <Selector type="From" method="DomainObject" value="segment" />
+                        <Selector type="To" method="DomainObject" value="segmentDescendant" />
+                    </Action>
+                    <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Relationship#SchemaDefinesInstance">
+                        <Selector type="From" method="DtsFindSchemaDomainObject" value="segmentDescendant" />
+                        <Selector type="To" method="DomainObject" value="segmentDescendant" />
+                    </Action>
+                </Pattern>
+                
+                <Pattern name="Find Segment children" detectionType="InitialLoad" method="XPath" value="./*">
+                    <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#SegmentHasChild">
+                        <Selector type="From" method="DomainObject" value="segment" />
+                        <Selector type="To" method="DomainObjectFromValueObjectXPath" value="." />
+                    </Action>
+                </Pattern>
+                
+            </Pattern>
+        </Pattern>
+
+        <Pattern name="Find Period" detectionType="InitialLoad" method="XPath" value="xbrli:period">
+            <Action saveDO="period" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Instance#Period">
+                <Selector type="ValueObject" method="XPath" value="."/>
+               <Failure />
+            </Action>
+            <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#ContextSpecifiesPeriod">
+                <Selector type="From" method="DomainObject" value="context" />
+                <Selector type="To" method="DomainObject" value="period" />
+            </Action>
+
+            <Action saveDO="instant" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Instance#Instant">
+                <Selector type="ValueObject" method="XPath" value="xbrli:instant"/>
+               <Failure />
+             </Action>
+            <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#PeriodHasDate">
+                <Selector type="From" method="DomainObject" value="period" />
+                <Selector type="To" method="DomainObject" value="instant" />
+            </Action>
+            
+            <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#ContextHasDate">
+                <Selector type="From" method="DomainObject" value="context" />
+                <Selector type="To" method="DomainObject" value="instant" />
+            </Action>
+
+            <Action saveDO="forever" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Instance#Forever">
+                <Selector type="ValueObject" method="XPath" value="xbrli:forever"/>
+               <Failure />
+            </Action>
+            <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#PeriodHasDate">
+                <Selector type="From" method="DomainObject" value="period" />
+                <Selector type="To" method="DomainObject" value="forever" />
+            </Action>
+            
+            <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#ContextHasDate">
+                <Selector type="From" method="DomainObject" value="context" />
+                <Selector type="To" method="DomainObject" value="forever" />
+            </Action>
+
+            <Action saveDO="startdate" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Instance#StartDate">
+                <Selector type="ValueObject" method="XPath" value="xbrli:startDate"/>
+               <Failure />
+            </Action>
+            <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#PeriodHasDate">
+                <Selector type="From" method="DomainObject" value="period" />
+                <Selector type="To" method="DomainObject" value="startdate" />
+            </Action>
+            
+            <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#ContextHasDate">
+                <Selector type="From" method="DomainObject" value="context" />
+                <Selector type="To" method="DomainObject" value="startdate" />
+            </Action>
+
+            <Action saveDO="enddate" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Instance#EndDate">
+                <Selector type="ValueObject" method="XPath" value="xbrli:endDate"/>
+               <Failure />
+            </Action>
+            <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#PeriodHasDate">
+                <Selector type="From" method="DomainObject" value="period" />
+                <Selector type="To" method="DomainObject" value="enddate" />
+            </Action>
+            <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#ContextHasDate">
+                <Selector type="From" method="DomainObject" value="context" />
+                <Selector type="To" method="DomainObject" value="enddate" />
+            </Action>
+            
+        </Pattern>
+
+        <Pattern name="Find Scenario" detectionType="InitialLoad" method="XPath" value="xbrli:scenario">
+            <Action saveDO="scenario" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Instance#Scenario">
+                <Selector type="ValueObject" method="XPath" value="."/>
+            </Action>
+            <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#ContextSpecifiesScenario">
+                <Selector type="From" method="DomainObject" value="context" />
+                <Selector type="To" method="DomainObject" value="scenario" />
+            </Action>
+            <Pattern name="Find Scenario Descendants" detectionType="InitialLoad" method="XPath" value=".//*">
+                <Action saveDO="scenarioDescendant" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Instance#ScenarioDescendant">
+                    <Selector type="ValueObject" method="XPath" value="."/>
+                </Action>
+                <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#ScenarioHasDescendant">
+                    <Selector type="From" method="DomainObject" value="scenario" />
+                    <Selector type="To" method="DomainObject" value="scenarioDescendant" />
+                </Action>
+                <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Relationship#SchemaDefinesInstance">
+                    <Selector type="From" method="DtsFindSchemaDomainObject" value="scenarioDescendant" />
+                    <Selector type="To" method="DomainObject" value="scenarioDescendant" />
+                </Action>
+            </Pattern>
+            
+            <Pattern name="Find Scenario children" detectionType="InitialLoad" method="XPath" value="./*">
+                 <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#ScenarioHasChild">
+                     <Selector type="From" method="DomainObject" value="scenario" />
+                     <Selector type="To" method="DomainObjectFromValueObjectXPath" value="." />
+                  </Action>
+            </Pattern>
+            
+        </Pattern>
+    </Pattern>
+
+    <Pattern name="Find Unit" detectionType="InitialLoad" method="XPath" value="/xbrli:xbrl/xbrli:unit">    
+    	<Action saveDO="unit" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Instance#Unit">
+            <Selector type="ValueObject" method="XPath" value="."/>
+        </Action>
+        <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#InstanceSpecifiesUnit">
+            <Selector type="From" method="DomainObject" value="instance" />
+            <Selector type="To" method="DomainObject" value="unit" />
+        </Action>
+        <Pattern name="Find Unit Divides" detectionType="InitialLoad" method="XPath" value="xbrli:divide">
+            <Action saveDO="divide" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Instance#Divide">
+                <Selector type="ValueObject" method="XPath" value="."/>
+            </Action>
+            <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#UnitSpecifiesDivide">
+                <Selector type="From" method="DomainObject" value="unit" />
+                <Selector type="To" method="DomainObject" value="divide" />
+            </Action>
+            <Pattern name="Find Divide Numerators" detectionType="InitialLoad" method="XPath" value="xbrli:unitNumerator">
+                <Action saveDO="unitNumerator" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Instance#Numerator">
+                    <Selector type="ValueObject" method="XPath" value="."/>
+                </Action>
+                <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesNumerator">
+                    <Selector type="From" method="DomainObject" value="divide" />
+                    <Selector type="To" method="DomainObject" value="unitNumerator" />
+                </Action>
+            </Pattern>
+            <Pattern name="Find Divide Denominators" detectionType="InitialLoad" method="XPath" value="xbrli:unitDenominator">
+                <Action saveDO="unitDenominator" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Instance#Denominator">
+                    <Selector type="ValueObject" method="XPath" value="."/>
+                </Action>
+                <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesDenominator">
+                    <Selector type="From" method="DomainObject" value="divide" />
+                    <Selector type="To" method="DomainObject" value="unitDenominator" />
+                </Action>
+            </Pattern>
+        </Pattern>
+        <Pattern name="Find Unit Measures" detectionType="InitialLoad" method="XPath" value=".//xbrli:measure">
+
+            <Action saveDO="measure" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Instance#Measure">
+                <Selector type="ValueObject" method="XPath" value="."/>
+            </Action>
+            <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesMeasure">
+                <Selector type="From" method="DomainObjectFromValueObjectXPath" value=".." />
+                <Selector type="To" method="DomainObject" value="measure" />
+            </Action>
+
+            <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesMeasure">
+   	            <Selector type="From" method="DomainObject" value="unit" />
+       	        <Selector type="To" method="DomainObject" value="measure" />
+           	</Action>
+
+     	    <Pattern name="Create namespaces" detectionType="InitialLoad" method="XPath" value="namespace::node()[name()!= '']">
+                <Failure />  
+
+                <Action saveDO="namespace" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Namespace#Namespace">
+                    <DtsQueryPredicate dtsRecursion="false">
+                        <QueryPart method="NamespaceNode" value="value" />
+                    </DtsQueryPredicate>
+                    <!-- Factory must construct a flyweight whose value is "value()" -->
+                    <Selector type="ValueObject" method="XPath" value="."/>
+                    <Failure>
+                        <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Load/Instance/UnableToCreateNamespace">
+                            <Selector type="ValueObject" method="XPath" value="value()"/>
+                        </Action>
+                    </Failure>
+    	        </Action>
+	    
+                <Action saveDO="prefix" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Namespace#NamespacePrefix">
+                    <DtsQueryPredicate dtsRecursion="false">
+                         <QueryPart method="NamespaceNode" value="name" />
+                    </DtsQueryPredicate>
+                    <!-- Factory must construct a flyweight whose value is "name()" -->
+                    <Selector type="ValueObject" method="XPath" value="."/>
+                    <Failure>
+                        <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Load/Instance/UnableToCreateNamespacePrefix">
+                            <Selector type="ValueObject" method="XPath" value="name()"/>
+                        </Action>
+                    </Failure>
+                 </Action>
+
+                 <Action saveDO="orn" method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Relationship#ObjectReferencesNamespace">		           	     
+                     <Selector type="From" method="DomainObject" value="measure" />
+                     <Selector type="To" method="DomainObject" value="namespace" />
+                     <Failure>
+                         <!-- This is an internal error, no selectors ... -->
+                         <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Load/Instance/UnableToHookupNamespace" />
+                     </Failure>
+                  </Action>
+
+                  <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#InstanceNamespaceHasPrefix">
+                      <Selector type="From" method="DomainObject" value="orn" />
+                      <Selector type="To" method="DomainObject" value="prefix" />
+                      <Failure>
+                          <!-- This is an internal error, no selectors ... -->
+                          <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Load/Instance/UnableToHookupNamespacePrefix" />
+                      </Failure>
+                  </Action>
+
+            </Pattern>
+        </Pattern>
+    </Pattern>
+
+    <Pattern name="Find facts" detectionType="FinalLoad"  method="XPath" value="/xbrli:xbrl">
+        <Action method="ProcessInstanceDocument" uri="N/A">
+            <Selector type="ValueObject" method="XPath" value="." />
+        </Action>
+    </Pattern>
+
+    <Pattern name="Discover Linkbase" detectionType="Discovery" method="XPath" value="/xbrli:xbrl/link:linkbaseRef">
+        <Action method="LoadLinkbaseFromXmlBase" uri="." >
+            <Selector type="XmlBase" method="XmlBase" value="xml:base"/>
+            <Selector type="LogicalUri" method="XPath" value="@xlink:href"/>
+            <Failure>
+                 <Action method="LoadLinkbaseFromLogicalUri" uri=".">
+                     <Selector type="LogicalUri" method="XPath" value="@xlink:href"/>
+                     <Failure>
+                        <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Load/Instance#LoadLinkbaseFailedWithXmlBase">
+                            <Selector type="ValueObject" method="XPath" value="ancestor-or-self::node()/attribute::xml:base" />
+                            <Selector type="ValueObject" method="XPath" value="@xlink:href"/>
+                            <Failure>
+                                <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Load/Instance#LoadLinkbaseFailedWithLogicalUri">
+                                    <Selector type="ValueObject" method="XPath" value="@xlink:href"/>
+                                    <Failure>
+                                        <!-- Unable to get expected selectors, at least say something -->
+                                        <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Load/Instance#LoadLinkbaseFailedConfused"/>
+                                    </Failure>
+                                </Action>
+                            </Failure>
+                        </Action>
+                     </Failure>
+                 </Action>
+             </Failure>
+        </Action>
+
+        <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Relationship#InstanceReferencesLinkbase">
+            <Selector type="ValueObject" method="XPath" value="." />         
+    	    <Selector type="From" method="DomainObject" value="instance" />
+            <Selector type="To" method="ReferencedDomainObject" value="N/A" />
+        </Action>
+    </Pattern>
+
+    <Pattern name="Create namespaces" detectionType="InitialLoad" method="XPath"
+             value="namespace::node()[name()!= '']">
+        <Failure />
+
+        <Action method="AddToNamespaceLookup" uri="N/A">
+            <Selector type="Prefix" method="NamespaceNode" value="name" />
+            <Selector type="Namespace" method="NamespaceNode" value="value" />
+        </Action>
+
+        <Action saveDO="namespace" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Namespace#Namespace">
+            <Selector type="ValueObject" method="XPath" value="."/>
+        </Action>
+
+        <Action saveDO="prefix" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Namespace#NamespacePrefix">
+            <Selector type="ValueObject" method="XPath" value="."/>
+        </Action>
+
+        <Action saveDO="trn" method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#InstanceReferencesNamespace">
+            <Selector type="From" method="DomainObject" value="instance" />
+            <Selector type="To" method="DomainObject" value="namespace" />
+        </Action>
+
+        <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#InstanceNamespaceHasPrefix">
+            <Selector type="From" method="DomainObject" value="trn" />
+            <Selector type="To" method="DomainObject" value="prefix" />
+        </Action>
+    </Pattern>
+
+    <Pattern name="Create Dimensional Characterization"
+			 detectionType="FinalLoad" 
+             method="XPath"
+             value="/xbrli:xbrl" >
+        <Action method="HookupDimensionalCharacterization"
+                uri="relationship://ubmatrix.com/Xbrl/Dimension#CharacterizedBy" />
+    </Pattern>
+
+</PatternSet>
+
+<!--
+The contents of this file are subject to the End-User Software License Agreement (the "License"). You may not use this 
+file except in compliance with the License. A current copy of the License is available by contacting product support.
+
+Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights and limitations under the License.
+-->

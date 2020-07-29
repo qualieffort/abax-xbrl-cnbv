@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:ems="http://www.springframework.net/ems">
+
+  <object id="UsuarioService" type="AbaxXBRLCore.Services.Implementation.UsuarioService">
+    <property name="Repository" ref="UsuarioRepository"></property>
+    <property name="RolRepository" ref="RolRepository"></property>
+    <property name="GrupoUsuariosRepository" ref="GrupoUsuariosRepository"></property>
+    <property name="GrupoUsuariosRolRepository" ref="GrupoUsuariosRolRepository"></property>
+    <property name="UsuarioGrupoRepository" ref="UsuarioGrupoRepository"></property>
+    <property name="UsuarioRolRepository" ref="UsuarioRolRepository"></property>
+    <property name="UsuarioEmpresaRepository" ref="UsuarioEmpresaRepository"></property>
+  </object>
+
+  <object id="LoginService" type="AbaxXBRLCore.Services.Implementation.LoginService">
+    <property name="Repository" ref="UsuarioRepository"></property>
+  </object>
+
+  <object id="DocumentoInstanciaService" type="AbaxXBRLCore.Services.Implementation.DocumentoInstanciaService" init-method="InicializarTaxonomias">
+
+    <property name="BitacoraVersionDocumentoRepository" ref="BitacoraVersionDocumentoRepository"></property>
+    <property name="DocumentoInstanciaRepository" ref="DocumentoInstanciaRepository"></property>
+    <property name="VersionDocumentoInstanciaRepository" ref="VersionDocumentoInstanciaRepository"></property>
+    <property name="UsuarioDocumentoInstanciaRepository" ref="UsuarioDocumentoInstanciaRepository"></property>
+    <property name="UsuarioRepository" ref="UsuarioRepository"></property>
+    <property name="EmpresaRepository" ref="EmpresaRepository"/>
+    <property name="AlertaRepository" ref="AlertaRepository"/>
+    <property name="UnidadRepository" ref="UnidadRepository"/>
+    <property name="ContextoRepository" ref="ContextoRepository"/>
+    <property name="DtsDocumentoInstanciaRepository" ref="DtsDocumentoInstanciaRepository"/>
+    <property name="NotaAlPieRepository" ref="NotaAlPieRepository"/>
+    <property name="HechoRepository" ref="HechoRepository"/>
+    <property name="TaxonomiaXbrlRepository" ref="TaxonomiaXbrlRepository"/>
+    <property name="ArchivoAdjuntoXbrlRepository" ref="ArchivoAdjuntoXbrlRepository"/>
+    <property name="ImportadorExportadorArchivoDocumentoInstancia" ref="ImportadorExportadorArchivosPlantilla"/>
+    <property name="CacheTaxonomia" ref="CacheTaxonomia"/>
+    <property name="EstrategiaCacheTaxonomia" ref="EstrategiaCacheTaxonomia"/>
+    <property name="IndicadorInicializarTaxonomias" value="${IndicadorInicializarTaxonomias}"/>
+    <property name="XbrlViewerService" ref="XbrlViewerService"/>
+    <property name="RegistroAuditoriaRepository" ref="RegistroAuditoriaRepository"/>
+    <property name="ConfiguracionAuxiliarXBRL" ref="ConfiguracionAuxiliarXBRL"/>
+
+    <property name="CronExpresionVersionDocumentoPendientes" value="${cronExpresionVersionDocumentoPendientes}"/>
+
+    <property name="TaxonomiasPreCarga">
+      <list>
+        <value>https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/ra-prospecto-2016-08-22/ar_N_entry_point_2016-08-22.xsd</value>
+      </list>
+    </property>
+
+
+
+
+  </object>
+
+  <object id="ConfiguracionAuxiliarXBRL" type="AbaxXBRLCore.Common.Dtos.ConfiguracionAuxiliarXBRL">
+    <property name ="DominiosSustitutosDocumentoInstancia">
+      <dictionary key-type="string" value-type="string">
+        <entry key="http://cnbv.xbrl.mx" value="https://taxonomiasxbrl.cnbv.gob.mx" />
+      </dictionary>
+    </property>
+    <property name ="DominiosSustitutosTaxonomia">
+      <dictionary key-type="string" value-type="string">
+        <entry key="https://taxonomiasxbrl.cnbv.gob.mx" value="http://taxonomiasxbrl.cnbv.gob.mx" />
+      </dictionary>
+    </property>
+  </object>
+
+  <object id="AuditoriaService" type="AbaxXBRLCore.Services.Implementation.AuditoriaService">
+    <property name="Repository" ref="AccionAuditableRepository"></property>
+    <property name="RegistroAuditoriaRepository" ref="RegistroAuditoriaRepository"></property>
+    <property name="ModuloRepository" ref="ModuloRepository"></property>
+  </object>
+
+  <object id="RolService" type="AbaxXBRLCore.Services.Implementation.RolService">
+    <property name="RolRepository" ref="RolRepository"></property>
+    <property name="RolFacultadRepository" ref="RolFacultadRepository"></property>
+    <property name="FacultadRepository" ref="FacultadRepository"></property>
+    <property name="CategoriaFacultadRepository" ref="CategoriaFacultadRepository"></property>
+  </object>
+
+  <object id="EmpresaService" type="AbaxXBRLCore.Services.Implementation.EmpresaService">
+    <property name="EmpresaRepository" ref="EmpresaRepository"></property>
+    <property name="TipoEmpresaRepository" ref="TipoEmpresaRepository"></property>
+    <property name="TaxonomiaXbrlRepository" ref="TaxonomiaXbrlRepository"/>
+    <property name="ArchivoTaxonomiaXbrlRepository" ref="ArchivoTaxonomiaXbrlRepository"/>
+    <property name="RelacionEmpresasRepository" ref="RelacionEmpresasRepository"/>
+    <property name="RepresentanteComunFideicomisoRepository" ref="RepresentanteComunFideicomisoRepository"/>
+    <property name="TipoRelacionEmpresaRepository" ref="TipoRelacionEmpresaRepository"/>
+    <property name="BitacoraProcesarArchivosBMVRepository" ref="BitacoraProcesarArchivosBMVRepository"/>
+
+
+    <property name="SincronizacionArchivosBMVService" ref="SincronizacionArchivosBMVService"/>
+  </object>
+
+  <object id="XbrlViewerService" type="AbaxXBRLCore.Viewer.Application.Service.Impl.XbrlViewerService">
+
+  </object>
+
+  <object id="CacheTaxonomia" type="AbaxXBRLCore.Common.Cache.Impl.CacheTaxonomiaEnMemoriaXBRL, AbaxXBRLCore">
+
+  </object>
+
+  <object id="EstrategiaCacheTaxonomia" type="AbaxXBRL.Taxonomia.Impl.EstrategiaCacheTaxonomiaMemoria, AbaxXBRL">
+
+  </object>
+
+  <object id="ConsultaAnalisisService" type="AbaxXBRLCore.Services.Implementation.ConsultaAnalisisService, AbaxXBRLCore">
+    <property name="ConsultaAnalisisRepository" ref="ConsultaAnalisisRepository"></property>
+    <property name="ContextoRepository"  ref="ContextoRepository"></property>
+    <property name="DocumentoInstanciaRepository"  ref="DocumentoInstanciaRepository"></property>
+  </object>
+
+  <object id="ConsultaRepositorioService" type="AbaxXBRLCore.Services.Implementation.ConsultaRepositorioService, AbaxXBRLCore">
+    <property name="ConsultaRepositorioRepository" ref="ConsultaRepositorioRepository"></property>
+  </object>
+
+
+  <object id="FideicomisoService" type="AbaxXBRLCore.Services.Implementation.FideicomisoService, AbaxXBRLCore">
+    <property name="FideicomisoRepository" ref="FideicomisoRepository"></property>
+  </object>
+
+
+  <object id="BitacoraVersionDocumentoService" type="AbaxXBRLCore.Services.Implementation.BitacoraVersionDocumentoService">
+    <property name="BitacoraVersionDocumentoRepository" ref="BitacoraVersionDocumentoRepository"></property>
+    <property name="BitacoraProcesarArchivosBMVRepository" ref="BitacoraProcesarArchivosBMVRepository"></property>
+    <property name="BitacoraDistribucionDocumentoRepository" ref="BitacoraDistribucionDocumentoRepository"></property>
+
+  </object>
+
+  <object id="BitacoraDistribucionDocumentoService" type="AbaxXBRLCore.Services.Implementation.BitacoraDistribucionDocumentoService">
+    <property name="BitacoraDistribucionDocumentoRepository" ref="BitacoraDistribucionDocumentoRepository"></property>
+  </object>
+
+  <object id="GrupoEmpresaService" type="AbaxXBRLCore.Services.Implementation.GrupoEmpresaService">
+    <property name="GrupoEmpresaRepository" ref="GrupoEmpresaRepository"></property>
+    <property name="RegistroAuditoriaRepository" ref="RegistroAuditoriaRepository"></property>
+    <property name="EmpresaRepository" ref="EmpresaRepository"></property>
+  </object>
+  <!--
+  <object id="EMSTibcoConnectionFactory" type="Spring.Messaging.Ems.Connections.CachingConnectionFactory, Spring.Messaging.Ems">
+    <property name="SessionCacheSize" value="5" />
+    <property name="TargetConnectionFactory">
+      <object type="Spring.Messaging.Ems.Common.EmsConnectionFactory, Spring.Messaging.Ems">
+        <constructor-arg name="serverUrl" value="${tibcoServer}"/>
+        <property name="UserName" value="${usuarioTibco}"/>
+        <property name="UserPassword" value="${passwordTibco}"/>
+        <property name="ConnAttemptCount" value="10" />
+        <property name="ConnAttemptDelay" value="100" />
+        <property name="ConnAttemptTimeout" value="1000" />
+      </object>
+    </property>
+  </object>
+
+  <object id="ProcesarDocumentoXBRLGateway" type="AbaxXBRLCore.Distribucion.Ems.ProcesarDocumentoXBRLEmsGateway">
+    <property name="ConnectionFactory" ref="EMSTibcoConnectionFactory" />
+    <property name="ColaDestino" value="${nombreProcesarXBRLQueue}" />
+  </object>
+  -->
+  <object id="ParametroSistemaService" type="AbaxXBRLCore.Services.Implementation.ParametroSistemaService">
+    <property name="ParametroSistemaRepository" ref="ParametroSistemaRepository" />
+    <property name="RegistroAuditoriaRepository" ref="RegistroAuditoriaRepository"></property>
+  </object>
+
+  <object id="ListaNotificacionService" type="AbaxXBRLCore.Services.Implementation.ListaNotificacionService">
+    <property name="DestinatarioNotificacionRepository" ref="DestinatarioNotificacionRepository"></property>
+    <property name="ListaNotificacionRepository" ref="ListaNotificacionRepository"></property>
+    <property name="RegistroAuditoriaRepository" ref="RegistroAuditoriaRepository"></property>
+  </object>
+
+  <object id="SincronizacionArchivosBMVService" type="AbaxXBRLCore.Services.Implementation.SincronizacionArchivosBMVService" init-method="InicializarProcesoSincronizacionEmisoras">
+    <property name="EmpresaRepository" ref="EmpresaRepository"></property>
+    <property name="RelacionEmpresasRepository" ref="RelacionEmpresasRepository"/>
+    <property name="TipoRelacionEmpresaRepository" ref="TipoRelacionEmpresaRepository"/>
+    <property name="EmpresaService" ref="EmpresaService"/>
+
+  </object>
+
+  <object id="ConsultaPersonasResponsablesService" type="AbaxXBRLCore.Services.Implementation.ConsultaPersonasResponsablesService">
+    <property name="ConsultaPersonasResponsablesRepository" ref="ConsultaPersonasResponsablesRepository"></property>
+  </object>
+  <object id="ConsultaEnviosTaxonomiaService" type="AbaxXBRLCore.Services.Implementation.ConsultaEnviosTaxonomiaService">
+    <property name="ConsultaEnviosTaxonomiaRepository" ref="ConsultaEnviosTaxonomiaRepository"></property>
+  </object>
+  
+  <object id="ReporteCellStoreMongoService" type="AbaxXBRLCore.Services.Implementation.ReporteCellStoreMongoService">
+    <property name="SectorRepository" ref="SectorRepository"></property>
+    <property name="SubSectorRepository" ref="SubSectorRepository"/>
+    <property name="RamoRepository" ref="RamoRepository"/>
+    <property name="EmpresaRepository" ref="EmpresaRepository"/>
+  </object>
+
+  <object id="ProcesarSobreXBRLService" type="AbaxXBRLCore.Services.Implementation.ProcesarSobreXBRLService">
+    <property name="AlmacenarDocumentoInstanciaService" ref="AlmacenarDocumentoInstanciaService"></property>
+    <property name="EmpresaService" ref="EmpresaService"/>
+    <property name="DocumentoInstanciaService" ref="DocumentoInstanciaService"/>
+    <property name="ValidarDocumentoInstanciaService" ref="ValidarDocumentoInstanciaService"/>    
+  </object>
+
+</objects>

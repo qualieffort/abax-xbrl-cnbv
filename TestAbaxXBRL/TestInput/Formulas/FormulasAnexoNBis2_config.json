@@ -1,0 +1,353 @@
+{
+	
+	"Datos generales":{
+		"Obligatorio_Condicional_MentioningPartialOrTotalDependence": {
+		"NombreFormula": "Obligatorio_Condicional_MentioningPartialOrTotalDependence",
+		"Precondition": "Fideicomisos",
+		"Variables":[
+				{"Concepto": "ar_pros_TypeOfInstrument"},
+				{"Concepto": "ar_pros_MentioningPartialOrTotalDependence"},
+			]
+		},
+		"AnnualReport": {
+		"NombreFormula": "AnnualReport",
+		"Igual": "Anexo N Bis 2",
+		"Variables":[
+				{"Concepto": "ar_pros_AnnualReport"},
+			]
+		},
+		"Obligatorio_Condicional_MentioningwhetherOrNotHaveCollateral": {
+			"NombreFormula": "Obligatorio_Condicional_MentioningwhetherOrNotHaveCollateral",
+			"Expresion":'(squeeze(size(variable1)) > 0) or (variable2 == "Acciones" or variable2 == "Fideicomisos" or variable2 == "Estructurados" or variable2 == "Acciones,Estructurados")',
+			"MensajeExito":"El hecho {variable1} debe ser reportado para el tipo de instrumento \"Deuda\".",
+			"MensajeError":"El hecho {variable1} debe ser reportado para el tipo de instrumento \"Deuda\".",
+			"VariablesPrecondicion":[
+				{"IdConcepto": "ar_pros_TypeOfInstrument"}
+			],
+			"VariablesIteracion":[
+				{"IdConcepto": "ar_pros_MentioningwhetherOrNotHaveCollateral"},
+			]
+		}
+	},
+	"Portada":{
+		"Portada_No_Vacios": {
+			"NombreFormula": "Portada_No_Vacios",
+			"Variables":[
+				    {"Concepto": "ar_pros_NumberOfTrust"},
+				    {"Concepto": "ar_pros_DataRelatedToTheIndenture"},
+				    {"Concepto": "ar_pros_NameOfTrustee"},
+				    {"Concepto": "ar_pros_Settlor"},
+				    {"Concepto": "ar_pros_TrusteesInFirstPlace"},
+				    {"Concepto": "ar_pros_TrusteesInSecondPlace"},
+				    {"Concepto": "ar_pros_TrusteesInThirdPlace"},
+				    {"Concepto": "ar_pros_OtherTrustees"},
+				    {"Concepto": "ar_pros_TrustEstateManager"},
+				    {"Concepto": "ar_pros_Ticker"},
+				    {"Concepto": "ar_pros_SummaryOfTheMostImportantCharacteristics"},
+				    {"Concepto": "ar_pros_IndicationThatThereIsNoObligationToPayThePrincipal"},
+				    {"Concepto": "ar_pros_RightsUnderTheTrustNotes"},
+				    {"Concepto": "ar_pros_SerieSubordinationOfTitlesIfAny"},
+				    {"Concepto": "ar_pros_LocationAndPaymentOfIncome"},
+				    {"Concepto": "ar_pros_NameOfTheCommonRepresentative"},
+				    {"Concepto": "ar_pros_SerieDepositary"},
+				    {"Concepto": "ar_pros_SerieTaxRegime"},
+				    {"Concepto": "ar_pros_WhereAppropriateValuatotyOpinion"},
+				    {"Concepto": "ar_pros_TheMentionThatTheValuesOfTheIssuerAreRegistered"},
+				    {"Concepto": "ar_pros_AnnualReportCueLegend"},
+				    {"Concepto": "ar_pros_Article86LegendOfTheLmv"},
+				    {"Concepto": "ar_pros_PeriodRepresenting"}					
+					
+					
+				]
+			},
+		"PORTADA_Obligatorio_Renglon_Serie_especificacion_de_las_caracteristicas_de_los_titulos_en_circulacion": {
+			"NombreFormula": "PORTADA_Obligatorio_Renglon_Serie_especificacion_de_las_caracteristicas_de_los_titulos_en_circulacion",
+			"Variables":[
+					{"Concepto": "ar_pros_EquitySerie"},
+					{"Concepto": "ar_pros_Class"},
+					{"Concepto": "ar_pros_SerieType"},
+					{"Concepto": "ar_pros_SerieTicker"},
+					{"Concepto": "ar_pros_SerieTotalAmount"},
+					{"Concepto": "ar_pros_SerieNumberOfStocks"},
+					{"Concepto": "ar_pros_SerieNominalValue"},
+					{"Concepto": "ar_pros_SerieStockExhangesWhereTheyAreRegistered"},
+					{"Concepto": "ar_pros_SerieTerm"},
+					{"Concepto": "ar_pros_EquitySerieSettlementDate"},
+					{"Concepto": "ar_pros_NumberOfSeriesInWhichTheIssuanceIsDivided"},
+					{"Concepto": "ar_pros_SerieNumberOfCorrespondingEmission"}
+
+				
+				]
+			},
+		"Requeridos_Deuda_Por_Serie": {
+		"NombreFormula": "Requeridos_Deuda_Por_Serie",
+		"Variables":[
+				{"Concepto":"ar_pros_DebtSeries"},
+				{"Concepto":"ar_pros_DebtIssuanceDate"},
+				{"Concepto":"ar_pros_DebtSerieSettlementDate"},
+				{"Concepto":"ar_pros_DebtSerieTermOfTheIssuance"},
+				{"Concepto":"ar_pros_DebtInterestPerformanceAndCalculationProcedure"},
+				{"Concepto":"ar_pros_DebtPaymentFrequencyOfInterest"},
+				{"Concepto":"ar_pros_DebtLocationAndPaymentOfInterestAndPrincipal"},
+				{"Concepto":"ar_pros_DebtSubordinationOfTitlesIfAny"},
+				{"Concepto":"ar_pros_DebtAmortizationAndEarlyAmortizationEarlyMaturityIfApplicable"},
+				{"Concepto":"ar_pros_DebtGuaranteeIfAny"},
+				{"Concepto":"ar_pros_DebtTrustIfAny"},
+				{"Concepto":"ar_pros_DebtCommonRepresentative"},
+				{"Concepto":"ar_pros_DebtDepositary"},
+				{"Concepto":"ar_pros_DebtTaxRegime"}
+			]
+		},
+		"ExistenciaSerieDeudaEje":{
+			"NombreFormula":"ExistenciaSerieDeudaEje",
+			"Expresion":'(variable2 != " _null_ ") or not(variable1 == "Deuda LP" or variable1 == "Deuda CP" or variable1 == "Acciones,Deuda LP" or variable1 == "Acciones,Deuda CP" or variable1 == "Acciones,Deuda LP,Deuda CP" or variable1 == "Acciones,Deuda LP,Deuda CP,Estructurados" or variable1 == "Deuda LP,Deuda CP" or variable1 == "Deuda LP,Deuda CP,Estructurados" or variable1 == "Deuda LP,Fideicomisos" or variable1 == "Deuda LP,Estructurados" or variable1 == "Deuda CP,Fideicomisos" or variable1 == "Deuda CP,Estructurados")',
+			"MensajeExito":"Existe al menos una serie en la tabla \"Especificación de las características de los títulos de deuda\" para el tipo de valor \"Deuda\".",
+			"MensajeError":"Debería existir al menos una serie en la tabla \"Especificación de las características de los títulos de deuda\" para el tipo de valor \"Deuda\".",
+			"VariablesCoincidenPeriodo":"false",
+			"ExcepcionSinHijos": "true",
+			"VariablesExpresion":[
+				{"IdConcepto": "ar_pros_TypeOfInstrument"},
+				{"IdConcepto":"ar_pros_DebtSeries", "ValorFallback":" _null_ "}
+			]
+		},
+		"Requeridos_Deuda_Calificaciones": {
+			"NombreFormula": "Requeridos_Deuda_Calificaciones",
+			"Expresion":'(squeeze(size(variable2)) > 0) or (squeeze(size(variable3)) > 0) or (squeeze(size(variable4)) > 0) or (squeeze(size(variable5)) > 0) or (squeeze(size(variable6)) > 0) or (squeeze(size(variable7)) > 0) or (squeeze(size(variable8)) > 0) or (squeeze(size(variable9)) > 0)',
+			"MensajeExito":"Para cada serie de deuda se debe registrar almenos una calificación.",
+			"MensajeError":"Para cada serie de deuda se debe registrar almenos una calificación.",
+			"VariablesExpresion":[
+				{"IdConcepto": "ar_pros_DebtSeries"},
+				{"IdConcepto": "ar_pros_Rating", "MismasDimensiones": true,"FiltrosDimension":[{"Explicita":"true", "IdDimension":"ar_pros_SecuritiesRatingAxis", "QNameDimension":"http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:SecuritiesRatingAxis", "IdItemMiembro": "ar_pros_FitchMexicoSADeCVMember",                  "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:FitchMexicoSADeCVMember"}]},
+				{"IdConcepto": "ar_pros_Rating", "MismasDimensiones": true,"FiltrosDimension":[{"Explicita":"true", "IdDimension":"ar_pros_SecuritiesRatingAxis", "QNameDimension":"http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:SecuritiesRatingAxis", "IdItemMiembro": "ar_pros_HRRatingsDeMexicoSADeCVMember",            "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:HRRatingsDeMexicoSADeCVMember"}]},
+				{"IdConcepto": "ar_pros_Rating", "MismasDimensiones": true,"FiltrosDimension":[{"Explicita":"true", "IdDimension":"ar_pros_SecuritiesRatingAxis", "QNameDimension":"http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:SecuritiesRatingAxis", "IdItemMiembro": "ar_pros_MoodysDeMexicoSADeCVMember",               "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:MoodysDeMexicoSADeCVMember"}]},
+				{"IdConcepto": "ar_pros_Rating", "MismasDimensiones": true,"FiltrosDimension":[{"Explicita":"true", "IdDimension":"ar_pros_SecuritiesRatingAxis", "QNameDimension":"http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:SecuritiesRatingAxis", "IdItemMiembro": "ar_pros_StandardAndPoorsSADeCVMember",             "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:StandardAndPoorsSADeCVMember"}]},
+				{"IdConcepto": "ar_pros_Rating", "MismasDimensiones": true,"FiltrosDimension":[{"Explicita":"true", "IdDimension":"ar_pros_SecuritiesRatingAxis", "QNameDimension":"http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:SecuritiesRatingAxis", "IdItemMiembro": "ar_pros_VerumCalificadoraDeValoresSAPIDeCVMember", "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:VerumCalificadoraDeValoresSAPIDeCVMember"}]},
+				{"IdConcepto": "ar_pros_Rating", "MismasDimensiones": true,"FiltrosDimension":[{"Explicita":"true", "IdDimension":"ar_pros_SecuritiesRatingAxis", "QNameDimension":"http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:SecuritiesRatingAxis", "IdItemMiembro": "ar_pros_AMBestAmericaLatinaSADeCVMember",          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:AMBestAmericaLatinaSADeCVMember"}]},
+				{"IdConcepto": "ar_pros_Rating", "MismasDimensiones": true,"FiltrosDimension":[{"Explicita":"true", "IdDimension":"ar_pros_SecuritiesRatingAxis", "QNameDimension":"http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:SecuritiesRatingAxis", "IdItemMiembro": "ar_pros_DBRSRatingsMexicoSAdeCVMember",            "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:DBRSRatingsMexicoSAdeCVMember"}]},
+				{"IdConcepto": "ar_pros_Rating", "MismasDimensiones": true,"FiltrosDimension":[{"Explicita":"true", "IdDimension":"ar_pros_SecuritiesRatingAxis", "QNameDimension":"http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:SecuritiesRatingAxis", "IdItemMiembro": "ar_pros_SecuritiesRatingOtherMember",              "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:SecuritiesRatingOtherMember"}]}
+			]
+		},
+		"VA_Requeridos_Significado_Calificaciones": {
+			"NombreFormula": "VA_Requeridos_Significado_Calificaciones",
+			"Expresion":'((squeeze(size(variable2)) > 0) and (squeeze(size(variable1)) > 0)) or ((squeeze(size(variable2)) == 0) and (squeeze(size(variable1)) == 0))',
+			"MensajeExito":"Por cada calificación capturada se debe de ingresar el significado de la calificación.",
+			"MensajeError":"Por cada calificación capturada se debe de ingresar el significado de la calificación.",
+			"VariablesExpresion":[
+				{"IdConcepto": "ar_pros_RatingMeaning"},
+				{"IdConcepto": "ar_pros_Rating", "MismasDimensiones": true}
+			]
+		},
+		"VA_Requerido_OtraCalificadoraNombreCalificacion": {
+			"NombreFormula": "VA_Requerido_OtraCalificadoraNombreCalificacion",
+			"Expresion":'(squeeze(size(variable1)) == 0 and squeeze(size(variable2)) == 0) or ( squeeze(size(variable1)) > 0  and squeeze(size(variable2)) > 0 )',
+			"MensajeExito":"En caso de indicar un 'Nombre' para 'Otro [Miembro]' de la sección de 'Calificadoras' de la tabla Series de Deuda, se indica una 'Calificación'",
+			"MensajeError":"En caso de indicar un 'Nombre' para 'Otro [Miembro]' de la sección de 'Calificadoras' de la tabla Series de Deuda, también se debe de indicar una 'Calificación'",
+			"VariablesExpresion":[
+				{"IdConcepto": "ar_pros_SecuritiesRatingOherName","FiltrosDimension":[{"Explicita":"true", "IdDimension":"ar_pros_SecuritiesRatingAxis", "QNameDimension":"http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:SecuritiesRatingAxis", "IdItemMiembro": "ar_pros_SecuritiesRatingOtherMember",              "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:SecuritiesRatingOtherMember"}]},
+				{"IdConcepto": "ar_pros_Rating","MismasDimensiones": true}
+			]
+		},
+        "ExistenciaSerieEje":{
+			"NombreFormula":"ExistenciaSerieEje",
+			"Expresion":'(variable2 != " _null_ ")',
+			"MensajeExito":"Existe al menos una serie en la tabla \"Especificación de las características de los títulos en circulación\"",
+			"MensajeError":"Debería existir al menos una serie en la tabla \"Especificación de las características de los títulos en circulación\"",
+			"VariablesCoincidenPeriodo":"false",
+			"ExcepcionSinHijos": "true",
+			"VariablesExpresion":[
+				{"IdConcepto": "ar_pros_TypeOfInstrument"},
+				{"IdConcepto":"ar_pros_Class", "ValorFallback":" _null_ "}
+			]
+		},
+        "Requeridos_SerieCapitales": {
+		"NombreFormula": "Requeridos_SerieCapitales",
+		"Variables":[
+				{"Concepto":"ar_pros_Class"},
+				{"Concepto":"ar_pros_EquitySerie"},
+				{"Concepto":"ar_pros_SerieType"},
+                {"Concepto":"ar_pros_SerieTicker"},
+                {"Concepto":"ar_pros_SerieTotalAmount"},
+                {"Concepto":"ar_pros_SerieNumberOfStocks"},
+                {"Concepto":"ar_pros_SerieNominalValue"},
+				{"Concepto":"ar_pros_SerieStockExhangesWhereTheyAreRegistered"},
+                {"Concepto":"ar_pros_SerieTerm"},
+                {"Concepto":"ar_pros_NumberOfSeriesInWhichTheIssuanceIsDivided"},
+                {"Concepto":"ar_pros_SerieNumberOfCorrespondingEmission"},
+				{"Concepto":"ar_pros_SerieTickerFromTheSourceMarket"}
+			]
+		}
+	},
+	"Informacion General": {
+		"No_Vacios_Informacion_General": {
+			"NombreFormula": "No_Vacios_Informacion_General",
+			"Variables":[
+					{"Concepto": "ar_pros_GlossaryOfTermsAndDefinitions"},
+					{"Concepto": "ar_pros_ExecutiveSummary"},
+					{"Concepto": "ar_pros_RiskFactors"},
+					{"Concepto": "ar_pros_OtherValues"},
+					{"Concepto": "ar_pros_SignificantChangesToTheRightsOfSecuritiesRegistered"},
+					{"Concepto": "ar_pros_UseOfProceedsIfAny"},
+					{"Concepto": "ar_pros_PublicDocuments"}
+				]
+			}
+	},
+		"Estructura de la Operacion": {
+		"No_Vacios_Estructura_de_la_Operacion": {
+			"NombreFormula": "No_Vacios_Estructura_de_la_Operacion",
+			"Variables":[
+					{"Concepto": "ar_pros_TrustEstate"},
+					{"Concepto": "ar_pros_EvolutionOfTheAssetsInTrust"},
+					{"Concepto": "ar_pros_AssetPerformance"},
+					{"Concepto": "ar_pros_CompositionOfTotalAssets"},
+					{"Concepto": "ar_pros_VariationInBalanceAndNumberOfAssets"},
+					{"Concepto": "ar_pros_AssetsStatusByGradeOrLevelOfCompliance"},
+					{"Concepto": "ar_pros_GuaranteesOnAssets"},
+					{"Concepto": "ar_pros_LoadsAndLimitations"},
+					{"Concepto": "ar_pros_PerformanceOfSecuritiesIssued"},
+					{"Concepto": "ar_pros_ContractsAndAgreements"},
+					{"Concepto": "ar_pros_BusinessPlanAnalysisAndInvestmentSchedule"},
+					{"Concepto": "ar_pros_Valuation"},
+					{"Concepto": "ar_pros_FeesCostsAndExpensesOfTheAdministratorOfTheEstate"},
+					{"Concepto": "ar_pros_RelevantInformationOfThePeriod"},
+					{"Concepto": "ar_pros_OtherThirdPartiesObligatedWithTheTrust"},
+					{"Concepto": "ar_pros_GeneralMeetingsOfHolders"},
+					{"Concepto": "ar_pros_ExternalAuditorsOperationStructure"},
+					{"Concepto": "ar_pros_TransactionsWithRelatedPartiesAndConflictsOfInterest"}
+				
+				]
+			}
+	},
+    "La Fideicomitente":{
+		"La_Fideicomitente_no_vacios": {
+			"NombreFormula": "La_Fideicomitente_no_vacios",
+			"Variables":[
+					{"Concepto": "ar_pros_HistoryAndDevelopmentOfTheSettlor"},
+					{"Concepto": "ar_pros_MainActivity"},
+					{"Concepto": "ar_pros_DistributionChannels"},
+					{"Concepto": "ar_pros_PatentsLicensesTrademarksAndOtherContracts"},
+					{"Concepto": "ar_pros_MainCustomers"},
+					{"Concepto": "ar_pros_ApplicableLawAndTaxSituation"},
+					{"Concepto": "ar_pros_HumanResources"},
+					{"Concepto": "ar_pros_EnvironmentalPerformance"},
+					{"Concepto": "ar_pros_IssuerMarketInformation"},
+					{"Concepto": "ar_pros_CorporateStructure"},
+					{"Concepto": "ar_pros_DescriptionOfKeyAssets"},
+					{"Concepto": "ar_pros_JudicialAdministrativeOrArbitrationProceedings"},
+				    {"Concepto": "ar_pros_SharesRepresentingTheCapital"},
+					{"Concepto": "ar_pros_Dividends"},
+					{"Concepto": "ar_pros_CorporateRestructuringsIfAny"},
+				    {"Concepto": "ar_pros_DirectorsAndShareholders"},
+					{"Concepto": "ar_pros_AssociationAndOtherAgreements"},
+					{"Concepto": "ar_pros_ExternalAuditorsSettlor"},
+					{"Concepto": "ar_pros_TransactionsWithRelatedPartiesAndConflictsOfInterestOfTheSettlor"}
+				]
+			},		
+		"La_Fideicomitente_obligatorio_renglos_tabla_administradores_de_la_empresa": {
+			"NombreFormula": "La_Fideicomitente_obligatorio_renglos_tabla_administradores_de_la_empresa",
+			"Variables":[
+					{"Concepto": "ar_pros_AdministratorName"},
+					{"Concepto": "ar_pros_AdministratorFirstName"},
+					{"Concepto": "ar_pros_AdministratorGender"},
+					{"Concepto": "ar_pros_AdministratorDirectorshipType"},
+					{"Concepto": "ar_pros_AdministratorPeriodForWhichTheyWereElected"},
+					{"Concepto": "ar_pros_AdministratorPosition"},
+					{"Concepto": "ar_pros_AdministratorTimeWorkedInTheIssuer"}
+				]
+		},
+		"VA_DescripcionPoliticaPrograma": {
+			"NombreFormula": "VA_DescripcionPoliticaPrograma",
+			"Expresion":'(squeeze(size(variable1)) > 0) or (variable2 != "SI")',
+			"MensajeExito":"El concepto {variable1} debe ser reportado si el concepto \"Cuenta con programa o política de inclusión laboral\" tiene valor \"SI\".",
+			"MensajeError":"El concepto {variable1} debe ser reportado si el concepto \"Cuenta con programa o política de inclusión laboral\" tiene valor \"SI\".",
+			"VariablesPrecondicion":[
+				{"IdConcepto": "ar_pros_HasAPolicyOrProgramOfLaborInclusion"}
+			],
+			"VariablesIteracion":[
+				{"IdConcepto": "ar_pros_DescriptionOfThePolicyOrProgramOfLaborInclusion"},
+			]
+		},
+		"ExistenciaAdministradores":{
+			"NombreFormula":"ExistenciaAdministradores",
+			"Expresion":'(variable2 != " _null_ ")',
+			"MensajeExito":"Existe al menos un registro en la tabla de \"Administradores de la empresa\".",
+			"MensajeError":"Debe existir al menos un registro en la tabla de \"Administradores de la empresa\".",
+			"VariablesCoincidenPeriodo":"false",
+			"ExcepcionSinHijos": "true",
+			"VariablesExpresion": [
+			    {"IdConcepto": "ar_pros_TypeOfInstrument"},
+				{"IdConcepto":"ar_pros_AdministratorName", "ValorFallback":" _null_ "}
+			]
+		},
+		"ADMINISTRACION_obligatorios_subcomites": {
+			"NombreFormula": "ADMINISTRACION_obligatorios_subcomites",
+			"Variables":[
+					{"Concepto": "ar_pros_SubcommitteesNames"},
+					{"Concepto": "ar_pros_SubcommitteesTypeOfSubcommitteeToWhichItBelongs"},
+					{"Concepto": "ar_pros_SubcommitteesAppointmentDate"},
+					{"Concepto": "ar_pros_SubcommitteesPeriodForWhichTheyWereElected"},
+					{"Concepto": "ar_pros_SubcommitteesGender"}
+				]
+		}
+	}
+	,
+	"Informacion Financiera del Fideicomiso": {
+		"Informacion_Financiera_del_Fideicomiso_no_vacios": {
+		"NombreFormula": "Informacion_Financiera_del_Fideicomiso_no_vacios",
+		"Variables":[
+				{"Concepto": "ar_pros_SelectedFinancialInformationOfTheTrust"},
+				{"Concepto": "ar_pros_BalanceAndTrustResults"},
+				{"Concepto": "ar_pros_SourceAndApplicationOfResources"},
+				{"Concepto": "ar_pros_MovementsInTheAccountsForCashManagement"},
+				{"Concepto": "ar_pros_IndexesAndFinancialRatios"},
+				{"Concepto": "ar_pros_SelectedFinancialInformationOfTheCompaniesForWhichTheTrustInvests"},
+				{"Concepto": "ar_pros_RelevantCreditReportTrust"},
+				{"Concepto": "ar_pros_CommentsAndManagementAnalysisOnTrustOperatingResults"},
+				{"Concepto": "ar_pros_OperationResultsTrust"},
+				{"Concepto": "ar_pros_FinancialPositionLiquidityAndCapitalResourcesTrust"},
+				{"Concepto": "ar_pros_InternalControlTrust"}
+			
+			]
+		}
+	},
+	"Informacion Financiera de la Fideicomitente": {
+		"Informacion_Financiera_de_la_Fideicomitente_no_vacios": {
+		"NombreFormula": "Informacion_Financiera_de_la_Fideicomitente_no_vacios",
+		"Variables":[
+				{"Concepto": "ar_pros_SelectedFinancialInformationOfTheSettlor"},
+				{"Concepto": "ar_pros_CommentsAndManagementAnalysisOnOperatingResultsOfTheSettlor"},
+				{"Concepto": "ar_pros_OperationResultsOfTheSettlor"},
+				{"Concepto": "ar_pros_FinancialPositionLiquidityAndCapitalResourcesOfTheSettlor"},
+				{"Concepto": "ar_pros_InternalControlOfTheSettlor"}
+
+			]
+		}
+	},
+    "Persona responsable":{
+		"PERSONAS_RESPONSABLES_obligatorio_renglon_tabla_personas_responsables": {
+			"NombreFormula": "PERSONAS_RESPONSABLES_obligatorio_renglon_tabla_personas_responsables",
+			"Variables":[
+					{"Concepto": "ar_pros_ResponsiblePersonName"},
+					{"Concepto": "ar_pros_ResponsiblePersonPosition"},
+					{"Concepto": "ar_pros_ResponsiblePersonInstitution"},
+					{"Concepto": "ar_pros_ResponsiblePersonLegend"},
+				]
+			},
+		"PERSONAS_RESPONSABLES_no_vacio_nombre_y_cargo_de_personas_responsables": {
+			"NombreFormula": "PERSONAS_RESPONSABLES_no_vacio_nombre_y_cargo_de_personas_responsables",
+			"Variables":[
+					{"Concepto": "ar_pros_NameAndPositionsOfResponsiblePersonsPdf"}
+				]
+			}
+	},
+    "Anexos": {
+		"Obligatorio_Anexos_no_vacia": {
+		"NombreFormula": "Obligatorio_Anexos_no_vacia",
+		"Variables":[
+				{"Concepto": "ar_pros_FinancialStatementsAuditedPdf"},
+				{"Concepto": "ar_pros_AdditionalInformationAnnexPdf"},
+				{"Concepto": "ar_pros_IndependentValuerPdf"}
+			]
+		}
+	}
+
+}

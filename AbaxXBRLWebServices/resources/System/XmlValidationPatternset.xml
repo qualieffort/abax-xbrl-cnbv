@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<!--
+Project: Xbrl Processing Engine
+Copyright (c) 2011  EDGAR(r) Online, Inc.
+
+EDGAR(r) is a federally registered trademark of the U.S. Securities and Exchange Commission. EDGAR 
+Online is not affiliated with or approved by the U.S. Securities and Exchange Commission.
+-->
+
+
+<PatternSet
+    name="XmlValidationPatterns"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ValidationPatterns.xsd" >
+
+    <Pattern id="ValidateInstanceAgainstSchema" 
+			name="ValidateInstanceAgainstSchema" 
+			method="DtsXPath" 
+			value="ValidateInstance()">			
+         <Failure>
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Taxonomy#InstanceDocumentFailedToValidateAgainstSchema" />
+         </Failure>
+    </Pattern>     
+
+    <Pattern id="ValidateTuplesMustNotUseMixedAttribute" 
+    			name="ValidateTuplesMustNotUseMixedAttribute" 
+    			method="DtsXPath" 
+    			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#TupleConcept'ValidateMixedAttribute()">      			      			
+             <Failure severity="error">
+                        <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Taxonomy#TuplesMustNotUseMixedAttribute" />
+             </Failure>
+    </Pattern>     
+                
+    <Pattern id="ValidateTuplesMustNotContainAnonymousDefinition" 
+    			name="ValidateTuplesMustNotContainAnonymousDefinition" 
+    			method="DtsXPath" 
+    			value="/+'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#TupleContainsConcept'/'domain://ubmatrix.com/Xbrl/Taxonomy#LocalConcept'ValidateAnonymousDefinition()">    			
+             <Failure>
+                        <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Taxonomy#TuplesMustNotContainAnonymousDefinition" />
+             </Failure>
+    </Pattern>  
+    
+ </PatternSet>
+ 
+<!--
+The contents of this file are subject to the End-User Software License Agreement (the "License"). You may not use this 
+file except in compliance with the License. A current copy of the License is available by contacting product support.
+
+Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights and limitations under the License.
+-->

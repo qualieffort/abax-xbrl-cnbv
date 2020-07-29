@@ -1,0 +1,15 @@
+﻿<div class="spanCampoTextoGenerico">
+    <div class="contenedor-visor" ng-if="!editando">
+        <span class="xbrl-visor"></span>
+    </div>
+    <div class="contenedor-editor" ng-if="editando">
+        <div class="input-group">
+            <span class="input-group-btn">
+                <input type="text"
+                       class="form-control"
+                       ng-model="valorTemporal.valor"
+                       ng-blur="manejarBlur()" />
+            </span>
+        </div>
+    </div>
+</div>

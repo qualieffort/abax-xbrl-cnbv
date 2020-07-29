@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+
+
+  <!--object id="AbaxDbEntities" type="AbaxXBRLCore.Model.AbaxDbEntities" >
+  </object-->
+
+  <object id="UsuarioRepository" type="AbaxXBRLCore.Repository.Implementation.UsuarioRepository">
+    <property name="MailUtil" ref="EnvioMailUtil" ></property>
+  </object>
+
+
+  <object id="AccionAuditableRepository" type="AbaxXBRLCore.Repository.Implementation.AccionAuditableRepository">
+  </object>
+
+
+  <object id="CategoriaFacultadRepository" type="AbaxXBRLCore.Repository.Implementation.CategoriaFacultadRepository">
+  </object>
+
+  <object id="DocumentoInstanciaRepository" type="AbaxXBRLCore.Repository.Implementation.DocumentoInstanciaRepository">
+  </object>
+
+  <object id="VersionDocumentoInstanciaRepository" type="AbaxXBRLCore.Repository.Implementation.VersionDocumentoInstanciaRepository">
+  </object>
+
+  <object id="FacultadRepository" type="AbaxXBRLCore.Repository.Implementation.FacultadRepository">
+  </object>
+
+
+  <object id="GrupoUsuariosRepository" type="AbaxXBRLCore.Repository.Implementation.GrupoUsuariosRepository">
+  </object>
+
+
+  <object id="GrupoUsuariosRolRepository" type="AbaxXBRLCore.Repository.Implementation.GrupoUsuariosRolRepository">
+  </object>
+
+
+
+  <object id="ModuloRepository" type="AbaxXBRLCore.Repository.Implementation.ModuloRepository">
+  </object>
+
+
+
+
+  <object id="RegistroAuditoriaRepository" type="AbaxXBRLCore.Repository.Implementation.RegistroAuditoriaRepository">
+  </object>
+
+
+  <object id="RolFacultadRepository" type="AbaxXBRLCore.Repository.Implementation.RolFacultadRepository">
+  </object>
+
+
+  <object id="RolRepository" type="AbaxXBRLCore.Repository.Implementation.RolRepository">
+  </object>
+
+
+  <object id="UsuarioGrupoRepository" type="AbaxXBRLCore.Repository.Implementation.UsuarioGrupoRepository">
+  </object>
+
+
+  <object id="UsuarioRolRepository" type="AbaxXBRLCore.Repository.Implementation.UsuarioRolRepository">
+  </object>
+
+  
+  <object id="EmpresaRepository" type="AbaxXBRLCore.Repository.Implementation.EmpresaRepository">
+  </object>
+
+
+  <object id="UsuarioEmpresaRepository" type="AbaxXBRLCore.Repository.Implementation.UsuarioEmpresaRepository">
+  </object>
+  
+  <object id="UsuarioDocumentoInstanciaRepository" type="AbaxXBRLCore.Repository.Implementation.UsuarioDocumentoInstanciaRepository">
+  </object>
+
+ 
+
+  <object id="AlertaRepository" type="AbaxXBRLCore.Repository.Implementation.AlertaRepository">
+  </object>
+
+  <object id="UnidadRepository" type="AbaxXBRLCore.Repository.Implementation.UnidadRepository">
+  </object>
+
+  <object id="ContextoRepository" type="AbaxXBRLCore.Repository.Implementation.ContextoRepository">
+  </object>
+
+  <object id="DtsDocumentoInstanciaRepository" type="AbaxXBRLCore.Repository.Implementation.DtsDocumentoInstanciaRepository">
+  </object>
+  
+  <object id="NotaAlPieRepository" type="AbaxXBRLCore.Repository.Implementation.NotaAlPieRepository">
+  </object>
+
+  <object id="HechoRepository" type="AbaxXBRLCore.Repository.Implementation.HechoRepository">
+  </object>
+
+  <object id="TaxonomiaXbrlRepository" type="AbaxXBRLCore.Repository.Implementation.TaxonomiaXbrlRepository">
+  </object>
+
+  <object id="ConsultaAnalisisRepository" type="AbaxXBRLCore.Repository.Implementation.ConsultaAnalisisRepository">
+  </object>
+
+  <object id="ConsultaRepositorioRepository" type="AbaxXBRLCore.Repository.Implementation.ConsultaRepositorioRepository">
+  </object>
+  
+
+  <object id="FideicomisoRepository" type="AbaxXBRLCore.Repository.Implementation.FideicomisoRepository">
+  </object>
+
+  <object id="BitacoraVersionDocumentoRepository" type="AbaxXBRLCore.Repository.Implementation.BitacoraVersionDocumentoRepository">
+  </object>
+  <object id="BitacoraDistribucionDocumentoRepository" type="AbaxXBRLCore.Repository.Implementation.BitacoraDistribucionDocumentoRepository">
+  </object>
+  <object id="TipoEmpresaRepository" type="AbaxXBRLCore.Repository.Implementation.TipoEmpresaRepository">
+  </object>
+  
+  <object id="ArchivoTaxonomiaXbrlRepository" type="AbaxXBRLCore.Repository.Implementation.ArchivoTaxonomiaXbrlRepository">
+  </object>
+
+  <object id="RelacionEmpresasRepository" type="AbaxXBRLCore.Repository.Implementation.RelacionEmpresasRepository">
+  </object>
+
+  <object id="RepresentanteComunFideicomisoRepository" type="AbaxXBRLCore.Repository.Implementation.RepresentanteComunFideicomisoRepository">
+  </object>
+  
+  <object id="TipoRelacionEmpresaRepository" type="AbaxXBRLCore.Repository.Implementation.TipoRelacionEmpresaRepository">
+  </object>
+
+  <object id="GrupoEmpresaRepository" type="AbaxXBRLCore.Repository.Implementation.GrupoEmpresaRepository">
+  </object>
+
+  <object id="ParametroSistemaRepository" type="AbaxXBRLCore.Repository.Implementation.ParametroSistemaRepository">
+  </object>
+
+  <object id="ListaNotificacionRepository" type="AbaxXBRLCore.Repository.Implementation.ListaNotificacionRepository">
+  </object>
+
+  <object id="DestinatarioNotificacionRepository" type="AbaxXBRLCore.Repository.Implementation.DestinatarioNotificacionRepository">
+  </object>
+
+  <object id="ArchivoDocumentoInstanciaRepository" type="AbaxXBRLCore.Repository.Implementation.ArchivoDocumentoInstanciaRepository">
+  </object>
+
+
+  <object id="BitacoraProcesarArchivosBMVRepository" type="AbaxXBRLCore.Repository.Implementation.BitacoraProcesarArchivosBMVRepository">
+  </object>
+
+  <object id="ConsultaPersonasResponsablesRepository" type="AbaxXBRLCore.Repository.Implementation.ConsultaPersonasResponsablesRepository">
+  </object>
+
+  <object id="SectorRepository" type="AbaxXBRLCore.Repository.Implementation.SectorRepository">
+  </object>
+
+  <object id="SubSectorRepository" type="AbaxXBRLCore.Repository.Implementation.SubSectorRepository">
+  </object>
+
+  <object id="RamoRepository" type="AbaxXBRLCore.Repository.Implementation.RamoRepository">
+  </object>
+
+  <object id="ConsultaEnviosTaxonomiaRepository" type="AbaxXBRLCore.Repository.Implementation.ConsultaEnviosTaxonomiaRepository">
+  </object>
+
+  <object id="ArchivoAdjuntoXbrlRepository" type="AbaxXBRLCore.Repository.Implementation.ArchivoAdjuntoXbrlRepository">
+  </object>
+  
+
+</objects>

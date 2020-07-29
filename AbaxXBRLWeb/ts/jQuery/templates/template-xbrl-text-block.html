@@ -1,0 +1,29 @@
+﻿<div id="{{idCampoCapturaTextBlockModal}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade dialogoModalTextBlock">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div class="row m-t-sm">
+                    <div class="col-sm-8 m-b-xs">
+                        <h4 class="modal-title"> <span class="font-bold">{{'EDITOR_GENERICO_TITULO_EDITAR_HECHO' | translate}}</span></h4>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <p>
+                        <span class="font-bold">{{descripcionHecho}}</span>
+                    </p>
+                </div> 
+
+                <xbrl:campo-captura xbrl:id-concepto="{{hecho.IdConcepto}}" xbrl:id-contexto="{{hecho.IdContexto}}" xbrl:ocultar-detalles="true" id="input_{{idCampoCapturaTextBlockModal}}"></xbrl:campo-captura>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">{{'ETIQUETA_BOTON_CERRAR' | translate}}</button>
+
+            </div>
+        </div>
+    </div>
+</div>

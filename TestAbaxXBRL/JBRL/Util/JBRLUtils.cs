@@ -1,0 +1,590 @@
+﻿using AbaxXBRLCore.CellStore.Modelo;
+using AbaxXBRLCore.CellStore.Services.Impl;
+using AbaxXBRLCore.Common.Cache;
+using AbaxXBRLCore.Common.Util;
+using AbaxXBRLCore.Viewer.Application.Dto;
+using AbaxXBRLCore.XPE.impl;
+using MongoDB.Bson;
+using MongoDB.Driver;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using TestAbaxXBRL.JBRL.Constants;
+using TestAbaxXBRL.JBRL.Modelo;
+
+namespace TestAbaxXBRL.JBRL.Util
+{
+    /// <summary>
+    /// Generic utils.
+    /// </summary>
+    public class JBRLUtils
+    {
+        /// <summary>
+        /// The collection where the facts are recorded.
+        /// </summary>
+        public static string COLLECTION_NAME = "fact";
+        /// <summary>
+        /// Cache de taxonomías.
+        /// </summary>
+        private static ICacheTaxonomiaXBRL CacheTaxonomiaXBRL = new AbaxXBRLCore.Common.Cache.Impl.CacheTaxonomiaEnMemoriaXBRL();
+
+        /// <summary>
+        /// Obtiene la taxonomía de un documento de instacia.
+        /// </summary>
+        /// <param name="instanciaDto">Documento de instancia del cual se pretende obtener la taxonomía.</param>
+        public static void ObtenerTaxonomia(DocumentoInstanciaXbrlDto instanciaDto)
+        {
+            var _cacheTaxonomiaXbrl = CacheTaxonomiaXBRL;//(ICacheTaxonomiaXBRL)applicationContext.GetObject("CacheTaxonomia");
+            var xpeServ = XPEServiceImpl.GetInstance(true);
+            var taxonomiaDto = _cacheTaxonomiaXbrl.ObtenerTaxonomia(instanciaDto.DtsDocumentoInstancia);
+            if (taxonomiaDto == null)
+            {
+                var erroresTax = new List<ErrorCargaTaxonomiaDto>();
+                foreach (var dts in instanciaDto.DtsDocumentoInstancia)
+                {
+                    if (dts.Tipo == DtsDocumentoInstanciaDto.SCHEMA_REF)
+                    {
+                        taxonomiaDto = xpeServ.CargarTaxonomiaXbrl(dts.HRef, erroresTax, true);
+                        break;
+                    }
+                }
+
+                if (!erroresTax.Any(x => x.Severidad == ErrorCargaTaxonomiaDto.SEVERIDAD_FATAL))
+                {
+                    _cacheTaxonomiaXbrl.AgregarTaxonomia(instanciaDto.DtsDocumentoInstancia, taxonomiaDto);
+                }
+                else
+                {
+                    LogUtil.Error(erroresTax);
+                }
+            }
+
+            if (taxonomiaDto != null)
+            {
+                instanciaDto.EspacioNombresPrincipal = taxonomiaDto.EspacioNombresPrincipal;
+                instanciaDto.Taxonomia = taxonomiaDto;
+            }
+        }
+
+        /// <summary>
+        /// Finds the first fact of the givent conceptId.
+        /// </summary>
+        /// <param name="conceptId">Identifier of the concept search.</param>
+        /// <param name="document">Documento to evaluate.</param>
+        /// <returns>First fact found or null if not fact is found.</returns>
+        public static HechoDto GetFirstFactOfConcept(String conceptId, DocumentoInstanciaXbrlDto document)
+        {
+            HechoDto fact = null;
+            IList<String> factsIdsList;
+            if (document.HechosPorIdConcepto.TryGetValue(conceptId, out factsIdsList))
+            {
+                foreach (var factId in factsIdsList)
+                {
+                    if (document.HechosPorId.TryGetValue(factId, out fact))
+                    {
+                        break;
+                    }
+                }
+            }
+
+            return fact;
+        }
+        /// <summary>
+        /// Creates the report id from report keys
+        /// </summary>
+        /// <param name="reportKeys">Keys of the report.</param>
+        /// <returns>Hash of the report.</returns>
+        public static String GetHash(IDictionary<String, String> reportKeys)
+        {
+            var factAux = new FactJBRL();
+            var json = factAux.ParseJson(reportKeys);
+            var hash = factAux.GeneraHash(json);
+            return hash;
+        }
+        /// <summary>
+        /// Crea un hash con los parámetros clave del reporte.
+        /// </summary>
+        /// <param name="reportParams">Parámetros generales del reporte.</param>
+        /// <returns>Hash con los principales identificadores del reporte.</returns>
+        public static String CreateReportId(IDictionary<String, String> reportParams)
+        {
+            var reportKeys = new Dictionary<String, String>();
+            foreach (var paramId in reportParams.Keys)
+            {
+                if (ConstantsJBRL.REPORT_DIMENSIONS_KEYS_ATT_LIST.Contains(paramId))
+                {
+                    reportKeys[paramId] = reportParams[paramId];
+                }
+            }
+            var hash = GetHash(reportKeys);
+            return hash;
+        }
+        /// <summary>
+        /// Crea un hash con los parámetros clave del reporte.
+        /// </summary>
+        /// <param name="reportParams">Parámetros generales del reporte.</param>
+        /// <param name="reportSendDate">Send date of the report.</param>
+        /// <returns>Hash con los principales identificadores del reporte.</returns>
+        public static String CreateReportRecordId(String reportId, DateTime reportSendDate)
+        {
+            var reportKeys = new Dictionary<String, String>();
+            reportKeys[ConstantsJBRL.REPORT_REPORT_ID_ATT] = ModeloBase.ParseJson(reportId);
+            reportKeys[ConstantsJBRL.REPORT_REGISTRATON_DATE_ATT] = ModeloBase.ParseJson(reportSendDate);
+            var hash = GetHash(reportKeys);
+            return hash;
+        }
+        
+        /// <summary>
+        /// Gets the main facto of the report, this fact is used to get the reported period and the entity.
+        /// </summary>
+        /// <param name="document">Documento to evaluate.</param>
+        /// <returns>Mani fact or first fact founded.</returns>
+        public static HechoDto GetMainFact(DocumentoInstanciaXbrlDto document)
+        {
+            HechoDto fact = null;
+            foreach (var concetptId in ConstantsJBRL.MAIN_TAXONOMY_CONCEPT)
+            {
+                fact = GetFirstFactOfConcept(concetptId, document);
+                if (fact != null)
+                {
+                    break;
+                }
+            }
+            if (fact == null)
+            {
+                fact = document.HechosPorId.Values.First();
+            }
+            return fact;
+        }
+        /// <summary>
+        /// Gets the first element of the concepts in the list.
+        /// </summary>
+        /// <param name="conceptsIdsList"></param>
+        /// <param name="document"></param>
+        /// <returns></returns>
+        public static HechoDto GetFirstFact(IList<String> conceptsIdsList, DocumentoInstanciaXbrlDto document)
+        {
+            HechoDto fact = null;
+            foreach (var concetptId in conceptsIdsList)
+            {
+                fact = GetFirstFactOfConcept(concetptId, document);
+                if (fact != null)
+                {
+                    break;
+                }
+            }
+            return fact;
+        }
+        /// <summary>
+        /// Returns the name of the taxonomy for the gvent entry point.
+        /// </summary>
+        /// <param name="taxonomyEntryPoint">Etnry point to evaluate.</param>
+        /// <returns>Taxonomy name.</returns>
+        public static String GetTaxonomyName(String taxonomyEntryPoint)
+        {
+            String name = taxonomyEntryPoint;
+            ConstantsJBRL.ALIAS_TAXONOMIAS.TryGetValue(taxonomyEntryPoint, out name);
+            return name;
+        }
+        /// <summary>
+        /// The report main keys.
+        /// </summary>
+        /// <param name="document">Document to evaluate.</param>
+        /// <returns></returns>
+        public static void SetReportParams(DocumentoInstanciaXbrlDto document, IDictionary<String, String> extraParams)
+        {
+            if (!extraParams.ContainsKey(ConstantsJBRL.REPORT_TAXONOMY_ATT))
+            {
+                extraParams[ConstantsJBRL.REPORT_TAXONOMY_ATT] = document.Taxonomia.EspacioNombresPrincipal;
+                extraParams[ConstantsJBRL.REPORT_TAXONOMY_NAME_ATT] = GetTaxonomyName(document.Taxonomia.EspacioNombresPrincipal);
+
+            }
+            var hechoPrincipal = JBRLUtils.GetMainFact(document);
+            var auxiliar = new FactJBRL();
+            ContextoDto context;
+            if (!extraParams.ContainsKey(ConstantsJBRL.REPORT_ENTITY_ATT) ||
+              !extraParams.ContainsKey(ConstantsJBRL.REPORT_DATE_ATT))
+            {
+                if (document.ContextosPorId.TryGetValue(hechoPrincipal.IdContexto, out context))
+                {
+                    var reportedDateOfReport = context.Periodo.Tipo.Equals(PeriodoDto.Duracion) ? context.Periodo.FechaFin : context.Periodo.FechaInstante;
+                    if (!extraParams.ContainsKey(ConstantsJBRL.REPORT_ENTITY_ATT))
+                    {
+                        extraParams[ConstantsJBRL.REPORT_ENTITY_ATT] = context.Entidad.Id;
+                    }
+                    if (!extraParams.ContainsKey(ConstantsJBRL.REPORT_DATE_ATT))
+                    {
+                        extraParams[ConstantsJBRL.REPORT_DATE_ATT] = auxiliar.ParseString(reportedDateOfReport);
+                    extraParams[ConstantsJBRL.REPORT_YEAR_ATT] = reportedDateOfReport.Year.ToString();
+                    }
+                }
+            }
+            var quarter = JBRLUtils.GetFirstFact(ConstantsJBRL.QUARTER_CONCEPT, document);
+            var trustNumber = JBRLUtils.GetFirstFact(ConstantsJBRL.TRUST_NUMBRE_CONCEPT, document);
+            if (quarter != null)
+            {
+                extraParams[ConstantsJBRL.REPORT_QUARTER_ATT] = quarter.Valor;
+            }
+            if (trustNumber != null)
+            {
+                extraParams[ConstantsJBRL.REPORT_TRUST_NUMBER_ATT] = trustNumber.Valor;
+            }
+        }
+
+        /// <summary>
+        /// Checks if the send exists in the data base.
+        /// </summary>
+        /// <param name="sendId">Identifier of the send.</param>
+        /// <param name="abaxXBRLCellStoreMongo">Data access object.</param>
+        /// <returns>If the send exists.</returns>
+        public static bool ExistsReportRecord(string reportRecordId, AbaxXBRLCellStoreMongo abaxXBRLCellStoreMongo)
+        {
+            var count = abaxXBRLCellStoreMongo.CuentaElementosColeccion(COLLECTION_NAME, "{\"reportRecordId\":\"" + reportRecordId + "\"}");
+            return count > 0;
+        }
+        /// <summary>
+        /// Checks if the send exists in the data base.
+        /// </summary>
+        /// <param name="sendId">Identifier of the send.</param>
+        /// <param name="abaxXBRLCellStoreMongo">Data access object.</param>
+        /// <returns>If the send exists.</returns>
+        public static bool ExistsDownloadId (string downloadId, AbaxXBRLCellStoreMongo abaxXBRLCellStoreMongo)
+        {
+            var count = abaxXBRLCellStoreMongo.CuentaElementosColeccion(COLLECTION_NAME, "{\"dimensionMap.downloadId\":\"" + downloadId + "\"}");
+            return count > 0;
+        }
+        /// <summary>
+        /// Checks if the send exists in the data base.
+        /// </summary>
+        /// <param name="reportId">Identifier of the send.</param>
+        /// <param name="abaxXBRLCellStoreMongo">Data access object.</param>
+        /// <returns>If the send exists.</returns>
+        public static BsonDocument GetRecentlyReportSend(string reportId, AbaxXBRLCellStoreMongo abaxXBRLCellStoreMongo)
+        {
+            var db = abaxXBRLCellStoreMongo.GetMongoDB();
+            var collection = db.GetCollection<BsonDocument>(COLLECTION_NAME);
+            var match = new BsonDocument { { "reportId", reportId }, { "isReplaced", false } };
+            var groupDistinctDates = new BsonDocument { { "_id", "$registrationDate" } };
+            var groupMaxDate = new BsonDocument
+            {
+                { "_id", "_id" },
+                { "maxDate", new BsonDocument { { "$max", "$_id"} } }
+            };
+            var projectAsStrig = new BsonDocument
+            {
+                {"_id", 0 },
+                { "maxDate", new BsonDocument
+                    {
+                        { "$dateToString", new BsonDocument{{ "date","$maxDate"}, { "format","%Y-%m-%dT%H:%M:%S.%LZ" } }}
+                    }
+                }
+            };
+            var aggregate = collection.Aggregate().Match(match).
+                Group(groupDistinctDates).Group(groupMaxDate).Project(projectAsStrig);
+            return aggregate.FirstOrDefault();
+        }
+        /// <summary>
+        /// Checks if the send exists in the data base.
+        /// </summary>
+        /// <param name="reportId">Identifier of the send.</param>
+        /// <param name="abaxXBRLCellStoreMongo">Data access object.</param>
+        /// <returns>If the send exists.</returns>
+        public static bool Update(string reportId, AbaxXBRLCellStoreMongo abaxXBRLCellStoreMongo)
+        {
+            var count = abaxXBRLCellStoreMongo.CuentaElementosColeccion(COLLECTION_NAME, "{\"reportId\":\"" + reportId + "\"}");
+            return count > 0;
+        }
+
+        /// <summary>
+        /// Evaluate the given report version, and update previous versions with the given parameters or 
+        /// get the current version of the report.
+        /// </summary>
+        /// <param name="reportId">Report to evaluate.</param>
+        /// <param name="reportRecordId">Version to evaluate.</param>
+        /// <param name="registrationDate">Registration date of the current report.</param>
+        /// <param name="abaxXBRLCellStoreMongo">Data access object.</param>
+        /// <returns>The current version identifier or null if the given version is the most recent.</returns>
+        public static string SarchReplacementId(string reportId, string reportRecordId, DateTime registrationDate, AbaxXBRLCellStoreMongo abaxXBRLCellStoreMongo)
+        {
+            string replacementId = null;
+            var recentlySend = GetRecentlyReportSend(reportId, abaxXBRLCellStoreMongo);
+            if (recentlySend != null && recentlySend.Contains("maxDate"))
+            {
+                var maxDate = DateTime.Parse(recentlySend["maxDate"].AsString);
+                if (maxDate > registrationDate)
+                {
+                    replacementId = JBRLUtils.CreateReportRecordId(reportId, maxDate);
+                }
+            }
+            return replacementId;
+        }
+        /// <summary>
+        /// Updates the attributes "isReplaced" and "replacementId" with the given parameters.
+        /// </summary>
+        /// <param name="reportId">Report id to evaluate.</param>
+        /// <param name="reportRecordId">Version that replacement previous versions.</param>
+        /// <param name="abaxXBRLCellStoreMongo">Data access object of the data base.</param>
+        public static async Task UpdateReportsReplacementVersionAsync(string reportId, string reportRecordId, AbaxXBRLCellStoreMongo abaxXBRLCellStoreMongo)
+        {
+            FilterDefinition<BsonDocument> filter = new BsonDocument
+            {
+                {"reportId", reportId },
+                {"isReplaced", false },
+                {"reportRecordId", new BsonDocument { {"$ne", reportRecordId } } }
+            };
+            UpdateDefinition<BsonDocument> updateStatement = new BsonDocument
+            {
+                {"$set", new BsonDocument
+                    {
+                        {"isReplaced", true },
+                        {"replacementId", reportRecordId },
+                    }
+                }
+            };
+            var db = abaxXBRLCellStoreMongo.GetMongoDB();
+            var collection = db.GetCollection<BsonDocument>(COLLECTION_NAME);
+            await collection.UpdateManyAsync(filter, updateStatement);
+        }
+        /// <summary>
+        /// Finds the max reported date of the entity.
+        /// </summary>
+        /// <param name="taxonomyId">Taxonomy reported.</param>
+        /// <param name="entityId">Entity identifier.</param>
+        /// <param name="abaxXBRLCellStoreMongo">Data access object.</param>
+        /// <returns>Date found or null if not date was found.</returns>
+        public static async Task<DateTime?> GetMaxReportedDateAsync(string taxonomyId, string entityId, AbaxXBRLCellStoreMongo abaxXBRLCellStoreMongo)
+        {
+            var db = abaxXBRLCellStoreMongo.GetMongoDB();
+            var collection = db.GetCollection<BsonDocument>(COLLECTION_NAME);
+            var match = new BsonDocument
+            {
+                {"dimensionMap.taxonomyId", taxonomyId },
+                {"dimensionMap.instanceDocmentEntity", entityId }
+            };
+            var groupDistinctDates = new BsonDocument { { "_id", "$dimensionMap.instanceDocmentReportedDate" } };
+            var projectParseDate = new BsonDocument
+            {
+                {"_id","$_id" },
+                { "date", new BsonDocument
+                     {
+                         { "$dateFromString", new BsonDocument{{ "dateString","$_id"}}}
+                     }
+                }
+            };
+            var groupMaxDate = new BsonDocument
+            {
+                { "_id", "_id" },
+                { "maxDate", new BsonDocument { { "$max", "$date" } } }
+            };
+            var projectAsStrig = new BsonDocument
+            {
+                {"_id", 0 },
+                { "maxDate", new BsonDocument
+                    {
+                        { "$dateToString", new BsonDocument{{ "date","$maxDate"}, { "format","%Y-%m-%dT%H:%M:%S.%LZ" } }}
+                    }
+                }
+            };
+            var aggregate = collection.Aggregate().
+                Match(match).Group(groupDistinctDates).
+                Project(projectParseDate).Group(groupMaxDate).Project(projectAsStrig);
+            var document = await aggregate.FirstOrDefaultAsync();
+            DateTime? dateFound = null;
+            if (document != null && document.Contains("maxDate"))
+            {
+                var stringDate = document["maxDate"].AsString;
+                if (!String.IsNullOrWhiteSpace(stringDate))
+                {
+                    dateFound = DateTime.Parse(stringDate);
+                }
+            }
+            return dateFound;
+        }
+        /// <summary>
+        /// Get a list of string dates less that the given date.
+        /// </summary>
+        /// <param name="taxonomyId">Taxonomy identifier.</param>
+        /// <param name="entityId">Entity identifier.</param>
+        /// <param name="maxDate">Date to compare.</param>
+        /// <param name="abaxXBRLCellStoreMongo">Data access object</param>
+        /// <returns>List with the string dates.</returns>
+        public static async Task<IList<string>> FindLowestDatesAsync(string taxonomyId, string entityId, DateTime maxDate, AbaxXBRLCellStoreMongo abaxXBRLCellStoreMongo)
+        {
+            var db = abaxXBRLCellStoreMongo.GetMongoDB();
+            var collection = db.GetCollection<BsonDocument>(COLLECTION_NAME);
+            var match = new BsonDocument
+            {
+                {"dimensionMap.taxonomyId", taxonomyId },
+                {"dimensionMap.instanceDocmentEntity", entityId }
+            };
+            var groupDistinctDates = new BsonDocument { { "_id", "$dimensionMap.instanceDocmentReportedDate" } };
+            var projectParseDate = new BsonDocument
+            {
+                {"_id","$_id" },
+                { "date", new BsonDocument
+                     {
+                         { "$dateFromString", new BsonDocument{{ "dateString","$_id"}}}
+                     }
+                }
+            };
+            FilterDefinition<BsonDocument> matchLessDate = "{\"date\":{\"$lt\":" + ModeloBase.ParseJson(maxDate) + "}}";
+            var aggregate = collection.Aggregate().
+                Match(match).Group(groupDistinctDates).Project(projectParseDate).Match(matchLessDate);
+            var documentsList = await aggregate.ToListAsync();
+            var listDates = new List<string>();
+            foreach (var document in documentsList)
+            {
+                listDates.Add(document["_id"].AsString);
+            }
+            return listDates;
+        }
+        /// <summary>
+        /// Set the replacement to same facts reported in distinct documents.
+        /// </summary>
+        /// <param name="factsList">The list of facts to evaluate.</param>
+        /// <param name="abaxXBRLCellStoreMongo">Data access object.</param>
+        public static async Task UpdatePreviousFactsReplacementVersionAsync(IList<FactJBRL> factsList, AbaxXBRLCellStoreMongo abaxXBRLCellStoreMongo)
+        {
+            if (factsList.Count == 0)
+            {
+                return;
+            }
+            var first = factsList.First();
+            if (first.isReplaced)
+            {
+                return;
+            }
+
+            string entityId = null;
+            string taxonomyId = null;
+            if (!first.dimensionMap.TryGetValue("instanceDocmentEntity", out entityId) || string.IsNullOrEmpty(entityId) ||
+                !first.dimensionMap.TryGetValue("taxonomyId", out taxonomyId) || string.IsNullOrEmpty(taxonomyId))
+            {
+                return;
+            }
+            var maxReportedDate = await GetMaxReportedDateAsync(taxonomyId, entityId, abaxXBRLCellStoreMongo);
+            if (maxReportedDate == null)
+            {
+                return;
+            }
+            var reportedDatesList = await FindLowestDatesAsync(taxonomyId, entityId, maxReportedDate ?? DateTime.MinValue, abaxXBRLCellStoreMongo);
+            string currentDateString = null;
+            first.dimensionMap.TryGetValue("instanceDocmentReportedDate", out currentDateString);
+            if (currentDateString != null)
+            {
+                var currentDate = DateTime.Parse(currentDateString);
+                if (currentDate < maxReportedDate)
+                {
+                    reportedDatesList.Add(currentDateString);
+                }
+            }
+            if (reportedDatesList.Count == 0)
+            {
+                return;
+            }
+            FilterDefinition<BsonDocument> fechasAceptadas = Builders<BsonDocument>.Filter.In("dimensionMap.instanceDocmentReportedDate", reportedDatesList);
+            FilterDefinition<BsonDocument> filterNoReplaced = Builders<BsonDocument>.Filter.Eq("isReplaced", false);
+            FilterDefinition<BsonDocument> filterNotCurrent = Builders<BsonDocument>.Filter.And(fechasAceptadas, filterNoReplaced);
+            var reportRecordId = first.reportRecordId;
+            UpdateDefinition<BsonDocument> updateStatement = new BsonDocument
+            {
+                {"$set", new BsonDocument
+                    {
+                        {"isReplaced", true },
+                        {"replacementId", reportRecordId },
+                    }
+                }
+            };
+            var db = abaxXBRLCellStoreMongo.GetMongoDB();
+            var collection = db.GetCollection<BsonDocument>(COLLECTION_NAME);
+
+            var idsHEchosEnviados = new List<string>();
+            foreach (var fact in factsList)
+            {
+                idsHEchosEnviados.Add(fact.factId);
+                if (idsHEchosEnviados.Count >= 500)
+                {
+                    FilterDefinition<BsonDocument> filterIdsHechosActualizar = Builders<BsonDocument>.Filter.In("factId", idsHEchosEnviados);
+                    FilterDefinition<BsonDocument> filterHechosReenviados = Builders<BsonDocument>.Filter.And(filterIdsHechosActualizar, filterNotCurrent);
+                    await collection.UpdateManyAsync(filterHechosReenviados, updateStatement);
+                    idsHEchosEnviados = new List<string>();
+                }
+            }
+            if (idsHEchosEnviados.Count > 0)
+            {
+                FilterDefinition<BsonDocument> filterIdsHechosActualizar = Builders<BsonDocument>.Filter.In("factId", idsHEchosEnviados);
+                FilterDefinition<BsonDocument> filterHechosReenviados = Builders<BsonDocument>.Filter.And(filterIdsHechosActualizar, filterNotCurrent);
+                await collection.UpdateManyAsync(filterHechosReenviados, updateStatement);
+            }
+
+        }
+        /// <summary>
+        /// Insert the facts of a document into the mongo database.
+        /// </summary>
+        /// <param name="documentoInstanciXbrlDto">Documento to evaluate.</param>
+        /// <param name="reportParams">Extra params to include.</param>
+        /// <param name="factsList">Extra facts to include.</param>
+        /// <param name="taskList">List of task to wait befor ends.</param>
+        /// <param name="registrationDate">Registration date of the document.</param>
+        /// <param name="abaxXBRLCellStoreMongo">Data access object of mongo.</param>
+        public static void InsertFacts(
+            DocumentoInstanciaXbrlDto documentoInstanciXbrlDto,
+            IDictionary<String, String> reportParams,
+            IList<FactJBRL> factsList,
+            IList<Task> taskList,
+            DateTime registrationDate,
+            AbaxXBRLCellStoreMongo abaxXBRLCellStoreMongo)
+        {
+            var mongoDB = abaxXBRLCellStoreMongo.GetMongoDB();
+            JBRLUtils.SetReportParams(documentoInstanciXbrlDto, reportParams);
+            var reportId = JBRLUtils.CreateReportId(reportParams);
+            var reportRecordId = JBRLUtils.CreateReportRecordId(reportId, registrationDate);
+            if (JBRLUtils.ExistsReportRecord(reportRecordId, abaxXBRLCellStoreMongo))
+            {
+                return;
+            }
+            var replacementId =
+                JBRLUtils.SarchReplacementId(reportId, reportRecordId, registrationDate, abaxXBRLCellStoreMongo);
+
+            if (replacementId == null)
+            {
+                var taskVersion =
+                    JBRLUtils.UpdateReportsReplacementVersionAsync(reportId, reportRecordId, abaxXBRLCellStoreMongo);
+                taskList.Add(taskVersion);
+            }
+            foreach (var hechoId in documentoInstanciXbrlDto.HechosPorId.Keys)
+            {
+                var hecho = documentoInstanciXbrlDto.HechosPorId[hechoId];
+                if (hecho.TipoDatoXbrl.Contains("64"))
+                {
+                    continue;
+                }
+                var hechoJbrl = FactJBRL.Parse(
+                    hecho, documentoInstanciXbrlDto, reportId, reportRecordId,
+                    registrationDate, reportParams, replacementId);
+                if (hechoJbrl != null)
+                {
+                    factsList.Add(hechoJbrl);
+                }
+                else
+                {
+                    LogUtil.Error(new Dictionary<string, object>()
+                            {
+                                {"Error", "No fué posible convertir el hecho a JBRL" },
+                                {"HechoId", hecho.Id ?? "null" },
+                                {"Concepto", hecho.IdConcepto ?? "null" },
+                                {"Hecho", hecho }
+                            });
+                }
+            }
+            var modeloBaseList = new List<IModeloBase>();
+            modeloBaseList.AddRange(factsList);
+            abaxXBRLCellStoreMongo.InserttChunksCollection(mongoDB, JBRLUtils.COLLECTION_NAME, modeloBaseList);
+            var taskFactsEvaluation = JBRLUtils.
+                UpdatePreviousFactsReplacementVersionAsync(factsList, abaxXBRLCellStoreMongo);
+            taskList.Add(taskFactsEvaluation);
+        }
+    }
+}

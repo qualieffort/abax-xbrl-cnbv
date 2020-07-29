@@ -1,0 +1,170 @@
+﻿/* Common */
+
+.ng-all {
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color:#000;
+  
+}
+
+.ng-all .modal-body {
+    background-color:#000;
+}
+
+.ng-all .modal-content {
+    background-color:#000;
+}
+
+.ng-all .modal-dialog {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+}
+
+.ng-all.fade .modal-dialog {
+  -o-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -webkit-transition: none;
+  transition: none;
+  /*CSS transforms*/
+  -o-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -webkit-transform: none;
+  transform: none;
+}
+
+.ng-all .modal-dialog .modal-content {
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: none;
+  border-radius: 0;
+}
+
+/* Horizontal */
+
+.ng-all.horizontal {
+  height: 100%;
+}
+
+.ng-all.horizontal .modal-dialog .modal-content {
+  height: 100%;
+  width:100%;
+}
+
+.ng-all.horizontal .modal-dialog {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width:100%;
+}
+
+.panelAyuda {
+    position: relative;
+    background: #fff;
+    padding: 20px 30px;
+    border: 0;
+    margin-bottom: 30px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-radius:0;
+}
+
+.panelAyuda.panel-headerless .panel-body {
+    padding-top:0;
+}
+.panelAyuda .panel-body {
+    padding:0;
+    color:#979898;
+}
+
+.title-env {
+    float: left;
+    padding-left: 30px;
+    width: 100%;
+    padding-right: 30px;
+}
+
+.title-env .title {
+    margin: 0;
+    font-size: 27px;
+}
+
+.title-env .title + p {
+    margin: 0;
+    margin-top: 5px;
+    color: #979898;
+}
+
+
+
+.highlights {
+    margin-bottom:20px;
+}
+
+.list-unstyled {
+    padding-left:0;
+    list-style:none;
+}
+
+.highlights li {
+    display:table;
+    margin:0;
+}
+
+.highlights .entry-img {
+    display: block;
+    float: left;
+    width: 200px;
+    padding-right: 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.highlights .entry-img img {
+    border:1px solid rgba(0,0,0,.2);
+    display:block;
+    box-shadow:0 4px 5px rgba(0,0,0,.15);
+    max-width:100%;
+}
+
+.highlights .entry-description {
+    float:left;
+    width:75%;
+}
+
+.highlights li + li {
+    margin-top:50px;
+    width:100% !important;
+}
+
+.page-title {
+    background: #f8f8f8;
+    margin-bottom: 30px;
+    padding: 60px 0;
+    -webkit-box-shadow: 0 1px 0 rgba(0,1,1,.08),inset 0 1px 0 #ededed;
+    -moz-box-shadow: 0 1px 0 rgba(0,1,1,.08),inset 0 1px 0 #ededed;
+    box-shadow: 0 1px 0 rgba(0,1,1,.08),inset 0 1px 0 #ededed;
+}
+
+.highlights li.version + li {
+    margin-top: 20px;
+}
+
+.highlights .entry-img img {
+    display: block;
+    border: 1px solid rgba(0,0,0,.2);
+    -webkit-box-shadow: 0 4px 5px rgba(0,0,0,.15);
+    -moz-box-shadow: 0 4px 5px rgba(0,0,0,.15);
+    box-shadow: 0 4px 5px rgba(0,0,0,.15);
+    max-width: 100%;
+}
+
+@media (max-width: 767px) {
+    .highlights .entry-description {
+        width: 65%;
+    }
+}

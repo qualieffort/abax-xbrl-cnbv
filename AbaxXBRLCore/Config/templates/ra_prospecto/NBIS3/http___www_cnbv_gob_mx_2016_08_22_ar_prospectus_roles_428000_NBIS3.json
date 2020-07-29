@@ -1,0 +1,88 @@
+{
+	"ContextosPlantillaPorId" : {
+  "ctx": {
+    "Id": "ctx",
+    "Periodo": {
+      "Tipo": 1,
+      "FechaInstante": "#fecha_2014_12_31",
+      "FechaInicio": "",
+      "FechaFin": ""
+    },
+    "Entidad": {
+      "Id": "#nombreEntidad",
+      "EsquemaId": "#esquemaEntidad",
+      "ContieneInformacionDimensional": false,
+      "Segmento": null,
+      "ValoresDimension": []
+    },
+    "ContieneInformacionDimensional": false,
+    "Escenario": null,
+    "ValoresDimension": []
+  }
+},
+	
+	"UnidadesPlantillaPorId" : {},
+            
+	"HechosPlantillaPorId" : {
+  "ar_pros_ReferenceIncorporationInternalManagement_fdb04016-8585-41b2-a5f2-d8fbebc9fbee": {
+    "Id": "ar_pros_ReferenceIncorporationInternalManagement_fdb04016-8585-41b2-a5f2-d8fbebc9fbee",
+    "IdConcepto": "ar_pros_ReferenceIncorporationInternalManagement",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_SelectedFinancialInformationOfInternalManagement_b06ba0e5-3c29-41cb-a792-48e217d0c010": {
+    "Id": "ar_pros_SelectedFinancialInformationOfInternalManagement_b06ba0e5-3c29-41cb-a792-48e217d0c010",
+    "IdConcepto": "ar_pros_SelectedFinancialInformationOfInternalManagement",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_CommentsAndManagementAnalysisOnOperatingResultsOfInternalManagement_81f3194a-f2a9-485b-a60a-50b9809f6a58": {
+    "Id": "ar_pros_CommentsAndManagementAnalysisOnOperatingResultsOfInternalManagement_81f3194a-f2a9-485b-a60a-50b9809f6a58",
+    "IdConcepto": "ar_pros_CommentsAndManagementAnalysisOnOperatingResultsOfInternalManagement",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_OperationResultsOfInternalManagement_20565142-13ed-4f4e-98cc-b5f9a216373d": {
+    "Id": "ar_pros_OperationResultsOfInternalManagement_20565142-13ed-4f4e-98cc-b5f9a216373d",
+    "IdConcepto": "ar_pros_OperationResultsOfInternalManagement",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_FinancialPositionLiquidityAndCapitalResourcesOfInternalManagement_6a35c518-1b4c-4c9e-b502-164c6b8b59de": {
+    "Id": "ar_pros_FinancialPositionLiquidityAndCapitalResourcesOfInternalManagement_6a35c518-1b4c-4c9e-b502-164c6b8b59de",
+    "IdConcepto": "ar_pros_FinancialPositionLiquidityAndCapitalResourcesOfInternalManagement",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  }
+}
+}

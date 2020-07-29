@@ -1,0 +1,231 @@
+﻿<section>
+    <section class="vbox">
+        <section class="scrollable padder">
+            <section class="row m-b-md">
+                <div class="col-sm-6">
+                    <h3 class="m-b-xs text-black">{{'ETIQUETA_TABLERO_CONTROL' | translate}}</h3>
+                </div>
+                <div class="col-sm-3 controles-graficas-panelControl">
+                        <label for="opcionAnio">
+                            {{'ETIQUETA_ANO' | translate}}:
+                        </label>
+
+                    <select name="opcionAnio"
+                            ng-model="trimestreAgraficar.anio"
+                            ng-options="opcion as opcion.Etiqueta for opcion in opcionesAnio"
+                            ng-change="obtenDatosGraficasTaxonomias()"></select>
+                    
+                    <label for="opcionTrimestre">
+                        {{'ETIQUETA_TRIMESTRE'| translate}}:
+                    </label>
+                    <select name="opcionTrimestre"
+                            ng-model="trimestreAgraficar.trimestre"
+                            ng-options="opcion as opcion.Etiqueta for opcion in opcionesTrimestre"
+                            ng-change="obtenDatosGraficasTaxonomias()"></select>
+                </div>
+                <div class="col-sm-3" id="refrescarDatosPanelControl">
+
+                    <button type="button"
+                            class="btn btn-primary"
+                            ng-click="refrescarDatosPanelControl()"
+                            ng-hide="estaCargandoChartsTaxonomias"
+                            ng-disabled="formulario.$invalid">
+                        <i class="fa fa-refresh"></i>
+                        {{'ETIQUETA_BOTON_REFRESCAR_DATOS' | translate}}
+                    </button>
+                    <button type="button" disabled class="btn btn-primary " ng-hide="!estaCargandoChartsTaxonomias">
+                        <i class="fa fa-refresh fa-spin"></i>
+                        {{'MENSAJE_INFO_CARGANDO_DATOS' | translate}} ...
+                    </button>
+                </div>
+            </section>
+            <div class="row" ng-if="existenChartsTaxonomias && !estaCargandoChartsTaxonomias">
+                <div class="col-lg-3" ng-repeat="chartTaxo in chartsTaxonomias" title="{{chartTaxo.Etiqueta}}">
+                    <section class="panel panel-default">
+                        <header class="panel-heading">
+                            {{chartTaxo.Etiqueta|abaxCut:30}}
+                        </header>
+                        <div class="panel-body text-center">
+                            <small class="text-muted block">{{'MENSAJE_INFO_ARCHIVOS_REPORTADOS_POR_TAXONOMIA' | translate:chartTaxo.ParametrosEtiqueta}}</small>
+                            <div class="inline">
+                                <div class="easypiechart"
+                                     abax:xbrl-easy-pie-chart=""
+                                     abax:xbrl-easy-pie-chart-data="chartTaxo">
+                                    <div>
+                                        <span class="h2 m-l-sm step chart-percent-text">{{chartTaxo.TextoPorcentaje}}</span>%
+                                        <div class="text text-sm">{{'ETIQUETA_REPORTADO' | translate}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+
+                    <div class="panel b-a">
+                        <div class="panel-heading no-border bg-success lter text-center" title="{{'TITULO_DOCUMENTOS_INSTANCIA_XBRL' | translate}}">
+                            <a href="javascript:void(0)">
+                                <i class="i i-file-xml fa fa-4x m-t m-b text-white"></i>
+                            </a>
+                        </div>
+                        <div class="padder-v text-center clearfix">
+                            <div class="col-xs-6 b-r" title="{{'TITULO_DOCUMENTOS_PENDIENTES' | translate}}">
+                                <div class="h3 font-bold indicador-dashboard" ng-if="cantidadProcesoArchivosPendientes != -1">{{cantidadProcesoArchivosPendientes}}</div>
+                                <div class="h3 font-bold indicador-dashboard" ng-if="cantidadProcesoArchivosPendientes == -1"><i class="fa fa-refresh fa-spin"></i></div>
+                                <small class="text-muted">
+                                    <i class="fa fa-exclamation-triangle"></i>
+                                    {{'ETIQUETA_PENDIENTES' | translate}}
+                                </small>
+                            </div>
+                            <div class="col-xs-6" title="{{'TITULO_DOCUMENTOS_CON_ERROR' | translate}}">
+                                <div class="h3 font-bold indicador-dashboard" ng-if="cantidadProcesoArchivosErroneos != -1">{{cantidadProcesoArchivosErroneos}}</div>
+                                <div class="h3 font-bold indicador-dashboard" ng-if="cantidadProcesoArchivosErroneos == -1"><i class="fa fa-refresh fa-spin"></i></div>
+                                <small class="text-muted">
+                                    <i class="fa fa-times-circle"></i>
+                                    {{'ETIQUETA_ERRONEOS' | translate}}
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel b-a">
+                        <div class="panel-heading no-border bg-success lter text-center" title="{{'TITULO_DISTRIBUCIONES' | translate}}">
+                            <a href="javascript:void(0)">
+                                <i class="i i-feed fa fa-4x m-t m-b text-white"></i>
+                            </a>
+                        </div>
+                        <div class="padder-v text-center clearfix">
+                            <div class="col-xs-6 b-r" title="{{'TITULO_DISTRIBUCIONES_PENDIENTES' | translate}}">
+                                <div class="h3 font-bold indicador-dashboard" ng-if="cantidadProcesoDistribucionesPendientes != -1">{{cantidadDistribucionesPendientes}}</div>
+                                <div class="h3 font-bold indicador-dashboard" ng-if="cantidadProcesoDistribucionesPendientes == -1"><i class="fa fa-refresh fa-spin"></i></div>
+                                <small class="text-muted">
+                                    <i class="fa fa-exclamation-triangle"></i>
+                                    {{'ETIQUETA_PENDIENTES' | translate}}
+                                </small>
+                            </div>
+                            <div class="col-xs-6" title="{{'TITULO_DISTRIBUCIONES_CON_ERROR' | translate}}">
+                                <div class="h3 font-bold indicador-dashboard" ng-if="cantidadProcesoDistribucionesErroneos != -1">{{cantidadDistribucionesErroneos}}</div>
+                                <div class="h3 font-bold indicador-dashboard" ng-if="cantidadProcesoDistribucionesErroneos == -1"><i class="fa fa-refresh fa-spin"></i></div>
+                                <small class="text-muted">
+                                    <i class="fa fa-times-circle"></i>
+                                    {{'ETIQUETA_ERRONEAS' | translate}}
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-md-9">
+                    <section class="panel panel-default">
+                        <header class="panel-heading bg-light">
+                            <a href="javascript:void(0);">
+                                {{'TITULO_ULTIMOS_DOCUMENTOS_PROCESADOS' | translate}}
+                            </a>
+                        </header>
+                        <div class="panel-body font-bold" style="background: #eeeeee; padding-left: 30px" ng-if="estaCargandoListadoBitacoraVersionDocumentos">
+                            <i class="fa fa-refresh fa-spin"></i>
+                            {{'MENSAJE_INFO_CARGANDO_ELEMENTOS' | translate}} ...
+                        </div>
+                        <div class="panel-body font-bold text-danger" style=" background: #eeeeee; padding-left: 30px" ng-if="!estaCargandoListadoBitacoraVersionDocumentos && !existenElementosBitacoraVersionDocumentos">
+                            <i class="fa fa-warning"></i>
+                            {{'MENSAJE_WARNING_NO_EXISTEN_ELEMENTOS_LISTAR' | translate}}
+                        </div>
+                        <div class="panel-body" style="min-height: 334px;" ng-if="!estaCargandoListadoBitacoraVersionDocumentos && existenElementosBitacoraVersionDocumentos">
+                            <div class="table-responsive">
+                                <table class="table table-striped b-t b-light" >
+                                    <thead>
+                                        <tr>
+                                            <th class="th-sortable" data-toggle="class">{{'ETIQUETA_DOCUMENTO' | translate }}</th>
+                                            <th class="th-sortable" data-toggle="class">{{'ETIQUETA_VERSION' | translate }}</th>
+                                            <th class="th-sortable" data-toggle="class">{{'ETIQUETA_FECHA_CREACION' | translate }}</th>
+                                            <th class="th-sortable" data-toggle="class">{{'TITULO_DISTRIBUCIONES' | translate }}</th>
+                                            <th class="th-sortable" data-toggle="class" ng-if="puedeConsultarBitacoraVersionDocumentos">{{'TITULO_DETALLE' | translate }}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="elemento in paginacionElementosBitacoraVersionDocumento.ListaRegistros">
+                                            <td style="text-align:center;">{{elemento.Documento|abaxCut:30}}</td>
+                                            <td style="text-align:center;">{{elemento.Version}}</td>
+                                            <td style="text-align:center;">{{elemento.FechaRegistro}}</td>
+                                            <td style="text-align:center;">{{elemento.CatindadDistribuciones}}</td>
+                                            <td class="text-center" ng-if="puedeConsultarBitacoraVersionDocumentos">
+                                                <a title="{{'TITULO_DETALLE' | translate}}" href="javascript:void(0);" ui-sref="inicio.bitacoraVersionDocumentos" class="btn btn-rounded btn-sm btn-icon btn-default">
+                                                    <i class="fa fa-eye"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <section class="panel b-a">
+                        <div class="panel-heading b-b">
+                            <a href="#" class="font-bold">{{'ETIQUETA_MI_ACTIVIDAD_RECIENTE' | translate}}</a>
+                        </div>
+                        <ul class="list-group list-group-lg no-bg auto" style="min-height: 434px; overflow-y: auto; overflow-x: hidden;">
+
+                            <a href="javascript:void(0);" class="list-group-item clearfix" ng-if="cargandoBitacora">
+                                <i class="fa fa-refresh fa-spin"></i>
+                                {{'MENSAJE_INFO_CARGANDO_BITACORA' | translate}} ...
+                            </a>
+
+                            <a href="javascript:void(0);" class="list-group-item clearfix" ng-if="!cargandoBitacora" ng-repeat="registro in registrosAuditoria">
+                                <span class="pull-left thumb-sm avatar m-r">
+                                    <img src="images/a0.png" alt="...">
+                                </span>
+                                <span class="clear">
+                                    <span>{{registro.Usuario.NombreCompleto}}</span>
+                                    <small class="text-bold clear">{{formateaFechaHora(registro.Fecha)}}</small>
+                                    <small class="text-muted clear text-ellipsis" style="max-width:600px;">{{registro.Registro}}</small>
+                                </span>
+                            </a>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-md-6">
+                    <section class="panel b-a">
+                        <div class="panel-heading b-b">
+                            <a href="javascript:void(0);" ui-sref="inicio.alertas" class="font-bold">{{'ETIQUETA_ALERTAS_RECIENTES' | translate}}</a>
+                        </div>
+                        <ul class="list-group list-group-lg no-bg auto" style="min-height: 434px; overflow-y: auto; overflow-x: hidden;">
+
+                            <a href="#" class="list-group-item clearfix" ng-if="cargandoAlertasUsuario">
+                                <span class="clear">
+                                    <span>
+                                        <i class="fa fa-refresh fa-spin"></i>
+                                        {{'MENSAJE_INFO_CARGANDO_ALERTAS' | translate}} ...
+                                    </span>
+                                </span>
+                            </a>
+
+                            <a href="#" class="list-group-item clearfix" ng-if="!cargandoAlertasUsuario && !existenAlertasUsuario">
+                                <span class="clear">
+                                    <span>{{'MENSAJE_INFO_NO_HAY_ALERTAS_USUARIO' | translate}}.</span>
+                                </span>
+                            </a>
+
+
+                            <a href="#" class="list-group-item clearfix" ng-if="!cargandoAlertasUsuario && existenAlertasUsuario" ng-repeat="alerta in alertas">
+                                <span class="pull-left thumb-sm avatar m-r">
+                                    <img src="images/a0.png" alt="...">
+                                    <i class="b-white bottom" ng-class="alerta.DocumentoCorrecto ? 'on' : 'busy'"></i>
+                                </span>
+                                <span class="clear">
+                                    <span>{{alerta.NombreUsuario}}</span>
+                                    <small class="text-bold clear">{{formateaFechaHora(alerta.Fecha)}}</small>
+                                    <small class="text-muted clear text-ellipsis">{{alerta.Contenido}}</small>
+                                </span>
+                            </a>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </section>
+</section>

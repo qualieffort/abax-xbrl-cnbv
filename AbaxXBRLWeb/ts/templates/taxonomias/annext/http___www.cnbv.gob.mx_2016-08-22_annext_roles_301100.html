@@ -1,0 +1,1108 @@
+<xbrl-contenedor-formato xbrl:rol-uri="{{xbrlRol.Uri}}" orientacion="landscape" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+    <div oc-lazy-load="abaxXBRLSeriesModule">
+        <div id="contenedorAnexoT" xbrl:series>
+            <accordion close-others="false" ng-init="
+                isOpen_annext_DisclosureOfGeneralInformationAboutTheIssueAbstract = true;
+                isOpen_annext_TrustAssetsAbstract = false;
+                isOpen_annext_TrustLiabilitiesAbstract = false;
+                isOpen_annext_CapitalTrustAbstract = false;
+                isOpen_annext_IncomeTrustAbstract = false;
+                isOpen_annext_ChargesAndPaymentTrustAbstract = false;
+                isOpen_annext_SituationOfTrustPortfolioAssetsAbstract = false;
+                isOpen_annext_OtherRelevantInformationAbstract = false;
+                isOpen_annext_AdditionalInformationIfAnyAbstract = false;">
+
+                <accordion-group is-open="isOpen_annext_DisclosureOfGeneralInformationAboutTheIssueAbstract">
+                    <accordion-heading>
+                        <i class="pull-left fa" ng-class="{'fa-caret-down': isOpen_annext_DisclosureOfGeneralInformationAboutTheIssueAbstract, 'fa-caret-right': !isOpen_annext_DisclosureOfGeneralInformationAboutTheIssueAbstract}"></i>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="annext_DisclosureOfGeneralInformationAboutTheIssueAbstract" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"></xbrl:etiqueta-concepto>
+                    </accordion-heading>
+
+                    <table class="tablaAnchoFijo" cellspacing="2">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_CorporateNameOfTheIssuer" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ab4901d05-9181-4922-9e79-10218dc53afc"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_Ticker" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="Af1935438-d99b-4bbe-bb7c-0d50b8c9e8da"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_ContractNumberOfTheTrust" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A2c783876-1209-4e1e-8fbb-9d1734b95672"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_Series" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A511cc1f7-60c8-4dd7-8c61-1d67cdd81620"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_DenominationOfTheIssue" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ae9901dd9-3b0b-4856-8a36-2137fa42b9aa"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_ReportedYear" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A120e6bbe-1ee5-4337-9de5-787542ba585e"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_ReportedMonth" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ae1806672-ef74-4c59-9f7c-dbb0edd60a02"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_GuarantorOrAval" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aadd04db9-b91c-4761-b31d-2b8fff5c96b5"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_GuarantorAndGuaranteeName" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aadd04db9-b91c-4761-b31d-2b8fff5c9cd9"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_TypeOfGuarantee" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A04a58197-2ab5-4a04-ae70-528933141312"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_MasterAdministrator" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A04a58197-2ab5-4a04-ae70-528933141313"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_DenominationoftheMasterAdministrator" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A04a58197-2ab5-4a04-ae70-528933141314"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_AdministratorOrOperator" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A72aac059-61b2-494c-93ee-28e3a2d795e1"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_CommonRepresentative" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="Afe417b62-0b0d-48dd-94dc-612b5775ce91"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_Overcollateralization" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A176366ed-999d-40a0-b97a-b10a738f6526"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_LevelOfRoundingUsed" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A96506806-4c89-4faa-b8ca-a8c854f6beef"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_ResponsibilityLetterPdf" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A5865767c-6961-4bb0-b73d-a601524f741d"></xbrl:campo-captura></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </accordion-group>
+
+                <accordion-group is-open="isOpen_annext_TrustAssetsAbstract">
+                    <accordion-heading>
+                        <i class="pull-left fa" ng-class="{'fa-caret-down': isOpen_annext_TrustAssetsAbstract, 'fa-caret-right': !isOpen_annext_TrustAssetsAbstract}"></i>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="annext_TrustAssetsAbstract" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"></xbrl:etiqueta-concepto>
+                    </accordion-heading>
+
+                    <table class="tablaAnchoFijo" cellspacing="2">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_OutstandingBalanceOfCurrentAssetsAtEndOfPeriod" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A1f396af3-a640-4ffc-bf66-1323ec26be44"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_OutstandingBalanceOfOverdueAtEndOfPeriodAssets" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A86a94e85-4756-4fe0-becf-1840e3bd5a33"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_CashInTheTrustAtTheEndOfThePeriod" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aa94a67cb-4a4d-4d54-828f-b0c671f9b54c"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_OtherAssetsHeldAtTheTrust" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A0a30d996-d06b-4d81-a06e-4a26cb61b8fe"></xbrl:campo-captura></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </accordion-group>
+
+                <accordion-group is-open="isOpen_annext_TrustLiabilitiesAbstract">
+                    <accordion-heading>
+                        <i class="pull-left fa" ng-class="{'fa-caret-down': isOpen_annext_TrustLiabilitiesAbstract, 'fa-caret-right': !isOpen_annext_TrustLiabilitiesAbstract}"></i>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="annext_TrustLiabilitiesAbstract" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"></xbrl:etiqueta-concepto>
+                    </accordion-heading>
+
+                    <table class="tablaAnchoFijo" cellspacing="2">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_OutstandingBalanceOfTheIssueAtEndOfPeriod" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A903abd58-9993-4502-b227-1b9847f2d5e1"></xbrl:campo-captura></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <div>
+                        <xbrl:tabla-hipercubo xbrl:id-tabla-hipercubo="hiperCuboSeriesD1"
+                                              xbrl:dependencias="['ts/templates/taxonomias/annext/extensions/301100_D1.js']"
+                                              xbrl:configuracion="http___www_cnbv_gob_mx_2016_08_22_annext_roles_301100_D1_annext_OutstandingBalanceOfTheIssueAtEndOfPeriodTable"
+                                              xbrl:controlador="abaxXBRL.templates.extensions.series.ControladorHipercubosAnexoT"
+                                              xbrl:en-evento-hipercubo="$controlador.sincronizaEventos($eventoHipercubo,$parametros)">
+                            <div class="table-responsive">
+                                <table class="hipercubo table table-striped b-t b-light"
+                                       xbrl:tabla-excel selector="td"
+                                       selector-contenedor-x="#contenedorFormatos"
+                                       selector-contenedor-y="#contenedorFormatos"
+                                       tab-index="1"
+                                       on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)"
+                                       on-after-paste="onAfterPaste(valorPegado, x, y)"
+                                       on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)"
+                                       xbrl:tabla-scrolleable="">
+                                    <thead class="estiloA">
+                                        <tr>
+                                            <th class="no-padder">
+                                                <div class="table">
+                                                    <div class="row">
+                                                        <div class="cell-concepto">
+                                                            <xbrl:etiqueta-concepto xbrl:id-concepto="annext_SerieTypedAxis" xbrl:nivel-indentacion="3" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                                        </div>
+                                                        <div class="cell-button-agregar-dimension">
+                                                            <button type="button"
+                                                                    class="btn-info btn-desglose-credito btn-plus"
+                                                                    ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                                                    xbrl:agregar-miembro-dimension="annext_SerieTypedAxis">
+                                                                <i class="fa fa-plus"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <th xbrl:repite-miembros-dimension="annext_SerieTypedAxis" class="no-padder cortar-texto-700px">
+                                                <div class="table">
+                                                    <div class="row">
+                                                        <div class="cell-campo-captura ">
+                                                            <xbrl:campo-texto-dimension xbrl:alias-dimension="annext_SerieTypedAxis" xbrl:alias-miembro="$aliasMiembroRepeat"></xbrl:campo-texto-dimension>
+                                                        </div>
+                                                        <div class="cell-button-eliminar-dimension">
+                                                            <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="annext_SerieTypedAxis"
+                                                                    xbrl:alias-miembro="$aliasMiembroRepeat">
+                                                                <i class="fa fa-minus"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <xbrl:etiqueta-concepto xbrl:id-concepto="annext_DetailOfOutstandingBalanceOfTheIssueAtEndOfPeriod" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                            </td>
+                                            <td xbrl:repite-miembros-dimension="annext_SerieTypedAxis">
+                                                <xbrl:campo-captura-hecho-dimension 
+                                                                                    xbrl:id-concepto="annext_DetailOfOutstandingBalanceOfTheIssueAtEndOfPeriod" 
+                                                                                    xbrl:contexto-plantilla="DEFAULT" 
+                                                                                    xbrl:contexto-miembros-dimension="{'annext_SerieTypedAxis': '$aliasMiembroRepeat'}" 
+                                                                                    xbrl:alias-unidad="MXN"
+                                                                                    xbrl:valor-default="0" 
+                                                                                    xbrl:decimales="0" 
+                                                                                    xbrl:crear-hecho="false" 
+                                                                                    xbrl:eliminable="true"></xbrl:campo-captura-hecho-dimension>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </xbrl:tabla-hipercubo>
+                    </div>
+                    <br />
+                    <table class="tablaAnchoFijo" cellspacing="2">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_DebitsForExpensesOfTheTrust" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A5e0a01dd-ebbc-448c-bfbb-b3914b2d082f"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_DebtsPerExerciseOfFinancialGuaranteeIfApplicable" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A24b920f3-246f-454f-8062-ca40d928a725"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_TotalAmortizationOfPrincipalOwedToTheHoldersOfTrustNotes" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A378d3f46-b19c-4df7-912a-4225373a1b23"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_TotalInterestOwedToHoldersOfTrustNotes" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A5d758498-72b8-457e-831c-2530fac5f33c"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_OtherDebts" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A9a44e2de-2b62-4635-a647-a14b175250da"></xbrl:campo-captura></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </accordion-group>
+
+                <accordion-group is-open="isOpen_annext_CapitalTrustAbstract">
+                    <accordion-heading>
+                        <i class="pull-left fa" ng-class="{'fa-caret-down': isOpen_annext_CapitalTrustAbstract, 'fa-caret-right': !isOpen_annext_CapitalTrustAbstract}"></i>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="annext_CapitalTrustAbstract" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"></xbrl:etiqueta-concepto>
+                    </accordion-heading>
+
+                    <table class="tablaAnchoFijo" cellspacing="2">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_OvercollateralizationAmountAtEndOfPeriod" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A46ef437c-284b-4b84-9093-b0ce5f0402fc"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_OvercollateralizationEexpressedInPercentage" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A7d015fe6-492d-45ff-8eb5-c038f65fad94"></xbrl:campo-captura></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </accordion-group>
+
+                <accordion-group is-open="isOpen_annext_IncomeTrustAbstract">
+                    <accordion-heading>
+                        <i class="pull-left fa" ng-class="{'fa-caret-down': isOpen_annext_IncomeTrustAbstract, 'fa-caret-right': !isOpen_annext_IncomeTrustAbstract}"></i>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="annext_IncomeTrustAbstract" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"></xbrl:etiqueta-concepto>
+                    </accordion-heading>
+
+                    <table class="tablaAnchoFijo" cellspacing="2">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_ExchangeRateUsedToDetermineTheValueOfThePortfolioOfAssetsDenominatedInCurrenciesOtherThanMexicanCurrency" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ae62b0c01-2538-4617-86ad-5f055953b8c5"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_ScheduledAmortizationCharged" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A9213e4b9-0443-4c76-8f6e-5f9b73da2c7f"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_UnscheduledPrincipalPayments" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A6220f05e-7920-4311-910f-1c5add2abb87"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_IncomeFromSettlementsAndAwards" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ad7e4809c-103a-44a6-b827-7311e6e66c7c"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_OrdinaryInterestReceived" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ad037ac59-5de0-4ebc-8933-0f7b1727a669"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_DefaultInterestCharged" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ad0510311-7e9c-42eb-86a2-db5262744bc2"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_IncomeFromCollectedInsurance" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A268989ac-fb7c-4de3-bf0f-937bb27974a7"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_HedgingInstrumentsCollected" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ae5e4beca-de7c-47a9-ba7c-5bb039ce7653"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_FeesCharged" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="Af0061f85-d7eb-4b0e-8b00-8093e6ce9e37"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_ExerciseOfTheFinancialGuarantee" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aae54b4d2-8c52-46e5-b646-6fc12d8f12f9"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_NetIncomeFromInvestments" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="Afd5a1c65-3a9b-4b02-b97e-db7917e0bc79"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_OtherIncome" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A400c6f4d-f6f0-49dd-90ec-71b0c16479c8"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_TotalIncomeToTheTrust" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ae6233c57-088b-4a25-971d-343079e49ad7"></xbrl:campo-captura></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </accordion-group>
+
+                <accordion-group is-open="isOpen_annext_ChargesAndPaymentTrustAbstract">
+                    <accordion-heading>
+                        <i class="pull-left fa" ng-class="{'fa-caret-down': isOpen_annext_ChargesAndPaymentTrustAbstract, 'fa-caret-right': !isOpen_annext_ChargesAndPaymentTrustAbstract}"></i>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="annext_ChargesAndPaymentTrustAbstract" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"></xbrl:etiqueta-concepto>
+                    </accordion-heading>
+
+                    <table class="tablaAnchoFijo" cellspacing="2">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_ExchangeRateForThePaymentOfStockCertificates" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="Af88d34ee-53ad-4efe-9f3b-6678a2a08922"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_LifeInsurancePaid" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A7c22ad3b-f7b3-4cd7-a2ae-e90a17808134"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_DamageInsurancePaid" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A0174f929-88e2-410d-ab86-0230faac3be7"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_HedgingInstrumentsPremiumsPaid" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="Af36fea7d-0527-40e1-b0ab-383dc4c9154b"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_ManagementFeesPaidToTheMasterServicer" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A0f025817-1b29-422d-a7f1-208deb554efd"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_FeesForAdministrationToPrimaryServers" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A4357ff29-0b6d-426a-9731-59432255bfa8"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_CollectionChargesPaidWithFundsFromTheTrust" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A60fbcc5e-0a24-49f1-8f1a-12582cc315b9"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_TrusteeFees" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A761e7043-56ef-4014-8d5a-a697b9ff288d"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_FeesCommonRepresentative" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ac0f6210d-f423-41cd-9148-df0f60046f18"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_RegulatoryAgencies" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A4881ff03-1ede-470e-96ab-8e41eb90d1cd"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_RatingAgenciesAndExternalAuditors" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="Afde5b2c1-e0fd-47df-8886-3eda0d332796"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_AwardCosts" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A1426fc3e-3c16-4dbf-9e88-28951e4773f6"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_PaymentGuaranteeToHolders" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A50577182-d3fb-41ae-b48f-5d26f7a4b407"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_CreditInsuranceAndOrGuaranteeOfPaymentForBreachOfTheAssets" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A72c886e9-42a4-4ea5-9c50-b05c27c06054"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_AmountOfInterestPaidToHoldersOfTrustNotes" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ac4ba8390-7c5a-4dd2-8b3d-135437703098"></xbrl:campo-captura></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <div>
+                        <xbrl:tabla-hipercubo xbrl:id-tabla-hipercubo="hiperCuboSeriesD2"
+                                              xbrl:dependencias="['ts/templates/taxonomias/annext/extensions/301100_D1.js']"
+                                              xbrl:configuracion="http___www_cnbv_gob_mx_2016_08_22_annext_roles_301100_D1_annext_OutstandingBalanceOfTheIssueAtEndOfPeriodTable"
+                                              xbrl:controlador="abaxXBRL.templates.extensions.series.ControladorHipercubosAnexoT"
+                                              xbrl:en-evento-hipercubo="$controlador.sincronizaEventos($eventoHipercubo,$parametros)">
+                            <div class="table-responsive">
+                                <table class="hipercubo table table-striped b-t b-light"
+                                       xbrl:tabla-excel selector="td"
+                                       selector-contenedor-x="#contenedorFormatos"
+                                       selector-contenedor-y="#contenedorFormatos"
+                                       tab-index="1"
+                                       on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)"
+                                       on-after-paste="onAfterPaste(valorPegado, x, y)"
+                                       on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)"
+                                       xbrl:tabla-scrolleable="">
+                                    <thead class="estiloA">
+                                        <tr>
+                                            <th class="no-padder">
+                                                <div class="table">
+                                                    <div class="row">
+                                                        <div class="cell-concepto">
+                                                            <xbrl:etiqueta-concepto xbrl:id-concepto="annext_SerieTypedAxis" xbrl:nivel-indentacion="3" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                                        </div>
+                                                        <div class="cell-button-agregar-dimension">
+                                                            <button type="button"
+                                                                    class="btn-info btn-desglose-credito btn-plus"
+                                                                    ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                                                    xbrl:agregar-miembro-dimension="annext_SerieTypedAxis">
+                                                                <i class="fa fa-plus"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <th xbrl:repite-miembros-dimension="annext_SerieTypedAxis" class="no-padder cortar-texto-700px">
+                                                <div class="table">
+                                                    <div class="row">
+                                                        <div class="cell-campo-captura ">
+                                                            <xbrl:campo-texto-dimension xbrl:alias-dimension="annext_SerieTypedAxis" xbrl:alias-miembro="$aliasMiembroRepeat"></xbrl:campo-texto-dimension>
+                                                        </div>
+                                                        <div class="cell-button-eliminar-dimension">
+                                                            <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="annext_SerieTypedAxis"
+                                                                    xbrl:alias-miembro="$aliasMiembroRepeat">
+                                                                <i class="fa fa-minus"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <xbrl:etiqueta-concepto xbrl:id-concepto="annext_DetailOfAmountOfInterestPaidToHoldersOfTrustNotes" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                            </td>
+                                            <td xbrl:repite-miembros-dimension="annext_SerieTypedAxis">
+                                                <xbrl:campo-captura-hecho-dimension 
+                                                                                    xbrl:id-concepto="annext_DetailOfAmountOfInterestPaidToHoldersOfTrustNotes" 
+                                                                                    xbrl:contexto-plantilla="DEFAULT" 
+                                                                                    xbrl:contexto-miembros-dimension="{'annext_SerieTypedAxis': '$aliasMiembroRepeat'}"
+                                                                                    xbrl:alias-unidad="MXN"
+                                                                                    xbrl:valor-default="0" 
+                                                                                    xbrl:decimales="0" 
+                                                                                    xbrl:crear-hecho="false" 
+                                                                                    xbrl:eliminable="true"></xbrl:campo-captura-hecho-dimension>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </xbrl:tabla-hipercubo>
+                    </div>
+                    <br />
+                    <br />
+                    <table class="tablaAnchoFijo" cellspacing="2">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_AmountPaidForAmortizationToHoldersOfTrustNotes" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aa6a32b09-28af-46c8-8971-4ad64b24ef5e"></xbrl:campo-captura></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <div>
+                        <xbrl:tabla-hipercubo xbrl:id-tabla-hipercubo="hiperCuboSeriesD3"
+                                              xbrl:dependencias="['ts/templates/taxonomias/annext/extensions/301100_D1.js']"
+                                              xbrl:configuracion="http___www_cnbv_gob_mx_2016_08_22_annext_roles_301100_D1_annext_OutstandingBalanceOfTheIssueAtEndOfPeriodTable"
+                                              xbrl:controlador="abaxXBRL.templates.extensions.series.ControladorHipercubosAnexoT"
+                                              xbrl:en-evento-hipercubo="$controlador.sincronizaEventos($eventoHipercubo,$parametros)">
+                            <div class="table-responsive">
+                                <table class="hipercubo table table-striped b-t b-light"
+                                       xbrl:tabla-excel selector="td"
+                                       selector-contenedor-x="#contenedorFormatos"
+                                       selector-contenedor-y="#contenedorFormatos"
+                                       tab-index="1"
+                                       on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)"
+                                       on-after-paste="onAfterPaste(valorPegado, x, y)"
+                                       on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)"
+                                       xbrl:tabla-scrolleable="">
+                                    <thead class="estiloA">
+                                        <tr>
+                                            <th class="no-padder">
+                                                <div class="table">
+                                                    <div class="row">
+                                                        <div class="cell-concepto">
+                                                            <xbrl:etiqueta-concepto xbrl:id-concepto="annext_SerieTypedAxis" xbrl:nivel-indentacion="3" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                                        </div>
+                                                        <div class="cell-button-agregar-dimension">
+                                                            <button type="button"
+                                                                    class="btn-info btn-desglose-credito btn-plus"
+                                                                    ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                                                    xbrl:agregar-miembro-dimension="annext_SerieTypedAxis">
+                                                                <i class="fa fa-plus"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <th xbrl:repite-miembros-dimension="annext_SerieTypedAxis" class="no-padder cortar-texto-700px">
+                                                <div class="table">
+                                                    <div class="row">
+                                                        <div class="cell-campo-captura ">
+                                                            <xbrl:campo-texto-dimension xbrl:alias-dimension="annext_SerieTypedAxis" xbrl:alias-miembro="$aliasMiembroRepeat"></xbrl:campo-texto-dimension>
+                                                        </div>
+                                                        <div class="cell-button-eliminar-dimension">
+                                                            <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="annext_SerieTypedAxis"
+                                                                    xbrl:alias-miembro="$aliasMiembroRepeat">
+                                                                <i class="fa fa-minus"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <xbrl:etiqueta-concepto xbrl:id-concepto="annext_DetailOfAmountPaidForAmortizationToHoldersOfTrustNotes" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                            </td>
+                                            <td xbrl:repite-miembros-dimension="annext_SerieTypedAxis">
+                                                <xbrl:campo-captura-hecho-dimension 
+                                                                                    xbrl:id-concepto="annext_DetailOfAmountPaidForAmortizationToHoldersOfTrustNotes" 
+                                                                                    xbrl:contexto-plantilla="DEFAULT" 
+                                                                                    xbrl:contexto-miembros-dimension="{'annext_SerieTypedAxis': '$aliasMiembroRepeat'}"
+                                                                                    xbrl:alias-unidad="MXN"
+                                                                                    xbrl:valor-default="0" 
+                                                                                    xbrl:decimales="0" 
+                                                                                    xbrl:crear-hecho="false" 
+                                                                                    xbrl:eliminable="true"></xbrl:campo-captura-hecho-dimension>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </xbrl:tabla-hipercubo>
+                    </div>
+                    <br />
+                    <table class="tablaAnchoFijo" cellspacing="2">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_AmountPaidToHoldersOfCertificatesOrBondsOrSubordinatedResidual" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A2e3c916f-a025-4cc2-a559-c9f709a6a8ec"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_IncreaseOrDecreaseInReserves" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A949eb5f2-a2e3-406a-9e9d-4a886caf134a"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_OtherTrustExpensesDuringThePeriod" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="Abf6049ba-7fd9-4367-9e43-30208bff2b48"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_TotalChargesAndPayments" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A477c3240-0584-487b-a7b3-8c69b1b11b27"></xbrl:campo-captura></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </accordion-group>
+
+                <accordion-group is-open="isOpen_annext_SituationOfTrustPortfolioAssetsAbstract">
+                    <accordion-heading>
+                        <i class="pull-left fa" ng-class="{'fa-caret-down': isOpen_annext_SituationOfTrustPortfolioAssetsAbstract, 'fa-caret-right': !isOpen_annext_SituationOfTrustPortfolioAssetsAbstract}"></i>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="annext_SituationOfTrustPortfolioAssetsAbstract" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"></xbrl:etiqueta-concepto>
+                    </accordion-heading>
+
+                    <table class="tablaAnchoFijo" cellspacing="2">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_NumberOfAssetsAtEndOfPeriod" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A5e902d34-238b-43b0-8cdf-d888f0709308"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_TheWeightedAverageInterestRateOfThePortfolio" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A55e7b0d4-2ddd-4aa1-8a4b-77e69f7cb9f1"></xbrl:campo-captura></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="tablaAnchoFijo" cellspacing="2">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="etiquetaConceptoTitulo"><b><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="annext_TheWeightedAverageInterestRateOfThePortfolioDisclosure" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></div>
+                                    <div class="bloqueTexto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A0ec87fe4-b30f-4c09-b715-5fd62f71d383"></xbrl:campo-captura></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="tablaAnchoFijo" cellspacing="2">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_NPLRatio" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A761319f5-e1c9-4aaa-887f-fcd9b69aa3bc"></xbrl:campo-captura></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="tablaAnchoFijo" cellspacing="2">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="etiquetaConceptoTitulo"><b><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="annext_NPLRatioDisclosure" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></div>
+                                    <div class="bloqueTexto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A3ee418d8-40d1-4fc5-931f-38369c74c2e2"></xbrl:campo-captura></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="tablaAnchoFijo" cellspacing="2">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_RateOfPrepayment" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ac4d0c579-8954-442d-8792-5b62df0a8eb9"></xbrl:campo-captura></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="tablaAnchoFijo" cellspacing="2">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_UnscheduledPaymentAmount" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ac4d0c579-8954-442d-8792-5b62df0a8ec1"></xbrl:campo-captura></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="tablaAnchoFijo" cellspacing="2">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="etiquetaConceptoTitulo"><b><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="annext_RateOfPrepaymentDisclosure" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></div>
+                                    <div class="bloqueTexto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A9cdc1a77-22a2-431d-be88-8f704199ff8f"></xbrl:campo-captura></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="tablaAnchoFijo" cellspacing="2">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_NumberOfPrepaidActive" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aebf4e838-8ce2-4251-b1c7-d86a0540d30a"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_NumberOfAssetsAtEndOfPeriodExpired" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A0bd36e1a-17e9-4680-a9a1-cf9e1740a436"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_NumberOfAssetsOutstandingAtEndOfPeriod" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A7ac76898-af07-4655-b6d8-543f9108c867"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_NumberOfRecoveredAssetsInThePeriod" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A592a90fa-2f7e-4e1c-96f4-3f7d3fe0f3fa"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_InLieuOfPayment" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="6"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A9505d48e-081a-47b2-a7dd-c19320247203"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_AwardOrLiquidation" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="6"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A425fb167-d1fd-4491-a806-1a3b03474a01"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_SubstitutionOfDebtor" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="6"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ade16937a-dc22-4621-b2d8-39f369ab2a9a"></xbrl:campo-captura></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_OtherAssetsRecovered" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="6"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A455fe868-a68d-40cc-a7cb-5c0f6baecf5b"></xbrl:campo-captura></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <table class="tablaAnchoFijo" cellspacing="2">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="annext_UnpaidBalanceOfTheAssetsGroupedInArrearsAtTheEndOfThePeriod" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></td>
+                                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="A347157b0-6d23-46b7-b997-b6109faf9af0"></xbrl:campo-captura></td>                                
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+
+                    <div id="contenedorUnpaidBalance" class="table-responsive dinamicTable mainDT add-scroll-height" style="overflow: hidden;">
+                        <table class="table table-striped b-t b-light situation-of-trust"
+                               xbrl:tabla-excel xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura"
+                               selector="td:not(:first-child)"
+                               selector-contenedor-x="#contenedorUnpaidBalance"
+                               selector-contenedor-y="#contenedorFormatos"
+                               tab-index="1"
+                               on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)"
+                               on-after-paste="onAfterPaste(valorPegado, x, y)"
+                               on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)"
+                               xbrl:tabla-scrolleable="true">
+                            <thead>
+                                <tr>
+                                    <th class="main-header-void" rowspan="2" style="text-align:center; vertical-align:middle;">
+                                        <button xbrl:dt-boton-maximizar type="button" class="btn btn-s-md btn-info btn-rounded">
+                                            <i class="fa fa-arrows-alt"></i>
+                                            {{'ETIQUETA_EXPANDIR' | translate}}
+                                        </button>
+                                        <button xbrl:dt-boton-restaurar type="button" style="display:none;" class="btn btn-s-md btn-info btn-rounded">
+                                            <i class="fa fa-compress"></i>
+                                            {{'ETIQUETA_CONTRAER' | translate}}
+                                        </button>
+                                    </th>
+                                    <th class="header-axis" colspan="9">
+                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                                xbrl:id-concepto="annext_TimeIntervalAxis" xbrl:nivel-indentacion="0" xbrl:style="font-weight:600;">
+                                    </th>
+                                    <th xbrl:dt-column="dtC9" class="total-header" rowspan="2">
+                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                                xbrl:id-concepto="annext_TotalMember" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;">
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th xbrl:dt-column="dtC0" class="column-member">
+                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                                xbrl:id-concepto="annext_LessThan1MonthOrLessThan30DaysMember" xbrl:nivel-indentacion="0" xbrl:style="font-weight:600;">
+                                    </th>
+                                    <th xbrl:dt-column="dtC1" class="column-member">
+                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                                xbrl:id-concepto="annext_Between31And60DaysOrBetween1AndUpTo2MonthsMember" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;">
+                                    </th>
+                                    <th xbrl:dt-column="dtC2" class="column-member">
+                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                                xbrl:id-concepto="annext_Between61And90DaysOrBetween2AndUpTo3MonthsMember" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;">
+                                    </th>
+                                    <th xbrl:dt-column="dtC3" class="column-member">
+                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                                xbrl:id-concepto="annext_Between91And120DaysOr3ToUpTo4MonthsMember" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;">
+                                    </th>
+                                    <th xbrl:dt-column="dtC4" class="column-member">
+                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                                xbrl:id-concepto="annext_Between121And150DaysOrFrom4To5MonthsMember" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;">
+                                    </th>
+                                    <th xbrl:dt-column="dtC5" class="column-member">
+                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                                xbrl:id-concepto="annext_Between151And180DaysOrBetween5AndUpTo6MonthsMember" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;">
+                                    </th>
+                                    <th xbrl:dt-column="dtC6" class="column-member">
+                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                                xbrl:id-concepto="annext_MoreThan180DaysOrMoreThan6MonthsMember" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;">
+                                    </th>
+                                    <th xbrl:dt-column="dtC7" class="column-member">
+                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                                xbrl:id-concepto="annext_InJudicialProcessMember" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;">
+                                    </th>
+                                    <th xbrl:dt-column="dtC8" class="column-member">
+                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                                xbrl:id-concepto="annext_ExtensionMember" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;">
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                                xbrl:id-concepto="annext_UnpaidBalanceOfTheAssetsGroupedInArrearsAtTheEndOfThePeriodAbstract" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;">
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                                    <td>
+                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="annext_CurrentMonth" xbrl:nivel-indentacion="0" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A07e56069-56d8-4885-8231-a7d7a007ce47" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A79b39466-0752-4334-a167-5895b728fea8" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A65070f38-164d-4231-8424-717a88f35f31" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A4bec06b4-f17b-4180-b6eb-7286bd1fdbf0" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aa2c5514c-ff30-458b-a96e-ec9c4f12da6e" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A4ad81a36-b49d-46ca-98a4-c4fbdd6ceda3" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A64be218b-224c-4e70-bddc-f227c2672894" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A32cfdd99-cc5d-4c59-be53-58e461337e58" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ac6d348ea-f6f4-478d-b6ef-6573674dc17f" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A5f78344d-60bf-46f4-b856-92f5e4b9d078" />
+                                    </td>
+                                </tr>
+                                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                                    <td>
+                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="annext_LastMonth" xbrl:nivel-indentacion="0" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ad41ce559-e236-4033-b3c5-9ed12a2e837a" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A04afd1fa-8881-44dc-ae67-89edbce864ca" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A26107fa6-fba4-4c82-9d08-5fcadfa7edf5" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A0ac66fbb-8938-456a-88b7-a9acf883f04f" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A4a3b7d8c-ad95-4fa2-ba71-6948e6503b00" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A57e6818b-a7ec-4a3b-b231-96b4a827170c" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A3ed7793e-0309-41d7-b161-c24e04f2563b" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A4cc8d056-969c-4880-a168-6d2adb4e333a" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aa860e419-8318-4b32-b698-d1da738c0386" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ab186b258-8541-44f0-bc90-58638a140f74" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <table class="tablaAnchoFijo" cellspacing="2">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="etiquetaConceptoTitulo"><b><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="annext_NumberOfAssetsGroupedInArrearsAtTheEndOfThePeriod" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></div>
+                                    <div class="bloqueTexto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A0889b0fc-8c4e-4cee-8442-91fe7f75d02f"></xbrl:campo-captura></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <br />
+                    <br />
+
+                    <div id="contenedorNumberOfAssets" class="table-responsive dinamicTable mainDT add-scroll-height" style="overflow: hidden;">
+                        <table class="table table-striped b-t b-light situation-of-trust"
+                               xbrl:tabla-excel xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura"
+                               selector="td:not(:first-child)"
+                               selector-contenedor-x="#contenedorNumberOfAssets"
+                               selector-contenedor-y="#contenedorFormatos"
+                               tab-index="1"
+                               on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)"
+                               on-after-paste="onAfterPaste(valorPegado, x, y)"
+                               on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)"
+                               xbrl:tabla-scrolleable="true">
+                            <thead>
+                                <tr>
+                                    <th class="main-header-void" rowspan="2" style="text-align:center; vertical-align:middle;">
+                                        <button xbrl:dt-boton-maximizar type="button" class="btn btn-s-md btn-info btn-rounded">
+                                            <i class="fa fa-arrows-alt"></i>
+                                            {{'ETIQUETA_EXPANDIR' | translate}}
+                                        </button>
+                                        <button xbrl:dt-boton-restaurar type="button" style="display:none;" class="btn btn-s-md btn-info btn-rounded">
+                                            <i class="fa fa-compress"></i>
+                                            {{'ETIQUETA_CONTRAER' | translate}}
+                                        </button>
+                                    </th>
+                                    <th class="header-axis" colspan="9">
+                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                                xbrl:id-concepto="annext_TimeIntervalAxis" xbrl:nivel-indentacion="0" xbrl:style="font-weight:600;">
+                                    </th>
+                                    <th class="total-header" rowspan="2">
+                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                                xbrl:id-concepto="annext_TotalMember" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;">
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th class="column-member">
+                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                                xbrl:id-concepto="annext_LessThan1MonthOrLessThan30DaysMember" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;">
+                                    </th>
+                                    <th class="column-member">
+                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                                xbrl:id-concepto="annext_Between31And60DaysOrBetween1AndUpTo2MonthsMember" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;">
+                                    </th>
+                                    <th class="column-member">
+                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                                xbrl:id-concepto="annext_Between61And90DaysOrBetween2AndUpTo3MonthsMember" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;">
+                                    </th>
+                                    <th class="column-member">
+                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                                xbrl:id-concepto="annext_Between91And120DaysOr3ToUpTo4MonthsMember" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;">
+                                    </th>
+                                    <th class="column-member">
+                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                                xbrl:id-concepto="annext_Between121And150DaysOrFrom4To5MonthsMember" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;">
+                                    </th>
+                                    <th class="column-member">
+                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                                xbrl:id-concepto="annext_Between151And180DaysOrBetween5AndUpTo6MonthsMember" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;">
+                                    </th>
+                                    <th class="column-member">
+                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                                xbrl:id-concepto="annext_MoreThan180DaysOrMoreThan6MonthsMember" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;">
+                                    </th>
+                                    <th class="column-member">
+                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                                xbrl:id-concepto="annext_InJudicialProcessMember" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;">
+                                    </th>
+                                    <th class="column-member">
+                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                                xbrl:id-concepto="annext_ExtensionMember" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;">
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                                xbrl:id-concepto="annext_NumberOfAssetsGroupedInArrearsAtTheEndOfThePeriodAbstract" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;">
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                                    <td>
+                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="annext_NumberOfAssetsCurrentMonth" xbrl:nivel-indentacion="0" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A6d0ac16e-b79f-4009-b825-cf9f6b54c1fa" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A7d1bec4a-5569-478b-8c28-5f06f294b723" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aff4c9a05-69fd-4abb-a639-8bc2933be6ab" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A8cd81293-62bf-45d5-8625-6644ed978518" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A792af4c2-102c-4541-9b7a-ef0694472452" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A81750d2c-0ff0-4f5b-bf18-c9ec35bcf2d7" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Af5210033-b14c-4d7c-8dc6-f42b56dc5541" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ac079ac58-e35d-4fb0-97ee-207005a5f6cc" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ae33bc9d2-88fd-404b-8e67-da11319b645b" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A822eee33-b789-4d56-a111-943644bfa501" />
+                                    </td>
+                                </tr>
+                                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                                    <td>
+                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="annext_NumberOfAssetsLastMonth" xbrl:nivel-indentacion="0" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A42a6b3ec-70ab-45af-9ffa-6b91f233b4af" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Af0d41c88-917e-43c4-9012-bf9d6a596c62" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A1388f7fc-1c2e-4e07-b2a9-f6bf4398023b" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aa411414e-d70d-45b3-a154-61cb809f0c3e" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Acff8b6cf-d08e-478f-9fc0-86e7ead606d3" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aec645145-a334-4da1-b172-957a78fb6de7" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A280e0a86-7a9f-4496-a185-0690c4dac4dc" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ad20fad47-f90d-4216-9f0b-1644977c1708" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A5987fac1-6a43-4cd9-8e64-e9a4da2e0b3c" />
+                                    </td>
+                                    <td>
+                                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A6dc157be-9eb2-4e66-87ae-b7fb50d99242" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </accordion-group>
+
+                <accordion-group is-open="isOpen_annext_OtherRelevantInformationAbstract">
+                    <accordion-heading>
+                        <i class="pull-left fa" ng-class="{'fa-caret-down': isOpen_annext_OtherRelevantInformationAbstract, 'fa-caret-right': !isOpen_annext_OtherRelevantInformationAbstract}"></i>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="annext_OtherRelevantInformationAbstract" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"></xbrl:etiqueta-concepto>
+                    </accordion-heading>
+
+                    <table class="tablaAnchoFijo" cellspacing="2">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="etiquetaConceptoTitulo"><b><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="annext_GuaranteesOnGoodsRightsOrValuesTrust" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></div>
+                                    <div class="bloqueTexto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A64258281-bf47-4417-a225-28b759e54f44"></xbrl:campo-captura></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="etiquetaConceptoTitulo"><b><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="annext_ContractsAndAgreements" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></div>
+                                    <div class="bloqueTexto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ac3aa7266-ab0f-46b7-b668-79d7ce7dba37"></xbrl:campo-captura></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="etiquetaConceptoTitulo"><b><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="annext_JudicialAdministrativeOrArbitrationProceedings" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></div>
+                                    <div class="bloqueTexto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Affc67055-a950-4162-bd18-4df92674349d"></xbrl:campo-captura></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="etiquetaConceptoTitulo"><b><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="annext_Directors" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></div>
+                                    <div class="bloqueTexto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A20ef0388-87c0-4c5e-a570-4f6261301316"></xbrl:campo-captura></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </accordion-group>
+
+                <accordion-group is-open="isOpen_annext_AdditionalInformationIfAnyAbstract">
+                    <accordion-heading>
+                        <i class="pull-left fa" ng-class="{'fa-caret-down': isOpen_annext_AdditionalInformationIfAnyAbstract, 'fa-caret-right': !isOpen_annext_AdditionalInformationIfAnyAbstract}"></i>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="annext_AdditionalInformationIfAnyAbstract" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"></xbrl:etiqueta-concepto>
+                    </accordion-heading>
+
+                    <table class="tablaAnchoFijo" cellspacing="2">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="etiquetaConceptoTitulo"><b><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="annext_AdditionalInformation" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto></b></div>
+                                    <div class="bloqueTexto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Acee3ef76-298a-4189-b4a5-9e916ea7228b" xbrl:ultimo="true"></xbrl:campo-captura></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </accordion-group>
+
+            </accordion>
+        </div>
+    </div>
+</xbrl-contenedor-formato>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+  <object name="appConfigPropertyHolder" type="Spring.Objects.Factory.Config.PropertyPlaceholderConfigurer, Spring.Core">
+    <property name="configSections">
+      <value>appProperties</value>
+    </property>
+  </object>
+  
+  <object id="EnvioMailUtil" type="AbaxXBRLCore.Common.Util.MailUtil">
+    <property name="NPORT" value="${NPORT}"/>
+    <property name="S_HOST" value="${S_HOST}"/>
+    <property name="S_USERNAME" value="${S_USERNAME}"/>
+    <property name="S_PASSWORD" value="${S_PASSWORD}"/>
+    <property name="APLICA_SSL" value="${APLICA_SSL}"/>
+    <property name="S_APP_MAIL" value="${S_APP_MAIL}"/>
+  </object>
+
+  <!-- Conección LDAP para tipo Microsoft-->
+  <object id="ActiveDirectoryMicrosoft" type="AbaxXBRLCore.Common.Application.LDAPMicrosoftConnection">
+  </object>
+
+  <!-- Conección LDAP para tipo Novell-->
+  <object id="ActiveDirectoryNovell" type="AbaxXBRLCore.Common.Application.LDAPNovellConnection">
+  </object>
+  
+
+</objects>
+

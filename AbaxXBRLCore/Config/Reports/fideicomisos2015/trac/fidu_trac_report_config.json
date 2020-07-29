@@ -1,0 +1,17 @@
+﻿{
+    "PeriodosPorRol": {
+        "105000": [ "trim_actual" ],
+        "110000": [ "trim_actual" ],
+        "210000": [ "cierre_trim_actual", "cierre_trim_anio_anterior", "inicio_trim_anio_anterior" ],
+        "310000": [ "acum_anio_actual", "acum_anio_anterior", "trim_anio_actual", "trim_anio_anterior" ],
+        "410000": [ "acum_anio_actual", "acum_anio_anterior", "trim_anio_actual", "trim_anio_anterior" ],
+        "520000": [ "acum_anio_actual", "acum_anio_anterior" ],
+        "610000": [ "ifrs-full_IssuedCapitalMember", "ifrs-full_EquityAttributableToOwnersOfParentMember", "ifrs-full_EquityMember" ],
+        "700004": [ "cierre_trim_actual", "cierre_trim_anio_anterior", "inicio_trim_anio_anterior" ],
+        "800100": [ "cierre_trim_actual", "cierre_trim_anio_anterior", "inicio_trim_anio_anterior" ],
+        "800200": [ "acum_anio_actual", "acum_anio_anterior", "trim_anio_actual", "trim_anio_anterior" ],
+        "800500": [ "trim_actual" ],
+        "800600": [ "trim_actual" ],
+        "813000": [ "trim_actual" ]
+    }
+}

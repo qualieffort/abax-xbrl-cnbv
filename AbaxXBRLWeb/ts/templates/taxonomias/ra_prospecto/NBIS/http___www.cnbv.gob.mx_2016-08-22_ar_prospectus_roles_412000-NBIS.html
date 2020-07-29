@@ -1,0 +1,255 @@
+<xbrl-contenedor-formato xbrl:rol-uri="{{xbrlRol.Uri}}" orientacion="landscape" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+
+    <table class="tablaAnchoFijo" cellspacing="5">
+        <tbody>
+            <tr>
+                <td><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_HomeOfTheAnnualReportAbstract" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_IssuerLogo" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label>
+                        <b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_IssuerLogo_9f1b4f10-f4a7-4c11-8c8f-4964370baed0">
+                        </xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_NameOfTheIssuer" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label>
+                        <b>:</b>
+                    </div>
+
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_NameOfTheIssuer_f1560716-0140-49a4-84b0-1a204d990c95"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_AdressOfTheIssuer" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label>
+                        <b>:</b>
+                    </div>
+
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_AdressOfTheIssuer_6489380c-370f-4750-b1bf-f786fc9f0e45"></xbrl:campo-captura>
+                    </div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <br />
+
+    <div>
+
+        <table class="tablaAnchoFijo" cellspacing="5">
+            <tbody>
+                <tr>
+                    <td>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SpecificationOfTheCharacteristicsOfOutstandingSecuritiesAbstract" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SpecificationOfTheCharacteristicsOfOutstandingSecuritiesTable" xbrl:nivel-indentacion="2" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br />
+
+        <xbrl:tabla-hipercubo xbrl:id-tabla-hipercubo="hiperCuboSeries"
+                              xbrl:dependencias="['ts/templates/taxonomias/ra_prospecto/NBIS/extensiones/412000_NBIS_ConfiguracionHipercubos.js']"
+                              xbrl:configuracion="http___www_cnbv_gob_mx_2016_08_22_ar_prospectus_roles_412000_NBIS_ar_pros_SpecificationOfTheCharacteristicsOfOutstandingSecuritiesTable">
+            <div id="contenedorTablaExcel1" class="table-responsive">
+                <table class="hipercubo table table-striped b-t b-light"
+                       xbrl:tabla-excel selector="td"
+                       selector-contenedor-x="#contenedorFormatos"
+                       selector-contenedor-y="#contenedorFormatos"
+                       tab-index="1"
+                       on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)"
+                       on-after-paste="onAfterPaste(valorPegado, x, y)"
+                       on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)"
+                       xbrl:tabla-scrolleable="">
+                    <thead class="estiloA">
+                        <tr>
+                            <th class="no-padder">
+                                <div class="table">
+                                    <div class="row">
+                                        <div class="cell-concepto">
+                                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SeriesTypedAxis" xbrl:nivel-indentacion="3" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                        </div>
+                                        <div class="cell-button-agregar-dimension">
+                                            <button type="button"
+                                                    class="btn-info btn-desglose-credito btn-plus"
+                                                    ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                                    xbrl:agregar-miembro-dimension="ar_pros_SeriesTypedAxis">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </th>
+                            <th xbrl:repite-miembros-dimension="ar_pros_SeriesTypedAxis" class="no-padder cortar-texto-700px">
+                                <div class="table">
+                                    <div class="row">
+                                        <div class="cell-campo-captura ">
+                                            <xbrl:campo-texto-dimension xbrl:alias-dimension="ar_pros_SeriesTypedAxis" xbrl:alias-miembro="$aliasMiembroRepeat"></xbrl:campo-texto-dimension>
+                                        </div>
+                                        <div class="cell-button-eliminar-dimension">
+                                            <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_SeriesTypedAxis"
+                                                    xbrl:alias-miembro="$aliasMiembroRepeat">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SpecificationOfTheCharacteristicsOfOutstandingSecuritiesLineItems" xbrl:nivel-indentacion="2" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                            </td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_SeriesTypedAxis">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_Class" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto></td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_SeriesTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_Class" xbrl:contexto-plantilla="DEFAULT" xbrl:contexto-miembros-dimension="{'ar_pros_SeriesTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_EquitySerie" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto></td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_SeriesTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_EquitySerie" xbrl:contexto-plantilla="DEFAULT" xbrl:contexto-miembros-dimension="{'ar_pros_SeriesTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SerieType" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto></td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_SeriesTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_SerieType" xbrl:contexto-plantilla="DEFAULT" xbrl:contexto-miembros-dimension="{'ar_pros_SeriesTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SerieNumberOfStocks" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto></td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_SeriesTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_SerieNumberOfStocks" xbrl:contexto-plantilla="DEFAULT" xbrl:contexto-miembros-dimension="{'ar_pros_SeriesTypedAxis': '$aliasMiembroRepeat'}" xbrl:alias-unidad="PURE" xbrl:decimales="0" xbrl:valor-default="0"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SerieStockExhangesWhereTheyAreRegistered" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto></td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_SeriesTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_SerieStockExhangesWhereTheyAreRegistered" xbrl:contexto-plantilla="DEFAULT" xbrl:contexto-miembros-dimension="{'ar_pros_SeriesTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SerieTickerFromTheSourceMarket" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto></td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_SeriesTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_SerieTickerFromTheSourceMarket" xbrl:contexto-plantilla="DEFAULT" xbrl:contexto-miembros-dimension="{'ar_pros_SeriesTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SerieTypeOfOperation" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto></td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_SeriesTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_SerieTypeOfOperation" xbrl:contexto-plantilla="DEFAULT" xbrl:contexto-miembros-dimension="{'ar_pros_SeriesTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SerieObservations" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto></td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_SeriesTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_SerieObservations" xbrl:contexto-plantilla="DEFAULT" xbrl:contexto-miembros-dimension="{'ar_pros_SeriesTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </xbrl:tabla-hipercubo>
+    </div>
+
+    <br />
+    <br />
+
+    <table class="tablaAnchoFijo" cellspacing="5">
+        <tbody>
+            <tr>
+                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_Ticker" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></b></td>
+                <td style="text-align:left; width:50%; height:40px;" class=""><xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_Ticker_aa330478-9b01-436f-b937-d1bdebc42c7d"></xbrl:campo-captura></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_TheMentionThatTheValuesOfTheIssuerAreRegistered" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label>
+                        <b>:</b>
+                    </div>
+                    <div class="bloqueTexto" style="width:100%">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_TheMentionThatTheValuesOfTheIssuerAreRegistered_5f6a2746-371a-4bec-810a-1f710ffdeed2"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_Article86LegendOfTheLmv" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label>
+                        <b>:</b>
+                    </div>
+                    <div class="bloqueTexto" style="width:100%">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_Article86LegendOfTheLmv_4e3e32db-c0e4-4db1-95bc-542c740c5e60"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_AnnualReportCueLegend" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label>
+                        <b>:</b>
+                    </div>
+                    <div class="bloqueTexto" style="width:100%">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_AnnualReportCueLegend_f3e8a54b-3d2b-490b-8c5d-c6f14418a41e"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_PeriodRepresenting" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></b></td>
+                <td style="text-align:left; width:50%; height:40px;" class=""><xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_PeriodRepresenting_782fccaf-4e66-4068-b1a8-0e07ccd57770" xbrl:ultimo="true"></xbrl:campo-captura></td>
+            </tr>
+        </tbody>
+    </table>
+
+</xbrl-contenedor-formato>

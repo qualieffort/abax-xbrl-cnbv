@@ -1,0 +1,130 @@
+﻿<xbrl-contenedor-formato xbrl:rol-uri="{{::xbrlRol.Uri}}" orientacion="portrait" xbrl:ocultar-titulo-rol="true" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+    <div class="main-header">
+        <div style="width:100%">
+            <div class="logo">
+                <img src="Images/fondoActinver.png">
+            </div>
+            <div class="textoEmpresaHeader">
+                <h1 class="fontHeaderFormat">ACTINEM - FONDO ACTINVER MERCADOS EMERGENTES MUNDIALES, S.A. DE C.V., S.I.R.V</h1>
+            </div>
+        </div>
+        <center>
+            <div style="width:95%">
+                <div class="barraGris"></div>
+                <div class="barraAzulExtendida"></div>
+            </div>
+        </center>
+    </div>
+    <br />
+    <h4>{{::xbrlRol.Nombre}}</h4>
+    <br />
+    <br />
+    <table style="width:100%" cellspacing="5" class="cambioClave150007">
+        <tbody>
+
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td class="titulo">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                xbrl:id-concepto="inver_bmv_cor_FechaReporte"
+                                                class="etiquetaConcepto"
+                                                xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>:
+                    </b>
+                </td>
+                <td class="celdaVacia campo">
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura"
+                                        xbrl:id-hecho-plantilla="Fecha"></xbrl:campo-captura>
+                </td>
+            </tr>
+
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td class="titulo">
+                    <label>
+                        <b>
+                            <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                    xbrl:id-concepto="inver_bmv_cor_LugarReporte"
+                                                    class="etiquetaConcepto"
+                                                    xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>:
+                        </b>
+                    </label>
+                </td>
+                <td class="celdaVacia campo">
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura"
+                                        xbrl:id-hecho-plantilla="Lugar"></xbrl:campo-captura>
+                </td>
+            </tr>
+
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td class="titulo">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                xbrl:id-concepto="inver_bmv_cor_RazonSocial"
+                                                class="etiquetaConcepto"
+                                                xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>:
+                    </b>
+                </td>
+                <td class="celdaVacia campo">
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura"
+                                        xbrl:id-hecho-plantilla="RazonSocial"></xbrl:campo-captura>
+                </td>
+            </tr>
+
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td class="titulo">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                xbrl:id-concepto="inver_bmv_cor_ClavePizarra"
+                                                class="etiquetaConcepto"
+                                                xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>:
+                    </b>
+                </td>
+                <td class="celdaVacia campo">
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura"
+                                        xbrl:id-hecho-plantilla="ClavePizarra"></xbrl:campo-captura>
+                </td>
+            </tr>
+
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td class="titulo">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                xbrl:id-concepto="inver_bmv_cor_AsuntoComunicado"
+                                                class="etiquetaConcepto"
+                                                xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>:
+                    </b>
+                </td>
+                <td class="celdaVacia campo">
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura"
+                                        xbrl:id-hecho-plantilla="Asunto"></xbrl:campo-captura>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br/>
+    <br />
+    <div class="form-group">
+        <table style="width:100%" class="cambioClave150007">
+            <tbody>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                    <td>
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                        xbrl:id-concepto="inver_bmv_cor_EventoRelevanteComunicado"
+                                                        class="etiquetaConcepto"
+                                                        xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>:
+                            </b>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="celdaVacia">
+                        <br />
+                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura"
+                                            xbrl:id-hecho-plantilla="EventoRelevante" xbrl:ultimo="true"></xbrl:campo-captura>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</xbrl-contenedor-formato>

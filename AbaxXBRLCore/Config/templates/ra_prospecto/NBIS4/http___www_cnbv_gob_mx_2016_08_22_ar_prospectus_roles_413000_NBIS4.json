@@ -1,0 +1,124 @@
+{
+	"ContextosPlantillaPorId" : {
+  "ctx": {
+    "Id": "ctx",
+    "Periodo": {
+      "Tipo": 1,
+      "FechaInstante": "#fecha_2014_12_31",
+      "FechaInicio": "",
+      "FechaFin": ""
+    },
+    "Entidad": {
+      "Id": "#nombreEntidad",
+      "EsquemaId": "#esquemaEntidad",
+      "ContieneInformacionDimensional": false,
+      "Segmento": null,
+      "ValoresDimension": []
+    },
+    "ContieneInformacionDimensional": false,
+    "Escenario": null,
+    "ValoresDimension": []
+  }
+},
+	
+	"UnidadesPlantillaPorId" : {},
+            
+	"HechosPlantillaPorId" : {
+  "ar_pros_ReferenceIncorporationGeneralInformation_1e9727e3-c821-4355-8c4e-b648fb4390da": {
+    "Id": "ar_pros_ReferenceIncorporationGeneralInformation_1e9727e3-c821-4355-8c4e-b648fb4390da",
+    "IdConcepto": "ar_pros_ReferenceIncorporationGeneralInformation",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_GlossaryOfTermsAndDefinitions_c38be3ce-3f6f-4585-bd92-ab55c198a274": {
+    "Id": "ar_pros_GlossaryOfTermsAndDefinitions_c38be3ce-3f6f-4585-bd92-ab55c198a274",
+    "IdConcepto": "ar_pros_GlossaryOfTermsAndDefinitions",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_ExecutiveSummary_935bd2e0-bfe4-4341-8c65-138c1c2ef16e": {
+    "Id": "ar_pros_ExecutiveSummary_935bd2e0-bfe4-4341-8c65-138c1c2ef16e",
+    "IdConcepto": "ar_pros_ExecutiveSummary",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_RiskFactors_94ea2a2f-aa7a-48a5-a777-f7cd3c308d31": {
+    "Id": "ar_pros_RiskFactors_94ea2a2f-aa7a-48a5-a777-f7cd3c308d31",
+    "IdConcepto": "ar_pros_RiskFactors",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_OtherValues_bc8b74af-8df1-4ea2-8ea5-897a09aa7627": {
+    "Id": "ar_pros_OtherValues_bc8b74af-8df1-4ea2-8ea5-897a09aa7627",
+    "IdConcepto": "ar_pros_OtherValues",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_SignificantChangesToTheRightsOfSecuritiesRegistered_b76174d9-3126-4276-a703-cff921cde9eb": {
+    "Id": "ar_pros_SignificantChangesToTheRightsOfSecuritiesRegistered_b76174d9-3126-4276-a703-cff921cde9eb",
+    "IdConcepto": "ar_pros_SignificantChangesToTheRightsOfSecuritiesRegistered",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_UseOfProceedsIfAny_e349e9ce-0cac-4e38-8598-52d198c80e9d": {
+    "Id": "ar_pros_UseOfProceedsIfAny_e349e9ce-0cac-4e38-8598-52d198c80e9d",
+    "IdConcepto": "ar_pros_UseOfProceedsIfAny",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_PublicDocuments_27d9077d-54c9-456d-b907-baa1083937c6": {
+    "Id": "ar_pros_PublicDocuments_27d9077d-54c9-456d-b907-baa1083937c6",
+    "IdConcepto": "ar_pros_PublicDocuments",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  }
+}
+}

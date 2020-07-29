@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<!--
+Project: Xbrl Processing Engine
+Copyright (c) 2011  EDGAR(r) Online, Inc.
+
+EDGAR(r) is a federally registered trademark of the U.S. Securities and Exchange Commission. EDGAR 
+Online is not affiliated with or approved by the U.S. Securities and Exchange Commission.
+-->
+
+
+<PatternSet
+    name="TaxonomyVOs"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="VOPatterns.xsd">
+
+    <Pattern name="Load Namespace Resolvers" detectionType="Discovery" method="runOnce" value="N/A">
+        <Failure>
+                <Action method="ThrowException" uri="memo://ubmatrix.com/Load/Taxonomy#Internal-NamespaceResolverFailure" />
+        </Failure>
+        <Action method="AddToNamespaceResolver" uri="N/A">
+            <Selector type="Prefix" method="Constant" value="xs" />
+            <Selector type="Namespace" method="Constant" value="http://www.w3.org/2001/XMLSchema" />
+        </Action>
+        <Action method="AddToNamespaceResolver" uri="N/A">
+            <Selector type="Prefix" method="Constant" value="link" />
+            <Selector type="Namespace" method="Constant" value="http://www.xbrl.org/2003/linkbase" />
+        </Action>
+        <Action method="AddToNamespaceResolver" uri="N/A">
+            <Selector type="Prefix" method="Constant" value="xsi" />
+            <Selector type="Namespace" method="Constant" value="http://www.w3.org/2001/XMLSchema-instance" />
+        </Action>
+        <Action method="AddToNamespaceResolver" uri="N/A">
+            <Selector type="Prefix" method="Constant" value="xlink" />
+            <Selector type="Namespace" method="Constant" value="http://www.w3.org/1999/xlink" />
+        </Action>
+        <Action method="AddToNamespaceResolver" uri="N/A">
+            <Selector type="Prefix" method="Constant" value="xdt" />
+            <Selector type="Namespace" method="Constant" value="http://xbrl.org/2005/xbrldt" />
+        </Action>
+    </Pattern>
+
+    <Pattern name="Create taxonomy" detectionType="Discovery" method="XPath" value="/xs:schema">
+
+        <Failure>
+                <Action method="CreateErrorMemo" uri="memo://ubmatrix.com/Load/Taxonomy#UnableToLocateSchemaElement" />
+				<Action saveDO="memo" method="ThrowException" uri="Abort"/>
+        </Failure>
+
+        <Action method="SetOnLocationHandle" uri="N/A">
+            <Selector type="ValueObject" method="XPath" value="@targetNamespace"/>
+        </Action>
+
+        <Action saveDO="taxonomy" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Taxonomy#Taxonomy">
+            <Selector type="ValueObject" method="XPath" value="."/>
+            
+            <Failure>
+	            <Action saveDO="memo" method="CreateWarningMemo" uri="memo://ubmatrix.com/Load/Taxonomy#TaxonomyShouldHaveTargetNamespace" />	        
+	        </Failure>
+        </Action>
+
+        <Action method="SetPrimaryDomainObject" uri="N/A">
+            <Selector type="From" method="DomainObject" value="taxonomy" />
+        </Action>
+
+        <Action saveDO ="namespace" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Namespace#Namespace">
+            <Selector type="ValueObject" method="XPath" value="@targetNamespace"/>
+        </Action>
+
+        <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#TaxonomyDefinedByTargetNamespace">
+            <Selector type="From" method="DomainObject" value="taxonomy" />
+            <Selector type="To" method="DomainObject" value="namespace" />
+        </Action>
+    </Pattern>
+
+    <Pattern name="Index XML" detectionType="Discovery" method="Index" value="/xs:schema">
+        <Action method="DefineIndex" uri="N/A">
+            <Selector type="element" method="Constant" value="localName" />
+        </Action>
+    </Pattern>
+
+    <Pattern name="Redefine not permitted" system="false" detectionType="InitialLoad" method="Key" value="redefine">
+        <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Load/Taxonomy#RedefineNotPermitted">
+            <Selector type="ValueObject" method="XPath" value="."/>
+        </Action>
+    </Pattern>
+
+    <!-- Referenced namespaces (e.g., xmlns:my="http://my.com/myNamespace") -->
+    <Pattern name="Create namespaces" detectionType="InitialLoad" method="XPath"
+             value="namespace::node()[name()!= '']">
+        <Failure />
+
+        <Action method="AddToNamespaceLookup" uri="N/A">
+            <Selector type="Prefix" method="NamespaceNode" value="name" />
+            <Selector type="Namespace" method="NamespaceNode" value="value" />
+        </Action>
+
+        <Action saveDO="namespace" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Namespace#Namespace">
+            <Selector type="ValueObject" method="XPath" value="."/>
+        </Action>
+
+        <Action saveDO="prefix" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Namespace#NamespacePrefix">
+            <Selector type="ValueObject" method="XPath" value="."/>
+        </Action>
+
+        <Action saveDO="trn" method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#TaxonomyReferencesNamespace">
+            <Selector type="From" method="DomainObject" value="taxonomy" />
+            <Selector type="To" method="DomainObject" value="namespace" />
+        </Action>
+
+        <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#TaxonomyNamespaceHasPrefix">
+            <Selector type="From" method="DomainObject" value="trn" />
+            <Selector type="To" method="DomainObject" value="prefix" />
+        </Action>
+    </Pattern>
+
+    <Pattern name="Discover schemas via 'import'" detectionType="Discovery" method="Key" value="import">
+        <Failure />
+        <Action method="LoadSchemaFromXmlBase" uri=".">
+            <Selector type="XmlBase" method="XmlBase" value="xml:base" />
+            <Selector type="LogicalUri" method="XPath" value="@schemaLocation"/>
+            <Selector type="Namespace" method="XPath" value="@namespace"/>
+            <Failure>
+                <Action method="LoadSchemaFromLogicalUri" uri=".">
+                    <Selector type="LogicalUri" method="XPath" value="@schemaLocation"/>
+                    <Selector type="Namespace" method="XPath" value="@namespace"/>
+                    <Failure>
+                        <Action method="LoadSchemaFromNamespace" uri=".">
+                            <Selector type="Namespace" method="XPath" value="@namespace"/>
+                            <Failure>
+                                <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Load/Taxonomy#ImportFailedWithXmlBase">
+                                    <Selector type="ValueObject" method="XPath" value="@namespace"/>
+                                    <Selector type="ValueObject" method="XPath" value="ancestor-or-self::node()/attribute::xml:base" />
+                                    <Selector type="ValueObject" method="XPath" value="@schemaLocation"/>
+                                    <Failure>
+                                        <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Load/Taxonomy#ImportFailedWithNamespaceSchemaLocation">
+                                            <Selector type="ValueObject" method="XPath" value="@namespace"/>
+                                            <Selector type="ValueObject" method="XPath" value="@schemaLocation"/>
+                                            <Failure>
+                                                <!-- Unable to get expected selectors, at least say something -->
+                                                <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Load/Taxonomy#ImportFailedConfused">
+		                                            <Selector type="ValueObject" method="XPath" value="@namespace"/>
+                                                </Action>
+                                            </Failure>
+                                        </Action>
+                                    </Failure>
+                                </Action>
+                            </Failure>
+                        </Action>
+                    </Failure>
+                </Action>
+            </Failure>
+        </Action>
+
+        <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Relationship#TaxonomyReferencesTaxonomy">
+            <Selector type="ValueObject" method="XPath" value="."/>
+            <Selector type="From" method="DomainObject" value="taxonomy" />
+            <Selector type="To" method="ReferencedDomainObject" value="N/A" />
+        </Action>
+
+    </Pattern>
+
+    <Pattern name="Discover schemas via 'include'" detectionType="Discovery" method="Key" value="include">
+        <Failure />
+        <Action method="IncludeSchemaFromXmlBase" uri=".">
+            <Selector type="XmlBase" method="XmlBase" value="xml:base" />
+            <Selector type="LogicalUri" method="XPath" value="@schemaLocation"/>
+            <Failure>
+                <Action method="IncludeSchemaFromLogicalUri" uri=".">
+                    <Selector type="LogicalUri" method="XPath" value="@schemaLocation"/>
+                    <Failure>
+                        <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Load/Taxonomy#SchemaIncludeFailedWithXmlBase">
+                            <Selector type="ValueObject" method="XPath" value="ancestor-or-self::node()/attribute::xml:base" />
+                            <Selector type="ValueObject" method="XPath" value="@schemaLocation"/>
+                            <Failure>
+                                <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Load/Taxonomy#SchemaIncludeFailedWithSchemaLocation">
+                                    <Selector type="ValueObject" method="XPath" value="@schemaLocation"/>
+                                    <Failure>
+                                        <!-- Unable to get expected selectors, at least say something -->
+                                        <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Load/Taxonomy#SchemaIncludeFailedConfused" />
+                                    </Failure>
+                                </Action>
+                            </Failure>
+                        </Action>
+                    </Failure>
+                </Action>
+            </Failure>
+        </Action>
+
+        <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Relationship#TaxonomyReferencesTaxonomy">
+            <Selector type="ValueObject" method="XPath" value="."/>
+            <Selector type="From" method="DomainObject" value="taxonomy" />
+            <Selector type="To" method="ReferencedDomainObject" value="N/A" />
+        </Action>
+
+    </Pattern>
+
+    <Pattern name="Hack Pattern/Nesting broken" detectionType="InitialLoad" method="Key" value="schema">
+        <Action method="ProcessTaxonomy" uri="N/A">
+            <Selector type="ValueObject" method="XPath" value="." />
+        </Action>
+    </Pattern>
+
+    <Pattern name="Create Tuples" detectionType="InitialLoad" method="XPath" value="/">
+        <Pattern name="Taxonomy Tuple Children" detectionType="InitialLoad" method="FindTaxonomyTupleChildren" value="." >
+            <Action saveDO="TupleContainsConcept" method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#TupleContainsConcept">
+                <Selector type="From" method="DomainObjectFromValueObjectXPath" value="." />
+                <Selector type="To" method="DtsConstant" value="." />
+            </Action>
+        </Pattern>
+    </Pattern>
+    
+    <Pattern name="Create Roles" detectionType="InitialLoad" method="Key" value="roleType">
+        <Failure />
+        <Action saveDO="role" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Taxonomy#Role">
+            <Selector type="ValueObject" method="XPath" value="." />
+            <Failure />
+        </Action>
+
+        <Action method="Cache" uri="N/A">
+            <Selector type="indexable" method="DomainObject" value="role"/>
+            <Selector type="uri" method="XPath" value="@roleURI"/>
+        </Action>
+
+        <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#TaxonomySpecifiesRole">
+            <Selector type="From" method="DomainObject" value="taxonomy" />
+            <Selector type="To" method="DomainObject" value="role" />
+        </Action>
+
+        <!-- Get the usedOn elements -->
+        <Pattern name="Create Roles/UsedOn" detectionType="InitialLoad" method="XPath" value="link:usedOn">
+            <Action saveDO="usedOn" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Taxonomy#UsedOn">
+                <Selector type="ValueObject" method="XPath" value="." />         
+                <Failure />
+            </Action>
+            <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Relationship#RoleSupports">
+                <Selector type="From" method="DomainObject" value="role" />
+                <Selector type="To" method="DomainObject" value="usedOn" />
+            </Action>
+        </Pattern>
+        
+        <!-- Get the definition elements -->
+        <Pattern name="Create Roles/Definition" detectionType="InitialLoad" method="XPath" value="link:definition">
+            <Action saveDO="definition" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Taxonomy#Definition">
+                <Selector type="ValueObject" method="XPath" value="." />         
+                <Failure />
+            </Action>
+            <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Relationship#RoleDocumentedBy">
+                <Selector type="From" method="DomainObject" value="role" />
+                <Selector type="To" method="DomainObject" value="definition" />
+            </Action>
+        </Pattern>
+        
+
+    </Pattern>
+
+    <Pattern name="Create Arcroles" detectionType="InitialLoad" method="Key" value="arcroleType">
+        <Failure />
+        <Action saveDO="arcrole" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Taxonomy#Arcrole">
+            <Selector type="ValueObject" method="XPath" value="." />         
+            <Failure />
+        </Action>
+        
+        <Action method="Cache" uri="N/A">
+            <Selector type="indexable" method="DomainObject" value="arcrole"/>
+            <Selector type="uri" method="XPath" value="@arcroleURI"/>
+        </Action>
+        
+        <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#TaxonomySpecifiesArcrole">
+            <Selector type="From" method="DomainObject" value="taxonomy" />
+            <Selector type="To" method="DomainObject" value="arcrole" />
+        </Action>
+
+ 	<!-- Get the usedOn elements -->
+        <Pattern name="Create ArcRoles/UsedOn" detectionType="InitialLoad" method="XPath" value="link:usedOn">
+            <Action saveDO="usedOn" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Taxonomy#UsedOn">
+                <Selector type="ValueObject" method="XPath" value="." />         
+                <Failure />
+            </Action>
+            <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Relationship#ArcroleSupports">
+                <Selector type="From" method="DomainObject" value="arcrole" />
+                <Selector type="To" method="DomainObject" value="usedOn" />
+            </Action>
+        </Pattern>
+
+        <!-- Get the definition elements -->
+        <Pattern name="Create Roles/Definition" detectionType="InitialLoad" method="XPath" value="link:definition">
+            <Action saveDO="definition" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Taxonomy#Definition">
+                <Selector type="ValueObject" method="XPath" value="." />         
+                <Failure />
+            </Action>
+            <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Relationship#ArcroleDocumentedBy">
+                <Selector type="From" method="DomainObject" value="arcrole" />
+                <Selector type="To" method="DomainObject" value="definition" />
+            </Action>
+        </Pattern>        
+
+    </Pattern>
+    
+    
+    <!-- This must occur toward the end because types might be defined in reverse order -->
+   <Pattern name="Hack Pattern/Determine Datatype Deriviation" detectionType="InitialLoad" method="Key" value="schema">
+        <Action method="DetermineDatatypeDerivation" uri="N/A">
+            <Selector type="ValueObject" method="XPath" value="." />
+        </Action>
+    </Pattern>
+
+    <Pattern name="Discover Linkbase" detectionType="Discovery" method="Key" value="linkbaseRef">
+        <Action method="LoadLinkbaseFromXmlBase" uri="." >
+            <Selector type="XmlBase" method="XmlBase" value="xml:base" />
+            <Selector type="LogicalUri" method="XPath" value="@xlink:href"/>
+            <Failure>
+                <Action method="LoadLinkbaseFromLogicalUri" uri=".">
+                    <Selector type="LogicalUri" method="XPath" value="@xlink:href"/>
+                    <Failure>
+                        <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Load/Taxonomy#LoadLinkbaseFailedWithXmlBase">
+                            <Selector type="ValueObject" method="XPath" value="ancestor-or-self::node()/attribute::xml:base" />
+                            <Selector type="ValueObject" method="XPath" value="@xlink:href"/>
+                            <Failure>
+                                <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Load/Taxonomy#LoadLinkbaseFailedWithLogicalUri">
+                                    <Selector type="ValueObject" method="XPath" value="@xlink:href"/>
+                                    <Failure>
+                                        <!-- Unable to get expected selectors, at least say something -->
+                                        <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Load/Taxonomy#LoadLinkbaseFailedConfused"/>
+                                    </Failure>
+                                </Action>
+                            </Failure>
+                        </Action>
+                    </Failure>
+                </Action>
+            </Failure>
+        </Action>
+
+        <Action method="CreateRelationship" uri="relationship://ubmatrix.com/Xbrl/Relationship#TaxonomyReferencesLinkbase">
+            <Selector type="ValueObject" method="XPath" value="." />         
+            <Selector type="From" method="DomainObject" value="taxonomy" />
+            <Selector type="To" method="ReferencedDomainObject" value="N/A" />
+        </Action>
+	</Pattern>
+
+</PatternSet>
+
+<!--
+The contents of this file are subject to the End-User Software License Agreement (the "License"). You may not use this 
+file except in compliance with the License. A current copy of the License is available by contacting product support.
+
+Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights and limitations under the License.
+-->

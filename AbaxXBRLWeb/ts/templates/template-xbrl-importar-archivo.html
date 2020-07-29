@@ -1,0 +1,125 @@
+﻿<section>
+    <section class="vbox">
+        <section class="scrollable wrapper" slimscroll="{size: '10px', height: 'auto'}" slimscrolllistento="resize::resize">
+            <div class="m-b-md">
+                <h3 class="m-b-none">{{'ETIQUETA_CREAR_DOCUMENTO_INSTANCIA_XBRL' | translate}}</h3>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <div class="panel panel-default">
+                        <header class="panel-heading">
+                            <ul class="nav nav-tabs nav-tabs-dark font-bold">
+                                <li><a href="javascript:void();" data-toggle="tab1">{{'ETIQUETA_DOCUMENTO_A_CREAR' | translate}}</a></li>
+                                <li class="active"><a href="javascript:void();" data-toggle="tab2">{{'ETIQUETA_CARACTERISTICAS_DOCUMENTO' | translate}}</a></li>
+                            </ul>
+                        </header>
+
+                        <form>
+
+                            <section class="panel-body">
+                                <p>{{'ETIQUETA_INSTRUCCIONES_SELECCION_DOCUMENTO_IMPORTAR' | translate}}</p>
+                                <div class="line line-lg"></div>
+
+                                <div class="progress progress-xs m-t-md">
+                                    <div class="progress-bar bg-success" style="width: 100%;"></div>
+                                </div>
+                                <div class="tab-content">
+                                    <div class="row">
+                                        <div class="form-group col-sm-4">
+                                            <div class="tab-pane active" id="step1">
+
+                                                <p>{{'ETIQUETA_ARCHIVO_XBRL_O_ZIP' | translate}}:</p> <input type="file" ng-file-select ng-model="archivoImportado"
+                                                                                    ng-multiple="false"
+                                                                                    accept="{{extensionesPermitidas}}" name="archivoXBRL" class="form-control" /> &nbsp;&nbsp;
+                                                <span ng-if="cargado>0">{{'ETIQUETA_CARGANDO_ARCHIVO' | translate}}: {{porcentajeCargado}} %</span>
+                                            </div>
+
+                                            <div>&Oacute;</div>
+                                            <div>&nbsp;</div>
+                                            <div class="tab-pane active" id="step1">
+                                                <p>{{'ETIQUETA_URL_DOCUMENTO_INSTANCIA' | translate}}:</p> <input type="text" class="form-control" ng-model="urlArchivoImportado" />
+                                            </div>
+                                            <div>&nbsp;</div>
+                                            <button class="btn btn-sm btn-default" id="validarArchivoBtn" type="button" ng-click="importarArchivo()">&nbsp;&nbsp;&nbsp;{{'ETIQUETA_CARGAR' | translate}}&nbsp;&nbsp;&nbsp;</button>
+                                            &nbsp;&nbsp;&nbsp;
+                                            <button class="btn btn-sm btn-default" type="button" ng-click="limpiar()">&nbsp;&nbsp;&nbsp;{{'ETIQUETA_LIMPIAR' | translate}}&nbsp;&nbsp;&nbsp;</button>
+                                        </div>
+
+                                    </div>
+                                    <div ng-if="cargaCompleta">
+
+                                        <section class="panel panel-default" ng-if="!correcto">
+                                            <header class="panel-heading">{{'' | translate}}Resultado de la Validación : <p class="text-danger">{{'ETIQUETA_CON_ERRORES' | translate}}</p></header>
+                                            <table class="table table-striped m-b-none">
+                                                <thead>
+                                                    <tr>
+                                                        <th>{{'ETIQUETA_DOCUMENTO' | translate}}</th>
+                                                        <th>{{'ETIQUETA_ERROR' | translate}}</th>
+                                                        <th>{{'ETIQUETA_SEVERIDAD' | translate}}</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                    <tr ng-repeat="error in documentoInstancia.Errores">
+
+                                                        <td>
+                                                            {{documentoInstancia.NombreArchivo}}
+                                                        </td>
+                                                        <td>{{error.Mensaje}}</td>
+                                                        <td>
+                                                            <p class="text-danger" ng-if="error.Severidad == severidadError">{{'ETIQUETA_ERROR' | translate}}</p>
+                                                            <p class="text-warning" ng-if="error.Severidad == severidadAdvertencia">{{'ETIQUETA_ADVERTENCIA' | translate}}</p>
+                                                        </td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </section>
+                                        <section class="panel panel-default" ng-if="correcto">
+                                            <header class="panel-heading">Resultado de la Validación : <p class="text-success">{{'ETIQUETA_CORRECTO' | translate}}</p></header>
+                                            <table class="table table-striped m-b-none">
+                                                <thead>
+                                                    <tr>
+                                                        <th>{{'ETIQUETA_DOCUMENTO' | translate}}</th>
+                                                        <th>{{'ETIQUETA_PERIODO' | translate}}</th>
+                                                        <th>{{'ETIQUETA_ENTIDAD' | translate}}</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="(key, value) in documentoInstancia.ContextosPorFecha">
+
+                                                        <td>
+                                                            {{documentoInstancia.NombreArchivo}}
+                                                        </td>
+                                                        <td>{{key}}</td>
+                                                        <td>
+                                                            {{documentoInstancia.ContextosPorId[value[0]].Entidad.Id}}
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </section>
+                                    </div>
+
+                                </div>
+                            </section>
+                            <footer class="panel-footer">
+                                <ul class="pager wizard m-b-sm">
+                                    <li class="previous"><a href="javascript:void(0);" ui-sref="inicio.editorXBRL.DocumentoInstanciaCrearDocumentoInstancia1">{{'ETIQUETA_ANTERIOR' | translate}}</a></li>
+                                    <li class="next"><a href="javascript:void(0);" ng-if="puedeContinuar" ng-click="finalizar()">{{'ETIQUETA_FINALIZAR' | translate}}</a></li>
+                                </ul>
+                            </footer>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</section>
+
+
+
+
+

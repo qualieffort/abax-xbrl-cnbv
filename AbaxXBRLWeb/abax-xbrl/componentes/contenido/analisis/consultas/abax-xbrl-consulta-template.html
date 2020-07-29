@@ -1,0 +1,77 @@
+﻿<section class="panel panel-default">
+    <header class="panel-heading">
+        {{'TITULO_CATALOGO_DE_COSULTAS' | translate}}
+    </header>
+    <div class="row wrapper">
+        <div class="col-sm-4">
+            <input type="button" value="{{'ETIQUETA_BOTON_EXPORTAR_EXCEL' | translate}}" class="btn btn-sm btn-default" ng-click="descargaArchivo()" ng-hide="exportando" />
+            <button type="button" class="btn btn-sm btn-default" ng-if="exportando" disabled>
+                {{'MENSAJE_INFO_EXPORTANDO' | translate}} ...
+            </button>
+        </div>
+
+        <div class="col-lg-4">
+            <input type="search" name="search" placeholder="{{'PLACE_HOLDER_BUSCAR_CONSULTA' | translate}}" class="input-sm form-control input-s-lg inline v-middle" ng-model="valorCampoConsulta" />
+        </div>
+
+        <div class="col-lg-4 text-right">
+            <a ui-sref="inicio.analisis.mostrarConsulta" class="btn btn-sm btn-default">{{'ETIQUETA_BOTON_REGISTRAR_CONSULTA' | translate}}</a>
+
+        </div>
+    </div>
+</section>
+<section class="panel panel-default">
+    <header class="panel-heading bg-light">
+        {{'ETIQUETA_LISTADO_CONSULTAS' | translate}}
+    </header>
+
+    <div class="panel-body font-bold" style="background: #eeeeee; padding-left: 30px" ng-if="cargandoConsultas">
+        <i class="fa fa-refresh fa-spin"></i>
+        {{'MENSAJE_INFO_CARGANDO_CONSULTAS' | translate}} ...
+    </div>
+    <div class="panel-body font-bold" style="background: #eeeeee; padding-left: 30px" ng-if="!cargandoConsultas && !existenConsultasAnalisis">
+        {{'MENSAJE_INFO_SIN_RESULTADOS' | translate}}
+    </div>
+
+    <table id="tablaConsultas" class="table table-striped b-t b-light" ng-if="!cargandoConsultas && existenConsultasAnalisis" datatable="" dt-options="opcionesDataTableConsultas">
+        <thead class="table-bordered">
+            <tr>
+                <th class="th-sortable" width="80%" data-toggle="class">{{'ETIQUETA_NOMBRE' | translate}}</th>
+                <th class="th-sortable" style="text-align:center;" data-toggle="class">{{'ETIQUETA_EJECUTAR' | translate}}</th>
+                <th class="th-sortable" style="text-align:center;" data-toggle="class" >{{'ETIQUETA_BORRAR' | translate}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="consulta in consultas">
+                <td>{{consulta.Nombre}}</td>
+                <td style="text-align:center;">
+                    <a ui-sref="inicio.analisis.mostrarConsulta({id: consulta.IdConsultaAnalisis})" class="btn btn-rounded btn-sm btn-icon btn-default auto">
+                        <i class="fa fa-play"></i>
+                    </a>
+                </td>
+                
+                <td style="text-align:center;">
+                    <button class="btn btn-rounded btn-sm btn-icon btn-danger" ng-click="eliminar(consulta.IdConsultaAnalisis)">
+                        <i class="fa fa-trash-o"></i>
+                    </button>
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+    <footer class="panel-footer">
+        <div class="row">
+            <div class="col-sm-4 hidden-xs">
+                <input type="button" value="{{'ETIQUETA_BOTON_EXPORTAR_EXCEL' | translate}}" class="btn btn-sm btn-default" ng-click="descargaArchivo()" ng-hide="exportando" />
+                <button type="button" class="btn btn-sm btn-default" ng-if="exportando" disabled>
+                    {{'MENSAJE_INFO_EXPORTANDO' | translate}} ...
+                </button>
+            </div>
+            <div class="col-sm-4 text-center">
+            </div>
+            <div class="col-sm-4 text-right text-center-xs">
+            </div>
+        </div>
+    </footer>
+</section>

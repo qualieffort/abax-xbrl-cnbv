@@ -1,0 +1,22 @@
+﻿<li class="list-group-item error-item">
+    <span class="fa-stack pull-left m-r-sm">
+        <i class="fa fa-circle fa-stack-2x text-danger" id="colorError"></i>
+        <i class="fa fa-exclamation fa-stack-1x text-white" id="iconoError"></i>
+    </span>
+    <a href="javascript:void(0);"
+       class="clear error-tipo-operacion"
+       ng-click="presentarDetalleCalculo(error)"
+       ng-if="!error.EsFormula && error.OperacionEjecutada"
+       xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+        {{'ETIQUETA_EL_VALOR_DEL' | translate}} ${descripcionErrorCalculo}:
+        <span xbrl:auto-numeric class="valorError"></span>
+        {{'EDITOR_XBRL_NO_COINCIDE_ERROR_CALCULO' | translate }}:
+        <span xbrl:auto-numeric class="valorCalculadoError"></span>
+    </a>
+    <a href="javascript:void(0);"
+       class="clear  error-tipo-validacion">
+        {{'EDITOR_XBRL_NO_ES_POSIBLE_VALIDAR_HECHO' | translate}}: ${errorMotivo}.
+    </a>
+
+    <a href="javascript:void(0);" class="clear error-tipo-formula"></a>
+</li>

@@ -1,0 +1,11 @@
+/**
+ * Definición JSON con la configuración base de plantillas de contextos y dimensiones para el manejo de los hipercubos del rol #rolUri.
+ * 
+ * @author AbaxXBRL Template Generator
+ * @version 1.0
+ */
+module abaxXBRL.hipercubos.config {
+
+#definicionClase
+
+}

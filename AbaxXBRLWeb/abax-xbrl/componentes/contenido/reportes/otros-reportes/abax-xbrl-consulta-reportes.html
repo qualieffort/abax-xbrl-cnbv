@@ -1,0 +1,94 @@
+﻿<section>
+    <section class="vbox">
+        <section class="scrollable padder" style="padding-bottom: 100px;">
+            <section class="panel panel-default">
+                <header class="panel-heading">
+                    {{ tituloReporte | translate}}
+                </header>
+                <div class="row wrapper">
+                    <!--<div class="col-lg-3">
+                        <select class="input-sm form-control input-s-lg v-middle"
+                                ng-options="tipoReporte as tipoReporte.valor for tipoReporte in listaTipoReporte"
+                                ng-model="tipoReporte"
+                                style="display:none;"
+                                data-placeholder="{{'PLACE_HOLDER_TIPO_REPORTE_OTROS_REPORTES' | translate}}"
+                                chosen
+                                width="'300px'"
+                                allow-single-deselect="true">
+                            <option value=""></option>
+                        </select>
+                    </div>-->
+
+                    <div class="col-lg-3">
+                        <select class="input-sm form-control input-s-lg v-middle"
+                                ng-options="emisora as emisora.NombreCorto for emisora in emisoras"
+                                ng-model="aEmisora"
+                                style="display:none;"
+                                data-placeholder="{{'PLACE_HOLDER_CLAVE_COTIZACION_OTROS_REPORTES' | translate}}"
+                                ng-change="obtenerAniosEnvioReporteAnual()"
+                                chosen
+                                width="'300px'"
+                                allow-single-deselect="true">
+                            <option value=""></option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <select class="input-sm form-control input-s-lg v-middle"
+                                ng-options="anio as anio.llave for anio in aniosEnvios"
+                                ng-model="anioSeleccionado"
+                                style="display:none;"
+                                data-placeholder="{{'PLACE_HOLDER_ANIO_OTROS_REPORTES' | translate}}"
+                                ng-change="obtenerTrimestresEnvios();"
+                                chosen
+                                width="'300px'"
+                                allow-single-deselect="true">
+                            <option value=""></option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-3" ng-show="tipoDeReporte !== undefined && tipoDeReporte === 1">
+                        <select class="input-sm form-control input-s-lg v-middle"
+                                ng-options="trimestre as trimestre.llave for trimestre in trimestesEnvios"
+                                ng-model="trimestreSeleccionado"
+                                style="display:none;"
+                                data-placeholder="{{'PLACE_HOLDER_TRIMESTRE_OTROS_REPORTES' | translate}}"
+                                chosen
+                                width="'300px'"
+                                allow-single-deselect="true">
+                            <option value=""></option>
+                        </select>
+                    </div>
+
+                    <br /><br />
+                    <br />
+                                                            
+                    <div class="col-lg-9">
+                        
+                    </div>               
+                   
+                    <div class="col-lg-3">
+                        <!--ng-if="existeElementos"-->
+                        <div >
+                            <button type="button"
+                                    class="btn btn-sm btn-default"
+                                    ng-if="tieneFacultad(FacultadesEnum.ExportarDatosBitacora)"
+                                    style="width:300px; max-width:100%"
+                                    ng-click="exportaAExcel()"
+                                    ng-disabled=" !((tipoDeReporte != undefined && tipoDeReporte === 0 && aEmisora != undefined && anioSeleccionado != undefined)  || (tipoDeReporte != undefined && tipoDeReporte === 1 && aEmisora != undefined && anioSeleccionado != undefined && trimestreSeleccionado != undefined))"                                    
+                                    ng-hide="exportando">
+                                <i class="i i-file-excel"></i>
+                                {{'ETIQUETA_EXPORTAR' | translate}}
+                            </button>
+                            <button type="button" class="btn btn-sm btn-default" ng-if="exportando" style="width:200px" disabled>
+                                <i class="fa fa-refresh fa-spin"></i>
+                                {{'MENSAJE_INFO_EXPORTANDO' | translate}} ...
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        </section>
+    </section>
+</section>

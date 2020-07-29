@@ -1,0 +1,38 @@
+﻿<div class="timeline">
+    <article class="timeline-item active" ng-if="xbrlListadoVersiones.length == 0">
+        <div class="timeline-caption">
+            <div class="panel panel-warning">
+                <header class="panel-heading bg-dark">
+                    <h5> {{'EDITOR_XBRL_SIN_VERSIONES'|translate}} </h5>
+                </header>
+                <div class="panel-body">
+                    <h5> {{'EDITOR_XBRL_SIN_VERSIONES_DOCUMENTO' | translate}} </h5><br />
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="timeline-item" ng-class-even="'alt'" ng-class="{'active': $index == 0}" ng-repeat="version in xbrlListadoVersiones">
+        <div class="timeline-caption">
+            <div class="panel" ng-class="{'panel-warning': $index == 0 , 'panel-default' : $index != 0}">
+                <header class="panel-heading bg-dark">
+                    <h5>{{'EDITOR_XBRL_VERSION' | translate}}: {{version.Version}}</h5>
+                </header>
+                <div class="panel-body">
+                    <span class="arrow" ng-class-even="'right'" ng-class-odd="'left'" ng-if="$index != 0"></span>
+                    <span class="timeline-icon"><i class="fa time-icon" ng-class="{'fa-check': version.EsCorrecto, 'fa-exclamation': !version.EsCorrecto, 'bg-success': version.EsCorrecto, 'bg-danger': !version.EsCorrecto}"></i></span>
+                    <span class="timeline-date"><span ng-if="$index == 0">&nbsp;&nbsp;&nbsp;&nbsp;</span>{{version.Fecha}}</span>
+                    <h5>{{version.NombreUsuario}}  </h5> <br />
+                    <p>{{version.Comentarios}}</p>
+                    <div class="m-t-sm timeline-action" >
+                        <a href="javascript:void(0);" class="btn btn-sm btn-default btn-bg" ng-click="cargarVersionDocumentoInstancia(version.IdDocumentoInstancia,version.Version)"><i class="fa fa-reply"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{'ETIQUETA_CARGAR_DATOS' | translate}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <div class="timeline-footer">
+        <a href="javascript:void(0);">
+            <i class="i i-ellipsis time-icon inline-block bg-warning"></i>
+        </a>
+    </div>
+</div>

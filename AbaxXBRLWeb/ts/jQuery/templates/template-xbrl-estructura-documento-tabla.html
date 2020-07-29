@@ -1,0 +1,66 @@
+﻿<div id="{{idPlugin}}" class="table-responsive mainDT" style="overflow: hidden; margin-bottom:40px;">
+    <table class="table table-striped b-t b-light"
+           xbrl:tabla-excel
+           selector="td"
+           selector-contenedor-x="#contenedorTablaExcel-{{idPlugin}}"
+           selector-contenedor-y="#contenedorFormatos"
+           tab-index="1"
+           on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)"
+           on-after-paste="onAfterPaste(valorPegado, x, y)"
+           on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)"
+           xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura"
+           xbrl:tabla-scrolleable>
+        <thead id="encabezadoTabla">
+
+
+            <tr id="renglonEncabezado">
+                <th class="th-sortable" data-toggle="class" class="cabeceraConfiguracionTabla" style="padding-top: 33px;">
+                    <div id="divConfiguracion">
+                        <xbrl:configurar-tabla xbrl:estructura-tabla="elementoDocumento" xbrl:id-elemento-documento="{{idPlugin}}" documento-instancia="documentoInstancia" xbrl:fn-actualizar-tabla="actualizarEstructuraTablaPorId('{{idPlugin}}')"></xbrl:configurar-tabla>
+                    </div>
+                    &nbsp;
+                </th>
+                <th id="columnaEstructuraDocumento" style="background-color:miembroDimension.color">
+
+                    <span id="presentarEtiquetaConcepto">
+                        <xbrl:etiqueta-concepto xbrl:idioma="documentoInstancia.xbrlIdioma.ClaveIdioma" xbrl:id-concepto="miembroDimension.idConceptoMiembro" xbrl:nivel-indentacion="0" ´ />
+                    </span>
+
+                    <span id="presentarTitulo">
+                        miembroDimension.titulo
+                    </span>
+
+                </th>
+            </tr>
+        </thead>
+
+        <tbody id="cuerpoFormato">
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" id="renglonCuepoFormato">
+                <td class="celdaConceptos" style="width:300px;">
+                    <xbrl:etiqueta-concepto xbrl:idioma="documentoInstancia.xbrlIdioma.ClaveIdioma" xbrl:id-concepto="renglon.idConcepto" xbrl:nivel-indentacion="renglon.indentacion">
+                </td>
+
+                <td id="columnaHecho" style="background-color:bgColorHecho" cambio_hecho_comparador>
+                    <div id="mostrarHechoEditor" style="display:block">
+                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-concepto="hechoMostrado.IdConcepto" xbrl:id-contexto="hechoMostrado.IdContexto" xbrl:id-unidad="hechoMostrado.IdUnidad" xbrl:valor-default="0" xbrl:ultimo="descripcionUltimoCampo" />
+                    </div>
+
+                    <div id="mostrarHechoVisor" style="display:block">
+                        <div style="text-align:right; padding-right:20px;min-height:25px;">
+                            <span class="text-default">ValorHechoFormato</span>
+                        </div>
+                    </div>
+
+                    <div id="mostrarHechoTextBlock" class="celdaAnchoFijo textBlockLimit div-default divTextBlockMaximo" id="divAreaTextoede32c8b-fd87-431b-93a1-8ef415a5f283">
+                        ValorHechoFormato
+                    </div>
+
+                        <div id="sinHecho" class="campo_vacio">
+                            -
+                        </div>
+
+</td>
+            </tr>
+        </tbody>
+    </table>    
+</div>

@@ -1,0 +1,1 @@
+db.getCollection('Hecho').aggregate([ {"$group": { "_id": { Taxonomia: "$Taxonomia",ClaveEmisora:"$Entidad.Nombre", IdEnvio:"$IdEnvio"}}}]) 

@@ -1,0 +1,19 @@
+﻿<div>
+    <section class="m-b-lg">
+        <br>
+            <div id="popupDiv" class="list-group text-center">
+                <div class="list-group-item">
+                    <select class="input-s-lg form-control inline v-middle" ng-options="emisora.IdEmpresa as emisora.NombreCorto for emisora in emisoras" ng-model="miEmisora.IdEmpresa">
+                        <option value="">{{'PLACE_HOLDER_SELECCIONE_EMISORA' | translate}}...</option>
+                    </select>
+                </div>
+                <div class="col-lg-12">
+                    <input type="submit" value="{{'ETIQUETA_BOTON_REGRESAR' | translate}}" ng-click="cerrarSesion()" class="btn btn-default" style="width: 123px">
+                    <input type="button" value="{{'ETIQUETA_BOTON_ENTRAR' | translate}}" ng-click="acceder()" class="btn btn-primary login empresa" id="Elegir" ng-hide="autenticando">
+                    <button type="button" class="btn btn-primary login empresa bloqueado" disabled ng-if="autenticando">
+                        <i class="fa fa-refresh fa-spin"></i> {{'MENSAJE_INFO_ACCEDIENDO' | translate}} ...
+                    </button>
+                </div>
+            </div>
+    </section>
+</div>

@@ -1,0 +1,72 @@
+<xbrl-contenedor-formato xbrl:rol-uri="{{xbrlRol.Uri}}" orientacion="landscape" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+    <!--<div id="contenedorTablaExcel" class="table-responsive">
+    <table class="table table-striped b-t b-light" xbrl:tabla-excel selector="td:not(:first-child)" selector-contenedor-x="#contenedorFormatos" selector-contenedor-y="#contenedorFormatos" tab-index="1" on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)" on-after-paste="onAfterPaste(valorPegado, x, y)" on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)">
+        <thead>
+            <tr>
+                <th class="th-sortable" data-toggle="class">{{'EDITOR_XBRL_TITULO_CONCEPTO' | translate}}</th>
+                <th style="min-width: 230px; width: 230px;">
+                {{'EDITOR_XBRL_TITULO' | translate}}<br />
+                {{ definicionPlantilla.obtenerVariablePorId("medida_MXN")}}<br />
+                {{::definicionPlantilla.obtenerVariablePorId("fecha_2014_12_31")}}
+                </th>
+            </tr>
+        </thead>
+        <tbody>-->
+    <table class="tablaAnchoFijo" cellspacing="5">
+        <tbody>
+            <tr>
+                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_EquityMarket" xbrl:nivel-indentacion="0"></b></td>
+                <td style="text-align:left; width:50%; height:40px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="2">                 
+                   <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ShareholdingStructure" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                   <div class="bloqueTexto"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="ar_pros_ShareholdingStructure_5cbf27a4-1f68-43ed-a6bb-67743b429a3e"></xbrl:campo-captura></div>
+                 </td>              
+            </tr>
+            <tr>
+                <td colspan="2">              
+                    <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_BehaviorOfTheShare" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                    <div class="bloqueTexto"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="ar_pros_BehaviorOfTheShare_cf31b3f1-1b14-4e64-a297-152d5d877676"></xbrl:campo-captura></div>
+                 </td>            
+            </tr>
+            <tr>  
+                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_MarketMaker" xbrl:nivel-indentacion="1"></b></td>
+                <td style="text-align:left; width:50%; height:40px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="2">                
+                   <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_NameOfEachMarketMaker" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                   <div class="bloqueTexto"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="ar_pros_NameOfEachMarketMaker_a8b6eb85-cd4c-4c04-9f93-f22c4e9ee6b8"></xbrl:campo-captura></div>
+                 </td>             
+            </tr>
+            <tr>
+                <td colspan="2">              
+                      <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_IdentificationOfTheValues" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                      <div class="bloqueTexto"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="ar_pros_IdentificationOfTheValues_39f6e9e0-f7ee-44ef-a2b9-82b809e3075b"></xbrl:campo-captura></div>
+                  </td>             
+            </tr>
+            <tr>
+                <td colspan="2">               
+                       <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_EffectiveBeginningExtensionOrRenewal" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                       <div class="bloqueTexto"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="ar_pros_EffectiveBeginningExtensionOrRenewal_218906d5-2e38-4f38-8407-47c1f6276e3e"></xbrl:campo-captura></div>
+                </td>           
+            </tr>
+            <tr>
+                <td colspan="2">
+                    
+                    <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_DescriptionOfTheServicesProvided" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                    <div class="bloqueTexto"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="ar_pros_DescriptionOfTheServicesProvided_12084a5f-db3b-4c0c-912b-9aa5a910aa5c"></xbrl:campo-captura></div>
+                </td>             
+            </tr>
+            <tr>
+                <td colspan="2">
+                 
+                    <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_OverviewOfTheImpactOfThePerformance" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                    <div class="bloqueTexto"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="ar_pros_OverviewOfTheImpactOfThePerformance_e647ff0e-cf70-41cd-8dcc-ed990601cd80" xbrl:ultimo="true"></xbrl:campo-captura></div>
+                </td>              
+            </tr>
+        </tbody>
+    </table>
+  
+</xbrl-contenedor-formato>

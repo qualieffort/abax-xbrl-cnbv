@@ -1,0 +1,156 @@
+﻿<section class="panel panel-default">
+    <header class="panel-heading">
+        {{'TITULO_DIRECTORIO_USUARIOS' | translate}}
+    </header>
+    <div class="row wrapper">
+        <div class="col-sm-3">
+            <div class="col-sm-3" ng-if="existenUsuarios">
+                <button type="button"
+                        class="btn btn-sm btn-default"
+                        ng-if="(tieneFacultad(FacultadesEnum.ExportarDatosUsuario) && esUsuarioEmpresa == 0) || (tieneFacultad(FacultadesEnum.ExportarDatosUsuarioMismaEmpresa) && esUsuarioEmpresa > 0)"
+                        ng-click="descargaArchivo()"
+                        ng-hide="exportando">
+                    <i class="i i-file-excel"></i>
+                    {{'ETIQUETA_EXPORTAR' | translate}}
+                </button>
+                <button type="button" class="btn btn-sm btn-default" ng-if="exportando" disabled>
+                    <i class="fa fa-refresh fa-spin"></i>
+                    {{'MENSAJE_INFO_EXPORTANDO' | translate}} ...
+                </button>
+            </div>
+            <div class="col-sm-3" ng-if="!existenUsuarios">
+                <button type="button"
+                        class="btn btn-sm btn-default" disabled>
+                    <i class="i i-file-excel"></i>
+                    {{'ETIQUETA_EXPORTAR' | translate}}
+                </button>
+            </div>
+        </div>
+        <div class="col-sm-6 m-b-xs">
+            <select class="input-sm form-control input-s-sm inline v-middle" ng-change="cargarUsuarios()"
+                    ng-if="esUsuarioEmpresa == 0" ng-model="emisoraSeleccionada.IdEmpresa"
+                    ng-options="emisora.IdEmpresa as emisora.NombreCorto for emisora in emisoras"></select>
+            <input type="text" name="nombres" placeholder="{{'ETIQUETA_NOMBRE' | translate}}" value="" class="input-sm form-control input-s-lg inline v-middle" id="nombres" ng-model="usuarioBuscado" ng-model-options="{ debounce: 500 }" ng-change="cargarUsuarios()">
+        </div>
+        <div class="col-sm-3 m-b-xs text-right">
+            <button type="submit"
+                    ui-sref="inicio.usuario.agrega"
+                    ng-if="(tieneFacultad(FacultadesEnum.InsertarUsuario) && esUsuarioEmpresa == 0) || (tieneFacultad(FacultadesEnum.InsertarUsuarioMismaEmpresa) && esUsuarioEmpresa > 0)"
+                    class="btn btn-sm btn-default"
+                    style="width: 150px">
+                <i class="i i-add-to-list"></i> {{'ETIQUETA_BOTON_REGISTRAR_USUARIO' | translate}}
+        </button>
+        </div>
+    </div>
+</section>
+<section class="panel panel-default">
+    <header class="panel-heading bg-light">
+        {{'ETIQUETA_LISTADO_USUARIOS' | translate}}
+    </header>
+    <div class="row">
+        <div class="col-lg-4 text-left">
+            <h4 class=" font-bold v-middle"></h4>
+        </div>
+        <div class="col-lg-4 text-right"></div>
+    </div>
+    <div class="panel-body font-bold" style="background: #eeeeee; padding-left: 30px" ng-if="cargandoUsuarios">
+        <i class="fa fa-refresh fa-spin"></i>
+        {{'MENSAJE_INFO_CARGANDO_USUARIOS' | translate}} ...
+    </div>
+    <div class="panel-body font-bold" style="background: #eeeeee; padding-left: 30px" ng-if="!cargandoUsuarios && !existenUsuarios">
+        {{'MENSAJE_INFO_SIN_RESULTADOS' | translate}}
+    </div>
+    <div class="table-responsive" ng-if="!cargandoUsuarios && existenUsuarios">
+        <table id="tablaUsuarios" class="table table-striped b-t b-light" ng datatable="" dt-options="opcionesDataTableUsuarios">
+            <thead class="table-bordered">
+                <tr>
+                    <th style="text-align: center;">{{'ETIQUETA_APELLIDO_PATERNO' | translate}}</th>
+                    <th style="text-align: center;">{{'ETIQUETA_APELLIDO_MATERNO' | translate}}</th>
+                    <th style="text-align: center;">{{'ETIQUETA_NOMBRE' | translate}}</th>
+                    <th style="text-align: center;" ng-if="!sso">{{'PLACE_HOLDER_CORREO_ELECTRONICO' | translate}}</th>
+                    <th style="text-align: center;" ng-if="sso">{{'PLACE_HOLDER_USUARIO' | translate}}</th>
+
+                    <th style="text-align: center;">{{'ETIQUETA_PUESTO' | translate}}</th>
+                    <th style="text-align: center;" class="no-sort" ng-if="tieneFacultad(FacultadesEnum.ConsultarDatosBitacora)">{{'ETIQUETA_BITACORA' | translate}}</th>
+                    <th style="text-align: center;" class="no-sort" ng-if="(tieneFacultad(FacultadesEnum.AsignarRolesUsuario) && esUsuarioEmpresa == 0) || (tieneFacultad(FacultadesEnum.AsignarRolesUsuarioMismaEmpresa) && esUsuarioEmpresa > 0)">{{'ETIQUETA_ASIGNAR_ROLES' | translate}}</th>
+                    <th style="text-align: center;" class="no-sort" ng-if="tieneFacultad(FacultadesEnum.AsignarEmisorasUsuarios) && esUsuarioEmpresa == 0">{{'ETIQUETA_ASIGNAR_EMISORAS' | translate}}</th>
+                    <th style="text-align: center;" class="no-sort" ng-if="(tieneFacultad(FacultadesEnum.ActivarDesactivarUsuarios) && esUsuarioEmpresa == 0) || (tieneFacultad(FacultadesEnum.ActivarDesactivarUsuariosMismaEmpresa) && esUsuarioEmpresa > 0)">{{'ETIQUETA_ESTADO' | translate}}</th>
+                    <th style="text-align: center;" class="no-sort" ng-if="puedeBloquearDesbloquear">{{'ETIQUETA_BLOQUEAR_DESBLOQUEAR' | translate}}</th>
+                    <th style="text-align: center;" class="no-sort" ng-if="(tieneFacultad(FacultadesEnum.EditarUsuario) && esUsuarioEmpresa == 0) || (tieneFacultad(FacultadesEnum.EditarUsuarioMismaEmpresa) && esUsuarioEmpresa > 0)">{{'ETIQUETA_EDITAR' | translate}}</th>
+                    <th style="text-align: center;" class="no-sort" ng-if="(tieneFacultad(FacultadesEnum.EliminarUsuario) && esUsuarioEmpresa == 0) || (tieneFacultad(FacultadesEnum.EliminarUsuarioMismaEmpresa) && esUsuarioEmpresa > 0)">{{'ETIQUETA_ELIMINAR' | translate}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="usuario in usuarios">
+                    <td style="text-align:left;">{{usuario.ApellidoPaterno}}</td>
+                    <td style="text-align:left;">{{usuario.ApellidoMaterno}}</td>
+                    <td style="text-align:left;">{{usuario.Nombre}}</td>
+                    <td style="text-align:left;">{{usuario.CorreoElectronico}}</td>
+                    <td style="text-align:left;">{{usuario.Puesto}}</td>
+                    <td class="text-center" ng-if="tieneFacultad(FacultadesEnum.ConsultarDatosBitacora)">
+                        <a title="{{'ETIQUETA_BITACORA' | translate}}" ng-click="muestraBitacora(usuario)" class="btn btn-rounded btn-sm btn-icon btn-default"><i class="fa fa-list-ul"></i></a>
+                    </td>
+                    <td class="text-center" ng-if="(tieneFacultad(FacultadesEnum.AsignarRolesUsuario) && esUsuarioEmpresa == 0) || (tieneFacultad(FacultadesEnum.AsignarRolesUsuarioMismaEmpresa) && esUsuarioEmpresa > 0)">
+                        <a title="{{'ETIQUETA_ASIGNAR_ROLES' | translate}}" ng-click="asignarRoles(usuario)"
+                           ng-class="{'btn btn-rounded btn-sm btn-icon btn-danger':  usuario.TieneRoles == false, 'btn btn-rounded btn-sm btn-icon btn-default': usuario.TieneRoles == true }">
+                            <i class="i i-flow-tree"></i>
+                        </a>
+                    </td>
+                    <td class="text-center" ng-if="tieneFacultad(FacultadesEnum.AsignarEmisorasUsuarios) && esUsuarioEmpresa == 0">
+                        <a title="{{'ETIQUETA_ASIGNAR_EMISORAS' | translate}}" ui-sref="inicio.usuario.asignarEmisoras({id: usuario.IdUsuario})"
+                           ng-class="{'btn btn-rounded btn-sm btn-icon btn-danger':  usuario.TieneEmpresas == false, 'btn btn-rounded btn-sm btn-icon btn-default': usuario.TieneEmpresas == true }">
+                            <i class="i i-flow-tree"></i>
+                        </a>  
+                    </td>
+                    <td class="text-center" ng-if="(tieneFacultad(FacultadesEnum.ActivarDesactivarUsuarios) && esUsuarioEmpresa == 0) || (tieneFacultad(FacultadesEnum.ActivarDesactivarUsuariosMismaEmpresa) && esUsuarioEmpresa > 0)">
+                        <a ng-click="activacionUsuario(usuario.IdUsuario, usuario.Activo)">{{(usuario.Activo ? 'ETIQUETA_ACTIVO' : 'ETIQUETA_INACTIVO') | translate}}</a>
+                    </td>
+                    <td class="text-center" ng-if="puedeBloquearDesbloquear">
+                        <a title="{{(usuario.Bloqueado ? 'ETIQUETA_DESBLOQUEAR' : 'ETIQUETA_BLOQUEAR') | translate}}" ng ng-click="bloqueoUsuario(usuario.IdUsuario, usuario.Bloqueado)"
+                           ng-class="{'btn btn-rounded btn-sm btn-icon btn-danger': usuario.Bloqueado == true, 'btn btn-rounded btn-sm btn-icon btn-default': usuario.Bloqueado == false}">
+                            <i class="fa" ng-class="{'fa-lock': usuario.Bloqueado == true, 'fa-unlock': usuario.Bloqueado == false}"></i>
+                        </a>
+                    </td>
+                    <td class="text-center" ng-if="(tieneFacultad(FacultadesEnum.EditarUsuario) && esUsuarioEmpresa == 0) || (tieneFacultad(FacultadesEnum.EditarUsuarioMismaEmpresa) && esUsuarioEmpresa > 0)">
+                        <a title="{{'ETIQUETA_EDITAR' | translate}}" ui-sref="inicio.usuario.edita({id: usuario.IdUsuario})" class="btn btn-rounded btn-sm btn-icon btn-default"><i class="fa fa-pencil"></i></a>
+                    </td>
+                    <td class="text-center" ng-if="(tieneFacultad(FacultadesEnum.EliminarUsuario) && esUsuarioEmpresa == 0) || (tieneFacultad(FacultadesEnum.EliminarUsuarioMismaEmpresa) && esUsuarioEmpresa > 0)">
+                        <a title="{{'ETIQUETA_BORRAR' | translate}}" ng-click="eliminaUsuario(usuario.IdUsuario)" class="btn btn-rounded btn-sm btn-icon btn-danger"><i class="fa fa-trash-o"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <footer class="panel-footer ">
+        <div class="row">
+            <form>
+                <div class="col-sm-4 hidden-xs">
+                    <div class="col-sm-3" ng-if="existenUsuarios">
+                        <button type="button"
+                                class="btn btn-sm btn-default"
+                                ng-if="(tieneFacultad(FacultadesEnum.ExportarDatosUsuario) && esUsuarioEmpresa == 0) || (tieneFacultad(FacultadesEnum.ExportarDatosUsuarioMismaEmpresa) && esUsuarioEmpresa > 0)"
+                                ng-click="descargaArchivo()"
+                                ng-hide="exportando">
+                            <i class="i i-file-excel"></i>
+                            {{'ETIQUETA_EXPORTAR' | translate}}
+                        </button>
+                        <button type="button" class="btn btn-sm btn-default" ng-if="exportando" disabled>
+                            <i class="fa fa-refresh fa-spin"></i>
+                            {{'MENSAJE_INFO_EXPORTANDO' | translate}} ...
+                        </button>
+                    </div>
+                    <div class="col-sm-3" ng-if="!existenUsuarios">
+                        <button type="button"
+                                class="btn btn-sm btn-default" disabled>
+                            <i class="i i-file-excel"></i>
+                            {{'ETIQUETA_EXPORTAR' | translate}}
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <div class="col-sm-4 text-center"></div>
+            <div class="col-sm-4 text-right text-center-xs">
+            </div>
+        </div>
+    </footer>
+</section>

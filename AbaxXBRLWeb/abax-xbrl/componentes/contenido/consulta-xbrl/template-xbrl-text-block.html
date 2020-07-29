@@ -1,0 +1,31 @@
+﻿<div id="{{idCampoCapturaTextBlockModal}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div class="row m-t-sm">
+                    <div class="col-sm-8 m-b-xs">
+                        <h4 class="modal-title"> <span class="font-bold">{{'TITULO_DETALLE' | translate}}</span></h4>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <p>
+                        <span class="font-bold">{{descripcionHecho}}</span>
+                    </p>
+                </div>
+
+                <div class="celdaAnchoFijo textBlockLimit div-default divTextBlockMaximo" id="divAreaTexto{{idCampoCapturaTextBlockModal}}" style="overflow-y:visible">
+                    <iframe scrolling="no" id="frame_{{idCampoCapturaTextBlockModal}}" frameborder="0" style="width:100%;" />
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">{{'ETIQUETA_BOTON_CERRAR' | translate}}</button>
+
+            </div>
+        </div>
+    </div>
+</div>

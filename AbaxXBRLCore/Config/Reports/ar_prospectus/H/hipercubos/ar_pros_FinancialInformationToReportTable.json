@@ -1,0 +1,55 @@
+﻿{
+  "IdConceptos": [
+    "ar_pros_FinancialInformationToReportStartDate",
+    "ar_pros_FinancialInformationToReportEndtDate",
+    "ifrs-full_Revenue",
+    "ifrs-full_GrossProfit",
+    "ifrs-full_ProfitLossFromOperatingActivities",
+    "ifrs-full_ProfitLoss",
+    "ifrs-full_BasicEarningsLossPerShare",
+    "ifrs_mx-cor_20141205_AcquisitionOfPropertyAndEquipment",
+    "ifrs_mx-cor_20141205_DepreciacionYAmortizacionOperativa",
+    "ifrs-full_Assets",
+    "ifrs-full_NoncurrentLiabilities",
+    "ifrs_mx-cor_20141205_AccountsReceivableTurnoverDecimal",
+    "ifrs_mx-cor_20141205_AccountsPayableTurnoverDecimal",
+    "ifrs_mx-cor_20141205_InventoryTurnoverDecimal",
+    "ifrs-full_Equity",
+    "ifrs_mx-cor_20141205_CashDividendsDeclaredPerShare"
+  ],
+  "PlantillasContextos": {
+    "Instante": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": []
+    },
+    "Duracion": {
+      "Periodo": {
+        "VariableFechaInicio": "fecha_2014_01_01",
+        "VariableFechaFin": "fecha_2014_12_31",
+        "Tipo": 2
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": []
+    }
+  },
+  "PlantillaDimensiones": {
+    "ar_pros_FinancialInformationToReportTypedAxis": {
+      "PrefijoValor": "<ar_pros:FinancialInformationToReportDomain xmlns:ar_pros=\"http://www.cnbv.gob.mx/2016-08-22/ar_prospectus\">",
+      "SubfijoValor": "</ar_pros:FinancialInformationToReportDomain>",
+      "EtiquetaNuevoElemento": "Periodo",
+      "Explicita": false,
+      "IdDimension": "ar_pros_FinancialInformationToReportTypedAxis",
+      "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:FinancialInformationToReportTypedAxis"
+    }
+  },
+  "DimensionesDinamicas": [
+    "ar_pros_FinancialInformationToReportTypedAxis"
+  ],
+  "MaxColumnasVertical": 6,
+  "MaxColumnasHorizontal": 0,
+  "TamanoHoja": "Letter"
+}

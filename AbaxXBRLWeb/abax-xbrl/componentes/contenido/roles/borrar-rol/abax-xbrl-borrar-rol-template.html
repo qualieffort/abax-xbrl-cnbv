@@ -1,0 +1,11 @@
+﻿<div class="modal-header">
+    <button type="button" class="close" aria-hidden="true" ng-click="cancelar()">×</button>
+    <h4 class="modal-title" translate="TITULO_PROMPT_ELIMINAR_ROL"></h4>
+</div>
+<div class="modal-body">
+    <p translate="MENSAJE_CONFIRM_ELIMINAR_ROL_USUARIO" translate-values="{NOMBRE_ROL: rol.Nombre}"></p>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" ng-click="cancelar()" translate="ETIQUETA_BOTON_CANCELAR"></button>
+    <button class="btn btn-primary" ng-click="eliminarRol()" translate="ETIQUETA_BOTON_ACEPTAR"></button>
+</div>

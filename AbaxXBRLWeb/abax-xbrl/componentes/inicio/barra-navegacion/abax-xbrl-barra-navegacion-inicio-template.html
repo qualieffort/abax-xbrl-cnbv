@@ -1,0 +1,332 @@
+﻿<aside class="bg-light lt b-r b-light aside-md hidden-print hidden-xs" id="nav" ng-class="{'nav-off-screen' : mostrarMenuNavegacionEnportrait, 'nav-xs': navegacionXS}">
+    <section class="vbox">
+        <section class="w-f scrollable">
+            <div slimscroll="{height: 'auto', disableFadeOut: true, distance: 0, size: 10}" slimscrolllistento="resize::resize" class="slim-scroll">
+                <div class="bg-primary header header-md navbar navbar-fixed-top-xs box-shadow dk" ng-if="enEditorXBRL">
+                    <a href="javascript:void(0);" class="navbar-brand" title="{{'ETIQUETA_VERSION' | translate}}: {{versionApp}}">
+                        <img id="abaxmini" ng-src="images/{{abaxStyle.logoMini}}" ng-show="navegacionXS" />
+                        <img id="abaxlarge" ng-src="images/{{abaxStyle.imagenHorizontal}}" ng-show="!navegacionXS">
+                    </a> 
+                </div>
+                <div class="clearfix wrapper dk nav-user hidden-xs">
+                    <div class="dropdown" dropdown>
+                        <a href="" class="dropdown-toggle" dropdown-toggle>
+                            <span class="thumb avatar pull-left m-r">
+                                <img src="images/a0.png" class="dker" alt="...">
+                                <i class="on md b-light"></i>
+                            </span>
+                            <span class="hidden-nav-xs clear">
+                                <span class="block m-t-xs">
+                                    <strong class="font-bold text-lt">
+                                        {{usuarioSesion.Nombre}} {{usuarioSesion.ApellidoPaterno}}  {{usuarioSesion.ApellidoMaterno}}
+                                    </strong>
+                                    <b class="caret"></b>
+                                </span>
+                                <span class="text-muted text-xs block">{{usuarioSesion.Puesto}}</span>
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs" role="menu">
+                            <li ng-if="!sso">
+                                <span class="arrow top hidden-nav-xs"></span>
+                                <a ui-sref="inicio.usuario.cambiarContrasena">{{'ETIQUETA_CAMBIAR_CONTRASENA' | translate}}</a>
+                            </li>
+
+                            <li class="divider" ng-if="!sso">></li>
+                            <li>
+                                <a class="auto" href="" ng-click="cerrarSesion()">{{'ETIQUETA_CERRAR_SESION' | translate}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <!-- nav -->
+                <nav class="nav-primary hidden-xs">
+                    <div class="text-muted text-sm hidden-nav-xs padder m-t-sm m-b-sm">{{'ETIQUETA_MENU_OPCIONES' | translate}}</div>
+                    <ul class="nav nav-main">
+                        <li>
+                            <a ui-sref="inicio.panelControl" class="auto">
+                                <i class="i i-statistics icon"></i>
+                                <span class="font-bold">{{'ETIQUETA_TABLERO_CONTROL' | translate}}</span>
+                            </a>
+                        </li>
+
+
+
+                        <li ng-if="tieneFacultadBigacoraVersionDocumentos">
+                            <a href="javascript:void(0);" class="auto" ng-click="colapsarSubmenuBitacora=!colapsarSubmenuBitacora">
+                                <i class="i i-health"></i>
+                                <span class="font-bold">{{'ETIQUETA_MONITOR' | translate}}</span>
+                            </a>
+                            <ul class="nav dk" collapse="colapsarSubmenuBitacora">
+
+                                <li ng-if="tieneFacultadConsultasRepositorio">
+                                    <a ui-sref="inicio.bitacoraVersionDocumentos" class="auto">
+                                        <i class="i  i-search2"></i>
+                                        <span class="font-bold">{{'TITULO_MONITOR_DOCUMENTOS' | translate}}</span>
+                                    </a>
+                                </li>
+
+                                <li ng-if="tieneFacultadConsultarRepositorioXBRL">
+                                    <a style="cursor:pointer;" ui-sref="inicio.bitacoraArchivosBMV" class="auto">
+                                        <i class="i  i-search2"></i>
+                                        <span class="font-bold">{{'TITULO_MONITOR_ARCHIVOS_BMV' | translate}}</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+
+
+                        <li ng-if="tieneFacultadesConfiguracion">
+                            <a href="" class="auto" ng-click="colapsarSubmenuConfigurar = !colapsarSubmenuConfigurar">
+                                <i class="fa fa-gears"></i>
+                                <span class="font-bold">{{'ETIQUETA_CONFIGURAR' | translate}}</span>
+                            </a>
+                            <ul class="nav dk" collapse="colapsarSubmenuConfigurar">
+                                <li ng-if="tieneFacultadConsultaEmpresas">
+                                    <a id="A1" ui-sref="inicio.empresa.indice" class="auto">
+                                        <i class="fa fa-building-o"></i>
+                                        <span class="font-bold">{{'ETIQUETA_EMPRESA' | translate}}</span>
+                                    </a>
+                                </li>
+                                <li ng-if="tieneFacultadConsultarTipoEmpresas">
+                                    <a ui-sref="inicio.tipoEmpresaListado" class="auto">
+                                        <i class="fa fa-tags"></i>
+                                        <span class="font-bold">{{'TITULO_TIPO_EMPRESA' | translate}}</span>
+                                    </a>
+                                </li>
+                                <li ng-if="tieneFacultadConsultarGrupoEmpresa">
+                                    <a ui-sref="inicio.listaGrupoEmpresas" class="auto">
+                                        <i class="i i-flow-tree"></i>
+                                        <span class="font-bold">{{'TITULO_GRUPO_EMPRESA' | translate}}</span>
+                                    </a>
+                                </li>
+                                <li ng-if="tieneFacultadConsultarTaxonomias">
+                                    <a ui-sref="inicio.taxonomiasListado" class="auto">
+                                        <i class="fa fa-clipboard"></i>
+                                        <span class="font-bold">{{'TITULO_TAXONOMIAS' | translate}}</span>
+                                    </a>
+                                </li>
+                                <li ng-if="tieneFacultadConsultaRoles">
+                                    <a id="A2" ui-sref="inicio.roles" class="auto">
+                                        <i class="i i-flow-tree"></i>
+                                        <span class="font-bold">{{'ETIQUETA_ROLES' | translate}}</span>
+                                    </a>
+                                </li>
+                                <li ng-if="tieneFacultadConsultaGrupos">
+                                    <a id="A1" ui-sref="inicio.grupos" class="auto">
+                                        <i class="fa fa-group"></i>
+                                        <span class="font-bold">{{'ETIQUETA_GRUPOS' | translate}}</span>
+                                    </a>
+                                </li>
+                                <li ng-if="tieneFacultadConsultaUsuarios">
+                                    <a id="A1" ui-sref="inicio.usuario.indice({esUsuarioEmpresa: 0})" class="auto">
+                                        <i class="fa fa-user"></i>
+                                        <span class="font-bold">{{'ETIQUETA_USUARIOS' | translate}}</span>
+                                    </a>
+                                </li>
+                                <li ng-if="!tieneFacultadConsultaUsuarios && tieneFacultadConsultaUsuariosMismaEmpresa">
+                                    <a id="A1" ui-sref="inicio.usuario.indice({esUsuarioEmpresa: 1})" class="auto">
+                                        <i class="fa fa-user"></i>
+                                        <span class="font-bold">{{'ETIQUETA_USUARIOS_EMPRESA' | translate}}</span>
+                                    </a>
+                                </li>
+                                <li ng-if="tieneFacultadConsultarParametroSistema">
+                                    <a ui-sref="inicio.listaParametrosSistema" class="auto">
+                                        <i class="i i-params"></i>
+                                        <span class="font-bold">{{'TITULO_PARAMETRO_SISTEMA' | translate}}</span>
+                                    </a>
+                                </li>
+                                <li ng-if="tieneFacultadListasNotificacion">
+                                    <a ui-sref="inicio.listadoListasNotificacion" class="auto">
+                                        <i class="i i-paperplane"></i>
+                                        <span class="font-bold">{{'TITULO_NOTIFICACIONES' | translate}}</span>
+                                    </a>
+                                </li>
+
+                                <li ng-if="tieneFacultadConsultarDatosBitacora">
+                                    <a ui-sref="inicio.bitacora" class="auto">
+                                        <i class="fa fa-list-alt"></i>
+                                        <span class="font-bold">{{'ETIQUETA_BITACORA_AUDITORIA' | translate}}</span>
+                                    </a>
+                                </li>
+                                <li ng-if="Facultad.Inicio_Fideicomisos">
+                                    <a ui-sref="inicio.fideicomisos" class="auto">
+                                        <i class="fa fa-money"></i>
+                                        <span class="font-bold">{{'ETIQUETA_FIDEICOMISOS' | translate}}</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li ng-if="(tieneFacultad(FacultadesEnum.CrearDocumentoInstancia)  && tieneFacultad(FacultadesEnum.GuardarDocumentoInstancia)) ||tieneFacultad(FacultadesEnum.ListadoDocumentoInstancia)">
+                            <a href="" class="auto"
+                               ng-click="colapsarSubmenuEditorXbrl=!colapsarSubmenuEditorXbrl">
+                                <i class="i i-stack icon"></i>
+                                <span class="font-bold">{{'ETIQUETA_EDITOR_XBRL' | translate}}</span>
+                            </a>
+                            <ul class="nav dk" collapse="colapsarSubmenuEditorXbrl">
+                                <li ng-if="tieneFacultad(FacultadesEnum.CrearDocumentoInstancia) &&  tieneFacultad(FacultadesEnum.GuardarDocumentoInstancia)">
+                                    <a id="edEstado" style="cursor:pointer;" ng-if="!enEditorXBRL" ui-sref="inicio.editorXBRL" class="auto">
+                                        <i class="i i-code"></i>
+                                        <span class="font-bold">{{'ETIQUETA_CREAR_DOCUMENTO_INSTANCIA' | translate}}</span>
+                                    </a>
+                                    <a id="edEstado" style="cursor:pointer;" ng-if="enEditorXBRL" ui-sref="inicio.editorXBRL.DocumentoInstanciaCrearDocumentoInstancia1" class="auto">
+                                        <i class="i i-code"></i>
+                                        <span class="font-bold">{{'ETIQUETA_CREAR_DOCUMENTO_INSTANCIA' | translate}}</span>
+                                    </a>
+                                </li>
+                                <li ng-if="tieneFacultad(FacultadesEnum.ListadoDocumentoInstancia)">
+                                    <a style="cursor:pointer;" ui-sref="inicio.listaDocumentosInstancia" class="auto">
+                                        <i class="fa fa-th-list"></i>
+                                        <span class="font-bold">{{'ETIQUETA_LISTADO_DE_DOCUMENTOS_INSTANCIA' | translate}}</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li ng-if="tieneFacultadesConsultas">
+                            <a href="javascript:void(0);" class="auto"
+                               ng-click="colapsarSubmenuConsulta=!colapsarSubmenuConsulta">
+                                <i class="i i-search icon"></i>
+                                <span class="font-bold">{{'ETIQUETA_CONSULTAS' | translate}}</span>
+                            </a>
+                            <ul class="nav dk" collapse="colapsarSubmenuConsulta">
+
+                                <li ng-if="tieneFacultadConsultasRepositorio">
+                                    <a ui-sref="inicio.listadoConsultasRepositorio" class="auto">
+                                        <i class="fa fa-eye"></i>
+                                        <span class="font-bold">{{'TITULO_CONSULTAS_REPOSITORIO' | translate}}</span>
+                                    </a>
+                                </li>
+                                <li ng-if="tieneFacultadConsultarRepositorioXBRL">
+                                    <a style="cursor:pointer;" ui-sref="inicio.consultaXBRL" class="auto">
+                                        <i class="i i-data"></i>
+                                        <span class="font-bold">{{'ETIQUETA_CONSULTAR_REPOSITORIO_XBRL' | translate}}</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript:void(0);" class="auto"
+                               ng-click="colapsarReportes=!colapsarReportes">
+                                <i class="i i-search icon"></i>
+                                <span class="font-bold">{{'ETIQUETA_REPORTES' | translate}}</span>
+                            </a>
+                            <ul class="nav dk" collapse="colapsarReportes">
+
+                                <li ng-if="tieneFacultadConsultasRepositorio">
+                                    <a ui-sref="inicio.responsables" class="auto">
+                                        <i class="i  i-search2"></i>
+                                        <span class="font-bold">{{'ETIQUETA_PERSONAS_RESPONSABLES' | translate}}</span>
+                                    </a>
+                                </li>
+
+                                <li ng-if="tieneFacultadConsultasRepositorio">
+                                    <a ui-sref="inicio.enviosTaxonomia" class="auto">
+                                        <i class="i  i-search2"></i>
+                                        <span class="font-bold">{{'ETIQUETA_CONSULTA_ENVIOS_TAXONOMIA' | translate}}</span>
+                                    </a>
+                                </li>
+
+                                <li ng-if="tieneFacultadConsultasRepositorio">
+                                    <a ui-sref="inicio.administradores" class="auto">
+                                        <i class="i  i-search2"></i>
+                                        <span class="font-bold">{{'TITULO_ADMINISTRADORES' | translate}}</span>
+                                    </a>
+                                </li>
+
+                                <li ng-if="tieneFacultadConsultasRepositorio">
+                                    <a ui-sref="inicio.resumenInformacion4D" class="auto">
+                                        <i class="i  i-search2"></i>
+                                        <span class="font-bold">{{'TITULO_RESUMEN_INFO_4D' | translate}}</span>
+                                    </a>
+                                </li>
+
+                                <li ng-if="tieneFacultadConsultasRepositorio">
+                                    <a ui-sref="inicio.reporteFichaAdministrativa" class="auto">
+                                        <i class="i  i-search2"></i>
+                                        <span class="font-bold">{{'TITULO_REPORTE_FICHA_ADMINISTRATIVA' | translate}}</span>
+                                    </a>
+                                </li>
+
+                                <li ng-if="tieneFacultadConsultasRepositorio">
+                                    <a ui-sref="inicio.reporteFichaTecnica" class="auto">
+                                        <i class="i  i-search2"></i>
+                                        <span class="font-bold">{{'TITULO_REPORTE_FICHA_TECNICA' | translate}}</span>
+                                    </a>
+                                </li>
+
+                                <li ng-if="tieneFacultadConsultasRepositorio">
+                                    <a ui-sref="inicio.reporteCalculoDeMaterialidad" class="auto">
+                                        <i class="i  i-search2"></i>
+                                        <span class="font-bold">{{'TITULO_REPORTE_CALCULO_DE_MATERIALIDAD' | translate}}</span>
+                                    </a>
+                                </li>
+
+                                <!--<li ng-if="tieneFacultadConsultasRepositorio">
+                                    <a ui-sref="inicio.reporteFolletoReestructura" class="auto">
+                                        <i class="i  i-search2"></i>
+                                        <span class="font-bold">{{'TITULO_REPORTE_FICHA_TECNICA' | translate}}</span>
+                                    </a>
+                                </li>-->
+
+                                <li ng-if="tieneFacultadConsultasRepositorio">
+                                    <a ui-sref="inicio.reporteDescripcionSectores" class="auto">
+                                        <i class="i  i-search2"></i>
+                                        <span class="font-bold">{{'ETIQUETA_REPORTE_DESCRIPCION_SECTORES' | translate}}</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a ui-sref="inicio.alertas" class="auto">
+                                <i class="i i-chat3 icon"></i>
+                                <span class="font-bold">{{'ETIQUETA_ALERTAS' | translate}}</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a ui-sref="inicio.mostrarAyuda" class="auto">
+                                <i class="i i-question2 icon"></i>
+                                <span class="font-bold">{{'ETIQUETA_MOSTRAR_AYUDA' | translate}}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="auto" href="{{urlSoporteTecnico}}" target="_blank">
+                                <i class="i i-info2 icon"></i>
+                                <span class="font-bold">{{'ETIQUETA_SOPORTE_TECNICO' | translate}}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" ng-click="cerrarSesion()" class="auto">
+                                <i class="i i-logout"></i>
+                                <span class="font-bold">{{'ETIQUETA_CERRAR_SESION' | translate}}</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <div class="line dk hidden-nav-xs"></div>
+                </nav>
+                <!-- / nav -->
+            </div>
+        </section>
+
+        <footer class="footer hidden-xs no-padder text-center-nav-xs">
+            <a href="javascript:void(0);" ng-click="cerrarSesion()" class="btn btn-icon icon-muted btn-inactive pull-right m-l-xs m-r-xs hidden-nav-xs">
+                <i class="i i-logout"></i>
+            </a>
+            <a id="btnOcultarMenu"
+               href="javascript:void(0);"
+               ng-click="navegacionXS = !navegacionXS; colapsarSubmenuEditorXbrl = true; colapsarSubmenuConfigurar = true;"
+               class="btn btn-icon icon-muted btn-inactive m-l-xs m-r-xs">
+                <i class="i i-circleleft" ng-if="!navegacionXS"></i>
+                <i class="i i-circleright" ng-if="navegacionXS"></i>
+            </a>
+        </footer>
+    </section>
+</aside>

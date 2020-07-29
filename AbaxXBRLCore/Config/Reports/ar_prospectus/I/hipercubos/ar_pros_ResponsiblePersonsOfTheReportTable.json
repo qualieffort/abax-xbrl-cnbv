@@ -1,0 +1,50 @@
+{
+  "IdConceptos": [
+    "ar_pros_ResponsiblePersonName",
+    "ar_pros_ResponsiblePersonPosition",
+    "ar_pros_ResponsiblePersonInstitution",
+    "ar_pros_ResponsiblePersonLegend"
+  ],
+  "PlantillasContextos": {
+    "MembersOfTheBoardOfDirectorsA2N1Member": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+          "IdItemMiembro": "ar_pros_MembersOfTheBoardOfDirectorsA2N1Member",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:MembersOfTheBoardOfDirectorsA2N1Member"
+        }
+      ]
+    }
+  },
+  "PlantillaDimensiones": {
+    "ar_pros_TypeOfResponsibleFigureAxis": {
+      "PrefijoValor": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:",
+      "SubfijoValor": "",
+      "EtiquetaNuevoElemento": "MembersOfTheBoardOfDirectorsA2N1Member",
+      "Explicita": true,
+      "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+      "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis"
+    },
+    "ar_pros_ResponsiblePersonsSequenceTypedAxis": {
+      "PrefijoValor": "<ar_pros:ResponsiblePersonSequenceDomain xmlns:ar_pros=\"http://www.cnbv.gob.mx/2016-08-22/ar_prospectus\">",
+      "SubfijoValor": "</ar_pros:ResponsiblePersonSequenceDomain>",
+      "EtiquetaNuevoElemento": "1",
+      "Explicita": false,
+      "IdDimension": "ar_pros_ResponsiblePersonsSequenceTypedAxis",
+      "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:ResponsiblePersonsSequenceTypedAxis"
+    }
+  },
+  "DimensionesDinamicas": [
+    "ar_pros_ResponsiblePersonsSequenceTypedAxis"
+  ],
+  "MaxColumnasVertical": 6,
+  "MaxColumnasHorizontal": 0,
+  "TamanoHoja": "Letter"
+}

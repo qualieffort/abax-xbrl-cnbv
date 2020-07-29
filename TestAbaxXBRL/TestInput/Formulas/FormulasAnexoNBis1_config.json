@@ -1,0 +1,171 @@
+{
+	"Datos generales":{
+		"Obligatorio_Mencionar_dependencia": {
+		"NombreFormula": "Obligatorio_Mencionar_dependencia",
+		"Precondition": "Fideicomisos",
+		"Variables":[
+				{"Concepto": "ar_pros_TypeOfInstrument"},
+				{"Concepto": "ar_pros_MentioningPartialOrTotalDependence"},
+			]
+		},
+		"AnnualReport": {
+		"NombreFormula": "AnnualReport",
+		"Igual": "Anexo N Bis 1",
+		"Variables":[
+				{"Concepto": "ar_pros_AnnualReport"},
+			]
+		}
+	},
+	"Portada":{
+		"Portada_No_Vacios": {
+		"NombreFormula": "Portada_No_Vacios",
+		"Variables":[
+				{"Concepto": "ar_pros_NumberOfTrust"},
+				{"Concepto": "ar_pros_DataRelatedToTheIndenture"},
+				{"Concepto": "ar_pros_NameOfTheIssuer"},
+				{"Concepto": "ar_pros_Settlor"},
+				{"Concepto": "ar_pros_Ticker"},
+				{"Concepto": "ar_pros_TrusteesInFirstPlace"},
+				{"Concepto": "ar_pros_TrusteesInSecondPlace"},
+				{"Concepto": "ar_pros_TrusteesInThirdPlace"},
+				{"Concepto": "ar_pros_OtherTrustees"},
+			    {"Concepto": "ar_pros_TrustEstateManager"},  
+			    {"Concepto": "ar_pros_SummaryOfTheMostImportantCharacteristics"}, 
+			    {"Concepto": "ar_pros_SerieInterestPerformanceAndCalculationProcedure"}, 
+			    {"Concepto": "ar_pros_WhereAppropriateMinimumPerformance"}, 
+			    {"Concepto": "ar_pros_FrequencyAndFormOfAmortizationOfSecurities"}, 
+			    {"Concepto": "ar_pros_PeriodicityAndPaymentOfYields"}, 
+			    {"Concepto": "ar_pros_SerieSubordinationOfTitlesIfAny"}, 
+			    {"Concepto": "ar_pros_LocationAndPaymentOfIncome"}, 
+			    {"Concepto": "ar_pros_NameOfTheCommonRepresentative"}, 
+			    {"Concepto": "ar_pros_SerieDepositary"}, 
+			    {"Concepto": "ar_pros_SerieTaxRegime"}, 
+			    {"Concepto": "ar_pros_WhereAppropriateValuatotyOpinion"}, 
+			    {"Concepto": "ar_pros_TheMentionThatTheValuesOfTheIssuerAreRegistered"}, 
+			    {"Concepto": "ar_pros_"}, 
+				{"Concepto": "ar_pros_Ticker"},
+				{"Concepto": "ar_pros_TheMentionThatTheValuesOfTheIssuerAreRegistered"},
+				{"Concepto": "ar_pros_Article86LegendOfTheLmv"},
+				{"Concepto": "ar_pros_AnnualReportCueLegend"},
+				{"Concepto": "ar_pros_PeriodRepresenting"},
+
+			]
+		},
+		"ExistenciaSerieEje":{
+			"NombreFormula":"ExistenciaSerieEje",
+			"Expresion":'(variable2 != " _null_ ")',
+			"MensajeExito":"Existe al menos una serie en la tabla \"Especificación de las características de los títulos en circulación\"",
+			"MensajeError":"Debería existir al menos una serie en la tabla \"Especificación de las características de los títulos en circulación\"",
+			"VariablesCoincidenPeriodo":"false",
+			"ExcepcionSinHijos": "true",
+			"VariablesExpresion":[
+				{"IdConcepto": "ar_pros_TypeOfInstrument"},
+				{"IdConcepto":"ar_pros_Class", "ValorFallback":" _null_ "}
+			]
+		},
+		"PORTADA_Obligatorio_Renglon_Serie_especificacion_de_las_caracteristicas_de_los_titulos_en_circulacion": {
+		"NombreFormula": "PORTADA_Obligatorio_Renglon_Serie_especificacion_de_las_caracteristicas_de_los_titulos_en_circulacion",
+		"Variables":[
+				{"Concepto": "ar_pros_Class"},
+				{"Concepto": "ar_pros_EquitySerie"},
+				{"Concepto": "ar_pros_SerieType"},
+	            {"Concepto": "ar_pros_SerieTicker"},
+	            {"Concepto": "ar_pros_SerieNumberOfStocks"},
+	            {"Concepto": "ar_pros_SerieTotalAmount"},
+	            {"Concepto": "ar_pros_ SerieNominalValue"},
+	            {"Concepto": "ar_pros_SerieTerm"},
+	            {"Concepto": "ar_pros_EquitySerieSettlementDate"},
+	            {"Concepto": "ar_pros_SerieNumberOfCorrespondingEmission"},
+				{"Concepto": "ar_pros_SerieNumberOfStocks"},
+				{"Concepto": "ar_pros_SerieStockExhangesWhereTheyAreRegistered"},
+				{"Concepto": "ar_pros_SerieTickerFromTheSourceMarket"}
+			]
+			}
+		},
+	"Informacion General": {
+		"No_Vacios_Informacion_General": {
+		"NombreFormula": "No_Vacios_Informacion_General",
+		"Variables":[
+				{"Concepto": "ar_pros_GlossaryOfTermsAndDefinitions"},
+				{"Concepto": "ar_pros_ExecutiveSummary"},
+				{"Concepto": "ar_pros_RiskFactors"},
+				{"Concepto": "ar_pros_PublicDocuments"},				
+				{"Concepto": "ar_pros_OtherValues"},
+				{"Concepto": "ar_pros_SignificantChangesToTheRightsOfSecuritiesRegistered"},				
+			]
+			}
+		},
+	"Operación_de_Bursatilización": {
+		"No_Vacios_Operación_de_Bursatilización": {
+		"NombreFormula": "No_Vacios_Operación_de_Bursatilización",
+			"Variables":[
+					{"Concepto": "ar_pros_TechnicalCommittee"},
+					{"Concepto": "ar_pros_TrustEstate"},
+					{"Concepto": "ar_pros_RelevantInformationOfThePeriod"},
+					{"Concepto": "ar_pros_OtherThirdPartiesObligatedWithTheTrust"},
+					{"Concepto": "ar_pros_EvolutionOfTheAssetsInTrust"},
+					{"Concepto": "ar_pros_PerformanceOfSecuritiesIssued"},
+					{"Concepto": "ar_pros_AssetPerformance"},
+					{"Concepto": "ar_pros_CompositionOfTotalAssets"},
+					{"Concepto": "ar_pros_VariationInBalanceAndNumberOfAssets"},
+					{"Concepto": "ar_pros_AssetsStatusByGradeOrLevelOfCompliance"},
+					{"Concepto": "ar_pros_GuaranteesOnAssets"},
+					{"Concepto": "ar_pros_IssuingOfValues"},	
+				]
+			}
+		},
+	"Informacion Financiera": {
+		"Obligatorio_Informacion_Financiera": {
+			"NombreFormula": "Obligatorio_Informacion_Financiera",
+			"Variables":[
+				
+				    {"Concepto": "ar_pros_BalanceAndTrustResults"},
+				    {"Concepto": "ar_pros_SourceAndApplicationOfResources"},
+				    {"Concepto": "ar_pros_MovementsInTheAccountsForCashManagement"},
+                    {"Concepto": "ar_pros_IndexesAndFinancialRatios"},
+
+				
+				]
+			},
+				"Obligatorio_Información_Seleccionada": {
+			"NombreFormula": "Obligatorio_Información_Seleccionada",
+			"Variables":[
+
+	               {"Concepto": "ar_pros_SelectedFinancialInformationOfTheTrust"},
+				
+			    ]
+			}
+	    },
+	"Administracion":{
+		"ADMINISTRACION_no_vacios": {
+			"NombreFormula": "ADMINISTRACION_no_vacios",
+			"Variables":[
+				    {"Concepto": "ar_pros_ExternalAuditorsAdministration"},
+					{"Concepto": "ar_pros_TransactionsWithRelatedParties"},
+					{"Concepto": "ar_pros_MeetingsOfHolders"},
+				
+				]
+			}
+	
+		},
+	"Persona responsable":{
+		"PERSONAS_RESPONSABLES_obligatorio_renglon_tabla_personas_responsables": {
+			"NombreFormula": "PERSONAS_RESPONSABLES_obligatorio_renglon_tabla_personas_responsables",
+			"Variables":[					
+					{"Concepto": "ar_pros_ResponsiblePersonPosition"},
+					{"Concepto": "ar_pros_ResponsiblePersonInstitution"},
+					{"Concepto": "ar_pros_ResponsiblePersonLegend"},
+					{"Concepto": "ar_pros_ResponsiblePersonName"},
+				]
+			}		
+		},
+	"Anexos": {
+		"Obligatorio_Anexos": {
+		"NombreFormula": "Obligatorio_Anexos",
+			"Variables":[
+					{"Concepto": "ar_pros_FinancialStatementsAuditedPdf"},
+					{"Concepto": "ar_pros_AdditionalInformationAnnexPdf"},
+				]
+			}
+		}
+}      

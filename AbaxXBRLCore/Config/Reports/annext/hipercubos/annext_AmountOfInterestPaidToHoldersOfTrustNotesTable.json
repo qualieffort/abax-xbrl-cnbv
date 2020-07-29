@@ -1,0 +1,31 @@
+{
+  "IdConceptos": [
+    "annext_DetailOfAmountOfInterestPaidToHoldersOfTrustNotes"
+  ],
+  "PlantillasContextos": {
+    "DEFAULT": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2016_09_30",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": []
+    }
+  },
+  "PlantillaDimensiones": {
+    "annext_SerieTypedAxis": {
+      "PrefijoValor": "<annext:SerieDomain xmlns:annext=\"http://www.cnbv.gob.mx/2016-08-22/annext\">",
+      "SubfijoValor": "</annext:SerieDomain>",
+      "EtiquetaNuevoElemento": "Serie",
+      "Explicita": false,
+      "IdDimension": "annext_SerieTypedAxis",
+      "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/annext:SerieTypedAxis"
+    }
+  },
+  "DimensionesDinamicas": [
+    "annext_SerieTypedAxis"
+  ],
+  "MaxColumnasVertical": 6,
+  "MaxColumnasHorizontal": 0,
+  "TamanoHoja": "Letter"
+}

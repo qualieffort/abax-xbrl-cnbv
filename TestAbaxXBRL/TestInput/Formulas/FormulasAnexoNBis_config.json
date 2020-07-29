@@ -1,0 +1,244 @@
+{
+	"Datos generales":{
+		"Obligatorio_Condicional_MentioningPartialOrTotalDependence": {
+		"NombreFormula": "Obligatorio_Condicional_MentioningPartialOrTotalDependence",
+		"Precondition": "Fideicomisos",
+		"Variables":[
+				{"Concepto": "ar_pros_TypeOfInstrument"},
+				{"Concepto": "ar_pros_MentioningPartialOrTotalDependence"},
+			]
+		},
+		"Obligatorio_Condicional_MentioningwhetherOrNotHaveCollateral": {
+			"NombreFormula": "Obligatorio_Condicional_MentioningwhetherOrNotHaveCollateral",
+			"Expresion":'(squeeze(size(variable1)) > 0) or (variable2 == "Acciones" or variable2 == "Fideicomisos" or variable2 == "Estructurados" or variable2 == "Acciones,Estructurados")',
+			"MensajeExito":"El hecho {variable1} debe ser reportado para el tipo de instrumento \"Deuda\".",
+			"MensajeError":"El hecho {variable1} debe ser reportado para el tipo de instrumento \"Deuda\".",
+			"VariablesPrecondicion":[
+				{"IdConcepto": "ar_pros_TypeOfInstrument"}
+			],
+			"VariablesIteracion":[
+				{"IdConcepto": "ar_pros_MentioningwhetherOrNotHaveCollateral"},
+			]
+		}
+		,
+		"AnnualReport": {
+		"NombreFormula": "AnnualReport",
+		"Igual": "Anexo N Bis",
+		"Variables":[
+				{"Concepto": "ar_pros_AnnualReport"},
+			]
+		}
+	},
+	"Portada":{
+		"Portada_No_Vacios": {
+			"NombreFormula": "Portada_No_Vacios",
+			"Variables":[
+					{"Concepto": "ar_pros_IssuerLogo"},
+					{"Concepto": "ar_pros_NameOfTheIssuer"},
+					{"Concepto": "ar_pros_AdressOfTheIssuer"},
+					{"Concepto": "ar_pros_Ticker"},
+					{"Concepto": "ar_pros_TheMentionThatTheValuesOfTheIssuerAreRegistered"},
+					{"Concepto": "ar_pros_Article86LegendOfTheLmv"},
+					{"Concepto": "ar_pros_AnnualReportCueLegend"},
+					{"Concepto": "ar_pros_PeriodRepresenting"}
+				]
+			},
+		"PORTADA_Obligatorio_Renglon_Serie_especificacion_de_las_caracteristicas_de_los_titulos_en_circulacion": {
+			"NombreFormula": "PORTADA_Obligatorio_Renglon_Serie_especificacion_de_las_caracteristicas_de_los_titulos_en_circulacion",
+			"Variables":[
+					{"Concepto": "ar_pros_Class"},
+					{"Concepto": "ar_pros_EquitySerie"},
+					{"Concepto": "ar_pros_SerieType"},
+					{"Concepto": "ar_pros_SerieNumberOfStocks"},
+					{"Concepto": "ar_pros_SerieStockExhangesWhereTheyAreRegistered"},
+					{"Concepto": "ar_pros_SerieTickerFromTheSourceMarket"}
+				]
+			},
+		"ExistenciaSerieEje":{
+			"NombreFormula":"ExistenciaSerieEje",
+			"Expresion":'(variable2 != " _null_ ") or not(variable1 == "Acciones" or variable1 == "Acciones,Deuda LP" or variable1 == "Acciones,Deuda CP" or variable1 == "Acciones,Deuda LP,Deuda CP" or variable1 == "Acciones,Deuda LP,Deuda CP,Estructurados" or variable1 == "Acciones,Estructurados")',
+			"MensajeExito":"Existe al menos una serie en la tabla \"Especificación de las características de los títulos en circulación\" para el tipo de valor \"Acciones\".",
+			"MensajeError":"Debería existir al menos una serie en la tabla \"Especificación de las características de los títulos en circulación\" para el tipo de valor \"Acciones\".",
+			"VariablesCoincidenPeriodo":"false",
+			"ExcepcionSinHijos": "true",
+			"VariablesExpresion":[
+				{"IdConcepto": "ar_pros_TypeOfInstrument"},
+				{"IdConcepto":"ar_pros_Class", "ValorFallback":" _null_ "}
+			]
+		}
+	},
+	"Informacion General": {
+		"No_Vacios_Informacion_General": {
+			"NombreFormula": "No_Vacios_Informacion_General",
+			"Variables":[
+					{"Concepto": "ar_pros_GlossaryOfTermsAndDefinitions"},
+					{"Concepto": "ar_pros_ExecutiveSummary"},
+					{"Concepto": "ar_pros_RiskFactors"},
+					{"Concepto": "ar_pros_OtherValues"},
+					{"Concepto": "ar_pros_SignificantChangesToTheRightsOfSecuritiesRegistered"},
+					{"Concepto": "ar_pros_UseOfProceedsIfAny"},
+					{"Concepto": "ar_pros_PublicDocuments"}
+				]
+			}
+	},
+	"La Emisora": {
+		"LA_EMISORA_no_vacios": {
+		"NombreFormula": "LA_EMISORA_no_vacios",
+		"Variables":[
+				{"Concepto": "ar_pros_HistoryAndDevelopmentOfTheIssuer"},
+				{"Concepto": "ar_pros_BusinessOverview"},
+				{"Concepto": "ar_pros_MainActivity"},
+				{"Concepto": "ar_pros_DistributionChannels"},
+				{"Concepto": "ar_pros_PatentsLicensesTrademarksAndOtherContracts"},
+				{"Concepto": "ar_pros_MainCustomers"},
+				{"Concepto": "ar_pros_ApplicableLawAndTaxSituation"},
+				{"Concepto": "ar_pros_EnvironmentalPerformance"},
+				{"Concepto": "ar_pros_HumanResources"},
+				{"Concepto": "ar_pros_IssuerMarketInformation"},
+				{"Concepto": "ar_pros_CorporateStructure"},
+				{"Concepto": "ar_pros_DescriptionOfKeyAssets"},
+				{"Concepto": "ar_pros_JudicialAdministrativeOrArbitrationProceedings"},
+				{"Concepto": "ar_pros_CapitalShares"},
+				{"Concepto": "ar_pros_Dividends"},
+				{"Concepto": "ar_pros_CorporateRestructuringsIfAny"},
+				{"Concepto": "ar_pros_AdoptionProgramToTheRegimeOfCorporateStock"}
+			]
+		}
+	},
+	"Informacion Financiera": {
+		"Obligatorio_Informacion_Financiera": {
+			"NombreFormula": "Obligatorio_Informacion_Financiera",
+			"Variables":[
+					{"Concepto": "ar_pros_SelectedFinancialInformationDisclosure"},
+					{"Concepto": "ar_pros_SelectedQuarterlyFinancialInformation"},
+					{"Concepto": "ar_pros_InformationInCaseOfIssuesGuaranteedBySubsidiariesOfTheIssuer"},
+					{"Concepto": "ar_pros_CommentsAndManagementAnalysisOnOperatingResults"},
+					{"Concepto": "ar_pros_OperationResults"},
+					{"Concepto": "ar_pros_FinancialPositionLiquidityAndCapitalResources"}
+				]
+			}
+	},
+	"Administracion":{
+		"ADMINISTRACION_no_vacios": {
+			"NombreFormula": "ADMINISTRACION_no_vacios",
+			"Variables":[
+					{"Concepto": "ar_pros_TransactionsWithRelatedParties"},
+					{"Concepto": "ar_pros_AdministratorsAndShareholders"},
+					{"Concepto": "ar_pros_AssociationAndOtherAgreements"},
+					{"Concepto": "ar_pros_ExternalAuditorsAdministration"},
+				]
+			},
+		"ADMINISTRACON_obligatorio_condicional_otras_practicas_de_gobierno_corporativo": {
+			"NombreFormula": "ADMINISTRACON_obligatorio_condicional_otras_practicas_de_gobierno_corporativo",
+			"Precondition": "SI",
+			"Variables":[
+					{"Concepto": "ar_pros_ForeingIssuer"},
+					{"Concepto": "ar_pros_OtherCorporateGovernancePractices"},
+				]
+			},
+		"ADMINISTRACION_obligatorio_renglon_tabla_administradores_de_la_empresa": {
+			"NombreFormula": "ADMINISTRACION_obligatorio_renglon_tabla_administradores_de_la_empresa",
+			"Variables":[
+					{"Concepto": "ar_pros_AdministratorName"},
+					{"Concepto": "ar_pros_AdministratorFirstName"},
+					{"Concepto": "ar_pros_AdministratorGender"},
+					{"Concepto": "ar_pros_AdministratorDirectorshipType"},
+					{"Concepto": "ar_pros_AdministratorPeriodForWhichTheyWereElected"},
+					{"Concepto": "ar_pros_AdministratorPosition"},
+					{"Concepto": "ar_pros_AdministratorTimeWorkedInTheIssuer"}
+				]
+			},
+		"VA_DescripcionPoliticaPrograma": {
+			"NombreFormula": "VA_DescripcionPoliticaPrograma",
+			"Expresion":'(squeeze(size(variable1)) > 0) or (variable2 != "SI")',
+			"MensajeExito":"El concepto {variable1} debe ser reportado si el concepto \"Cuenta con programa o política de inclusión laboral\" tiene valor \"SI\".",
+			"MensajeError":"El concepto {variable1} debe ser reportado si el concepto \"Cuenta con programa o política de inclusión laboral\" tiene valor \"SI\".",
+			"VariablesPrecondicion":[
+				{"IdConcepto": "ar_pros_HasAPolicyOrProgramOfLaborInclusion"}
+			],
+			"VariablesIteracion":[
+				{"IdConcepto": "ar_pros_DescriptionOfThePolicyOrProgramOfLaborInclusion"},
+			]
+		},
+		"ADMINISTRACION_obligatorio_renglon_tabla_accionistas_de_la_empresa": {
+			"NombreFormula": "ADMINISTRACION_obligatorio_renglon_tabla_accionistas_de_la_empresa",
+			"Variables":[
+					{"Concepto": "ar_pros_ShareholderNameCorporateName"}
+				]
+		},
+		"ExistenciaAdministradores":{
+			"NombreFormula":"ExistenciaAdministradores",
+			"Expresion":'(variable2 != " _null_ ")',
+			"MensajeExito":"Existe al menos un registro en la tabla de \"Administradores de la empresa\".",
+			"MensajeError":"Debe existir al menos un registro en la tabla de \"Administradores de la empresa\".",
+			"VariablesCoincidenPeriodo":"false",
+			"ExcepcionSinHijos": "true",
+			"VariablesExpresion": [
+			    {"IdConcepto": "ar_pros_TypeOfInstrument"},
+				{"IdConcepto":"ar_pros_AdministratorName", "ValorFallback":" _null_ "}
+			]
+		}
+	},
+	"Mercado de capitales":{
+		"MERCADO_DE_CAPITALES_no_vacios": {
+			"NombreFormula": "MERCADO_DE_CAPITALES_no_vacios",
+			"Precondition": "Acciones",
+			"Variables":[
+					{"Concepto": "ar_pros_ShareholdingStructure"},
+					{"Concepto": "ar_pros_BehaviorOfTheShare"}
+				]
+			}
+	},
+	"Persona responsable":{
+		"PERSONAS_RESPONSABLES_obligatorio_renglon_tabla_personas_responsables": {
+			"NombreFormula": "PERSONAS_RESPONSABLES_obligatorio_renglon_tabla_personas_responsables",
+			"Variables":[
+					{"Concepto": "ar_pros_ResponsiblePersonName"},
+					{"Concepto": "ar_pros_ResponsiblePersonPosition"},
+					{"Concepto": "ar_pros_ResponsiblePersonInstitution"},
+					{"Concepto": "ar_pros_ResponsiblePersonLegend"},
+				]
+		},
+		"PERSONAS_RESPONSABLES_ObligatoriosPorInstitucion": {
+			"NombreFormula": "Obligatorio_Condicional_Mercado_Capitales",
+			"Expresion":'(squeeze(size(variable1)) > 0) and (squeeze(size(variable2)) > 0) and (squeeze(size(variable3)) > 0)',
+			"MensajeExito":"Se deben ingresar almenos una persona responsalbe para la inclusión {variable1}.",
+			"MensajeError":"Se deben ingresar almenos una persona responsalbe para la inclusión {variable1}.",
+			"VariablesExpresion":[
+				{"IdConcepto": "ar_pros_ResponsiblePersonInstitution"},
+				{"IdConcepto": "ar_pros_ResponsiblePersonName", "MismasDimensiones": true, "ValorFallback":""},
+				{"IdConcepto": "ar_pros_ResponsiblePersonPosition", "MismasDimensiones": true, "ValorFallback":""}
+			]
+		},
+		"ExistenciaNombrePersonaResponsable":{
+			"NombreFormula":"ExistenciaNombrePersonaResponsable",
+			"Expresion":'bignumber(variable1) >= 1',
+			"MensajeExito":"Se adjunto un documento de \"Nombre y cargo de personas responsables\".",
+			"MensajeError":"Se debe adjuntar un documento de \"Nombre y cargo de personas responsables\".",
+			"VariablesCoincidenPeriodo":"false",
+			"TipoFormula": "model.TipoFormula.ExistenceAssertion",
+			"VariablesExpresion":[
+				{"IdConcepto":"ar_pros_NameAndPositionsOfResponsiblePersonsPdf","ConteoHechos":true, "PuedeEliminarse":true, "PuedeCrearse":true}
+			]
+		},
+		"ExistenciaPersonaResponsable":{
+			"NombreFormula":"ExistenciaPersonaResponsable",
+			"Expresion":'bignumber(variable1) >= 1',
+			"MensajeExito":"Se de be tener al menos un registro en la tabla \"Personas responsables del informe\"",
+			"MensajeError":"Se de be tener al menos un registro en la tabla \"Personas responsables del informe\"",
+			"VariablesCoincidenPeriodo":"false",
+			"TipoFormula": "model.TipoFormula.ExistenceAssertion",
+			"VariablesExpresion":[
+				{"IdConcepto":"ar_pros_ResponsiblePersonName","ConteoHechos":true, "PuedeEliminarse":true, "PuedeCrearse":true}
+			]
+		}
+	},
+	"Anexos": {
+		"Obligatorio_Anexos": {
+		"NombreFormula": "Obligatorio_Anexos",
+		"Variables":[
+				{"Concepto": "ar_pros_FinancialStatementsAuditedPdf"}
+			]
+		}
+	}
+}

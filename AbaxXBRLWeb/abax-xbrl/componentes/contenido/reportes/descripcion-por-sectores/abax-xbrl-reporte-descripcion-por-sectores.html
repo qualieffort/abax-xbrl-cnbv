@@ -1,0 +1,108 @@
+﻿<section>
+    <section class="vbox">
+        <section class="scrollable padder" style="padding-bottom: 100px;">
+            <section class="panel panel-default">
+                <header class="panel-heading">
+                    {{ 'TITULO_REPORTE_DESCRIPCION_SECTORES' | translate}}
+                </header>
+                <div class="row wrapper">                    
+                    <div class="col-lg-3">
+                        <select class="input-sm form-control input-s-lg v-middle"
+                                ng-options="sector as sector.Valor for sector in listaSectores"
+                                ng-model="sectorSeleccionado"
+                                style="display:none;"
+                                data-placeholder="{{'PLACE_HOLDER_SECTOR_REPORTE_DESCRIPCION_SECTORES' | translate}}"
+                                ng-change="obtenerSubSectores()"
+                                chosen
+                                width="'300px'"
+                                allow-single-deselect="true">
+                            <option value=""></option>
+                        </select>
+                    </div>                    
+
+                    <div class="col-lg-3">
+                        <select class="input-sm form-control input-s-lg v-middle"
+                                ng-options="subSector as subSector.Valor for subSector in listaSubSectores"
+                                ng-model="subSectorSeleccionado"
+                                style="display:none;"
+                                data-placeholder="{{'PLACE_HOLDER_SUBSECTOR_REPORTE_DESCRIPCION_SECTORES' | translate}}"
+                                ng-change="obtenerRamos()"
+                                chosen
+                                width="'300px'"
+                                allow-single-deselect="true">
+                            <option value=""></option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <select class="input-sm form-control input-s-lg v-middle"
+                                ng-options="ramo as ramo.Valor for ramo in listaRamos"
+                                ng-model="ramoSeleccionado"
+                                style="display:none;"
+                                data-placeholder="{{'PLACE_HOLDER_RAMO_REPORTE_DESCRIPCION_SECTORES' | translate}}"                 
+                                ng-change="obtenerAniosEnvioReporteAnual()"
+                                chosen
+                                width="'300px'"
+                                allow-single-deselect="true">
+                            <option value=""></option>
+                        </select>
+                    </div>                    
+                    <div class="col-lg-3">
+                        <select class="input-sm form-control input-s-lg v-middle"
+                                ng-options="anio as anio.Valor for anio in listaAnios"
+                                ng-model="anioSeleccionado"
+                                style="display:none;"
+                                data-placeholder="{{'PLACE_HOLDER_ANIO_OTROS_REPORTES' | translate}}"
+                                ng-change="obtenerTrimestresEnvios()"      
+                                chosen
+                                width="'300px'"
+                                allow-single-deselect="true">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    
+                    <br /><br />
+                    <br />
+                    
+                    <div class="col-lg-3">
+                        <select class="input-sm form-control input-s-lg v-middle"
+                                ng-options="trimestre as trimestre.Llave for trimestre in listaTrimestres"
+                                ng-model="trimestreSeleccionado"
+                                style="display:none;"
+                                data-placeholder="{{'PLACE_HOLDER_TRIMESTRE_OTROS_REPORTES' | translate}}"
+                                chosen
+                                width="'300px'"
+                                allow-single-deselect="true">
+                            <option value=""></option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-6">
+                        
+                    </div>               
+                   
+                    <div class="col-lg-3">
+                        <!--ng-if="existeElementos"-->
+                        <div >
+                            <button type="button"
+                                    class="btn btn-sm btn-default"
+                                    ng-if="tieneFacultad(FacultadesEnum.ExportarDatosBitacora)"
+                                    style="width:300px; max-width:100%"
+                                    ng-click="exportaAExcel()"
+                                    ng-disabled="!(sectorSeleccionado && subSectorSeleccionado && ramoSeleccionado && anioSeleccionado && trimestreSeleccionado)"                                    
+                                    ng-hide="exportando">
+                                <i class="i i-file-excel"></i>
+                                {{'ETIQUETA_EXPORTAR' | translate}}
+                            </button>
+                            <button type="button" class="btn btn-sm btn-default" ng-if="exportando" style="width:200px" disabled>
+                                <i class="fa fa-refresh fa-spin"></i>
+                                {{'MENSAJE_INFO_EXPORTANDO' | translate}} ...
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        </section>
+    </section>
+</section>

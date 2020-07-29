@@ -1,0 +1,355 @@
+<xbrl-contenedor-formato xbrl:rol-uri="{{xbrlRol.Uri}}" orientacion="landscape" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+    <table class="tablaAnchoFijo" cellspacing="5">
+        <tbody>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_FinancialInformation" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ReferenceIncorporationFinancialInformation" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_ReferenceIncorporationFinancialInformation_78c5d8c2-ffdf-4376-b1d8-325dde63a3ba"></xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SelectedFinancialInformationAbstract" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;">&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br />
+
+    <div id="contenedorTablaExcel" class="table-responsive">
+        <table class="hipercubo table table-striped b-t b-light"
+               xbrl:tabla-excel selector="td"
+               selector-contenedor-x="#contenedorFormatos"
+               selector-contenedor-y="#contenedorFormatos"
+               tab-index="1"
+               on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)"
+               on-after-paste="onAfterPaste(valorPegado, x, y)"
+               on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)"
+               xbrl:tabla-scrolleable="">
+            <thead class="estiloA">
+                <tr>
+                    <th class="th-sortable" data-toggle="class">{{'EDITOR_XBRL_TITULO_CONCEPTO' | translate}}</th>
+                    <th style="min-width: 230px; width: 230px;">
+                        Acumulado<br />
+                        {{::definicionPlantilla.obtenerVariablePorId("fecha_2014_12_31")}}
+                    </th>
+                    <th style="min-width: 230px; width: 230px;">
+                        Acumulado<br />
+                        {{::definicionPlantilla.obtenerVariablePorId("fecha_2013_12_31")}}
+                    </th>
+                    <th style="min-width: 230px; width: 230px;">
+                        Acumulado<br />
+                        {{::definicionPlantilla.obtenerVariablePorId("fecha_2012_12_31")}}
+                    </th>
+             
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="cortar-texto-400px">
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_Revenue" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs-full_Revenue_46767bd6-eb5e-4904-9d8d-d93895218b30"></xbrl:campo-captura>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs-full_Revenue_97b921a6-8e6a-4123-8da6-5ec11c95acce"></xbrl:campo-captura>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs-full_Revenue_8807b630-604d-473c-844e-c004346ab7e0"></xbrl:campo-captura>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_GrossProfit" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs-full_GrossProfit_24b432f7-e440-4ee0-bacb-dbe3bab1810f"></xbrl:campo-captura>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs-full_GrossProfit_ed500306-133d-40f7-810c-1e0c4e9406ce"></xbrl:campo-captura>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs-full_GrossProfit_3a0d9ec5-166c-43b8-a99b-820fa6875a51"></xbrl:campo-captura>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_ProfitLossFromOperatingActivities" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs-full_ProfitLossFromOperatingActivities_9fb608cb-c3ac-47be-ae81-4c64cc6f5b6e"></xbrl:campo-captura>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs-full_ProfitLossFromOperatingActivities_3b22c712-6bfc-48ef-96fa-ca11c3165688"></xbrl:campo-captura>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs-full_ProfitLossFromOperatingActivities_97ef3b34-77c3-4441-93f8-ec4131c39300"></xbrl:campo-captura>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_ProfitLoss" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs-full_ProfitLoss_15887efd-7388-4f8d-a818-8f07a6f173f6"></xbrl:campo-captura>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs-full_ProfitLoss_ee549516-b8ec-46d4-81f3-e331cde9798b"></xbrl:campo-captura>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs-full_ProfitLoss_b4223a10-66af-42fe-9a47-e5972b0851ad"></xbrl:campo-captura>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_BasicEarningsLossPerShare" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs-full_BasicEarningsLossPerShare_6bdab271-192f-4774-9692-17f508d17420"></xbrl:campo-captura>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs-full_BasicEarningsLossPerShare_67583b58-f9e1-4e55-9e80-d859a5a1c6e1"></xbrl:campo-captura>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs-full_BasicEarningsLossPerShare_88a0654c-8e20-467b-8702-f7c1563d574b"></xbrl:campo-captura>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs_mx-cor_20141205_AcquisitionOfPropertyAndEquipment" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs_mx-cor_20141205_AcquisitionOfPropertyAndEquipment_1bff9c93-7640-447b-963b-4870c8eab4c6"></xbrl:campo-captura>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs_mx-cor_20141205_AcquisitionOfPropertyAndEquipment_477d6056-3093-4700-8a87-de483ae13b76"></xbrl:campo-captura>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs_mx-cor_20141205_AcquisitionOfPropertyAndEquipment_bdf25f75-0d94-4367-aab7-b9a31ac92194"></xbrl:campo-captura>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs_mx-cor_20141205_DepreciacionYAmortizacionOperativa" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs_mx-cor_20141205_DepreciacionYAmortizacionOperativa_c971acee-bea5-466f-a02e-f13f4eb5950a"></xbrl:campo-captura>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs_mx-cor_20141205_DepreciacionYAmortizacionOperativa_113d4cb4-b57a-466e-9291-547f95b60fe1"></xbrl:campo-captura>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs_mx-cor_20141205_DepreciacionYAmortizacionOperativa_cdd5202e-eff9-43cd-b919-da00e0f83858"></xbrl:campo-captura>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_Assets" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs-full_Assets_f04b0ba6-3f8a-48c0-bcfc-17d0e696eed5"></xbrl:campo-captura>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs-full_Assets_fbc4f51b-5407-46ef-b7ea-a197e84b6ba8"></xbrl:campo-captura>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs-full_Assets_b4216de9-2571-4992-ba2b-30ca0cab3597"></xbrl:campo-captura>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_NoncurrentLiabilities" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs-full_NoncurrentLiabilities_4bf9b055-363d-4472-a8ed-b81faf674871"></xbrl:campo-captura>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs-full_NoncurrentLiabilities_b7d0e1a9-e6a6-47c4-9298-9921d3818590"></xbrl:campo-captura>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs-full_NoncurrentLiabilities_922d7437-fab4-4733-8155-501ecbbf586b"></xbrl:campo-captura>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs_mx-cor_20141205_AccountsReceivableTurnoverDecimal" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs_mx-cor_20141205_AccountsReceivableTurnoverDecimal_9a9cbbc2-f088-4c81-a737-995ebbc7d252"></xbrl:campo-captura>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs_mx-cor_20141205_AccountsReceivableTurnoverDecimal_4fa705ac-ed10-4b62-81bf-a322184b4097"></xbrl:campo-captura>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs_mx-cor_20141205_AccountsReceivableTurnoverDecimal_ea073eef-e019-4c21-a073-56d8f0e8d022"></xbrl:campo-captura>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs_mx-cor_20141205_AccountsPayableTurnoverDecimal" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs_mx-cor_20141205_AccountsPayableTurnoverDecimal_00ad472b-e695-482d-a56c-b4420ff9a857"></xbrl:campo-captura>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs_mx-cor_20141205_AccountsPayableTurnoverDecimal_01fd6ed9-d602-41d8-a114-49dd3647b0fd"></xbrl:campo-captura>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs_mx-cor_20141205_AccountsPayableTurnoverDecimal_73dee771-dba5-4a9a-84bd-1ff9abe0f99c"></xbrl:campo-captura>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs_mx-cor_20141205_InventoryTurnoverDecimal" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs_mx-cor_20141205_InventoryTurnoverDecimal_d27b9078-8353-4637-b1c6-9571baa7af1f"></xbrl:campo-captura>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs_mx-cor_20141205_InventoryTurnoverDecimal_40410368-9c65-4f25-9cb8-a552baf4cb9b"></xbrl:campo-captura>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs_mx-cor_20141205_InventoryTurnoverDecimal_cfd1531d-6738-43f4-992a-6dcaddd1babd"></xbrl:campo-captura>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_Equity" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs-full_Equity_d1450ba0-8e97-4844-98c0-1e12dc9a5892"></xbrl:campo-captura>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs-full_Equity_d46e0711-cb32-40e0-acf2-aac66f656cd8"></xbrl:campo-captura>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs-full_Equity_b519144b-4898-497a-b6ec-1d3fc8629788"></xbrl:campo-captura>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs_mx-cor_20141205_CashDividendsDeclaredPerShare" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs_mx-cor_20141205_CashDividendsDeclaredPerShare_5b047799-60d0-44e2-85d0-3cd2865c44b9"></xbrl:campo-captura>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs_mx-cor_20141205_CashDividendsDeclaredPerShare_bb3f1516-9d46-4196-85a3-c451f6183100"></xbrl:campo-captura>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ifrs_mx-cor_20141205_CashDividendsDeclaredPerShare_c0b470d0-e6e6-4b29-8b46-dda55e20d26f"></xbrl:campo-captura>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br />
+
+    <table class="tablaAnchoFijo" cellspacing="5">
+        <tbody>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SelectedFinancialInformationDisclosure" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_SelectedFinancialInformationDisclosure_fcd48267-c88f-4cf5-b92c-badfef160300"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SelectedQuarterlyFinancialInformation" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_SelectedQuarterlyFinancialInformation_460ce6f9-5000-4b1d-9c45-85d47677209d"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_InformationInCaseOfIssuesGuaranteedBySubsidiariesOfTheIssuer" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_InformationInCaseOfIssuesGuaranteedBySubsidiariesOfTheIssuer_fc8ec39f-cef8-433b-aed9-3559b638e0cd"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_CommentsAndManagementAnalysisOnOperatingResults" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_CommentsAndManagementAnalysisOnOperatingResults_4302bce0-96ea-4503-8d58-75481895143b"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_OperationResults" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_OperationResults_310bbfbf-cfe3-48bc-b488-c0a5d7ccf61e"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_FinancialPositionLiquidityAndCapitalResources" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_FinancialPositionLiquidityAndCapitalResources_6b436559-f685-481d-b1c3-51709a382835"
+                                            xbrl:ultimo="true"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</xbrl-contenedor-formato>

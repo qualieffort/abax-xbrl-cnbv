@@ -1,0 +1,417 @@
+<xbrl-contenedor-formato xbrl:rol-uri="{{xbrlRol.Uri}}" orientacion="landscape" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+    <table class="tablaAnchoFijo" cellspacing="5">
+        <tbody>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_FinancialInformation" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ReferenceIncorporationFinancialInformation" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_ReferenceIncorporationFinancialInformation_c75946f3-3485-454a-b416-fdf2d841570d"></xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ReferenceIncorporationFinancialInformationText" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label>
+                        <b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_ReferenceIncorporationFinancialInformationText_c75946f3-3485-454a-b416-fdf2d841570d"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr xbrl:evalua-descartar="descartarPeriodos">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SelectedFinancialInformationAbstract" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                </td>
+            </tr>
+            <tr xbrl:evalua-descartar="descartarPeriodos">
+                <td style="text-align:left; width:50%;">
+                    <label>
+                        <br />
+                        <br />
+                        <b>Ingresar informaci&oacuten financiera en unidades monetarias</b>
+                    </label>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;">&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <!--========================================================================================= -->
+    <!-- TABLA SERIE DE INFORMACIÓN FINANCIERA -->
+    <!--========================================================================================= -->
+    <div xbrl:evalua-descartar="descartarPeriodos">
+        <xbrl:tabla-hipercubo xbrl:id-tabla-hipercubo="hiperCuboInformacionFinanciera"
+                              xbrl:dependencias="['ts/templates/taxonomias/ra_prospecto/H/extensiones/HcInformacionFinanciera.js']"
+                              xbrl:configuracion="http___www_cnbv_gob_mx_2016_08_22_ar_prospectus_roles_433014_D_ar_pros_FinancialInformationToReportTable">
+            <div id="contenedorTablaExcel" class="table-responsive">
+                <table class="hipercubo table table-striped b-t b-light"
+                       xbrl:tabla-excel selector="td"
+                       selector-contenedor-x="#contenedorFormatos"
+                       selector-contenedor-y="#contenedorFormatos"
+                       tab-index="1"
+                       on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)"
+                       on-after-paste="onAfterPaste(valorPegado, x, y)"
+                       on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)"
+                       xbrl:tabla-scrolleable="">
+                    <thead class="estiloA">
+                        <tr>
+                            <th class="no-padder">
+                                <div class="table">
+                                    <div class="row">
+                                        <div class="cell-concepto">
+                                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_FinancialInformationToReportTypedAxis" xbrl:nivel-indentacion="3" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                        </div>
+                                        <div class="cell-button-agregar-dimension">
+                                            <button type="button"
+                                                    class="btn-info btn-desglose-credito btn-plus"
+                                                    ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                                    xbrl:agregar-miembro-dimension="ar_pros_FinancialInformationToReportTypedAxis">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </th>
+                            <th xbrl:repite-miembros-dimension="ar_pros_FinancialInformationToReportTypedAxis" class="no-padder cortar-texto-700px">
+                                <div class="table">
+                                    <div class="row">
+                                        <div class="cell-campo-captura ">
+                                            <xbrl:campo-texto-dimension xbrl:alias-dimension="ar_pros_FinancialInformationToReportTypedAxis" xbrl:alias-miembro="$aliasMiembroRepeat"></xbrl:campo-texto-dimension>
+                                        </div>
+                                        <div class="cell-button-eliminar-dimension">
+                                            <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_FinancialInformationToReportTypedAxis"
+                                                    xbrl:alias-miembro="$aliasMiembroRepeat">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        &nbsp;&nbsp;{{ ::definicionPlantilla.obtenerVariablePorId("medida_MXN_sin_contexto")}}
+                                    </div>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr xbrl:evalua-descartar="ar_pros_FinancialInformationToReportStartDate">
+                            <td>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_FinancialInformationToReportStartDate" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                            </td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_FinancialInformationToReportTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_FinancialInformationToReportStartDate" xbrl:contexto-plantilla="Instante" xbrl:contexto-miembros-dimension="{'ar_pros_FinancialInformationToReportTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+
+                        <tr xbrl:evalua-descartar="ar_pros_FinancialInformationToReportEndtDate">
+                            <td>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_FinancialInformationToReportEndtDate" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                            </td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_FinancialInformationToReportTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_FinancialInformationToReportEndtDate" xbrl:contexto-plantilla="Instante" xbrl:contexto-miembros-dimension="{'ar_pros_FinancialInformationToReportTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+
+                        <tr xbrl:evalua-descartar="ifrs-full_Revenue">
+                            <td>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_Revenue" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                            </td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_FinancialInformationToReportTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ifrs-full_Revenue" xbrl:alias-unidad="MXN" xbrl:decimales="-3" xbrl:valor-default="0" xbrl:contexto-plantilla="Duracion" xbrl:contexto-miembros-dimension="{'ar_pros_FinancialInformationToReportTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+
+                        <tr xbrl:evalua-descartar="ifrs-full_GrossProfit">
+                            <td>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_GrossProfit" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                            </td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_FinancialInformationToReportTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ifrs-full_GrossProfit" xbrl:alias-unidad="MXN" xbrl:decimales="-3" xbrl:valor-default="0" xbrl:contexto-plantilla="Duracion" xbrl:contexto-miembros-dimension="{'ar_pros_FinancialInformationToReportTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+
+                        <tr xbrl:evalua-descartar="ifrs-full_ProfitLossFromOperatingActivities">
+                            <td>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_ProfitLossFromOperatingActivities" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                            </td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_FinancialInformationToReportTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ifrs-full_ProfitLossFromOperatingActivities" xbrl:alias-unidad="MXN" xbrl:decimales="-3" xbrl:valor-default="0" xbrl:contexto-plantilla="Duracion" xbrl:contexto-miembros-dimension="{'ar_pros_FinancialInformationToReportTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+
+                        <tr xbrl:evalua-descartar="ifrs-full_ProfitLoss">
+                            <td>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_ProfitLoss" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                            </td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_FinancialInformationToReportTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ifrs-full_ProfitLoss" xbrl:alias-unidad="MXN" xbrl:decimales="-3" xbrl:valor-default="0" xbrl:contexto-plantilla="Duracion" xbrl:contexto-miembros-dimension="{'ar_pros_FinancialInformationToReportTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+
+                        <tr xbrl:evalua-descartar="ifrs-full_BasicEarningsLossPerShare">
+                            <td>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_BasicEarningsLossPerShare" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                            </td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_FinancialInformationToReportTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ifrs-full_BasicEarningsLossPerShare" xbrl:alias-unidad="MXN" xbrl:decimales="-3" xbrl:valor-default="0" xbrl:contexto-plantilla="Duracion" xbrl:contexto-miembros-dimension="{'ar_pros_FinancialInformationToReportTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+
+                        <tr xbrl:evalua-descartar="ifrs_mx-cor_20141205_AcquisitionOfPropertyAndEquipment">
+                            <td>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs_mx-cor_20141205_AcquisitionOfPropertyAndEquipment" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                            </td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_FinancialInformationToReportTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ifrs_mx-cor_20141205_AcquisitionOfPropertyAndEquipment" xbrl:alias-unidad="MXN" xbrl:decimales="-3" xbrl:valor-default="0" xbrl:contexto-plantilla="Duracion" xbrl:contexto-miembros-dimension="{'ar_pros_FinancialInformationToReportTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+
+                        <tr xbrl:evalua-descartar="ifrs_mx-cor_20141205_DepreciacionYAmortizacionOperativa">
+                            <td>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs_mx-cor_20141205_DepreciacionYAmortizacionOperativa" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                            </td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_FinancialInformationToReportTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ifrs_mx-cor_20141205_DepreciacionYAmortizacionOperativa" xbrl:alias-unidad="MXN" xbrl:decimales="-3" xbrl:valor-default="0" xbrl:contexto-plantilla="Duracion" xbrl:contexto-miembros-dimension="{'ar_pros_FinancialInformationToReportTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+
+                        <tr xbrl:evalua-descartar="ifrs-full_Assets">
+                            <td>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_Assets" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                            </td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_FinancialInformationToReportTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ifrs-full_Assets" xbrl:alias-unidad="MXN" xbrl:decimales="-3" xbrl:valor-default="0" xbrl:contexto-plantilla="Instante" xbrl:contexto-miembros-dimension="{'ar_pros_FinancialInformationToReportTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+
+                        <tr xbrl:evalua-descartar="ifrs-full_NoncurrentLiabilities">
+                            <td>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_NoncurrentLiabilities" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                            </td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_FinancialInformationToReportTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ifrs-full_NoncurrentLiabilities" xbrl:alias-unidad="MXN" xbrl:decimales="-3" xbrl:valor-default="0" xbrl:contexto-plantilla="Instante" xbrl:contexto-miembros-dimension="{'ar_pros_FinancialInformationToReportTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+
+                        <tr xbrl:evalua-descartar="ifrs_mx-cor_20141205_AccountsReceivableTurnoverDecimal">
+                            <td>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs_mx-cor_20141205_AccountsReceivableTurnoverDecimal" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                            </td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_FinancialInformationToReportTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ifrs_mx-cor_20141205_AccountsReceivableTurnoverDecimal" xbrl:alias-unidad="pure" xbrl:decimales="0" xbrl:valor-default="0" xbrl:contexto-plantilla="Duracion" xbrl:contexto-miembros-dimension="{'ar_pros_FinancialInformationToReportTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+
+                        <tr xbrl:evalua-descartar="ifrs_mx-cor_20141205_AccountsPayableTurnoverDecimal">
+                            <td>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs_mx-cor_20141205_AccountsPayableTurnoverDecimal" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                            </td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_FinancialInformationToReportTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ifrs_mx-cor_20141205_AccountsPayableTurnoverDecimal" xbrl:alias-unidad="pure" xbrl:decimales="0" xbrl:valor-default="0" xbrl:contexto-plantilla="Duracion" xbrl:contexto-miembros-dimension="{'ar_pros_FinancialInformationToReportTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+
+                        <tr xbrl:evalua-descartar="ifrs_mx-cor_20141205_InventoryTurnoverDecimal">
+                            <td>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs_mx-cor_20141205_InventoryTurnoverDecimal" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                            </td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_FinancialInformationToReportTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ifrs_mx-cor_20141205_InventoryTurnoverDecimal" xbrl:alias-unidad="pure" xbrl:decimales="0" xbrl:valor-default="0" xbrl:contexto-plantilla="Duracion" xbrl:contexto-miembros-dimension="{'ar_pros_FinancialInformationToReportTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+
+                        <tr xbrl:evalua-descartar="ifrs-full_Equity">
+                            <td>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_Equity" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                            </td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_FinancialInformationToReportTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ifrs-full_Equity" xbrl:alias-unidad="MXN" xbrl:decimales="-3" xbrl:valor-default="0" xbrl:contexto-plantilla="Instante" xbrl:contexto-miembros-dimension="{'ar_pros_FinancialInformationToReportTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+
+                        <tr xbrl:evalua-descartar="ifrs_mx-cor_20141205_CashDividendsDeclaredPerShare">
+                            <td>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs_mx-cor_20141205_CashDividendsDeclaredPerShare" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                            </td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_FinancialInformationToReportTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ifrs_mx-cor_20141205_CashDividendsDeclaredPerShare" xbrl:alias-unidad="MXN" xbrl:decimales="-3" xbrl:valor-default="0" xbrl:contexto-plantilla="Duracion" xbrl:contexto-miembros-dimension="{'ar_pros_FinancialInformationToReportTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </xbrl:tabla-hipercubo>
+    </div>
+    <!--========================================================================================= -->
+    <!-- FIN TABLA SERIE DE INFORMACIÓN FINANCIERA -->
+    <!--========================================================================================= -->
+    <br />
+    <br />
+
+    <table class="tablaAnchoFijo" cellspacing="5">
+        <tbody>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SelectedFinancialInformationDisclosure" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label>
+                        <b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_SelectedFinancialInformationDisclosure_a061f5f1-8c78-4156-bdf8-dbeed50c75b0"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SelectedQuarterlyFinancialInformation" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label>
+                        <b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_SelectedQuarterlyFinancialInformation_88948703-7c3d-40ba-9a51-a9df4b4f4a20"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_InformationInCaseOfIssuesGuaranteedBySubsidiariesOfTheIssuer" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label>
+                        <b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_InformationInCaseOfIssuesGuaranteedBySubsidiariesOfTheIssuer_a126f33c-a14a-4dad-9f2b-c398b7f87e9d"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_FinancialInformationByBusinessLine" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label>
+                        <b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_FinancialInformationByBusinessLine_d92192ed-b7f3-4d79-ac22-75f327e795ca"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_RelevantCreditReport" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label>
+                        <b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_RelevantCreditReport_409b9004-7d2d-48f9-a28b-944f3cbd3797"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_CommentsAndManagementAnalysisOnOperatingResults" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label>
+                        <b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_CommentsAndManagementAnalysisOnOperatingResults_da818f7d-df73-491c-bd01-da2b5d7193ed"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_OperationResults" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label>
+                        <b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_OperationResults_3cdedc04-da93-439d-a610-5941bbc6a04b"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_FinancialPositionLiquidityAndCapitalResources" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label>
+                        <b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_FinancialPositionLiquidityAndCapitalResources_2061338e-fe66-40e0-ad41-c6f3bc7e0eaa"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_InternalControl" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label>
+                        <b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_InternalControl_b0b9713c-685a-4a02-afb4-3e59341c5144"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_EstimatesCriticalAccountingProvisionsOrReserves" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label>
+                        <b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_EstimatesCriticalAccountingProvisionsOrReserves_a669aaf3-585e-4a07-80d0-0c5e0ea9f722"
+                                            xbrl:ultimo="true"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</xbrl-contenedor-formato>

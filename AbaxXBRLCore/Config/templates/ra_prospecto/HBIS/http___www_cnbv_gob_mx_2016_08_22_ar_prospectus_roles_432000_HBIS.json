@@ -1,0 +1,76 @@
+{
+	"ContextosPlantillaPorId" : {
+  "ctx_2014": {
+    "Id": "ctx_2014",
+    "Periodo": {
+      "Tipo": 1,
+      "FechaInstante": "#fecha_2014_12_31",
+      "FechaInicio": "",
+      "FechaFin": ""
+    },
+    "Entidad": {
+      "Id": "#nombreEntidad",
+      "EsquemaId": "#esquemaEntidad",
+      "ContieneInformacionDimensional": false,
+      "Segmento": null,
+      "ValoresDimension": []
+    },
+    "ContieneInformacionDimensional": false,
+    "Escenario": null,
+    "ValoresDimension": []
+  }
+},
+	
+	"UnidadesPlantillaPorId" : {},
+            
+	"HechosPlantillaPorId" : {
+  "ar_pros_ReferenceIncorporationAnnex_c1c19283-1038-4c24-b941-40c3fbdd9218": {
+    "Id": "ar_pros_ReferenceIncorporationAnnex_c1c19283-1038-4c24-b941-40c3fbdd9218",
+    "IdConcepto": "ar_pros_ReferenceIncorporationAnnex",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_FinancialStatementsAuditedPdf_3123914a-35b1-4e27-927e-a2d1323d1a4b": {
+    "Id": "ar_pros_FinancialStatementsAuditedPdf_3123914a-35b1-4e27-927e-a2d1323d1a4b",
+    "IdConcepto": "ar_pros_FinancialStatementsAuditedPdf",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_LegalOpinionPdf_d9bbff0f-e6bd-4f8d-923e-b9e89de912df": {
+    "Id": "ar_pros_LegalOpinionPdf_d9bbff0f-e6bd-4f8d-923e-b9e89de912df",
+    "IdConcepto": "ar_pros_LegalOpinionPdf",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_TitleWhichCoversTheIssuePdf_4719693d-825c-4fbf-beaa-8c8dd79cf9ee": {
+    "Id": "ar_pros_TitleWhichCoversTheIssuePdf_4719693d-825c-4fbf-beaa-8c8dd79cf9ee",
+    "IdConcepto": "ar_pros_TitleWhichCoversTheIssuePdf",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  }
+}
+}

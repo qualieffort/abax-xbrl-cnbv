@@ -1,0 +1,55 @@
+{
+  "cambiosContenidoVersion": "<p>- Se integran plantillas y taxonom&iacute;a para IFRS BMV 2015 ICS</p><p>- Se integran plantillas y taxonom&iacute;a para IFRS BMV 2015 para Corto Plazo</p><p>- Se integran plantillas y taxonom&iacute;a para IFRS BMV 2015 SAPIB</p><p>- Se integran plantillas y taxonom&iacute;a para IFRS BMV 2015 FIBRAS</p>",
+  "descripcionVersion": "Sin cambios de version", 
+  "ListadoAyuda": [
+    {
+      "Titulo": "Conoce las opciones disponibles para ti en la barra de Herramientas del editor de documentos Instancia XBRL de la aplicaci&oacute;n Abax.",
+      "Contenido": "<p>En la barra de Herramientas del editor de documento Instancia XBRL usted podr&aacute; encontrar las siguientes opciones: <br />1. Ocultar/mostrar barra de herramientas. <br />2. Exportar informaci&oacute;n del Documento Instancia a formato XBRL, Excel, Word, PDF, HTML. <br />3. Importar informaci&oacute;n a partir de un archivo con formato Excel. <br />4. Importar notas a partir de un archivo con formato Word. <br />5. Bloquear / desbloquear edici&oacute;n del Documento Instancia. <br />6. Guardar una nueva versi&oacute;n del Documento Instancia. <br />7. Compartir Documento Instancia con otros usuarios de la aplicaci&oacute;n. <br />8. Consultar / recuperar el hist&oacute;rico de versiones del Documento Instancia. <br />9. Opci&oacute;n Ayuda, habilita la asistencia mediante Tips con la descripci&oacute;n del funcionamiento de cada opci&oacute;n disponible en la barra de herramientas. <br />10. Ajustar tama&ntilde;o del editor. <br />11. Ver Editor en pantalla completa. <br />12. Cambiar el idioma de las etiquetas de conceptos XBRL presentados en el documento de Instancia XBRL</p>",
+      "urlVideo": "MaterialApoyo/BarraDeHerramientasXBRL.mp4",
+      "urlImagen": "MaterialApoyo/barraDeHerramientas.png"
+    },
+	{
+      "Titulo": "Crear un Documento Instancia XBRL.",
+      "Contenido": "<p>Crear un Documento Instancia XBRL a partir de una taxonom&iacute;a IFRS BMV 2015. <br /> Es posible crear un documento Instancia XBRL a partir de otro existente o tomando como base una plantilla de captura. La opci&oacute;n para crear un documento Instancia XBRL mediante el uso de una plantilla y taxonom&iacute;a predefinida asisten al usuario con un formulario sencillo para establecer los criterios del reporte.</p>",
+      "urlVideo": "MaterialApoyo/CrearDocumentoInstanciaXBRL.mp4",
+      "urlImagen": "MaterialApoyo/CrearDocumentoInstancia.png"
+    },
+	{
+      "Titulo": "Opciones Guardar e Historial del editor de documentos Instancia XBRL.",
+      "Contenido": "<p>Opciones Guardar e Historial del editor de documentos Instancia XBRL. <br /> La opci&oacute;n Guardar permite generar una versi&oacute;n sin importar el estado de validaci&oacute;n del documento Instancia XBRL. La aplicaci&oacute;n Abax XBRL no solo guarda la &uacute;ltima versi&oacute;n del documento Instancia XBRL tambi&eacute;n posibilita a los usuarios propietarios del documento consultar el hist&oacute;rico de las versiones del documento. Desde el hist&oacute;rico del documento Instancia es posible recuperar el contenido de una versi&oacute;n especifica.</p>",
+      "urlVideo": "MaterialApoyo/Guardar_e_HistorialXBRL.mp4",
+      "urlImagen": "MaterialApoyo/GuardarVersion.png"
+    },
+	{
+      "Titulo": "Bloquear y desbloquear documentos Instancia XBRL.",
+      "Contenido": "<p>Bloquear y desbloquear versiones de documentos Instancia XBRL. <br />&Uacute;til opci&oacute;n para garantizar la integridad de la informaci&oacute;n de una versi&oacute;n para un documento Instancia XBRL. Un documento desbloqueado permite el vaciado de informaci&oacute;n y garantiza que el sistema realice todas las validaciones en tiempo real de la informaci&oacute;n del documento.  Un documento bloqueado no puede modificado por el usuario que lo defini&oacute; o por los usuarios que comparten el uso del documento, hasta que el mismo usuario que lo bloqueo lo habilite para su edici&oacute;n.</p>",
+      "urlVideo": "MaterialApoyo/BloquearDesbloquear.mp4",
+      "urlImagen": "MaterialApoyo/BloquearDesbloquear.png"
+    },
+	{
+      "Titulo": "Compartir documento Instancia XBRL.",
+      "Contenido": "<p>Compartir documento Instancia XBRL. <br /> &Uacute;til opci&oacute;n para permitir la colaboraci&oacute;n de otros usuarios de la aplicaci&oacute;n sobre un documento Instancia XBRL. Esta opci&oacute;n permite limitar el uso de un documento Instancia XBRL para ser consultado solo para los usuarios asignados. Esta opci&oacute;n tambi&eacute;n permitir asignar un documento Instancia XBRL a m&aacute;s de un usuario como Propietario, esta facultad habilita las opciones para poder Modificar, Exportar, Importar y Eliminar el documento Instancia XBRL.</p>",
+      "urlVideo": "MaterialApoyo/CompartirXBRL.mp4",
+      "urlImagen": "MaterialApoyo/Compartir.png"
+    },
+	{
+      "Titulo": "Notas al Pie de pagina del documento Instancia XBRL.",
+      "Contenido": "<p>Notas al Pie de pagina del documento Instancia XBRL. <br /> El editor de documento Instancia XBRL permite establecer y consultar Notas al Pie de pagina esta opci&oacute;n facilita explicar, aclarar o ampliar las informaci&oacute;n contenida en los Estados Financieros. Las Notas al Pie de pagina quedan identificadas con una visible marca amarilla.  De una forma muy sencilla es posible agregar citas al documento Instancia y campos asociados a una operaci&oacute;n de calculo.</p>",
+      "urlVideo": "MaterialApoyo/NotasAlPieXBRL.mp4",
+      "urlImagen": "MaterialApoyo/CrearDocumentoInstancia.png"
+    },
+	{
+      "Titulo": "Exportar Documento Instancia XBRL.",
+      "Contenido": "<p>Exportar Documento Instancia XBRL. <br /> El editor de documentos Instancia XBRL cuanta con la opci&oacute;n para Exportar la informaci&oacute;n reportada del Documento Instancia XBRL a formato XBRL, Excel, Word, PDF  y  HTML</p>",
+      "urlVideo": "MaterialApoyo/ExportarDocumentoInstancia.mp4",
+      "urlImagen": "MaterialApoyo/ExportarDocumentoInstancia.png"
+    },
+	{
+      "Titulo": "Importar un documento Excel en Abax XBRL.",
+      "Contenido": "<p>Importar un documento Excel en Abax XBRL. <br /> La plataforma de reporteo Abax XBRL permite importar informaci&oacute;n de Hechos a un documento Instancia XBRL a partir de un Layout predefinido. Esta opci&oacute;n permite la descarga del layout que cumple con el formato requerido de la taxonom&iacute;a y secciones del reporte financiero. La importaci&oacute;n de carga de informaci&oacute;n realizara la validaci&oacute;n para determinar si el documento Instancia es correcto.</p>",
+      "urlVideo": "MaterialApoyo/DocumentoDeExcelXBRL.mp4",
+      "urlImagen": "MaterialApoyo/ImportarDocumentoExcel.png"
+    }
+	
+  ]
+}

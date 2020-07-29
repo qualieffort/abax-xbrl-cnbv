@@ -1,0 +1,12 @@
+﻿'{{idFormula}}': new model.DefinicionFormula().deserialize(
+                    {
+                        Id: '{{idFormula}}',
+                        TipoFormula: {{TipoFormula}},
+                        Expresion: '{{expresion}}',
+                        MensajeExito: '{{mensajeExito}}',
+                        MensajeError: '{{mensajeError}}',
+                        VariablesCoincidenPeriodo: {{VariablesCoincidenPeriodo}},{{ExcepcionSinHijos}}{{ExpresionJavaScript}}
+                        DefinicionVariables:  
+						{{definicionVariables}}
+                    }
+                    )

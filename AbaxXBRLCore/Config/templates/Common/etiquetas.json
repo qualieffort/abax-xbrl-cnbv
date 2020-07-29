@@ -1,0 +1,32 @@
+﻿{
+    "es": {
+        "VERSION_PLANTILLA_NOTAS": "v1.1",
+        "ETIQUETA_2H_SOFTWARE": "2HSoftware",
+        "ETIQUETA_ABAX_XBRL": "Abax XBRL\u00AE",
+        "ETIQUETA_VERSION": "versi\u00f3n",
+        "ETIQUETA_TITULO_DOCUMENTO": "Plantilla de notas - ",
+        "ETIQUETA_CARATULA_1": "Importaci\u00f3n de informaci\u00f3n de notas para el Documento de Instancia",
+        "ETIQUETA_INSTRUCCION_1": "Instrucciones de llenado",
+        "ETIQUETA_INSTRUCCION_2": "Para la correcta importaci\u00f3n de las notas en un documento de instancia se debe de tener en cuenta lo siguiente:",
+        "ETIQUETA_INSTRUCCION_3": "Incluir el contenido inmediatamente debajo de la nota que se desee importar.",
+        "ETIQUETA_INSTRUCCION_4": "Se tiene que respetar la totalidad del documento sin eliminar conceptos.",
+        "ETIQUETA_INSTRUCCION_5": "Siempre se debe de guardar el documento en formato .docx (Office 2007 en adelante).",
+        "ETIQUETA_INSTRUCCION_6": "Siempre debe de tener como base esta plantilla para importar información (dotx).",
+        "ETIQUETA_FORMATO": "[Formato: "
+    },
+    "en": {
+        "VERSION_PLANTILLA_NOTAS": "v1.1",
+        "ETIQUETA_2H_SOFTWARE": "2H Software",
+        "ETIQUETA_ABAX_XBRL": "Abax XBRL\u00AE",
+        "ETIQUETA_VERSION": "version",
+        "ETIQUETA_TITULO_DOCUMENTO": "Notes Template - ",
+        "ETIQUETA_CARATULA_1": "Importing information from notes for Instance Document",
+        "ETIQUETA_INSTRUCCION_1": "Filling Instructions",
+        "ETIQUETA_INSTRUCCION_2": "For the correct import of the notes in a instance document, you should take into account the following:",
+        "ETIQUETA_INSTRUCCION_3": "Include the content immediately below the note you want to import.",
+        "ETIQUETA_INSTRUCCION_4": "You have to respect the entire document without deleting concepts.",
+        "ETIQUETA_INSTRUCCION_5": "You should always save the document in .docx format (Office 2007 onwards).",
+        "ETIQUETA_INSTRUCCION_6": "You should always be based on this template to import information (dotx).",
+        "ETIQUETA_FORMATO": "[Format: "
+    }
+}

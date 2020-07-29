@@ -1,0 +1,29 @@
+﻿<div class="{{configuracion.claseTitulo}}">
+    <div class="modal-header panel-heading">
+        <button type="button" class="close" aria-hidden="true" ng-click="cancelar()">×</button>
+        <h4 class="modal-title">
+            <i class="{{configuracion.claseIconoTitulo}}"></i>
+            {{configuracion.textoTititulo}}
+        </h4>
+    </div>
+    <div class="modal-body">
+        <table class="table table-striped m-b-none datos-detalle-popup">
+           <tbody>
+                <tr ng-repeat="elemento in configuracion.datos">
+                    <th ng-class="elemento.ClaseTitulo">
+                        {{elemento.Titulo}}:
+                    </th>
+                    <td ng-if="elemento.Tipo == tipo.Text" ng-class="elemento.ClaseValor">
+                        {{elemento.Valor}}
+                    </td>
+                    <td ng-if="elemento.Tipo == tipo.TextScrollable" ng-class="elemento.ClaseValor">
+                        <div class="textScrollable">{{elemento.Valor}}</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="cancelar()">{{'ETIQUETA_BOTON_CERRAR' | translate}}</button>
+    </div>
+</div>

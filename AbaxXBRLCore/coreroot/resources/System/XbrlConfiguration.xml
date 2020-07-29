@@ -1,0 +1,366 @@
+<?xml version="1.0"?>
+<XbrlConfiguration
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="XbrlConfiguration.xsd">
+  <DefaultSchemaLocationResolutionList>
+
+
+    <!-- htpps://taxonomiasxbrl.cnbv.gob.mx -->
+    <!-- dir /s /b /o:gn > archivos.txt -->
+
+
+    <!-- XBRL Org schemas -->
+    <SchemaLocationResolution namespace="http://www.xbrl.org/2003/instance"
+                              logicalUri="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/xbrl-instance-2003-12-31.xsd" />
+
+    <SchemaLocationResolution namespace="http://www.xbrl.org/2003/linkbase"
+                              logicalUri="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/xbrl-linkbase-2003-12-31.xsd" />
+    <SchemaLocationResolution namespace="http://www.xbrl.org/2003/XLink"
+                              logicalUri="http://www.xbrl.org/2003/xl-2003-12-31.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/xl-2003-12-31.xsd" />
+    <SchemaLocationResolution namespace="http://www.w3.org/1999/xlink"
+                              logicalUri="http://www.w3.org/1999/xlink-2003-12-31.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/xlink-2003-12-31.xsd" />
+    <SchemaLocationResolution namespace="http://www.xbrl.org/2004/ref"
+                              logicalUri="http://www.xbrl.org/2004/ref-2004-08-10.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/ref-2004-08-10.xsd" />
+    <SchemaLocationResolution namespace="http://www.xbrl.org/2006/ref"
+                              logicalUri="http://www.xbrl.org/2006/ref-2006-02-27.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/ref-2006-02-27.xsd" />
+    <SchemaLocationResolution namespace="http://www.xbrl.org/2004/linkbase/formula"
+                              logicalUri="http://www.xbrl.org/2004/linkbase/formula-linkbase-2005-08-22.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/formula-linkbase-2005-08-22.xsd" />
+    <SchemaLocationResolution namespace="http://www.w3.org/XML/1998/namespace"
+                              logicalUri="http://www.w3.org/2001/xml.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/xml.xsd" />
+    <SchemaLocationResolution namespace="http://www.w3.org/2001/XMLSchema"
+                              logicalUri="http://www.w3.org/2001/XMLSchema.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/XMLSchema.xsd" />
+    <SchemaLocationResolution namespace="http://xbrl.org/2005/xbrldt"
+                              logicalUri="http://www.xbrl.org/2005/xbrldt-2005.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/xbrldt-2005.xsd" />
+    <SchemaLocationResolution namespace="http://xbrl.org/2005/xbrldta"
+                              logicalUri="http://www.xbrl.org/2005/xbrldta-2005.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/xbrldta-2005.xsd" />
+    <SchemaLocationResolution namespace="http://xbrl.org/2006/xbrldi"
+                              logicalUri="http://www.xbrl.org/2006/xbrldi-2006.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/xbrldi-2006.xsd" />
+
+    <!-- UBMatrix schemas (should be XBRL Org) -->
+    <SchemaLocationResolution namespace="http://www.xbrl.org/2003/role"
+                              logicalUri="http://www.ubmatrix.com/schema/BaseXbrlSchema.xsd"
+                              physicalUri="$COREROOT/resources/System/BaseXbrlSchema.xsd" />
+
+    <!-- XBRL Org Formula 2007 schemas - Redirects XBRL.org references to web based schemas to local installed versions of the same schemas -->
+    <SchemaLocationResolution namespace="http://xbrl.org/2008/filter/boolean"
+                              logicalUri="http://www.xbrl.org/2008/boolean-filter.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/Formula/boolean-filter.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2008/filter/concept"
+                              logicalUri="http://www.xbrl.org/2008/concept-filter.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/Formula/concept-filter.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2008/assertion/consistency"
+                              logicalUri="http://www.xbrl.org/2008/consistency-assertion.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/Formula/consistency-assertion.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2008/filter/dimension"
+                              logicalUri="http://www.xbrl.org/2008/dimension-filter.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/Formula/dimension-filter.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2008/filter/entity"
+                              logicalUri="http://www.xbrl.org/2008/entity-filter.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/Formula/entity-filter.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2008/formula"
+                              logicalUri="http://www.xbrl.org/2008/formula.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/Formula/formula.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2008/filter/general"
+                              logicalUri="http://www.xbrl.org/2008/general-filter.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/Formula/general-filter.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2008/label"
+                              logicalUri="http://www.xbrl.org/2008/generic-label.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/Formula/generic-label.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2008/generic"
+                              logicalUri="http://www.xbrl.org/2008/generic-link.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/Formula/generic-link.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2008/reference"
+                              logicalUri="http://www.xbrl.org/2008/generic-reference.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/Formula/generic-reference.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2008/filter/match"
+                              logicalUri="http://www.xbrl.org/2008/match-filter.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/Formula/match-filter.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2008/filter/period"
+                              logicalUri="http://www.xbrl.org/2008/period-filter.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/Formula/period-filter.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2008/filter/relative"
+                              logicalUri="http://www.xbrl.org/2008/relative-filter.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/Formula/relative-filter.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2008/filter/segment-scenario"
+                              logicalUri="http://www.xbrl.org/2008/segment-scenario-filter.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/Formula/segment-scenario-filter.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2008/filter/tuple"
+                              logicalUri="http://www.xbrl.org/2008/tuple-filter.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/Formula/tuple-filter.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2008/filter/unit"
+                              logicalUri="http://www.xbrl.org/2008/unit-filter.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/Formula/unit-filter.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2008/validation"
+                              logicalUri="http://www.xbrl.org/2008/validation.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/Formula/validation.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2008/assertion/value"
+                              logicalUri="http://www.xbrl.org/2008/value-assertion.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/Formula/value-assertion.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2008/assertion/existence"
+                              logicalUri="http://www.xbrl.org/2008/existence-assertion.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/Formula/existence-assertion.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2008/filter/value"
+                              logicalUri="http://www.xbrl.org/2008/value-filter.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/Formula/value-filter.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2008/variable"
+                              logicalUri="http://www.xbrl.org/2008/variable.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/Formula/variable.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2010/variable/instance"
+                              logicalUri="http://xbrl.org/2010/variable/instance/variable-instance.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/Formula/variable-instance.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2010/variable/variables-scope"
+                              logicalUri="http://xbrl.org/2010/variable/variables-scope/variables-scope.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/Formula/variables-scope.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2010/variable-bind-missing"
+                              logicalUri="http://xbrl.org/2010/variable-bind-missing/variable-bind-missing.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/Formula/variable-bind-missing.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2010/message"
+                              logicalUri="http://xbrl.org/2010/message/generic-message.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/Formula/generic-message.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2009/function"
+                              logicalUri="http://xbrl.org/2009/function/function.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/Formula/function.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2010/custom-function"
+                              logicalUri="http://xbrl.org/2010/custom-function/custom-function-implementation.xsd"
+							  physicalUri="$COREROOT/resources/System/xbrlOrg/Formula/custom-function-implementation.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2010/filter/concept-relation"
+                              logicalUri="http://xbrl.org/2010/filter/concept-relation/concept-relation-filter.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/Formula/concept-relation-filter.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2010/filter/aspect-cover"
+                              logicalUri="http://xbrl.org/2010/filter/aspect-cover/aspect-cover-filter.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/Formula/aspect-cover-filter.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2010/message/validation"
+                              logicalUri="http://www.xbrl.org/2010/validation-message.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/2010/validation-message.xsd" />
+
+    <!-- XBRL Org Table Linkbase 1.0 -->
+    <SchemaLocationResolution namespace="http://xbrl.org/2014/table"
+                              logicalUri="http://xbrl.org/2014/table.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/2014/table.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/2014/table/model"
+                              logicalUri="http://xbrl.org/2014/tablemodel.xsd"
+                              physicalUri="$COREROOT/resources/System/xbrlOrg/2014/tablemodel.xsd" />
+
+    <SchemaLocationResolution namespace="http://xbrl.org/PWD/2013-05-17/table"
+                  logicalUri="http://xbrl.org/PWD/2013-05-17/table"
+                  physicalUri="$COREROOT/resources/System/xbrlOrg/PWD/2013-05-17/table.xsd" />
+
+    <!-- REC XBRL Org extensible-enumerations -->
+    <SchemaLocationResolution namespace="http://xbrl.org/2014/extensible-enumerations"
+                                logicalUri="http://www.xbrl.org/2014/extensible-enumerations.xsd"
+                                physicalUri="$COREROOT/resources/System/xbrlOrg/2014/extensible-enumerations.xsd" />
+
+    <!-- PWD & PR XBRL Org extensible-enumerations -->
+    <SchemaLocationResolution namespace="http://xbrl.org/PR/2014-03-26/extensible-enumerations"
+                  logicalUri="http://www.xbrl.org/PR/2014-03-26/extensible-enumerations.xsd"
+                  physicalUri="$COREROOT/resources/System/xbrlOrg/PR/2014-03-26/extensible-enumerations.xsd" />
+
+  </DefaultSchemaLocationResolutionList>
+
+  <!-- 
+  The Preload Section allows users to load taxonomies into memo on initialization of Processing Engine 
+  Once the taxonomy is loaded then each document that references that docuemnt or namespace will utilize the 
+  preloaded taxonomy rather than relaod the taxonomy.
+  -->
+
+  <Preload>
+    <LoadSchema namespace="http://www.xbrl.org/2003/role" forceGrammarLoad="true"/>
+    <LoadSchema namespace="http://www.w3.org/2001/XMLSchema" defaultIgnoreDuringFind="true" forceGrammarLoad="true"/>
+    <LoadSchema namespace="http://www.w3.org/XML/1998/namespace" defaultIgnoreDuringFind="true" forceGrammarLoad="true"/>
+    <LoadSchema namespace="http://www.w3.org/1999/xlink" forceGrammarLoad="true">
+      <AddReference namespace="http://www.w3.org/2001/XMLSchema" />
+    </LoadSchema>
+    <LoadSchema namespace="http://www.xbrl.org/2003/XLink" forceGrammarLoad="true">
+      <AddReference namespace="http://www.w3.org/2001/XMLSchema" />
+    </LoadSchema>
+    <LoadSchema namespace="http://www.xbrl.org/2003/linkbase" forceGrammarLoad="true">
+      <AddReference namespace="http://www.xbrl.org/2003/role" />
+      <AddReference namespace="http://www.w3.org/2001/XMLSchema" />
+    </LoadSchema>
+    <LoadSchema namespace="http://www.xbrl.org/2003/instance" forceGrammarLoad="true">
+      <AddReference namespace="http://www.xbrl.org/2003/role" />
+      <AddReference namespace="http://www.w3.org/2001/XMLSchema" />
+    </LoadSchema>
+    <LoadSchema namespace="http://www.xbrl.org/2004/ref" forceGrammarLoad="true"/>
+    <LoadSchema namespace="http://www.xbrl.org/2006/ref" forceGrammarLoad="true"/>
+    <LoadSchema namespace="http://www.xbrl.org/2004/linkbase/formula" />
+    <!--    <LoadSchema namespace="http://xbrl.org/2005/xbrldta" forceGrammarLoad="true"/> -->
+    <LoadSchema namespace="http://xbrl.org/2005/xbrldt" forceGrammarLoad="true"/>
+    <LoadSchema namespace="http://xbrl.org/2006/xbrldi" forceGrammarLoad="true"/>
+
+    <!-- XBRL Formula 2008 Preloads; these must remain ordered -->
+    <LoadSchema namespace="http://xbrl.org/2008/generic" forceGrammarLoad="true"/>
+    <LoadSchema namespace="http://xbrl.org/2008/label" forceGrammarLoad="true"/>
+    <LoadSchema namespace="http://xbrl.org/2008/reference" forceGrammarLoad="true"/>
+    <LoadSchema namespace="http://xbrl.org/2008/variable" forceGrammarLoad="true"/>
+    <LoadSchema namespace="http://xbrl.org/2008/validation" forceGrammarLoad="true"/>
+    <LoadSchema namespace="http://xbrl.org/2008/assertion/consistency" forceGrammarLoad="true"/>
+    <LoadSchema namespace="http://xbrl.org/2008/assertion/value" forceGrammarLoad="true"/>
+    <LoadSchema namespace="http://xbrl.org/2008/assertion/existence" forceGrammarLoad="true"/>
+    <LoadSchema namespace="http://xbrl.org/2008/formula" forceGrammarLoad="true"/>
+    <LoadSchema namespace="http://xbrl.org/2008/filter/boolean" forceGrammarLoad="true" />
+    <LoadSchema namespace="http://xbrl.org/2008/filter/concept" forceGrammarLoad="true"/>
+    <LoadSchema namespace="http://xbrl.org/2008/filter/dimension" forceGrammarLoad="true"/>
+    <LoadSchema namespace="http://xbrl.org/2008/filter/entity" forceGrammarLoad="true"/>
+    <LoadSchema namespace="http://xbrl.org/2008/filter/general" forceGrammarLoad="true"/>
+    <LoadSchema namespace="http://xbrl.org/2008/filter/match" forceGrammarLoad="true"/>
+    <LoadSchema namespace="http://xbrl.org/2008/filter/period" forceGrammarLoad="true"/>
+    <LoadSchema namespace="http://xbrl.org/2008/filter/relative" forceGrammarLoad="true"/>
+    <LoadSchema namespace="http://xbrl.org/2008/filter/segment-scenario" forceGrammarLoad="true"/>
+    <LoadSchema namespace="http://xbrl.org/2008/filter/tuple" forceGrammarLoad="true"/>
+    <LoadSchema namespace="http://xbrl.org/2008/filter/unit" forceGrammarLoad="true"/>
+    <LoadSchema namespace="http://xbrl.org/2008/filter/value" forceGrammarLoad="true"/>
+
+    <!-- XBRL Org Table Linkbase 1.0 -->
+    <LoadSchema namespace="http://xbrl.org/2014/table" forceGrammarLoad="true"/>
+    <LoadSchema namespace="http://xbrl.org/2014/table/model" forceGrammarLoad="true"/>
+
+    <LoadSchema namespace="http://xbrl.org/PWD/2013-05-17/table" forceGrammarLoad="true"/>
+    <!--
+    Define each taxonomy entry point that you wish to have preloaded in the following manner
+    
+    <LoadSchema namespace="enter namespace" forceGrammarLoad="true"/>	
+    -->
+
+
+  </Preload>
+
+  <!-- Configuration for registration of node wrappers and extension function modules -->
+  <Transformation
+	  caching="true"
+	  dynamicTypeAnalysis="true" />
+
+  <XMLComponentProviders>
+    <XMLComponentProvider logicalUri="DefaultXMLComponentProvider" active="true" classUri="ubmatrix.xbrl.common.xml.component.saxon.src.DefaultXMLComponentProvider"/>
+    <XMLComponentProvider logicalUri="OracleXMLComponentProvider" active="false" classUri="ubmatrix.xbrl.common.xml.component.oracle.src.OracleXMLComponentProvider"/>
+  </XMLComponentProviders>
+
+  <!-- Register load patterns here - This configuration should not be modified -->
+  <XbrlLocationControllerPatternPath name="Taxonomy" physicalUri="$COREROOT/resources/System/TaxonomyVOPatterns.xml" />
+  <XbrlLocationControllerPatternPath name="InstanceInSchema" physicalUri="$COREROOT/resources/System/InstanceInSchemaVOPatterns.xml" />
+  <XbrlLocationControllerPatternPath name="LinkbaseInSchema" physicalUri="$COREROOT/resources/System/LinkbaseInSchemaVOPatterns.xml" />
+  <XbrlLocationControllerPatternPath name="LinkbaseInInstance" physicalUri="$COREROOT/resources/System/LinkbaseInInstanceVOPatterns.xml" />
+  <XbrlLocationControllerPatternPath name="Instance" physicalUri="$COREROOT/resources/System/InstanceVOPatterns.xml" />
+  <XbrlLocationControllerPatternPath name="Linkbase_server" physicalUri="$COREROOT/resources/System/LinkbaseVOPatterns_server.xml" />
+  <XbrlLocationControllerPatternPath name="Linkbase_desktop" physicalUri="$COREROOT/resources/System/LinkbaseVOPatterns_desktop.xml" />
+  <XbrlLocationControllerPatternPath name="Peek" physicalUri="$COREROOT/resources/System/PeekPatterns.xml" />
+
+  <!-- Register XML behaviors, such as Editing and Function support do not modify this section without contacting support 
+       for additional information 
+  -->
+  <XmlBehaviorMethodsPath name="InstanceMetadata" physicalUri="$COREROOT/resources/System/InstanceMetadata.xml" />
+  <XmlBehaviorMethodsPath name="UnitMetadata" physicalUri="$COREROOT/resources/System/UnitMetadata.xml" />
+  <XmlBehaviorMethodsPath name="UnitDivideMetadata" physicalUri="$COREROOT/resources/System/UnitDivideMetadata.xml" />
+  <XmlBehaviorMethodsPath name="FactMetadata" physicalUri="$COREROOT/resources/System/FactMetadata.xml" />
+  <XmlBehaviorMethodsPath name="ContextEntityMetadata" physicalUri="$COREROOT/resources/System/ContextEntityMetadata.xml" />
+  <XmlBehaviorMethodsPath name="ContextMetadata" physicalUri="$COREROOT/resources/System/ContextMetadata.xml" />
+  <XmlBehaviorMethodsPath name="ContextPeriodMetadata" physicalUri="$COREROOT/resources/System/ContextPeriodMetadata.xml" />
+  <XmlBehaviorMethodsPath name="FormulaMetadata" physicalUri="$COREROOT/resources/System/FormulaMetadata.xml" />
+  <XmlBehaviorMethodsPath name="TaxonomyMetadata" physicalUri="$COREROOT/resources/System/TaxonomyMetadata.xml" />
+
+  <!-- Flag that enables/disable tracing within the SDK -->
+  <Trace value="false" />
+
+  <!-- Flag that enables/disables prohibition within the SDK -->
+  <TopView value="true" />
+
+  <!-- 
+  The is the default Language setting for Processing Engine and its memo localization.  
+  The localized memos are contained within the localizer.xml file. 
+  -->
+  <Language value="en" />
+
+  <!-- XBRL and Inline XRBL message resources -->
+  <LocalizationPath name="en" physicalUri="$COREROOT/resources/System/Localizer.xml" />
+  <LocalizationPath name="en" physicalUri="$COREROOT/resources/System/InlineLocalizer.xml" />
+
+  <!-- Flag that controls where the core root variable is read from -->
+  <CoreRootSource>Environment</CoreRootSource>
+
+  <!-- Register new validation modules here -->
+
+  <!-- 
+  The following are the default validation patterns files for Processing Engine you can changed execute='false'
+  if you do not not require this pattern to be executed when you validate XBRL documents.
+  -->
+
+  <Validation classificationUri="validation://ubmatrix.com/Xbrl/Validation#Xml" logicalUri="Xml">
+    <!-- Schema validation -->
+    <Validator patternSetUri="$COREROOT/resources/System/XmlValidationPatternset.xml" classificationUri="implementation://ubmatrix.com/Xbrl/Validation#Xml" logicalUri="Xml" pluginID="" execute="true" classUri="ubmatrix.xbrl.validation.resolver.src.XmlFunctionUriResolver" />
+  </Validation>
+
+  <Validation classificationUri="validation://ubmatrix.com/Xbrl/Validation#DTS" logicalUri="Xbrl21">
+    <!-- XBRL Taxonomy validation patterns -->
+    <Validator patternSetUri="$COREROOT/resources/System/TaxonomyValidationPatternset.xml" classificationUri="implementation://ubmatrix.com/Xbrl/Validation#Taxonomy" logicalUri="Taxonomy" runCondition="/'domain://ubmatrix.com/Xbrl/Taxonomy#Taxonomy'" pluginID="" execute="true" classUri="ubmatrix.xbrl.validation.xbrl21Validation.resolvers.src.Xbrl21FunctionUriResolver" inheritsFrom="Xml"/>
+    <!-- XBRL linkabase validation patterns -->
+    <Validator patternSetUri="$COREROOT/resources/System/LinkbaseValidationPatternset.xml" classificationUri="implementation://ubmatrix.com/Xbrl/Validation#Linkbase" logicalUri="Linkbase" runCondition="/'domain://ubmatrix.com/Xbrl/Linkbase#Linkbase'" pluginID="" execute="true" classUri="ubmatrix.xbrl.validation.xbrl21Validation.resolvers.src.Xbrl21FunctionUriResolver" inheritsFrom="Xml"/>
+    <!-- XBRL instance validation patterns -->
+    <Validator patternSetUri="$COREROOT/resources/System/InstanceValidationPatternset.xml" classificationUri="implementation://ubmatrix.com/Xbrl/Validation#Instance" logicalUri="InstanceDocument" runCondition="/'domain://ubmatrix.com/Xbrl/Instance#Instance'" pluginID="" execute="true" classUri="ubmatrix.xbrl.validation.xbrl21Validation.resolvers.src.Xbrl21FunctionUriResolver" inheritsFrom="Xml"/>
+    <Validator patternSetUri="$COREROOT/resources/System/TaxonomySchemaValidationPatternset.xml" classificationUri="implementation://ubmatrix.com/Xbrl/Validation#TaxonomySchema" logicalUri="TaxonomySchema" runCondition="/'domain://ubmatrix.com/Xbrl/Instance#Instance'" pluginID="" execute="false" classUri="ubmatrix.xbrl.validation.xbrl21Validation.resolvers.src.Xbrl21FunctionUriResolver" inheritsFrom="Xml"/>
+    <Validator patternSetUri="$COREROOT/resources/System/CalculationValidationPatternset.xml" classificationUri="implementation://ubmatrix.com/Xbrl/Validation#Calculation" logicalUri="Calculation" runCondition="/'domain://ubmatrix.com/Xbrl/Instance#Instance'" pluginID="" execute="true" classUri="ubmatrix.xbrl.validation.xbrl21Validation.resolvers.src.Xbrl21FunctionUriResolver" inheritsFrom="Xml"/>
+    <!-- XBRL UnitsRegistry validation patterns -->
+    <Validator patternSetUri="$COREROOT/resources/System/UTRValidationPatternset.xml" classificationUri="implementation://ubmatrix.com/Xbrl/Validation#UnitsRegistry" logicalUri="UnitsRegistry" runCondition="/'domain://ubmatrix.com/Xbrl/Instance#Instance'" pluginID="" execute="false" classUri="ubmatrix.xbrl.validation.xbrl21Validation.resolvers.src.Xbrl21FunctionUriResolver" inheritsFrom="Xml"/>
+    <!-- XBRL Extensible Enumerations patterns -->
+    <Validator patternSetUri="$COREROOT/resources/System/enumValidationPatternset.xml" classificationUri="implementation://ubmatrix.com/Xbrl/Validation#Enum" logicalUri="Enum" runCondition="/'domain://ubmatrix.com/Xbrl/Taxonomy#Taxonomy'" pluginID="" execute="false" classUri="ubmatrix.xbrl.validation.xbrl21Validation.resolvers.src.Xbrl21FunctionUriResolver" inheritsFrom="Xml"/>
+    <!-- XBRL Formula validation patterns -->
+    <Validator patternSetUri="$COREROOT/resources/System/FormulaLinkbaseValidationPatternset.xml" classificationUri="implementation://ubmatrix.com/Xbrl/Validation#FormulaLinkbase" logicalUri="Formula" runCondition="/'domain://ubmatrix.com/Xbrl/Linkbase#Linkbase'" pluginID="" execute="true" classUri="ubmatrix.xbrl.validation.xbrl21Validation.resolvers.src.Xbrl21FunctionUriResolver" inheritsFrom="Xml"/>
+    <!-- XBRL Dimension Linkbase validation patterns -->
+    <Validator patternSetUri="$COREROOT/resources/System/LinkbaseDimensionValidationPatternset.xml" classificationUri="implementation://ubmatrix.com/Xbrl/Validation/Dimension#Linkbase" logicalUri="LinkbaseDimension" runCondition="/'&amp;http://xbrl.org/2005/xbrldt#'" pluginID="" classUri="ubmatrix.xbrl.validation.xbrl21Validation.resolvers.src.DimensionFunctionUriResolver" execute="true" inheritsFrom="Xml" />
+    <!-- XBRL Dimension Instance validation patterns -->
+    <Validator patternSetUri="$COREROOT/resources/System/InstanceDimensionValidationPatternset.xml" classificationUri="implementation://ubmatrix.com/Xbrl/Validation/Dimension#Instance" logicalUri="InstanceDimension" runCondition="/'&amp;http://xbrl.org/2005/xbrldt#'" pluginID="" classUri="ubmatrix.xbrl.validation.xbrl21Validation.resolvers.src.DimensionFunctionUriResolver" execute="true" inheritsFrom="Xml" />
+    <!-- XBRL Formula 2008 validation patterns -->
+    <Validator patternSetUri="$COREROOT/resources/System/FormulaLinkbase2008ValidationPatternset.xml" classificationUri="implementation://ubmatrix.com/Xbrl/Validation#Formula2008Linkbase" logicalUri="Formula2008" runCondition="/'domain://ubmatrix.com/Xbrl/Linkbase#Linkbase'" pluginID="" classUri="ubmatrix.xbrl.formula.impl.engine.resolver.src.XbrlFormulaFunctionUriResolver" execute="false" inheritsFrom="Xml" />
+    <!-- XBRL Formula Severity validation patterns -->
+    <Validator patternSetUri="$COREROOT/resources/System/FormulaSeverityValidationPatternset.xml" classificationUri="implementation://ubmatrix.com/Xbrl/Validation#FormulaSeverity" logicalUri="FormulaSeverity" runCondition="/'domain://ubmatrix.com/Xbrl/Linkbase#Linkbase'" pluginID="" classUri="ubmatrix.xbrl.formula.impl.engine.resolver.src.XbrlFormulaFunctionUriResolver" execute="false" inheritsFrom="Xml" />
+    <!-- Generic Linkbase validation patterns -->
+    <Validator patternSetUri="$COREROOT/resources/System/GenericLinkbaseValidationPatternset.xml" classificationUri="implementation://ubmatrix.com/Xbrl/Validation#GenericLinkbase" logicalUri="GenericLinkbase" runCondition="/'http://xbrl.org/2008/generic#link'" pluginID="" classUri="ubmatrix.xbrl.validation.xbrl21Validation.resolvers.src.Xbrl21FunctionUriResolver" execute="true" inheritsFrom="Xml" />
+
+  </Validation>
+
+  <Validation classificationUri="validation://ubmatrix.com/Xbrl/Validation#BestPractices" logicalUri="BestPractices">
+    <!-- The following patterns are considered XBRL best practices -->
+    <Validator patternSetUri="$COREROOT/resources/System/FrtaValidationPatternset.xml" classificationUri="implementation://ubmatrix.com/Xbrl/Validation#Frta" logicalUri="Frta" runCondition="/'domain://ubmatrix.com/Xbrl/Taxonomy#Taxonomy'" pluginID="" classUri="ubmatrix.xbrl.validation.xbrl21Validation.resolvers.src.FRTAFunctionUriResolver" execute="false" inheritsFrom="Xml" />
+  </Validation>
+</XbrlConfiguration>

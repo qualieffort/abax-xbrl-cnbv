@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<!--
+Project: Xbrl Processing Engine
+Copyright (c) 2011  EDGAR(r) Online, Inc.
+
+EDGAR(r) is a federally registered trademark of the U.S. Securities and Exchange Commission. EDGAR 
+Online is not affiliated with or approved by the U.S. Securities and Exchange Commission.
+-->
+
+
+<!DOCTYPE dimensions [
+
+           <!-- Used to control the namespaceUri of memos -->
+
+           <!ENTITY xdtSpecUri "http://xbrl.org/2005/xbrldi/errors">
+	   
+]>
+
+<PatternSet
+
+    name="Instance Dimension Validation Patterns"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ValidationPatterns.xsd" >
+
+    <!-- 3.1.1
+
+			A primary item is dimensionally valid in the hypercubes found in at least one base set are mutually valid. 
+			See 3.1.2 below, "Mutual validity of hypercubes in a base set". A dimensional processor MUST raise an error [Ins Err, 2] 			
+			xbrldie:PrimaryItemDimensionallyInvalidError if the hypercube combinations found in all base sets are invalid.
+
+	        Note:The mutual validity of hypercubes in a base set and validity of dimensions is performed during validation of
+            the primary items.
+     -->
+    <Pattern id="xbrldie_PrimaryItemDimensionallyInvalidError"
+             name="xbrldie:PrimaryItemDimensionallyInvalidError"
+             method="DtsXPath"
+             value="test_xbrldie_primaryitemdimensionallyinvaliderror()">
+          <Failure severity="error">
+                <Action saveDO="memo" method="CreateErrorMemo" uri="&xdtSpecUri;#PrimaryItemDimensionallyInvalidError" />
+          </Failure>
+    </Pattern>  
+
+	<!-- 3.1.4
+
+	A context MUST NOT contain more than one dimension value for each dimension. A validator MUST signal [Ins Err, 3] 
+	xbrldie:RepeatedDimensionInInstanceError when this rule is violated.	
+-->
+    <Pattern id="xbrldie_Test_Xbrldie_RepeatedDimensionInInstance"
+             name="xbrldie:Test_Xbrldie_RepeatedDimensionInInstance"
+             method="DtsXPath"
+             value="test_xbrldie_repeateddimensionininstance()">
+          <Failure severity="error">
+                <Action saveDO="memo" method="CreateErrorMemo" uri="&xdtSpecUri;#RepeatedDimensionInInstanceError" />
+          </Failure>
+    </Pattern>  
+
+	<!-- 2.8.1
+
+	The default value of a dimension MUST NOT be reported in an instance. A dimensional processor MUST raise [Ins Err, 1]	 		
+	xbrldie:DefaultValueUsedInInstanceError when a default value is explicitly reported.
+	-->
+    <Pattern id="xbrldie_Test_Xbrldie_DefaultValueUsedInInstance"
+             name="xbrldie:Test_Xbrldie_DefaultValueUsedInInstance"
+             method="DtsXPath"
+             value="test_xbrldie_defaultvalueusedininstance()">
+          <Failure severity="error">
+                <Action saveDO="memo" method="CreateErrorMemo" uri="&xdtSpecUri;#DefaultValueUsedInInstanceError" />
+          </Failure>
+    </Pattern>  
+
+	<!-- 3.1.4.4.2
+
+	The content of the dimension attribute of an xbrldi:typedMember element MUST be the 
+	QName of a typed dimension declaration [Def, 6] defined in a schema within the DTS of the 
+	instance document. A dimensional processor MUST raise an error [Ins Err, 4] xbrldie:TypedMemberNotTypedDimensionError 
+	if the element whose QName appears in the dimension attribute of xbrldi:explicitMember resolves to anything 
+	other than a typed dimension declaration [Def, 6].
+	-->
+    <Pattern id="xbrldie_Test_Xbrldie_TypedMemberNotTypedDimension"
+             name="xbrldie:Test_Xbrldie_TypedMemberNotTypedDimension"
+             method="DtsXPath"
+             value="test_xbrldie_typedmembernottypeddimension()">
+          <Failure severity="error">
+                <Action saveDO="memo" method="CreateErrorMemo" uri="&xdtSpecUri;#TypedMemberNotTypedDimensionError" />
+          </Failure>
+    </Pattern>  
+
+	<!-- 3.1.4.5.2
+
+	The content of the dimension attribute of an xbrldi:explicitMember element MUST be the QName of an 
+	explicit dimension element [Def, 7] defined in a schema within the DTS of the instance document. A 
+	dimensional processor MUST raise an error [Ins Err, 5] xbrldie:ExplicitMemberNotExplicitDimensionError 
+	if the element whose QName appears in the dimension attribute of xbrldi:explicitMember resolves to anything other than an explicit dimension 
+	declaration [Def, 7].
+	-->
+    <Pattern id="xbrldie_Test_Xbrldie_ExplicitMemberNotExplicitDimension"
+             name="xbrldie:Test_Xbrldie_ExplicitMemberNotExplicitDimension"
+             method="DtsXPath"
+             value="test_xbrldie_explicitmembernotexplicitdimension()">
+          <Failure severity="error">
+                <Action saveDO="memo" method="CreateErrorMemo" uri="&xdtSpecUri;#ExplicitMemberNotExplicitDimensionError" />
+          </Failure>
+    </Pattern>  
+
+	<!-- 3.1.4.5.3
+
+	element definition can be found in the taxonomy schema referenced by the namespace of the QName. 
+	A dimensional processor MUST raise en error [Ins Err, 6] xbrldie:ExplicitMemberUndefinedQNameError if this rule is violated.
+	-->
+    <Pattern id="xbrldie_Test_Xbrldie_ExplicitMemberUndefinedQNameError"
+             name="xbrldie:Test_Xbrldie_ExplicitMemberUndefinedQNameError"
+             method="DtsXPath"
+             value="test_xbrldie_explicitmemberundefinedqnameerror()">
+          <Failure severity="error">
+                <Action saveDO="memo" method="CreateErrorMemo" uri="&xdtSpecUri;#ExplicitMemberUndefinedQNameError" />
+          </Failure>
+    </Pattern>  
+
+<!-- Test all aggregations found in the DTS -->
+<!-- This pattern retires. Removing aggregator-contributor support from XPE, this is a XBRL spec that has been superseded by XBRL Formula and therefore we should remove support for this -->
+<!--
+    <Pattern id="xbrldie_Test_Xbrldie_Aggregation" 
+			name="xbrldie_Test_Xbrldie_Aggregation" 
+			method="DtsXPath" 
+			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#Role'HasInvalidAggregation()">
+         <Failure severity="error" />
+    </Pattern>
+    -->
+<!-- tests xbrldie:IllegalTypedDimensionContentError -->    
+    <Pattern id="xbrldie_Test_Xbrldie_IllegalTypedDimensionContentError"
+             name="xbrldie:Test_Xbrldie_IllegalTypedDimensionContentError"
+             method="DtsXPath"
+             value="test_xbrldie_illegaltypeddimensioncontenterror()">
+          <Failure severity="error">
+                <Action saveDO="memo" method="CreateErrorMemo" uri="&xdtSpecUri;#IllegalTypedDimensionContentError" />
+          </Failure>
+    </Pattern>  
+
+</PatternSet>
+
+<!--
+The contents of this file are subject to the End-User Software License Agreement (the "License"). You may not use this 
+file except in compliance with the License. A current copy of the License is available by contacting product support.
+
+Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights and limitations under the License.
+-->

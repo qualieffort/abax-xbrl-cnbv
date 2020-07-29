@@ -1,0 +1,221 @@
+﻿///<reference path="../../../modeloAbax.ts" /> 
+///<reference path="../../../modeloPlantillaAbax.ts" /> 
+///<reference path="../../../../scripts/typings/moment/moment.d.ts" />
+module abaxXBRL.templates {
+
+    /**
+     * Implementación del Objeto de Plantilla de documento de instancia XBRL para la taxonomía de #uriEntryPoint
+     */
+    export class #nombreClase implements abaxXBRL.model.DefinicionDePlantillaXbrl {
+
+        /**
+         * Contiene la definción de los parámetros de configuración utilizados por esta plantilla
+         */
+        DefinicionesParametrosConfiguracion: { [id: string]: abaxXBRL.model.DefinicionParametroConfiguracionPlantilla };
+
+        /**
+         * Contiene la definición de los elementos utilizados por las plantillas de los diferentes roles que componen la plantilla
+         */
+        DefinicionesElementos: abaxXBRL.model.DefinicionDeElementosPlantilla;
+
+        /** El documento instancia que presenta esta plantilla */
+        DocumentoInstancia: abaxXBRL.model.DocumentoInstanciaXbrl;
+
+        /** Las variables que se calcularon para la plantilla del documento instancia en base a los parámetros de configuración. */
+        VariablesDocumentoInstancia: { [id: string]: string };
+
+        /** Indica que no fue capaz de determinar los parámetros de configuración del usuario */
+        IncapazDeterminarParametrosConfiguracion: boolean;
+
+        /** Los valores de los diferentes parámetros de configuración */
+        ParametrosConfiguracion: { [id: string]: any } = {};
+
+		/** Las llaves que identifican los diferentes grupos de periodos por fecha (instante o duración) */
+        llavesPeriodo: Array<string>;
+
+		/** Las entidades asociadas con el documento instancia */
+        entidades: Array<model.EntidadPlantilla>;
+
+		/** El idioma por defecto para las etiquetas */
+        IDIOMA_DEFAULT(): string { return 'es'; }
+
+		/** Muestra el diccioneadio de las etiquetas de las partes de una referencia por idioma. */
+        EtiquetasParteReferencia: { [idioma: string]: { [nombreParte: string]: string } } = {};
+
+        obtenerDefinicionDeParametrosDeConfiguracion(): { [id: string]: abaxXBRL.model.DefinicionParametroConfiguracionPlantilla } {
+            return this.DefinicionesParametrosConfiguracion;
+        }
+
+        agregarDefinicionElementos(definicion: abaxXBRL.model.DefinicionDeElementosPlantilla): void {
+            $.extend(true, this.DefinicionesElementos.ContextosPlantillaPorId, definicion.ContextosPlantillaPorId);
+            $.extend(true, this.DefinicionesElementos.UnidadesPlantillaPorId, definicion.UnidadesPlantillaPorId);
+            $.extend(true, this.DefinicionesElementos.HechosPlantillaPorId, definicion.HechosPlantillaPorId);
+        }
+
+        obtenerDefinicionDeElementos(): abaxXBRL.model.DefinicionDeElementosPlantilla {
+            return this.DefinicionesElementos;
+        }
+
+        determinarParametrosConfiguracion(): boolean {
+            var resultado: boolean = true;
+            this.ParametrosConfiguracion = {};
+            
+			//TODO: Determinar parámetros de configuración
+
+            return resultado;
+        }
+
+        /**
+         * Inicializa la definición de la plantilla de un documento XBRL.
+         *
+         * @param documentoInstancia el documentoInstanciaXBRL que será presentado.
+         */
+        init(documentoInstancia: abaxXBRL.model.DocumentoInstanciaXbrl): void {
+            this.DocumentoInstancia = documentoInstancia;
+
+            if (!this.ParametrosConfiguracion || this.ParametrosConfiguracion == null) {
+                if (!this.determinarParametrosConfiguracion()) {
+                    this.IncapazDeterminarParametrosConfiguracion = true;
+                    return;
+                }
+            }
+
+            if (!this.generarVariablesDocumentoInstancia()) {
+                this.IncapazDeterminarParametrosConfiguracion = true;
+            }
+        }
+
+        /**
+         * Genera las variables requeridas por el documento instancia.
+         *
+         * @return true si fue posible generar con éxito las variables. false en cualquier otro caso.
+         */
+        generarVariablesDocumentoInstancia(): boolean {
+
+            var resultado: boolean = true;
+
+            //TODO: Determinar variables Documento Instancia
+			#declaracionVariables
+
+            return resultado;
+        }
+
+
+		/**
+        * Elimina de cada rol los hechos que no aplican según las características del documento de instancia
+        */
+        eliminarHechosSinUso(abaxServicio: services.AbaxXBRLServices): void {
+		
+		}
+
+		/**
+         * Obtiene la etiqueta de la parte de referencia.
+         *
+         * @param nombreParte el nombre que se requiere obtener la etiqueta.
+         * @param lenguaje es el código del lenguaje que se desea presentar la etiqueta
+         * @return la etiqueta de la parte de la referencia en el lenguaje especificado.
+         */
+        obtenerEtiquetaParteReferencia(nombreParte: string, lenguaje: string): string {
+
+            var etiquetaParte = this.EtiquetasParteReferencia[lenguaje][nombreParte];
+
+            if (etiquetaParte == null) {
+                etiquetaParte = this.EtiquetasParteReferencia[this.IDIOMA_DEFAULT()][nombreParte];
+            }
+
+            return etiquetaParte;
+        }
+
+		/**
+        * Crea todas las etiquetas de las partes de una referencia por taxonomia.
+        */
+        generarEtiquetasPartesReferencia(): void {
+
+            if (!this.EtiquetasParteReferencia["es"]) {
+                this.EtiquetasParteReferencia["es"] = {}
+                
+
+                this.EtiquetasParteReferencia["en"] = {}
+                
+            }
+        }
+
+        /**
+         * Obtiene un mapa cuyas llaves son el identificador de la variable del documento instancia y como valor asociado el valor determinado para la variable del documento.
+         *
+         * @return un mapa cuyas llaves son el identificador de la variable del documento instancia y como valor asociado el valor determinado para la variable del documento.
+         */
+        obtenerVariablesDocumentoInstancia(): { [id: string]: string } {
+            return this.VariablesDocumentoInstancia;
+        }
+
+        /**
+         * Obtiene el valor de una variable por medio de su identificador.
+         *
+         * @param id el identificador de la variable a consultar.
+         * @return el valor asociado a la variable que corresponde al identificador proporcionado. null si no existe una variable con dicho identificador.
+         */
+        obtenerVariablePorId(id: string): string {
+            var variable: string = null;
+
+            if (this.VariablesDocumentoInstancia[id] && this.VariablesDocumentoInstancia[id] != null) {
+                variable = this.VariablesDocumentoInstancia[id];
+            }
+
+            return variable;
+        }
+
+        /**
+         * Obtiene una ruta relativa a la raíz de la aplicación web en donde se encuentra la plantilla que deberá ser utilizada para el formato de captura de un rol de un documento instancia XBRL.
+         *
+         * @param rolURI el URI del rol a consultar.
+         * @return la ubicación relativa desde la raíz de la aplicación donde se localiza la plantilla. null en caso de no existir una plantilla para dicho rol.
+         */
+        obtenerUbicacionPlantillaDeRol(rolURI: string): string {
+            if (!this.IncapazDeterminarParametrosConfiguracion) {
+                var rutaPlantillas = '/ts/templates/taxonomias/#folderTaxonomia/';
+                var extensionPlantillas = '.html';
+                return rutaPlantillas + rolURI.replace(':', '_').replace(/\//g, '_') + extensionPlantillas;
+            } else {
+                return '/ts/templates/taxonomias/plantilla_generica.html'
+            }
+        }
+
+        /**
+         * Obtiene una ruta relativa a la raíz de la aplicación web en donde se encuentra la definición de la plantilla que deberá ser utilizada para el formato de captura de un rol de un documento instancia XBRL.
+         *
+         * @param rolURI el URI del rol a consultar.
+         * @return la ubicación relativa desde la raíz de la aplicación donde se localiza la definición de la  plantilla. null en caso de no existir una definició nde la plantilla para dicho rol.
+         */
+        obtenerUbicacionDefinicionDeRol(rolURI: string): string {
+            if (!this.IncapazDeterminarParametrosConfiguracion) {
+                var rutaDefiniciones = '/ts/templates/taxonomias/#folderTaxonomia/';
+                var extensionDefiniciones = '.js';
+                return rutaDefiniciones + rolURI.replace(':', '_').replace(/\//g, '_') + extensionDefiniciones;
+            } else {
+                return '/ts/templates/taxonomias/plantilla_generica.html'
+            }
+        }
+
+        /**
+         * Constructor por defecto de la clase #nombreClase
+         */
+        constructor() {
+            this.DefinicionesElementos = {
+                ContextosPlantillaPorId: {},
+                UnidadesPlantillaPorId: {},
+                HechosPlantillaPorId: {},
+				ListadoDeFormulas: {}
+            };
+            this.VariablesDocumentoInstancia = {};
+			this.EtiquetasParteReferencia = {};
+            this.DocumentoInstancia = null;
+            this.ParametrosConfiguracion = null;
+            this.IncapazDeterminarParametrosConfiguracion = false;
+            this.DefinicionesParametrosConfiguracion = {
+                //TODO: Definir Parámetros de Configuración
+            };
+        }
+    }
+
+}

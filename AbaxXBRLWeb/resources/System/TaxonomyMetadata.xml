@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Project: Xbrl Processing Engine
+Copyright (c) 2011  EDGAR(r) Online, Inc.
+
+EDGAR(r) is a federally registered trademark of the U.S. Securities and Exchange Commission. EDGAR 
+Online is not affiliated with or approved by the U.S. Securities and Exchange Commission.
+-->
+
+
+<MethodSet name="EditingPattern" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Metadata.xsd">	
+	<!-- TAXONOMY -->
+	<Method name="SetSubstitutionGroup" behaviorUri="behavior://ubmatrix.com/Xbrl/Taxonomy#Concept.SetSubstitutionGroup" reindex="substitutionGroup">
+		<DomainObjectArgumentSelector name="conceptDO" value="." type="DomainObject" allowNull="False"/> 		
+		<DomainObjectArgumentSelector name="substitutionGroupDO" value="0" type="DomainObject" allowNull="False"/> 		
+			<RemoveDomainObject>
+				<DtsQuerySelector saveDO="RemoveDomainObject">
+					<DomainObjectSelector saveDO="startDO" value="conceptDO"/>
+					<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#DefinedBySubstitutionGroup'"/>
+				</DtsQuerySelector>
+			</RemoveDomainObject>
+			<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#DefinedBySubstitutionGroup">
+				<DomainObjectSelector saveDO="From" value="conceptDO"/>
+				<DomainObjectSelector saveDO="To" value="substitutionGroupDO"/>
+			</CreateRelationship>
+	</Method>
+	<Method name="SetDatatype" behaviorUri="behavior://ubmatrix.com/Xbrl/Taxonomy#Concept.SetDatatype">
+		<DomainObjectArgumentSelector name="conceptDO" value="." type="DomainObject" allowNull="False"/> 		
+		<DomainObjectArgumentSelector name="datatypeDO" value="0" type="DomainObject" allowNull="False"/> 		
+		<RemoveDomainObject>
+			<DtsQuerySelector saveDO="RemoveDomainObject">
+				<DomainObjectSelector saveDO="startDO" value="conceptDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#ConceptSpecifiesDatatype'"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#ConceptSpecifiesDatatype">
+			<DomainObjectSelector saveDO="From" value="conceptDO"/>
+			<DomainObjectSelector saveDO="To" value="datatypeDO"/>
+		</CreateRelationship>
+	</Method>
+	<Method name="RemoveConcept" behaviorUri="behavior://ubmatrix.com/Xbrl/Taxonomy#Taxonomy.RemoveConcept">
+		<DomainObjectArgumentSelector name="taxonomyDO" value="." type="DomainObject" allowNull="False"/> 		
+		<DomainObjectArgumentSelector name="conceptDO" value="0" type="DomainObject" allowNull="False"/> 		
+		<RemoveDomainObject>
+			<DtsQuerySelector saveDO="RemoveDomainObject">
+				<DomainObjectSelector saveDO="startDO" value="conceptDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#ConceptSpecifiesDatatype'"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+		<RemoveDomainObject>
+			<DtsQuerySelector saveDO="RemoveDomainObject">
+				<DomainObjectSelector saveDO="startDO" value="conceptDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#DefinedBySubstitutionGroup'"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+		<RemoveDomainObject>
+			<DtsQuerySelector saveDO="RemoveDomainObject">
+				<DomainObjectSelector saveDO="startDO" value="taxonomyDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#TaxonomySpecifiesConcept'"/>
+				<DomainObjectSelector saveDO="toEndDO" value="conceptDO"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+		<RemoveDomainObject>
+			<DtsQuerySelector saveDO="RemoveDomainObjectSet">
+				<DomainObjectSelector saveDO="startDO" value="conceptDO"/>
+				<ConstantSelector value="/-'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#TupleContainsConcept'"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+		<RemoveDomainObject>
+			<DtsQuerySelector saveDO="RemoveDomainObjectSet">
+				<DomainObjectSelector saveDO="startDO" value="conceptDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#TupleContainsConcept'"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+		<RemoveDomainObject>
+			<DomainObjectSelector saveDO="RemoveDomainObject" value="conceptDO"/>
+		</RemoveDomainObject>
+	</Method>
+	<Method name="RemoveDataType" behaviorUri="behavior://ubmatrix.com/Xbrl/Taxonomy#Taxonomy.RemoveDataType">
+		<DomainObjectArgumentSelector name="taxonomyDO" value="." type="DomainObject" allowNull="False"/> 		
+		<DomainObjectArgumentSelector name="dataTypeDO" value="0" type="DomainObject" allowNull="False"/> 		
+		<RemoveDomainObject>
+			<DtsQuerySelector saveDO="RemoveDomainObject">
+				<DomainObjectSelector saveDO="startDO" value="dataTypeDO"/>
+				<ConstantSelector value="/-'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#ConceptSpecifiesDatatype'"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+		<RemoveDomainObject>
+			<DtsQuerySelector saveDO="RemoveDomainObject">
+				<DomainObjectSelector saveDO="startDO" value="taxonomyDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#TaxonomySpecifiesDatatype'"/>
+				<DomainObjectSelector saveDO="toEndDO" value="dataTypeDO"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+		<RemoveDomainObject>
+			<DtsQuerySelector saveDO="RemoveDomainObjectSet">
+				<DomainObjectSelector saveDO="startDO" value="dataTypeDO"/>
+				<ConstantSelector value="/-'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#Derives'"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+		<RemoveDomainObject>
+			<DtsQuerySelector saveDO="RemoveDomainObjectSet">
+				<DomainObjectSelector saveDO="startDO" value="dataTypeDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#Derives'"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+		<RemoveDomainObject>
+			<DomainObjectSelector saveDO="RemoveDomainObject" value="dataTypeDO"/>
+		</RemoveDomainObject>
+	</Method>
+	<Method name="RemoveDataType" behaviorUri="behavior://ubmatrix.com/Xbrl/Taxonomy#Concept.RemoveDataType">
+		<DomainObjectArgumentSelector name="conceptDO" value="." type="DomainObject" allowNull="False"/> 		
+		<DomainObjectArgumentSelector name="dataTypeDO" value="0" type="DomainObject" allowNull="False"/> 		
+		<ConditionSet Fail="NotEmpty" testValue="taxonomyDO">
+			<DtsQuerySelector saveDO="taxonomyDO">
+				<DomainObjectSelector saveDO="startDO" value="conceptDO"/>
+				<ConstantSelector value="/-'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#TaxonomySpecifiesDatatype"/>				
+			</DtsQuerySelector>
+		</ConditionSet>
+		<RemoveDomainObject>
+			<DtsQuerySelector saveDO="RemoveDomainObject">
+				<DomainObjectSelector saveDO="startDO" value="dataTypeDO"/>
+				<ConstantSelector value="/-'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#ConceptSpecifiesDatatype'"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+		<RemoveDomainObject>
+			<DtsQuerySelector saveDO="RemoveDomainObject">
+				<DomainObjectSelector saveDO="startDO" value="taxonomyDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#TaxonomySpecifiesDatatype'"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+		<RemoveDomainObject>
+			<DtsQuerySelector saveDO="RemoveDomainObjectSet">
+				<DomainObjectSelector saveDO="startDO" value="dataTypeDO"/>
+				<ConstantSelector value="/-'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#Derives'"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+		<RemoveDomainObject>
+			<DtsQuerySelector saveDO="RemoveDomainObjectSet">
+				<DomainObjectSelector saveDO="startDO" value="dataTypeDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#Derives'"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+		<RemoveDomainObject>
+			<DomainObjectSelector saveDO="RemoveDomainObject" value="dataTypeDO"/>
+		</RemoveDomainObject>
+	</Method>
+	<Method name="RemoveSubstitutionGroup" behaviorUri="behavior://ubmatrix.com/Xbrl/Taxonomy#Concept.RemoveSubstitutionGroup" reindex="substitutionGroup">
+		<DomainObjectArgumentSelector name="conceptDO" value="." type="DomainObject" allowNull="False"/> 		
+		<DomainObjectArgumentSelector name="substitutionGroupDO" value="0" type="DomainObject" allowNull="False"/> 		
+		<RemoveDomainObject>
+			<DtsQuerySelector saveDO="RemoveDomainObject">
+				<DomainObjectSelector saveDO="startDO" value="conceptDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#DefinedBySubstitutionGroup'"/>
+				<DomainObjectSelector saveDO="toEndDO" value="substitutionGroupDO"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+	</Method>
+	<Method name="RemoveElement" behaviorUri="behavior://ubmatrix.com/Xbrl/Taxonomy#Taxonomy.RemoveElement">
+		<DomainObjectArgumentSelector name="taxonomyDO" value="." type="DomainObject" allowNull="False"/> 		
+		<DomainObjectArgumentSelector name="elementDO" value="0" type="DomainObject" allowNull="False"/> 		
+		<RemoveDomainObject>
+			<DtsQuerySelector saveDO="RemoveDomainObject">
+				<DomainObjectSelector saveDO="startDO" value="elementDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#ConceptSpecifiesDatatype'"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+		<RemoveDomainObject>
+			<DtsQuerySelector saveDO="RemoveDomainObject">
+				<DomainObjectSelector saveDO="startDO" value="elementDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#DefinedBySubstitutionGroup'"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+		<RemoveDomainObject>
+			<DtsQuerySelector saveDO="RemoveDomainObject">
+				<DomainObjectSelector saveDO="startDO" value="taxonomyDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#TaxonomySpecifiesConcept'"/>
+				<DomainObjectSelector saveDO="toEndDO" value="elementDO"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+		<RemoveDomainObject>
+			<DomainObjectSelector saveDO="RemoveDomainObject" value="elementDO"/>
+		</RemoveDomainObject>
+	</Method>
+
+</MethodSet>
+
+<!--
+The contents of this file are subject to the End-User Software License Agreement (the "License"). You may not use this 
+file except in compliance with the License. A current copy of the License is available by contacting product support.
+
+Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights and limitations under the License.
+-->

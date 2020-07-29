@@ -1,0 +1,124 @@
+{
+	"ContextosPlantillaPorId" : {
+  "ctx_2014": {
+    "Id": "ctx_2014",
+    "Periodo": {
+      "Tipo": 1,
+      "FechaInstante": "#fecha_2014_12_31",
+      "FechaInicio": "",
+      "FechaFin": ""
+    },
+    "Entidad": {
+      "Id": "#nombreEntidad",
+      "EsquemaId": "#esquemaEntidad",
+      "ContieneInformacionDimensional": false,
+      "Segmento": null,
+      "ValoresDimension": []
+    },
+    "ContieneInformacionDimensional": false,
+    "Escenario": null,
+    "ValoresDimension": []
+  }
+},
+	
+	"UnidadesPlantillaPorId" : {},
+            
+	"HechosPlantillaPorId" : {
+  "ar_pros_ReferenceIncorporationFinancialInformation_43a91dbe-fd5d-4a6d-bb4b-0a9e19596807": {
+    "Id": "ar_pros_ReferenceIncorporationFinancialInformation_43a91dbe-fd5d-4a6d-bb4b-0a9e19596807",
+    "IdConcepto": "ar_pros_ReferenceIncorporationFinancialInformation",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_SelectedFinancialInformation_d74a2c9e-3a3d-499f-bb8a-fc3467389861": {
+    "Id": "ar_pros_SelectedFinancialInformation_d74a2c9e-3a3d-499f-bb8a-fc3467389861",
+    "IdConcepto": "ar_pros_SelectedFinancialInformation",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_PublicDebt_f42a1972-9060-4cc5-a709-f0fa7651b448": {
+    "Id": "ar_pros_PublicDebt_f42a1972-9060-4cc5-a709-f0fa7651b448",
+    "IdConcepto": "ar_pros_PublicDebt",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_CommentsAndAnalysisOfTheFederalEntityOrMunicipality_b3ea3196-e4f4-47e7-a810-963089e0231c": {
+    "Id": "ar_pros_CommentsAndAnalysisOfTheFederalEntityOrMunicipality_b3ea3196-e4f4-47e7-a810-963089e0231c",
+    "IdConcepto": "ar_pros_CommentsAndAnalysisOfTheFederalEntityOrMunicipality",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_OperationResults_3b4ef0f1-743c-4743-b579-7e610a9a8868": {
+    "Id": "ar_pros_OperationResults_3b4ef0f1-743c-4743-b579-7e610a9a8868",
+    "IdConcepto": "ar_pros_OperationResults",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_FinancialPositionLiquidityAndCapitalResources_b17683fc-d604-47f0-b6ef-2659bd6c44d1": {
+    "Id": "ar_pros_FinancialPositionLiquidityAndCapitalResources_b17683fc-d604-47f0-b6ef-2659bd6c44d1",
+    "IdConcepto": "ar_pros_FinancialPositionLiquidityAndCapitalResources",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_InternalControl_f958e6a0-9b1e-4d6d-a12d-9ce8d71f5106": {
+    "Id": "ar_pros_InternalControl_f958e6a0-9b1e-4d6d-a12d-9ce8d71f5106",
+    "IdConcepto": "ar_pros_InternalControl",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_EstimatesCriticalAccountingProvisionsOrReserves_673353e5-db8c-42ab-973c-d90e3c47da0e": {
+    "Id": "ar_pros_EstimatesCriticalAccountingProvisionsOrReserves_673353e5-db8c-42ab-973c-d90e3c47da0e",
+    "IdConcepto": "ar_pros_EstimatesCriticalAccountingProvisionsOrReserves",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  }
+}
+}

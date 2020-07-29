@@ -1,0 +1,157 @@
+﻿
+<div class="modal-header">
+    <button type="button" class="close" aria-hidden="true" ng-click="cerrarDialogo()">&times;</button>
+    <div class="row m-t-sm">
+        <div class="col-sm-10 m-b-xs">
+            <h4 class="modal-title">{{'VISOR_XBRL_COMPARAR_CONFIGURACION_TABLA' | translate}}</h4>
+        </div>
+    </div>
+</div>
+<div class="modal-body">
+
+    <tabset>
+        <tab>
+            <tab-heading>
+                <i class="fa fa-cog text-muted"></i> {{'VISOR_XBRL_COMPARAR_TAB_GENERAL' | translate}}
+            </tab-heading>
+
+            <section class="panel-body">
+                <div style="height:{{alturaModal}}px; overflow-y: auto;">
+                    <div class="form-group">
+
+                        <div class="checkbox i-checks">
+                            <label>
+                                <input type="checkbox" ng-model="opcionesTabla['mostrarColumnasVacias']" /><i></i> {{'VISOR_XBRL_COMPARAR_MOSTRAR_COLUM_SIN_DATOS' | translate}}
+                            </label>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+
+                        <div class="checkbox i-checks">
+                            <label>
+                                <input type="checkbox" ng-model="opcionesTabla['mostrarRenglonesVacios']" ng-change="aplicarATodosLosRenglones(opcionesTabla['mostrarRenglonesVacios'],true)" /><i></i> {{'VISOR_XBRL_COMPARAR_MOSTRAR_RENGLONES_SIN_DATOS' | translate}}
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <div class="checkbox i-checks">
+                            <label>
+                                <input type="checkbox" ng-model="opcionesTabla['agruparDimensionFecha']" /><i></i> {{'VISOR_XBRL_COMPARAR_AGRUPAR_FECHAS' | translate}}
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <h4 class="m-t-none">{{'VISOR_XBRL_COMPARAR_ORDEN_DIMENSIONES' | translate}} <small>{{'VISOR_XBRL_COMPARAR_ARRASTRAR_ORDEN' | translate}} </small></h4>
+                        <script type="text/ng-template" id="items_renderer.html">
+                            <div ui-tree-handle class="list-group-item" style="min-height:45px;">
+                                <i class="fa fa-sort text-muted fa m-r-sm" style="float:left;"></i>
+                                <div ng-if="item.id == idDimensionTiempo || item.id == idDimensionEntidad" style="float:left;">{{'ETIQUETA_DIMENSION' | translate}}: {{item.title}}</div>
+                                <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="{{item.id}}" xbrl:nivel-indentacion="0"
+                                                        ng-if="item.id != idDimensionTiempo && item.id != idDimensionEntidad" />
+                            </div>
+                            <ol ui-tree-nodes="opcionesTreeOrden" ng-model="item.items" ng-class="{hidden: collapsed}">
+                                <li ng-repeat="item in item.items" ui-tree-node ng-include="'items_renderer.html'">
+                                </li>
+                            </ol>
+                        </script>
+                        <div ui-tree="opcionesTreeOrden">
+                            <ol ui-tree-nodes ng-model="itemsOrdenDimensiones">
+                                <li ng-repeat="item in itemsOrdenDimensiones" ui-tree-node ng-include="'items_renderer.html'"></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </tab>
+        <tab>
+            <tab-heading>
+                <i class="fa fa-cog text-muted"></i> {{'VISOR_XBRL_RENGLONES' | translate}}
+            </tab-heading>
+            <section class="panel-body">
+                <div style="height:{{alturaModal}}px; overflow-y: auto;">
+                    <script type="text/ng-template" id="items_renderer_renglones.html">
+                        <div ui-tree-handle class="list-group-item" style="padding:7px;">
+                            <div class="checkbox i-checks" style="margin-top:0px;margin-bottom:5px;float:left;margin-right:5px">
+                                <label class="col-lg-1 control-label" style="width:1px;padding-right:1px;">
+                                    <input type="checkbox" ng-model="item.visible" ng-change="aplicarVisibleAHijos(item,item.visible)" /><i></i>
+
+                                </label>
+                            </div>
+                            <div>
+                                <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                        xbrl:id-concepto="{{item.idConcepto}}" xbrl:nivel-indentacion="0" xbrl:rol-etiqueta="{{item.rolEtiqueta}}">
+                            </div>
+                        </div>
+                        <ol ui-tree-nodes="opcionesTreeOrden" ng-model="item.items" ng-class="{hidden: collapsed}">
+                            <li ng-repeat="item in item.items" ui-tree-node ng-include="'items_renderer_renglones.html'" data-drag-enabled="false" style="list-style-type: none;">
+                            </li>
+                        </ol>
+                    </script>
+                    <div ui-tree="opcionesTreeOrden" data-drag-enabled="false">
+                        <ol ui-tree-nodes ng-model="itemsRenglones" data-drag-enabled="false">
+                            <li ng-repeat="item in itemsRenglones" ui-tree-node ng-include="'items_renderer_renglones.html'" style="list-style-type: none;"></li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+        </tab>
+        <tab>
+            <tab-heading>
+                <i class="fa fa-sitemap text-muted"></i> {{'VISOR_XBRL_COLUMNAS' | translate}}
+            </tab-heading>
+            <section class="panel-body">
+                <div style="height:{{alturaModal}}px; overflow-y: auto;">
+                    <tabset>
+                        <tab ng-repeat="dimension in xbrlEstructuraTabla.tabla.encabezado.dimensiones">
+                            <tab-heading>
+                                <div ng-if="dimension.idConceptoEje == idDimensionTiempo || dimension.idConceptoEje == idDimensionEntidad"><strong>{{'ETIQUETA_DIMENSION' | translate}}: {{dimension.titulo}}</strong></div>
+                                <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="{{dimension.idConceptoEje}}" xbrl:nivel-indentacion="0"
+                                                        ng-if="dimension.idConceptoEje != idDimensionTiempo && dimension.idConceptoEje != idDimensionEntidad" />
+                            </tab-heading>
+                            <section class="panel-body">
+
+                                <div class="form-group">
+                                    <script type="text/ng-template" id="items_renderer_miembros.html">
+
+                                        <div ui-tree-handle class="list-group-item">
+
+                                            <div class="checkbox i-checks" style="margin-top:0px;margin-bottom:5px;float:left;margin-right:5px">
+                                                <label class="col-lg-1 control-label" style="width:1px;padding-right:1px;">
+                                                    <input type="checkbox" ng-model="item.visible" ng-change="aplicarVisibleAHijos(item,item.visible)" /><i></i>
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <div ng-if="item.idDimension == idDimensionTiempo || item.idDimension == idDimensionEntidad">{{item.titulo}}</div>
+                                                <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="{{item.idMiembro}}" xbrl:nivel-indentacion="0"
+                                                                        ng-if="item.idDimension != idDimensionTiempo && item.idDimension != idDimensionEntidad" />
+                                            </div>
+                                        </div>
+                                        <ol ui-tree-nodes="opcionesTreeOrden" ng-model="item.items" ng-class="{hidden: collapsed}">
+                                            <li ng-repeat="item in item.items" ui-tree-node ng-include="'items_renderer_miembros.html'" data-drag-enabled="false">
+                                            </li>
+                                        </ol>
+
+                                    </script>
+                                    <div ui-tree="opcionesTreeOrden" data-drag-enabled="false">
+                                        <ol ui-tree-nodes ng-model="itemMiembros[dimension.idConceptoEje]" data-drag-enabled="false">
+                                            <li ng-repeat="item in itemMiembros[dimension.idConceptoEje]" ui-tree-node ng-include="'items_renderer_miembros.html'"></li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </section>
+                        </tab>
+                    </tabset>
+                </div>
+            </section>
+        </tab>
+    </tabset>
+</div>
+
+<div class="modal-footer">
+    <div>
+        <button type="button" class="btn btn-default" ng-click="cerrarDialogo()">{{'ETIQUETA_BOTON_CANCELAR' | translate}}</button>
+        <button type="button" class="btn btn-s-md btn-warning" ng-click="actualizarTabla()">{{'VISOR_XBRL_BTN_ACTUALIZAR_TABLA' | translate}}</button>
+    </div>
+</div>

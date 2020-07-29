@@ -1,0 +1,14 @@
+﻿<tr>
+    <td width="40%"><span class="concepto" xbrl:roles-concepto-tool-tip="{{detalleOperando.IdConcepto}}">{{descripcionConcepto}}</span></td>
+
+    <td colspan="4" width="60%">
+
+        <table width="100%">
+            <tr>
+                <td style="width:33%;"><span>{{etiquetaMiembroDimension}}</span></td>
+                <td style="width:33%;" class="valorCalculado"><xbrl:campo-captura xbrl:id-concepto="{{detalleOperando.IdConcepto}}" xbrl:id-contexto="{{detalleOperando.IdContexto}}" xbrl:id-unidad="{{detalleOperando.IdUnidad}}" xbrl:solo-lectura="true" xbrl:es-valor-calculado="true" xbrl:ocultar-detalles="true"></xbrl:campo-captura></td>
+                <td style="width:33%;"><xbrl:campo-captura xbrl:id-concepto="{{detalleOperando.IdConcepto}}" xbrl:id-contexto="{{detalleOperando.IdContexto}}" xbrl:id-unidad="{{detalleOperando.IdUnidad}}" xbrl:solo-lectura="{{xbrlSoloLectura}}" xbrl:solo-edicion="{{xbrlSoloEdicion}}" xbrl:ocultar-detalles="true" xbr:abrir-popup="false"></xbrl:campo-captura></td>
+            </tr>
+        </table>
+    </td>
+</tr>

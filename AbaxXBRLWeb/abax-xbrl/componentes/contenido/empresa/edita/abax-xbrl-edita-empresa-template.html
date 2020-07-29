@@ -1,0 +1,134 @@
+﻿<section class="row m-b-md">
+    <div class="col-sm-6">
+        <h3 class="m-b-xs text-black">{{'TITULO_CATALOGO_DE_EMPRESAS' | translate}}</h3>
+    </div>
+</section>
+<section class="panel panel-default">
+    <header class="panel-heading font-bold">
+        {{'TITULO_EDITAR_EMPRESA' | translate}}
+    </header>
+    <form name="empresaForm" class="form-horizontal">
+        <div class="panel-body">
+            <div class="line line-dashed b-b line-lg pull-in"></div>
+            <div class="form-group">
+                <label for="NombreCorto" class="col-sm-2 control-label">{{'ETIQUETA_NOMBRE_CORTO' | translate}}</label>
+                <div class="col-sm-10">
+                    <div class="row">
+                        <div class="col-md-4" ng-class="{ 'has-error' : empresaForm.NombreCorto.$invalid }">
+                            <input class="form-control" id="NombreCorto" name="NombreCorto" type="text" value="" ng-model="empresa.NombreCorto" required>
+                        </div>
+                        <p ng-show="empresaForm.NombreCorto.$invalid" class="help-block">{{'ETIQUETA_CAMPO_REQUERIDO' | translate}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="line line-dashed b-b line-lg pull-in"></div>
+            <div class="form-group">
+                <label for="AliasClaveCotizacion" class="col-sm-2 control-label">{{'ETIQUETA_ALIAS_CLAVE_COTIZACION' | translate}}</label>
+                <div class="col-sm-10">
+                    <div class="row">
+                        <div class="col-md-4" ng-class="{ 'has-error' : empresaForm.AliasClaveCotizacion.$invalid }">
+                            <input class="form-control" id="AliasClaveCotizacion" name="AliasClaveCotizacion" type="text" value="" ng-model="empresa.AliasClaveCotizacion">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="line line-dashed b-b line-lg pull-in"></div>
+            <div class="form-group">
+                <label for="RFC" class="col-sm-2 control-label">{{'ETIQUETA_RFC' | translate}}</label>
+                <div class="col-sm-10">
+                    <div class="row">
+                        <div class="col-md-4" ng-class="{ 'has-error' : empresaForm.RFC.$invalid }">
+                            <input class="form-control" id="RFC" name="RFC" type="text" value="" ng-model="empresa.RFC" ng-pattern="rfc" maxlength="14" required>
+                        </div>
+                        <p ng-show="empresaForm.RFC.$invalid" class="help-block">{{'ETIQUETA_CAMPO_REQUERIDO_FORMATO_VALIDO' | translate}}</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="line line-dashed b-b line-lg pull-in"></div>
+            <div class="form-group">
+                <label for="RazonSocial" class="col-sm-2 control-label">{{'ETIQUETA_RAZON_SOCIAL' | translate}}</label>
+                <div class="col-sm-10">
+                    <div class="row">
+                        <div class="col-md-4" ng-class="{ 'has-error' : empresaForm.RazonSocial.$invalid }">
+                            <input class="form-control" id="RazonSocial" name="RazonSocial" type="text" value="" ng-model="empresa.RazonSocial" required>
+                        </div>
+                        <p ng-show="empresaForm.RazonSocial.$invalid" class="help-block">{{'ETIQUETA_CAMPO_REQUERIDO' | translate}}</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="line line-dashed b-b line-lg pull-in"></div>
+            <div class="form-group">
+                <label for="DomicilioFiscal" class="col-sm-2 control-label">{{'ETIQUETA_DOMICILIO_FISCAL' | translate}}</label>
+                <div class="col-sm-10">
+                    <div class="row">
+                        <div class="col-md-4" ng-class="{ 'has-error' : empresaForm.DomicilioFiscal.$invalid }">
+                            <input class="form-control" id="DomicilioFiscal" name="DomicilioFiscal" type="text" value="" ng-model="empresa.DomicilioFiscal" required>
+                        </div>
+                        <p ng-show="empresaForm.DomicilioFiscal.$invalid" class="help-block">{{'ETIQUETA_CAMPO_REQUERIDO' | translate}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="line line-dashed b-b line-lg pull-in"></div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">{{'ETIQUETA_ES_FIDEICOMITENTE' | translate}}:</label>
+                <div class="col-sm-10 checkbox">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a ng-hide="empresa.Fideicomitente" class="text-danger" style="font-size:14px" href="javascript:void(0);" ng-click="empresa.Fideicomitente = !empresa.Fideicomitente">
+                                <i class="fa fa-square-o"></i>
+                                {{'ETIQUETA_NO' | translate}}
+                            </a>
+                            <a ng-hide="!empresa.Fideicomitente" class="text-success" style="font-size:14px" href="javascript:void(0);" ng-click="empresa.Fideicomitente = !empresa.Fideicomitente">
+                                <i class="fa fa-check-square-o"></i>
+                                {{'ETIQUETA_SI' | translate}}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">{{'ETIQUETA_ES_REPRESENTANTE_COMUN' | translate}}:</label>
+                <div class="col-sm-10 checkbox">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a ng-hide="empresa.RepresentanteComun" class="text-danger" style="font-size:14px" href="javascript:void(0);" ng-click="empresa.RepresentanteComun = !empresa.RepresentanteComun">
+                                <i class="fa fa-square-o"></i>
+                                {{'ETIQUETA_NO' | translate}}
+                            </a>
+                            <a ng-hide="!empresa.RepresentanteComun" class="text-success" style="font-size:14px" href="javascript:void(0);" ng-click="empresa.RepresentanteComun = !empresa.RepresentanteComun">
+                                <i class="fa fa-check-square-o"></i>
+                                {{'ETIQUETA_SI' | translate}}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="panel-footer">
+            <div class="row wrapper">
+                <div class="col-sm-12 text-right">
+                    <button type="button" class="btn btn-default" ng-click="cancelar()" >
+                        <i class="i i-back"></i> {{'ETIQUETA_BOTON_CANCELAR' | translate}}
+                        </button>
+                    <button type="submit" class="btn btn-primary" ng-click="actualizarEmpresa()" ng-hide="guardando" ng-disabled="empresaForm.$invalid" >
+                        <i class="fa fa-save"></i> {{'ETIQUETA_BOTON_GUARDAR' | translate}}
+                        </button>
+                    <button type="button" class="btn btn-primary" disabled ng-if="guardando">
+                        <i class="fa fa-refresh fa-spin"></i> {{'MENSAJE_INFO_GUARDANDO' | translate}} ...
+                    </button>
+                </div>
+            </div>
+        </footer>
+    </form>
+</section>

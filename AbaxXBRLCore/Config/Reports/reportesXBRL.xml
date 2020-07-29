@@ -1,0 +1,1198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects xmlns="http://www.springframework.net">
+
+	<object id="CacheReporteXBRL" type="AbaxXBRLCore.Reports.Cache.Impl.CacheReporte&lt;string,object&gt;" singleton="true"/>
+
+	<object id="ReporteBuilder" abstract="true" type="AbaxXBRLCore.Reports.Builder.ReporteBuilder">
+		<property name="cache" ref="CacheReporteXBRL"/>
+	</object>
+
+	<object id="ReporteIFRSXBRLBuilder" parent="ReporteBuilder" type="AbaxXBRLCore.Reports.Builder.ReporteIFRSXBRLBuilder"/>
+  <object id="ReporteIFRSXBRLBuilder2019" parent="ReporteBuilder" type="AbaxXBRLCore.Reports.Builder.ReporteIFRSXBRLBuilder2019"/>
+	<object id="ReporteFIDUXBRLBuilder" parent="ReporteBuilder" type="AbaxXBRLCore.Reports.Builder.ReporteFIDUXBRLBuilder"/>
+	<object id="ReporteAnexoTXBRLBuilder" parent="ReporteBuilder" type="AbaxXBRLCore.Reports.Builder.ReporteAnexoTXBRLBuilder"/>
+	<object id="ReporteAnualProspectoXBRLBuilder" parent="ReporteBuilder" type="AbaxXBRLCore.Reports.Builder.ReporteAnualProspectoXBRLBuilder"/>
+	<object id="ReporteEventosRelevantesBuilder" parent="ReporteBuilder" type="AbaxXBRLCore.Reports.Builder.ReporteEventosRelevantesBuilder"/>
+
+	<object id="ReporteBuilderFactory" type="AbaxXBRLCore.Reports.Builder.Factory.ReporteBuilderFactory">
+		<property name="ConfiguracionBuilders">
+			<dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Builder.ReporteBuilder">
+				<entry key="http://www.bmv.com.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_cp_entry_point_2014-12-05" value-ref="ReporteIFRSXBRLBuilder"/>
+        <entry key="http://www.cnbv.gob.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_cp_entry_point_2019-01-01" value-ref="ReporteIFRSXBRLBuilder2019"/>
+				<entry key="http://www.bmv.com.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_fibras_entry_point_2014-12-05" value-ref="ReporteIFRSXBRLBuilder"/>
+				<entry key="http://www.bmv.com.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_fibras_entry_point_2016-08-22" value-ref="ReporteIFRSXBRLBuilder"/>
+				<entry key="http://www.cnbv.gob.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_fibras_entry_point_2016-08-22" value-ref="ReporteIFRSXBRLBuilder"/>
+        <entry key="http://www.cnbv.gob.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_fibras_entry_point_2019-01-01" value-ref="ReporteIFRSXBRLBuilder2019"/>
+        <entry key="http://www.cnbv.gob.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_fibras_aa_entry_point_2019-01-01" value-ref="ReporteIFRSXBRLBuilder2019"/>
+				<entry key="http://www.bmv.com.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_ics_entry_point_2014-12-05" value-ref="ReporteIFRSXBRLBuilder"/>
+        <entry key="http://www.cnbv.gob.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_ics_entry_point_2019-01-01" value-ref="ReporteIFRSXBRLBuilder2019"/>
+        <entry key="http://www.cnbv.gob.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_sapib_entry_point_2019-01-01" value-ref="ReporteIFRSXBRLBuilder2019"/>
+				<entry key="http://www.bmv.com.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_sapib_entry_point_2014-12-05" value-ref="ReporteIFRSXBRLBuilder"/>
+
+				<entry key="http://www.bmv.com.mx/2015-06-30/ccd/full_ifrs_ccd_entry_point_2015-06-30" value-ref="ReporteFIDUXBRLBuilder"/>
+				<entry key="http://www.bmv.com.mx/2015-06-30/ccd/full_ifrs_ccd_entry_point_2016-08-22" value-ref="ReporteFIDUXBRLBuilder"/>
+				<entry key="http://www.cnbv.gob.mx/2015-06-30/ccd/full_ifrs_ccd_entry_point_2016-08-22" value-ref="ReporteFIDUXBRLBuilder"/>
+				<entry key="http://www.bmv.com.mx/2015-06-30/deuda/full_ifrs_deuda_entry_point_2015-06-30" value-ref="ReporteFIDUXBRLBuilder"/>
+				<entry key="http://www.bmv.com.mx/2015-06-30/trac/full_ifrs_trac_entry_point_2015-06-30" value-ref="ReporteFIDUXBRLBuilder"/>
+
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/annext_entrypoint" value-ref="ReporteAnexoTXBRLBuilder"/>
+
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/ar_N_entry_point_2016-08-22" value-ref="ReporteAnualProspectoXBRLBuilder"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/ar_NBIS_entry_point_2016-08-22" value-ref="ReporteAnualProspectoXBRLBuilder"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/ar_NBIS1_entry_point_2016-08-22" value-ref="ReporteAnualProspectoXBRLBuilder"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/ar_NBIS2_entry_point_2016-08-22" value-ref="ReporteAnualProspectoXBRLBuilder"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/ar_NBIS3_entry_point_2016-08-22" value-ref="ReporteAnualProspectoXBRLBuilder"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/ar_NBIS4_entry_point_2016-08-22" value-ref="ReporteAnualProspectoXBRLBuilder"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/ar_NBIS5_entry_point_2016-08-22" value-ref="ReporteAnualProspectoXBRLBuilder"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/ar_O_entry_point_2016-08-22" value-ref="ReporteAnualProspectoXBRLBuilder"/>
+
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/pros_H_entry_point_2016-08-22" value-ref="ReporteAnualProspectoXBRLBuilder"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/pros_HBIS_entry_point_2016-08-22" value-ref="ReporteAnualProspectoXBRLBuilder"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/pros_HBIS1_entry_point_2016-08-22" value-ref="ReporteAnualProspectoXBRLBuilder"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/pros_HBIS2_entry_point_2016-08-22" value-ref="ReporteAnualProspectoXBRLBuilder"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/pros_HBIS3_entry_point_2016-08-22" value-ref="ReporteAnualProspectoXBRLBuilder"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/pros_HBIS4_entry_point_2016-08-22" value-ref="ReporteAnualProspectoXBRLBuilder"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/pros_HBIS5_entry_point_2016-08-22" value-ref="ReporteAnualProspectoXBRLBuilder"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/pros_L_entry_point_2016-08-22" value-ref="ReporteAnualProspectoXBRLBuilder"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/pros_I_entry_point_2016-08-22" value-ref="ReporteAnualProspectoXBRLBuilder"/>
+
+				<entry key="http://www.bmv.com.mx/2016-08-22/rel_ev_emisoras_entrypoint" value-ref="ReporteEventosRelevantesBuilder"/>
+				<entry key="http://www.bmv.com.mx/2016-08-22/rel_ev_fondos_entrypoint" value-ref="ReporteEventosRelevantesBuilder"/>
+        
+        <entry key="http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news_common_representative_view_entry_point" value-ref="ReporteEventosRelevantesBuilder"/>
+        <entry key="http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news_investment_funds_view_entry_point"      value-ref="ReporteEventosRelevantesBuilder"/>
+        <entry key="http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news_issuer_view_entry_point"                value-ref="ReporteEventosRelevantesBuilder"/>
+        <entry key="http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news_rating_agency_view_entry_point"         value-ref="ReporteEventosRelevantesBuilder"/>
+        <entry key="http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news_trust_issuer_view_entry_point"          value-ref="ReporteEventosRelevantesBuilder"/>
+        
+			</dictionary>
+		</property>
+	</object>
+
+	<object id="ExportadorDocumentoInstanciaFactory" type="AbaxXBRLCore.Reports.Exporter.Impl.ExportadorDocumentoInstanciaFactory">
+		<property name="ConfiguracionExportadores">
+			<dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorDocumentoInstancia">
+				<entry key="http://www.bmv.com.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_cp_entry_point_2014-12-05" value-ref="ExportadorIFRS2015"/>
+        <entry key="http://www.cnbv.gob.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_cp_entry_point_2019-01-01" value-ref="ExportadorIFRS2015"/>
+				<entry key="http://www.bmv.com.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_fibras_entry_point_2014-12-05" value-ref="ExportadorIFRS2015"/>
+				<entry key="http://www.bmv.com.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_fibras_entry_point_2016-08-22" value-ref="ExportadorIFRS2015"/>
+				<entry key="http://www.cnbv.gob.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_fibras_entry_point_2016-08-22" value-ref="ExportadorIFRS2015"/>
+        <entry key="http://www.cnbv.gob.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_fibras_entry_point_2019-01-01" value-ref="ExportadorIFRS2015"/>
+        <entry key="http://www.cnbv.gob.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_fibras_aa_entry_point_2019-01-01" value-ref="ExportadorIFRS2015"/>
+				<entry key="http://www.bmv.com.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_ics_entry_point_2014-12-05" value-ref="ExportadorIFRS2015"/>
+        <entry key="http://www.cnbv.gob.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_ics_entry_point_2019-01-01" value-ref="ExportadorIFRS2015"/>
+        <entry key="http://www.cnbv.gob.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_sapib_entry_point_2019-01-01" value-ref="ExportadorIFRS2015"/>
+				<entry key="http://www.bmv.com.mx/taxonomy/ifrs_mx/full_ifrs_mc_mx_sapib_entry_point_2014-12-05" value-ref="ExportadorIFRS2015"/>
+
+				<entry key="http://www.bmv.com.mx/2015-06-30/ccd/full_ifrs_ccd_entry_point_2015-06-30" value-ref="ExportadorFIDECCD2015"/>
+				<entry key="http://www.bmv.com.mx/2015-06-30/ccd/full_ifrs_ccd_entry_point_2016-08-22" value-ref="ExportadorFIDECCD2015"/>
+				<entry key="http://www.cnbv.gob.mx/2015-06-30/ccd/full_ifrs_ccd_entry_point_2016-08-22" value-ref="ExportadorFIDECCD2015"/>
+				<entry key="http://www.bmv.com.mx/2015-06-30/deuda/full_ifrs_deuda_entry_point_2015-06-30" value-ref="ExportadorFIDEDEUDA2015"/>
+				<entry key="http://www.bmv.com.mx/2015-06-30/trac/full_ifrs_trac_entry_point_2015-06-30" value-ref="ExportadorFIDETRAC2015"/>
+
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/annext_entrypoint" value-ref="ExportadorReporteAnexoT"/>
+
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/ar_N_entry_point_2016-08-22" value-ref="ExportadorReporteAnualN"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/ar_NBIS_entry_point_2016-08-22" value-ref="ExportadorReporteAnualNBIS"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/ar_NBIS1_entry_point_2016-08-22" value-ref="ExportadorReporteAnualNBIS1"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/ar_NBIS2_entry_point_2016-08-22" value-ref="ExportadorReporteAnualNBIS2"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/ar_NBIS3_entry_point_2016-08-22" value-ref="ExportadorReporteAnualNBIS3"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/ar_NBIS4_entry_point_2016-08-22" value-ref="ExportadorReporteAnualNBIS4"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/ar_NBIS5_entry_point_2016-08-22" value-ref="ExportadorReporteAnualNBIS5"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/ar_O_entry_point_2016-08-22" value-ref="ExportadorReporteAnualO"/>
+
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/pros_H_entry_point_2016-08-22" value-ref="ExportadorReporteProspectoH"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/pros_HBIS_entry_point_2016-08-22" value-ref="ExportadorReporteProspectoHBIS"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/pros_HBIS1_entry_point_2016-08-22" value-ref="ExportadorReporteProspectoHBIS1"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/pros_HBIS2_entry_point_2016-08-22" value-ref="ExportadorReporteProspectoHBIS2"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/pros_HBIS3_entry_point_2016-08-22" value-ref="ExportadorReporteProspectoHBIS3"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/pros_HBIS4_entry_point_2016-08-22" value-ref="ExportadorReporteProspectoHBIS4"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/pros_HBIS5_entry_point_2016-08-22" value-ref="ExportadorReporteProspectoHBIS5"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/pros_L_entry_point_2016-08-22" value-ref="ExportadorReporteProspectoL"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/pros_I_entry_point_2016-08-22" value-ref="ExportadorReporteProspectoI"/>
+
+				<entry key="http://www.bmv.com.mx/2016-08-22/rel_ev_emisoras_entrypoint" value-ref="ExportadorEventosRelevantesEmisoras2016"/>
+				<entry key="http://www.bmv.com.mx/2016-08-22/rel_ev_fondos_entrypoint" value-ref="ExportadorEventosRelevantesFondos2016"/>
+        
+        <entry key="http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news_common_representative_view_entry_point" value-ref="ExportadorEventosRelevantes2018"/>
+        <entry key="http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news_investment_funds_view_entry_point"      value-ref="ExportadorEventosRelevantes2018"/>
+        <entry key="http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news_issuer_view_entry_point"                value-ref="ExportadorEventosRelevantes2018"/>
+        <entry key="http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news_rating_agency_view_entry_point"         value-ref="ExportadorEventosRelevantes2018"/>
+        <entry key="http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news_trust_issuer_view_entry_point"          value-ref="ExportadorEventosRelevantes2018"/>
+        
+			</dictionary>
+		</property>
+	</object>
+
+	<!-- Exportadores Documento de Instancia por Taxonomia -->
+	<object id="ExportadorIFRS2015" type="AbaxXBRLCore.Reports.Exporter.Impl.ExportadorDocumentoInstanciaConPlantilla">
+		<property name="ReporteBuilderFactory" ref="ReporteBuilderFactory"/>
+		<property name="UbicacionPlantillaExportacion" value="AbaxXBRLCore.Config.Reports.exportTemplate.docx"/>
+		<property name="ExportadorPorRol">
+			<dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorRolDocumentoInstancia">
+				<entry key="http://bmv.com.mx/role/ifrs/mc_2014-03-05_role-105000" value-ref="ExportadorRolNotasCompleto"/>
+				<entry key="http://bmv.com.mx/role/ifrs/ias_1_2014-03-05_role-110000" value-ref="ExportadorRolDocumento110000IFRS"/>
+				<entry key="http://bmv.com.mx/role/ifrs/ias_1_2014-03-05_role-210000" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/ias_1_2014-03-05_role-310000" value-ref="ExportadorRolDocumento310000IFRS"/>
+				<entry key="http://bmv.com.mx/role/ifrs/ias_1_2014-03-05_role-410000" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/ias_7_2014-03-05_role-520000" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/ias_1_2014-03-05_role-610000" value-ref="ExportadorRolDocumento610000IFRS"/>
+				<entry key="http://bmv.com.mx/role/ifrs/mx_extension_2014-12-05_role-700000" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/mx_extension_2014-12-05_role-700002" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/mx_extension_2014-12-05_role-700003" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/mx_extension_2014-12-05_role-800001" value-ref="ExportadorRolDocumento800001IFRS"/>
+				<entry key="http://bmv.com.mx/role/ifrs/mx_extension_2014-12-05_role-800003" value-ref="ExportadorRolDocumento800003IFRS"/>
+				<entry key="http://bmv.com.mx/role/ifrs/mx_extension_2014-12-05_role-800005" value-ref="ExportadorRolDocumento800005IFRS"/>
+				<entry key="http://bmv.com.mx/role/ifrs/mx_extension_2014-12-05_role-800007" value-ref="ExportadorRolNotasOmitirVacias"/>
+				<entry key="http://bmv.com.mx/role/ifrs/ias_1_2014-03-05_role-800100" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/ias_1_2014-03-05_role-800200" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/mx_extension_2014-12-05_role-800201" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/ias_1_2014-03-05_role-800500" value-ref="ExportadorRolNotasOmitirVacias"/>
+				<entry key="http://bmv.com.mx/role/ifrs/ias_1_2014-03-05_role-800600" value-ref="ExportadorRolNotasOmitirVacias"/>
+				<entry key="http://bmv.com.mx/role/ifrs/ias_34_2014-03-05_role-813000" value-ref="ExportadorRolNotas813000"/>
+				<entry key="http://bmv.com.mx/role/ifrs/rol_full_ifrs_mx_2016-08-22-815100" value-ref="ExportadorRol815100"/>
+				<entry key="http://bmv.com.mx/role/ifrs/rol_full_ifrs_mx_2016-08-22-815101" value-ref="ExportadorRol815101"/>
+				
+				<entry key="http://cnbv.gob.mx/role/ifrs/mc_2014-03-05_role-105000" value-ref="ExportadorRolNotasCompleto"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/ias_1_2014-03-05_role-110000" value-ref="ExportadorRolDocumento110000IFRS"/>
+        <entry key="http://cnbv.gob.mx/role/ifrs/rol_full_ifrs_mx_2016-08-22-110000" value-ref="ExportadorRolDocumento110000IFRS"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/ias_1_2014-03-05_role-210000" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/ias_1_2014-03-05_role-310000" value-ref="ExportadorRolDocumento310000IFRS"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/ias_1_2014-03-05_role-410000" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/ias_7_2014-03-05_role-520000" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/ias_1_2014-03-05_role-610000" value-ref="ExportadorRolDocumento610000IFRS"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/mx_extension_2014-12-05_role-700000" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/mx_extension_2014-12-05_role-700002" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/mx_extension_2014-12-05_role-700003" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/mx_extension_2014-12-05_role-800001" value-ref="ExportadorRolDocumento800001IFRS"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/mx_extension_2014-12-05_role-800003" value-ref="ExportadorRolDocumento800003IFRS"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/mx_extension_2014-12-05_role-800005" value-ref="ExportadorRolDocumento800005IFRS"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/mx_extension_2014-12-05_role-800007" value-ref="ExportadorRolNotasOmitirVacias"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/ias_1_2014-03-05_role-800100" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/ias_1_2014-03-05_role-800200" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/mx_extension_2014-12-05_role-800201" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/ias_1_2014-03-05_role-800500" value-ref="ExportadorRolNotasOmitirVacias"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/ias_1_2014-03-05_role-800600" value-ref="ExportadorRolNotasOmitirVacias"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/ias_34_2014-03-05_role-813000" value-ref="ExportadorRolNotas813000"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/rol_full_ifrs_mx_2016-08-22-815100" value-ref="ExportadorRol815100"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/rol_full_ifrs_mx_2016-08-22-815101" value-ref="exportadorGeneralProspecto"/>
+        <entry key="http://cnbv.gob.mx/role/ifrs/rol_full_ifrs_mx_2019-01-01-815100" value-ref="ExportadorRol815100"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/rol_full_ifrs_mx_2019-01-01-815101" value-ref="ExportadorRol815101"/>
+        
+        <entry key="http://cnbv.gob.mx/role/ifrs/mc_2017-03-09_role-105000" value-ref="ExportadorRolNotasCompleto"/>
+        <entry key="http://cnbv.gob.mx/role/ifrs/ias_1_2017-03-09_role-110000" value-ref="ExportadorRolDocumento110000IFRS"/>
+        <entry key="http://cnbv.gob.mx/role/ifrs/ias_1_2017-03-09_role-210000" value-ref="ExportadorRolTabularGenerico"/>
+        <entry key="http://cnbv.gob.mx/role/ifrs/ias_1_2017-03-09_role-310000" value-ref="ExportadorRolDocumento310000IFRS"/>
+        <entry key="http://cnbv.gob.mx/role/ifrs/ias_1_2017-03-09_role-410000" value-ref="ExportadorRolTabularGenerico"/>
+        <entry key="http://cnbv.gob.mx/role/ifrs/ias_7_2017-03-09_role-520000" value-ref="ExportadorRolTabularGenerico"/>
+        <entry key="http://cnbv.gob.mx/role/ifrs/ias_1_2017-03-09_role-610000" value-ref="ExportadorRolDocumento610000IFRS"/>
+        <entry key="http://cnbv.gob.mx/role/ifrs/mx_extension_2019-01-01_role-700000" value-ref="ExportadorRolTabularGenerico"/>
+        <entry key="http://cnbv.gob.mx/role/ifrs/mx_extension_2019-01-01_role-700002" value-ref="ExportadorRolTabularGenerico"/>
+        <entry key="http://cnbv.gob.mx/role/ifrs/mx_extension_2019-01-01_role-700003" value-ref="ExportadorRolTabularGenerico"/>
+        <entry key="http://cnbv.gob.mx/role/ifrs/mx_extension_2019-01-01_role-800001" value-ref="ExportadorRolDocumento800001IFRS"/>
+        <entry key="http://cnbv.gob.mx/role/ifrs/mx_extension_2019-01-01_role-800003" value-ref="ExportadorRolDocumento800003IFRS"/>
+        <entry key="http://cnbv.gob.mx/role/ifrs/mx_extension_2019-01-01_role-800005" value-ref="ExportadorRolDocumento800005IFRS"/>
+        <entry key="http://cnbv.gob.mx/role/ifrs/mx_extension_2019-01-01_role-800007" value-ref="ExportadorRolNotasOmitirVacias"/>
+        <entry key="http://cnbv.gob.mx/role/ifrs/ias_1_2017-03-09_role-800100" value-ref="ExportadorRolTabularGenerico"/>
+        <entry key="http://cnbv.gob.mx/role/ifrs/mx_extension_2019-01-01_role-800201" value-ref="ExportadorRolTabularGenerico"/>
+        <entry key="http://cnbv.gob.mx/role/ifrs/ias_1_2017-03-09_role-800200" value-ref="ExportadorRolTabularGenerico"/>
+        <entry key="http://cnbv.gob.mx/role/ifrs/ias_1_2017-03-09_role-800500" value-ref="ExportadorRolNotasOmitirVacias"/>
+        <entry key="http://cnbv.gob.mx/role/ifrs/ias_1_2017-03-09_role-800600" value-ref="ExportadorRolNotasOmitirVacias"/>
+        <entry key="http://cnbv.gob.mx/role/ifrs/ias_34_2017-03-09_role-813000" value-ref="ExportadorRolNotas813000"/>
+
+
+				<entry key="footnote" value-ref="ExportadorRolDocumentoNotasAlPie"/>
+			</dictionary>
+		</property>
+	</object>
+
+	<object id="ExportadorFIDECCD2015" type="AbaxXBRLCore.Reports.Exporter.Impl.ExportadorDocumentoInstanciaConPlantilla">
+		<property name="UbicacionPlantillaExportacion" value="AbaxXBRLCore.Config.Reports.exportTemplate.docx"/>
+		<property name="ReporteBuilderFactory" ref="ReporteBuilderFactory"/>
+		<property name="ExportadorPorRol">
+			<dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorRolDocumentoInstancia">
+				<entry key="http://bmv.com.mx/role/ifrs/ccd/2015/mc_2014-03-05_role-105000" value-ref="ExportadorRolNotasCompleto"/>
+				<entry key="http://bmv.com.mx/role/ifrs/ccd/2015/ias_1_2014-03-05_role-110000" value-ref="ExportadorRolDocumento110000FIDE2015"/>
+				<entry key="http://bmv.com.mx/role/ifrs/ccd/2015/ias_1_2014-03-05_role-210000" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/ccd/2015/ias_1_2014-03-05_role-310000" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/ccd/2015/ias_1_2014-03-05_role-410000" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/ccd/2015/ias_7_2014-03-05_role-510000" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/ccd/2015/ias_7_2014-03-05_role-520000" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/ccd/2015/ias_1_2014-03-05_role-610000" value-ref="ExportadorRolDocumento610000FIDE"/>
+				<entry key="http://bmv.com.mx/role/ifrs/ccd/2015/ias_1_2014-03-05_role-800100" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/ccd/2015/ias_1_2014-03-05_role-800200" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/ccd/2015/ias_1_2014-03-05_role-800500" value-ref="ExportadorRolNotasOmitirVacias"/>
+				<entry key="http://bmv.com.mx/role/ifrs/ccd/2015/ias_1_2014-03-05_role-800600" value-ref="ExportadorRolNotasOmitirVacias"/>
+				<entry key="http://bmv.com.mx/role/ifrs/ccd/2015/ias_34_2014-03-05_role-813000" value-ref="ExportadorRolNotas813000"/>
+				<entry key="http://bmv.com.mx/role/ifrs/ccd/rol_full_ifrs_mx_2016-08-22-815100" value-ref="ExportadorRol815100"/>
+				<entry key="http://bmv.com.mx/role/ifrs/ccd/rol_full_ifrs_mx_2016-08-22-815101" value-ref="exportadorGeneralProspecto"/>
+				
+				<entry key="http://cnbv.gob.mx/role/ifrs/ccd/2015/mc_2014-03-05_role-105000" value-ref="ExportadorRolNotasCompleto"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/ccd/2015/ias_1_2014-03-05_role-110000" value-ref="ExportadorRolDocumento110000FIDE2015"/>
+        <entry key="http://cnbv.gob.mx/role/ifrs/ccd/rol_full_ifrs_mx_2016-08-22-110000" value-ref="ExportadorRolDocumento110000FIDE2015"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/ccd/2015/ias_1_2014-03-05_role-210000" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/ccd/2015/ias_1_2014-03-05_role-310000" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/ccd/2015/ias_1_2014-03-05_role-410000" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/ccd/2015/ias_7_2014-03-05_role-510000" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/ccd/2015/ias_7_2014-03-05_role-520000" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/ccd/2015/ias_1_2014-03-05_role-610000" value-ref="ExportadorRolDocumento610000FIDE"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/ccd/2015/ias_1_2014-03-05_role-800100" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/ccd/2015/ias_1_2014-03-05_role-800200" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/ccd/2015/ias_1_2014-03-05_role-800500" value-ref="ExportadorRolNotasOmitirVacias"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/ccd/2015/ias_1_2014-03-05_role-800600" value-ref="ExportadorRolNotasOmitirVacias"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/ccd/2015/ias_34_2014-03-05_role-813000" value-ref="ExportadorRolNotas813000"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/ccd/rol_full_ifrs_mx_2016-08-22-815100" value-ref="ExportadorRol815100"/>
+				<entry key="http://cnbv.gob.mx/role/ifrs/ccd/rol_full_ifrs_mx_2016-08-22-815101" value-ref="exportadorGeneralProspecto"/>
+
+				<entry key="footnote" value-ref="ExportadorRolDocumentoNotasAlPie"/>
+			</dictionary>
+		</property>
+	</object>
+
+	<object id="ExportadorFIDEDEUDA2015" type="AbaxXBRLCore.Reports.Exporter.Impl.ExportadorDocumentoInstanciaConPlantilla">
+		<property name="UbicacionPlantillaExportacion" value="AbaxXBRLCore.Config.Reports.exportTemplate.docx"/>
+		<property name="ReporteBuilderFactory" ref="ReporteBuilderFactory"/>
+		<property name="ExportadorPorRol">
+			<dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorRolDocumentoInstancia">
+				<entry key="http://bmv.com.mx/role/ifrs/deuda/2015/mc_2014-03-05_role-105000" value-ref="ExportadorRolNotasCompleto"/>
+				<entry key="http://bmv.com.mx/role/ifrs/deuda/2015/ias_1_2014-03-05_role-110000" value-ref="ExportadorRolDocumento110000FIDE2015"/>
+				<entry key="http://bmv.com.mx/role/ifrs/deuda/2015/ias_1_2014-03-05_role-210000" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/deuda/2015/ias_1_2014-03-05_role-310000" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/deuda/2015/ias_1_2014-03-05_role-410000" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/deuda/2015/ias_7_2014-03-05_role-510000" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/deuda/2015/ias_7_2014-03-05_role-520000" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/deuda/2015/ias_1_2014-03-05_role-610000" value-ref="ExportadorRolDocumento610000FIDE"/>
+				<entry key="http://bmv.com.mx/role/ifrs/deuda/2015/ias_1_2014-03-05_role-800100" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/deuda/2015/ias_1_2014-03-05_role-800200" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/deuda/2015/ias_1_2014-03-05_role-800500" value-ref="ExportadorRolNotasOmitirVacias"/>
+				<entry key="http://bmv.com.mx/role/ifrs/deuda/2015/ias_1_2014-03-05_role-800600" value-ref="ExportadorRolNotasOmitirVacias"/>
+				<entry key="http://bmv.com.mx/role/ifrs/deuda/2015/ias_34_2014-03-05_role-813000" value-ref="ExportadorRolNotas813000"/>
+				<entry key="footnote" value-ref="ExportadorRolDocumentoNotasAlPie"/>
+			</dictionary>
+		</property>
+	</object>
+
+	<object id="ExportadorFIDETRAC2015" type="AbaxXBRLCore.Reports.Exporter.Impl.ExportadorDocumentoInstanciaConPlantilla">
+		<property name="UbicacionPlantillaExportacion" value="AbaxXBRLCore.Config.Reports.exportTemplate.docx"/>
+		<property name="ReporteBuilderFactory" ref="ReporteBuilderFactory"/>
+		<property name="ExportadorPorRol">
+			<dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorRolDocumentoInstancia">
+				<entry key="http://bmv.com.mx/role/ifrs/trac/2015/mc_2014-03-05_role-105000" value-ref="ExportadorRolNotasCompleto"/>
+				<entry key="http://bmv.com.mx/role/ifrs/trac/2015/ias_1_2014-03-05_role-110000" value-ref="ExportadorRolDocumento110000FIDE2015"/>
+				<entry key="http://bmv.com.mx/role/ifrs/trac/2015/ias_1_2014-03-05_role-210000" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/trac/2015/ias_1_2014-03-05_role-310000" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/trac/2015/ias_1_2014-03-05_role-410000" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/trac/2015/ias_7_2014-03-05_role-510000" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/trac/2015/ias_7_2014-03-05_role-520000" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/trac/2015/ias_1_2014-03-05_role-610000" value-ref="ExportadorRolDocumento610000FIDE"/>
+        <entry key="http://bmv.com.mx/role/ifrs/trac/2015/ias_1_112_2014-03-05_role-700004" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/trac/2015/ias_1_2014-03-05_role-800100" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/trac/2015/ias_1_2014-03-05_role-800200" value-ref="ExportadorRolTabularGenerico"/>
+				<entry key="http://bmv.com.mx/role/ifrs/trac/2015/ias_1_2014-03-05_role-800500" value-ref="ExportadorRolNotasOmitirVacias"/>
+				<entry key="http://bmv.com.mx/role/ifrs/trac/2015/ias_1_2014-03-05_role-800600" value-ref="ExportadorRolNotasOmitirVacias"/>
+				<entry key="http://bmv.com.mx/role/ifrs/trac/2015/ias_34_2014-03-05_role-813000" value-ref="ExportadorRolNotas813000"/>
+				<entry key="footnote" value-ref="ExportadorRolDocumentoNotasAlPie"/>
+			</dictionary>
+		</property>
+	</object>
+
+	<object id="ExportadorReporteAnexoT" type="AbaxXBRLCore.Reports.Exporter.Impl.ExportadorDocumentoInstanciaAnnexT">
+		<property name="UbicacionPlantillaExportacion" value="AbaxXBRLCore.Config.Reports.annext.exportTemplateAnnexT.docx"/>
+		<property name="ReporteBuilderFactory" ref="ReporteBuilderFactory"/>
+		<property name="ExportadorPorRol">
+			<dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorRolDocumentoInstancia">
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/annext/roles/301100" value-ref="ExportadorRolAnnexT301100"/>
+				<entry key="footnote" value-ref="ExportadorRolDocumentoNotasAlPie"/>
+			</dictionary>
+		</property>
+	</object>
+
+	<!-- exportador de reporte anual N-->
+	<object id="ExportadorReporteAnualN" type="AbaxXBRLCore.Reports.Exporter.Impl.ExportadorDocumentoInstanciaArPros">
+		<property name="UbicacionPlantillaExportacion" value="AbaxXBRLCore.Config.Reports.ar_prospectus.exportTemplateArPros.docx"/>
+		<property name="ReporteBuilderFactory" ref="ReporteBuilderFactory"/>
+		<property name="ExportadorPorRol">
+			<dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorRolDocumentoInstancia">
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/411000-AR" value-ref="ExportadorRolArPros411000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/412000-N" value-ref="ExportadorRolArPros412000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/413000-N" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/417000-N" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/424000-N" value-ref="ExportadorRolArPros424000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/427000-N" value-ref="ExportadorRolDocumentoArPros427000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/429000-N" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/430000-N" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/431000-N" value-ref="ExportadorRolDocumentoArPros431000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/432000-N" value-ref="ExportadorRolArPros"/>
+				<entry key="footnote" value-ref="ExportadorRolDocumentoNotasAlPie"/>
+			</dictionary>
+		</property>
+	</object>
+
+	<!-- exportador de reporte anual N BIS -->
+	<object id="ExportadorReporteAnualNBIS" type="AbaxXBRLCore.Reports.Exporter.Impl.ExportadorDocumentoInstanciaArPros">
+		<property name="UbicacionPlantillaExportacion" value="AbaxXBRLCore.Config.Reports.ar_prospectus.exportTemplateArPros.docx"/>
+		<property name="ReporteBuilderFactory" ref="ReporteBuilderFactory"/>
+		<property name="ExportadorPorRol">
+			<dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorRolDocumentoInstancia">
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/411000-AR" value-ref="ExportadorRolArPros411000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/412000-NBIS" value-ref="ExportadorRolArPros412000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/413000-NBIS" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/417000-NBIS" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/424000-NBIS" value-ref="ExportadorRolArPros424000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/427000-NBIS" value-ref="ExportadorRolDocumentoArPros427000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/429000-NBIS" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/431000-NBIS" value-ref="ExportadorRolDocumentoArPros431000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/432000-NBIS" value-ref="ExportadorRolArPros"/>
+				<entry key="footnote" value-ref="ExportadorRolDocumentoNotasAlPie"/>
+			</dictionary>
+		</property>
+	</object>
+
+	<!-- exportador de reporte anual N BIS 1 -->
+	<object id="ExportadorReporteAnualNBIS1" type="AbaxXBRLCore.Reports.Exporter.Impl.ExportadorDocumentoInstanciaArPros">
+		<property name="UbicacionPlantillaExportacion" value="AbaxXBRLCore.Config.Reports.ar_prospectus.exportTemplateArPros.docx"/>
+		<property name="ReporteBuilderFactory" ref="ReporteBuilderFactory"/>
+		<property name="ExportadorPorRol">
+			<dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorRolDocumentoInstancia">
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/411000-AR" value-ref="ExportadorRolArPros411000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/412000-NBIS1" value-ref="ExportadorRolArPros412000SinPortada"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/413000-NBIS1" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/415000-NBIS1" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/425000-NBIS1" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/427000-NBIS1" value-ref="ExportadorRolDocumentoArPros427000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/431000-NBIS1" value-ref="ExportadorRolDocumentoArPros431000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/432000-NBIS1" value-ref="ExportadorRolArPros"/>
+				<entry key="footnote" value-ref="ExportadorRolDocumentoNotasAlPie"/>
+			</dictionary>
+		</property>
+	</object>
+
+	<!-- exportador de reporte anual N BIS 2 -->
+	<object id="ExportadorReporteAnualNBIS2" type="AbaxXBRLCore.Reports.Exporter.Impl.ExportadorDocumentoInstanciaArPros">
+		<property name="UbicacionPlantillaExportacion" value="AbaxXBRLCore.Config.Reports.ar_prospectus.exportTemplateArPros.docx"/>
+		<property name="ReporteBuilderFactory" ref="ReporteBuilderFactory"/>
+		<property name="ExportadorPorRol">
+			<dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorRolDocumentoInstancia">
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/411000-AR" value-ref="ExportadorRolArPros411000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/412000-NBIS2" value-ref="ExportadorRolArPros412000SinPortada"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/413000-NBIS2" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/416000-NBIS2" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/420000-NBIS2" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/425000-NBIS2" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/426000-NBIS2" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/431000-NBIS2" value-ref="ExportadorRolDocumentoArPros431000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/432000-NBIS2" value-ref="ExportadorRolArPros"/>
+				<entry key="footnote" value-ref="ExportadorRolDocumentoNotasAlPie"/>
+			</dictionary>
+		</property>
+	</object>
+
+	<!-- exportador de reporte anual N BIS 3 -->
+	<object id="ExportadorReporteAnualNBIS3" type="AbaxXBRLCore.Reports.Exporter.Impl.ExportadorDocumentoInstanciaArPros">
+		<property name="UbicacionPlantillaExportacion" value="AbaxXBRLCore.Config.Reports.ar_prospectus.exportTemplateArPros.docx"/>
+		<property name="ReporteBuilderFactory" ref="ReporteBuilderFactory"/>
+		<property name="ExportadorPorRol">
+			<dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorRolDocumentoInstancia">
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/411000-AR-NBIS3" value-ref="ExportadorRolArPros411000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/412000-NBIS3" value-ref="ExportadorRolArPros412000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/413000-NBIS3" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/421000-NBIS3" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/422000-NBIS3" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/425000-NBIS3" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/428000-NBIS3" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/431000-NBIS3" value-ref="ExportadorRolDocumentoArPros431000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/432000-NBIS3" value-ref="ExportadorRolArPros"/>
+				<entry key="footnote" value-ref="ExportadorRolDocumentoNotasAlPie"/>
+			</dictionary>
+		</property>
+	</object>
+
+	<!-- exportador de reporte anual N BIS 4 -->
+	<object id="ExportadorReporteAnualNBIS4" type="AbaxXBRLCore.Reports.Exporter.Impl.ExportadorDocumentoInstanciaArPros">
+		<property name="UbicacionPlantillaExportacion" value="AbaxXBRLCore.Config.Reports.ar_prospectus.exportTemplateArPros.docx"/>
+		<property name="ReporteBuilderFactory" ref="ReporteBuilderFactory"/>
+		<property name="ExportadorPorRol">
+			<dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorRolDocumentoInstancia">
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/411000-AR" value-ref="ExportadorRolArPros411000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/412000-NBIS4" value-ref="ExportadorRolArPros412000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/413000-NBIS4" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/421000-NBIS4" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/423000-NBIS4" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/425000-NBIS4" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/431000-NBIS4" value-ref="ExportadorRolDocumentoArPros431000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/432000-NBIS4" value-ref="ExportadorRolArPros"/>
+				<entry key="footnote" value-ref="ExportadorRolDocumentoNotasAlPie"/>
+			</dictionary>
+		</property>
+	</object>
+
+	<!-- exportador de reporte anual N BIS 5 -->
+	<object id="ExportadorReporteAnualNBIS5" type="AbaxXBRLCore.Reports.Exporter.Impl.ExportadorDocumentoInstanciaArPros">
+		<property name="UbicacionPlantillaExportacion" value="AbaxXBRLCore.Config.Reports.ar_prospectus.exportTemplateArPros.docx"/>
+		<property name="ReporteBuilderFactory" ref="ReporteBuilderFactory"/>
+		<property name="ExportadorPorRol">
+			<dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorRolDocumentoInstancia">
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/411000-AR" value-ref="ExportadorRolArPros411000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/412000-NBIS5" value-ref="ExportadorRolArPros412000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/413000-NBIS5" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/416000-NBIS5" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/420000-NBIS5" value-ref="ExportadorRolArPros"/>
+        <entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/422000-NBIS5" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/425000-NBIS5" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/431000-NBIS5" value-ref="ExportadorRolDocumentoArPros431000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/432000-NBIS5" value-ref="ExportadorRolArPros"/>
+				<entry key="footnote" value-ref="ExportadorRolDocumentoNotasAlPie"/>
+			</dictionary>
+		</property>
+	</object>
+
+	<!-- exportador de reporte anual O -->
+	<object id="ExportadorReporteAnualO" type="AbaxXBRLCore.Reports.Exporter.Impl.ExportadorDocumentoInstanciaArPros">
+		<property name="UbicacionPlantillaExportacion" value="AbaxXBRLCore.Config.Reports.ar_prospectus.exportTemplateArPros.docx"/>
+		<property name="ReporteBuilderFactory" ref="ReporteBuilderFactory"/>
+		<property name="ExportadorPorRol">
+			<dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorRolDocumentoInstancia">
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/411000-AR" value-ref="ExportadorRolArPros411000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/412000-O" value-ref="ExportadorRolArPros412000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/413000-O" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/419000-O" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/424000-O" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/427000-O" value-ref="ExportadorRolDocumentoArProsO427000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/430000-O" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/431000-O" value-ref="ExportadorRolDocumentoArPros431000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/432000-O" value-ref="ExportadorRolArPros"/>
+				<entry key="footnote" value-ref="ExportadorRolDocumentoNotasAlPie"/>
+			</dictionary>
+		</property>
+	</object>
+
+	<!-- exportador de reporte Prospecto H-->
+	<object id="ExportadorReporteProspectoH" type="AbaxXBRLCore.Reports.Exporter.Impl.ExportadorDocumentoInstanciaArPros">
+		<property name="UbicacionPlantillaExportacion" value="AbaxXBRLCore.Config.Reports.ar_prospectus.exportTemplateArPros.docx"/>
+		<property name="ReporteBuilderFactory" ref="ReporteBuilderFactory"/>
+		<property name="ExportadorPorRol">
+			<dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorRolDocumentoInstancia">
+        <entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/411000-H" value-ref="exportadorGeneralProspecto"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/412000-H" value-ref="exportadorPortadaProspecto412000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/413000-H" value-ref="exportadorGeneralProspecto"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/414000-H" value-ref="exportadorGeneralProspecto"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/417000-H" value-ref="exportadorGeneralProspecto"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/424000-H" value-ref="exportadorGeneralProspecto"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/427000-H" value-ref="exportadorGeneralProspecto"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/430000-H" value-ref="exportadorGeneralProspecto"/>
+        <entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/430500-H" value-ref="exportadorGeneralProspecto"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/431000-H" value-ref="ExportadorRolDocumentoArPros431000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/432000-H" value-ref="exportadorGeneralAnexos"/>
+				<entry key="footnote" value-ref="ExportadorRolDocumentoNotasAlPie"/>
+        <!--
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/411000-H" value-ref="ExportadorRolArPros411000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/412000-H" value-ref="ExportadorRolArPros412000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/413000-H" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/414000-H" value-ref="ExportadorRolPros414"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/417000-H" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/424000-H" value-ref="ExportadorRolArPros424000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/427000-H" value-ref="ExportadorRolDocumentoArPros427000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/430000-H" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/431000-H" value-ref="ExportadorRolDocumentoArPros431000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/432000-H" value-ref="ExportadorRolArPros"/>
+				<entry key="footnote" value-ref="ExportadorRolDocumentoNotasAlPie"/>
+        -->
+			</dictionary>
+		</property>
+	</object>
+
+	<!-- exportador de reporte Prospecto HBIS-->
+	<object id="ExportadorReporteProspectoHBIS" type="AbaxXBRLCore.Reports.Exporter.Impl.ExportadorDocumentoInstanciaArPros">
+		<property name="UbicacionPlantillaExportacion" value="AbaxXBRLCore.Config.Reports.ar_prospectus.exportTemplateArPros.docx"/>
+		<property name="ReporteBuilderFactory" ref="ReporteBuilderFactory"/>
+		<property name="ExportadorPorRol">
+			<dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorRolDocumentoInstancia">
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/411000-HBIS" value-ref="ExportadorRolArPros411000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/412000-HBIS" value-ref="ExportadorRolArPros412000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/413000-HBIS" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/414000-HBIS" value-ref="ExportadorRolPros414"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/417000-HBIS" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/424000-HBIS" value-ref="ExportadorRolArPros424000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/427000-HBIS" value-ref="ExportadorRolDocumentoArPros427000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/431000-HBIS" value-ref="ExportadorRolDocumentoArPros431000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/432000-HBIS" value-ref="ExportadorRolArPros"/>
+				<entry key="footnote" value-ref="ExportadorRolDocumentoNotasAlPie"/>
+			</dictionary>
+		</property>
+	</object>
+
+	<!-- exportador de reporte Prospecto HBIS1-->
+	<object id="ExportadorReporteProspectoHBIS1" type="AbaxXBRLCore.Reports.Exporter.Impl.ExportadorDocumentoInstanciaArPros">
+		<property name="UbicacionPlantillaExportacion" value="AbaxXBRLCore.Config.Reports.ar_prospectus.exportTemplateArPros.docx"/>
+		<property name="ReporteBuilderFactory" ref="ReporteBuilderFactory"/>
+		<property name="ExportadorPorRol">
+			<dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorRolDocumentoInstancia">
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/411000-HBIS1" value-ref="ExportadorRolArPros411000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/412000-HBIS1" value-ref="ExportadorRolArPros412000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/413000-HBIS1" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/414000-HBIS1" value-ref="ExportadorRolArPros414000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/415000-HBIS1" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/425000-HBIS1" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/427000-HBIS1" value-ref="ExportadorRolDocumentoArPros427000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/431000-HBIS1" value-ref="ExportadorRolDocumentoArPros431000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/432000-HBIS1" value-ref="ExportadorRolArPros"/>
+				<entry key="footnote" value-ref="ExportadorRolDocumentoNotasAlPie"/>
+			</dictionary>
+		</property>
+	</object>
+
+	<!-- exportador de reporte Prospecto HBIS2-->
+	<object id="ExportadorReporteProspectoHBIS2" type="AbaxXBRLCore.Reports.Exporter.Impl.ExportadorDocumentoInstanciaArPros">
+		<property name="UbicacionPlantillaExportacion" value="AbaxXBRLCore.Config.Reports.ar_prospectus.exportTemplateArPros.docx"/>
+		<property name="ReporteBuilderFactory" ref="ReporteBuilderFactory"/>
+		<property name="ExportadorPorRol">
+			<dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorRolDocumentoInstancia">
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/411000-HBIS2" value-ref="ExportadorRolArPros411000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/412000-HBIS2" value-ref="ExportadorRolArPros412000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/413000-HBIS2" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/414000-HBIS2" value-ref="ExportadorRolArPros414000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/416000-HBIS2" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/420000-HBIS2" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/422000-HBIS2" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/426000-HBIS2" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/431000-HBIS2" value-ref="ExportadorRolDocumentoArPros431000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/432000-HBIS2" value-ref="ExportadorRolArPros"/>
+				<entry key="footnote" value-ref="ExportadorRolDocumentoNotasAlPie"/>
+			</dictionary>
+		</property>
+	</object>
+
+	<!-- exportador de reporte Prospecto HBIS3-->
+	<object id="ExportadorReporteProspectoHBIS3" type="AbaxXBRLCore.Reports.Exporter.Impl.ExportadorDocumentoInstanciaArPros">
+		<property name="UbicacionPlantillaExportacion" value="AbaxXBRLCore.Config.Reports.ar_prospectus.exportTemplateArPros.docx"/>
+		<property name="ReporteBuilderFactory" ref="ReporteBuilderFactory"/>
+		<property name="ExportadorPorRol">
+			<dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorRolDocumentoInstancia">
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/411000-HBIS3" value-ref="ExportadorRolArPros411000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/412000-HBIS3" value-ref="ExportadorRolArPros412000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/413000-HBIS3" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/414000-HBIS3" value-ref="ExportadorRolArPros414000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/421000-HBIS3" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/422000-HBIS3" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/425000-HBIS3" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/428000-HBIS3" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/431000-HBIS3" value-ref="ExportadorRolDocumentoArPros431000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/432000-HBIS3" value-ref="ExportadorRolArPros"/>
+				<entry key="footnote" value-ref="ExportadorRolDocumentoNotasAlPie"/>
+			</dictionary>
+		</property>
+	</object>
+
+	<!-- exportador de reporte Prospecto HBIS4-->
+	<object id="ExportadorReporteProspectoHBIS4" type="AbaxXBRLCore.Reports.Exporter.Impl.ExportadorDocumentoInstanciaArPros">
+		<property name="UbicacionPlantillaExportacion" value="AbaxXBRLCore.Config.Reports.ar_prospectus.exportTemplateArPros.docx"/>
+		<property name="ReporteBuilderFactory" ref="ReporteBuilderFactory"/>
+		<property name="ExportadorPorRol">
+			<dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorRolDocumentoInstancia">
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/411000-HBIS4" value-ref="ExportadorRolArPros411000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/412000-HBIS4" value-ref="ExportadorRolArPros412000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/413000-HBIS4" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/414000-HBIS4" value-ref="ExportadorRolArPros414000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/421000-HBIS4" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/423000-HBIS4" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/425000-HBIS4" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/431000-HBIS4" value-ref="ExportadorRolDocumentoArPros431000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/432000-HBIS4" value-ref="ExportadorRolArPros"/>
+				<entry key="footnote" value-ref="ExportadorRolDocumentoNotasAlPie"/>
+			</dictionary>
+		</property>
+	</object>
+
+	<!-- exportador de reporte Prospecto HBIS5-->
+	<object id="ExportadorReporteProspectoHBIS5" type="AbaxXBRLCore.Reports.Exporter.Impl.ExportadorDocumentoInstanciaArPros">
+		<property name="UbicacionPlantillaExportacion" value="AbaxXBRLCore.Config.Reports.ar_prospectus.exportTemplateArPros.docx"/>
+		<property name="ReporteBuilderFactory" ref="ReporteBuilderFactory"/>
+		<property name="ExportadorPorRol">
+			<dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorRolDocumentoInstancia">
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/411000-HBIS5" value-ref="ExportadorRolArPros411000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/412000-HBIS5" value-ref="ExportadorRolArPros412000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/413000-HBIS5" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/414000-HBIS5" value-ref="ExportadorRolArPros414000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/416000-HBIS5" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/420000-HBIS5" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/422000-HBIS5" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/425000-HBIS5" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/431000-HBIS5" value-ref="ExportadorRolDocumentoArPros431000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/432000-HBIS5" value-ref="ExportadorRolArPros"/>
+				<entry key="footnote" value-ref="ExportadorRolDocumentoNotasAlPie"/>
+			</dictionary>
+		</property>
+	</object>
+
+	<!-- exportador de reporte Prospecto L-->
+	<object id="ExportadorReporteProspectoL" type="AbaxXBRLCore.Reports.Exporter.Impl.ExportadorDocumentoInstanciaArPros">
+		<property name="UbicacionPlantillaExportacion" value="AbaxXBRLCore.Config.Reports.ar_prospectus.exportTemplateArPros.docx"/>
+		<property name="ReporteBuilderFactory" ref="ReporteBuilderFactory"/>
+		<property name="ExportadorPorRol">
+			<dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorRolDocumentoInstancia">
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/411000-L" value-ref="ExportadorRolArPros411000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/412000-L" value-ref="ExportadorRolArPros412000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/413000-L" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/414000-L" value-ref="ExportadorRolPros414"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/419000-L" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/424000-L" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/427000-L" value-ref="ExportadorRolDocumentoArPros427000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/430000-L" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/431000-L" value-ref="ExportadorRolDocumentoArPros431000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/432000-L" value-ref="ExportadorRolArPros"/>
+				<entry key="footnote" value-ref="ExportadorRolDocumentoNotasAlPie"/>
+				
+			</dictionary>
+		</property>
+	</object>
+
+	<!-- exportador de reporte Prospecto I-->
+	<object id="ExportadorReporteProspectoI" type="AbaxXBRLCore.Reports.Exporter.Impl.ExportadorDocumentoInstanciaArPros">
+		<property name="UbicacionPlantillaExportacion" value="AbaxXBRLCore.Config.Reports.ar_prospectus.exportTemplateArPros.docx"/>
+		<property name="ReporteBuilderFactory" ref="ReporteBuilderFactory"/>
+		<property name="ExportadorPorRol">
+			<dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorRolDocumentoInstancia">
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/411000-I" value-ref="ExportadorRolArPros411000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/412000-I" value-ref="ExportadorRolArPros412000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/413000-I" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/414000-I" value-ref="ExportadorRolPros414"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/417000-I" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/418000-I" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/424000-I" value-ref="ExportadorRolArPros"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/427000-I" value-ref="ExportadorRolDocumentoArPros427000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/431000-I" value-ref="ExportadorRolDocumentoArPros431000"/>
+				<entry key="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/432000-I" value-ref="ExportadorRolArPros"/>
+				<entry key="footnote" value-ref="ExportadorRolDocumentoNotasAlPie"/>
+			</dictionary>
+		</property>
+	</object>
+
+	<object id="ExportadorEventosRelevantesEmisoras2016" type="AbaxXBRLCore.Reports.Exporter.Impl.ExportadorDocumentoInstanciaSimple">
+		<property name="UbicacionPlantillaExportacion" value="AbaxXBRLCore.Config.Reports.eventosRelevantes.exportTemplateEventosRelevantesEmisoras.docx"/>
+		<property name="ReporteBuilderFactory" ref="ReporteBuilderFactory"/>
+		<property name="ExportadorPorRol">
+			<dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorRolDocumentoInstancia">
+				<entry key="http://www.bmv.com.mx/2016-08-22/rel_ev/roles/800010" value-ref="ExportadorRolEventoRelevante"/>
+			</dictionary>
+		</property>
+	</object>
+
+	<object id="ExportadorEventosRelevantesFondos2016" type="AbaxXBRLCore.Reports.Exporter.Impl.ExportadorDocumentoInstanciaSimple">
+		<property name="UbicacionPlantillaExportacion" value="AbaxXBRLCore.Config.Reports.eventosRelevantes.exportTemplateEventosRelevantesFondos.docx"/>
+		<property name="ReporteBuilderFactory" ref="ReporteBuilderFactory"/>
+		<property name="ExportadorPorRol">
+			<dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorRolDocumentoInstancia">
+				<entry key="http://www.bmv.com.mx/2016-08-22/rel_ev/roles/800011" value-ref="ExportadorRolEventoRelevante"/>
+			</dictionary>
+		</property>
+	</object>
+
+  <object id="ExportadorEventosRelevantes2018" type="AbaxXBRLCore.Reports.Exporter.Impl.ExportadorDocumentoInstanciaSimple">
+    <property name="UbicacionPlantillaExportacion" value="AbaxXBRLCore.Config.Reports.eventosRelevantes.exportTemplateEventosRelevantes2018.docx"/>
+    <property name="ReporteBuilderFactory" ref="ReporteBuilderFactory"/>
+    <property name="ExportadorPorRol">
+      <dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorRolDocumentoInstancia">
+        <entry key="http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news/roles/issuer_view" value-ref="ExportadorRolEventoRelevante2018"/>
+        <entry key="http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news/roles/trust_issuer_view" value-ref="ExportadorRolEventoRelevante2018"/>
+        <entry key="http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news/roles/common_representative_view" value-ref="ExportadorRolEventoRelevante2018"/>
+        <entry key="http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news/roles/rating_agency_view" value-ref="ExportadorRolEventoRelevante2018"/>
+        <entry key="http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news/roles/investment_funds_view" value-ref="ExportadorRolEventoRelevante2018"/>
+        <entry key="footnote" value-ref="ExportadorRolDocumentoNotasAlPie"/>
+      </dictionary>
+    </property>
+  </object>
+  
+  
+  
+	<!-- Exportadores Documento de Instancia por Taxonomia -->
+
+	<!-- Exportadores por Rol -->
+	<object id="ExportadorRolNotasCompleto" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.ExportadorRolDocumentoNotas">
+		<property name="ExportarNotasVacias" value="true"/>
+	</object>
+	<object id="ExportadorRolNotasOmitirVacias" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.ExportadorRolDocumentoNotas">
+		<property name="ExportarNotasVacias" value="false"/>
+	</object>
+  <object id="ExportadorRolNotas813000" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.ExportadorRolDocumentoNotas">
+		<property name="ExportarNotasVacias" value="false"/>
+    <property name="PresentarComoHTML">
+      <dictionary key-type="string" value-type="string">
+				  <entry key="ifrs-full_DescriptionOfSignificantEventsAndTransactions" value =""/>
+          <entry key="ifrs-full_ExplanationOfSeasonalityOrCyclicalityOfInterimOperations" value =""/>
+          <entry key="ifrs-full_ExplanationOfNatureAndAmountOfItemsAffectingAssetsLiabilitiesEquityNetIncomeOrCashFlowsThatAreUnusualBecauseOfTheirNatureSizeOrIncidence" value =""/>
+          <entry key="ifrs-full_ExplanationOfNatureAndAmountOfChangesInEstimatesOfAmountsReportedInPriorInterimPeriodsOrPriorFinancialYears" value =""/>
+          <entry key="ifrs-full_ExplanationOfIssuancesRepurchasesAndRepaymentsOfDebtAndEquitySecurities" value =""/>
+          <entry key="ifrs-full_ExplanationOfMaterialEventsSubsequentToEndOfInterimPeriodThatHaveNotBeenReflected" value =""/>
+          <entry key="ifrs-full_ExplanationOfEffectOfChangesInCompositionOfEntityDuringInterimPeriod" value =""/>
+          <entry key="ifrs-full_DescriptionOfComplianceWithIFRSsIfAppliedForInterimFinancialReport" value =""/>
+          <entry key="ifrs-full_DescriptionOfNatureAndAmountOfChangeInEstimateDuringFinalInterimPeriod" value =""/>
+		  </dictionary>
+    </property>
+    <property name="PresentarComoTextoAdosFilas">
+      <dictionary key-type="string" value-type="string">
+				  <entry key="ifrs-full_DividendsPaidOrdinaryShares" value =""/>
+          <entry key="ifrs-full_DividendsPaidOtherShares" value =""/>
+          <entry key="ifrs-full_DividendsPaidOrdinarySharesPerShare" value =""/>
+          <entry key="ifrs-full_DividendsPaidOtherSharesPerShare" value =""/>
+		  </dictionary>
+    </property>
+	</object>
+
+	<object id="ExportadorRolTabularGenerico" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.ExportadorRolDocumentoTabular"/>
+	<object id="ExportadorRolTabularConNotasGenerico" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.ExportadorRolDocumentoTabularConNotas"/>
+	<object id="ExportadorRolDocumentoNotasAlPie" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.ExportadorRolDocumentoNotasAlPie"/>
+
+	<object id="ExportadorRolDocumento110000IFRS" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.ExportadorRolDocumento110000IFRS"/>
+	<object id="ExportadorRolDocumento610000IFRS" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.ExportadorRolDocumento610000IFRS"/>
+	<object id="ExportadorRolDocumento800001IFRS" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.ExportadorRolDocumento800001IFRS"/>
+	<object id="ExportadorRolDocumento800003IFRS" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.ExportadorRolDocumento800003IFRS"/>
+	<object id="ExportadorRolDocumento800005IFRS" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.ExportadorRolDocumento800005IFRS"/>
+	<object id="ExportadorRolDocumento310000IFRS" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.ExportadorRolDocumento310000IFRS"/>
+
+	<object id="ExportadorRolDocumento110000FIDE2015" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.ExportadorRolDocumento110000FIDE2015"/>
+	<object id="ExportadorRolDocumento610000FIDE" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.ExportadorRolDocumento610000IFRS">
+		<property name="ColumnasPorHoja" value="9"/>
+	</object>
+
+	<object id="ExportadorRolAnnexT301100" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.ExportadorRolAnnexT301100"/>
+
+	<object id="ExportadorRolArPros" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.ExportadorRolArPros"/>
+	<object id="ExportadorRolArPros412000" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.ExportadorRolArPros412000"/>
+  <object id="ExportadorRolArPros424000" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.ExportadorRolArPros424000"/>
+  <object id="ExportadorRolArPros414000" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.ExportadorRolArPros414000"/>
+  <object id="ExportadorRolPros414" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.ExportadorRolPros414"/>
+  <object id="ExportadorRolArPros411000" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.ExportadorRolArPros411000"/>
+  <object id="ExportadorRolDocumentoArPros427000" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.ExportadorRolDocumentoArPros427000"/>
+  <object id="ExportadorRolDocumentoArProsO427000" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.ExportadorRolDocumentoArProsO427000"/>
+  <object id="ExportadorRolDocumentoArPros431000" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.ExportadorRolDocumentoArPros431000"/>
+
+  <object id="ExportadorRolEventoRelevante" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.ExportadorRolEventoRelevante"/>
+  <object id="ExportadorRolEventoRelevante2018" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.ExportadorRolEventoRelevante2018">
+    <property name="ConstructoresSubseccionConcepto">
+        <dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorSubseccionConcepto">
+				  <entry key="rel_news_RelevantEventAbstract" value-ref="exportadorHipercuboEventoRelevante" />
+			  </dictionary>
+    </property>
+  </object>
+  
+  <object id="exportadorHipercuboEventoRelevante" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.EventoRelevante.ExportadorHipercuboEventoRelevante" />
+
+  <object id="ExportadorRol815100" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.ExportadorRolDocumento815100Bmv2014"/>
+  <object id="ExportadorRol815101" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.ExportadorRolDocumento815101"/>
+
+  <object id="ExportadorRolArPros412000SinPortada" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.ExportadorRolArPros412000">
+    <property name="DesactivarHechosPortada" value="true"/>
+  </object>
+  
+  <object id="exportadorGeneralProspecto" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.Prospecto.ExportadorGeneralProspecto" singleton="false">
+    <property name="TamanioLetraTituloConceptoNota" value="11" />
+    <property name="DepurarEtiquetasAbstractos" value="true" />
+    <property name="DescartarAbastractos" value="true" />
+    <property name="RolesIncorporacionPorReferencia">
+      <list element-type="AbaxXBRLCore.Reports.Dto.RolIncorporacionPorReferenciaDto">
+        <object type="AbaxXBRLCore.Reports.Dto.RolIncorporacionPorReferenciaDto">
+          <property name="Uri" value="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/413000-H" />
+          <property name="IdConceptoIncorporacionPorReferencia" value="ar_pros_ReferenceIncorporationGeneralInformation" />
+          <property name="IdConceptoTextoReferencia" value="ar_pros_ReferenceIncorporationGeneralInformationText" />
+        </object>
+        <object type="AbaxXBRLCore.Reports.Dto.RolIncorporacionPorReferenciaDto">
+          <property name="Uri" value="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/417000-H" />
+          <property name="IdConceptoIncorporacionPorReferencia" value="ar_pros_ReferenceIncorporationTheIssuer" />
+          <property name="IdConceptoTextoReferencia" value="ar_pros_ReferenceIncorporationTheIssuerText" />
+        </object>
+        <object type="AbaxXBRLCore.Reports.Dto.RolIncorporacionPorReferenciaDto">
+          <property name="Uri" value="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/424000-H" />
+          <property name="IdConceptoIncorporacionPorReferencia" value="ar_pros_ReferenceIncorporationFinancialInformation" />
+          <property name="IdConceptoTextoReferencia" value="ar_pros_ReferenceIncorporationFinancialInformationText" />
+        </object>
+        <object type="AbaxXBRLCore.Reports.Dto.RolIncorporacionPorReferenciaDto">
+          <property name="Uri" value="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/427000-H" />
+          <property name="IdConceptoIncorporacionPorReferencia" value="ar_pros_ReferenceIncorporationAdministration" />
+          <property name="IdConceptoTextoReferencia" value="ar_pros_ReferenceIncorporationAdministrationText" />
+        </object>
+        <object type="AbaxXBRLCore.Reports.Dto.RolIncorporacionPorReferenciaDto">
+          <property name="Uri" value="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/430000-H" />
+          <property name="IdConceptoIncorporacionPorReferencia" value="ar_pros_ReferenceIncorporationUnderlyingAssets" />
+          <property name="IdConceptoTextoReferencia" value="ar_pros_ReferenceIncorporationUnderlyingAssetsText" />
+        </object>
+			</list>
+    </property>
+    <property name="ConstructoresSubseccionConcepto">
+        <dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorSubseccionConcepto">
+				  <entry key="ar_pros_NumberAndCharacteristicsOfTheSecuritiesBeingOfferedAbstract" value-ref="exportadorTablaSeriesOferta414000" />
+          <entry key="ar_pros_DebtSeriesCharacteristicsAbstract" value-ref="exportadorTablaSeriesOferta414000" />
+				  <entry key="ar_pros_StructuredSeriesCharacteristicsAbstract" value-ref="exportadorTablaSeriesOferta414000" />
+          <entry key="ar_pros_CharacteristicsOfTheCurrentListedSeriesAbstract" value-ref="exportadorTablaSeriesPortada412000" />
+          <entry key="ar_pros_MultiplesAbstract" value-ref="exportadorTablaMultiplos" />
+          <entry key="ar_pros_MainProjectsOrFinancingPurposesAbstract" value-ref="exportadorTablaConceptosHorizontalType" />
+          <entry key="ar_pros_InvestorRelationshipAbstract" value-ref="exportadorTablaConceptosHorizontalType" />
+          <entry key="ar_pros_FoundingShareholdersAbstract" value-ref="exportadorTablaConceptosHorizontalType" />
+          <entry key="ar_pros_FinancialInformationToReportAbstract"  value-ref="exportadorTablaSeriesPortada412000" />
+          <entry key="ar_pros_AnnexesAbstract"  value-ref="exportadorTablaPorConfiguracion" />
+          <entry key="ar_pros_CompanyShareholdersAbstract" value-ref="exportadorTablaPorConfiguracion" />
+          <entry key="ar_pros_CommitteesAuxiliaryToTheBoardOfDirectorsAbstract" value-ref="exportadorTablaPorConfiguracion" />
+			  </dictionary>
+    </property>
+    <property name="ConstructoresPorMarca">
+        <dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorSubseccionConcepto">
+          <entry key="ar_pros_SecuritiesPlacedByIntermediariesAbstract" value-ref="exportadorValoresColocadosPorIntermediarios" />
+          <entry key="ar_pros_CostsRelatedWithTheOfferProgramAbstract" value-ref="exportadorParticipantesEnOferta" />
+          <entry key="ar_pros_FoundingShareholdersAbstract" value-ref="exportadorPersonasParticipacionRelevante" />
+          <entry key="ar_pros_FunctionAndFacultiesOfTheBoardOfDirectors" value-ref="exportadorTablaAdministradores" />
+          <entry key="ar_pros_ReasonsWhyTheCommitteesAuxiliaryToTheBoardOfDirectorsDoNotHaveAFinancialExpertMember" value-ref="exportadorTablaDirectivos" />
+        </dictionary>
+    </property>
+    <property name="ConceptosDescartar">
+      <list element-type="string">
+				<value>ar_pros_SellingShareholdersAbstract</value>
+        <value>ar_pros_StockMarketAbstract</value>
+        <value>ar_pros_MarketMakerAbstract</value>
+        <!--<value>ar_pros_RecentEventsAbstract</value>-->
+        <value>ar_pros_InTheCaseOfDebtIssuersAbstract</value>
+        <!--<value>ifrs-full_Assets</value>-->
+        <value>ifrs-full_Equity</value>
+        <value>ifrs-full_NoncurrentLiabilities</value>
+        <value>ar_pros_TypeOfInstrument</value>
+			</list>
+    </property>
+     <property name="ConceptosIgnorarReporte">
+      <list element-type="string">
+				<value>ar_pros_ConstitucionDateOfTheIssuer</value>
+        <value>ar_pros_NumberOfMembersInTheBoardOfDirectors</value>
+        <value>ar_pros_DenominationOfTheIssuer</value>
+        <value>ar_pros_TotalAmountProgramRegistration</value>
+        <value>ar_pros_ReferenceCurrencyInWhichTheProgramIsAuthorizedPESOS</value>
+        <value>ar_pros_ReferenceCurrencyInWhichTheProgramIsAuthorizedUSD</value>
+        <value>ar_pros_ReferenceCurrencyInWhichTheProgramIsAuthorizedUDI</value>
+        <value>ar_pros_ReferenceCurrencyInWhichTheProgramIsAuthorizedEURO</value>
+        <value>ar_pros_ReferenceCurrencyInWhichTheProgramIsAuthorizedDIVEXT</value>
+        <value>ar_pros_ObservationsOnTheAuthorizedAmountOfTheProgramRegistration</value>
+        <value>ar_pros_LifeOfTheProgram</value>
+        <value>ar_pros_EquitySerieTotalAmountProgramRegistration</value>
+        <value>ar_pros_EquitySerie</value>
+        <value>ar_pros_EquityTypeOfInstrument</value>
+        <value>ar_pros_EquitySerieLegalBasisOfTheTaxRegimeApplicable</value>
+        <value>ar_pros_DebtSeriesLegalBasisOfTheTaxRegimeApplicable</value>
+        <value>ar_pros_StructuredSeriesLegalBasisOfTheTaxRegimeApplicable</value>
+        <value>ar_pros_PotentialAcquirers</value>
+        <value>ar_pros_MentioningwhetherOrNotHaveCollateral</value>
+        <value>ar_pros_TypeOfInstrumentDescription</value>
+        <value>ar_pros_EffectOfEmissionsUnderAProgram</value>
+        <value>ar_pros_DebtSeries</value>
+        <value>ar_pros_DebtTypeOfInstrumentIssuers</value>
+        <value>ar_pros_StructuredSeries</value>
+        <value>ar_pros_StructuredTypeOfInstrumentIssuers</value>
+
+			</list>
+    </property>
+    <property name="BooleanosAgrupar">
+      <dictionary key-type="string" value-type="System.Collections.Generic.IList&lt;string&gt;">
+        <entry key="ar_pros_DesignationOfTheReferenceCurrencyInWhichTheProgramIsAuthorizedAbstract">
+          <list element-type="string">
+            <value>ar_pros_ReferenceCurrencyInWhichTheProgramIsAuthorizedPESOS</value>
+            <value>ar_pros_ReferenceCurrencyInWhichTheProgramIsAuthorizedUSD</value>
+            <value>ar_pros_ReferenceCurrencyInWhichTheProgramIsAuthorizedUDI</value>
+            <value>ar_pros_ReferenceCurrencyInWhichTheProgramIsAuthorizedEURO</value>
+            <value>ar_pros_ReferenceCurrencyInWhichTheProgramIsAuthorizedDIVEXT</value>
+          </list>
+        </entry>
+      </dictionary>
+    </property>
+  </object>
+  
+  <object id="exportadorPortadaProspecto412000" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.Prospecto.ExportadorPortadaProspecto412000" singleton="false">
+    <property name="ForzarDosColumnas" value="true" />
+    <property name="AnchoMinimoTitulodosColumnas" value="33" />
+    <property name="AnchoSegundaColumnaCampo" value="67" />
+    <property name="TamanioLetraTituloConceptoNota" value="11" />
+    <property name="DepurarEtiquetasAbstractos" value="true" />
+    <property name="DescartarAbastractos" value="true" />
+    <property name="ConceptosDescartar">
+      <list element-type="string">
+				<value>ar_pros_IssuerLogo</value>
+        <value>ar_pros_IssuanceUnderArt13OfTheCUELegend</value>
+        <value>ar_pros_DefinitiveDocument</value>
+        <value>ar_pros_LegendProspectusSupplementBrochure</value>
+        <value>ar_pros_LeafletCoverAbstract</value>
+        <value>ar_pros_NameOfTheUnderWriter</value>
+        <value>ar_pros_TypeOfInstrument</value>
+        <value>ar_pros_LimitedPublicOffering</value>
+			</list>
+    </property>
+    <property name="ConceptosSinEtiqueta">
+      <list element-type="string">
+        <value>ar_pros_LegendArticle86OfTheLMV</value>
+				<value>ar_pros_LegendDocumentAvailableWithTheUnderwriter</value>
+        <value>ar_pros_LegendProspectusSupplementBrochure</value>
+        <value>ar_pros_SupplementLegend</value>
+        <value>ar_pros_ProspectusLegend</value>
+        <value>ar_pros_TheMentionOfTheSecuritiesAreRegisteredInTheRNV</value>
+        <value>ar_pros_ParticipantsInTheSyndicateIntermediariesLogo</value>
+        <value>ar_pros_MentionOfAnyRiskAssociatedWithTheOperationInQuestion</value>
+        <value>ar_pros_PlaceAndDateOfPublicationOfTheProspectusSupplementProspectus</value>
+			</list>
+    </property>
+    <property name="ConceptosDespuesDelIndice">
+      <list element-type="string">
+        <value>ar_pros_SupplementLegend</value>
+        <value>ar_pros_ProspectusLegend</value>
+			</list>
+    </property>
+    <property name="EstilosPorConcepto">
+      <dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Dto.EstilosConceptoDTO">
+				<entry key="ar_pros_SupplementLegend" value-ref="estiloLeyendasDespuesIndice" />
+        <entry key="ar_pros_ProspectusLegend" value-ref="estiloLeyendasDespuesIndice" />
+			</dictionary>
+    </property>
+    <property name="ConstructoresSubseccionConcepto">
+      <dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorSubseccionConcepto">
+				<entry key="ar_pros_NumberAndCharacteristicsOfTheSecuritiesBeingOfferedAbstract" value-ref="exportadorTablaSeriesPortada412000" />
+        <entry key="ar_pros_DebtSeriesCharacteristicsAbstract" value-ref="exportadorTablaSeriesPortada412000" />
+				<entry key="ar_pros_StructuredSeriesCharacteristicsAbstract" value-ref="exportadorTablaSeriesPortada412000" />
+        <entry key="ar_pros_ParticipantsInTheOfferAbstract" value-ref="exportadorParticipantesOfertaPortada412000" />
+			</dictionary>
+    </property>
+    <property name="ConstructoresPorMarca">
+        <dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorSubseccionConcepto">
+          <entry key="ar_pros_SecuritiesPlacedByIntermediariesAbstract" value-ref="exportadorValoresColocadosPorIntermediarios" />
+          <entry key="ar_pros_CostsRelatedWithTheOfferProgramAbstract" value-ref="exportadorParticipantesEnOferta" />
+          <entry key="ar_pros_FoundingShareholdersAbstract" value-ref="exportadorPersonasParticipacionRelevante" />
+          <entry key="ar_pros_FunctionAndFacultiesOfTheBoardOfDirectors" value-ref="exportadorTablaAdministradores" />
+          <entry key="ar_pros_ReasonsWhyTheCommitteesAuxiliaryToTheBoardOfDirectorsDoNotHaveAFinancialExpertMember" value-ref="exportadorTablaDirectivos" />
+        </dictionary>
+    </property>
+    <property name="BooleanosAgrupar">
+      <dictionary key-type="string" value-type="System.Collections.Generic.IList&lt;string&gt;">
+        <entry key="ar_pros_DesignationOfTheReferenceCurrencyInWhichTheProgramIsAuthorizedAbstract">
+          <list element-type="string">
+            <value>ar_pros_ReferenceCurrencyInWhichTheProgramIsAuthorizedPESOS</value>
+            <value>ar_pros_ReferenceCurrencyInWhichTheProgramIsAuthorizedUSD</value>
+            <value>ar_pros_ReferenceCurrencyInWhichTheProgramIsAuthorizedUDI</value>
+            <value>ar_pros_ReferenceCurrencyInWhichTheProgramIsAuthorizedEURO</value>
+            <value>ar_pros_ReferenceCurrencyInWhichTheProgramIsAuthorizedDIVEXT</value>
+          </list>
+        </entry>
+      </dictionary>
+    </property>
+    <property name="PresentarCuandoValorIgual">
+      <dictionary key-type="string" value-type="string">
+        <entry key="ar_pros_IssuanceUnderArt13OfTheCUE" value="SI" />
+      </dictionary>
+    </property>
+  </object>
+
+  <object name="estiloLeyendasDespuesIndice" type="AbaxXBRLCore.Reports.Dto.EstilosConceptoDTO">
+    <property name="EstiloValor">
+      <object type="AbaxXBRLCore.Reports.Dto.EstilosReporteDTO">
+        <property name="Tamaniofuente" value="14" />
+        <property name="Negrita" value="true" />
+      </object>
+    </property> 
+  
+  </object>
+  
+  <object id="exportadorTablaSeriesPortada412000" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.Prospecto.Tablas.ExportadorTablaSeriesPortada412000" singleton="false">
+     <property name="BooleanosAgrupar">
+      <dictionary key-type="string" value-type="System.Collections.Generic.IList&lt;string&gt;">
+        <entry key="ar_pros_DebtSeriesTypeOfGuaranteeAbstract"> 
+          <list element-type="string">
+						<value>ar_pros_DebtSeriesTypeOfGuaranteeWarranty</value>
+            <value>ar_pros_DebtSeriesTypeOfGuaranteeTrust</value>
+            <value>ar_pros_DebtSeriesTypeOfGuaranteeGovernment</value>
+            <value>ar_pros_DebtSeriesTypeOfGuaranteeMortgage</value>
+            <value>ar_pros_DebtSeriesTypeOfGuaranteePledge</value>
+            <value>ar_pros_DebtSeriesTypeOfGuaranteeChirographic</value>
+            <value>ar_pros_DebtSeriesTypeOfGuaranteeWillBeSpecifiedInEachIssue</value>
+            <value>ar_pros_DebtSeriesTypeOfGuaranteeOther</value>
+					</list>
+        </entry>
+        <entry key="ar_pros_DebtSeriesDiscountOrYieldInterestRateAbstract"> 
+          <list element-type="string">
+						<value>ar_pros_DebtSeriesDiscountOrYieldInterestRateDiscount</value>
+            <value>ar_pros_DebtSeriesDiscountOrYieldInterestRateFixedPerformance</value>
+            <value>ar_pros_DebtSeriesDiscountOrYieldInterestRateVariablePerformance</value>
+					</list>
+        </entry>
+        <entry key="ar_pros_StructuredSeriesTypeOfGuaranteeAbstract">
+          <list element-type="string">
+            <value>ar_pros_StructuredSeriesTypeOfGuaranteeWarranty</value>
+            <value>ar_pros_StructuredSeriesTypeOfGuaranteeTrust</value>
+            <value>ar_pros_StructuredSeriesTypeOfGuaranteeGovernment</value>
+            <value>ar_pros_StructuredSeriesTypeOfGuaranteeMortgage</value>
+            <value>ar_pros_StructuredSeriesTypeOfGuaranteePledge</value>
+            <value>ar_pros_StructuredSeriesTypeOfGuaranteeChirographic</value>
+            <value>ar_pros_StructuredSeriesTypeOfGuaranteeWillBeSpecifiedInEachIssue</value>
+            <value>ar_pros_StructuredSeriesTypeOfGuaranteeOther</value>
+          </list>
+        </entry>
+        <entry key="ar_pros_EquitySerieOfferTypAbstract">
+          <list element-type="string">
+            <value>ar_pros_EquitySerieOfferTypePrimaryNational</value>
+            <value>ar_pros_EquitySerieOfferTypeSecondaryNational</value>
+            <value>ar_pros_EquitySerieOfferTypeMixNational</value>
+            <value>ar_pros_EquitySerieOfferTypePrimaryInternational</value>
+            <value>ar_pros_EquitySerieOfferTypeSecondaryInternational</value>
+            <value>ar_pros_EquitySerieOfferTypeMixInternational</value>
+            <value>ar_pros_EquitySerieOfferTypePrimaryGlobal</value>
+            <value>ar_pros_EquitySerieOfferTypeSecondaryGlobal</value>
+            <value>ar_pros_EquitySerieOfferTypeMixGlobal</value>
+            <value>ar_pros_EquitySerieOfferTypeToBeDefined</value>
+          </list>
+        </entry>
+        <entry key="ar_pros_DebtSerieOfferTypAbstract">
+          <list element-type="string">
+            <value>ar_pros_DebtSerieOfferTypePrimaryNational</value>
+            <value>ar_pros_DebtSerieOfferTypeSecondaryNational</value>
+            <value>ar_pros_DebtSerieOfferTypeMixNational</value>
+            <value>ar_pros_DebtSerieOfferTypePrimaryInternational</value>
+            <value>ar_pros_DebtSerieOfferTypeSecondaryInternational</value>
+            <value>ar_pros_DebtSerieOfferTypeMixInternational</value>
+            <value>ar_pros_DebtSerieOfferTypePrimaryGlobal</value>
+            <value>ar_pros_DebtSerieOfferTypeSecondaryGlobal</value>
+            <value>ar_pros_DebtSerieOfferTypeMixGlobal</value>
+            <value>ar_pros_DebtSerieOfferTypeToBeDefined</value>
+          </list>
+        </entry>
+        <entry key="ar_pros_StructuredSerieOfferTypAbstract">
+          <list element-type="string">
+            <value>ar_pros_StructuredSerieOfferTypePrimaryNational</value>
+            <value>ar_pros_StructuredSerieOfferTypeSecondaryNational</value>
+            <value>ar_pros_StructuredSerieOfferTypeMixNational</value>
+            <value>ar_pros_StructuredSerieOfferTypePrimaryInternational</value>
+            <value>ar_pros_StructuredSerieOfferTypeSecondaryInternational</value>
+            <value>ar_pros_StructuredSerieOfferTypeMixInternational</value>
+            <value>ar_pros_StructuredSerieOfferTypePrimaryGlobal</value>
+            <value>ar_pros_StructuredSerieOfferTypeSecondaryGlobal</value>
+            <value>ar_pros_StructuredSerieOfferTypeMixGlobal</value>
+            <value>ar_pros_StructuredSerieOfferTypeToBeDefined</value>
+          </list>
+        </entry>
+        </dictionary>
+    </property>
+    <property name="PresentarCuandoValorIgual">
+      <dictionary key-type="string" value-type="string">
+        <entry key="ar_pros_EquitySerieIssuanceUnderArt13OfTheCUE" value="SI" />
+        <entry key="ar_pros_DebtSerieIssuanceUnderArt13OfTheCUE" value="SI" />
+        <entry key="ar_pros_StructuredSerieIssuanceUnderArt13OfTheCUE" value="SI" />
+        <entry key="ar_pros_EquitySerieLimitedPublicOffering" value="SI" />
+        <entry key="ar_pros_DebtSerieLimitedPublicOffering" value="SI" />
+        <entry key="ar_pros_StructuredSerieLimitedPublicOffering" value="SI" />
+      </dictionary>
+    </property>
+  </object>
+  
+  <object id="exportadorTablaSeriesOferta414000" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.Prospecto.Tablas.ExportadorTablaSeriesOferta414000" singleton="false"></object>
+  
+  <object id="exportadorTablaMultiplos" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.Prospecto.Tablas.ExportadorTablaMultiplos" singleton="false"></object>
+  
+  <object id="exportadorTablaConceptosHorizontalType" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.Prospecto.Tablas.ExportadorTablaConceptosHorizontalType" singleton="false"></object>
+
+  <object id="exportadorTablaInformacionFinanciera" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.Prospecto.Tablas.ExportadorTablaInformacionFinanciera" singleton="false">
+    <property name="ConceptosTabla">
+      <list element-type="string">
+        <value>ifrs-full_Revenue</value>
+        <value>ifrs-full_GrossProfit</value>
+        <value>ifrs-full_ProfitLossFromOperatingActivities</value>
+        <value>ifrs-full_ProfitLoss</value>
+        <value>ifrs-full_BasicEarningsLossPerShare</value>
+        <value>ifrs_mx-cor_20141205_AcquisitionOfPropertyAndEquipment</value>
+        <value>ifrs_mx-cor_20141205_DepreciacionYAmortizacionOperativa</value>
+        <value>ifrs-full_Assets</value>
+        <value>ifrs-full_NoncurrentLiabilities</value>
+        <value>ifrs_mx-cor_20141205_AccountsReceivableTurnoverDecimal</value>
+        <value>ifrs_mx-cor_20141205_AccountsPayableTurnoverDecimal</value>
+        <value>ifrs_mx-cor_20141205_InventoryTurnoverDecimal</value>
+        <value>ifrs-full_Equity</value>
+        <value>ifrs_mx-cor_20141205_CashDividendsDeclaredPerShare</value>
+      </list>
+    </property>
+  </object>
+  
+  <object id="exportadorTablaPorConfiguracion" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.Prospecto.Tablas.ExportadorTablaPorConfiguracion" singleton="false"></object>
+
+  <object id="exportadorTablaAdministradores" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.Prospecto.Tablas.ExportadorTablaPorConfiguracion" singleton="false">
+    <property name="IdConceptoReferencia" value="ar_pros_CompanyAdministratorsAbstract"/>
+    <property name="IdConfiguracion" value="Administradores" />
+  </object>
+  <object id="exportadorTablaDirectivos" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.Prospecto.Tablas.ExportadorTablaPorConfiguracion" singleton="false">
+    <property name="IdConceptoReferencia" value="ar_pros_CompanyAdministratorsAbstract"/>
+    <property name="IdConfiguracion" value="Directivos" />
+  </object>
+
+  
+  
+  <object id="exportadorValoresColocadosPorIntermediarios" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.Prospecto.Tablas.ExportadorTablaConceptosHorizontalType" singleton="false">
+    <property name="IdConceptoReferencia" value="ar_pros_ParticipantsInTheOfferAbstract"/>
+    <property name="IdsPlantillasContexto">
+          <list element-type="string">
+						<value>BrokerageCommissionsAndPlacementMember</value>
+					</list>
+    </property>
+    <property name="ConceptosAplica">
+          <list element-type="string">
+						<value>ar_pros_ParticipantName</value>
+            <value>ar_pros_ParticipantPercentageOfDistributedTitles</value>
+            <value>ar_pros_ParticipantNumberOfTitlesDistributed</value>
+            <value>ar_pros_ParticipantLeadingIntermediary</value>
+            <value>ar_pros_ParticipantConcentratePostures</value>
+					</list>
+    </property>
+  </object>
+  
+  <object id="exportadorParticipantesEnOferta" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.Prospecto.Tablas.ExportadorTablaConceptosHorizontalType" singleton="false">
+    <property name="IdConceptoReferencia" value="ar_pros_ParticipantsInTheOfferAbstract"/>
+    <property name="ConceptosAplica">
+          <list element-type="string">
+						<value>ar_pros_ParticipantName</value>
+            <value>ar_pros_SignificantParticipationInTheOffer</value>
+            <value>ar_pros_AmountOfferCost</value>
+            <value>ar_pros_IvaOfferCost</value>
+             <value>ar_pros_TotalOfferCost</value>
+					</list>
+    </property>
+  </object>
+  
+  <object id="exportadorPersonasParticipacionRelevante" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.Prospecto.Tablas.ExportadorTablaConceptosHorizontalType" singleton="false">
+    <property name="IdConceptoReferencia" value="ar_pros_ParticipantsInTheOfferAbstract"/>
+    <property name="IdsPlantillasContexto">
+          <list element-type="string">
+						<value>OtherParticipantMember</value>
+					</list>
+    </property>
+    <property name="ConceptosAplica">
+          <list element-type="string">
+						<value>ar_pros_ParticipantName</value>
+            <value>ar_pros_ParticipantAdditionalInformation</value>
+					</list>
+    </property>
+    <property name="Proyeccion" value="PresonasParticipacionRelevante" />
+  </object>
+  
+  <object id="exportadorParticipantesOfertaPortada412000" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.Prospecto.Tablas.ExportadorTablaConceptosHorizontalType" singleton="false">
+    <property name="IdsPlantillasContexto">
+          <list element-type="string">
+						<value>BrokerageCommissionsAndPlacementMember</value>
+            <value>CommonRepresentativeMember</value>
+					</list>
+    </property>
+    <property name="ConceptosAplica">
+          <list element-type="string">
+						<value>ar_pros_ParticipantName</value>
+					</list>
+    </property>
+  </object>
+
+  <object id="exportadorGeneralAnexos" type="AbaxXBRLCore.Reports.Exporter.Impl.Rol.Prospecto.ExportadorGeneralProspecto" singleton="false">
+    <property name="TamanioLetraTituloConceptoNota" value="11" />
+    <property name="DepurarEtiquetasAbstractos" value="true" />
+    <property name="DescartarAbastractos" value="true" />
+    <property name="ConcatenarAdjuntos" value="true"/>
+    <property name="ConstructoresSubseccionConcepto">
+        <dictionary key-type="string" value-type="AbaxXBRLCore.Reports.Exporter.IExportadorSubseccionConcepto">
+          <entry key="ar_pros_AnnexesAbstract"  value-ref="exportadorTablaPorConfiguracion" />
+			  </dictionary>
+    </property>
+  </object>
+	
+	<!-- Exportadores por Rol -->
+</objects>

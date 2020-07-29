@@ -1,0 +1,191 @@
+﻿<section>
+
+    <section class="scrollable padder">
+        <div class="m-b-md">
+            <h3 class="m-b-none">{{'ETIQUETA_CONSULTA_CONFIGURACION_REPOSITORIO'| translate}}</h3>
+        </div>
+        <section class="panel panel-default">
+            <div class="row">
+                <div class="col-sm-12">
+                    <form name="configuracionConsultaPaso1" id="configuracionConsulta" novalidate>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <ul class="nav nav-tabs  nav-tabs-dark font-bold">
+                                    <li class="active"><a href="#configuracionConceptos" data-toggle="tab">{{'ETIQUETA_TAXONOMIA'| translate}}</a></li>
+                                    <li><a href="#configuracionEntidades" data-toggle="tab">{{'ETIQUETA_ENTIDAD' | translate}}</a></li>
+                                    <li><a href="#configuracionPeriodos" data-toggle="tab">{{'ETIQUETA_PERIODO' | translate}}</a></li>
+                                </ul>
+                            </div>
+                            <div class="panel-body">
+                                
+                                <div class="line line-lg"></div>
+                                <h4>{{'ETIQUETA_CONFIGURACION_CONSULTA' | translate}}</h4>
+                                <div class="progress progress-xs m-t-md">
+                                    <div class="progress-bar " ng-class="{'bg-warning':porcentajeAvance!=100,'bg-success':porcentajeAvance==100}" style="width: {{porcentajeAvance}}%;"></div>
+                                </div>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="configuracionConceptos">
+
+                                        <div ng-class="{ 'has-error' : !consultaAnalisis.IdTaxonomiaXbrl }">
+                                            <p>{{'ETIQUETA_SELECCIONAR_TAXONOMIA'| translate}}:</p>
+                                            <select style="width:50%;" ng-model="consultaAnalisis.IdTaxonomiaXbrl" ng-required="true" required class="form-control" ng-options="taxonomia.IdTaxonomiaXbrl as taxonomia.Nombre for taxonomia in taxonomiasConfiguracionConsulta" ng-change="cargarRolesTaxonomia()">
+                                                <option value="">--{{'ETIQUETA_SELECCIONAR_TAXONOMIA' | translate}}--</option>
+                                            </select>
+                                            <p ng-show="!consultaAnalisis.IdTaxonomiaXbrl" class="help-block">{{'ETIQUETA_SELECCIONAR_TAXONOMIA' | translate}}.</p>
+                                        </div>
+                                        <p>&nbsp;</p>
+
+                                        <div ng-if="mostrarRolesTaxonomia" ng-class="{ 'has-error' : !consultaAnalisis.Idioma }">
+                                            <p>{{'ETIQUETA_SELECCIONAR_IDIOMA_TAXONOMIA'| translate}}:</p>
+                                            <select style="width:50%;" ng-model="consultaAnalisis.Idioma" ng-required="true" required class="form-control" ng-options="idioma.Idioma as idioma.DescripcionIdioma for idioma in idiomasTaxonomia">
+                                                <option value="">--{{'ETIQUETA_SELECCIONAR_IDIOMA_TAXONOMIA' | translate}}--</option>
+                                            </select>
+                                            <p ng-show="!consultaAnalisis.Idioma" class="help-block">{{'ETIQUETA_SELECCIONAR_IDIOMA_TAXONOMIA' | translate}}.</p>
+                                        </div>
+                                        <p>&nbsp;</p>
+
+
+                                        <div ng-if="mostrarRolesTaxonomia">
+                                            <p class="m-t">{{'ETIQUETA_CONSULTA_CONFIGURACION_ROLES_TAXONOMIA'| translate}}:</p>
+                                            <div style="padding-bottom:50px;">
+                                                <div style="float:left;width:100%">
+
+                                                    <script type="text/ng-template" id="renderer_roles_taxonomia.html">
+                                                        <div ui-tree-handle class="list-group-item">
+
+                                                            <div class="checkbox i-checks" style="margin-top:0px;margin-bottom:5px;float:left;margin-right:5px">
+                                                                <label class="col-lg-1 control-label" style="width:1px;padding-right:1px;">
+                                                                    <input type="checkbox" ng-model="roles.Seleccionado" ng-change="seleccionarRol(roles)" /><i></i>
+                                                                </label>
+                                                            </div>
+                                                            <div>
+                                                                {{roles.Descripcion| translate}}
+
+                                                            </div>
+
+                                                        </div>
+
+
+                                                        <ol ui-tree-nodes="" ng-model="roles.listadoRoles" ng-class="{hidden: collapsed}">
+                                                            <li ng-repeat="roles in roles.listadoRoles" ui-tree-node ng-include="'renderer_roles_taxonomia.html'" data-drag-enabled="false" style="list-style-type:none">
+                                                            </li>
+                                                        </ol>
+
+                                                    </script>
+
+                                                    <div ui-tree="opcionesTreeOrden" data-drag-enabled="false">
+                                                        <ol ui-tree-nodes ng-model="rolesTaxonomia" data-drag-enabled="false">
+                                                            <li ng-repeat="roles in rolesTaxonomia" ui-tree-node ng-include="'renderer_roles_taxonomia.html'" style="list-style-type:none"></li>
+                                                        </ol>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="configuracionEntidades">
+                                        <div>
+                                            <p>{{'ETIQUETA_SELECCIONE_EMISORA' | translate}}:</p>
+                                            <div style="width:50%;float:left;">
+                                                <select style="width:50%;" ng-model="entidadSeleccionada" class="form-control" ng-options="emisora as emisora.NombreCorto for emisora in emisoras">
+                                                    <option value="">{{'ETIQUETA_SELECCIONAR_OPCION' | translate}}</option>
+                                                </select>
+                                            </div>
+
+                                            <div style="float:left;width:45%;margin-left:50px;">
+                                                <input type="button" class="btn btn-sm btn-default" value="{{'CONSULTA_ANALISIS_AGREGAR' | translate}}" ng-click="agregarElementoEntidad()" />
+                                            </div>
+                                            <p>&nbsp;</p>
+                                        </div>
+                                        <p>&nbsp;</p>
+                                        <section class="panel panel-default" style="padding-top:40px;">
+
+                                            <center>
+                                                <table class="table table-striped b-t b-light " tabindex="1" style="-webkit-user-select: none;width:100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>{{'ETIQUETA_ENTIDAD'|translate}}</th>
+                                                            <th width="10%">{{'ETIQUETA_ELIMINAR' | translate}}</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr ng-repeat="entidad in consultaAnalisis.ConsultaAnalisisEntidad">
+                                                            <td>{{entidad.NombreEntidad}}</td>
+                                                            <td><a href="javascript:void(0)" class="btn btn-rounded btn-sm btn-icon btn-danger" ng-click="eliminarEntidad(entidad.IdEmpresa)"><i class="fa fa-trash-o"></i></a></td>
+                                                        </tr>
+                                                        <tr ng-if="consultaAnalisis.ConsultaAnalisisEntidad.length==0"><td colspan="2"><p class="help-block">{{'ETIQUETA_SIN_ENTIDADES_CONF_CONSULTA' | translate}}</p></td></tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </center>
+                                        </section>
+
+
+
+                                    </div>
+                                    <div class="tab-pane" id="configuracionPeriodos">
+
+                                        <div style="width:100%;padding-bottom:50px;">
+                                            <div style="width:30%;float:left">
+                                                <p>{{'ETIQUETA_CONSULTA_ANIO' | translate}}</p>
+                                                <select style="width:50%;" ng-model="anioSeleccionado" ng-required="true" required class="form-control" ng-options="anio for anio  in anios">
+                                                    <option value="">--{{'ETIQUETA_SELECCIONAR_ANIO' | translate}}--</option>
+                                                </select>
+                                            </div>
+                                            <div style="width:30%;float:left">
+                                                <p>{{'ETIQUETA_CONSULTA_TRIMESTRE' | translate}}</p>
+                                                <select style="width:50%;" ng-model="trimestreSeleccionado" ng-required="true" required class="form-control" ng-options="trimestre for trimestre in trimestres">
+                                                    <option value="">--{{'ETIQUETA_SELECCIONAR_TRIMESTRE' | translate}}--</option>
+                                                </select>
+                                            </div>
+
+                                            <div style="float:left;width:30%;margin-left:50px;">
+                                                <input type="button" class="btn btn-sm btn-default" value="{{'CONSULTA_ANALISIS_AGREGAR' | translate}}" ng-click="agregarElementoPeriodo()" />
+                                            </div>
+                                            <p>&nbsp;</p>
+
+                                        </div>
+
+                                        <section class="panel panel-default">
+                                            <header class="panel-heading bg-light ng-binding">{{'ETIQUETA_PERIODO_ACONSULTAR' | translate}}</header>
+                                            <center>
+                                                <table class="table table-striped b-t b-light " tabindex="1" style="-webkit-user-select: none;width:100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>{{'ETIQUETA_PERIODO' | translate}}</th>
+                                                            <th width="10%">{{'ETIQUETA_ELIMINAR' | translate}}</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr ng-repeat="periodo in consultaAnalisis.ConsultaAnalisisPeriodo">
+                                                            <td>{{periodo.Periodo}}</td>
+                                                            <td><a href="javascript:void(0)" class="btn btn-rounded btn-sm btn-icon btn-danger" ng-click="eliminarPeriodo(periodo.Periodo)"><i class="fa fa-trash-o"></i></a></td>
+                                                        </tr>
+                                                        <tr ng-if="consultaAnalisis.ConsultaAnalisisPeriodo.length==0"><td colspan="2"><p class="help-block">{{'ETIQUETA_SIN_PERIODOS_CONF_CONSULTA' | translate}}</p></td></tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </center>
+                                        </section>
+
+
+                                    </div>
+                                    <ul class="pager wizard m-b-sm">
+                                        <li class="previous"><a href="#">{{'ETIQUETA_ANTERIOR' | translate}}</a></li>
+                                        <li>
+                                            <a ng-click="ejecutarConsulta()" style="float:right;background-color:#1aae88" class="btn-success" ng-if="configuracionValida && !exportando">{{'ETIQUETA_EJECUTAR' | translate}}</a>
+                                            <a style="float:right;background-color:#1aae88" class="btn-success" ng-if="exportando">{{'MENSAJE_INFO_EXPORTANDO' | translate}} ...</a>
+                                        </li>
+                                        <li class="next"><a href="#">{{'ETIQUETA_SIGUIENTE' | translate}}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+</section>

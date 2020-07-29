@@ -1,0 +1,101 @@
+<xbrl-contenedor-formato xbrl:rol-uri="{{xbrlRol.Uri}}" orientacion="landscape" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+    <div oc-lazy-load="abaxXBRLDistribucionIngresosModuleCNBV">
+        <div id="contenedorDistribucionIngresos" class="table-responsive" xbrl:distribucion-ingresos-cnbv>
+            <table class="table table-striped b-t b-light ingresosPorProducto" xbrl:tabla-excel xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" selector="td:not(:first-child)" selector-contenedor-x="#contenedorDistribucionIngresos" selector-contenedor-y="#contenedorFormatos" tab-index="1" on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)" on-after-paste="onAfterPaste(valorPegado, x, y)" on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)">
+                <thead>
+                    <tr>
+                        <th class="th-sortable" data-toggle="class">{{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Marcas y Productos' : 'Brands and Products' }}  </th>
+                        <th style="min-width:190px;"><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_IngresosNacionalesMiembro" xbrl:nivel-indentacion="0" /></th>
+                        <th style="min-width:190px;"><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_IngresosPorExportacionMiembro" xbrl:nivel-indentacion="0" /></th>
+                        <th style="min-width:190px;"><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_IngresosDeSubsidiariasEnElExtranjeroMiembro" xbrl:nivel-indentacion="0" /></th>
+                        <th style="min-width:190px;"><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_IngresosTotalesMiembro" xbrl:nivel-indentacion="0" /></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="conceptoAbstracto" style="padding: 0;">
+                            <div style="display: table-row; height:100%;">
+                                <span style="display: table-cell; padding: 16px; width:92%;">
+                                    {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Agregar una marca' : 'Add a brand' }}
+                                </span>
+                                <button style="display: table-cell; height: 100%; width: 20px; text-align:center; border:0px; padding: 0px;"
+                                        type="button"
+                                        ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                        ng-click="agregarValorDimensionMarca()"
+                                        class="btn-info">
+                                    <i class="fa fa-plus" style="width:20px"></i>
+                                </button>
+                            </div>
+                        </td>
+                        <td class="conceptoAbstracto seleccion">&nbsp;</td>
+                        <td class="conceptoAbstracto seleccion">&nbsp;</td>
+                        <td class="conceptoAbstracto seleccion">&nbsp;</td>
+                        <td class="conceptoAbstracto seleccion">&nbsp;</td>
+                    </tr>
+                    <tr class="filaMarca" ng-repeat-start="valorDimensionMarca in valoresDimensionMarca">
+                        <td class="conceptoPrimarioAbstracto">
+                            <div class="marcaContainer">
+                                <span class="marca">
+                                    <xbrl:campo-texto-generico-dip-cnbv xbrl:valor="{{valorDimensionMarca}}" xbrl:lista-valores="valoresDimensionMarca" xbrl:change-value-listener="actualizarValorDimensionMarca(newValue, oldValue)" xbrl:mensaje-alerta-vacio="MENSAJE_WARNING_MARCA_VACIA" xbrl:mensaje-alerta-repetido="MENSAJE_WARNING_MARCA_REPETIDA"></xbrl:campo-texto-generico-dip-cnbv>
+                                </span>
+                                <div class="botonesMarca">
+                                    <button style="display: table-cell; height: 50%; width: 20px; text-align:center; border:0px; padding: 0px;"
+                                            type="button"
+                                            ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                            class="btn-info"
+                                            ng-click="agregarValorDimensionProducto(valorDimensionMarca)">
+                                        <i class="fa fa-plus" style="width:20px; height: 50%"></i>
+                                    </button>
+                                    <button style="display: table-cell; height: 50%; width: 20px; text-align:center; border:0px; padding: 0px;"
+                                            type="button"
+                                            ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                            class="btn-danger"
+                                            ng-click="eliminarElementosDimensionMarca(valorDimensionMarca)">
+                                        <i class="fa fa-minus" style="width:20px; height: 50%"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="conceptoPrimarioAbstracto seleccion">&nbsp;</td>
+                        <td class="conceptoPrimarioAbstracto seleccion">&nbsp;</td>
+                        <td class="conceptoPrimarioAbstracto seleccion">&nbsp;</td>
+                        <td class="conceptoPrimarioAbstracto seleccion">&nbsp;</td>
+                    </tr>
+                    <tr class="productoMarca" ng-repeat-end ng-repeat="valorDimensionProducto in valoresDimensionProductoPorMarca[valorDimensionMarca]">
+                        <td class="nombreProducto">
+                            <div class="productoContainer">
+                                <span class="campoGenericoContainer">
+                                    <xbrl:campo-texto-generico-dip-cnbv xbrl:valor="{{valorDimensionProducto}}" xbrl:lista-valores="valoresDimensionProductoPorMarca[valorDimensionMarca]" xbrl:change-value-listener="actualizarValorDimensionProducto(valorDimensionMarca,newValue, oldValue)" xbrl:mensaje-alerta-vacio="MENSAJE_WARNING_PRODUCTO_VACIO" xbrl:mensaje-alerta-repetido="MENSAJE_WARNING_PRODUCTO_REPETIDO"></xbrl:campo-texto-generico-dip-cnbv>
+                                </span>
+                                <button class="botonMinus"
+                                        type="button"
+                                        ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                        class="btn-danger"
+                                        ng-click="eliminarElementosProducto(valorDimensionMarca,valorDimensionProducto)">
+                                    <i class="fa fa-minus" style="width:20px"></i>
+                                </button>
+                            </div>
+                        </td>
+                        <td class="seleccion"><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-concepto="ifrs_mx-cor_20141205_ImporteDeIngresos" xbrl:id-contexto="{{::obtenerIdContexto(valorDimensionMarca,valorDimensionProducto,'IngresosNacionalesMiembro','ifrs_mx-cor_20141205_IngresosNacionalesMiembro')}}" xbrl:id-unidad="{{::idUnidadMoneda}}" xbrl:decimales="-3" xbrl:valor-default="0" xbrl:crear-hecho="true" xbrl:formula="{{obtenIdFormulaTotalIngresos(valorDimensionMarca,valorDimensionProducto)}}"></xbrl:campo-captura></td>
+                        <td class="seleccion"><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-concepto="ifrs_mx-cor_20141205_ImporteDeIngresos" xbrl:id-contexto="{{::obtenerIdContexto(valorDimensionMarca,valorDimensionProducto,'IngresosPorExportacionMiembro','ifrs_mx-cor_20141205_IngresosPorExportacionMiembro')}}" xbrl:id-unidad="{{::idUnidadMoneda}}" xbrl:decimales="-3" xbrl:valor-default="0" xbrl:crear-hecho="true" xbrl:formula="{{obtenIdFormulaTotalIngresos(valorDimensionMarca,valorDimensionProducto)}}"></xbrl:campo-captura></td>
+                        <td class="seleccion"><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-concepto="ifrs_mx-cor_20141205_ImporteDeIngresos" xbrl:id-contexto="{{::obtenerIdContexto(valorDimensionMarca,valorDimensionProducto,'IngresosDeSubsidiariasEnElExtranjeroMiembro','ifrs_mx-cor_20141205_IngresosDeSubsidiariasEnElExtranjeroMiembro')}}" xbrl:id-unidad="{{::idUnidadMoneda}}" xbrl:decimales="-3" xbrl:valor-default="0" xbrl:crear-hecho="true" xbrl:formula="{{obtenIdFormulaTotalIngresos(valorDimensionMarca,valorDimensionProducto)}}"></xbrl:campo-captura></td>
+                        <td class="seleccion">
+                            <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-concepto="ifrs_mx-cor_20141205_ImporteDeIngresos" xbrl:id-contexto="{{::obtenerIdContexto(valorDimensionMarca,valorDimensionProducto,'IngresosTotalesMiembro','ifrs_mx-cor_20141205_IngresosTotalesMiembro')}}" xbrl:id-unidad="{{::idUnidadMoneda}}" xbrl:decimales="-3" xbrl:valor-default="0" xbrl:crear-hecho="true" xbrl:ultimo="$parent.$last && $last" xbrl:formula="{{obtenIdFormulaTotalIngresos(valorDimensionMarca,valorDimensionProducto)}}"></xbrl:campo-captura>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="totalConceptoAbstracto"><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_ImporteDeIngresos" xbrl:nivel-indentacion="2" /></td>
+                        <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A6519bf39-9bd3-4bc8-a100-83adbed489cd"></xbrl:campo-captura></td>
+                        <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A710b15d5-8ad0-485a-93a5-9893b33b0327"></xbrl:campo-captura></td>
+                        <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A7a665c9e-3026-4158-a5c6-ddb9da0117f4"></xbrl:campo-captura></td>
+                        <td class="totalConceptoAbstracto" ng-repeat="i in [] | rango:1">
+                            <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ac53c1485-c468-47a9-bbf8-04d90332f49e" xbrl:ultimo="ultimoCampo" ng-repeat="i in [] | rango:1"></xbrl:campo-captura>
+                            <input type="hidden" id="{{idUltimoCampo}}" ng-if="idUltimoCampo === 'FinDistribucionIngresos'" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</xbrl-contenedor-formato>

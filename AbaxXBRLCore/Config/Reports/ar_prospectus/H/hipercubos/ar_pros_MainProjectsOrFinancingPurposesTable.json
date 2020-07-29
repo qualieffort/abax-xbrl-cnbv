@@ -1,0 +1,36 @@
+﻿{
+  "IdConceptos": [
+    "ar_pros_MainProjectsOrFinancingPurposesAbstract",
+    "ar_pros_ProjectOrFinancingPurposeLineItems",
+    "ar_pros_MainFinancingPurposeDescription",
+    "ar_pros_MainFinancingPurposePercentage"
+  ],
+  "PlantillasContextos": {
+
+    "DEFAULT": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": []
+    }
+  },
+  "PlantillaDimensiones": {
+    "ar_pros_MainProjectsOrFinancingPurposesSequenceTypedAxis": {
+      "PrefijoValor": "<ar_pros:SerieDomain xmlns:ar_pros=\"http://www.cnbv.gob.mx/2016-08-22/ar_prospectus\">",
+      "SubfijoValor": "</ar_pros:SerieDomain>",
+      "EtiquetaNuevoElemento": "1",
+      "Explicita": false,
+      "IdDimension": "ar_pros_MainProjectsOrFinancingPurposesSequenceTypedAxis",
+      "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:MainProjectsOrFinancingPurposesSequenceTypedAxis"
+    }
+  },
+  "DimensionesDinamicas": [
+    "ar_pros_MainProjectsOrFinancingPurposesSequenceTypedAxis"
+  ],
+  "MaxColumnasVertical": 6,
+  "MaxColumnasHorizontal": 0,
+  "TamanoHoja": "Letter"
+
+}

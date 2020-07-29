@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Project: Xbrl Processing Engine
+Version: 4
+
+Copyright (c) 2011  EDGAR(r) Online, Inc.
+
+EDGAR(r) is a federally registered trademark of the U.S. Securities and Exchange Commission. EDGAR 
+Online is not affiliated with or approved by the U.S. Securities and Exchange Commission.
+-->
+
+<xs:schema elementFormDefault="unqualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:simpleType name="ConditionSetFailEnumeration">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="NotEmpty"/>
+			<xs:enumeration value="Empty"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BooleanTypeEnumeration">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="True"/>
+			<xs:enumeration value="False"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ArgumentSelectorTypeEnumeration">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="DomainObject"/>
+			<xs:enumeration value="Relationship"/>
+			<xs:enumeration value="SchemaVOUri"/>
+			<xs:enumeration value="String"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="InstructionType">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="DomainObjectSelector" type="SelectorType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="ConstantSelector" type="SelectorType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="DtsQuerySelector" type="SelectorType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="RunMethod" type="InstructionType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="DTSAddReferencedLocation" type="InstructionType" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="doUri" type="xs:token" use="optional"/>
+		<xs:attribute name="voUri" type="xs:token" use="optional"/>
+		<xs:attribute name="name" type="xs:token" use="optional"/>
+		<xs:attribute name="saveDO" type="xs:token" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="ConditionSetInstructionType">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="DomainObjectSelector" type="SelectorType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="ConstantSelector" type="SelectorType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="DtsQuerySelector" type="SelectorType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="RunMethod" type="InstructionType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="RemoveDomainObject" type="InstructionType" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:choice>
+			<xs:element name="Failure" type="ConditionSetSuccessAndFailureType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Success" type="ConditionSetSuccessAndFailureType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Return" type="ReturnType" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="doUri" type="xs:token" use="optional"/>
+		<xs:attribute name="voUri" type="xs:token" use="optional"/>
+		<xs:attribute name="name" type="xs:token" use="optional"/>
+		<xs:attribute name="testValue" type="xs:token" use="optional"/>
+		<xs:attribute name="Fail" type="ConditionSetFailEnumeration" use="optional"/>
+		<xs:attribute name="saveDO" type="xs:token" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="FailureType">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="CreateMemo" type="InstructionType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="CreateDomainObject" type="InstructionType" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SelectorType">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="DomainObjectSelector" type="SelectorType" maxOccurs="unbounded"/>
+				<xs:element name="ConstantSelector" type="SelectorType" maxOccurs="unbounded"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="value" type="xs:token" use="optional"/>
+		<xs:attribute name="name" type="xs:string" use="optional"/>
+		<xs:attribute name="saveDO" type="xs:token" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="ArgumentSelectorType">
+		<xs:attribute name="value" type="xs:token" use="optional"/>
+		<xs:attribute name="name" type="xs:string" use="optional"/>
+		<xs:attribute name="type" type="ArgumentSelectorTypeEnumeration" use="required"/>
+		<xs:attribute name="allowNull" type="BooleanTypeEnumeration" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="ConditionSetSuccessAndFailureType">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="CreateMemo" type="InstructionType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="CreateRelationship" type="InstructionType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="CreateDomainObject" type="InstructionType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="RemoveDomainObject" type="InstructionType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="DtsQuerySelector" type="SelectorType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="RunMethod" type="InstructionType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="ConditionSet" type="ConditionSetInstructionType" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DTSQueryType">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="DomainObjectSelector" type="SelectorType" maxOccurs="unbounded"/>
+				<xs:element name="ConstantSelector" type="SelectorType" maxOccurs="unbounded"/>
+			</xs:choice>
+			<xs:element name="Failure" type="FailureType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ReturnType">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="DomainObjectSelector" type="SelectorType" maxOccurs="unbounded"/>
+				<xs:element name="DtsQuerySelector" type="SelectorType" maxOccurs="unbounded"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MethodType">
+		<xs:sequence>
+			<xs:element name="DomainObjectArgumentSelector" type="ArgumentSelectorType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="ConstantArgumentSelector" type="SelectorType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="ConditionSet" type="ConditionSetInstructionType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="CreateDomainObject" type="InstructionType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="CreateRelationship" type="InstructionType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="RemoveRelationship" type="InstructionType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="RemoveDomainObject" type="InstructionType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="DisconnectDomainObject" type="InstructionType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="ConnectDomainObject" type="InstructionType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="DtsQuerySelector" type="SelectorType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="RunMethod" type="InstructionType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="DTSAddReferencedLocation" type="InstructionType" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:choice>
+			<xs:element name="Return" type="ReturnType" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:token" use="optional"/>
+		<xs:attribute name="reindex" type="xs:string" use="optional"/>
+		<xs:attribute name="behaviorUri" type="xs:token" use="required"/>
+	</xs:complexType>
+	<xs:element name="MethodSet">
+		<xs:annotation>
+			<xs:documentation>The Metadata for Editing</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Method" type="MethodType" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:token" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
+
+<!--
+The contents of this file are subject to the End-User Software License Agreement (the "License"). You may not use this 
+file except in compliance with the License. A current copy of the License is available by contacting product support.
+
+Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights and limitations under the License.
+-->

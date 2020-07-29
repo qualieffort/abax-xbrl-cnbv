@@ -1,0 +1,77 @@
+﻿<form name="formaImportarHechosDocumento" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true" ng-click="cerrarDialogo()">&times;</button>
+        <div class="row m-t-sm">
+            <div class="col-sm-10 m-b-xs">
+                <h4 class="modal-title">{{'EDITOR_XBRL_BUSCAR_DOCUMENTO_IMPORTAR_TITULO' | translate}}</h4>
+            </div>
+        </div>
+    </div>
+    <div class="modal-body" style="overflow:scroll;max-height:600px">
+        <p>{{'EDITOR_XBRL_BUSCAR_DOCUMENTO_IMPORTAR_DESCRIPCION' | translate}}</p>
+        
+
+        <div class="panel-body font-bold" style="background: #eeeeee; padding-left: 30px" ng-if="mostrarCargando">
+            <i class="fa fa-refresh fa-spin"></i>
+            {{'MENSAJE_INFO_CARGANDO_DOCUMENTOS' | translate}} ...
+        </div>
+        <div class="panel-body font-bold" style="background: #eeeeee; padding-left: 30px" ng-if="!mostrarCargando && !existenDocumentosUsuario">
+            {{'MENSAJE_INFO_SIN_RESULTADOS' | translate}}
+        </div>
+        <div ng-if="!mostrarCargando && existenDocumentosUsuario">
+            <table class="table table-striped b-t b-light" datatable="" dt-options="opcionesDataTableDocumentosUsuario">
+                <thead>
+                    <tr>
+                        <th data-toggle="class" style="text-align:center;" translate="ETIQUETA_SELECCIONAR"></th>
+                        <th width="140" class="th-sortable" data-toggle="class" style="text-align:center;" translate="ETIQUETA_EMISORA">
+                            <span class="th-sort">
+                                <i class="fa fa-sort-down text"></i>
+                                <i class="fa fa-sort-up text-active"></i>
+                                <i class="fa fa-sort"></i>
+                            </span>
+                        </th>
+                        <th class="th-sortable" data-toggle="class" translate="ETIQUETA_NOMBRE_DOCUMENTO">
+                            <span class="th-sort">
+                                <i class="fa fa-sort-down text"></i>
+                                <i class="fa fa-sort-up text-active"></i>
+                                <i class="fa fa-sort"></i>
+                            </span>
+                        </th>
+                        <th class="th-sortable" data-toggle="class" style="text-align:center;" translate="ETIQUETA_FECHA_CREACION"></th>
+                        <th class="th-sortable" data-toggle="class" style="text-align:center;" translate="ETIQUETA_TAXONOMIA"></th>
+                   
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="documento in documentosUsuario">
+                        <td style="text-align:center;">
+                            <div class="radio i-checks">
+                                <label>
+                                    <input type="radio" style="width:30px" name="chkComparar" value="{{documento.IdDocumentoInstancia}}" ng-click="actualizarDocumentoSeleeccionado(documento.IdDocumentoInstancia)">
+                                    <i></i>                                    
+                                </label>
+                            </div>
+                        </td>
+                        <td style="text-align:center;">{{documento.Empresa.NombreCorto}}</td>
+                        <td>{{documento.Titulo}}</td>
+                        <td style="text-align:center;">{{documento.FechaCreacion}}</td>
+
+                        <td ng-if="!documento.Taxonomia || documento.Taxonomia.length == 0">{{'ETIQUETA_TAXONOMIA_DESCONOCIDA' | translate }}</td>
+                        <td ng-if="documento.Taxonomia && documento.Taxonomia.length > 0">{{documento.Taxonomia}}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+
+
+
+    </div>
+    <div class="modal-footer">
+        <div>
+            <button type="button" class="btn btn-default" ng-click="cerrarDialogo()">{{'ETIQUETA_BOTON_CANCELAR'|translate}}</button>
+            <button type="button" class="btn btn-s-md btn-warning" ng-click="importarHechosDocumento()">{{'EDITOR_XBRL_IMPORTAR_DOCUMENTO' | translate}}</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,75 @@
+﻿{
+  "IdConceptos": [
+    "ar_pros_SubcommitteesIntegrationOfTheSubcommitteesItems",
+    "ar_pros_SubcommitteesNames",
+    "ar_pros_SubcommitteesLastName",
+    "ar_pros_SubcommitteesMothersLastName",
+    "ar_pros_SubcommitteesTypeOfSubcommitteeToWhichItBelongs",
+    "ar_pros_SubcommitteesDesignationSynopsis",
+    "ar_pros_SubcommitteesAppointmentDate",
+    "ar_pros_SubcommitteesTypeOfAssemblyIfApplicable",
+    "ar_pros_SubcommitteesPeriodForWhichTheyWereElected",
+    "ar_pros_SubcommitteesGender",
+    "ar_pros_SubcommitteesAdditionalInformation"
+  ],
+  "PlantillasContextos": {
+    "ar_pros_SubcommitteesIndependentMember": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_SubcommitteesTypeOfSubcommitteesAxis",
+          "IdItemMiembro": "ar_pros_SubcommitteesIndependentMember",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:SubcommitteesTypeOfSubcommitteesAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:SubcommitteesIndependentMember"
+        }
+      ]
+    },
+    "ar_pros_SubcommitteesNotIndependentMember": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_SubcommitteesTypeOfSubcommitteesAxis",
+          "IdItemMiembro": "ar_pros_SubcommitteesNotIndependentMember",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:SubcommitteesTypeOfSubcommitteesAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:SubcommitteesNotIndependentMember"
+        }
+      ]
+    }
+  },
+  "PlantillaDimensiones": {
+    "ar_pros_SubcommitteesSequenceAxis": {
+      "PrefijoValor": "<ar_pros:SubcommitteesSequenceDomain xmlns:ar_pros=\"http://www.cnbv.gob.mx/2016-08-22/ar_prospectus\">",
+      "SubfijoValor": "</ar_pros:SubcommitteesSequenceDomain>",
+      "EtiquetaNuevoElemento": "1",
+      "Explicita": false,
+      "IdDimension": "ar_pros_SubcommitteesSequenceAxis",
+      "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:SubcommitteesSequenceAxis"
+    },
+    "ar_pros_SubcommitteesTypeOfSubcommitteesAxis": {
+      "PrefijoValor": "http:",
+      "SubfijoValor": "",
+      "EtiquetaNuevoElemento": "//www.bmv.com.mx/2016-08-22/ar_prospectus:SubcommitteesIndependentMember",
+      "Explicita": true,
+      "IdDimension": "ar_pros_SubcommitteesTypeOfSubcommitteesAxis",
+      "IdItemMiembro": "ar_pros_SubcommitteesIndependentMember",
+      "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:SubcommitteesTypeOfSubcommitteesAxis",
+      "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:SubcommitteesIndependentMember"
+    }
+  },
+  "DimensionesDinamicas": [
+    "ar_pros_SubcommitteesSequenceAxis"
+  ],
+  "MaxColumnasVertical": 6,
+  "MaxColumnasHorizontal": 0,
+  "TamanoHoja": "Letter"
+}

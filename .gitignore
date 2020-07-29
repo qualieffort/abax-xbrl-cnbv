@@ -1,0 +1,36 @@
+# Folders to discard
+bin/
+obj/
+.bin/
+.metadata/
+.tscache/
+.settings/
+.vs/
+grunt*/
+typescript/
+.recommenders/
+target/
+RemoteSystemsTempFiles/
+commons-lima/commons-lima-persistence/data/JcrRepo/
+AbaxXBRLWeb/App_Data/uploads/
+AbaxXBRLWebServices/App_Data/uploads/
+AbaxXBRLWebServices/resources/System/cache
+AbaxXBRLWeb/resources/System/cache
+PublishWebServices/
+packages/
+PublishAbaxXBRL/
+sqlScripts/Mongo/export/
+TestAbaxXBRL/TestOutput
+TestAbaxXBRL/TestInput/DocumentosXbrl
+# Files to discard - 
+
+*.map
+*.user
+*.log
+*.suo
+AbaxXBRLWeb/ts/**/*.js
+AbaxXBRLWeb/abax-xbrl/**/*.js
+
+AbaxXBRLWeb/Scripts/typings/**/*.js
+Taxonomias/taxonomy.zip
+

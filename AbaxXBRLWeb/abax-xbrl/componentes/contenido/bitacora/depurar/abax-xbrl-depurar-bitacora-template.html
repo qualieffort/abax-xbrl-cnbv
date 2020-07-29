@@ -1,0 +1,88 @@
+﻿
+<section class="scrollable padder">
+    <section class="panel panel-default">
+
+        <section class="row m-b-md">
+            <div class="col-sm-6">
+                <h3 class="m-b-xs text-black" style="padding-left:10px;">
+                    {{'TITULO_DEPURAR_BITACORA' | translate}}
+                </h3>
+            </div>
+        </section>
+
+        <header class="panel-heading font-bold">
+            {{'TITULO_DEPURAR_BITACORA' | translate}}
+        </header>
+
+        <form name="depurarBitacoraForm" class="form-horizontal">
+            <div class="panel-body"> 
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <div class="form-group"> 
+                    <label class="col-sm-12 text-center">{{'ELIMINAR_REGISTROS_FECHA_ANTERIOR' | translate}} :</label>
+                    <br />
+                    <div class="col-sm-12 text-center">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <input type="text"
+                                       name="fecha"
+                                       id="fecha"
+                                       placeholder="{{'PLACE_HOLDER_FECHA' | translate}}"
+                                       ng-model="filtroFecha"
+                                       class=" input-sm form-control input-s-lg inline v-middle datepicker-input form-control"
+                                       datepicker-popup="dd/MM/yyyy"
+                                       current-text="{{'ETIQUETA_HOY'| translate}}"
+                                       clear-text="{{'ETIQUETA_LIMPIAR'| translate}}"
+                                       close-text="{{'ETIQUETA_BOTON_CERRAR'| translate}}"
+                                       is-open="datePikerOpen"
+                                       style="width:200px; max-width:90%"
+                                       ng-click="muestraDatePiker($event)"
+                                       title="{{'ETIQUETA_FECHA_SUGERIDA' | translate}} {{fechaSujerida}}"
+                                       ng-class="{ 'has-error' : depurarBitacoraForm.fecha.$invalid }"
+                                       required />
+                                <p ng-show="depurarBitacoraForm.fecha.$invalid" class="help-block">{{'ETIQUETA_CAMPO_REQUERIDO' | translate}}</p>
+                            </div> 
+                        </div> 
+                    </div>
+                </div>
+                <br />
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+            </div> 
+            <footer class="panel-footer">
+                <div class="row wrapper">
+                    <div class="col-sm-12 text-center">
+                        <div class="col-lg-4"> </div>
+                        <div class="col-lg-2">
+                            <button type="button"
+                                    class="btn btn-sm btn-default"
+                                    style="width:200px; max-width:100%"
+                                    ng-click="cancelar()">
+                                {{'ETIQUETA_BOTON_CANCELAR' | translate}}
+                            </button>
+                        </div>
+                        <div class="col-lg-2">
+                            <button type="button"
+                                    class="btn btn-sm "
+                                    style="width:200px; max-width:100%; border-color: rgb(255, 180, 0); background-color: rgb(255, 180, 0); color:rgb(255, 255, 255)"
+                                    ng-show="!depurarBitacoraForm.fecha.$invalid"
+                                    ng-click="depurarBitacora()">
+                                {{'ETIQUETA_BOTON_DEPURAR' | translate}}
+                            </button>
+                        </div>
+                        <div class="col-lg-4"> </div>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+            </footer>
+
+        </form>
+
+    </section>
+</section>
+
+

@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<!--
+Project: Xbrl Processing Engine
+Copyright (c) 2011  EDGAR(r) Online, Inc.
+
+EDGAR(r) is a federally registered trademark of the U.S. Securities and Exchange Commission. EDGAR 
+Online is not affiliated with or approved by the U.S. Securities and Exchange Commission.
+-->
+
+
+<!DOCTYPE dimensions [
+
+           <!-- Used to control the namespaceUri of memos -->
+
+           <!ENTITY xdtSpecUri "http://xbrl.org/2005/xbrldt/errors">
+	   
+]>
+
+<PatternSet
+
+    name="Taxonomy Dimension Validation Patterns"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ValidationPatterns.xsd" >
+
+    <!-- 2.2.1 
+
+         A dimensional processor MUST raise an error
+         xbrldte:HypercubeElementIsNotAbstract if an element that is in the
+         substitution group of xbrldt:hypercubeItem is not abstract.
+     -->
+    <Pattern id="xbrldte_HypercubeElementIsNotAbstract"
+             name="xbrldte:HypercubeElementIsNotAbstract"
+             method="DtsXPath"
+             value="/'domain://ubmatrix.com/Xbrl/Taxonomy/Dimension#Hypercube'[(not(hasAttr('abstract'))) or (attr('abstract') != 'true')]">
+          <Failure severity="error">
+                <Action saveDO="memo" method="CreateErrorMemo" uri="&xdtSpecUri;#HypercubeElementIsNotAbstractError" />
+          </Failure>
+    </Pattern>
+
+    <!-- 2.2.1.1 Constraints on the source of a hypercube-dimension
+         relationship.
+
+         The source of a hypercube-dimension relationship MUST be a hypercube
+         declaration. A dimensional processor MUST raise an error
+         xbrldte:HypercubeDimensionSourceError if this rule is violated. -->
+    <Pattern id="xbrldte_HypercubeDimensionSourceError"
+             name="2.2.1.1 xbrldte:HypercubeDimensionSourceError"
+             method="DtsXPath"
+             value="/-'relationship://ubmatrix.com/Xbrl/Dimension#HypercubeDimension'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy/Dimension#Hypercube)">
+          <Failure severity="error">
+                <Action saveDO="memo" method="CreateErrorMemo" uri="&xdtSpecUri;#HypercubeDimensionSourceError" />
+          </Failure>
+    </Pattern>
+             
+    <!-- 2.2.1.2 Constraints on the target of a hypercube-dimension
+                 relationship.
+
+                 The target of a hypercube-dimension relationship MUST be a
+                 dimension declaration. A dimensional processor MUST raise an
+                 error xbrldte:HypercubeDimensionTargetError if this rule is
+                 violated. -->
+    <Pattern id="xbrldte_HypercubeDimensionTargetError"
+             name="2.2.1.1 xbrldte:HypercubeDimensionTargetError"
+             method="DtsXPath"
+             value="/+'relationship://ubmatrix.com/Xbrl/Dimension#HypercubeDimension'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy/Dimension#Dimension)"> 
+          <Failure severity="error">
+                <Action saveDO="memo" method="CreateErrorMemo" uri="&xdtSpecUri;#HypercubeDimensionTargetError" />
+          </Failure>
+    </Pattern>
+             
+    <!-- 2.3.1.1.1 The source of an "all" or "notAll" relationship must be a
+                 primary item declaration.
+
+                 A dimensional processor must raise an error
+                 xbrldte:HasHypercubeSourceError if the source of an "all"
+                 relationship is not a primary item declaration.
+    -->
+    <Pattern id="HasHypercubeSourceError_a"
+             name="xbrldte:HasHypercubeSourceError_a"
+             method="DtsXPath"
+             value="/-'relationship://ubmatrix.com/Xbrl/Dimension#HasHypercube'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept)">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#HasHypercubeSourceError" />
+        </Failure>
+    </Pattern>
+    <Pattern id="HasHypercubeSourceError_b"
+             name="xbrldte:HasHypercubeSourceError_b"
+             method="DtsXPath"
+             value="/-'relationship://ubmatrix.com/Xbrl/Dimension#HasHypercube'/'domain://ubmatrix.com/Xbrl/Taxonomy/Dimension#Hypercube'">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#HasHypercubeSourceError" />
+        </Failure>
+    </Pattern>
+    <Pattern id="HasHypercubeSourceError_c"
+             name="xbrldte:HasHypercubeSourceError_c"
+             method="DtsXPath"
+             value="/-'relationship://ubmatrix.com/Xbrl/Dimension#HasHypercube'/'domain://ubmatrix.com/Xbrl/Taxonomy/Dimension#Dimension'">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#HasHypercubeSourceError" />
+        </Failure>
+    </Pattern>
+    <!--
+    <Pattern id="HasHypercubeSourceError_d"
+             name="xbrldte:HasHypercubeSourceError_d"
+             method="DtsXPath"
+             value="/-'relationship://ubmatrix.com/Xbrl/Dimension#HasHypercube'/'domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept'/-'relationship://ubmatrix.com/Xbrl/Dimension#DomainMember'">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#HasHypercubeSourceError" />
+        </Failure>
+    </Pattern>
+    <Pattern id="HasHypercubeSourceError_e"
+             name="xbrldte:HasHypercubeSourceError_e"
+             method="DtsXPath"
+             value="/-'relationship://ubmatrix.com/Xbrl/Dimension#HasHypercube'/'domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept'/+'relationship://ubmatrix.com/Xbrl/Dimension#DomainMember'">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#HasHypercubeSourceError" />
+        </Failure>
+    </Pattern>
+-->
+    <!--2.3.1.1.2 The target of an "all" or "notAll" relationship must be a
+                 hypercube declaration.
+
+                 A dimensional processor MUST raise an error
+                 xbrldte:HasHypercubeTargetError if the target of an "all"
+                 relationship is not a hypercube declaration [Def, 1].
+    -->
+    <Pattern id="HasHypercubeTargetError_a"
+             name="xbrldte:HasHypercubeTargetError"
+             method="DtsXPath"
+             value="/+'relationship://ubmatrix.com/Xbrl/Dimension#HasHypercube'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy/Dimension#Hypercube)">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#HasHypercubeTargetError" />
+        </Failure>
+    </Pattern>
+
+    <!-- 2.3.1.1.3 A has-hypercube arc MUST have an xbrldt:contextElement attribute. 
+                 
+				 A dimensional processor MUST raise an error [Dim Err, 6] xbrldte:HasHypercubeMissingContextElementAttributeError if this rule is 
+				violated.
+    -->
+    <Pattern id="HasHypercubeTargetError_b"
+             name="xbrldte:HasHypercubeTargetError"
+             method="DtsXPath"
+             value="/'relationship://ubmatrix.com/Xbrl/Dimension#HasHypercube'[not(hasAttr('http://xbrl.org/2005/xbrldt#contextElement'))]">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#HasHypercubeMissingContextElementAttributeError" />
+        </Failure>
+    </Pattern>
+
+<!-- 2.4.3.2.	A dimensional processor MUST check the cycles in two consecutive arcs [Def, 2] 
+					connected with an xbrldt:targetRole attribute according to the value of the cyclesAllowed 
+					attribute in the arc definition in the xbrldt schema as if the two consecutive arcs [Def, 2] were 
+					created in the same extended link role. 
+
+					A dimensional processor MUST raise [Dim Err, 8] xbrldte:DRSDirectedCycleError if invalid directed cycles where found. 
+-->
+    <Pattern id="xbrldte_DRSDirectedCycleError"
+             name="xbrldte:DRSDirectedCycleError"
+             method="DtsXPath"
+             value="test_xbrldte_drsdirectedcycleerror()">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#DRSDirectedCycleError" />
+        </Failure>
+    </Pattern>   
+
+    <!-- 2.5.1 A dimensional processor MUST raise an error
+             xbrldte:DimensionElementIsNotAbstract if an element that is in
+             the substitution group of xbrldt:dimensionItem is not
+             abstract. -->
+    <Pattern id="xbrldte_DimensionElementIsNotAbstract"
+             name="xbrldte:DimensionElementIsNotAbstract"
+             method="DtsXPath"
+             value="/'domain://ubmatrix.com/Xbrl/Taxonomy/Dimension#Dimension'[not(hasAttr('abstract')) or (attr('abstract') != 'true')]">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#DimensionElementIsNotAbstractError" />
+        </Failure>
+    </Pattern>
+
+    <!-- 2.5.2.1.1	The xbrldt:typedDomainRef attribute must only appears in a
+                    dimension declaration. 
+
+                    A dimensional processor MUST raise an error
+                    xbrldte:TypedDomainRefError if the xbrldt:typedDomainRef
+                    attribute appears on an XML Schema element declaration
+                    that is not a dimension declaration. -->
+    <Pattern id="xbrldte_TypedDomainRefError_1a"
+             name="xbrldte:TypedDomainRefError (dimension element)"
+             method="DtsXPath"
+             value="/'domain://ubmatrix.com/Xbrl#UnclassifiedElement'[hasAttr('http://xbrl.org/2005/xbrldt#typedDomainRef')]">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#TypedDomainRefError" />
+        </Failure>
+    </Pattern>
+    <Pattern id="xbrldte_TypedDomainRefError_1b"
+             name="xbrldte:TypedDomainRefError (dimension element)"
+             method="DtsXPath"
+             value="/'domain://ubmatrix.com/Xbrl/Taxonomy#ReferencePart'[hasAttr('http://xbrl.org/2005/xbrldt#typedDomainRef')]">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#TypedDomainRefError" />
+        </Failure>
+    </Pattern>
+    <Pattern id="xbrldte_TypedDomainRefError_1c"
+             name="xbrldte:TypedDomainRefError (dimension element)"
+             method="DtsXPath"
+             value="/'domain://ubmatrix.com/Xbrl/Taxonomy#Concept'[hasAttr('http://xbrl.org/2005/xbrldt#typedDomainRef')]Exclude(domain://ubmatrix.com/Xbrl/Taxonomy/Dimension#Dimension)">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#TypedDomainRefError" />
+        </Failure>
+    </Pattern>
+
+<!--
+ 2.5.1.1.1.	A dimensional processor MUST raise an error [Dim Err, 11] xbrldte:TypedDimensionError 
+				if the xbrldt:typedDomainRef attribute locates (with xml:base and following definition in section 
+				3.2 of [XPTR]) any of the following:
+						Nothing
+						Something that is not a global XML Schema element declaration
+						A global abstract element declaration.
+-->
+    <Pattern id="xbrldte_TypedDimensionError"
+             name="xbrldte:TypedDimensionError"
+             method="DtsXPath"
+             value="Test_xbrldte_TypedDimensionError()">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#TypedDimensionError" />
+        </Failure>
+    </Pattern>
+
+<!--
+2.5.1.1.1.	A dimensional processor MUST raise an error [Dim Err, 12] xbrldte:TypedDimensionURIError  
+				if the xbrldt:typedDomainRef attribute does not contain a fragment identifier. -->
+    <Pattern id="xbrldte_TypedDimensionURIError"
+             name="xbrldte:TypedDimensionError"
+             method="DtsXPath"
+             value="/'domain://ubmatrix.com/Xbrl/Taxonomy/Dimension#TypedDimension'Test_xbrldte_TypedDimensionURIError()">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#TypedDimensionURIError" />
+        </Failure>
+    </Pattern>
+
+    <!-- 2.5.3.1	A dimensional processor MUST raise an error [Dim Err, 13] 
+				xbrldte:DimensionDomainSourceError if the source of the arc is not 
+				a explicit dimension declaration [Def, 7]. -->
+    <Pattern id="DimensionDomainSourceError_a"
+             name="xbrldte:DimensionDomainSourceError_a"
+             method="DtsXPath"
+             value="/-'relationship://ubmatrix.com/Xbrl/Dimension#DimensionDomain'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy/Dimension#Dimension)">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#DimensionDomainSourceError" />
+        </Failure>
+    </Pattern>
+
+    <Pattern id="DimensionDomainSourceError_b"
+             name="xbrldte:DimensionDomainSourceError_b"
+             method="DtsXPath"
+             value="/-'relationship://ubmatrix.com/Xbrl/Dimension#DimensionDomain'/'domain://ubmatrix.com/Xbrl/Taxonomy/Dimension#TypedDimension'">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#DimensionDomainSourceError" />
+        </Failure>
+    </Pattern>
+
+    <!-- 2.5.3.1	The target of a dimension-domain relationship must be a
+                    domain member declaration.
+
+                    A dimensional processor MUST raise an error
+                    xbrldte:DimensionDomainTargetError if the target of the
+                    relationship is not a domain member declaration [Def, 4]. -->
+    <Pattern id="DimensionDomainTargetError_a"
+             name="xbrldte:DimensionDomainTargetError_a"
+             method="DtsXPath"
+             value="/+'relationship://ubmatrix.com/Xbrl/Dimension#DimensionDomain'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept)">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#DimensionDomainTargetError" />
+        </Failure>
+    </Pattern>
+    
+    <!--
+    <Pattern id="DimensionDomainTargetError_b"
+             name="xbrldte:DimensionDomainTargetError_b"
+             method="DtsXPath"
+             value="/+'relationship://ubmatrix.com/Xbrl/Dimension#DimensionDomain'/'domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept'/+'relationship://ubmatrix.com/Xbrl/Dimension#HasHypercube'">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#DimensionDomainTargetError" />
+        </Failure>
+    </Pattern>
+-->
+    <Pattern id="DimensionDomainTargetError_c"
+             name="xbrldte:DimensionDomainTargetError_c"
+             method="DtsXPath"
+             value="/+'relationship://ubmatrix.com/Xbrl/Dimension#DimensionDomain'/'domain://ubmatrix.com/Xbrl/Taxonomy/Dimension#Dimension'">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#DimensionDomainTargetError" />
+        </Failure>
+    </Pattern>
+
+    <Pattern id="DimensionDomainTargetError_d"
+             name="xbrldte:DimensionDomainTargetError_d"
+             method="DtsXPath"
+             value="/+'relationship://ubmatrix.com/Xbrl/Dimension#DimensionDomain'/'domain://ubmatrix.com/Xbrl/Taxonomy/Dimension#Hypercube'">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#DimensionDomainTargetError" />
+        </Failure>
+    </Pattern>
+
+<!-- 2.5.3.2.1	A dimensional processor MUST raise an error [Dim Err, 15] xbrldte:PrimaryItemPolymorphismError 
+				if there is a cycle in which the primary item source of the hypercube is also a member of 
+				a domain [Def, 9] of any of the declared explicit dimensions.
+-->
+    <Pattern id="PrimaryItemPolymorphismError_1"
+             name="xbrldte:PrimaryItemPolymorphismError_1"
+             method="DtsXPath" 
+             value="/-'relationship://ubmatrix.com/Xbrl/Dimension#HasHypercube'/'domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept'test_xbrldte_primaryitempolymorphismerror()">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#PrimaryItemPolymorphismError" />
+        </Failure>
+    </Pattern>
+
+    <Pattern id="PrimaryItemPolymorphismError_2"
+             name="xbrldte:PrimaryItemPolymorphismError_2"
+             method="DtsXPath" 
+             value="/+'relationship://ubmatrix.com/Xbrl/Dimension#DomainMember'/'domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept'test_xbrldte_primaryitempolymorphismerror()">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#PrimaryItemPolymorphismError" />
+        </Failure>
+    </Pattern>
+
+    <!--2.5.3.2.1	The source of a domain-member relationship must be a
+                    primary item declaration.
+
+                    A dimensional processor MUST raise an error
+                    xbrldte:DomainMemberSourceError if this rule is violated.-->
+    <Pattern id="xbrldte_DomainMemberSourceError_a"
+             name="xbrldte:DomainMemberSourceError_a"
+             method="DtsXPath"
+             value="/-'relationship://ubmatrix.com/Xbrl/Dimension#DomainMember'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept)">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#DomainMemberSourceError" />
+        </Failure>
+    </Pattern>
+    <Pattern id="xbrldte_DomainMemberSourceError_b"
+             name="xbrldte:DomainMemberSourceError_b"
+             method="DtsXPath"
+             value="/-'relationship://ubmatrix.com/Xbrl/Dimension#DomainMember'/'domain://ubmatrix.com/Xbrl/Taxonomy/Dimension#Hypercube'">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#DomainMemberSourceError" />
+        </Failure>
+    </Pattern>
+    <Pattern id="xbrldte_DomainMemberSourceError_c"
+             name="xbrldte:DomainMemberSourceError_c"
+             method="DtsXPath"
+             value="/-'relationship://ubmatrix.com/Xbrl/Dimension#DomainMember'/'domain://ubmatrix.com/Xbrl/Taxonomy/Dimension#Dimension'">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#DomainMemberSourceError" />
+        </Failure>
+    </Pattern>
+    <!--
+    <Pattern id="xbrldte_DomainMemberSourceError_d"
+             name="xbrldte:DomainMemberSourceError_d"
+             method="DtsXPath"
+             value="/-'relationship://ubmatrix.com/Xbrl/Dimension#DomainMember'/'domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept'/+'relationship://ubmatrix.com/Xbrl/Dimension#HasHypercube'">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#DomainMemberSourceError" />
+        </Failure>
+    </Pattern>
+-->
+    <!-- 2.5.2.2.1	The target of a domain-member relationship must be a
+                    primary item declaration.
+
+                    A dimensional processor MUST raise an error
+                    xbrldte:DomainMemberTargetError if this rule is violated -->
+    <Pattern id="DomainMemberTargetError_a"
+             name="xbrldte:DomainMemberTargetError_a"
+             method="DtsXPath"
+             value="/+'relationship://ubmatrix.com/Xbrl/Dimension#DomainMember'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept)">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#DomainMemberTargetError" />
+        </Failure>
+    </Pattern>
+    <Pattern id="DomainMemberTargetError_b"
+             name="xbrldte:DomainMemberTargetError_b"
+             method="DtsXPath"
+             value="/+'relationship://ubmatrix.com/Xbrl/Dimension#DomainMember'/'domain://ubmatrix.com/Xbrl/Taxonomy/Dimension#Hypercube'">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#DomainMemberTargetError" />
+        </Failure>
+    </Pattern>
+    <Pattern id="DomainMemberTargetError_c"
+             name="xbrldte:DomainMemberTargetError_c"
+             method="DtsXPath"
+             value="/+'relationship://ubmatrix.com/Xbrl/Dimension#DomainMember'/'domain://ubmatrix.com/Xbrl/Taxonomy/Dimension#Dimension'">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#DomainMemberTargetError" />
+        </Failure>
+    </Pattern>
+    <!--
+    <Pattern id="DomainMemberTargetError_d"
+             name="xbrldte:DomainMemberTargetError_d"
+             method="DtsXPath"
+             value="/+'relationship://ubmatrix.com/Xbrl/Dimension#DomainMember'/'domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept'/+'relationship://ubmatrix.com/Xbrl/Dimension#HasHypercube'">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#DomainMemberTargetError" />
+        </Failure>
+    </Pattern>
+-->
+    <!-- 2.7.1.1	There MUST be at least one standard label of a dimensional element [Def, 11] 
+					in the schema-rooted DTS of the schema where the element is defined. 
+					A dimensional processor must raise an error [Dim Err, 18] xbrldte:NoStandardLabelError if 
+					a dimensional element [Def, 11] has no standard label in the schema-rooted DTS of the schema 
+					where the element is defined.
+
+					Typed dimensions, explicit dimensions, domains and hypercubes are all represented using element declarations. [Def, 11] 	
+					Dimensional elements are the element declarations that are the targets of has-hypercube, hypercube-dimension, 
+					dimension-domain and domain-member relationships.
+ -->
+ <!-- Currently not required by XBRL dimensions specification.
+    <Pattern id="NoStandardLabel_a"
+             name="xbrldte:NoStandardLabel_a"
+             method="DtsXPath"
+             value="/+'relationship://ubmatrix.com/Xbrl/Dimension#HasHypercube'/'domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept'[not(hasPath(/+'http://www.xbrl.org/2003/linkbase#labelArc'/'http://www.xbrl.org/2003/linkbase#label'[/-'relationship://ubmatrix.com/Xbrl/Relationship#RoleClassifies'/'http://www.xbrl.org/2003/role/label']))]">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#NoStandardLabelError" />
+        </Failure>
+    </Pattern>
+
+    <Pattern id="NoStandardLabel_b"
+             name="xbrldte:NoStandardLabel_b"
+             method="DtsXPath"
+             value="/+'relationship://ubmatrix.com/Xbrl/Dimension#HypercubeDimension'/'domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept'[not(hasPath(/+'http://www.xbrl.org/2003/linkbase#labelArc'/'http://www.xbrl.org/2003/linkbase#label'[/-'relationship://ubmatrix.com/Xbrl/Relationship#RoleClassifies'/'http://www.xbrl.org/2003/role/label']))]">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#NoStandardLabelError" />
+        </Failure>
+    </Pattern>
+    
+    <Pattern id="NoStandardLabel_c"
+             name="xbrldte:NoStandardLabel_c"
+             method="DtsXPath"
+             value="/+'relationship://ubmatrix.com/Xbrl/Dimension#DimensionDomain'/'domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept' [not(hasPath(/+'http://www.xbrl.org/2003/linkbase#labelArc'/'http://www.xbrl.org/2003/linkbase#label'[/-'relationship://ubmatrix.com/Xbrl/Relationship#RoleClassifies'/'http://www.xbrl.org/2003/role/label']))]">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#NoStandardLabelError" />
+        </Failure>
+    </Pattern>
+    
+    <Pattern id="NoStandardLabel_d"
+             name="xbrldte:NoStandardLabel_d"
+             method="DtsXPath"
+             value="/+'relationship://ubmatrix.com/Xbrl/Dimension#DomainMember'/'domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept' [not(hasPath(/+'http://www.xbrl.org/2003/linkbase#labelArc'/'http://www.xbrl.org/2003/linkbase#label'[/-'relationship://ubmatrix.com/Xbrl/Relationship#RoleClassifies'/'http://www.xbrl.org/2003/role/label']))]">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#NoStandardLabelError" />
+        </Failure>
+    </Pattern>
+
+    <Pattern id="NoStandardLabel_e"
+             name="xbrldte:NoStandardLabel_e"
+             method="DtsXPath"
+             value="/+'relationship://ubmatrix.com/Xbrl/Dimen ion#DimensionDefault'/'domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept' [not(hasPath(/+'http://www.xbrl.org/2003/linkbase#labelArc'/'http://www.xbrl.org/2003/linkbase#label'[/-'relationship://ubmatrix.com/Xbrl/Relationship#RoleClassifies'/'http://www.xbrl.org/2003/role/label']))]">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#NoStandardLabelError" />
+        </Failure>
+    </Pattern>
+-->
+
+        <!--2.8.1.1.	A dimensional processor MUST raise an error [Dim Err, 19] xbrldte:DimensionDefaultSourceError 
+					if the source of the arc is not an explicit dimension declaration [Def, 7].-->
+    <Pattern id="xbrldte_DimensionDefaultSourceError"
+             name="xbrldte:DimensionDefaultSourceError"
+             method="DtsXPath"
+             value="/-'relationship://ubmatrix.com/Xbrl/Dimension#DimensionDefault'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy/Dimension#Dimension)">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#DimensionDefaultSourceError" />
+        </Failure>
+    </Pattern>
+
+    <!-- 2.8.1.1	A dimensional processor MUST raise an error [Dim Err, 20] xbrldte:DimensionDefaultTargetError 
+				if the target of the arc is not a domain member declaration [Def, 8]. -->
+    <Pattern id="DimensionDefaultTargetError_a"
+             name="xbrldte:DimensionDefaultTargetError_a"
+             method="DtsXPath"
+             value="/+'relationship://ubmatrix.com/Xbrl/Dimension#DimensionDefault'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept)">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#DimensionDefaultTargetError" />
+        </Failure>
+    </Pattern>
+    <Pattern id="DimensionDefaultTargetError_b"
+             name="xbrldte:DimensionDefaultTargetError_b"
+             method="DtsXPath"
+             value="/+'relationship://ubmatrix.com/Xbrl/Dimension#DimensionDefault'/'domain://ubmatrix.com/Xbrl/Taxonomy/Dimension#Hypercube'">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#DimensionDefaultTargetError" />
+        </Failure>
+    </Pattern>
+    <Pattern id="DimensionDefaultTargetError_c"
+             name="xbrldte:DimensionDefaultTargetError_c"
+             method="DtsXPath"
+             value="/+'relationship://ubmatrix.com/Xbrl/Dimension#DimensionDefault'/'domain://ubmatrix.com/Xbrl/Taxonomy/Dimension#Dimension'">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#DimensionDefaultTargetError" />
+        </Failure>
+    </Pattern>
+    <!--
+    <Pattern id="DimensionDefaultTargetError_d"
+             name="xbrldte:DimensionDefaultTargetError_d"
+             method="DtsXPath"
+             value="/+'relationship://ubmatrix.com/Xbrl/Dimension#DimensionDefault'/'domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept'/+'relationship://ubmatrix.com/Xbrl/Dimension#HasHypercube'">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#DimensionDefaultTargetError" />
+        </Failure>
+    </Pattern>
+-->
+<!--
+2.8.1.1	There MUST be no more than one default member in a domain. A dimensional processor MUST raise an error [Dim Err, 21] 			
+			xbrldte:TooManyDefaultMembersError if this rule is violated.
+-->
+    <Pattern id="TooManyDefaultMembersError"
+             name="xbrldte:TooManyDefaultMembersError"
+             method="DtsXPath"
+             value="/'domain://ubmatrix.com/Xbrl/Taxonomy/Dimension#Hypercube'test_xbrldie_toomanydefaultdimensionvalues()">
+        <Failure severity="error">
+            <Action method="CreateErrorMemo" uri="&xdtSpecUri;#TooManyDefaultMembersError" />
+        </Failure>
+    </Pattern>
+</PatternSet>
+
+<!--
+The contents of this file are subject to the End-User Software License Agreement (the "License"). You may not use this 
+file except in compliance with the License. A current copy of the License is available by contacting product support.
+
+Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights and limitations under the License.
+-->

@@ -1,0 +1,87 @@
+<xbrl-contenedor-formato xbrl:rol-uri="{{xbrlRol.Uri}}" orientacion="landscape" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+    <div oc-lazy-load="abaxXBRLEventosRelevantesModule">
+        <div xbrl:eventos-relevantes>
+
+            <table class="tablaAnchoFijo" cellspacing="5">
+                <tbody>
+                    <tr>
+                        <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="rel_ev_RelevantEventReportAbstract" xbrl:nivel-indentacion="0"></b></td>
+                        <td style="text-align:left; width:50%; height:40px;">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="rel_ev_Ticker" xbrl:nivel-indentacion="1"></b></td>
+                        <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="rel_ev_Ticker_2b98a49c-aa87-4f26-b9c8-a09228509047"></xbrl:campo-captura></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="rel_ev_Date" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></b></td>
+                        <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="rel_ev_Date_f1bac7d6-e2fa-47c5-b5be-8e286b35a037"></xbrl:campo-captura></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="rel_ev_BusinessName" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></b></td>
+                        <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="rel_ev_BusinessName_e6c21fc6-75e0-4343-92f8-c8281c284df4"></xbrl:campo-captura></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="rel_ev_Place" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></b></td>
+                        <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="rel_ev_Place_f01cba99-df21-4925-86fa-74575bf57b03"></xbrl:campo-captura></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="rel_ev_Subject" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></b></td>
+                        <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="rel_ev_Subject_a909871e-6fb0-4d35-9018-2131affc7b3d"></xbrl:campo-captura></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="rel_ev_AttachedDocumentPdf" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></b></td>
+                        <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="rel_ev_AttachedDocumentPdf_20e6fae3-1aaa-433a-8744-aa9f5ce7f34d" xbrl:ultimo="true" xbrl:extensiones="pdf"></xbrl:campo-captura></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <br />                   
+                            <b>    <xbrl:etiqueta-concepto xbrl:id-concepto="rel_ev_RelevantEventTypesAxis" xbrl:nivel-indentacion="0" />:</b>
+                            <br />
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <ui-select ng-model="tipoEventoSeleccionado.elemento" theme="select2" title="Tipo de Evento Relevante"
+                                       style="min-width: 100%;max-width:100%" ng-change="onChangeTipoEventoPrincipal()" ng-disabled="documentoInstancia.BloquearCamposCaptura">
+                                <ui-select-match placeholder="Elija por favor un tipo de evento relevante" allow-clear="false">
+                                    {{$select.selected.label}}
+                                </ui-select-match>
+                                <ui-select-choices group-by="'grupo'" repeat="opcion in tiposEventoPrincipales | filter: $select.search" refresh="refresh($select.search, $select)" refresh-delay="1000">
+                                    <div ng-bind-html="opcion.label | highlight: $select.search"></div>
+                                </ui-select-choices>
+                            </ui-select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            
+                                <div id="detalleTipoEvento" style="display:none">
+                                    <br />
+                                    <b>Tipo de evento relevante seleccionado:</b> <br /><xbrl:etiqueta-concepto xbrl:id-concepto="" xbrl:nivel-indentacion="1" >
+                                </div>
+                                
+                           
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="rel_ev_RelevantEventContent" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                            <div class="bloqueTexto" id="contenedorCampoContenidoEvento">
+                                <xbrl:campo-captura xbrl:id-concepto="rel_ev_RelevantEventContent" xbrl:id-contexto="" xbrl:valor-default="" xbrl:crear-hecho="true" xbrl:crear-hecho-dblclick="false"></xbrl:campo-captura>
+                            </div>
+
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            
+
+        </div>
+    </div>
+</xbrl-contenedor-formato>

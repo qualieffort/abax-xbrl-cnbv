@@ -1,0 +1,13 @@
+﻿<div style="text-align:left; padding-right:20px; min-height:25px;" ng-if="!editando">
+    <span class="xbrl-visor"></span>
+</div>
+<div style="text-align:right; padding-right:40px;" ng-if="editando">
+    <div class="input-group">
+        <span class="input-group-btn">
+            <input type="text"
+                   class="form-control"
+                   ng-model="valorTemporal.valor"
+                   ng-blur="manejarBlur()" />
+        </span>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+<xbrl-contenedor-formato xbrl:rol-uri="{{::xbrlRol.Uri}}" orientacion="portrait" xbrl:ocultar-titulo-rol="true" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+    <h3 style="text-align:center;"><b></b></h3>
+    <table style="width:100%" cellspacing="5">
+        <tbody>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td style="text-align:left;width:200px;"><b><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_ClaveCotizacion" xbrl:nivel-indentacion="1"></b><b>:</b></td>
+                <td style="text-align:left;width:250px;"><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aa6a0bccf-914c-4874-8710-2d138d967d89"></xbrl:campo-captura></td>
+                <td style="text-align:right;"><b><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_PeriodCoveredByFinancialStatements" xbrl:nivel-indentacion="1"></b><b>:</b></td>
+                <td style="text-align:left;width:250px;"><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A189a673e-e7f1-42ae-a51a-7b2719e2c1f6"></xbrl:campo-captura></td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td style="text-align:right;" colspan="3"><b><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_DateOfEndOfReportingPeriod" xbrl:nivel-indentacion="1"></b><b>:</b></td>
+                <td style="text-align:left;" colspan="1"><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A9ead3564-238f-4b87-a242-89279a72e488"></xbrl:campo-captura></td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td colspan="3"><span><b><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_NameOfReportingEntityOrOtherMeansOfIdentification" xbrl:nivel-indentacion="1"></b><b>:</b></span></td>
+                <td colspan="1"><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ac8c9bdf9-fbe7-4e86-82bc-d10661a038d0"></xbrl:campo-captura></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <h4>{{xbrlRol.Nombre}}</h4>
+    <br>
+    <table style="width:100%;" cellspacing="5">
+        <tbody>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td style="text-align:left; width:70%;"><label><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_DescriptionOfPresentationCurrency" xbrl:nivel-indentacion="1"></label>:</td>
+                <td style="text-align:left; width:30%;"><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ab5adfb5e-aa69-4671-9d3d-1398e8ccbcf0"></xbrl:campo-captura></td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td style="text-align:left; width:70%;"><label> <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_LevelOfRoundingUsedInFinancialStatements" xbrl:nivel-indentacion="1"></label>:</td>
+                <td style="text-align:left; width:30%;"><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A6e62b59f-85db-4900-b38c-3e7b856c0909"></xbrl:campo-captura></td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td style="text-align:left; width:70%;"><label><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_Dictaminado" xbrl:nivel-indentacion="1"></label>:</td>
+                <td style="text-align:left; width:30%;"><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Af2d19254-0881-4f72-976b-ea7223c15d26"></xbrl:campo-captura></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="form-group">
+        <table style="width:100%">
+            <tbody>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                    <td>
+                        <label><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_DisclosureOfGeneralInformationAboutFinancialStatementsExplanatory" xbrl:nivel-indentacion="1"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="celdaVacia">
+                        <br />
+                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ab1133c4c-1fe1-4e44-96a0-302d0ddc5d4d"></xbrl:campo-captura>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="form-group">
+        <table style="width:100%">
+            <tbody>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                    <td>
+                        <label><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_ExplanationOfChangeInNameOfReportingEntityOrOtherMeansOfIdentificationFromEndOfPrecedingReportingPeriod" xbrl:nivel-indentacion="1"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="celdaVacia">
+                        <br />
+                        <br />
+                        <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A6737ad5c-2a28-4fdf-a01a-cd8610c0bd0c" xbrl:ultimo="true"></xbrl:campo-captura>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</xbrl-contenedor-formato>

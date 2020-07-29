@@ -1,0 +1,5 @@
+db.createCollection("fs.chunks");
+db.createCollection("fs.files");
+
+db.getCollection("fs.chunks").createIndex({"files_id":1, "n":1});
+db.getCollection("fs.files").createIndex({"filename":1, "uploadDate":1});

@@ -1,0 +1,64 @@
+{
+	"ContextosPlantillaPorId" : {
+  "ctx": {
+    "Id": "ctx",
+    "Periodo": {
+      "Tipo": 1,
+      "FechaInstante": "#fecha_2014_12_31",
+      "FechaInicio": "",
+      "FechaFin": ""
+    },
+    "Entidad": {
+      "Id": "#nombreEntidad",
+      "EsquemaId": "#esquemaEntidad",
+      "ContieneInformacionDimensional": false,
+      "Segmento": null,
+      "ValoresDimension": []
+    },
+    "ContieneInformacionDimensional": false,
+    "Escenario": null,
+    "ValoresDimension": []
+  }
+},
+	
+	"UnidadesPlantillaPorId" : {},
+            
+	"HechosPlantillaPorId" : {
+  "ar_pros_ReferenceIncorporationAnnex_d0bb0c70-603f-4471-ae14-b8b4b2a0705e": {
+    "Id": "ar_pros_ReferenceIncorporationAnnex_d0bb0c70-603f-4471-ae14-b8b4b2a0705e",
+    "IdConcepto": "ar_pros_ReferenceIncorporationAnnex",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_FinancialStatementsAuditedPdf_a9fd30f0-19ad-4ecf-a609-f46def7d57d3": {
+    "Id": "ar_pros_FinancialStatementsAuditedPdf_a9fd30f0-19ad-4ecf-a609-f46def7d57d3",
+    "IdConcepto": "ar_pros_FinancialStatementsAuditedPdf",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_AdditionalInformationAnnexPdf_d59c305e-0aa0-4c80-8575-16a824d171f3": {
+    "Id": "ar_pros_AdditionalInformationAnnexPdf_d59c305e-0aa0-4c80-8575-16a824d171f3",
+    "IdConcepto": "ar_pros_AdditionalInformationAnnexPdf",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  }
+}
+}

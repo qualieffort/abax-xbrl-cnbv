@@ -1,0 +1,122 @@
+﻿<section class="panel panel-default">
+    <header class="panel-heading bg-light">
+        {{'EDITOR_XBRL_COMPARTIR_USUARIOS' | translate}}
+    </header>
+    <div class="row wrapper">
+        <div class="col-sm-8">&nbsp;</div>
+        <div class="col-sm-4">&nbsp;</div>
+    </div>
+    <section class="row m-b-md">
+        <div class="col-sm-4">
+            <section class="panel panel-default" style="min-height: 400px; height: 400px; overflow-y: auto; overflow-x:hidden;">
+                <header class="panel-heading">
+                    {{'ETIQUETA_USUARIOS_POR_ASIGNAR' | translate}}
+                </header>
+                <div class="row wrapper">
+                    <div class="col-sm-4">&nbsp;</div>
+                    <div class="col-sm-8">
+                        <div class="input-group">
+                            <input type="text" placeholder="{{'PLACE_HOLDER_BUSCAR_USUARIO' | translate}}" class="input-sm form-control" id="buscarNoAsignados" ng-model="buscarNoAsignados" />
+                            <span class="input-group-btn"><button class="btn btn-sm btn-default" type="button">{{'ETIQUETA_IR' | translate}}!</button></span>
+                        </div>
+                    </div>
+                </div>
+                <table id="tableNoAsignados" class="table table-striped b-t b-light">
+                    <thead>
+                        <tr>
+                            <th style="text-align: center;">
+                                <label class="checkbox m-n i-checks">
+                                    <input type="checkbox" /><i></i>
+                                </label>
+                            </th>
+                            <th>{{'ETIQUETA_NOMBRE_COMPLETO' | translate}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr ng-repeat="usuarioNoAsignado in usuariosNoAsignados | filter:buscarNoAsignados">
+                            <td style="text-align: center;">
+                                <label class="checkbox m-n i-checks">
+                                    <input type="checkbox" ng-model="usuarioNoAsignado.Seleccionado" /><i></i>
+                                </label>
+                            </td>
+                            <td>{{usuarioNoAsignado.NombreCompleto}}</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </section>
+        </div>
+        <div class="col-sm-2">
+            <div style="text-align: center; margin-top: 155px;">
+                <a href="#" class="btn btn-rounded btn-sm btn-icon btn-default" ng-click="quitarUsuariosAsignados()"><i class="fa fa-angle-double-left"></i></a>
+                <br />
+                <br />
+                <a href="#" class="btn btn-rounded btn-sm btn-icon btn-default" ng-click="asignarUsuarios()"><i class="fa fa-angle-double-right"></i></a>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <section class="panel panel-default" style="min-height: 400px; height: 400px; overflow-y: auto; overflow-x:hidden;">
+                <header class="panel-heading">
+                    {{'ETIQUETA_USUARIOS_ASIGNADOS' | translate}}
+                </header>
+                <div class="row wrapper">
+                    <div class="col-sm-4">&nbsp;</div>
+                    <div class="col-sm-8">
+                        <div class="input-group">
+                            <input type="text" placeholder="{{'PLACE_HOLDER_BUSCAR_USUARIO' | translate}}" class="input-sm form-control" id="buscarAsignados" ng-model="buscarAsignados" />
+                                <span class="input-group-btn"><button class="btn btn-sm btn-default" type="button">{{'ETIQUETA_IR' | translate}}!</button></span>
+                        </div>
+                    </div>
+                </div>
+                <table id="tableAsignados" class="table table-striped b-t b-light">
+                    <thead>
+                        <tr>
+                            <th style="text-align: center;">
+                                <label class="checkbox m-n i-checks">
+                                    <input type="checkbox" /><i></i>
+                                </label>
+                            </th>
+                            <th>{{'ETIQUETA_NOMBRE_COMPLETO' | translate}}</th>
+                            <th>{{'ETIQUETA_ES_PROPIETARIO'  | translate}}</th>
+                            <th>{{'ETIQUETA_PUEDE_MODIFICAR' | translate}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="usuarioAsignado in usuariosAsignados | filter:buscarAsignados">
+                            <td style="text-align: center;">
+                                <label class="checkbox m-n i-checks">
+                                    <input type="checkbox" ng-model="usuarioAsignado.Seleccionado"><i></i>
+                                </label>
+                            </td>
+                            <td>{{usuarioAsignado.NombreCompleto}}</td>
+                            <td style="text-align: center;">
+                                <label class="checkbox m-n i-checks">
+                                    <input type="checkbox" ng-model="usuarioAsignado.EsDueno"><i></i>
+                                </label>
+                            </td>
+                            <td style="text-align: center;">
+                                <label class="checkbox m-n i-checks">
+                                    <input type="checkbox" ng-model="usuarioAsignado.PuedeEscribir"><i></i>
+                                </label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </section>
+
+    <footer class="panel-footer ">
+        <div class="row">
+            <div class="col-sm-4 hidden-xs">
+            </div>
+            <div class="col-sm-4 text-center">
+            </div>
+            <div class="col-sm-4 text-right text-center-xs">
+                <a id="btnCerrarAsignarUsuarios" href="javascript:void(0);" class="btn btn-default" ng-click="xbrlFnListaActualizada()">Cerrar</a>
+                <input type="button" value="{{'TITULO_ASIGNAR_USUARIOS' | translate}}" class="btn btn-primary" ng-click="guardarCambios()" />
+            </div>
+        </div>
+    </footer>
+</section>

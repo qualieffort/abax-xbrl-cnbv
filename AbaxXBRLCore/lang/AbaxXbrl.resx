@@ -1,0 +1,744 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Aplicar" xml:space="preserve">
+    <value>Aplicar</value>
+  </data>
+  <data name="Borrar" xml:space="preserve">
+    <value>Borrar</value>
+  </data>
+  <data name="BorrarRol" xml:space="preserve">
+    <value>¿Esta seguro de borrar el rol seleccionado?</value>
+  </data>
+  <data name="BotonCancelar" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="BotonRegistrar" xml:space="preserve">
+    <value>Registrar</value>
+  </data>
+  <data name="BotonSeleccionar" xml:space="preserve">
+    <value>Seleccionar</value>
+  </data>
+  <data name="Buscar" xml:space="preserve">
+    <value>Buscar</value>
+  </data>
+  <data name="CambiarPassword" xml:space="preserve">
+    <value>Cambiar Contraseña</value>
+  </data>
+  <data name="ConstraseñaPassword" xml:space="preserve">
+    <value>La constraseña y/o el password son incorrectos</value>
+  </data>
+  <data name="ContraselaAnteriorNoCoincide" xml:space="preserve">
+    <value>MENSAJE_WARNING_CONTRASEÑA_ANTERIOR</value>
+  </data>
+  <data name="ContraseñaNuevaFormato" xml:space="preserve">
+    <value>MENSAJE_WARNING_FORMATO_CONTRASEÑA </value>
+  </data>
+  <data name="ContraseñaUsada" xml:space="preserve">
+    <value>MENSAJE_WARNING_CONTRASEÑA_USADA</value>
+  </data>
+  <data name="CrearDocumento" xml:space="preserve">
+    <value>Crear Documento XBRL</value>
+  </data>
+  <data name="De" xml:space="preserve">
+    <value>de</value>
+  </data>
+  <data name="DescripcionRolEtiqueta" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="DescripcionRolTabla" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="DescripcionRolVacia" xml:space="preserve">
+    <value>La descripcion del rol es requerida</value>
+  </data>
+  <data name="DomicilioFiscal" xml:space="preserve">
+    <value>Domicilio Fiscal</value>
+  </data>
+  <data name="Editar" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="Eliminar" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Correo Electrónico</value>
+  </data>
+  <data name="EmailReq" xml:space="preserve">
+    <value>MENSAJE_ERROR_AUTENTICAR_USUARIO_SIN_CORREO</value>
+  </data>
+  <data name="Empresas" xml:space="preserve">
+    <value>Empresas</value>
+  </data>
+  <data name="EnvioPass" xml:space="preserve">
+    <value>Enviar Contraseña</value>
+  </data>
+  <data name="EnvioPassOlvidadoError" xml:space="preserve">
+    <value>MENSAJE_ERROR_USUARIO_NO_REGISTRADO</value>
+  </data>
+  <data name="EnvioPassOlvidadoExito" xml:space="preserve">
+    <value>MENSAJE_EXITO_ENVIO_CONTRASEÑA</value>
+  </data>
+  <data name="Exportar" xml:space="preserve">
+    <value>Exportar a Excel</value>
+  </data>
+  <data name="Facultades" xml:space="preserve">
+    <value>Facultades</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="Importar" xml:space="preserve">
+    <value>Importar</value>
+  </data>
+  <data name="InformacionRequerida" xml:space="preserve">
+    <value>Informacion Requerida</value>
+  </data>
+  <data name="IniciarSesion" xml:space="preserve">
+    <value>Iniciar Sesión</value>
+  </data>
+  <data name="Ir" xml:space="preserve">
+    <value>Ir</value>
+  </data>
+  <data name="LabelAccionBitacora" xml:space="preserve">
+    <value>Acción</value>
+  </data>
+  <data name="LabelEmisoraBitacora" xml:space="preserve">
+    <value>Emisora</value>
+  </data>
+  <data name="LabelFechaBitacora" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="LabelRegistroBitacora" xml:space="preserve">
+    <value>Registro</value>
+  </data>
+  <data name="LabelUsuarioBitacora" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="LabeModuloBitacora" xml:space="preserve">
+    <value>Módulo</value>
+  </data>
+  <data name="ListadoEmpresas" xml:space="preserve">
+    <value>Listado de Empresas</value>
+  </data>
+  <data name="ListadoRoles" xml:space="preserve">
+    <value>Listado de Roles</value>
+  </data>
+  <data name="NombreCorto" xml:space="preserve">
+    <value>Nombre corto</value>
+  </data>
+  <data name="NombreRolEtiqueta" xml:space="preserve">
+    <value>Nombre del Rol</value>
+  </data>
+  <data name="NombreRolVacia" xml:space="preserve">
+    <value>El nombre del rol es requerido</value>
+  </data>
+  <data name="OlvidoContraseña" xml:space="preserve">
+    <value>¿Olvidó su Password?</value>
+  </data>
+  <data name="Pagina" xml:space="preserve">
+    <value>Pagina</value>
+  </data>
+  <data name="Para" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PassReq" xml:space="preserve">
+    <value>MENSAJE_ERROR_AUTENTICAR_SIN_CONTRASENA</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Contraseña</value>
+  </data>
+  <data name="PasswordAnterior" xml:space="preserve">
+    <value>Contraseña Anterior</value>
+  </data>
+  <data name="PasswordConfirmar" xml:space="preserve">
+    <value>Confirmar Contraseña</value>
+  </data>
+  <data name="PasswordNuevo" xml:space="preserve">
+    <value>Nueva Constraseña</value>
+  </data>
+  <data name="RazonSocial" xml:space="preserve">
+    <value>Razón social </value>
+  </data>
+  <data name="RegistrarNuevaEmpresa" xml:space="preserve">
+    <value>Registrar Nueva Empresa</value>
+  </data>
+  <data name="RegistrarNuevRol" xml:space="preserve">
+    <value>Registrar Nuevo Rol</value>
+  </data>
+  <data name="RFC" xml:space="preserve">
+    <value>RFC</value>
+  </data>
+  <data name="RolBorrado" xml:space="preserve">
+    <value>Rol Borrado Correctamente</value>
+  </data>
+  <data name="RolErrorBorrar" xml:space="preserve">
+    <value>Error al Borrar el Rol</value>
+  </data>
+  <data name="RolErrorGuardar" xml:space="preserve">
+    <value>Error al Guardar el Rol</value>
+  </data>
+  <data name="RolGuardado" xml:space="preserve">
+    <value>Rol Guardado Correctamente</value>
+  </data>
+  <data name="RolTabla" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="SinResultados" xml:space="preserve">
+    <value>No se han encontrado resultados</value>
+  </data>
+  <data name="SubTituloEditarRol" xml:space="preserve">
+    <value>Editar Rol</value>
+  </data>
+  <data name="SubTituloRegistrarRol" xml:space="preserve">
+    <value>Registrar Rol</value>
+  </data>
+  <data name="TituloBitacoraAuditoria" xml:space="preserve">
+    <value>Bitácora de Auditoria</value>
+  </data>
+  <data name="TituloCatalogoEmpresa" xml:space="preserve">
+    <value>Catálogo de Empresas</value>
+  </data>
+  <data name="TituloCatalogoRol" xml:space="preserve">
+    <value>Catálogo de Roles</value>
+  </data>
+  <data name="TituloConsultaBitacora" xml:space="preserve">
+    <value>Historial de Actividad</value>
+  </data>
+  <data name="TituloDocumentosInstancia" xml:space="preserve">
+    <value>Documentos Instancia XBRL</value>
+  </data>
+  <data name="TituloEditar" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="TituloEliminar" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="TituloEmisora" xml:space="preserve">
+    <value>Emisora</value>
+  </data>
+  <data name="TituloEstadoDoc" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="TituloFechaCreacion" xml:space="preserve">
+    <value>Fecha de Creación</value>
+  </data>
+  <data name="TituloFechaUltimaMod" xml:space="preserve">
+    <value>Fecha Última Modificación</value>
+  </data>
+  <data name="TituloListadoDocumentosInstancia" xml:space="preserve">
+    <value>Listado de Documentos de Instancia</value>
+  </data>
+  <data name="TituloNombreDoc" xml:space="preserve">
+    <value>Nombre del Documento</value>
+  </data>
+  <data name="TituloRegistrarEmpresa" xml:space="preserve">
+    <value>Registrar Nueva Empresa</value>
+  </data>
+  <data name="TituloRegistrarRol" xml:space="preserve">
+    <value>Catalogo de Roles</value>
+  </data>
+  <data name="TituloSeccionDocumentosCompartidos" xml:space="preserve">
+    <value>Documentos Compartidos</value>
+  </data>
+  <data name="TituloSeccionMisDocumentos" xml:space="preserve">
+    <value>Mis Documentos</value>
+  </data>
+  <data name="TituloTaxonomia" xml:space="preserve">
+    <value>Taxonomía</value>
+  </data>
+  <data name="TituloUsuarioUltimaMod" xml:space="preserve">
+    <value>Usuario Última Modificación</value>
+  </data>
+  <data name="UsuarioBloqueado" xml:space="preserve">
+    <value>MENSAJE_EXITO_USUARIO_BLOQUEADO</value>
+  </data>
+  <data name="UsuarioDesactivado" xml:space="preserve">
+    <value>MENSAJE_EXITO_USUARIO_DESACTIVADO</value>
+  </data>
+  <data name="UsuarioNoEncontrado" xml:space="preserve">
+    <value>MENSAJE_WARNING_USUARIO_NO_ENCONTRADO</value>
+  </data>
+  <data name="EmpresaBorrada" xml:space="preserve">
+    <value>Empresa Borrada Correctamente</value>
+  </data>
+  <data name="EmpresaErrorBorrar" xml:space="preserve">
+    <value>Error al Borrar la Empresa</value>
+  </data>
+  <data name="EmpresaErrorGuardar" xml:space="preserve">
+    <value>Error al Guardar la Empresa</value>
+  </data>
+  <data name="EmpresaGuardado" xml:space="preserve">
+    <value>Empresa Guardada Correctamente</value>
+  </data>
+  <data name="NombreCortoEmpresaVacio" xml:space="preserve">
+    <value>El nombre corto de la empresa es vacio</value>
+  </data>
+  <data name="RazonSocialVacio" xml:space="preserve">
+    <value>La razon social es requerida</value>
+  </data>
+  <data name="RFCVacio" xml:space="preserve">
+    <value>RFC requerido</value>
+  </data>
+  <data name="Activo" xml:space="preserve">
+    <value>Activo</value>
+  </data>
+  <data name="ApellidoMaterno" xml:space="preserve">
+    <value>Apellido Materno</value>
+  </data>
+  <data name="ApellidoPaterno" xml:space="preserve">
+    <value>Apellido Paterno</value>
+  </data>
+  <data name="AsignarEmisoras" xml:space="preserve">
+    <value>Asignar Emisoras</value>
+  </data>
+  <data name="AsignarRoles" xml:space="preserve">
+    <value>Asignar Roles.</value>
+  </data>
+  <data name="Bitacora" xml:space="preserve">
+    <value>Bitácora</value>
+  </data>
+  <data name="Bloquear" xml:space="preserve">
+    <value>Bloquear</value>
+  </data>
+  <data name="Correo" xml:space="preserve">
+    <value>Correo Electrónico</value>
+  </data>
+  <data name="Desbloquear" xml:space="preserve">
+    <value>Desbloquear</value>
+  </data>
+  <data name="DirectorioUsuarios" xml:space="preserve">
+    <value>Directorio de Usuarios</value>
+  </data>
+  <data name="Inactivo" xml:space="preserve">
+    <value>Inactivo</value>
+  </data>
+  <data name="ListadoUsuarios" xml:space="preserve">
+    <value>Listado de Usuarios</value>
+  </data>
+  <data name="Nombre" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="Puesto" xml:space="preserve">
+    <value>Puesto</value>
+  </data>
+  <data name="RegistrarUsuario" xml:space="preserve">
+    <value>Registrar Usuario</value>
+  </data>
+  <data name="EditarUsuario" xml:space="preserve">
+    <value>Editar Usuario</value>
+  </data>
+  <data name="UltimoAcceso" xml:space="preserve">
+    <value>Ultimo Acceso</value>
+  </data>
+  <data name="Usuarios" xml:space="preserve">
+    <value>Usuarios</value>
+  </data>
+  <data name="Activar" xml:space="preserve">
+    <value>Activar</value>
+  </data>
+  <data name="ApellidoMaternoVacio" xml:space="preserve">
+    <value>El Apellido Materno del usuario es requerido</value>
+  </data>
+  <data name="ApellidoPaternoVacio" xml:space="preserve">
+    <value>El Apellido Paterno del usuario es requerido</value>
+  </data>
+  <data name="BorrarUsuario" xml:space="preserve">
+    <value>MENSAJE_EXITO_USUARIO_BORRADO</value>
+  </data>
+  <data name="CorreoElectronicoVacio" xml:space="preserve">
+    <value>El Correo Eletrónico del usuario es requerido</value>
+  </data>
+  <data name="CorreoSinFormato" xml:space="preserve">
+    <value>El Correo no cumple con el formato deseado</value>
+  </data>
+  <data name="ErrorUsuarioBorrardo" xml:space="preserve">
+    <value>MENSAJE_ERROR_BORRAR_USUARIO</value>
+  </data>
+  <data name="ErrorUsuarioGuardado" xml:space="preserve">
+    <value>MENSAJE_ERROR_USUARIO_GUARDADO</value>
+  </data>
+  <data name="ErrorUsuarioOperacion" xml:space="preserve">
+    <value>MENSAJE_ERROR_USUARIO_OPERACION</value>
+  </data>
+  <data name="GenerarNuevaContrasena" xml:space="preserve">
+    <value>Generar Nueva Contraseña</value>
+  </data>
+  <data name="LabelApellidoMaterno" xml:space="preserve">
+    <value>Apellido Materno</value>
+  </data>
+  <data name="LabelApellidoPaterno" xml:space="preserve">
+    <value>Apellido Paterno</value>
+  </data>
+  <data name="LabelCorreoElectronico" xml:space="preserve">
+    <value>Correo Electrónico</value>
+  </data>
+  <data name="LabelPuesto" xml:space="preserve">
+    <value>Puesto</value>
+  </data>
+  <data name="Nombres" xml:space="preserve">
+    <value>Nombre(s)</value>
+  </data>
+  <data name="NombreVacio" xml:space="preserve">
+    <value>El nombre del usuario es requerido</value>
+  </data>
+  <data name="UsuarioActivo" xml:space="preserve">
+    <value>MENSAJE_EXITO_USUARIO_ACTIVADO</value>
+  </data>
+  <data name="UsuarioBloquead" xml:space="preserve">
+    <value>Usuario Bloqueado</value>
+  </data>
+  <data name="UsuarioBorrado" xml:space="preserve">
+    <value>Usuario Borrado Correctamente</value>
+  </data>
+  <data name="UsuarioDesbloqueado" xml:space="preserve">
+    <value>MENSAJE_EXITO_USUARIO_DESBLOQUEADO</value>
+  </data>
+  <data name="UsuarioDescativado" xml:space="preserve">
+    <value>UsuarioDesctivado</value>
+  </data>
+  <data name="UsuarioGuardado" xml:space="preserve">
+    <value>MENSAJE_EXITO_USUARIO_GUARDADO</value>
+  </data>
+  <data name="RegistrarNuevaGrupo" xml:space="preserve">
+    <value>Registrar Grupo</value>
+  </data>
+  <data name="CatalogoDeGrupos" xml:space="preserve">
+    <value>Catálogo de Grupos</value>
+  </data>
+  <data name="ListadoDeGrupos" xml:space="preserve">
+    <value>Listado de Grupos</value>
+  </data>
+  <data name="RegistrarNuevoGrupo" xml:space="preserve">
+    <value>Registrar nuevo Grupo</value>
+  </data>
+  <data name="NombreGrupo" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="DescripcionGrupo" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="TituloEditarEmpresa" xml:space="preserve">
+    <value>Editar Empresa</value>
+  </data>
+  <data name="BotonEditar" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="RolesGrupo" xml:space="preserve">
+    <value>Roles</value>
+  </data>
+  <data name="EditarGrupo" xml:space="preserve">
+    <value>Editar Grupo</value>
+  </data>
+  <data name="NombreGrupoVacio" xml:space="preserve">
+    <value>El nombre del grupo es requerido</value>
+  </data>
+  <data name="DescripcionGrupoVacio" xml:space="preserve">
+    <value>La descripción del Grupo es requerido</value>
+  </data>
+  <data name="Guardar" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="ContrasenaGenerada" xml:space="preserve">
+    <value>Se ha generado y enviado una nueva contraseña</value>
+  </data>
+  <data name="ErrorGenerarContrasena" xml:space="preserve">
+    <value>Error al Generara la Contraseña</value>
+  </data>
+  <data name="Elegir" xml:space="preserve">
+    <value>Elegir</value>
+  </data>
+  <data name="Emisora" xml:space="preserve">
+    <value>Emisora</value>
+  </data>
+  <data name="Regresar" xml:space="preserve">
+    <value>Regresar</value>
+  </data>
+  <data name="SeleccionarEmisora" xml:space="preserve">
+    <value>Seleccione una Emisora...</value>
+  </data>
+  <data name="SeleccioneEmisoraValida" xml:space="preserve">
+    <value>Seleccione una Emisora Válida</value>
+  </data>
+  <data name="AsignarEmisorasUsuario" xml:space="preserve">
+    <value>Asignar Emisoras a Usuario</value>
+  </data>
+  <data name="Cancelar" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="EliminarGrupo" xml:space="preserve">
+    <value>Eliminar Grupo</value>
+  </data>
+  <data name="EliminarRol" xml:space="preserve">
+    <value>Eliminar Rol</value>
+  </data>
+  <data name="EliminarUsuario" xml:space="preserve">
+    <value>Eliminar Usuario</value>
+  </data>
+  <data name="GruposRegistrados" xml:space="preserve">
+    <value>Divisiones registradas en el catálogo</value>
+  </data>
+  <data name="PreguntaEliminar" xml:space="preserve">
+    <value>Está seguro que desea eliminar este grupo del usuario?</value>
+  </data>
+  <data name="PreguntaEliminarRol" xml:space="preserve">
+    <value>Está seguro que desea eliminar este rol?</value>
+  </data>
+  <data name="PreguntaEliminarUsuario" xml:space="preserve">
+    <value>Está seguro que desea eliminar este Usuario?</value>
+  </data>
+  <data name="EmisorasAsignadasCorrectamente" xml:space="preserve">
+    <value>Emisoras Asignadas Correctamente.</value>
+  </data>
+  <data name="ErrorEmisorasAsignadas" xml:space="preserve">
+    <value>Error al asignar las emisoras.</value>
+  </data>
+  <data name="EmisorasAsignadas" xml:space="preserve">
+    <value>Emisoras Asignadas.</value>
+  </data>
+  <data name="EmisorasPorASignar" xml:space="preserve">
+    <value>Emisoras Por Asignar.</value>
+  </data>
+  <data name="RolesSeleccionados" xml:space="preserve">
+    <value>Roles Seleccionados.</value>
+  </data>
+  <data name="RolesNoSeleccionados" xml:space="preserve">
+    <value>Roles No Seleccionados.</value>
+  </data>
+  <data name="RolesAsignadosCorrectamente" xml:space="preserve">
+    <value>Roles Asignados Correctamente.</value>
+  </data>
+  <data name="ErrorRolesAsignados" xml:space="preserve">
+    <value>Error al asignar los roles.</value>
+  </data>
+  <data name="FacultadesAsignadosCorrectamente" xml:space="preserve">
+    <value>Facultades Asignados Correctamente.</value>
+  </data>
+  <data name="ErrorFacultadesAsignados" xml:space="preserve">
+    <value>Error al asignar las facultades.</value>
+  </data>
+  <data name="AsignarFacultadesRoles" xml:space="preserve">
+    <value>Asignar Facultades a Roles</value>
+  </data>
+  <data name="AsignarFacultades" xml:space="preserve">
+    <value>Asignar Facultades</value>
+  </data>
+  <data name="FacultadesAsignadas" xml:space="preserve">
+    <value>Facultades Asignadas</value>
+  </data>
+  <data name="FacultadesNoAsignadas" xml:space="preserve">
+    <value>Facultades No Asignadas</value>
+  </data>
+  <data name="ConfirmarEliminarDocumento" xml:space="preserve">
+    <value>¿Está seguro que desea eliminar el Documento de Instancia?</value>
+  </data>
+  <data name="OpcionTodas" xml:space="preserve">
+    <value>Todas</value>
+  </data>
+  <data name="EliminarEmpresa" xml:space="preserve">
+    <value>Eliminar Empresa</value>
+  </data>
+  <data name="PreguntaEliminarEmpresa" xml:space="preserve">
+    <value>Está seguro que desea eliminar esta empresa?</value>
+  </data>
+  <data name="Usuario" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="RolesAsingados" xml:space="preserve">
+    <value>Roles Actualmente Asignados.</value>
+  </data>
+  <data name="RolesDisponibles" xml:space="preserve">
+    <value>Roles Disponibles.</value>
+  </data>
+  <data name="RfcSinFormato" xml:space="preserve">
+    <value>El RFC no cuenta con un formato válido</value>
+  </data>
+  <data name="UsuarioConCorreoExistente" xml:space="preserve">
+    <value>Ya existe un usuario registrado con el correo proporcionado</value>
+  </data>
+  <data name="BorrarGrupo" xml:space="preserve">
+    <value>Grupo Borrado Correctamente</value>
+  </data>
+  <data name="ErroBorrarGrupo" xml:space="preserve">
+    <value>Error al Borrar el Grupo</value>
+  </data>
+  <data name="ErrorGrupoGuardado" xml:space="preserve">
+    <value>Error al Guardar el Grupo</value>
+  </data>
+  <data name="GrupoGuardado" xml:space="preserve">
+    <value>Grupo Guardado Correctamente</value>
+  </data>
+  <data name="Mostrando" xml:space="preserve">
+    <value>Mostrando</value>
+  </data>
+  <data name="LabelGrupo" xml:space="preserve">
+    <value>Grupo</value>
+  </data>
+  <data name="RolesGruposAsignados" xml:space="preserve">
+    <value>Roles Asignados al Grupo Correctamente</value>
+  </data>
+  <data name="ErrorRolesGruposAsignados" xml:space="preserve">
+    <value>Error al Asignar Roles al Grupo</value>
+  </data>
+  <data name="AsignarRolesGrupo" xml:space="preserve">
+    <value>Asignar Roles a Grupo</value>
+  </data>
+  <data name="Facultad" xml:space="preserve">
+    <value>Facultad</value>
+  </data>
+  <data name="Rol" xml:space="preserve">
+    <value>Rol</value>
+  </data>
+  <data name="AsignarUsuariosGrupo" xml:space="preserve">
+    <value>Asignar Usuarios a Grupo</value>
+  </data>
+  <data name="UsuariosAsigados" xml:space="preserve">
+    <value>Usuarios Asignados.</value>
+  </data>
+  <data name="UsuariosPorAsigar" xml:space="preserve">
+    <value>Usuarios Por Asignar.</value>
+  </data>
+  <data name="AsignarUsuario" xml:space="preserve">
+    <value>Asignar Usuario</value>
+  </data>
+  <data name="UsuariosGruposAsignados" xml:space="preserve">
+    <value>Usuarios Asignados al Grupo Correctamente</value>
+  </data>
+  <data name="ErrorUsuariosGruposAsignados" xml:space="preserve">
+    <value>Error al Asignar Usuarios al Grupo</value>
+  </data>
+  <data name="UsuariosGrupo" xml:space="preserve">
+    <value>Usuarios</value>
+  </data>
+  <data name="SeRequireTenerUnaEmpresaAsignada" xml:space="preserve">
+    <value>Es requerido tener al menos una emisora asignada, antes de asignar roles al usuario.</value>
+  </data>
+  <data name="CambiarContraseña" xml:space="preserve">
+    <value>Cambiar Contraseña</value>
+  </data>
+  <data name="CerrarSesion" xml:space="preserve">
+    <value>Cerrar Sesión</value>
+  </data>
+  <data name="ContraseñaModificada" xml:space="preserve">
+    <value>MENSAJE_EXITO_CONTRASEÑA_CAMBIADA</value>
+  </data>
+  <data name="EnvioPassErrorCorreo" xml:space="preserve">
+    <value>MENSAJE_ERROR_ENVIO_CONTRASEÑA</value>
+  </data>
+</root>

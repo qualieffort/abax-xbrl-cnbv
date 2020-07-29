@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5d8d3371-b63d-47a4-b4ca-8091b19a68cc}</ProjectGuid>
+    <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
+    <Name>ModelingAbax</Name>
+    <RootNamespace>ModelingAbax</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ItemGroup>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="ModelDefinition\ModelingAbax.uml">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Validate Include="AbaxXbrl.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="AbaxXbrl.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>AbaxXbrl.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="AbaxXbrl.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>AbaxXbrl.layerdiagram</DependentUpon>
+    </Validate>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AbaxXBRLCore\AbaxXBRLCore.csproj">
+      <Name>AbaxXBRLCore</Name>
+      <Project>{146be311-a136-4871-b5a6-a28a8c1fd267}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\AbaxXBRLWeb\AbaxXBRLWeb.csproj">
+      <Name>AbaxXBRLWeb</Name>
+      <Project>{8e08c6cf-f5e7-49e0-92f9-f05c2489e5d0}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\AbaxXBRL\AbaxXBRL.csproj">
+      <Name>AbaxXBRL</Name>
+      <Project>{1dd1db2d-e049-437d-8e7a-3302502a30c4}</Project>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

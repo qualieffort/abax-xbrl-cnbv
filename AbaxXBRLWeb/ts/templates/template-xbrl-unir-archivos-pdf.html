@@ -1,0 +1,33 @@
+﻿<form name="formaUnirArchivosPDF" novalidate enctype="multipart/form-data" method="post">
+    <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true" ng-click="cerrarDialogo()">&times;</button>
+        <div class="row m-t-sm">
+            <div class="col-sm-10 m-b-xs">
+                <h4 class="modal-title">{{'EDITOR_XBRL_UNIR_ARCHIVOS_PDF'|translate}}</h4>
+            </div>
+        </div>
+    </div>
+    <div class="modal-body">
+        <p>{{'EDITOR_XBRL_INFORMAR_UNIR_ARCHIVOS_PDF' | translate}}</p>
+        <br />
+        <div class="form-group">
+            <label>{{'EDITOR_XBRL_SELECCIONAR_ARCHIVOS_UNIR' | translate}}:</label>
+
+            <input id="archivosPdf" type="file"ng-file-select="mostrarNombresInput($files)" ng-multiple="true" accept="{{extensionesPermitidas}}" class="filestyle" data-icon="false" data-classbutton="btn btn-default" data-classinput="form-control inline v-middle input-s" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);">
+
+            <div class="bootstrap-filestyle input-group">
+                <input type="text" class="form-control " disabled value="{{nombresArchivosSeleccionados}}">
+                <span class="group-span-filestyle input-group-btn" tabindex="0">
+                    <label for="archivosPdf" class="btn btn-default ">{{'ETIQUETA_SELECCIONE'|translate}}</label>
+                </span>
+            </div>
+
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div>
+            <button type="button" class="btn btn-default" ng-click="cerrarDialogo()">{{'ETIQUETA_BOTON_CANCELAR'|translate}}</button>
+            <button type="submit" class="btn btn-s-md btn-warning" ng-click="descargarArchivoPdfUnido()">{{'EDITOR_XBRL_DESCARGAR_PDF_UNIDO' | translate}}</button>
+        </div>
+    </div>
+</form>

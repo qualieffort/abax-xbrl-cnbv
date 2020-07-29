@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ActualizarEmpresa" xml:space="preserve">
+    <value>El usuario actualizó los datos de la emisora {0}</value>
+  </data>
+  <data name="ActualizarGrupo" xml:space="preserve">
+    <value>El usuario actualizó los datos generales del grupo de usuarios {0}</value>
+  </data>
+  <data name="ActualizarRol" xml:space="preserve">
+    <value>El usuario actualizó los datos rol con el nombre {0}</value>
+  </data>
+  <data name="Actualizarusuario" xml:space="preserve">
+    <value>El usuario actualizó los datos generales del usuario {0}</value>
+  </data>
+  <data name="ActualizarUsuarioEmpresa" xml:space="preserve">
+    <value>El usuariio {0} actualizó la relacion Usuario - Empresa {1}</value>
+  </data>
+  <data name="BorrarEmpresa" xml:space="preserve">
+    <value>El usuario eliminó a la empresa {0}</value>
+  </data>
+  <data name="BorrarGrupo" xml:space="preserve">
+    <value>El usuario {0} borro el grupo  {1}</value>
+  </data>
+  <data name="BorrarGrupoUsuariosRol" xml:space="preserve">
+    <value>El usuario {0} borro la asignación de grupo-rol con id {1}</value>
+  </data>
+  <data name="BorrarRol" xml:space="preserve">
+    <value>El usuario borro el rol con el nombre {0}</value>
+  </data>
+  <data name="BorrarUsuario" xml:space="preserve">
+    <value>El usuario eliminó al usuario con el correo electrónico {0}</value>
+  </data>
+  <data name="BorrarUsuarioEmpresa" xml:space="preserve">
+    <value>El usuario {0} borro la realcion Usuario - Empresa {1}</value>
+  </data>
+  <data name="BorrarUsuarioGrupo" xml:space="preserve">
+    <value>El usuario {0} desasignó al usuario {1} </value>
+  </data>
+  <data name="BorrarUsuarioRol" xml:space="preserve">
+    <value>El usuario desasignó roles al usuario {0}</value>
+  </data>
+  <data name="ContrasenaIncorrecta" xml:space="preserve">
+    <value>MENSAJE_WARNING_CONTRASENA_INCORRECTA</value>
+  </data>
+  <data name="ContraseñaModificada" xml:space="preserve">
+    <value>El usuario ha modificado su password exitósamente</value>
+  </data>
+  <data name="InsertarEmpresa" xml:space="preserve">
+    <value>El usuario registro una nueva emisora con el nombre {0}</value>
+  </data>
+  <data name="InsertarGrupo" xml:space="preserve">
+    <value>El usuario registro un nuevo grupo de usuarios con el nombre {0}</value>
+  </data>
+  <data name="InsertarGrupoUsuariosRol" xml:space="preserve">
+    <value>El usuario {0} asignó el rol {1} al grupo {2}</value>
+  </data>
+  <data name="InsertarRol" xml:space="preserve">
+    <value>El usuario registro un nuevo rol con el nombre {0}</value>
+  </data>
+  <data name="InsertarUsuario" xml:space="preserve">
+    <value>El usuario registro un nuevo usuario con el correo {0}</value>
+  </data>
+  <data name="InsertarUsuarioEmpresa" xml:space="preserve">
+    <value>El usuario asignó una empresa al usuario {0}</value>
+  </data>
+  <data name="InsertarUsuarioGrupo" xml:space="preserve">
+    <value>El usuario {0} asignó al usuario {1} al grupo {2}</value>
+  </data>
+  <data name="InsertarUsuarioRol" xml:space="preserve">
+    <value>El usuario asignó roles al usuario {0}</value>
+  </data>
+  <data name="IntentosExcedidos" xml:space="preserve">
+    <value>MENSAJE_WARNING_INTENTOS_EXCEDIDOS</value>
+  </data>
+  <data name="SinDatosUsuario" xml:space="preserve">
+    <value>No se encontraron datos del usuario</value>
+  </data>
+  <data name="ActivacionUsuario" xml:space="preserve">
+    <value>El usuario activo al usuario {0}</value>
+  </data>
+  <data name="AsignacionRolesAGrupos" xml:space="preserve">
+    <value>El usuario asignó roles al grupo {0}</value>
+  </data>
+  <data name="AsignarFacultadesARoles" xml:space="preserve">
+    <value>Se han asignado facultades al rol {0}</value>
+  </data>
+  <data name="AsignarUsuariosGrupo" xml:space="preserve">
+    <value>El usuario realizo asignacion de usuarios al grupo {0}</value>
+  </data>
+  <data name="BloqueoUsuario" xml:space="preserve">
+    <value>El usuario bloqueo al usuario {0}</value>
+  </data>
+  <data name="BorrarGrupoUsuario" xml:space="preserve">
+    <value>El usuario borro el grupo de usuarios {0}</value>
+  </data>
+  <data name="ContrasenaModificada" xml:space="preserve">
+    <value>Se ha modificado la contraseña</value>
+  </data>
+  <data name="DesactivacionUsuario" xml:space="preserve">
+    <value>El usuario desactivo al usuario {0}</value>
+  </data>
+  <data name="DesbloqueoUsuario" xml:space="preserve">
+    <value>El usuario desbloqueo al usuario {0}</value>
+  </data>
+  <data name="EnvioCorreoOlvidoContraseña" xml:space="preserve">
+    <value>Se solicito un correo por olvido de la constraseña</value>
+  </data>
+  <data name="FalloUsuarioAutentificado" xml:space="preserve">
+    <value>La autentificación del usuario no fue exitosa</value>
+  </data>
+  <data name="RegistroAcceso" xml:space="preserve">
+    <value>Se registro un acceso a la aplicación</value>
+  </data>
+  <data name="UsuarioAutenficado" xml:space="preserve">
+    <value>El usuario se autentificó en la aplicación</value>
+  </data>
+  <data name="BloquearLiberarDocumentoInstancia" xml:space="preserve">
+    <value>El usuario ha bloqueado para edición el documento instancia {0}</value>
+  </data>
+  <data name="ExportarFormatoAExcel" xml:space="preserve">
+    <value>El usuario ha exportado en formato Excel el documento instancia {0}</value>
+  </data>
+  <data name="GenerarXbrl" xml:space="preserve">
+    <value>El usuario ha exportado en formato XBRL el documento instancia {0}</value>
+  </data>
+  <data name="ImportarDatosDeExcel" xml:space="preserve">
+    <value>El usuario ha importado información a partir de un documento de Excel al documento instancia {0}</value>
+  </data>
+  <data name="ObtenerFormatoCaptura" xml:space="preserve">
+    <value>El usuario consultó del documento instancia {0}</value>
+  </data>
+  <data name="ObtenerFormatoCapturaHistorico" xml:space="preserve">
+    <value>El usuario ha consultado la versión {0} del documento instancia {1}</value>
+  </data>
+  <data name="ActualizarTipoEmpresa" xml:space="preserve">
+    <value>El usuario actualizo el tipo de empresa "{0}"</value>
+  </data>
+  <data name="InsertarTipoEmpresa" xml:space="preserve">
+    <value>El usuario inserto el nuevo tipo de empresa "{0}"</value>
+  </data>
+  <data name="BorrarTipoEmpresa" xml:space="preserve">
+    <value>El usuario borro el tipo de empresa "{0}"</value>
+  </data>
+  <data name="AsignarTiposEmpresa" xml:space="preserve">
+    <value>El usuario actualizó el listado de tipos de empresa asignados a la empresa "{0}"</value>
+  </data>
+  <data name="ExportarExcelTiposEmpresa" xml:space="preserve">
+    <value>El usuario exportó a excel el catálogo de tipos de empresas.</value>
+  </data>
+  <data name="ActualizarTaxonomiaXbrl" xml:space="preserve">
+    <value>El usuario actualizó la taxonomía xbrl "{0}"</value>
+  </data>
+  <data name="InsertarTaxonomiaXbrl" xml:space="preserve">
+    <value>El usuario insertó la nueva taxonomía xbrl "{0}"</value>
+  </data>
+  <data name="BorrarTaxonomiaXbrl" xml:space="preserve">
+    <value>El usuario borró la taxonomía xbrl "{0}"</value>
+  </data>
+  <data name="AsignarTaxonomiasXbrl" xml:space="preserve">
+    <value>El usuario actualizó el listado de taxonomías xbrl asignadas al tipo de empresa {0}</value>
+  </data>
+  <data name="AsignarFideicomitentes" xml:space="preserve">
+    <value>El usuario actualizó el listado de fideicomitentes asignados al fiduciario {0}</value>
+  </data>
+  <data name="ActualizarGrupoEmpresa" xml:space="preserve">
+    <value>El usuario actualizó la información del grupo de empresas "{0}" ({1}).</value>
+  </data>
+  <data name="ActualizarRelacioesGrupoEmpresaAempresa" xml:space="preserve">
+    <value>El usuario actualizó el listado de empresas asignadas al grupo "{0}".</value>
+  </data>
+  <data name="ActualizarRelacionesEmpresaAgruposEmprea" xml:space="preserve">
+    <value>El usuario actualizó el listado de grupos de empresa a los que pertenece la empresa "{0}".</value>
+  </data>
+  <data name="BorrarGrupoEmpresa" xml:space="preserve">
+    <value>El usuario elimino el grupo de empresas "{0}" ({1}) con todas sus relaciones.</value>
+  </data>
+  <data name="DepurarBitacora" xml:space="preserve">
+    <value>Se mandó depurar la bitácora de actividades a partir de la fecha {0}.</value>
+  </data>
+  <data name="ExportarExcelGrupoEmpresas" xml:space="preserve">
+    <value>El usuario exportó a excel el catálogo de grupos de empresas.</value>
+  </data>
+  <data name="InsertarGrupoEmpresa" xml:space="preserve">
+    <value>El usuario inserto el nuevo grupo de empresas "{0}" ({1}).</value>
+  </data>
+  <data name="LiberarDocumentoInstancia" xml:space="preserve">
+    <value>El usuario ha desbloqueado el documento instancia {0}</value>
+  </data>
+  <data name="ActualizarParametroSistema" xml:space="preserve">
+    <value>El usuario actualizó el valor del parametro de sistema "{0}" ({1}).</value>
+  </data>
+  <data name="ExportarExcelParametrosSistema" xml:space="preserve">
+    <value>El usuario exportó a excel el catálogo de parametros del sistema.</value>
+  </data>
+  <data name="InsertarListaNotificacion" xml:space="preserve">
+    <value>El usuario inserto la nueva lista de notificación "{0}"</value>
+  </data>
+  <data name="ActualizarListaNotificacion" xml:space="preserve">
+    <value>El usuario actualizo la lista de notificación "{0}"</value>
+  </data>
+  <data name="BorrarListaNotificacion" xml:space="preserve">
+    <value>El usuario borro la lista de notificación "{0}"</value>
+  </data>
+  <data name="ExportarExcelListasNotificacion" xml:space="preserve">
+    <value>El usuario exportó a excel el catálogo de listas de notificación.</value>
+  </data>
+  <data name="InsertarDestinatarioNotificacion" xml:space="preserve">
+    <value>El usuario inserto el nuevo destinatario "{0}" en la lista de notificación "{1}"</value>
+  </data>
+  <data name="ActualizarDestinatarioNotificacion" xml:space="preserve">
+    <value>El usuario actualizo el destinatario "{0}" de la lista de notificación "{1}"</value>
+  </data>
+  <data name="BorrarDestinatarioNotificacion" xml:space="preserve">
+    <value>El usuario borro el destinatario de notificación "{0}" de la lista de notificación "{1}"</value>
+  </data>
+  <data name="ExportarExcelDestinatariosNotificacion" xml:space="preserve">
+    <value>El usuario exportó a excel los destinatarios de la lista de notificación "{0}".</value>
+  </data>
+  <data name="ActualizaConsultaRepositorio" xml:space="preserve">
+    <value>El usuario actualizó la información de la consulta al repositorio "{0}"({1}).</value>
+  </data>
+  <data name="BorrarConsultaRepositorio" xml:space="preserve">
+    <value>El usuario eliminó la consulta al repositorio "{0}" ({1}).</value>
+  </data>
+  <data name="ExportarExcelConsultasRepositorio" xml:space="preserve">
+    <value>El usuario exportó a Excel el catálogo de Consultas al Repositorio.</value>
+  </data>
+  <data name="InsertarConsultaRepositorio" xml:space="preserve">
+    <value>El usuario a registrado una nuevo consulta del repositorio llamada "{0}"({1}).</value>
+  </data>
+</root>

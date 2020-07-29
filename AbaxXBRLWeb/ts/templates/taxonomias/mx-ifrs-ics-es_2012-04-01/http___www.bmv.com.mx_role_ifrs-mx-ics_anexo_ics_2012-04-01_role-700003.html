@@ -1,0 +1,91 @@
+
+<xbrl-contenedor-formato xbrl:rol-uri="{{::xbrlRol.Uri}}" orientacion="portrait" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+<div id="contenedorTablaExcel" class="table-responsive">
+    <table class="table table-striped b-t b-light" xbrl:tabla-excel xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" selector="td:not(:first-child)" selector-contenedor-x="#contenedorTablaExcel" selector-contenedor-y="#contenedorFormatos" tab-index="1" on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)" on-after-paste="onAfterPaste(valorPegado, x, y)" on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)">
+        <thead>
+            <tr>
+                <th class="th-sortable" data-toggle="class">
+                    {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Concepto' : 'Concept' }} 
+                </th>
+                <th style="min-width: 230px; width: 230px;">
+                    {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Datos Informativos a 12 Meses A&ntilde;o Actual' : 'Facts Current Year 12 Months' }} <br />
+                    {{ ::definicionPlantilla.obtenerVariablePorId("medida_MXN_sin_contexto")}}<br />
+                    {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2013_10_01")}} - {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2014_09_30")}}
+                </th>
+                <th style="min-width: 230px; width: 230px;">
+                    {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Datos Informativos a 12 Meses A&ntilde;o Actual' : 'Facts Previous 12 Months Year' }} <br />
+                    {{ ::definicionPlantilla.obtenerVariablePorId("medida_MXN_sin_contexto")}}<br />
+                    {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2012_10_01")}} - {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2013_09_30")}}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_DatosInformativosIngresosNetos12M" xbrl:nivel-indentacion="2">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A7e99dbf8-2631-46c1-b91a-2642d70dd83a">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Af80bddaa-49a6-4a9f-99b5-7f801896f154">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_DatosInformativosUtilidadPerdidaOperacion12M" xbrl:nivel-indentacion="2">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ad5b44f91-6ee3-4d5a-842e-81c4484677a1">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ab51a9e5a-590a-4e82-aae7-c9ae9f0c76ae">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_DatosInformativosUtilidadPerdidaNeta12M" xbrl:nivel-indentacion="2">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aee34be33-bc5e-4c87-ad80-32d32d0eeedd">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aab269670-e40b-4c1a-a83e-36e5efb49458">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_DatosInformativosParticipacionControladoraUtilidadPerdidaNeta12M" xbrl:nivel-indentacion="2">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A1254c536-33e1-47e5-9367-60fa2abaf25c">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Af92567f9-1e85-46cd-b460-5cb3ddc2379e">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_DepreciacionAmortizacionOperativa12M" xbrl:nivel-indentacion="2">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A11ac503c-0d57-488f-892c-cb4d1ed61225">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A05ae28e6-66ff-4038-88e0-9745a70e8e7e" xbrl:ultimo="true">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</xbrl-contenedor-formato>

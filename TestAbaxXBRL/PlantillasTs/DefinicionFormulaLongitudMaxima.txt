@@ -1,0 +1,18 @@
+﻿'{{idFormula}}': new model.DefinicionFormula().deserialize({
+                        Id: '{{idFormula}}',
+                        TipoFormula: model.TipoFormula.ValueAssertion,
+                        Expresion: 'squeeze(size(variable1)) <= {{longitudMaxima}}',
+                        MensajeExito: 'El hecho {variable1} tiene un máximo de {{longitudMaxima}} caracteres.',
+                        MensajeError: 'El hecho {variable1} debe tener un máximo de {{longitudMaxima}} caracteres.',
+                        VariablesCoincidenPeriodo: true,
+                        DefinicionVariables: {
+                            'variable1': new model.DefinicionVariableFormula().deserialize({
+                                Id: 'variable1',
+                                IdConcepto: '{{idConcepto}}',
+                                PuedeCrearse: false,
+                                PuedeEliminarse: false,
+                                ConteoHechos: false{{configuracionDimensionCondicion}}
+                            })
+                        }
+                    }
+                )

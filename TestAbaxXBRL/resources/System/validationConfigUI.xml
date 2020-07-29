@@ -1,0 +1,20 @@
+<panel id="innerPanel" layout="gridbaglayout">
+	<label text="Validation Configuration">
+		<gridbagconstraints id="spanRow" gridwidth="GridBagConstraints.REMAINDER" gridx="GridBagConstraints.RELATIVE" anchor="GridBagConstraints.LINE_START"/>
+	</label>
+	<separator>
+		<gridbagconstraints refid="spanRow" fill="GridBagConstraints.HORIZONTAL"/>
+	</separator>
+	<splitpane refid="spanRow" fill="GridBagConstraints.HORIZONTAL">
+		<gridbagconstraints refid="spanRow" fill="GridBagConstraints.HORIZONTAL"/>
+		<scrollpane >
+			<panel id="validationTreeContainer">
+			</panel>
+		</scrollpane>
+		<scrollpane layout="gridbaglayout">
+			<gridbagconstraints refid="spanRow" fill="GridBagConstraints.HORIZONTAL" anchor="GridBagConstraints.LINE_START"/>
+			<panel id="validationDetailsPane">
+			</panel>
+		</scrollpane>
+	</splitpane>
+</panel>

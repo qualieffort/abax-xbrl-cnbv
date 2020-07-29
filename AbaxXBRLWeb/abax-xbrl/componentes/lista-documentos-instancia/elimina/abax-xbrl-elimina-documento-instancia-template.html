@@ -1,0 +1,12 @@
+﻿<div class="modal-header">
+    <button type="button" class="close" aria-hidden="true" ng-click="$dismiss('close')">×</button>
+    <h4 class="modal-title">{{'TITULO_PROMPT_ELIMINAR_DOCUMENTO_INSTANCIA' | translate}}</h4>
+</div>
+<div class="modal-body">
+    <p>{{'ETIQUETA_PROMPT_ELIMINAR_DOCUMENTO_INSTANCIA' | translate}}</p>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" ng-click="cancelar()">{{'ETIQUETA_BOTON_CANCELAR' | translate}}</button>
+    <button class="btn btn-primary" ng-hide="eliminando" ng-click="eliminarDocumentoInstancia()">{{'ETIQUETA_BOTON_ACEPTAR' | translate}}</button>
+    <button class="btn btn-primary" ng-if="eliminando" disabled><i class="fa fa-refresh fa-spin"></i>{{'ETIQUETA_ELIMINANDO' | translate}} ...</button>
+</div>

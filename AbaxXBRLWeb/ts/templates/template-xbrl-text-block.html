@@ -1,0 +1,22 @@
+﻿<div>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="cerrarDialogo()">&times;</button>
+        <h4> {{'EDITOR_GENERICO_TITULO_EDITAR_HECHO' | translate}} </h4>
+    </div>
+    <div class="modal-body" style="padding-right:40px;"> 
+        <div class="row">
+            <p>
+                <span class="font-bold">{{descripcionHecho}}</span>
+            </p>
+        </div> 
+        <xbrl:campo-captura xbrl:id-concepto="{{hecho.IdConcepto}}" xbrl:id-contexto="{{hecho.IdContexto}}" xbrl:id-unidad="{{hecho.IdUnidad}}" xbrl:solo-edicion="true" xbrl:ocultar-detalles="false"></xbrl:campo-captura>
+    </div>
+
+    <div class="modal-footer">
+        <input type="button" value="{{'ETIQUETA_BOTON_CERRAR'|translate}}" ng-click="cerrarDialogo()" class="btn btn-default">
+    </div>
+
+</div>
+
+
+

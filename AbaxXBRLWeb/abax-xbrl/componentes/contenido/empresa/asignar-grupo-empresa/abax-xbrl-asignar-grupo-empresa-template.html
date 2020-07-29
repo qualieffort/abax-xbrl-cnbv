@@ -1,0 +1,149 @@
+﻿<section>
+    <section class="vbox">
+        <section class="scrollable padder">
+            <section class="row m-b-md">
+                <div class="col-sm-6">
+                    <h3 class="m-b-xs text-black">   {{'TITULO_CATALOGO_DE_EMPRESAS' | translate}}</h3>
+                </div>
+            </section>
+            <section class="panel panel-default">
+                <header class="panel-heading bg-light">
+                    {{'TITULO_ASIGNRAR_GRUPOS' | translate}}
+                </header>
+                <div class="panel-body">
+                    <div class="col-sm-6">
+                        <label class="col-sm-2 control-label font-bold" style="width: 150px;">{{'TITULO_EMPRESAS' | translate}}:</label>
+                        <select class="input-sm form-control input-s-lg v-middle"
+                                ng-model="propietarioSeleccionado"
+                                style="display:none;"
+                                ng-options="item as item.Etiqueta for item in listaElementosPropietarios"
+                                ng-change="onChangeElementoPropietario()"
+                                chosen
+                                width="'300px'"
+                                allow-single-deselect="false"></select>
+                    </div>
+                </div>
+                <section class="row m-b-md">
+                    <div class="col-sm-5">
+                        <section class="panel panel-default" style="min-height: 400px; height: 400px; overflow-y: auto; overflow-x:hidden;">
+                            <header class="panel-heading">
+                                {{'TITULO_ASINGADOS' | translate}}
+                            </header>
+                            <div class="row wrapper">
+                                <div class="col-sm-2">&nbsp;</div>
+                                <div class="col-sm-8">
+                                    <div class="input-group" style="width:100%">
+                                        <input type="text" placeholder="{{'PLACE_HOLDER_BUSCAR' | translate}}" ng-model="filtroLeft" class="input-sm form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">&nbsp;</div>
+                            </div>
+                            <div style="text-align:center;" ng-if="cargandoAsignados">
+                                <i class="fa fa-refresh fa-spin"></i>
+                                {{'MENSAJE_INFO_CARGANDO_ELEMENTOS'| translate}} ...
+                            </div>
+                            <table class="table table-striped b-t b-light" ng-hide="cargandoAsignados">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: center;" width="20">
+                                            <label class="checkbox m-n i-checks">
+                                                <input type="checkbox" class="checkall" ng-click="checkAllAsignadas()"><i></i>
+                                            </label>
+                                        </th>
+                                        <th> {{'TITULO_EMPRESAS' | translate}}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in listaAsignados | filter:filtroLeft | orderBy: 'Nombre' | abaxXBRLAsignarFilter:'asignadasVisibles'">
+                                        <td style="text-align: center;">
+                                            <label class="checkbox m-n i-checks">
+                                                <input type="checkbox" ng-model="listaChecks[item.Valor]"><i></i>
+                                            </label>
+                                        </td>
+                                        <td>{{item.Etiqueta}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    </div>
+                    <div class="col-sm-2">
+                        <div style="text-align: center;">
+                            <a href="javascript:void(0);" ng-click="asignarTodos()" class="btn btn-rounded btn-sm btn-icon btn-default"><i class="fa fa-angle-double-left"></i></a>
+                            <br />
+                            <br />
+                            <a href="javascript:void(0);" ng-click="quitarTodos()" class="btn btn-rounded btn-sm btn-icon btn-default"><i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <section class="panel panel-default" style="min-height: 400px; height: 400px; overflow-y: auto; overflow-x:hidden;">
+
+                            <header class="panel-heading">
+                                {{'TITULO_DISPONIBLES' | translate}}
+                            </header>
+                            <div class="row wrapper">
+                                <div class="col-sm-2">&nbsp;</div>
+                                <div class="col-sm-8">
+                                    <div class="input-group" style="width:100%">
+                                        <input type="text" placeholder="{{'PLACE_HOLDER_BUSCAR' | translate}}" ng-model="filtroRight" class="input-sm form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">&nbsp;</div>
+                            </div>
+                            <div style="text-align:center;" ng-if="cargandoAsignados">
+                                <i class="fa fa-refresh fa-spin"></i>
+                                {{'MENSAJE_INFO_CARGANDO_ELEMENTOS'| translate}} ...
+                            </div>
+                            <table class="table table-striped b-t b-light" ng-hide="cargandoAsignados">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: center;" width="20">
+                                            <label class="checkbox m-n i-checks">
+                                                <input type="checkbox" class="checkall" ng-click="checkAllNoAsignadas()"><i></i>
+                                            </label>
+                                        </th>
+                                        <th> {{'TITULO_EMPRESAS' | translate}}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in listaNoAsignados | filter:filtroRight | orderBy: 'Nombre' | abaxXBRLAsignarFilter:'noAsignadasVisibles'">
+                                        <td style="text-align: center;">
+                                            <label class="checkbox m-n i-checks">
+                                                <input type="checkbox" ng-model="listaChecks[item.Valor]"><i></i>
+                                            </label>
+                                        </td>
+                                        <td>{{item.Etiqueta}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    </div>
+                </section>
+                <footer class="panel-footer ">
+                    <div class="row">
+                        <div class="col-sm-4 hidden-xs"></div>
+                        <div class="col-sm-4 text-center"></div>
+                        <div class="col-sm-4 text-right text-center-xs">
+                            <button type="button" ui-sref="inicio.empresa.indice" class="btn btn-default">
+                                <i class="i i-back"></i>
+                                {{'ETIQUETA_BOTON_CANCELAR' | translate}}
+                            </button>
+                            <button type="button"
+                                    ng-click="guardar()"
+                                    class="btn btn-primary"
+                                    ng-hide="guardando">
+                                {{'ETIQUETA_BOTON_GUARDAR' | translate}}
+                            </button>
+                            <button type="button"
+                                    disabled
+                                    class="btn btn-primary"
+                                    ng-if="guardando">
+                                <i class="fa fa-refresh fa-spin"></i>
+                                {{'MENSAJE_INFO_GUARDANDO' | translate}} ...
+                            </button>
+                        </div>
+                    </div>
+                </footer>
+            </section>
+        </section>
+    </section>
+</section>

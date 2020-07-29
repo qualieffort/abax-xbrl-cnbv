@@ -1,0 +1,87 @@
+﻿<form name="guardarConsultaForm" ng-submit="guardarConsulta(guardarConsultaForm.$valid)" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true" ng-click="cerrarDialogo()">&times;</button>
+        <div class="row m-t-sm">
+            <div class="col-sm-10 m-b-xs">
+                <h4 class="modal-title">{{'CONSULTA_ANALISIS_CONFIG_PERIODOS' | translate}}</h4>
+            </div>
+        </div>
+    </div>
+    <div class="modal-body">
+        <div class="radio i-checks">
+            <label style="width: 150px;float: left;">
+                <input type="radio" name="a" value="option1" checked ng-click="esInstante=true">
+                <i></i>
+                {{'CONSULTA_ANALISIS_CONFIG_PERIODO_INSTANTE' | translate}}
+            </label>
+
+            <label style="width: 150px;float: left;">
+                <input type="radio" name="a" value="option1" checked ng-click="esInstante=false">
+                <i></i>
+                {{'CONSULTA_ANALISIS_CONFIG_PERIODO_PERIODO' | translate}}
+            </label>
+
+        </div>
+
+        <div ng-if="esInstante" style="width:75%;float:left;padding-bottom:20px;">
+            <p>{{'CONSULTA_ANALISIS_CONFIG_PERIODO_SELEC_INSTANTE' | translate}}:</p>
+            <select chosen width="'75%'"
+                    data-placeholder="{{'PLACE_HOLDER_SELECCIONE_EMISORA' | translate}}"
+                    ng-model="periodoSeleccionInstante"
+                    class="form-control"
+                    ng-options="periodo as periodo.Periodo for periodo in periodosInstante"
+                    ng-change="CambiarSeleccion(periodoSeleccionInstante)"
+                    style="display: none;">
+                <option value="">{{'ETIQUETA_SELECCIONAR_OPCION' | translate}}</option>
+            </select>
+
+
+
+        </div>
+
+        <div ng-if="!esInstante" style="width:75%;float:left;padding-bottom:20px;">
+            <p>{{'CONSULTA_ANALISIS_CONFIG_PERIODO_SELEC_PERIODO' | translate}}:</p>
+            <select chosen width="'75%'"
+                    data-placeholder="{{'PLACE_HOLDER_SELECCIONE_EMISORA' | translate}}"
+                    ng-model="periodoSeleccionPeriodo"
+                    class="form-control"
+                    ng-options="periodo1 as periodo1.Periodo for periodo1 in periodos"
+                    ng-change="CambiarSeleccion(periodoSeleccionPeriodo)"
+                    style="display: none;">
+                <option value="">{{'ETIQUETA_SELECCIONAR_OPCION' | translate}}</option>
+            </select>
+        </div>
+
+
+        <div style="float:left;width:20%;margin-left:10px;">
+            <p>&nbsp;</p>
+            <input type="button" class="btn btn-sm btn-default" value="{{'CONSULTA_ANALISIS_AGREGAR' | translate}}" ng-click="agregarElementoPeriodo()" />
+        </div>
+
+        <div style="width:100%;height:{{alturaModal}}px; overflow-y: auto;">
+            <center>
+                <table class="table table-striped b-t b-light " tabindex="1" style="-webkit-user-select: none;width:100%">
+                    <thead>
+                        <tr>
+                            <th>{{'ETIQUETA_PERIODO' | translate}}</th>
+                            <th width="10%">{{'ETIQUETA_ELIMINAR' | translate}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="periodo in consultaAnalisis.ConsultaAnalisisPeriodo">
+                            <td>{{periodo.Periodo}}</td>
+                            <td><a href="javascript:void(0)" class="btn btn-rounded btn-sm btn-icon btn-danger" ng-click="eliminarPeriodo(periodo.Periodo)"><i class="fa fa-trash-o"></i></a></td>
+                        </tr>
+                        <tr ng-if="consultaAnalisis.ConsultaAnalisisPeriodo.length==0"><td colspan="2"><p class="help-block">{{'CONSULTA_ANALISIS_CONFIG_PERIODO_SIN_RESULTADOS' | translate}}</p></td></tr>
+
+                    </tbody>
+                </table>
+            </center>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div>
+            <button type="button" class="btn btn-default" ng-click="cerrarDialogo()">{{'ETIQUETA_BOTON_CERRAR'|translate}}</button>
+        </div>
+    </div>
+</form>

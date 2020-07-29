@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Project: Xbrl Processing Engine
+Version: 4
+
+Copyright (c) 2011  EDGAR(r) Online, Inc.
+
+EDGAR(r) is a federally registered trademark of the U.S. Securities and Exchange Commission. EDGAR 
+Online is not affiliated with or approved by the U.S. Securities and Exchange Commission.
+-->
+
+<xs:schema elementFormDefault="unqualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:simpleType name="maxOccursType">
+		<xs:union memberTypes="xs:nonNegativeInteger">
+			<xs:simpleType>
+				<xs:restriction base="xs:token">
+					<xs:enumeration value="unbounded"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:union>
+	</xs:simpleType>
+	<xs:complexType name="RelationshipConstraintType">
+		<xs:sequence>
+			<xs:element name="Restriction" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RestrictedAttribute" minOccurs="0">
+							<xs:complexType>
+								<xs:attribute name="attribute" type="xs:string" use="required"/>
+								<xs:attribute name="resolution" type="xs:string" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="classificationUri" type="xs:token" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="minOccurs" type="xs:nonNegativeInteger" use="optional" default="0"/>
+		<xs:attribute name="maxOccurs" type="maxOccursType" use="optional" default="0"/>
+		<xs:attribute name="memoClassificationUri" type="xs:anyURI" use="optional" default="memo://ubmatrix.com/Xbrl/Validation/ClassificationEndpoint/#NotSet"/>
+		<xs:attribute name="memoCardinalityUri" type="xs:anyURI" use="optional" default="memo://ubmatrix.com/Xbrl/Validation/CardinalityEndpoint/#NotSet"/>
+	</xs:complexType>
+	<xs:complexType name="DomainTemplateType">
+		<xs:sequence>
+			<xs:element name="Inheritance" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:attribute name="classificationUri" type="xs:token" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="UponMismatch" minOccurs="0">
+				<xs:complexType>
+					<xs:attribute name="memoUri" type="xs:token" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Behaviors" type="BehaviorsType" minOccurs="0"/>
+			<xs:element name="Indices" type="IndicesType" minOccurs="0"/>
+			<xs:element name="ReIndexing" type="ReIndexingType" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="classificationUri" type="xs:token" use="required"/>
+		<xs:attribute name="implementationUri" type="xs:token" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="RelationshipTemplateType">
+		<xs:complexContent>
+			<xs:extension base="DomainTemplateType">
+				<xs:sequence>
+					<xs:element name="From" type="RelationshipConstraintType" minOccurs="0"/>
+					<xs:element name="To" type="RelationshipConstraintType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="TemplateDictionary">
+		<xs:annotation>
+			<xs:documentation>Template Dictionary for XBRL domain objects and relationships</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element name="DomainTemplate" type="DomainTemplateType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="RelationshipTemplate" type="RelationshipTemplateType" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:token" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="BehaviorsType">
+		<xs:sequence>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="QueryBehavior" type="QueryBehaviorType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="CodeBehavior" type="CodeBehaviorType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="XmlBehavior" type="XmlBehaviorType" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CodeBehaviorType">
+		<xs:complexContent>
+			<xs:extension base="BehaviorType">
+				<xs:attribute name="implementationURI" type="xs:anyURI" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="QueryBehaviorType">
+		<xs:complexContent>
+			<xs:extension base="BehaviorType">
+				<xs:attribute name="queryURI" type="xs:anyURI" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="XmlBehaviorType">
+		<xs:complexContent>
+			<xs:extension base="BehaviorType">
+				<xs:attribute name="methodURI" type="xs:anyURI" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BehaviorType">
+		<xs:attribute name="name" type="xs:string" use="required"/>
+	</xs:complexType>
+	<!-- Facilitates reindexing -->
+	<xs:complexType name="ReIndexingType">
+		<xs:sequence>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="SelfReIndexer" type="SelfReIndexerType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="DescendantReIndexer" type="DescendantReIndexerType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="CascadeReIndexer" type="CascadeReIndexerType" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CascadeReIndexerType">
+		<xs:complexContent>
+			<xs:extension base="ReIndexerType">
+				<xs:attribute name="relationshipToTarget" type="xs:string" use="optional"/>
+				<xs:attribute name="targetHint" type="xs:string" use="optional"/>
+				<xs:attribute name="target" type="ReIndexerSourceEnumeration" use="optional"/>
+				<xs:attribute name="targetValue" type="xs:string" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DescendantReIndexerType">
+		<xs:complexContent>
+			<xs:extension base="ReIndexerType">
+				<xs:attribute name="relationshipToTarget" type="xs:string" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SelfReIndexerType">
+		<xs:complexContent>
+			<xs:extension base="ReIndexerType">
+				<xs:sequence>
+					<xs:element name="ReClassification" minOccurs="0" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:attribute name="hint" type="xs:string" use="required"/>
+							<xs:attribute name="classification" type="xs:anyURI" use="optional"/>
+							<xs:attribute name="targetHint" type="xs:string" use="optional"/>
+							<xs:attribute name="target" type="ReIndexerSourceEnumeration" use="optional"/>
+							<xs:attribute name="targetValue" type="xs:string" use="optional"/>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ReIndexerType">
+		<xs:attribute name="source" type="ReIndexerSourceEnumeration" use="required"/>
+		<xs:attribute name="force" type="xs:string" use="optional"/>
+		<xs:attribute name="sourceHint" type="xs:string" use="optional"/>
+		<xs:attribute name="order" type="xs:integer" use="optional" default="1000000"/>
+	</xs:complexType>
+	<xs:simpleType name="ReIndexerSourceEnumeration">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="Undefined"/>
+			<xs:enumeration value="Attribute"/>
+			<xs:enumeration value="LocalName"/>
+			<xs:enumeration value="Value"/>
+			<xs:enumeration value="Namespace"/>
+			<xs:enumeration value="SubstitutionGroup"/>
+			<xs:enumeration value="PrimaryPrefix"/>
+			<xs:enumeration value="PhysicalUri"/>
+			<xs:enumeration value="RelatedPhysicalUri"/>
+			<xs:enumeration value="Add"/>
+			<xs:enumeration value="Remove"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Added to facilitate dynamic indexing -->
+	<xs:complexType name="IndicesType">
+		<xs:sequence>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="FullNameIndex" type="FullNameIndexType" minOccurs="0"/>
+				<xs:element name="LocalNameIndex" type="LocalNameIndexType" minOccurs="0"/>
+				<xs:element name="NodeValueIndex" type="NodeValueIndexType" minOccurs="0"/>
+				<xs:element name="AttributeIndex" type="AttributeIndexType" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AttributeIndexType">
+		<xs:complexContent>
+			<xs:extension base="IndexType">
+				<xs:attribute name="name" type="xs:string" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="FullNameIndexType">
+		<xs:complexContent>
+			<xs:extension base="IndexType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LocalNameIndexType">
+		<xs:complexContent>
+			<xs:extension base="IndexType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="NodeValueIndexType">
+		<xs:complexContent>
+			<xs:extension base="IndexType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="IndexType"/>
+</xs:schema>
+
+<!--
+The contents of this file are subject to the End-User Software License Agreement (the "License"). You may not use this 
+file except in compliance with the License. A current copy of the License is available by contacting product support.
+
+Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights and limitations under the License.
+-->

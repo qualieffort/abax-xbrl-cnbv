@@ -1,0 +1,21 @@
+﻿<style>
+    .modal-footer {
+        padding: 19px 20px 20px;
+        margin-top: 0px;
+        text-align: right;
+        border: 0;
+    }
+</style>
+
+<div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-s-md btn-warning btn-rounded" ng-click="cerrarDialogo()"><b>{{'ETIQUETA_BOTON_CERRAR'|translate}}</b></button>
+    </div>
+    <div class="modal-body" style="text-align:center">
+        <video autoplay="autoplay" width="80%" controls height="auto" preload="auto">
+            <source ng-src="{{urlVideo}}" type="video/mp4" />
+        </video>
+    </div>
+
+</div>
+

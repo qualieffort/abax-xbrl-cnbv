@@ -1,0 +1,67 @@
+<xbrl-contenedor-formato xbrl:rol-uri="{{xbrlRol.Uri}}" orientacion="landscape" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+    <div oc-lazy-load="abaxXBRLEventosRelevantesModule2017">
+        <div xbrl:eventos-relevantes>
+            <table class="tablaAnchoFijo" cellspacing="5">
+                <tbody>
+                    <tr>
+                        <td style="text-align:left; width:50%;"><xbrl:etiqueta-concepto xbrl:id-concepto="rel_news_RelevantEventReportAbstract" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto></td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr><td style="text-align:left; width:50%;"><xbrl:etiqueta-concepto xbrl:id-concepto="rel_news_Ticker" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></td>                                                                                                                                                                                                                                                                                                                                                                                                    <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="rel_news_Ticker_46bb3c6e-6648-415d-a390-790f2abbc73c"></xbrl:campo-captura></td></tr>
+                    <tr><td style="text-align:left; width:50%;"><xbrl:etiqueta-concepto xbrl:id-concepto="rel_news_ParticipantShortName" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></td>                                                                                                                                                                                                                                                                                                                                                                                      <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="rel_news_ParticipantShortName_bf041438-4a5c-44d0-afd2-fd59ed9731b2"></xbrl:campo-captura></td></tr>
+                    <tr><td style="text-align:left; width:50%;"><xbrl:etiqueta-concepto xbrl:id-concepto="rel_news_Date" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></td>                                                                                                                                                                                                                                                                                                                                                                                                      <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="rel_news_Date_ef2e2235-04ab-4758-bb75-56e38bb5d0a6"></xbrl:campo-captura></td></tr>
+                    <tr><td style="text-align:left; width:50%;"><xbrl:etiqueta-concepto xbrl:id-concepto="rel_news_BusinessName" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></td>                                                                                                                                                                                                                                                                                                                                                                                              <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="rel_news_BusinessName_fc83813e-6b9a-4547-bd87-1c2b593fa580"></xbrl:campo-captura></td></tr>
+                    <tr><td style="text-align:left; width:50%;"><xbrl:etiqueta-concepto xbrl:id-concepto="rel_news_Place" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></td>                                                                                                                                                                                                                                                                                                                                                                                                     <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="rel_news_Place_90dec5fa-2cb2-4fea-a77a-bb81e1c5f91f"></xbrl:campo-captura></td></tr>
+                    <tr><td style="text-align:left; width:50%;"><xbrl:etiqueta-concepto xbrl:id-concepto="rel_news_Subject" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></td>                                                                                                                                                                                                                                                                                                                                                                                                   <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="rel_news_Subject_b5cfc929-eb3a-4828-8b95-890d524de10b"></xbrl:campo-captura></td></tr>
+                    <tr><td style="text-align:left; width:50%;"><xbrl:etiqueta-concepto xbrl:id-concepto="rel_news_ForeignMarket" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></td>                                                                                                                                                                                                                                                                                                                                                                                             <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="rel_news_ForeignMarket_d0a35792-b9d2-4794-9a59-c6ab359e190a" xbrl:ultimo="true"></xbrl:campo-captura></td></tr>
+                    <tr><td style="text-align:left; width:50%;"><xbrl:etiqueta-concepto xbrl:id-concepto="rel_news_AttachedDocumentPdf" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></td>                                                                                                                                                                                                                                                                                                                                                                                       <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="rel_news_AttachedDocumentPdf_2e4d8f9c-9d3a-4e15-86a1-e3c91539b2c2"></xbrl:campo-captura></td></tr>
+                    <tr>
+                        <td colspan="2">
+                            <br />
+                            <b>    <xbrl:etiqueta-concepto xbrl:id-concepto="rel_news_RelevantEventTypesAxis" xbrl:nivel-indentacion="0" />:</b>
+                            <br />
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <ui-select ng-model="tipoEventoSeleccionado.elemento" theme="select2" title="Tipo de Evento Relevante"
+                                       style="min-width: 100%;max-width:100%" ng-change="onChangeTipoEventoPrincipal()" ng-disabled="documentoInstancia.BloquearCamposCaptura">
+                                <ui-select-match placeholder="Elija por favor un tipo de evento relevante" allow-clear="false">
+                                    {{$select.selected.label}}
+                                </ui-select-match>
+                                <ui-select-choices group-by="'grupo'" repeat="opcion in tiposEventoPrincipales | filter: $select.search" refresh="refresh($select.search, $select)" refresh-delay="1000">
+                                    <div ng-bind-html="opcion.label | highlight: $select.search"></div>
+                                </ui-select-choices>
+                            </ui-select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+
+                            <div id="detalleTipoEvento" style="display:none">
+                                <br />
+                                <b>Tipo de evento relevante seleccionado:</b> <br /><xbrl:etiqueta-concepto xbrl:id-concepto="" xbrl:nivel-indentacion="1">
+                            </div>
+
+
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="rel_news_RelevantEventContent" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                            <div class="bloqueTexto" id="contenedorCampoContenidoEvento">
+                                <xbrl:campo-captura xbrl:id-concepto="rel_news_RelevantEventContent" xbrl:id-contexto="" xbrl:valor-default="" xbrl:crear-hecho="true" xbrl:crear-hecho-dblclick="false" xbrl:ultimo="true"></xbrl:campo-captura>
+
+                            </div>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+           </div>
+        </div>
+</xbrl-contenedor-formato>

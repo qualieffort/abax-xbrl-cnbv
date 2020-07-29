@@ -1,0 +1,47 @@
+<schema xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns="http://www.w3.org/2001/XMLSchema"
+    xmlns:cfi="http://xbrl.org/2009/function" xmlns:variable="http://xbrl.org/2008/variable"
+    xmlns:gen="http://xbrl.org/2008/generic" targetNamespace="http://xbrl.org/2009/function"
+    elementFormDefault="qualified">
+    <import namespace="http://www.xbrl.org/2003/XLink"
+        schemaLocation="http://www.xbrl.org/2003/xl-2003-12-31.xsd"/>
+    <import namespace="http://xbrl.org/2008/variable"
+        schemaLocation="http://xbrl.org/2008/variable.xsd"/>
+    <annotation>
+        <appinfo>
+            <link:arcroleType id="cfi-relationship" cyclesAllowed="none"
+                arcroleURI="http://xbrl.org/arcrole/2009/cfi">
+                <link:definition> custom function signature has implementation</link:definition>
+                <link:usedOn> gen:arc</link:usedOn>
+            </link:arcroleType>
+        </appinfo>
+    </annotation>
+    <element id="xml-implementation" name="implementation" substitutionGroup="variable:resource"
+        type="variable:resource.type"/>
+    <element id="xml-alt-implementation" name="alt-implementation"
+        substitutionGroup="variable:resource">
+        <complexType mixed="true">
+            <complexContent>
+                <extension base="variable:resource.type">
+                    <sequence>
+                        <element id="xml-input" name="input" minOccurs="0" maxOccurs="unbounded">
+                            <complexType>
+                                <attribute name="name" type="QName"/>
+                            </complexType>
+                        </element>
+                        <element id="xml-step" name="step" minOccurs="0" maxOccurs="unbounded">
+                            <complexType>
+                                <simpleContent>
+                                    <extension base="variable:expression">
+                                        <attribute name="name" type="QName"/>
+                                    </extension>
+                                </simpleContent>
+                            </complexType>
+                        </element>
+                        <element id="xml-output" name="output" type="variable:expression"
+                            minOccurs="1" maxOccurs="1"/>
+                    </sequence>
+                </extension>
+            </complexContent>
+        </complexType>
+    </element>
+</schema>

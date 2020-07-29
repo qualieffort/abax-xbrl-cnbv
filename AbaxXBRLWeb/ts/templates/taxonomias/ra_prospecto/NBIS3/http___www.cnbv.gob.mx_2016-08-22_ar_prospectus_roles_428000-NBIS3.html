@@ -1,0 +1,56 @@
+<xbrl-contenedor-formato xbrl:rol-uri="{{xbrlRol.Uri}}" orientacion="landscape" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+    <!--<div id="contenedorTablaExcel" class="table-responsive">
+    <table class="table table-striped b-t b-light" xbrl:tabla-excel selector="td:not(:first-child)" selector-contenedor-x="#contenedorFormatos" selector-contenedor-y="#contenedorFormatos" tab-index="1" on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)" on-after-paste="onAfterPaste(valorPegado, x, y)" on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)">
+        <thead>
+            <tr>
+                <th class="th-sortable" data-toggle="class">{{'EDITOR_XBRL_TITULO_CONCEPTO' | translate}}</th>
+                <th style="min-width: 230px; width: 230px;">
+                {{'EDITOR_XBRL_TITULO' | translate}}<br />
+                {{ definicionPlantilla.obtenerVariablePorId("medida_MXN")}}<br />
+                {{::definicionPlantilla.obtenerVariablePorId("fecha_2014_12_31")}}
+                </th>
+            </tr>
+        </thead>
+        <tbody>-->
+    <table class="tablaAnchoFijo" cellspacing="5">
+        <tbody>
+            <tr>
+                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_FinancialReportingInternalAdministration" xbrl:nivel-indentacion="0"></b></td>
+                <td style="text-align:left; width:50%; height:40px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                
+                    <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SelectedFinancialInformationOfInternalManagement" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                    <div class="bloqueTexto"><xbrl:campo-captura  xbrl:id-hecho-plantilla="ar_pros_SelectedFinancialInformationOfInternalManagement_b06ba0e5-3c29-41cb-a792-48e217d0c010"></xbrl:campo-captura></div>
+                </td>
+               
+            </tr>
+            <tr>
+                <td colspan="2">
+                
+                    <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_CommentsAndManagementAnalysisOnOperatingResultsOfInternalManagement" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                    <div class="bloqueTexto"><xbrl:campo-captura  xbrl:id-hecho-plantilla="ar_pros_CommentsAndManagementAnalysisOnOperatingResultsOfInternalManagement_81f3194a-f2a9-485b-a60a-50b9809f6a58"></xbrl:campo-captura></div>
+                </td>
+                
+            </tr>
+            <tr>
+                <td colspan="2">
+              
+                    <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_OperationResultsOfInternalManagement" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                    <div class="bloqueTexto"><xbrl:campo-captura  xbrl:id-hecho-plantilla="ar_pros_OperationResultsOfInternalManagement_20565142-13ed-4f4e-98cc-b5f9a216373d"></xbrl:campo-captura></div>
+                </td>
+               
+            </tr>
+            <tr>
+                <td colspan="2">
+             
+                    <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_FinancialPositionLiquidityAndCapitalResourcesOfInternalManagement" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                    <div class="bloqueTexto"><xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_FinancialPositionLiquidityAndCapitalResourcesOfInternalManagement_6a35c518-1b4c-4c9e-b502-164c6b8b59de" xbrl:ultimo="true"></xbrl:campo-captura></div>
+                </td>
+               
+            </tr>
+        </tbody>
+    </table>
+
+</xbrl-contenedor-formato>

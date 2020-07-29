@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Project: Xbrl Processing Engine
+Copyright (c) 2011  EDGAR(r) Online, Inc.
+
+EDGAR(r) is a federally registered trademark of the U.S. Securities and Exchange Commission. EDGAR 
+Online is not affiliated with or approved by the U.S. Securities and Exchange Commission.
+-->
+
+<MethodSet name="EditingPattern" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Metadata.xsd">	
+	<!-- PERIOD -->
+	<Method name="CreateStartDate" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Period.CreateStartDate">
+		<DomainObjectArgumentSelector name="periodDO" value="." type="DomainObject" allowNull="False"/> 
+		<DomainObjectArgumentSelector name="startDateValue" value="0" type="String" allowNull="True"/> 
+
+		<RunMethod name="RemoveInstant">
+			<ConstantSelector saveDO="methodName" value="RemoveInstant"/>
+			<DomainObjectSelector saveDO="methodWorkingDO" value="periodDO"/>
+		</RunMethod>
+
+		<RunMethod name="RemoveForever">
+			<ConstantSelector saveDO="methodName" value="RemoveForever"/>
+			<DomainObjectSelector saveDO="methodWorkingDO" value="periodDO"/>
+		</RunMethod>
+
+		<CreateDomainObject saveDO="startDateDO" doUri="domain://ubmatrix.com/Xbrl/Instance#StartDate">
+			<ConstantSelector saveDO="schemaDO" value="&amp;http://www.xbrl.org/2003/instance#context#period#startDate"/>
+			<DomainObjectSelector saveDO="value" value="startDateValue"/>
+		</CreateDomainObject>
+		
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#PeriodHasDate">
+			<DomainObjectSelector saveDO="From" value="periodDO"/>
+			<DomainObjectSelector saveDO="To" value="startDateDO"/>
+		</CreateRelationship>
+		
+		<DtsQuerySelector saveDO="contextDO">
+			<DomainObjectSelector saveDO="startDO" value="periodDO"/>
+			<ConstantSelector value="/-'relationship://ubmatrix.com/Xbrl/Instance/Relationship#ContextSpecifiesPeriod'/'domain://ubmatrix.com/Xbrl/Instance#Context'"/>
+		</DtsQuerySelector>
+				
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#ContextHasDate">
+			<DomainObjectSelector saveDO="From" value="contextDO"/>
+			<DomainObjectSelector saveDO="To" value="startDateDO"/>
+		</CreateRelationship>
+
+		<Return>
+			<DomainObjectSelector saveDO="startDateDO" value="startDateDO"/>
+		</Return>
+	</Method>	
+
+	<Method name="CreateEndDate" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Period.CreateEndDate">
+		<DomainObjectArgumentSelector name="periodDO" value="." type="DomainObject" allowNull="False"/> 
+		<DomainObjectArgumentSelector name="endDateValue" value="0" type="String" allowNull="True"/> 
+
+		<RunMethod name="RemoveInstant">
+			<ConstantSelector saveDO="methodName" value="RemoveInstant"/>
+			<DomainObjectSelector saveDO="methodWorkingDO" value="periodDO"/>
+		</RunMethod>
+
+		<RunMethod name="RemoveForever">
+			<ConstantSelector saveDO="methodName" value="RemoveForever"/>
+			<DomainObjectSelector saveDO="methodWorkingDO" value="periodDO"/>
+		</RunMethod>
+
+		<CreateDomainObject saveDO="endDateDO" doUri="domain://ubmatrix.com/Xbrl/Instance#EndDate">
+			<ConstantSelector saveDO="schemaDO" value="&amp;http://www.xbrl.org/2003/instance#context#period#endDate"/>
+			<DomainObjectSelector saveDO="value" value="endDateValue"/>
+		</CreateDomainObject>
+
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#PeriodHasDate">
+			<DomainObjectSelector saveDO="From" value="periodDO"/>
+			<DomainObjectSelector saveDO="To" value="endDateDO"/>
+		</CreateRelationship>
+
+		<DtsQuerySelector saveDO="contextDO">
+			<DomainObjectSelector saveDO="startDO" value="periodDO"/>
+			<ConstantSelector value="/-'relationship://ubmatrix.com/Xbrl/Instance/Relationship#ContextSpecifiesPeriod'/'domain://ubmatrix.com/Xbrl/Instance#Context'"/>
+		</DtsQuerySelector>
+
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#ContextHasDate">
+			<DomainObjectSelector saveDO="From" value="contextDO"/>
+			<DomainObjectSelector saveDO="To" value="endDateDO"/>
+		</CreateRelationship>
+
+		<Return>
+			<DomainObjectSelector saveDO="endDateDO" value="endDateDO"/>
+		</Return>
+	</Method>	
+
+	<Method name="CreateForever" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Period.CreateForever">
+		<DomainObjectArgumentSelector name="periodDO" value="." type="DomainObject" allowNull="False"/> 
+
+		<RunMethod name="RemoveDates">	<!-- remove existing forever -->
+			<ConstantSelector saveDO="methodName" value="RemoveDates"/>
+			<DomainObjectSelector saveDO="methodWorkingDO" value="periodDO"/>
+		</RunMethod>
+
+		<CreateDomainObject saveDO="foreverDO" doUri="domain://ubmatrix.com/Xbrl/Instance#Forever">
+			<ConstantSelector saveDO="schemaDO" value="&amp;http://www.xbrl.org/2003/instance#context#period#forever"/>
+		</CreateDomainObject>
+
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#PeriodHasDate">
+			<DomainObjectSelector saveDO="From" value="periodDO"/>
+			<DomainObjectSelector saveDO="To" value="foreverDO"/>
+		</CreateRelationship>
+
+		<DtsQuerySelector saveDO="contextDO">
+			<DomainObjectSelector saveDO="startDO" value="periodDO"/>
+			<ConstantSelector value="/-'relationship://ubmatrix.com/Xbrl/Instance/Relationship#ContextSpecifiesPeriod'/'domain://ubmatrix.com/Xbrl/Instance#Context'"/>
+		</DtsQuerySelector>
+
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#ContextHasDate">
+			<DomainObjectSelector saveDO="From" value="contextDO"/>
+			<DomainObjectSelector saveDO="To" value="foreverDO"/>
+		</CreateRelationship>
+
+		<Return>
+			<DomainObjectSelector saveDO="foreverDO" value="foreverDO"/>
+		</Return>
+	</Method>
+
+	<Method name="CreateInstant" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Period.CreateInstant">
+		<DomainObjectArgumentSelector name="periodDO" value="." type="DomainObject" allowNull="False"/> 
+		<DomainObjectArgumentSelector name="instantDateValue" value="0" type="String" allowNull="True"/> 
+
+		<RunMethod name="RemoveDates">	<!-- remove existing instant -->
+			<ConstantSelector saveDO="methodName" value="RemoveDates"/>
+			<DomainObjectSelector saveDO="methodWorkingDO" value="periodDO"/>
+		</RunMethod>
+
+		<CreateDomainObject saveDO="instantDO" doUri="domain://ubmatrix.com/Xbrl/Instance#Instant">
+			<ConstantSelector saveDO="schemaDO" value="&amp;http://www.xbrl.org/2003/instance#context#period#instant"/>
+			<DomainObjectSelector saveDO="value" value="instantDateValue"/>
+		</CreateDomainObject>
+		
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#PeriodHasDate">
+			<DomainObjectSelector saveDO="From" value="periodDO"/>
+			<DomainObjectSelector saveDO="To" value="instantDO"/>
+		</CreateRelationship>
+
+		<DtsQuerySelector saveDO="contextDO">
+			<DomainObjectSelector saveDO="startDO" value="periodDO"/>
+			<ConstantSelector value="/-'relationship://ubmatrix.com/Xbrl/Instance/Relationship#ContextSpecifiesPeriod'/'domain://ubmatrix.com/Xbrl/Instance#Context'"/>
+		</DtsQuerySelector>
+		
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#ContextHasDate">
+			<DomainObjectSelector saveDO="From" value="contextDO"/>
+			<DomainObjectSelector saveDO="To" value="instantDO"/>
+		</CreateRelationship>
+		
+		<Return>
+			<DomainObjectSelector saveDO="instantDO" value="instantDO"/>
+		</Return>
+	</Method>
+
+    <!-- Not required -->
+    <!-- 
+	<Method name="SetDate" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Period.SetDate">
+		<DomainObjectArgumentSelector name="periodDO" value="." type="DomainObject" allowNull="False"/> 
+		<DomainObjectArgumentSelector name="dateDO" value="0" type="DomainObject" allowNull="False"/> 
+
+		<ConditionSet testValue="periodDateDO" Fail="NotEmpty">
+			<DtsQuerySelector saveDO="periodDateDO">
+				<DomainObjectSelector saveDO="startDO" value="periodDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#PeriodHasDate'"/>
+			</DtsQuerySelector>
+			<Failure>
+				<RemoveDomainObject>
+					<DomainObjectSelector saveDO="RemoveDomainObject" value="periodDateDO"/>
+				</RemoveDomainObject>
+			</Failure>
+		</ConditionSet>
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#PeriodHasDate">
+			<DomainObjectSelector saveDO="From" value="periodDO"/>
+			<DomainObjectSelector saveDO="To" value="dateDO"/>
+		</CreateRelationship>
+	</Method>
+    -->
+   
+	<Method name="RemoveDates" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Period.RemoveDates">
+		<DomainObjectArgumentSelector name="periodDO" value="." type="DomainObject" allowNull="False"/> 
+
+		<RunMethod name="RemoveStartDate">
+			<ConstantSelector saveDO="methodName" value="RemoveStartDate"/>
+			<DomainObjectSelector saveDO="methodWorkingDO" value="periodDO"/>
+		</RunMethod>
+
+		<RunMethod name="RemoveEndDate">
+			<ConstantSelector saveDO="methodName" value="RemoveEndDate"/>
+			<DomainObjectSelector saveDO="methodWorkingDO" value="periodDO"/>
+		</RunMethod>
+
+		<RunMethod name="RemoveInstant">
+			<ConstantSelector saveDO="methodName" value="RemoveInstant"/>
+			<DomainObjectSelector saveDO="methodWorkingDO" value="periodDO"/>
+		</RunMethod>
+
+		<RunMethod name="RemoveForever">
+			<ConstantSelector saveDO="methodName" value="RemoveForever"/>
+			<DomainObjectSelector saveDO="methodWorkingDO" value="periodDO"/>
+		</RunMethod>
+	</Method>
+	
+	<Method name="RemoveStartDate" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Period.RemoveStartDate">
+		<DomainObjectArgumentSelector name="periodDO" value="." type="DomainObject" allowNull="False"/> 
+
+		<ConditionSet testValue="dateDO" Fail="Empty">
+			<DtsQuerySelector saveDO="dateDO">
+				<DomainObjectSelector saveDO="startDO" value="periodDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#PeriodHasDate'/'domain://ubmatrix.com/Xbrl/Instance#StartDate'"/>
+			</DtsQuerySelector>
+
+			<Success>
+				<RunMethod name="RemoveDate">
+					<ConstantSelector saveDO="methodName" value="RemoveDate"/>
+					<DomainObjectSelector saveDO="methodWorkingDO" value="periodDO"/>
+					<DomainObjectSelector saveDO="methodArg0" value="dateDO"/>
+				</RunMethod>
+			</Success>
+		</ConditionSet>
+	</Method>
+	
+	<Method name="RemoveEndDate" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Period.RemoveEndDate">
+		<DomainObjectArgumentSelector name="periodDO" value="." type="DomainObject" allowNull="False"/> 
+
+		<ConditionSet testValue="dateDO" Fail="Empty">
+			<DtsQuerySelector saveDO="dateDO">
+				<DomainObjectSelector saveDO="startDO" value="periodDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#PeriodHasDate'/'domain://ubmatrix.com/Xbrl/Instance#EndDate'"/>
+			</DtsQuerySelector>
+
+			<Success>
+				<RunMethod name="RemoveDate">
+					<ConstantSelector saveDO="methodName" value="RemoveDate"/>
+					<DomainObjectSelector saveDO="methodWorkingDO" value="periodDO"/>
+					<DomainObjectSelector saveDO="methodArg0" value="dateDO"/>
+				</RunMethod>
+			</Success>
+		</ConditionSet>
+	</Method>
+
+	<Method name="RemoveInstant" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Period.RemoveInstant">
+		<DomainObjectArgumentSelector name="periodDO" value="." type="DomainObject" allowNull="False"/> 
+		<ConditionSet testValue="dateDO" Fail="Empty">
+			<DtsQuerySelector saveDO="dateDO">
+				<DomainObjectSelector saveDO="startDO" value="periodDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#PeriodHasDate'/'domain://ubmatrix.com/Xbrl/Instance#Instant'"/>
+			</DtsQuerySelector>
+
+			<Success>
+				<RunMethod name="RemoveDate">
+					<ConstantSelector saveDO="methodName" value="RemoveDate"/>
+					<DomainObjectSelector saveDO="methodWorkingDO" value="periodDO"/>
+					<DomainObjectSelector saveDO="methodArg0" value="dateDO"/>
+				</RunMethod>
+			</Success>
+		</ConditionSet>
+	</Method>
+
+	<Method name="RemoveForever" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Period.RemoveForever">
+		<DomainObjectArgumentSelector name="periodDO" value="." type="DomainObject" allowNull="False"/> 
+
+		<ConditionSet testValue="dateDO" Fail="Empty">
+			<DtsQuerySelector saveDO="dateDO">
+				<DomainObjectSelector saveDO="startDO" value="periodDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#PeriodHasDate'/'domain://ubmatrix.com/Xbrl/Instance#Forever'"/>
+			</DtsQuerySelector>
+
+			<Success>
+				<RunMethod name="RemoveDate">
+					<ConstantSelector saveDO="methodName" value="RemoveDate"/>
+					<DomainObjectSelector saveDO="methodWorkingDO" value="periodDO"/>
+					<DomainObjectSelector saveDO="methodArg0" value="dateDO"/>
+				</RunMethod>
+			</Success>
+		</ConditionSet>
+	</Method>
+
+	<Method name="RemoveDate" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Period.RemoveDate">
+		<DomainObjectArgumentSelector name="periodDO" value="." type="DomainObject" allowNull="False"/> 
+		<DomainObjectArgumentSelector name="dateDO" value="0" type="DomainObject" allowNull="False"/>
+		
+		<RemoveDomainObject>	<!-- remove the PeriodHasDate -->
+			<DtsQuerySelector saveDO="RemoveDomainObject">
+			   	<DomainObjectSelector saveDO="startDO" value="periodDO"/>
+			   	<DomainObjectSelector saveDO="toEndDO" value="dateDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#PeriodHasDate'"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+
+		<RemoveDomainObject>	<!-- remove the date -->
+			<DomainObjectSelector saveDO="RemoveDomainObject" value="dateDO"/>
+		</RemoveDomainObject>
+	</Method>
+</MethodSet>
+
+<!--
+The contents of this file are subject to the End-User Software License Agreement (the "License"). You may not use this 
+file except in compliance with the License. A current copy of the License is available by contacting product support.
+
+Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights and limitations under the License.
+-->

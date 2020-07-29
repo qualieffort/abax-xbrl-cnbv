@@ -1,0 +1,82 @@
+﻿<div class="panel-info" style="z-index:2000;">
+    <div class="modal-header panel-heading">
+        <button type="button" class="close" aria-hidden="true" ng-click="cancelar()">×</button>
+        <h4 class="modal-title">
+            <i class="fa fa-floppy-o"></i>
+            {{'TITULO_GUARDAR_CONSULTA' | translate}}
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="Nombre">{{'ETIQUETA_NOMBRE' | translate}}:</label>
+            <div class="col-sm-10">
+                <div class="row">
+                    <div  ng-class="{ 'has-error' : formulario.Nombre.$invalid }">
+                        <input type="text" id="Nombre" name="Nombre" placeholder="{{'PLACE_HOLDER_NOMBRE_CONSULTA_REPOSITORIO' | translate}}" class="form-control" ng-model="entidad.Nombre" ng-required="true" />
+                    </div>
+                    <br />
+                    <p ng-show="formulario.Nombre.$invalid" class="help-block">
+                        <i class="fa fa-exclamation-circle"></i>
+                        {{'MENSAJE_ERROR_CAMPO_NOMBRE_REQUERIDO' | translate}}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="line line-dashed b-b line-lg pull-in"></div>
+        <br />
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="Descripcion">{{'ETIQUETA_DESCRIPCION' | translate}}:</label>
+            <div class="col-sm-10">
+                <div class="row">
+                    <div ng-class="{ 'has-error' : formulario.Descripcion.$invalid }">
+                        <input type="text" id="Descripcion" name="Descripcion" placeholder="{{'PLACE_HOLDER_DESCRIPCION_CONSULTA_REPOSITORIO' | translate}}" class="form-control" ng-model="entidad.Descripcion" ng-required="true" />
+                    </div>
+                    <br />
+                    <p ng-show="formulario.Descripcion.$invalid" class="help-block">
+                        <i class="fa fa-exclamation-circle"></i>
+                        {{'MENSAJE_ERROR_CAMPO_DESCRIPCION_REQUERIDO' | translate}}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="line line-dashed b-b line-lg pull-in"></div>
+        <br />
+        <div class="form-group">
+            <label class="col-sm-2 control-label">{{'ETIQUETA_TIPO' | translate}}:</label>
+            <div class="col-sm-10 checkbox">
+                <div class="row">
+                    <div class="col-md-4">
+                        <a ng-hide="entidad.Publica" class="text-danger" style="font-size:14px" href="javascript:void(0);" ng-click="entidad.Publica = !entidad.Publica">
+                            <i class="fa fa-square-o"></i>
+                            {{'ETIQUETA_PRIVADA' | translate}}
+                        </a>
+                        <a ng-hide="!entidad.Publica" class="text-success" style="font-size:14px" href="javascript:void(0);" ng-click="entidad.Publica = !entidad.Publica">
+                            <i class="fa fa-check-square-o"></i>
+                            {{'ETIQUETA_PUBLICA' | translate}}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" 
+                ng-if="puedePersistir" 
+                class="btn btn-primary" 
+                ng-click="guardar()" 
+                ng-hide="estaGuardando" 
+                ng-disabled="formulario.$invalid">
+            <i class="fa fa-save"></i>
+            {{'ETIQUETA_BOTON_GUARDAR' | translate}}
+        </button>
+        <button type="button" 
+                disabled 
+                class="btn btn-primary" 
+                ng-if="estaGuardando">
+            <i class="fa fa-refresh fa-spin"></i>
+            {{'MENSAJE_INFO_GUARDANDO' | translate}} ...
+        </button>
+    </div>
+</div>

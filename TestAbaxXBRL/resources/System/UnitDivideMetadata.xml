@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Project: Xbrl Processing Engine
+Copyright (c) 2011  EDGAR(r) Online, Inc.
+
+EDGAR(r) is a federally registered trademark of the U.S. Securities and Exchange Commission. EDGAR 
+Online is not affiliated with or approved by the U.S. Securities and Exchange Commission.
+-->
+
+
+<MethodSet name="EditingPattern" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Metadata.xsd">	
+	<!-- DIVIDE.Numerator -->
+	<Method name="CreateNumeratorMeasure" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Numerator.CreateNumeratorMeasure">
+		<DomainObjectArgumentSelector name="numeratorDO" value="." type="DomainObject" allowNull="False"/> 
+		<CreateDomainObject saveDO="measureDO" doUri="domain://ubmatrix.com/Xbrl/Instance#Measure">
+			<ConstantSelector saveDO="schemaDO" value="&amp;http://www.xbrl.org/2003/instance#unit#measure"/>
+		</CreateDomainObject>
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesMeasure">
+			<DomainObjectSelector saveDO="From" value="numeratorDO"/>
+			<DomainObjectSelector saveDO="To" value="measureDO"/>
+		</CreateRelationship>
+		<Return>
+			<DomainObjectSelector saveDO="measureDO" value="measureDO"/>
+		</Return>
+	</Method>
+
+	<Method name="RemoveNumeratorMeasure" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Numerator.RemoveNumeratorMeasure">
+		<DomainObjectArgumentSelector name="numeratorDO" value="." type="DomainObject" allowNull="False"/> 
+		<DomainObjectArgumentSelector name="numeratorMeasureDO" value="0" type="DomainObject" allowNull="False"/> 
+		<ConditionSet testValue="numeratorMeasureRelDO" Fail="Empty">
+			<!-- get numeratorMeasureDO from divideDO
+			-->
+			<DtsQuerySelector saveDO="numeratorMeasureRelDO">
+				<DomainObjectSelector saveDO="startDO" value="numeratorDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesMeasure'"/>
+				<DomainObjectSelector saveDO="toEndDO" value="numeratorMeasureDO"/>
+			</DtsQuerySelector>
+			<Failure>
+				<CreateMemo doUri="memo://ubmatrix.com/Edit/Instance/#NumeratorDoesNotHaveMeasure">
+					<DomainObjectSelector name="particle1" value="numeratorDO"/>
+					<DomainObjectSelector name="particle2" value="numeratorMeasureDO"/>
+				</CreateMemo>	
+			</Failure>
+			<Success>
+				<RemoveDomainObject>
+					<DomainObjectSelector saveDO="RemoveDomainObject" value="numeratorMeasureRelDO"/>
+				</RemoveDomainObject>
+			</Success>
+		</ConditionSet>
+		<RemoveDomainObject>
+			<DomainObjectSelector saveDO="RemoveDomainObject" value="numeratorMeasureDO"/>
+		</RemoveDomainObject>
+	</Method>
+
+	<!-- DIVIDE.Denominator -->
+	<Method name="CreateDenominatorMeasure" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Denominator.CreateDenominatorMeasure">
+		<DomainObjectArgumentSelector name="denominatorDO" value="." type="DomainObject" allowNull="False"/> 
+		<CreateDomainObject saveDO="measureDO" doUri="domain://ubmatrix.com/Xbrl/Instance#Measure">
+			<ConstantSelector saveDO="schemaDO" value="&amp;http://www.xbrl.org/2003/instance#unit#measure"/>
+		</CreateDomainObject>
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesMeasure">
+			<DomainObjectSelector saveDO="From" value="denominatorDO"/>
+			<DomainObjectSelector saveDO="To" value="measureDO"/>
+		</CreateRelationship>
+		<Return>
+			<DomainObjectSelector saveDO="measureDO" value="measureDO"/>
+		</Return>
+	</Method>
+
+	<Method name="RemoveDenominatorMeasure" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Denominator.RemoveDenominatorMeasure">
+		<DomainObjectArgumentSelector name="denominatorDO" value="." type="DomainObject" allowNull="False"/> 
+		<DomainObjectArgumentSelector name="denominatorMeasureDO" value="0" type="DomainObject" allowNull="False"/> 
+		<ConditionSet testValue="denominatorMeasureRelDO" Fail="Empty">
+			<!-- get numeratorMeasureDO from divideDO
+			-->
+			<DtsQuerySelector saveDO="denominatorMeasureRelDO">
+				<DomainObjectSelector saveDO="startDO" value="denominatorDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesMeasure'"/>
+				<DomainObjectSelector saveDO="toEndDO" value="denominatorMeasureDO"/>
+			</DtsQuerySelector>
+			<Failure>
+				<CreateMemo doUri="memo://ubmatrix.com/Edit/Instance/#DenominatorDoesNotHaveSuchMeasure">
+					<DomainObjectSelector name="particle1" value="denominatorDO"/>
+					<DomainObjectSelector name="particle2" value="denominatorMeasureDO"/>
+				</CreateMemo>	
+			</Failure>
+			<Success>
+				<RemoveDomainObject>
+					<DomainObjectSelector saveDO="RemoveDomainObject" value="denominatorMeasureRelDO"/>
+				</RemoveDomainObject>
+			</Success>
+		</ConditionSet>
+		<RemoveDomainObject>
+			<DomainObjectSelector saveDO="RemoveDomainObject" value="denominatorMeasureDO"/>
+		</RemoveDomainObject>
+	</Method>
+
+	<!-- UNIT.Divide -->
+	<Method name="CreateDenominator" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Divide.CreateDenominator">
+		<DomainObjectArgumentSelector name="divideDO" value="." type="DomainObject" allowNull="False"/> 
+		<CreateDomainObject saveDO="denominatorDO" doUri="domain://ubmatrix.com/Xbrl/Instance#Denominator">
+			<ConstantSelector saveDO="schemaDO" value="&amp;http://www.xbrl.org/2003/instance#unit#divide#unitDenominator"/>
+		</CreateDomainObject>
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesDenominator">
+			<DomainObjectSelector saveDO="From" value="divideDO"/>
+			<DomainObjectSelector saveDO="To" value="denominatorDO"/>
+		</CreateRelationship>
+		<Return>
+			<DomainObjectSelector saveDO="denominatorDO" value="denominatorDO"/>
+		</Return>
+	</Method>
+	<Method name="SetDenominator" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Divide.SetDenominator">
+		<DomainObjectArgumentSelector name="divideDO" value="." type="DomainObject" allowNull="False"/> 
+		<DomainObjectArgumentSelector name="denominatorDO" value="0" type="DomainObject" allowNull="False"/> 
+		<ConditionSet testValue="divideDenominatorDO" Fail="NotEmpty">		
+			<!-- get denominator from divideDO
+			-->
+			<DtsQuerySelector saveDO="divideDenominatorDO">
+				<DomainObjectSelector saveDO="startDO" value="divideDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesDenominator'"/>
+			</DtsQuerySelector>
+			<Failure>
+				<RemoveDomainObject>
+					<DomainObjectSelector saveDO="RemoveDomainObject" value="divideDenominatorDO"/>
+				</RemoveDomainObject>
+			</Failure>
+		</ConditionSet>
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesDenominator">
+			<DomainObjectSelector saveDO="From" value="divideDO"/>
+			<DomainObjectSelector saveDO="To" value="denominatorDO"/>
+		</CreateRelationship>
+	</Method>	
+	<Method name="RemoveDenominator" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Divide.RemoveDenominator">
+		<DomainObjectArgumentSelector name="divideDO" value="." type="DomainObject" allowNull="False"/> 
+		<ConditionSet Fail="Empty" testValue="denominatorDO" saveDO="denominatorDO">
+			<DtsQuerySelector saveDO="denominatorDO">
+				<DomainObjectSelector saveDO="startDO" value="divideDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesDenominator'/'domain://ubmatrix.com/Xbrl/Instance#Denominator'"/>
+			</DtsQuerySelector>
+			<Failure>
+				<CreateMemo doUri="memo://ubmatrix.com/Edit/Instance/#DivideDoesNotHaveDenominator">
+					<DomainObjectSelector saveDO="particle1" value="divideDO"/>
+				</CreateMemo>	
+			</Failure>
+			<Return>
+				<DomainObjectSelector saveDO="denominatorDO" value="denominatorDO"/>
+			</Return>
+		</ConditionSet>
+		<RunMethod name="RemoveMeasureDO" saveDO="denominatorMeasure">
+			<ConstantSelector saveDO="methodName" value="RemoveMeasureDO"/>
+			<DomainObjectSelector saveDO="methodWorkingDO" value="denominatorDO"/>
+			<DtsQuerySelector saveDO="methodArg0">
+				<DomainObjectSelector saveDO="startDO" value="denominatorDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesMeasure'/'domain://ubmatrix.com/Xbrl/Instance#Measure'"/>
+			</DtsQuerySelector>
+		</RunMethod>
+		<RemoveDomainObject>
+			<!-- get divideDO <-> denominatorDO
+			-->
+			<DtsQuerySelector saveDO="RemoveDomainObject">
+				<DomainObjectSelector saveDO="startDO" value="divideDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesDenominator'"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+		<RemoveDomainObject>
+			<DomainObjectSelector saveDO="RemoveDomainObject" value="denominatorDO"/>
+		</RemoveDomainObject>
+	</Method>
+	<Method name="DisconnectDenominator" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Divide.DisconnectDenominator">
+		<DomainObjectArgumentSelector name="divideDO" value="." type="DomainObject" allowNull="False"/> 
+		<RemoveDomainObject>
+			<!-- get divideDO <-> denominatorDO
+			-->
+			<DtsQuerySelector saveDO="RemoveDomainObject">
+				<DomainObjectSelector saveDO="startDO" value="divideDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesDenominator'"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+	</Method>
+	<Method name="CreateNumerator" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Divide.CreateNumerator">
+		<DomainObjectArgumentSelector name="divideDO" value="." type="DomainObject" allowNull="False"/> 
+		<CreateDomainObject saveDO="numeratorDO" doUri="domain://ubmatrix.com/Xbrl/Instance#Numerator">
+			<ConstantSelector saveDO="schemaDO" value="&amp;http://www.xbrl.org/2003/instance#unit#divide#unitNumerator"/>
+		</CreateDomainObject>
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesNumerator">
+			<DomainObjectSelector saveDO="From" value="divideDO"/>
+			<DomainObjectSelector saveDO="To" value="numeratorDO"/>
+		</CreateRelationship>
+		<Return>
+			<DomainObjectSelector saveDO="numeratorDO" value="numeratorDO"/>
+		</Return>
+	</Method>
+	<Method name="SetNumerator" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Divide.SetNumerator">
+		<DomainObjectArgumentSelector name="divideDO" value="." type="DomainObject" allowNull="False"/> 
+		<DomainObjectArgumentSelector name="numeratorDO" value="0" type="DomainObject" allowNull="False"/> 
+		<ConditionSet testValue="divideNumeratorDO" Fail="NotEmpty">		
+			<!-- get denominatorDO from divideDO
+			-->
+			<DtsQuerySelector saveDO="divideNumeratorDO">
+				<DomainObjectSelector saveDO="startDO" value="divideDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesNumerator'"/>
+			</DtsQuerySelector>
+			<Failure>
+				<RemoveDomainObject>
+					<DomainObjectSelector saveDO="RemoveDomainObject" value="divideNumeratorDO"/>
+				</RemoveDomainObject>
+			</Failure>
+		</ConditionSet>
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesNumerator">
+			<DomainObjectSelector saveDO="From" value="divideDO"/>
+			<DomainObjectSelector saveDO="To" value="numeratorDO"/>
+		</CreateRelationship>
+	</Method>	
+	<Method name="RemoveNumerator" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Divide.RemoveNumerator">
+		<DomainObjectArgumentSelector name="divideDO" value="." type="DomainObject" allowNull="False"/> 
+		<ConditionSet Fail="Empty" testValue="numeratorDO" saveDO="numeratorDO">
+			<DtsQuerySelector saveDO="numeratorDO">
+				<DomainObjectSelector saveDO="startDO" value="divideDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesNumerator'/'domain://ubmatrix.com/Xbrl/Instance#Numerator'"/>
+			</DtsQuerySelector>
+			<Failure>
+				<CreateMemo doUri="memo://ubmatrix.com/Edit/Instance/#DivideDoesNotHaveNumerator">
+					<DomainObjectSelector saveDO="particle1" value="divideDO"/>
+				</CreateMemo>	
+			</Failure>
+			<Return>
+				<DomainObjectSelector saveDO="numeratorDO" value="numeratorDO"/>
+			</Return>
+		</ConditionSet>
+		<RunMethod name="RemoveMeasureDO">
+			<ConstantSelector saveDO="methodName" value="RemoveMeasureDO"/>
+			<DomainObjectSelector saveDO="methodWorkingDO" value="numeratorDO"/>
+			<DtsQuerySelector saveDO="methodArg0">
+				<DomainObjectSelector saveDO="startDO" value="numeratorDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesMeasure'/'domain://ubmatrix.com/Xbrl/Instance#Measure'"/>
+			</DtsQuerySelector>
+		</RunMethod>
+		<RemoveDomainObject>
+			<!-- get divideDO <-> numeratorDO
+			-->
+			<DtsQuerySelector saveDO="RemoveDomainObject">
+				<DomainObjectSelector saveDO="startDO" value="divideDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesNumerator'"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+		<RemoveDomainObject>
+			<DomainObjectSelector saveDO="RemoveDomainObject" value="numeratorDO"/>
+		</RemoveDomainObject>
+	</Method>
+	<Method name="DisconnectNumerator" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Divide.DisconnectNumerator">
+		<DomainObjectArgumentSelector name="divideDO" value="." type="DomainObject" allowNull="False"/> 
+		<RemoveDomainObject>
+			<!-- get divideDO <-> numeratorDO
+			-->
+			<DtsQuerySelector saveDO="RemoveDomainObject">
+				<DomainObjectSelector saveDO="startDO" value="divideDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesNumerator'"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+	</Method>
+
+</MethodSet>
+
+<!--
+The contents of this file are subject to the End-User Software License Agreement (the "License"). You may not use this 
+file except in compliance with the License. A current copy of the License is available by contacting product support.
+
+Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights and limitations under the License.
+-->

@@ -1,0 +1,961 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\MSTest.TestAdapter.1.3.2\build\net45\MSTest.TestAdapter.props" Condition="Exists('..\packages\MSTest.TestAdapter.1.3.2\build\net45\MSTest.TestAdapter.props')" />
+  <Import Project="..\packages\Microsoft.CodeCoverage.15.9.0\build\netstandard1.0\Microsoft.CodeCoverage.props" Condition="Exists('..\packages\Microsoft.CodeCoverage.15.9.0\build\netstandard1.0\Microsoft.CodeCoverage.props')" />
+  <Import Project="..\packages\NUnit.3.11.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.11.0\build\NUnit.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7AD8DBE0-0735-4D94-B812-CC05E9C29667}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestAbaxXBRL</RootNamespace>
+    <AssemblyName>TestAbaxXBRL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Words">
+      <HintPath>..\packages\Aspose.Words.15.3.0\lib\net3.5-client\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.0.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.0.0\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.0.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.0.0\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DnsClient, Version=1.0.7.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>..\packages\DnsClient.1.0.7\lib\net45\DnsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="dom">
+      <HintPath>..\lib\dom.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.BulkInsert, Version=6.0.2.8, Culture=neutral, PublicKeyToken=630a17433349cb76, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.BulkInsert-ef6.6.0.2.8\lib\Net40\EntityFramework.BulkInsert.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.Extended">
+      <HintPath>..\packages\EntityFramework.Extended.6.1.0.120\lib\net40\EntityFramework.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.MappingAPI, Version=6.1.0.9, Culture=neutral, PublicKeyToken=7ee2e825d201459e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.MappingAPI.6.1.0.9\lib\net45\EntityFramework.MappingAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="GhostscriptSharp, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GhostScriptSharp.1.3.1.4\lib\net40\GhostscriptSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NPOI.Excel.2.1.1\lib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Core, Version=0.46.0.2, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.API, Version=0.46.0.2, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\IKVM.OpenJDK.XML.API.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Bind">
+      <HintPath>..\lib\IKVM.OpenJDK.XML.Bind.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Parse, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\IKVM.OpenJDK.XML.Parse.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Transform, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\IKVM.OpenJDK.XML.Transform.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\packages\DotNetZip.1.9.3\lib\net20\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.CodeCoverage.Shim, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeCoverage.15.9.0\lib\net45\Microsoft.VisualStudio.CodeCoverage.Shim.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MSTest.TestFramework.1.3.2\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MSTest.TestFramework.1.3.2\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.2.4.26, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.2.4\lib\net45\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.2.4.26, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.2.4\lib\net45\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.2.4.26, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.2.4\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Legacy, Version=2.2.4.26, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\mongocsharpdriver.2.2.4\lib\net45\MongoDB.Driver.Legacy.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.1.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NPOI.Excel.2.1.1\lib\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.1.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NPOI.Excel.2.1.1\lib\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.1.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NPOI.Excel.2.1.1\lib\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.1.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NPOI.Excel.2.1.1\lib\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.11.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.11.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.50.4790.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.50.4790-beta5a\lib\net20\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.50.4790.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.50.4790-beta5a\lib\net20\PdfSharp.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="relaxngdatatype">
+      <HintPath>..\lib\relaxngdatatype.dll</HintPath>
+    </Reference>
+    <Reference Include="resolver, Version=5.0.1.5000, Culture=neutral, PublicKeyToken=bfa5755d7fdecb9f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\resolver.dll</HintPath>
+    </Reference>
+    <Reference Include="sax">
+      <HintPath>..\lib\sax.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.License, Version=1.3.2.40, Culture=neutral, PublicKeyToken=b1144360237c8b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.PDF.3.2\lib\net40\Spire.License.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf, Version=3.2.52.56040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.PDF.3.2\lib\net40\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Aop, Version=2.0.1.45000, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spring.Aop.2.0.1\lib\net45\Spring.Aop.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core, Version=2.0.1.45000, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spring.Core.2.0.1\lib\net45\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data, Version=2.0.1.45000, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spring.Data.2.0.1\lib\net45\Spring.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Messaging.Ems, Version=1.3.2.40943, Culture=neutral, PublicKeyToken=65e474d141e25e07" />
+    <Reference Include="Spring.Testing.Microsoft">
+      <HintPath>..\packages\Spring.Testing.Microsoft.1.3.2\lib\net40\Spring.Testing.Microsoft.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Testing.NUnit, Version=2.0.1.45000, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spring.Testing.NUnit.2.0.1\lib\net45\Spring.Testing.NUnit.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.3.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http, Version=2.2.22.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.22\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.22\lib\net40\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.22\lib\net40\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.2.22.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.22\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.XML" />
+    <Reference Include="xalan.net, Version=5.0.1.5000, Culture=neutral, PublicKeyToken=bfa5755d7fdecb9f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\xalan.net.dll</HintPath>
+    </Reference>
+    <Reference Include="XbrlProcessorSDK, Version=5.3.1.432, Culture=neutral, PublicKeyToken=bfa5755d7fdecb9f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\XbrlProcessorSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="XbrlProcessorSDK-Api, Version=5.3.1.432, Culture=neutral, PublicKeyToken=bfa5755d7fdecb9f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\XbrlProcessorSDK-Api.dll</HintPath>
+    </Reference>
+    <Reference Include="xml-apis, Version=5.0.1.5000, Culture=neutral, PublicKeyToken=bfa5755d7fdecb9f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\xml-apis.dll</HintPath>
+    </Reference>
+    <Reference Include="xmlcomp, Version=5.0.1.5000, Culture=neutral, PublicKeyToken=bfa5755d7fdecb9f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\xmlcomp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise />
+  </Choose>
+  <ItemGroup>
+    <Compile Include="ConcatenaJsonsTest.cs" />
+    <Compile Include="DescargaJsonsRssTest.cs" />
+    <Compile Include="Dtos\Mongo\ElementoConsulta4D.cs" />
+    <Compile Include="Dtos\Mongo\HechoCrudoDTO.cs" />
+    <Compile Include="Dtos\Mongo\HechoReducido.cs" />
+    <Compile Include="Dtos\Mongo\MapaPersonasResponsables.cs" />
+    <Compile Include="Dtos\Mongo\Nbis1Raw.cs" />
+    <Compile Include="Dtos\Mongo\NBis1TableElement.cs" />
+    <Compile Include="Dtos\Mongo\PersonaResponsable.cs" />
+    <Compile Include="JBRL\Constants\ConstantsJBRL.cs" />
+    <Compile Include="JBRL\Modelo\AzureFunctionTestRequestDto.cs" />
+    <Compile Include="JBRL\Modelo\EnvioJBRL.cs" />
+    <Compile Include="JBRL\Modelo\DimensionMemberJBRL.cs" />
+    <Compile Include="JBRL\Modelo\TranslateTextDto.cs" />
+    <Compile Include="JBRL\Modelo\TranslationResultDto.cs" />
+    <Compile Include="JBRL\Modelo\XBRLJsonProccessResponseDTO.cs" />
+    <Compile Include="JBRL\Test\ActualizaConceptosTaxonomiaTest.cs" />
+    <Compile Include="JBRL\Test\ActualizaNombreAdministradorTest.cs" />
+    <Compile Include="JBRL\Test\CargaHechosXBRLaJBRLdeRSSTest.cs" />
+    <Compile Include="JBRL\Test\CargaHechosXBRLaJBRLTest.cs" />
+    <Compile Include="JBRL\Test\PruebaAzureFunctionsTest.cs" />
+    <Compile Include="JBRL\Test\RegeneraRegistroReporteTest.cs" />
+    <Compile Include="JBRL\Test\ReproceaNotasXBRLTest.cs" />
+    <Compile Include="JBRL\Test\ResponseDto.cs" />
+    <Compile Include="JBRL\Util\JBRLUtils.cs" />
+    <Compile Include="Modelo\DefinicionFormulaTest.cs" />
+    <Compile Include="Modelo\DefinicionVariableFormulaJsonTest.cs" />
+    <Compile Include="Modelo\FiltroDimensionJsonTest.cs" />
+    <Compile Include="JBRL\Modelo\ConceptoXBRL.cs" />
+    <Compile Include="JBRL\Modelo\ContextoJBRL.cs" />
+    <Compile Include="JBRL\Modelo\FactJBRL.cs" />
+    <Compile Include="JBRL\Modelo\TipoDatoJBRL.cs" />
+    <Compile Include="Modelo\RawAdministrator.cs" />
+    <Compile Include="Modelo\VariableFormulaTest.cs" />
+    <Compile Include="Reportes\TestGenerarReporteCNBVIngresosPorProducto.cs" />
+    <Compile Include="Reportes\TestGenerarReportesCellstore.cs" />
+    <Compile Include="resources\TestGeneraHechosCreditos.cs" />
+    <Compile Include="SolicitudHTTPTest.cs" />
+    <Compile Include="TestAbaxCellStore.cs" />
+    <Compile Include="TestAbaxCellStoreSpotfire.cs" />
+    <Compile Include="TestGeneral.cs" />
+    <Compile Include="TestGenerarReporteCalculoMaterialidadReestructura.cs" />
+    <Compile Include="TestGenerarColeccionesReportes.cs" />
+    <Compile Include="TestReProcesamiento4D.cs" />
+    <Compile Include="TestGeneraReporte4D.cs" />
+    <Compile Include="TestGeneraReporteNbis1LuisMuguerza.cs" />
+    <Compile Include="Reportes\TestGeneraReportePersonasResponsablesMongo.cs" />
+    <Compile Include="Reportes\TestGeneraReporteAdministradores.cs" />
+    <Compile Include="TestGenerarFormulasExistence.cs" />
+    <Compile Include="TestReprocesaFideicomisosCellstore.cs" />
+    <Compile Include="TestReProcesamientoQueue.cs" />
+    <Compile Include="TestCombinaciones.cs" />
+    <Compile Include="TestMezclaPDF.cs" />
+    <Compile Include="Modelo\TestCase.cs" />
+    <Compile Include="Modelo\TestData.cs" />
+    <Compile Include="Modelo\Variation.cs" />
+    <Compile Include="TestAsposeWordPdf.cs" />
+    <Compile Include="TestConsumerTaskHechos.cs" />
+    <Compile Include="TestFiltroBlockStore.cs" />
+    <Compile Include="TestGeneraJson.cs" />
+    <Compile Include="TestObtenIdentificadoresConceptoPoretiqueta.cs" />
+    <Compile Include="TestPersistenciaCellStoreMongo.cs" />
+    <Compile Include="TestProcesoImportacionArchivoEmisoras.cs" />
+    <Compile Include="TestReporteGenerico.cs" />
+    <Compile Include="TestCargarTaxoColombia.cs" />
+    <Compile Include="TestCrearArchivoZIP.cs" />
+    <Compile Include="TestCrearJsonHistorico.cs" />
+    <Compile Include="TestDocumentoInstanciaService.cs" />
+    <Compile Include="TestGenerarEstructuraDocumentoInstancia.cs" />
+    <Compile Include="TestGenerarExistenceYValueAssertions.cs" />
+    <Compile Include="TestImportarArchivosDocumento.cs" />
+    <Compile Include="TestImportarHechosDeOtroDocumento.cs" />
+    <Compile Include="TestIntegracionXPE.cs" />
+    <Compile Include="TestPlantillaDocumentoInstanciaExcel.cs" />
+    <Compile Include="TestReportesXBRL.cs" />
+    <Compile Include="TestTaxonomiaXBRL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestDocumentoInstanciaXBRL.cs" />
+    <Compile Include="TestPlantillaDocumentoInstancia.cs" />
+    <Compile Include="TestImportarNotasArchivosDocumento.cs" />
+    <Compile Include="TestXbrlViewerService.cs" />
+    <Compile Include="TestCrearRegistrosBlockStore.cs" />
+    <Compile Include="TestConsultarRegistrosBlockStore.cs" />
+    <Compile Include="TestCargarInformacionFinancieraComprimida.cs" />
+    <Compile Include="TestReporteExcelInfoMongoDB.cs" />
+    <Compile Include="TestXPELoad.cs" />
+    <Compile Include="TestProcesarDistribuciones.cs" />
+    <Compile Include="XBRLConformanceSuiteTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AbaxXBRLCore\AbaxXBRLCore.csproj">
+      <Project>{146be311-a136-4871-b5a6-a28a8c1fd267}</Project>
+      <Name>AbaxXBRLCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbaxXBRLCore\AbaxXBRLCore.csproj">
+      <Project>{146be311-a136-4871-b5a6-a28a8c1fd267}</Project>
+      <Name>AbaxXBRLCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AbaxXBRL\AbaxXBRL.csproj">
+      <Project>{1dd1db2d-e049-437d-8e7a-3302502a30c4}</Project>
+      <Name>AbaxXBRL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EmbeddedResource Include="Aspose.Words.lic">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\BaseXbrlSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <EmbeddedResource Include="PlantillasTs\CondicionalNegadoNoRequerido.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlantillasTs\ConfiguracionHipercubo.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlantillasTs\DefinicionElementosJson.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlantillasTs\DefinicionFormulaExistence.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlantillasTs\DefinicionFormulaExistenciaCondicional.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlantillasTs\DefinicionFormulaIgualdad.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlantillasTs\DefinicionFormulaLongitudMaxima.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlantillasTs\FormulaGenerica.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="resources\System\configui.properties" />
+    <None Include="resources\System\Localizer.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\Metadata.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\QueryRegistry.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\registry.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\TemplateDictionary.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\TemplateTaxonomy.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\TemplateTuple.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\ValidationPatterns.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\VOPatterns.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\2009\negated-2009-12-16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\2009\nonNumeric-2009-12-16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\2009\numeric-2009-12-16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\2010\aspect-cover-filter.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\2010\custom-function-implementation.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\2010\generic-message.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\2010\validation-message.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\2010\variable-instance.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\2014\extensible-enumerations.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\2014\table.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\2014\tablemodel.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\formula-linkbase-2005-04-19.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\formula-linkbase-2005-08-22.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\aspect-cover-filter.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\boolean-filter.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\concept-filter.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\concept-relation-filter.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\consistency-assertion.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\custom-function-implementation.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\dimension-filter.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\entity-filter.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\existence-assertion.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\formula-tuple.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\formula.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\function.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\general-filter.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\generic-label-roles-expression.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\generic-label.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\generic-link.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\generic-message.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\generic-reference.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\gnl-2008.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\gnl.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\match-filter.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\period-filter.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\relative-filter.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\segment-scenario-filter.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\tuple-filter.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\unit-filter.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\validation-message.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\validation.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\value-assertion.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\value-filter.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\variable-bind-missing.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\variable-instance.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\variable.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\Formula\variables-scope.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\inlinexbrl-1_0-transformation.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xbrl\xbrl-instance-2003-12-31-ixmod.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xbrl\xbrl-linkbase-2003-12-31-ixmod.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xbrl\xl-2003-12-31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xbrl\xlink-2003-12-31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml-inlinexbrl-1_0-definitions.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml-inlinexbrl-1_0-model.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml-inlinexbrl-1_0-modules.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml-inlinexbrl-1_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml-inlinexbrl-1_1-definitions.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml-inlinexbrl-1_1-model.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml-inlinexbrl-1_1-modules.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml-inlinexbrl-1_1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xframes-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-applet-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-attribs-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-base-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-basic-form-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-basic-table-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-basic10-model-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-basic10-module-redefines-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-basic10-modules-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-basic10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-bdo-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-blkphras-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-blkpres-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-blkstruct-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-charent-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-copyright-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-csismap-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-datatypes-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-edit-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-events-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-form-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-frames-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-framework-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-hypertext-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-iframe-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-image-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-inlphras-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-inlpres-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-inlstruct-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-inlstyle-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-legacy-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-link-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-list-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-meta-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-misc-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-nameident-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-notations-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-object-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-param-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-pres-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-ruby-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-ruby-basic-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-script-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-ssismap-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-struct-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-style-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-table-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-target-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml-text-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml11-model-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml11-module-redefines-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml11-modules-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xhtml2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xml-events-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xml-events-2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xml-events-attribs-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xml-events-attribs-2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xml-events-copyright-1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xml-events-copyright-2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\inlineXBRL\xhtml\xml-handlers-2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\lrr-2004-11-07.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\PR\2014-03-26\extensible-enumerations.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\PWD\2013-05-17\table.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\ref-2004-08-10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\ref-2004-09-15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\ref-2006-02-27.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\xbrl-instance-2003-12-31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\xbrl-linkbase-2003-12-31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\xbrldi-2006.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\xbrldt-2005.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\xl-2003-12-31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\xlink-2003-12-31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\xml.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\xbrlOrg\XMLSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\System\XMLRecordSet.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PlantillasTs\DefinicionElementos.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PlantillasTs\DefinicionTaxonomia.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PlantillasExcel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Configuracion\TestPersistenciaMongo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="resources\System\baseUI.xml" />
+    <Content Include="resources\System\CalcTrace-toHtml-EDGAR.xsl" />
+    <Content Include="resources\System\CalcTrace-toHtml.xsl" />
+    <Content Include="resources\System\CalculationValidationPatternset.xml" />
+    <Content Include="resources\System\ContextEntityMetadata.xml" />
+    <Content Include="resources\System\ContextMetadata.xml" />
+    <Content Include="resources\System\ContextPeriodMetadata.xml" />
+    <Content Include="resources\System\CurrencyCodes.xml" />
+    <Content Include="resources\System\enumValidationPatternset.xml" />
+    <Content Include="resources\System\FactMetadata.xml" />
+    <Content Include="resources\System\FormulaLinkbase2008ValidationPatternset.xml" />
+    <Content Include="resources\System\FormulaLinkbaseValidationPatternset.xml" />
+    <Content Include="resources\System\FormulaMetadata.xml" />
+    <Content Include="resources\System\FormulaSeverityValidationPatternset.xml" />
+    <Content Include="resources\System\FrisValidationPatternset.xml" />
+    <Content Include="resources\System\FrtaValidationPatternset.xml" />
+    <Content Include="resources\System\GenericLinkbaseValidationPatternset.xml" />
+    <Content Include="resources\System\InlineLocalizer.xml" />
+    <Content Include="resources\System\InstanceDimensionValidationPatternset.xml" />
+    <Content Include="resources\System\InstanceInSchemaVOPatterns.xml" />
+    <Content Include="resources\System\InstanceMetadata.xml" />
+    <Content Include="resources\System\InstanceValidationPatternset.xml" />
+    <Content Include="resources\System\InstanceVOPatterns.xml" />
+    <Content Include="resources\System\LinkbaseDimensionValidationPatternset.xml" />
+    <Content Include="resources\System\LinkbaseInInstanceVOPatterns.xml" />
+    <Content Include="resources\System\LinkbaseInSchemaVOPatterns.xml" />
+    <Content Include="resources\System\LinkbaseValidationPatternset.xml" />
+    <Content Include="resources\System\LinkbaseVOPatterns_desktop.xml" />
+    <Content Include="resources\System\LinkbaseVOPatterns_server.xml" />
+    <Content Include="resources\System\Localizer.xml" />
+    <Content Include="resources\System\lrr.xml" />
+    <Content Include="resources\System\Metadata.xml" />
+    <Content Include="resources\System\PeekPatterns.xml" />
+    <Content Include="resources\System\preLoadConfigUI.xml" />
+    <Content Include="resources\System\QueryRegistry.xml" />
+    <Content Include="resources\System\registry.xml" />
+    <Content Include="resources\System\schemaLocResolutionUI.xml" />
+    <Content Include="resources\System\TaxonomyMetadata.xml" />
+    <Content Include="resources\System\TaxonomySchemaValidationPatternset.xml" />
+    <Content Include="resources\System\TaxonomyValidationPatternset.xml" />
+    <Content Include="resources\System\TaxonomyVOPatterns.xml" />
+    <Content Include="resources\System\TemplateInstance.xml" />
+    <Content Include="resources\System\TemplateInstanceForFormula.xml" />
+    <Content Include="resources\System\TemplateLinkbase.xml" />
+    <Content Include="resources\System\tree.xml" />
+    <Content Include="resources\System\UnitDivideMetadata.xml" />
+    <Content Include="resources\System\UnitMetadata.xml" />
+    <Content Include="resources\System\UTRValidationPatternset.xml" />
+    <Content Include="resources\System\validationConfigUI.xml" />
+    <Content Include="resources\System\ValidationReport.xsl" />
+    <Content Include="resources\System\Xbrl21Templates.xml" />
+    <Content Include="resources\System\XbrlConfiguration.xml" />
+    <Content Include="resources\System\XbrlFormula2008Trace-toHtml.xsl" />
+    <Content Include="resources\System\XbrlFormulaTemplates.xml" />
+    <Content Include="resources\System\XbrlMessagingTemplates.xml" />
+    <Content Include="resources\System\xbrlOrg\utr.xml" />
+    <Content Include="resources\System\XBRLRulesTrace-toHtml.xsl" />
+    <Content Include="resources\System\XmlValidationPatternset.xml" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <PropertyGroup>
+    <PostBuildEvent>
+PowerShell -NoProfile -ExecutionPolicy Bypass -Command "ls '$(SolutionDir)\packages\GhostScriptSharp.*\Tools\gsdll32.dll' | Sort -Descending | Select -First 1 | cp -Destination '$(TargetDir)'; exit 0"</PostBuildEvent>
+  </PropertyGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NUnit.3.11.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.11.0\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeCoverage.15.9.0\build\netstandard1.0\Microsoft.CodeCoverage.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeCoverage.15.9.0\build\netstandard1.0\Microsoft.CodeCoverage.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeCoverage.15.9.0\build\netstandard1.0\Microsoft.CodeCoverage.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeCoverage.15.9.0\build\netstandard1.0\Microsoft.CodeCoverage.targets'))" />
+    <Error Condition="!Exists('..\packages\MSTest.TestAdapter.1.3.2\build\net45\MSTest.TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSTest.TestAdapter.1.3.2\build\net45\MSTest.TestAdapter.props'))" />
+    <Error Condition="!Exists('..\packages\MSTest.TestAdapter.1.3.2\build\net45\MSTest.TestAdapter.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSTest.TestAdapter.1.3.2\build\net45\MSTest.TestAdapter.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.CodeCoverage.15.9.0\build\netstandard1.0\Microsoft.CodeCoverage.targets" Condition="Exists('..\packages\Microsoft.CodeCoverage.15.9.0\build\netstandard1.0\Microsoft.CodeCoverage.targets')" />
+  <Import Project="..\packages\MSTest.TestAdapter.1.3.2\build\net45\MSTest.TestAdapter.targets" Condition="Exists('..\packages\MSTest.TestAdapter.1.3.2\build\net45\MSTest.TestAdapter.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,78 @@
+{
+  "IdConceptos": [
+    "ar_pros_MultiplePriceEarningsBeforeTheOffer",
+    "ar_pros_MultiplePriceBookValueBeforeTheOffer",
+    "ar_pros_MultiplePriceEbitdaBeforeTheOffer",
+    "ar_pros_ValueOfTheIssuerEBITDABeforeTheOffer",
+    "ar_pros_OtherMultipleBeforeBid",
+    "ar_pros_MultiplePriceEarningsAfterTheOffer",
+    "ar_pros_MultiplePriceBookValueAfterTheOffer",
+    "ar_pros_MultiplePriceEbitdaAfterTheOffer",
+    "ar_pros_ValueOfTheIssuerEBITDAAfterTheOffer",
+    "ar_pros_OtherMultipleAfterTheOffer"
+  ],
+  "PlantillasContextos": {
+    "PresentMultiplesMember": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfMultiplesAxis",
+          "IdItemMiembro": "ar_pros_PresentMultiplesMember",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfMultiplesAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:PresentMultiplesMember"
+        }
+      ]
+    },
+    "MultiplesOfSectorOrBranchMember": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfMultiplesAxis",
+          "IdItemMiembro": "ar_pros_MultiplesOfSectorOrBranchMember",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfMultiplesAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:MultiplesOfSectorOrBranchMember"
+        }
+      ]
+    },
+    "MarketMultiplesMember": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfMultiplesAxis",
+          "IdItemMiembro": "ar_pros_MarketMultiplesMember",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfMultiplesAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:MarketMultiplesMember"
+        }
+      ]
+    }
+  },
+  "PlantillaDimensiones": {
+    "ar_pros_TypeOfMultiplesAxis": {
+      "PrefijoValor": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:",
+      "SubfijoValor": "",
+      "EtiquetaNuevoElemento": "PresentMultiplesMember",
+      "Explicita": true,
+      "IdDimension": "ar_pros_TypeOfMultiplesAxis",
+      "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfMultiplesAxis"
+    }
+  },
+  "DimensionesDinamicas": [],
+  "MaxColumnasVertical": 6,
+  "MaxColumnasHorizontal": 0,
+  "TamanoHoja": "Letter"
+}

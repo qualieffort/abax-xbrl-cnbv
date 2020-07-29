@@ -1,0 +1,76 @@
+{
+	"ContextosPlantillaPorId" : {
+  "ctx_2014": {
+    "Id": "ctx_2014",
+    "Periodo": {
+      "Tipo": 1,
+      "FechaInstante": "#fecha_2014_12_31",
+      "FechaInicio": "",
+      "FechaFin": ""
+    },
+    "Entidad": {
+      "Id": "#nombreEntidad",
+      "EsquemaId": "#esquemaEntidad",
+      "ContieneInformacionDimensional": false,
+      "Segmento": null,
+      "ValoresDimension": []
+    },
+    "ContieneInformacionDimensional": false,
+    "Escenario": null,
+    "ValoresDimension": []
+  }
+},
+	
+	"UnidadesPlantillaPorId" : {},
+            
+	"HechosPlantillaPorId" : {
+  "ar_pros_DescriptionOfTheUnderlyingAssets_fb10933b-c7ee-4b39-9c2c-2af5d94774be": {
+    "Id": "ar_pros_DescriptionOfTheUnderlyingAssets_fb10933b-c7ee-4b39-9c2c-2af5d94774be",
+    "IdConcepto": "ar_pros_DescriptionOfTheUnderlyingAssets",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_HistoricalPerformanceOfTheUnderlyingAssets_2ac4a8c5-e72d-4a3f-8e13-7e640628d7a0": {
+    "Id": "ar_pros_HistoricalPerformanceOfTheUnderlyingAssets_2ac4a8c5-e72d-4a3f-8e13-7e640628d7a0",
+    "IdConcepto": "ar_pros_HistoricalPerformanceOfTheUnderlyingAssets",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_ExercisesToIdentifyThePossibleReturns_928f8716-52f7-431d-a9ba-d262b6f74d7e": {
+    "Id": "ar_pros_ExercisesToIdentifyThePossibleReturns_928f8716-52f7-431d-a9ba-d262b6f74d7e",
+    "IdConcepto": "ar_pros_ExercisesToIdentifyThePossibleReturns",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_OtherInformation_82e08a7a-ef44-4845-9c49-d951149f3a70": {
+    "Id": "ar_pros_OtherInformation_82e08a7a-ef44-4845-9c49-d951149f3a70",
+    "IdConcepto": "ar_pros_OtherInformation",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  }
+}
+}

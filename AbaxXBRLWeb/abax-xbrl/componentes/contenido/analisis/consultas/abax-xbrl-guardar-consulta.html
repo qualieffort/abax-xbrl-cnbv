@@ -1,0 +1,43 @@
+﻿<form name="guardarConsultaForm" ng-submit="guardarConsulta(guardarConsultaForm.$valid)" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true" ng-click="cerrarDialogo()">&times;</button>
+        <div class="row m-t-sm">
+            <div class="col-sm-10 m-b-xs">
+                <h4 class="modal-title"> {{'ETIQUETA_GUARDAR_CONSULTA_ANALISIS'|translate}} </h4>
+            </div>
+        </div>
+    </div>
+    <div class="modal-body">
+        <div ng-if="!guardado">
+            <p>{{'ETIQUETA_PROPORCIONE_COMENTARIO' | translate}}</p>
+            <div class="form-group" ng-class="{ 'has-error' : guardarConsultaForm.textTitulo.$invalid && !guardarConsultaForm.textTitulo.$pristine }">
+                <label>{{ 'ETIQUETA_NOMBRE' | translate }}</label>
+                <input name="textTitulo" type="text" class="form-control rounded" ng-model="consultaAnalisis.Nombre" required ng-minlength="3" ng-maxlength="250">
+                <p ng-show="guardarConsultaForm.textTitulo.$invalid && !guardarConsultaForm.textTitulo.$pristine" class="help-block">{{'ETIQUETA_NOMBRE_REQUERIDO' | translate}}</p>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error' : guardarConsultaForm.textComentarios.$invalid && !guardarConsultaForm.textComentarios.$pristine }">
+                <label>{{'ETIQUETA_DESCRIPCION'|translate}}</label>
+                <textarea name="textComentarios" class="form-control" rows="6" placeholder="{{'TECLEA_DESCRIPCION' | translate}}" ng-model="consultaAnalisis.Descripcion" required></textarea>
+                <p ng-show="guardarConsultaForm.textComentarios.$invalid && !guardarConsultaForm.textComentarios.$pristine" class="help-block">{{'ETIQUETA_DESCRIPCION_REQUERIDO'|translate}}</p>
+            </div>
+        </div>
+        <div ng-if="guardado">
+            <p>{{ 'CONSULTA_ANALISIS_GENERADA' | translate }}</p>
+            <p>
+                {{ 'ETIQUETA_NOMBRE' | translate }}: <span class="font-bold">{{consultaAnalisis.Nombre}}</span>
+            </p>
+            <p>
+                {{'ETIQUETA_DESCRIPCION'| translate }}: <span class="font-bold">{{consultaAnalisis.Descripcion}}</span>
+            </p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div ng-if="!guardado">
+            <button type="button" class="btn btn-default" ng-click="cerrarDialogo()">{{'ETIQUETA_BOTON_CANCELAR'|translate}}</button>
+            <button type="submit" class="btn btn-s-md btn-warning" ng-disabled="guardarConsultaForm.$invalid">{{'ETIQUETA_BOTON_GUARDAR'|translate}}</button>
+        </div>
+        <div ng-if="guardado">
+            <button type="button" class="btn btn-default" ng-click="cerrarDialogo()">{{ 'ETIQUETA_BOTON_CERRAR' | translate }}</button>
+        </div>
+    </div>
+</form>

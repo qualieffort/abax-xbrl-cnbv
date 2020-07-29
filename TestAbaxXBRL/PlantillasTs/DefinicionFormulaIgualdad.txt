@@ -1,0 +1,19 @@
+﻿'{{idFormula}}': new model.DefinicionFormula().deserialize(
+                    {
+                        Id: '{{idFormula}}',
+                        TipoFormula: model.TipoFormula.ValueAssertion,
+                        Expresion: 'variable1 == "{{valorCondicion}}"',
+                        MensajeExito: 'El valor del hecho {variable1} es igual a "{{valorCondicion}}"',
+                        MensajeError: 'El valor del hecho {variable1} debe ser igual a "{{valorCondicion}}"',
+                        VariablesCoincidenPeriodo: false,
+                        DefinicionVariables: {
+                            'variable1': new model.DefinicionVariableFormula().deserialize({
+                                Id: 'variable1',
+                                IdConcepto: '{{idConceptoCondicion}}',
+                                PuedeCrearse: false,
+                                PuedeEliminarse: false,
+                                ConteoHechos: false{{configuracionDimensionCondicion}}
+                            })
+                        }
+                    }
+                    )

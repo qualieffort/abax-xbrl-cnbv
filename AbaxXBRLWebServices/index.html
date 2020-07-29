@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="abaxXBRL" class="app app js no-touch no-android chrome no-firefox no-iemobile no-ie no-ie8 no-ie10 no-ie11 no-ios">
+
+    <head>
+        <title>Abax XBRL</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <!--Librerias javascript -->
+        <script type="text/javascript" src="Scripts/jquery-2.1.3.min.js"></script>
+        <script type="text/javascript" src="Scripts/angular.js"></script>
+        <script type="text/javascript" src="Scripts/angular-locale/angular-locale_en-us.js"></script>
+        <script type="text/javascript" src="Scripts/angular-locale/angular-locale_es-mx.js"></script>
+        <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+        <script type="text/javascript" src="Scripts/angular-dynamic-locale-master/tmhDynamicLocale.js"></script>
+        <script type="text/javascript" src="Scripts/angular-ui-router/angular-ui-router.js"></script>
+        <script type="text/javascript" src="Scripts/angular-translate.min.js"></script>
+        <script type="text/javascript" src="Scripts/angular-fullscreen/angular-fullscreen.js"></script>
+        <script type="text/javascript" src="Scripts/storage-local.js"></script>
+        <script type="text/javascript" src="Scripts/storage-cookie.js"></script>
+        <script type="text/javascript" src="Scripts/angular-cookies.min.js"></script>
+        <script type="text/javascript" src="Scripts/angular-ui/ui-bootstrap.min.js"></script>
+        <script type="text/javascript" src="Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+        <script type="text/javascript" src="Scripts/impromptu/jquery-impromptu.min.js"></script>
+        <script type="text/javascript" src="Scripts/angular-local-storage/angular-local-storage.js"></script>
+        <script type="text/javascript" src="js/slimscroll/jquery.slimscroll.min.js"></script>
+        <script type="text/javascript" src="js/slimscroll/angular-slimscroll.js"></script>
+        <script type="text/javascript" src="Scripts/lazyLoad/ocLazyLoad.js"></script>
+        <script type="text/javascript" src="Scripts/datatables/jquery.dataTables.js"></script>
+        <script type="text/javascript" src="Scripts/angular-datatables/angular-datatables.js"></script>
+        <script type="text/javascript" src="js/loading/jquery.isloading.min.js"></script>
+        <script type="text/javascript" src="//cdn.ravenjs.com/1.1.16/jquery,native/raven.min.js"></script>
+        <script type="text/javascript" src="https://s3.amazonaws.com/assets.freshdesk.com/widget/freshwidget.js"></script>
+        <script type="text/javascript" src="abax-xbrl/shared/modulos/carga-inicial/abax-xbrl-carga-inicial-app.js?versionApp=1.9.8&tagApp=trunk&revisionApp=1550"></script>
+    </head>
+    <body class="app">
+        <div oc-lazy-load="abaxXBRL.main" style="display:none;">
+            <section ui-view="root" ng-controller="abaxXBRLMainController" class="vbox"></section>
+        </div>
+    </body>
+</html>
+

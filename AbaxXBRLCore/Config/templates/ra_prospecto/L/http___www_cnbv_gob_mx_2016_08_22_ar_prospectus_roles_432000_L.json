@@ -1,0 +1,88 @@
+{
+    "ContextosPlantillaPorId": {
+        "ctx_2014": {
+            "Id": "ctx_2014",
+            "Periodo": {
+                "Tipo": 1,
+                "FechaInstante": "#fecha_2014_12_31",
+                "FechaInicio": "",
+                "FechaFin": ""
+            },
+            "Entidad": {
+                "Id": "#nombreEntidad",
+                "EsquemaId": "#esquemaEntidad",
+                "ContieneInformacionDimensional": false,
+                "Segmento": null,
+                "ValoresDimension": [ ]
+            },
+            "ContieneInformacionDimensional": false,
+            "Escenario": null,
+            "ValoresDimension": [ ]
+        }
+    },
+
+    "UnidadesPlantillaPorId": { },
+
+    "HechosPlantillaPorId": {
+        "ar_pros_ReferenceIncorporationAnnex_dab9525f-425e-4ef4-bacf-f0f85f16b3e3": {
+            "Id": "ar_pros_ReferenceIncorporationAnnex_dab9525f-425e-4ef4-bacf-f0f85f16b3e3",
+            "IdConcepto": "ar_pros_ReferenceIncorporationAnnex",
+            "IdContextoPlantilla": "ctx_2014",
+            "Hechos": [ ],
+            "IdUnidadPlantilla": null,
+            "ValorNumerador": null,
+            "ValorDenominador": null,
+            "Precision": null,
+            "Decimales": null,
+            "Valor": "#valorDefaultNoNumerico"
+        },
+        "ar_pros_FinancialInformationPdf_0cff5074-0231-42a5-bbde-d3270552780d": {
+            "Id": "ar_pros_FinancialInformationPdf_0cff5074-0231-42a5-bbde-d3270552780d",
+            "IdConcepto": "ar_pros_FinancialInformationPdf",
+            "IdContextoPlantilla": "ctx_2014",
+            "Hechos": [ ],
+            "IdUnidadPlantilla": null,
+            "ValorNumerador": null,
+            "ValorDenominador": null,
+            "Precision": null,
+            "Decimales": null,
+            "Valor": "#valorDefaultNoNumerico"
+        },
+        "ar_pros_LegalOpinionPdf_2aaeb607-819d-492a-b883-e44be5ce8f8e": {
+            "Id": "ar_pros_LegalOpinionPdf_2aaeb607-819d-492a-b883-e44be5ce8f8e",
+            "IdConcepto": "ar_pros_LegalOpinionPdf",
+            "IdContextoPlantilla": "ctx_2014",
+            "Hechos": [ ],
+            "IdUnidadPlantilla": null,
+            "ValorNumerador": null,
+            "ValorDenominador": null,
+            "Precision": null,
+            "Decimales": null,
+            "Valor": "#valorDefaultNoNumerico"
+        },
+        "ar_pros_TitleWhichCoversTheIssuePdf_2be54218-c507-482f-a06e-01024b0342b2": {
+            "Id": "ar_pros_TitleWhichCoversTheIssuePdf_2be54218-c507-482f-a06e-01024b0342b2",
+            "IdConcepto": "ar_pros_TitleWhichCoversTheIssuePdf",
+            "IdContextoPlantilla": "ctx_2014",
+            "Hechos": [ ],
+            "IdUnidadPlantilla": null,
+            "ValorNumerador": null,
+            "ValorDenominador": null,
+            "Precision": null,
+            "Decimales": null,
+            "Valor": "#valorDefaultNoNumerico"
+        },
+        "ar_pros_RatingOnCreditRiskPdf_2be54218-c507-482f-a06e-01024b0342b3": {
+            "Id": "ar_pros_RatingOnCreditRiskPdf_2be54218-c507-482f-a06e-01024b0342b3",
+            "IdConcepto": "ar_pros_RatingOnCreditRiskPdf",
+            "IdContextoPlantilla": "ctx_2014",
+            "Hechos": [ ],
+            "IdUnidadPlantilla": null,
+            "ValorNumerador": null,
+            "ValorDenominador": null,
+            "Precision": null,
+            "Decimales": null,
+            "Valor": "#valorDefaultNoNumerico"
+        }
+    }
+}

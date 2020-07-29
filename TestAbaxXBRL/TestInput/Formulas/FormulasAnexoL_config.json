@@ -1,0 +1,596 @@
+{
+	"Datos generales":{
+	    "Obligatorio_Condicional_LeyendaSuplemento":{
+			"NombreFormula":"Obligatorio_Condicional_LeyendaSuplemento",
+			"Expresion":'(variable2 == "INF" and squeeze(size(variable1)) == 0) or (variable2 != "INF" and squeeze(size(variable1)) > 0)',
+			"MensajeExito":"Para el tipo de reporte 'Suplemento' el concepto 'Leyenda sumplemento' es requerido, para otro tipo de reporte el concepto 'Leyenda suplemento' no debe ser reportado.",
+			"MensajeError":"Para el tipo de reporte 'Suplemento' el concepto 'Leyenda sumplemento' es requerido, para otro tipo de reporte el concepto 'Leyenda suplemento' no debe ser reportado.",
+			"VariablesPrecondicion":[
+				{"IdConcepto":"ar_pros_Supplement","ValorFallback":"INF"}
+			],
+			"VariablesIteracion":[
+				{"IdConcepto":"ar_pros_SupplementLegend","ValorFallback":""}
+			]
+		},
+		"obligatorio_condicional_mencionar_dependiendo_parcial_o_total":{
+			"NombreFormula":"obligatorio_condicional_mencionar_dependiendo_parcial_o_total",
+		    "Expresion":'(variable2 == "Fideicomisos" and squeeze(size(variable1)) > 0)  or (variable2 != "Fideicomisos" and squeeze(size(variable1)) == 0)',
+			"MensajeExito":"El concepto 'Mencionar dependencia parcial o total' existe y es reportado cuando el 'Tipo de instrumento' es 'Fideicomisos'",
+			"MensajeError":"El concepto 'Mencionar dependencia parcial o total' debe existir y ser reportado cuando el 'Tipo de instrumento' es 'Fideicomisos'",
+			"VariablesExpresion":[
+				{"Concepto":"ar_pros_MentioningPartialOrTotalDependence","ValorFallback":""},
+				{"Concepto":"ar_pros_TypeOfInstrument","ValorFallback":"INF"}				
+			]
+			
+		},
+		"No_Vacios_Datos_Generales": {
+			"NombreFormula": "No_Vacios_Datos_Generales",
+			"Variables":[
+					{"Concepto": "ar_pros_IssuanceUnderArt13OfTheCUE"},
+					{"Concepto": "ar_pros_LimitedPublicOffering"},
+					{"Concepto": "ar_pros_TypeOfInstrument"},
+					{"Concepto": "ar_pros_ForeingIssuer"},
+					{"Concepto": "ar_pros_MentioningwhetherOrNotHaveCollateral"},
+					{"Concepto": "ar_pros_IssuewithCapitalCalls"}
+				]
+		},
+		"Obligatorio_condicional_acontecimientos_recientes":{
+			"NombreFormula":"Obligatorio_condicional_acontecimientos_recientes",
+			"Expresion":'( (variable2 == "INF")  or (variable2 != "INF" and squeeze(size(variable1)) == 0)) and ( (variable3 != "INF" and squeeze(size(variable1)) > 0) or variable3 == "INF") and ( (variable4 != "INF" and squeeze(size(variable1)) > 0) or variable4 == "INF")',
+			"MensajeExito":"El concepto 'Acontecimientos recientes' debe ser reportado para los reportes 'Suplemento' y 'Folleto' y no debe ser reportado para el tipo de reporte 'Prospecto de colocación'.",
+			"MensajeError":"El concepto 'Acontecimientos recientes' debe ser reportado para los reportes 'Suplemento' y 'Folleto' y no debe ser reportado para el tipo de reporte 'Prospecto de colocación'.",
+			"VariablesExpresion":[
+					{"IdConcepto":"ar_pros_RecentEvents","ValorFallback":""},
+					{"IdConcepto":"ar_pros_PlacementProspectus","ValorFallback":"INF"},
+					{"IdConcepto":"ar_pros_Supplement","ValorFallback":"INF"},
+					{"IdConcepto":"ar_pros_Brochure","ValorFallback":"INF"}
+				]
+			
+		},
+		"Obligatorio_Leyenda_Prospecto":{
+			"NombreFormula":"Obligatorio_Leyenda_Prospecto",
+			"Expresion":'(variable2 == "INF" and squeeze(size(variable1)) == 0) or (variable2 != "INF" and squeeze(size(variable1)) > 0)',
+			"MensajeExito":"Para el tipo de reporte 'Prospecto de colocación' el hecho {variable1} es requerido, para otro tipo de reporte el concepto 'Emisión única' no debe ser reportado.",
+			"MensajeError":"Para el tipo de reporte 'Prospecto de colocación' el hecho {variable1} es requerido, para otro tipo de reporte el concepto 'Emisión única' no debe ser reportado.",
+			"VariablesPrecondicion":[
+				{"IdConcepto":"ar_pros_PlacementProspectus", "ValorFallback":"INF"}
+			],
+			"VariablesIteracion":[
+				{"IdConcepto":"ar_pros_ProspectusLegend", "ValorFallback":""}
+			]
+			
+		},
+		"Obligatorio_Condicional_Emision_Unica_Prospecto": {
+			"NombreFormula": "Obligatorio_Condicional_Emision_Unica_Prospecto",
+			"Expresion":'(variable1 != "INF" or  variable2 == 0)',
+			"MensajeExito":"El hecho {variable1} debe ser reportado para reportes del tipo Prospecto y Suplemento.",
+			"MensajeError":"El hecho {variable1} debe ser reportado para reportes del tipo Prospecto y Suplemento.",
+			"VariablesExpresion":[
+				{"IdConcepto": "ar_pros_PlacementProspectus", "ValorFallback":"INF"},
+				{"IdConcepto": "ar_pros_OnlyEmission", "ValorFallback":"INF"}
+			]
+		}
+	},
+	"Portada":{
+           "Portada_No_Vacios": {
+			"NombreFormula": "Portada_No_Vacios",
+			"Variables":[
+					{"Concepto": "ar_pros_DenominationOfTheIssuer"},
+					{"Concepto": "ar_pros_Ticker"},
+					{"Concepto": "ar_pros_SerieDepositary"},
+					{"concepto":"ar_pros_MentionOfAnyRiskAssociatedWithTheOperationInQuestion"},
+					{"concepto":"ar_pros_TheMentionOfTheSecuritiesAreRegisteredInTheRNV"},
+					{"Concepto": "ar_pros_LegendArticle86OfTheLMV"},
+					{"Concepto": "ar_pros_NumberOfRegister"},
+					{"Concepto": "ar_pros_PlaceAndDateOfPublicationOfTheProspectusSupplementProspectus"},
+					{"Concepto": "ar_pros_OfficeNumberAndDateOfAuthorizationOfTheCommission"},
+                    {"Concepto": "ar_pros_ProspectusSupplementBrochure"},					
+					{"Concepto": "ar_pros_LegendProspectusSupplementBrochure"},
+					{"Concepto": "ar_pros_TermAndExpirationDate"},
+					{"Concepto": "ar_pros_NumberOfSeriesInWhichTheEmissionIsDividedInTheCaseOfSecuritiesIssuedUnderATrust"}						
+				]
+			},		
+			"PORTADA_Obligatorio_Renglon_Serie_especificacion_de_las_caracteristicas_de_los_titulos_en_circulacion": {
+			"NombreFormula": "PORTADA_Obligatorio_Renglon_Serie_especificacion_de_las_caracteristicas_de_los_titulos_en_circulacion",
+			"Variables":[
+				    {"Concepto": "ar_pros_Class"},
+					{"Concepto": "ar_pros_EquitySerie"},
+					{"Concepto": "ar_pros_SerieType"},
+					{"Concepto": "ar_pros_SerieTicker"},
+					{"Concepto": "ar_pros_SerieTotalAmount"},
+					{"Concepto": "ar_pros_SerieNumberOfStocks"},
+					{"Concepto": "ar_pros_SerieNominalValue"},
+					{"Concepto": "ar_pros_SerieStockExhangesWhereTheyAreRegistered"},
+					{"Concepto": "ar_pros_SerieTerm"},
+					{"Concepto": "ar_pros_EquitySerieSettlementDate"},
+					{"Concepto": "ar_pros_NumberOfSeriesInWhichTheIssuanceIsDivided"},
+					{"Concepto": "ar_pros_SerieNumberOfCorrespondingEmission"},
+					{"Concepto": "ar_pros_SerieObservations"}
+				
+				]
+			},
+			  "Obligatorio_Condicional_Suplemento_Programa": {
+				"NombreFormula": "Obligatorio_Condicional_Vigencia_programa",
+				"Expresion":'(squeeze(size(variable1)) > 0) or ((variable2 == "INF" or variable3 != "NO") and variable4 == "INF")',
+				"MensajeExito":"El hecho {variable1} debe ser reportado para un reporte de tipo Programa o Suplemento.",
+				"MensajeError":"El hecho {variable1} debe ser reportado para un reporte de tipo Programa o Suplemento.",
+				"VariablesPrecondicion":[
+					{"IdConcepto": "ar_pros_PlacementProspectus", "ValorFallback":"INF"},
+					{"IdConcepto": "ar_pros_OnlyEmission", "ValorFallback":"INF"},
+					{"IdConcepto": "ar_pros_Supplement", "ValorFallback":"INF"}
+				],
+				"VariablesIteracion":[
+					{"IdConcepto": "ar_pros_PeriodOrDateOfTheOffer", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_ClosingDateBookOrAuction", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_DateOfRegisterInTheStockExchange", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_SettlementDate", "ValorFallback":""},										
+					{"IdConcepto": "ar_pros_TotalNumberOfValues", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_IssuanceUnderArt13OfTheCUELegend", "ValorFallback":""},								
+					{"IdConcepto": "ar_pros_NetResourceThatWillGetTheIssuerWithThePlacement", "ValorFallback":""},	
+					{"IdConcepto": "ar_pros_InTheCaseOfAdditionalValues", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_AdditionalValueDateOfIssue", "ValorFallback":""},																		
+					{"IdConcepto": "ar_pros_DateOfPublicationOfTenderNotice", "ValorFallback":""},	
+					{"IdConcepto": "ar_pros_AmountOfPositionsPresented", "ValorFallback":""},	
+					{"IdConcepto": "ar_pros_NumberOfPositionsPresented", "ValorFallback":""},	
+					{"IdConcepto": "ar_pros_NumberOfAssignedPositions", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_TotalDemandValues", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_AssignedRateOrPrice", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_RateOrMinimumAndMaximumPrice", "ValorFallback":""},		
+					{"IdConcepto": "ar_pros_Term", "ValorFallback":""},	
+					{"IdConcepto": "ar_pros_WhereApplicableNumberCorrespondingEmission", "ValorFallback":""},	
+					{"IdConcepto": "ar_pros_SerieIssuanceDate", "ValorFallback":""},		
+					{"IdConcepto": "ar_pros_InterestRateOfIssue", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_FrequencyOfPaymentOfIncome", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_InterestRateApplicableForTheFirstPeriod", "ValorFallback":""},	
+					{"IdConcepto": "ar_pros_WhereAppropriateSubordinationOfTitles", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_DataRelatingToTheIndenture", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_NumberOfTrust", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_DescriptionOfHowThePlacementPriceIsDetermined", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_WhereAppropriateIssueNumberForTheCaseOfSecuritiesIssuedUnderATrust", "ValorFallback":""},			
+					{"IdConcepto": "ar_pros_SerieNumberOfCorrespondingEmission", "ValorFallback":""}
+					
+				]
+			},
+			 "Obligatorio_Condicional_Suplemento_Programa_2": {
+				"NombreFormula": "Obligatorio_Condicional_Vigencia_programa_2",
+				"Expresion":'(squeeze(size(variable1)) > 0) or ((variable2 == "INF" or variable3 == "NO") and variable4 == "INF")',
+				"MensajeExito":"El hecho {variable1} debe ser reportado para un reporte de tipo Programa o Suplemento.",
+				"MensajeError":"El hecho {variable1} debe ser reportado para un reporte de tipo Programa o Suplemento.",
+				"VariablesPrecondicion":[
+					{"IdConcepto": "ar_pros_PlacementProspectus", "ValorFallback":"INF"},
+					{"IdConcepto": "ar_pros_OnlyEmission", "ValorFallback":"INF"},
+					{"IdConcepto": "ar_pros_Supplement", "ValorFallback":"INF"}
+				],
+				"VariablesIteracion":[
+					{"IdConcepto": "ar_pros_AmountProgramAndOrNumberOfCertificates", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_LifeOfTheProgram", "ValorFallback":""},		
+					{"IdConcepto": "ar_pros_EffectOfEmissionsUnderAProgram", "ValorFallback":""}
+					
+				]
+			},			
+			"LA_OFERTA_obligatorio_condicional_tabla_Valores_Adicionales": {
+				"NombreFormula": "LA_OFERTA_obligatorio_condicional_tabla_Valores_Adicionales",
+				"Expresion":'(squeeze(size(variable1)) > 0) or not(variable5 == "SI" and ((variable2 != "INF" and variable3 == "SI") or variable4 != "INF"))',
+				"MensajeExito":"El hecho {variable1} de la tabla 'Valores adicionales' debe existir y ser reportado al menos una vez para Prospecto Emisión unica o Suplemento cuando el concepto 'Tratándose de valores adicionales' es 'SI'.",
+				"MensajeError":"El hecho {variable1} de la tabla 'Valores adicionales' debe existir y ser reportado al menos una vez para Prospecto Emisión unica o Suplemento cuando el concepto 'Tratándose de valores adicionales' es 'SI'.",
+				"VariablesPrecondicion":[
+					{"IdConcepto": "ar_pros_PlacementProspectus", "ValorFallback":"INF"},
+					{"IdConcepto": "ar_pros_OnlyEmission", "ValorFallback":"INF"},
+					{"IdConcepto": "ar_pros_Supplement", "ValorFallback":"INF"},
+					{"IdConcepto": "ar_pros_InTheCaseOfAdditionalValues", "ValorFallback":"INF"}
+				],
+				"VariablesIteracion":[
+					{"IdConcepto": "ar_pros_AdditionalValueDateOfIssue", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_DescriptionOfHowThePlacementPriceIsDeterminedAdditionalValue", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_TotalAmountOfSecurities", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_TotalNumberOfSecuritiesOriginalAndAdditional", "ValorFallback":""}
+				]
+			},
+			"Obligatorio_Condicional_Emision_Al_Amparo": {
+				"NombreFormula": "Obligatorio_Condicional_Emision_Al_Amparo",
+				"Expresion":'(variable2 == "SI" and squeeze(size(variable1)) > 0 )  or (variable2 != "NO" and squeeze(size(variable1)) == 0)',
+				"MensajeExito":"El hecho {variable1} debe ser reportado en caso de que el concepto 'Emisión al amparo del art. 13 bis de la CUE' sea 'SI', en caso contrario no debe ser reportado.",
+				"MensajeError":"El hecho {variable1} debe ser reportado en caso de que el concepto 'Emisión al amparo del art. 13 bis de la CUE' sea 'SI', en caso contrario no debe ser reportado.",
+				"VariablesPrecondicion":[
+					{"IdConcepto": "ar_pros_IssuanceUnderArt13OfTheCUE", "ValorFallback":""} 
+				],
+				"VariablesIteracion":[
+					{"IdConcepto": "ar_pros_IssuanceUnderArt13OfTheCUELegend", "ValorFallback":""} 
+				]
+			},
+			"Obligatorio_Condicional_Suplemento_Prospecto_": {
+				"NombreFormula": "Obligatorio_Condicional_Suplemento_Prospecto_",
+				"Expresion":'(squeeze(size(variable1)) > 0) or (variable2 != "INF" or variable3 != "INF" )',
+				"MensajeExito":"El hecho {variable1} debe ser reportado para reportes del tipo Prospecto y Suplemento.",
+				"MensajeError":"El hecho {variable1} debe ser reportado para reportes del tipo Prospecto y Suplemento.",
+				"VariablesPrecondicion":[
+					{"IdConcepto": "ar_pros_PlacementProspectus", "ValorFallback":"INF"},
+					{"IdConcepto": "ar_pros_Supplement", "ValorFallback":"INF"}
+				],
+				"VariablesIteracion":[
+					{"IdConcepto": "ar_pros_TheMentionOfBeingPublicOffering", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_LegendDocumentAvailableWithTheUnderwriter", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_DiscountInterestRateOrYield", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_PlaceAndMannerOfPaymentOfInterestOrIncomeAndPrincipal", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_Settlor", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_TrusteesInFirstPlace", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_TrusteesInSecondPlace", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_TrusteesInThirdPlace", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_OtherTrustees", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_TrustValues", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_RightsUnderTheSecuritiesIssued", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_GeneralCharacteristicsOfTheSecuritiesToTrust", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_FormOfAmortizationOfSecurities", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_NameOfTheCommonRepresentative", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_WhereAppropriateValuatoryOpinion", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_NamesOfTheParticipantsInTheSyndicateIntermediaries", "ValorFallback":""}
+				]
+			},
+			"Obligatorio_Renglon_Renglon_Valores_Adicionales": {
+				"NombreFormula": "Obligatorio_Renglon_Renglon_Valores_Adicionales",
+			    "Variables":[
+					{"Concepto": "ar_pros_AdditionalValueDateOfIssue"},
+					{"Concepto": "ar_pros_AdditionalValueAmount"},
+					{"Concepto": "ar_pros_AdditionalValueNumberOfValues"},
+					{"Concepto": "ar_pros_AdditionalValueTerm"},
+					{"Concepto": "ar_pros_AdditionalValuePlacementPrice"},
+					{"Concepto": "ar_pros_AdditionalValueObservations"}
+					
+				]
+	
+		    },
+		    "PORTADA_Obligatorio_Serie": {
+				"NombreFormula": "PORTADA_Obligatorio_Serie",
+				"Variables":[
+					    {"Concepto": "ar_pros_Series"},
+					    {"Concepto": "ar_pros_Type"},
+					    {"Concepto": "ar_pros_Class"},					
+						{"Concepto": "ar_pros_NominalValue"},
+						{"Concepto": "ar_pros_NumberOfValues"},				
+						{"Concepto": "ar_pros_TickerOfTheOriginStockMarket"},
+						{"Concepto": "ar_pros_TypeOfOperation"},
+						{"Concepto": "ar_pros_Observations"}
+					
+					]
+			},
+			"Obligatorio_Prospecto_emisión_única_Suplemento_Folleto": {
+					"NombreFormula": "Obligatorio_Prospecto_emisión_única_Suplemento_Folleto",
+					"Expresion":'(squeeze(size(variable1)) > 0) or ((variable2 == "INF" or variable3 != "SI") and variable4 == "INF" and variable5 == "INF")',
+					"MensajeExito":"La sección {variable1} es obligatoria para tipo de reporte: Prospecto en emisión única, Suplemento y Folleto.",
+					"MensajeError":"La sección {variable1} es obligatoria para tipo de reporte: Prospecto en emisión única, Suplemento y Folleto.",
+					"VariablesPrecondicion":[
+						{"IdConcepto": "ar_pros_PlacementProspectus", "ValorFallback":"INF"},
+						{"IdConcepto": "ar_pros_OnlyEmission", "ValorFallback":"INF"},
+						{"IdConcepto": "ar_pros_Supplement", "ValorFallback":"INF"},
+						{"IdConcepto": "ar_pros_Brochure", "ValorFallback":"INF"}
+					],
+					"VariablesIteracion":[
+						{"IdConcepto": "ar_pros_SerieNumberOfCorrespondingEmission", "ValorFallback":""},
+						{"IdConcepto": "ar_pros_DateOfPublicationOfTenderNotice", "ValorFallback":""},
+						{"IdConcepto": "ar_pros_Series", "ValorFallback":""},
+					    {"IdConcepto": "ar_pros_TotalAmountOfTheOffer", "ValorFallback":""},
+						{"IdConcepto": "ar_pros_DebtSerieSettlementDate", "ValorFallback":""},
+						{"IdConcepto": "ar_pros_NumberOfSeriesInWhichTheIssuanceIsDivided", "ValorFallback":""},
+						{"IdConcepto": "ar_pros_RevolvingCharacterProgram", "ValorFallback":""}
+					]
+		    },
+	        "Obligatorio_Condicional_En_caso_de_emisiones_al_amparo_de_un_programa": {
+			   "NombreFormula": "Obligatorio_Condicional_En_caso_de_emisiones_al_amparo_de_un_programa",
+			   "Expresion":'(squeeze(size(variable1)) > 0) or (variable2 == "INF")',
+			   "MensajeExito":"El hecho {variable1} debe ser reportado para un tipo de reporte Suplemento.",
+			   "MensajeError":"El hecho {variable1} debe ser reportado para un tipo de reporte Suplemento.",
+			   "VariablesPrecondicion":[
+				  {"IdConcepto": "ar_pros_Supplement", "ValorFallback":"INF"}
+			    ],
+			    "VariablesIteracion":[
+				  {"IdConcepto": "ar_pros_InTheCaseOfEmissionsUnderAProgram", "ValorFallback":""} 
+			     ]
+		    },
+		    "Obligatorio_Condicional_Monto_total_programa_inscripcion": {
+			   "NombreFormula": "Obligatorio_Condicional_Monto_total_programa_inscripcion",
+			   "Expresion":'(squeeze(size(variable1)) > 0) or ((variable2 != "INF" or variable3 == "NO") and variable4 != "INF")',
+			   "MensajeExito":"El hecho {variable1} debe ser reportado para un tipo de reporte Suplemento.",
+			   "MensajeError":"El hecho {variable1} debe ser reportado para un tipo de reporte Suplemento.",
+			    "VariablesPrecondicion":[
+				   {"IdConcepto": "ar_pros_PlacementProspectus", "ValorFallback":"INF"},
+				   {"IdConcepto": "ar_pros_OnlyEmission", "ValorFallback":"INF"},
+				   {"IdConcepto": "ar_pros_Brochure", "ValorFallback":"INF"}
+			    ],
+			    "VariablesIteracion":[
+				   {"IdConcepto": "ar_pros_TotalAmountProgramRegistration", "ValorFallback":""} 
+			    ]
+		   }
+    },
+    "Informacion General":{
+			"Obligatorio_Incorporación_por_Referencia": {
+				"NombreFormula": "Obligatorio_Incorporación_por_Referencia",
+				"Precondition": "NO",
+				"Variables":[
+						{"Concepto": "ar_pros_ReferenceIncorporationGeneralInformation"},
+						{"Concepto": "ar_pros_ExecutiveSummary"},
+						{"concepto": "ar_pros_OtherValues"},
+						{"Concepto": "ar_pros_RiskFactors"},					
+						{"Concepto": "ar_pros_PublicDocuments"}
+					]
+			},
+			"Obligatorio_Glosario_Términos_Definiciones": {
+				"NombreFormula": "Obligatorio_Glosario_Términos_Definiciones",
+				"Variables":[
+					{"Concepto": "ar_pros_GlossaryOfTermsAndDefinitions"}
+				]
+			}
+	},
+	"La Oferta":{
+           "Obligatorio_Oferta_no_vacios": {
+			"NombreFormula": "Obligatorio_Oferta_no_vacios",
+			"Variables":[
+				{"Concepto": "ar_pros_OfferCharacteristics"},
+				{"Concepto": "ar_pros_InsertACopyOfTheResultOfTheOpinionOfNacionalFinancieraSnc"},
+				{"Concepto": "ar_pros_FoundingShareholdersName"},
+				{"Concepto": "ar_pros_FoundingShareholderPosition"}
+			]
+		},
+		"LA_OFERTA_obligatorio_renglon_tabla_Participantes_en_la_oferta": {
+			"NombreFormula": "LA_OFERTA_obligatorio_renglon_tabla_Participantes_en_la_oferta",
+			"Variables":[
+				{"Concepto": "ar_pros_ParticipantName"},
+				{"Concepto": "ar_pros_SignificantParticipationInTheOffer"},
+				{"Concepto": "ar_pros_AmountOfferCost"},
+				{"Concepto": "ar_pros_IvaOfferCost"},
+				{"Concepto": "ar_pros_TotalOfferCost"},
+			]
+		},
+		"LA_OFERTA_obligatorio_condicional_Suplemento_Prospecto_": {
+			"NombreFormula": "LA_OFERTA_obligatorio_condicional_Tipo_de_Oferta",
+			"Expresion":'(squeeze(size(variable1)) > 0) or (variable2 != "INF" and variable3 != "INF")',
+			"MensajeExito":"El hecho {variable1} debe ser reportado para un reporte de Prospecto o de Suplemento.",
+			"MensajeError":"El hecho {variable1} debe ser reportado para un reporte de Prospecto o de Suplemento.",
+			"VariablesPrecondicion":[
+				{"IdConcepto": "ar_pros_PlacementProspectus", "ValorFallback":"INF"},
+				{"IdConcepto": "ar_pros_Supplement", "ValorFallback":"INF"}
+			],
+			"VariablesIteracion":[
+				
+				{"IdConcepto": "ar_pros_TypeOfOffer", "ValorFallback":""},	
+				{"IdConcepto": "ar_pros_DesignationOfTheReferenceCurrencyInWhichTheProgramIsAuthorized", "ValorFallback":""},	
+			    {"IdConcepto": "ar_pros_MentionTheMinutesOfTheExtraordinaryGeneralMeetingOfShareholders", "ValorFallback":""},					    	
+				{"IdConcepto": "ar_pros_DescriptiveAndSchematicExplanationOfTheOperation", "ValorFallback":""},	
+				{"IdConcepto": "ar_pros_MentioningTheQualificationOfTheCreditRiskOfTheIssueOrProgram", "ValorFallback":""},	
+			    {"IdConcepto": "ar_pros_HowToImplementOrEnforceTheGuarantee", "ValorFallback":""},	
+			    {"IdConcepto": "ar_pros_InTheCaseOfMortgageBackedSecuritiesSpecifyTheValueOfTheCollateral", "ValorFallback":""},	
+			    {"IdConcepto": "ar_pros_MentionIfTheCollateralAreInsured", "ValorFallback":""},	
+			    {"IdConcepto": "ar_pros_IfTheTitlesHaveFiduciaryGuarantee", "ValorFallback":""},	
+			    {"IdConcepto": "ar_pros_BasisForDeterminingThePerformance", "ValorFallback":""},	
+			    {"IdConcepto": "ar_pros_DiscloseTheTermsOfAnyClause", "ValorFallback":""},	
+			    {"IdConcepto": "ar_pros_TranscriptOfOtherRelevantTermsTitle", "ValorFallback":""},	
+			    {"IdConcepto": "ar_pros_LegalBasisOfTheTaxRegimeApplicable", "ValorFallback":""},	
+			    {"IdConcepto": "ar_pros_SummaryOfTheIndenture", "ValorFallback":""},	
+			    {"IdConcepto": "ar_pros_DistributionPlan", "ValorFallback":""},	
+			    {"IdConcepto": "ar_pros_ParticipantName", "ValorFallback":""},
+			    {"IdConcepto": "ar_pros_InvestorName", "ValorFallback":""},
+			    {"IdConcepto": "ar_pros_FoundingShareholdersName", "ValorFallback":""}
+			   
+			
+			]
+		},
+		"LA_OFERTA_obligatorio_renglon_tabla_Relacion_con_inversionistas": {
+			"NombreFormula": "LA_OFERTA_obligatorio_renglon_tabla_Relacion_con_inversionistas",
+			"Variables":[
+				{"Concepto": "ar_pros_InvestorName"},
+				{"Concepto": "ar_pros_InvestorAdress"},
+				{"Concepto": "ar_pros_InvestorPhone"},
+				{"Concepto": "ar_pros_InvestorMail"},
+			]
+		},
+		"LA_OFERTA_obligatorio_condicional_Suplemento_EmisionUnica_": {
+			"NombreFormula": "LA_OFERTA_obligatorio_condicional_Tipo_de_Oferta",
+			"Expresion":'(squeeze(size(variable1)) > 0) or ((variable2 == "INF" or variable3 == "SI") and variable4 == "INF")',
+			"MensajeExito":"El hecho {variable1} debe ser reportado para los reportes de tipo Prospecto Emisión Única y Suplemento.",
+			"MensajeError":"El hecho {variable1} debe ser reportado para los reportes de tipo Prospecto Emisión Única y Suplemento.",
+			"VariablesPrecondicion":[
+				{"IdConcepto": "ar_pros_PlacementProspectus", "ValorFallback":"INF"},
+				{"IdConcepto": "ar_pros_OnlyEmission", "ValorFallback":"INF"},
+				{"IdConcepto": "ar_pros_Supplement", "ValorFallback":"INF"}
+			],
+			"VariablesIteracion":[
+				{"IdConcepto": "ar_pros_TotalAmountOfTheIssueInMexicoAndAbroadIfNecessar", "ValorFallback":""},
+				{"IdConcepto": "ar_pros_NumberOfSecuritiesOfferedInMexicoAndAbroadIfNecessary", "ValorFallback":""},
+				{"IdConcepto": "ar_pros_PlacementPriceValues", "ValorFallback":""},
+				{"IdConcepto": "ar_pros_NameOfTheReferenceCurrencyInWhichTheIssueIsMade", "ValorFallback":""},
+				{"IdConcepto": "ar_pros_ExchangeRateUDIValue", "ValorFallback":""},
+				{"IdConcepto": "ar_pros_OtherConsiderationsOfSupply", "ValorFallback":""},
+				{"IdConcepto": "ar_pros_ThePeriodForWhichTheOfferWillRemainInEffect", "ValorFallback":""},
+				{"IdConcepto": "ar_pros_TheFormAndTheDeadlineForTheSettlementOfSecurities", "ValorFallback":""},
+				{"IdConcepto": "ar_pros_AmortizationTable", "ValorFallback":""},
+				{"IdConcepto": "ar_pros_FrequencyAndFormOfAmortizationOfSecurities", "ValorFallback":""},
+				{"IdConcepto": "ar_pros_ConstraintsToWhichTheStationWillBeSubjectDuringTheLifeOfTheIssue", "ValorFallback":""},
+				{"IdConcepto": "ar_pros_IdentificationOfTheSourceOfTheNecessaryResources", "ValorFallback":""},
+				{"IdConcepto": "ar_pros_UseOfFunds", "ValorFallback":""},
+				{"IdConcepto": "ar_pros_CapitalStructureAfterTheOffering", "ValorFallback":""},
+				{"IdConcepto": "ar_pros_FeaturesCommonRepresentative", "ValorFallback":""},
+				{"IdConcepto": "ar_pros_NamesOfPersonsWithRelevantParticipationInTheOffer", "ValorFallback":""},
+				{"IdConcepto": "ar_pros_Rating", "ValorFallback":""},
+				{"IdConcepto": "ar_pros_ReasonsForThisRating", "ValorFallback":""},
+				{"IdConcepto": "ar_pros_RatingMeaning", "ValorFallback":""}
+			]
+			
+		},
+		"LA_OFERTA_obligatorio_condicional_OfertaPublicaRestringida_NO_": {
+			"NombreFormula": "LA_OFERTA_obligatorio_condicional_OfertaPublicaRestringida",
+			"Expresion":'(squeeze(size(variable1)) > 0) or not(variable4 == "NO" and (variable2 != "INF" or variable3 != "INF"))',
+			"MensajeExito":"El hecho {variable1} debe ser reportado para un reporte de Prospecto o de Suplemento cuando el concepto 'Oferta pública restringida' es 'NO'.",
+			"MensajeError":"El hecho {variable1} debe ser reportado para un reporte de Prospecto o de Suplemento cuando el concepto 'Oferta pública restringida' es 'NO'.",
+			"VariablesPrecondicion":[
+				{"IdConcepto": "ar_pros_PlacementProspectus", "ValorFallback":"INF"},
+				{"IdConcepto": "ar_pros_Supplement", "ValorFallback":"INF"},
+				{"IdConcepto": "ar_pros_LimitedPublicOffering", "ValorFallback":"INF"}
+			],
+			"VariablesIteracion":[
+				{"IdConcepto": "ar_pros_PotentialAcquirers", "ValorFallback":""},
+				{"IdConcepto": "ar_pros_PossibleLimitations", "ValorFallback":""},
+			]
+		},
+		"LA_OFERTA_obligatorio_condicional_OfertaPublicaRestringida_SI_": {
+			"NombreFormula": "LA_OFERTA_obligatorio_condicional_OfertaPublicaRestringida_SI",
+			"Expresion":'(squeeze(size(variable1)) > 0) or not(variable4 == "SI" and (variable2 != "INF" or variable3 != "INF"))',
+			"MensajeExito":"El hecho {variable1} debe ser reportado para un reporte de Prospecto o de Suplemento cuando el concepto 'Oferta pública restringida' es 'NO'.",
+			"MensajeError":"El hecho {variable1} debe ser reportado para un reporte de Prospecto o de Suplemento cuando el concepto 'Oferta pública restringida' es 'NO'.",
+			"VariablesPrecondicion":[
+				{"IdConcepto": "ar_pros_PlacementProspectus", "ValorFallback":"INF"},
+				{"IdConcepto": "ar_pros_Supplement", "ValorFallback":"INF"},
+				{"IdConcepto": "ar_pros_LimitedPublicOffering", "ValorFallback":"INF"}
+			],
+			"VariablesIteracion":[
+				{"IdConcepto": "ar_pros_TypeOfInvestorToWhichItIsAddressed", "ValorFallback":""},
+				
+			]
+		}
+	},
+	"Descripcion de la entidad federativa": {
+		"Descripcion_entidad_obligatorio_descripcion_general": {
+			"NombreFormula": "Descripcion_entidad_obligatorio_descripcion_general",
+			"Variables":[
+				{"Concepto": "ar_pros_DescriptionAndDevelopmentOfTheFederalEntityOrMunicipality"}
+			]
+		},
+		"DESCRIP_DE_LA_ENTIDAD_FEDERATIVA_obligatorio_condicional_incorporacion_por_referencia": {
+			"NombreFormula": "DESCRIP_DE_LA_ENTIDAD_FEDERATIVA_obligatorio_condicional_incorporacion_por_referencia",
+			"Precondition": "NO",
+			"Variables":[
+				
+				    {"Concepto": "ar_pros_ReferenceIncorporationFederalEntityOrMunicipality"},
+					{"Concepto": "ar_pros_NameOfTheStateOrMunicipality"},	
+					{"Concepto": "ar_pros_OfficeAddressStateOrMunicipalExecutive"},
+					{"Concepto": "ar_pros_PreponderantEconomicActivityOfTheMunicipalityOrState"},
+					{"Concepto": "ar_pros_DescriptionOfEconomicDevelopmentInTheLast3Years"},
+					{"Concepto": "ar_pros_RelevantMacroeconomicData"},
+					{"Concepto": "ar_pros_EnumeratePublicServices"},
+					{"Concepto": "ar_pros_DescriptionOfRelevantContracts"},
+					{"Concepto": "ar_pros_DescriptionOfRelevantAdministrativeProcesses"},
+					{"Concepto": "ar_pros_DescriptionOfTheMainItemsOfIncomeAndExpenses"},
+					{"Concepto": "ar_pros_ApplicableLawAndTaxSituation"},
+					{"Concepto": "ar_pros_HumanResources"},
+					{"Concepto": "ar_pros_CorporateInformation"},
+					{"Concepto": "ar_pros_DescriptionOfKeyAssets"},
+					{"Concepto": "ar_pros_Investments"},							
+				    {"Concepto": "ar_pros_JudicialAdministrativeOrArbitrationProceedings"}			
+			]
+			
+		}
+
+
+	},
+	"Informacion Financiera": {
+		"Informacion_Financiera_obligatorio_descripcion_general": {
+			"NombreFormula": "Descripcion_entidad_obligatorio_descripcion_general",
+			"Variables":[
+				{"Concepto": "ar_pros_SelectedFinancialInformation"}
+			]
+		},
+		"INF_FINANCIERA_obligatorio_condicional_no_vacios_incorporacion_por_referencia": {
+			"NombreFormula": "INF_FINANCIERA_obligatorio_condicional_no_vacios_incorporacion_por_referencia",
+			"Precondition": "NO",
+			"Variables":[
+				
+				    {"Concepto": "ar_pros_ReferenceIncorporationFinancialInformation"},
+					{"Concepto": "ar_pros_PublicDebt"},	
+				    {"Concepto": "ar_pros_CommentsAndAnalysisOfTheFederalEntityOrMunicipality"},
+					{"Concepto": "ar_pros_OperationResults"},							
+					{"Concepto": "ar_pros_FinancialPositionLiquidityAndCapitalResources"},
+					{"Concepto": "ar_pros_InternalControl"},
+					{"Concepto": "ar_pros_EstimatesCriticalAccountingProvisionsOrReserves"},
+		
+							
+							
+			]
+			
+		}
+	},
+	"Administracion":{
+	    "Obligatorio_Incorporación_por_Referencia_Administracion": {
+			    "NombreFormula": "Obligatorio_Incorporación_por_Referencia_Administracion",
+			    "Precondition": "NO",
+			    "Variables":[
+						{"Concepto": "ar_pros_ReferenceIncorporationAdministration"},
+						{"Concepto": "ar_pros_AdministratorName"},
+						{"Concepto": "ar_pros_KeyOfficials"}	
+					]
+		},
+		"La_ADMINISTRACION_obligatorio_renglos_tabla_administradores_de_la_empresa": {
+				"NombreFormula": "La_Fideicomitente_obligatorio_renglos_tabla_administradores_de_la_empresa",
+				"Variables":[
+					{"Concepto": "ar_pros_AdministratorName"},
+					{"Concepto": "ar_pros_AdministratorFirstName"},
+					{"Concepto": "ar_pros_AdministratorSecondName"},
+					{"Concepto": "ar_pros_AdministratorPosition"},
+					{"Concepto": "ar_pros_AdministratorAge"},
+					{"Concepto": "ar_pros_AdministratorMaximumStudiesDegree"},
+					{"Concepto": "ar_pros_AdministratorMainResponsabilities"},
+				    {"Concepto": "ar_pros_AdministratorRelationship"}									
+				]
+		}
+		
+	},
+	"Activos_Subyacentes": {
+	   "Informacion_Financiera_obligatorio_descripcion_general": {
+		      "NombreFormula": "Descripcion_entidad_obligatorio_descripcion_general",
+		      "Variables":[
+			      {"concepto": "ar_pros_DescriptionOfTheUnderlyingAssets"}
+		      ]
+
+	    },
+	   "Obligatorio_Incorporación_por_Referencia_Administracion": {
+		    "NombreFormula": "Obligatorio_Incorporación_por_Referencia_Administracion",
+		    "Precondition": "NO",
+		    "Variables":[
+			     {"concepto": "ar_pros_ReferenceIncorporationUnderlyingAssets"},
+			     {"concepto": "ar_pros_HistoricalPerformanceOfTheUnderlyingAssets"},
+			     {"concepto": "ar_pros_ExercisesToIdentifyThePossibleReturns"},
+			     {"concepto": "ar_pros_OtherInformation"}
+	    	]
+		}	
+		
+	},
+	"Personas_Responsalbes":{
+	    "VA_PERSONAS_RESPONSABLES_obligatorio_renglon_tabla_personas_responsables": {
+			"NombreFormula": "VA_PERSONAS_RESPONSABLES_obligatorio_renglon_tabla_personas_responsables",
+			"Variables":[
+				{"Concepto": "ar_pros_ResponsiblePersonName"},
+				{"Concepto": "ar_pros_ResponsiblePersonPosition"},
+				{"Concepto": "ar_pros_ResponsiblePersonInstitution"},
+				{"Concepto": "ar_pros_ResponsiblePersonLegend"}
+			]
+		},
+		"VA_PERSONAS_RESPONSABLES_obligatorio_nombre_y_cargo_de_personas_responsables_pdf": {
+			"NombreFormula": "VA_PERSONAS_RESPONSABLES_obligatorio_nombre_y_cargo_de_personas_responsables_pdf",
+			"Variables":[
+				{"Concepto": "ar_pros_NameAndPositionsOfResponsiblePersonsPdf"}
+			]
+		}
+	},
+	"Anexos": {
+			"ANEXOS__obligatorios_SinIncorporacionReferencia_": {
+				"NombreFormula": "ANEXOS__obligatorios_SinIncorporacionReferencia_",
+				"Expresion":'(squeeze(size(variable1)) > 0) or not(variable2 == "NO")',
+				"MensajeExito":"El hecho {variable1} es obligatorio en caso de no utilizar incorporación por referencia.",
+				"MensajeError":"El hecho {variable1} es obligatorio en caso de no utilizar incorporación por referencia.",
+				"VariablesPrecondicion":[
+					{"IdConcepto": "ar_pros_ReferenceIncorporationAnnex", "ValorFallback":"INF"}
+				],
+				"VariablesIteracion":[
+					{"IdConcepto": "ar_pros_IndenturePdf", "ValorFallback":""},
+					{"IdConcepto": "ar_pros_LegalOpinionPdf", "ValorFallback":""}
+			
+				]
+			},
+			"ANEXOS_obligatorio_estados_financieros_pdf": {
+				"NombreFormula": "ANEXOS_obligatorio_estados_financieros_pdf",
+				"Variables":[
+					{"Concepto": "ar_pros_FinancialStatementsPdf"}
+				]
+		    }
+	}
+
+	
+
+}

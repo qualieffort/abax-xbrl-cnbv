@@ -1,0 +1,31 @@
+﻿<form name="exportarDocumentoInstanciaForm" ng-submit="exportarDocumentoInstancia()" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true" ng-click="cerrarDialogo()">&times;</button>
+        <div class="row m-t-sm">
+            <div class="col-sm-10 m-b-xs">
+                <h4 class="modal-title">{{ 'EDITOR_XBRL_EXPORTAR_INFORMACION' | translate }}</h4>
+            </div>
+        </div>
+    </div>
+    <div class="modal-body">
+            <p>{{'EDITOR_XBRL_EXPORTAR_SELECCIONE_FORMATO'|translate}}</p>
+            <div class="form-group">
+                <label>{{'EDITOR_XBRL_FORMATO' | translate}}</label>
+                <select ng-model="formatoExportaDocumentoInstancia">
+                    <option value="1" >XBRL</option>
+                    <option value="6">XBRL en formato ZIP</option>
+                    <option ng-if="::exportarExcel" value="2" >Excel</option>
+                    <option value="3" >Word</option>
+                    <option value="4" >PDF</option>
+                    <option value="5" >HTML</option>
+                    <!--option value="6">TXT</!-option-->
+                </select>
+            </div>
+    </div>
+    <div class="modal-footer">
+        <div>
+            <button type="button" class="btn btn-default" ng-click="cerrarDialogo()">{{'ETIQUETA_BOTON_CANCELAR' | translate}}</button>
+            <button type="submit" class="btn btn-s-md btn-warning" >{{'EDITOR_XBRL_EXPORTAR_DOCUMENTO'|translate}}</button>
+        </div>
+    </div>
+</form>

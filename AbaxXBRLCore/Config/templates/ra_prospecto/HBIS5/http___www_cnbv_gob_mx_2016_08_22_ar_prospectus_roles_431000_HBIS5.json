@@ -1,0 +1,52 @@
+{
+	"ContextosPlantillaPorId" : {
+  "cxt": {
+    "Id": "cxt",
+    "Periodo": {
+      "Tipo": 1,
+      "FechaInstante": "#fecha_2014_12_31",
+      "FechaInicio": "",
+      "FechaFin": ""
+    },
+    "Entidad": {
+      "Id": "#nombreEntidad",
+      "EsquemaId": "#esquemaEntidad",
+      "ContieneInformacionDimensional": false,
+      "Segmento": null,
+      "ValoresDimension": []
+    },
+    "ContieneInformacionDimensional": false,
+    "Escenario": null,
+    "ValoresDimension": []
+  }
+},
+	
+	"UnidadesPlantillaPorId" : {},
+            
+	"HechosPlantillaPorId" : {
+    "ar_pros_NameAndPositionsOfResponsiblePersonsPdf_afff1348-7409-4cef-9ab5-d69e625f95e2": {
+      "Id": "ar_pros_NameAndPositionsOfResponsiblePersonsPdf_afff1348-7409-4cef-9ab5-d69e625f95e2",
+      "IdConcepto": "ar_pros_NameAndPositionsOfResponsiblePersonsPdf",
+      "IdContextoPlantilla": "cxt",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "ar_pros_IssuanceUnderArt13OfTheCUELegendPDF_e67c6b92-41fd-4b89-98de-fd46c0786fe9": {
+      "Id": "ar_pros_IssuanceUnderArt13OfTheCUELegendPDF_e67c6b92-41fd-4b89-98de-fd46c0786fe9",
+      "IdConcepto": "ar_pros_IssuanceUnderArt13OfTheCUELegendPDF",
+      "IdContextoPlantilla": "ctx_2014",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    }
+}
+}

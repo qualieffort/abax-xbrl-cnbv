@@ -1,0 +1,34 @@
+{
+  "IdConceptos": [
+    "ar_pros_ListedSerie",
+    "ar_pros_TheNumberOfSharesOutstandingPriorToThePublicOfferingClassifiedBySeries",
+    "ar_pros_TheNumberOfSharesOutstandingAfterThePublicOffer",
+    "ar_pros_IndicateTheTypeOfSharesAndCorporateRightsConferred"
+  ],
+  "PlantillasContextos": {
+    "DEFAULT": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": []
+    }
+  },
+  "PlantillaDimensiones": {
+    "ar_pros_ListedSerieTypedAxis": {
+      "PrefijoValor": "<ar_pros:SerieDomain xmlns:ar_pros=\"http://www.cnbv.gob.mx/2016-08-22/ar_prospectus\">",
+      "SubfijoValor": "</ar_pros:SerieDomain>",
+      "EtiquetaNuevoElemento": "1",
+      "Explicita": false,
+      "IdDimension": "ar_pros_ListedSerieTypedAxis",
+      "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:ListedSerieTypedAxis"
+    }
+  },
+  "DimensionesDinamicas": [
+    "ar_pros_ListedSerieTypedAxis"
+  ],
+  "MaxColumnasVertical": 6,
+  "MaxColumnasHorizontal": 0,
+  "TamanoHoja": "Letter"
+}

@@ -1,0 +1,76 @@
+{
+	"ContextosPlantillaPorId" : {
+  "ctx_2014": {
+    "Id": "ctx_2014",
+    "Periodo": {
+      "Tipo": 1,
+      "FechaInstante": "#fecha_2014_12_31",
+      "FechaInicio": "",
+      "FechaFin": ""
+    },
+    "Entidad": {
+      "Id": "#nombreEntidad",
+      "EsquemaId": "#esquemaEntidad",
+      "ContieneInformacionDimensional": false,
+      "Segmento": null,
+      "ValoresDimension": []
+    },
+    "ContieneInformacionDimensional": false,
+    "Escenario": null,
+    "ValoresDimension": []
+  }
+},
+	
+	"UnidadesPlantillaPorId" : {},
+            
+	"HechosPlantillaPorId" : {
+  "ar_pros_ReferenceIncorporationAdministration_1e62eea4-ecac-4428-949b-de7a0ff430a9": {
+    "Id": "ar_pros_ReferenceIncorporationAdministration_1e62eea4-ecac-4428-949b-de7a0ff430a9",
+    "IdConcepto": "ar_pros_ReferenceIncorporationAdministration",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_ExternalAuditors_af34eaa9-fbec-4e5d-b2b6-14e91fc05b3c": {
+    "Id": "ar_pros_ExternalAuditors_af34eaa9-fbec-4e5d-b2b6-14e91fc05b3c",
+    "IdConcepto": "ar_pros_ExternalAuditors",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_TransactionsWithRelatedParties_15dc78af-9574-4910-adc1-aebee21180a5": {
+    "Id": "ar_pros_TransactionsWithRelatedParties_15dc78af-9574-4910-adc1-aebee21180a5",
+    "IdConcepto": "ar_pros_TransactionsWithRelatedParties",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_AdministratorsAndShareholders_39b79208-ce4d-44af-a854-17c225a03573": {
+    "Id": "ar_pros_AdministratorsAndShareholders_39b79208-ce4d-44af-a854-17c225a03573",
+    "IdConcepto": "ar_pros_AdministratorsAndShareholders",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  }
+}
+}

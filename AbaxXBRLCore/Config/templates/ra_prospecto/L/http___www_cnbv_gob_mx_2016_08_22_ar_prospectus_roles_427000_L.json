@@ -1,0 +1,64 @@
+{
+	"ContextosPlantillaPorId" : {
+  "ctx_2014": {
+    "Id": "ctx_2014",
+    "Periodo": {
+      "Tipo": 1,
+      "FechaInstante": "#fecha_2014_12_31",
+      "FechaInicio": "",
+      "FechaFin": ""
+    },
+    "Entidad": {
+      "Id": "#nombreEntidad",
+      "EsquemaId": "#esquemaEntidad",
+      "ContieneInformacionDimensional": false,
+      "Segmento": null,
+      "ValoresDimension": []
+    },
+    "ContieneInformacionDimensional": false,
+    "Escenario": null,
+    "ValoresDimension": []
+  }
+},
+	
+	"UnidadesPlantillaPorId" : {},
+            
+	"HechosPlantillaPorId" : {
+  "ar_pros_ReferenceIncorporationAdministration_780d8325-5247-4074-b4c8-8ceb471bac73": {
+    "Id": "ar_pros_ReferenceIncorporationAdministration_780d8325-5247-4074-b4c8-8ceb471bac73",
+    "IdConcepto": "ar_pros_ReferenceIncorporationAdministration",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_ExternalAuditors_d60ad440-61bb-4529-a381-e8997f7d1c1f": {
+    "Id": "ar_pros_ExternalAuditors_d60ad440-61bb-4529-a381-e8997f7d1c1f",
+    "IdConcepto": "ar_pros_ExternalAuditors",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_KeyOfficials_df946fbc-0a15-418c-ac65-a0d46ce7a9be": {
+    "Id": "ar_pros_KeyOfficials_df946fbc-0a15-418c-ac65-a0d46ce7a9be",
+    "IdConcepto": "ar_pros_KeyOfficials",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  }
+}
+}

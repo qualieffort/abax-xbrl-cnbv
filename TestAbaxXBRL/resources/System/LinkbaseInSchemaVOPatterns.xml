@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<!--
+Project: Xbrl Processing Engine
+Copyright (c) 2011  EDGAR(r) Online, Inc.
+
+EDGAR(r) is a federally registered trademark of the U.S. Securities and Exchange Commission. EDGAR 
+Online is not affiliated with or approved by the U.S. Securities and Exchange Commission.
+-->
+
+
+<PatternSet
+    name="LinkbaseInSchemasVOs"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="VOPatterns.xsd">
+
+    <Pattern name="Load Namespace Resolvers" detectionType="Discovery" method="runOnce" value="N/A">
+        <Failure />
+        <Action method="AddToNamespaceResolver" uri="N/A">
+            <Selector type="Prefix" method="Constant" value="link" />
+            <Selector type="Namespace" method="Constant" value="http://www.xbrl.org/2003/linkbase" />
+        </Action>
+        <Action method="AddToNamespaceResolver" uri="N/A">
+	        <Selector type="Prefix" method="Constant" value="xlink" />
+	        <Selector type="Namespace" method="Constant" value="http://www.w3.org/1999/xlink" />
+    	</Action>
+        <Action method="AddToNamespaceResolver" uri="N/A">
+            <Selector type="Prefix" method="Constant" value="xs" />
+            <Selector type="Namespace" method="Constant" value="http://www.w3.org/2001/XMLSchema" />
+    	</Action>
+        <Action method="AddToNamespaceResolver" uri="N/A">
+            <Selector type="Prefix" method="Constant" value="xsi" />
+            <Selector type="Namespace" method="Constant" value="http://www.w3.org/2001/XMLSchema-instance" />
+        </Action>
+        <Action method="AddToNamespaceResolver" uri="N/A">
+            <Selector type="Prefix" method="Constant" value="xbrli" />
+            <Selector type="Namespace" method="Constant" value="http://www.xbrl.org/2003/instance" />
+        </Action>
+    </Pattern>
+
+    <Pattern name="Discover linkbase" detectionType="Discovery" method="XPath"
+             value="/xs:schema/xs:annotation/xs:appinfo/link:linkbase">
+        <Action saveDO="linkbase" method="CreateDomainObject" uri="domain://ubmatrix.com/Xbrl/Linkbase#InternalLinkbase">
+            <Selector type="ValueObject" method="XPath" value="."/>
+        </Action>
+	    <Action method="SetPrimaryDomainObject" uri="N/A">
+    	    <Selector type="From" method="DomainObject" value="linkbase" />
+       	</Action>
+    </Pattern>
+
+    <Pattern name="Discover schemas via 'schemaLocation'" detectionType="Discovery" method="XPath" value="@xsi:schemaLocation">
+        <Failure />
+        <Action method="LoadSchemasFromSchemaLocation" uri="N/A" >
+            <Selector type="SchemaLocationPairs" method="XPath" value="." />
+            <Failure>
+                <Action saveDO="memo" method="CreateWarningMemo" uri="memo://ubmatrix.com/Load/Taxonomy#UnableToLocateOneOrMoreOfTheXsiSchemaLocationFiles"/>
+            </Failure>
+        </Action>
+    </Pattern>
+
+    <Pattern name="Load linkbase" detectionType="FinalLoad" method="XPath"
+             value="/xs:schema/xs:annotation/xs:appinfo/link:linkbase">
+        
+        <Failure />
+
+        <Pattern name="Find link" detectionType="FinalLoad"  method="XPath" value="*[@xlink:type=&quot;extended&quot;]">
+            <Failure />
+
+            <Action method="QuickLink" uri="N/A">
+                <Selector type="ValueObject" method="XPath" value="."/>
+                <Selector type="Linkbase" method="DomainObjectFromValueObjectXPath" value=".."/>
+            </Action>
+
+        </Pattern>
+
+    </Pattern>
+</PatternSet>
+
+<!--
+The contents of this file are subject to the End-User Software License Agreement (the "License"). You may not use this 
+file except in compliance with the License. A current copy of the License is available by contacting product support.
+
+Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights and limitations under the License.
+-->

@@ -1,0 +1,30 @@
+﻿
+<div>
+    <xbrl:mensaje-validacion-formula xbrl:id-formula="{{idFormula}}" xbrl:id-hecho="{{idHecho}}" ></xbrl:mensaje-validacion-formula>
+
+    <div style="max-height:{{alturaModal}}px; overflow-y: auto;width:100%;">
+
+        <table class="table table-striped b-t b-light overflow-y">
+            <thead id="EncabezadoDetalleOperandosDimension_{{idDetalleValidacion}}">
+                <tr>
+                    <th width="40%">{{'EDITOR_XBRL_TITULO_CONCEPTO' | translate}}</th>
+                    <th colspan="2" width="20%">{{'ETIQUETA_DIMENSION' | translate}}</th>
+                    <th style="width:20%;" class="valorCalculado">{{'ETIQUETA_VALOR_CALCULADO' | translate}}</th>
+                    <th style="width:20%;">{{'ETIQUETA_VALOR' | translate}}</th>
+                </tr>
+            </thead>
+
+            <thead id="EncabezadoDetalleOperandos_{{idDetalleValidacion}}">
+                <tr>
+                    <th style="min-width:200px; width:200px;">{{'EDITOR_XBRL_TITULO_CONCEPTO' | translate}}</th>
+                    <th id="tituloPeriodo">{{'ETIQUETA_PERIODO' | translate}}</th>
+                    <th>{{'ETIQUETA_VALOR' | translate}}</th>
+                </tr>
+            </thead>
+
+            <tbody id="detalleOperandosFormula_{{idDetalleValidacion}}"></tbody>
+
+        </table>
+    </div>
+
+</div>

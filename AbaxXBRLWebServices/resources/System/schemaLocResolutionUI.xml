@@ -1,0 +1,28 @@
+<panel id="innerPanel" layout="gridbaglayout">
+	<label text="Schema Location Resolution Configuration">
+		<gridbagconstraints id="spanRow" gridwidth="GridBagConstraints.REMAINDER" gridx="GridBagConstraints.RELATIVE" anchor="GridBagConstraints.LINE_START"/>
+	</label>
+	<separator>
+		<gridbagconstraints refid="spanRow" fill="GridBagConstraints.HORIZONTAL"/>
+	</separator>
+	<button text="Add Row" Action="addRowAction">
+		<gridbagconstraints gridx="GridBagConstraints.RELATIVE" anchor="GridBagConstraints.LINE_START"/>
+	</button>
+	<button text="Delete Row" Action="delRowAction">
+		<gridbagconstraints gridwidth="GridBagConstraints.REMAINDER" anchor="GridBagConstraints.LINE_START"/>
+	</button>
+	<scrollpane id="tableScrollPane">
+		<gridbagconstraints refid="spanRow" />
+		<customtable id="customTable" initclass="ubmatrix.xbrl.tools.configui.src.utils.ui.SchemaLocConfigTableModel(Taxonomy|ubmatrix.xbrl.tools.configui.src.utils.ui.LoadTaxonomyButton,NameSpace,LogicalURI,PhysicalURI)">
+		</customtable>
+	</scrollpane>
+	<separator>
+		<gridbagconstraints refid="spanRow" fill="GridBagConstraints.HORIZONTAL"/>
+	</separator>
+	<label id="status">
+		<gridbagconstraints refid="spanRow" />
+	</label>
+	<progressbar id="progressBar">
+		<gridbagconstraints refid="spanRow" fill="GridBagConstraints.HORIZONTAL"/>
+	</progressbar>
+</panel>

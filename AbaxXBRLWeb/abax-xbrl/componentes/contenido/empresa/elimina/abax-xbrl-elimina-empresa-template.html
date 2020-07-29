@@ -1,0 +1,11 @@
+﻿<div class="modal-header">
+    <button type="button" class="close" aria-hidden="true" ng-click="cancelar()">×</button> 
+    <h4 class="modal-title">{{'TITULO_PROMPT_ELIMINAR_EMPRESA' | translate}}</h4>
+</div>
+<div class="modal-body">
+    <p>{{'ETIQUETA_PROMPT_ELIMINAR_EMPRESA' | translate}}</p>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" ng-click="cancelar()">{{'ETIQUETA_BOTON_CANCELAR' | translate}}</button>
+    <button id="botonEliminar" class="btn btn-primary" ng-click="eliminarEmpresa()">{{'ETIQUETA_BOTON_ACEPTAR' | translate}}</button>
+</div>

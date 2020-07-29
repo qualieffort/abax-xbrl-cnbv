@@ -1,0 +1,32 @@
+/*mongo localhost:27017/abaxxbrl "C:/2HSoftware/Proyectos/AbaxXBRL/AbaxXBRL/sqlScripts/Mongo/CreateCollenctionsMongo.txt*/
+db.createCollection("BlockStoreHecho");
+db.createCollection("BlockStoreConcepto");
+db.createCollection("BlockStoreDimension");
+db.createCollection("BlockStoreEmpresa");
+db.createCollection("BlockStoreUnidad");
+
+
+db.getCollection("BlockStoreHecho").createIndex({"codigoHashRegistro":1});
+db.getCollection("BlockStoreHecho").createIndex({"EspacioNombresPrincipal":1});
+db.getCollection("BlockStoreHecho").createIndex({"idEntidad":1});
+db.getCollection("BlockStoreHecho").createIndex({"concepto.Id":1});
+db.getCollection("BlockStoreHecho").createIndex({"periodo.Tipo":1});
+db.getCollection("BlockStoreHecho").createIndex({"periodo.FechaInicio":1,"periodo.FechaFin":1});
+db.getCollection("BlockStoreHecho").createIndex({"periodo.FechaInstante":1});
+db.getCollection("BlockStoreHecho").createIndex({"unidades":1});
+db.getCollection("BlockStoreHecho").createIndex({"dimension":1});
+
+db.getCollection("BlockStoreConcepto").createIndex({"Id":1});
+db.getCollection("BlockStoreConcepto").createIndex({"EspacioNombresPrincipal":1});
+
+db.getCollection("BlockStoreDimension").createIndex({"codigoHashRegistro":1});
+db.getCollection("BlockStoreDimension").createIndex({"idConcepto":1, "EspacioNombresPrincipal":1});
+db.getCollection("BlockStoreDimension").createIndex({"idConcepto":1, "EspacioNombresPrincipal":1});
+
+db.createUser(
+  {
+    user: "xbrlMongoUser",
+    pwd: "AbaxXBRL2018",
+    roles: [ { role: "readWrite", db: "abaxxbrl" } ]
+  }
+);

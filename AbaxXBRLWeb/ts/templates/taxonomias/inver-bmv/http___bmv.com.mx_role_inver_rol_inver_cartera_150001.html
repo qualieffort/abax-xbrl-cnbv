@@ -1,0 +1,467 @@
+﻿<xbrl-contenedor-formato xbrl:rol-uri="{{xbrlRol.Uri}}" orientacion="landscape" xbrl:ocultar-titulo-rol="true" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+    <div oc-lazy-load="{name: 'abaxXBRLCarteraInversionViewer', files: ['ts/templates/taxonomias/inver-bmv/extensions/carteraInversion.js?version=' + abaxXBRL.root.AbaxXBRLConstantesRoot.VERSION_APP.version], cache:true, reconfig:false}">
+        <div class="main-header">
+            <div style="width:100%">
+                <div class="logo">
+                    <img src="Images/fondoActinver.png">
+                </div>
+                <div class="textoEmpresaHeader">
+                    <h1 class="fontHeaderFormat">ACTINEM - FONDO ACTINVER MERCADOS EMERGENTES MUNDIALES, S.A. DE C.V., S.I.R.V</h1>
+                </div>
+            </div>
+            <center>
+                <div style="width:95%">
+                    <div class="barraGris"></div>
+                    <div class="barraAzulExtendida"></div>
+                </div>
+            </center>
+        </div>
+
+
+        <h4 style="text-align:center"><span style="text-align:center">INFORMACI&Oacute;N DERIVADA DE LOS ESTADOS FINANCIEROS<br />(CARTERA DE INVERSI&Oacute;N)</span></h4>
+        <br />
+
+        <div xbrl:cartera-inversion>
+            <pagination total-items="totalRegistros" previous-text="Anterior" next-text="Siguiente" items-per-page="numeroElementosPorPagina" ng-model="paginaActual" ng-change="mostrarPaginacion()"></pagination>
+
+            <div id="contenedorTablaExcel" class="table-responsive">
+                <table class="table table-striped b-t b-light" xbrl:tabla-excel xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" selector="td:not(:first-child)" selector-contenedor-x="#contenedorTablaExcel" selector-contenedor-y="#contenedorFormatos" tab-index="1" on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)" on-after-paste="onAfterPaste(valorPegado, x, y)" on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)">
+                    <thead>
+                        <tr>
+                            <th style="text-align:center; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd;">
+                                <button type="button"
+                                        class="btn-info btn-desglose-credito"
+                                        ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                        ng-click="agregarElementoTabla()">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </th>
+                            <th style="min-width:200px; width:200px;text-align:center; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd;">NUM. CONS.</th>
+                            <th style="min-width:200px; width:200px;text-align:center; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd;">TIPO DE INVERSI&Oacute;N</th>
+                            <th style="min-width:200px; width:200px;text-align:center; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd;">EMISORA</th>
+                            <th style="min-width:200px; width:200px;text-align:center; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd;">SERIE</th>
+                            <th style="min-width:200px; width:200px;text-align:center; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd;">CUP&Oacute;N</th>
+                            <th style="min-width:200px; width:200px;text-align:center; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd;">TIPO DE VALOR</th>
+                            <th style="min-width:200px; width:200px;text-align:center; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd;">C&Oacute;DIGO DE IDENTIFICACI&Oacute;N</th>
+                            <th style="min-width:200px; width:200px;text-align:center; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd;">TASA AL VALUAR</th>
+                            <th style="min-width:200px; width:200px;text-align:center; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd;">TIPO DE TASA</th>
+                            <th style="min-width:200px; width:200px;text-align:center; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd;">AGRUPACI&Oacute;N</th>
+                            <th style="min-width:200px; width:200px;text-align:center; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd;">CALIF. &Oacute; BURSATILIDAD</th>
+                            <th style="min-width:200px; width:200px;text-align:center; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd;">CANTIDAD DE T&Iacute;TULOS OPERADOS</th>
+                            <th style="min-width:200px; width:200px;text-align:center; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd;">CANTIDAD DE T&Iacute;TULOS LIQUIDADOS</th>
+                            <th style="min-width:200px; width:200px;text-align:center; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd;">TOTAL T&Iacute;TULOS EMISI&Oacute;N</th>
+                            <th style="min-width:200px; width:200px;text-align:center; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd;">COSTO PROM. UNIT. DE ADQ.</th>
+                            <th style="min-width:200px; width:200px;text-align:center; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd;">COSTO TOTAL ADQUISICI&Oacute;N</th>
+                            <th style="min-width:200px; width:200px;text-align:center; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd;">VALOR RAZONABLE &Oacute; CONTABLE UNITARIO</th>
+                            <th style="min-width:200px; width:200px;text-align:center; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd;">VALOR RAZONABLE &Oacute; CONTABLE TOTAL</th>
+                            <th style="min-width:200px; width:200px;text-align:center; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd;">D&Iacute;AS POR VENCER</th>
+                            <th style="min-width:200px; width:200px;text-align:center; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd;">VAR</th>
+                            <th style="min-width:200px; width:200px;text-align:center; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd;">CONTRAPARTE REPORTO PRESTAMO DERIVADO</th>
+                            <th style="min-width:200px; width:200px;text-align:center; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd;">TIPO DE CONTRATO (COMPRA-VENTA)</th>
+                            <th style="min-width:200px; width:200px;text-align:center; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd;">PA&Iacute;S DONDE SE ADQUIRIERON LOS VALORES</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" ng-repeat="renglonTabla in valoresTablaPaginada track by $index">
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <button type="button"
+                                                    ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                                    class="btn-danger btn-desglose-credito"
+                                                    ng-click="eliminarElementoTabla(renglonTabla.numeroRenglon)">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <button type="button"
+                                                    ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                                    class="btn-danger btn-desglose-credito"
+                                                    style="background-color: #357ebd !important;"
+                                                    ng-click="mostrarPopUp($index)">
+                                                <i class="fa  fa-pencil"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <!-- ##################  CAMPO  -  Numero de consecutivo  -->
+                            <td>
+                                <div ng-if="renglonTabla.camposRenglon[0].esActivo">
+                                    <input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[0].hecho.ValorHecho" xbrl:auto-numeric="" opciones-auto-numeric="{ vMin: '1', vMax: '99', mDec: '0', aPad: false }" ng-blur="renglonTabla.camposRenglon[0].esActivo=false">
+                                </div>
+                                <div class="campo_vacio" ng-if="!renglonTabla.camposRenglon[0].esActivo && renglonTabla.camposRenglon[0].hecho.ValorHecho==''" ng-dblclick="renglonTabla.camposRenglon[0].esActivo=true">
+                                    <span translate="ETIQUETA_VACIO"></span>
+                                </div>
+                                <div style="min-width:100px;" ng-if="!renglonTabla.camposRenglon[0].esActivo && renglonTabla.camposRenglon[0].hecho.ValorHecho!='' " ng-dblclick=" renglonTabla.camposRenglon[0].esActivo=true">
+                                    <span>{{renglonTabla.camposRenglon[0].hecho.ValorHecho}}</span>
+                                </div>
+                            </td>
+
+                            <!-- ##################  CAMPO 0 -  Tipo de inversión  -->
+
+                            <td>
+                                <div class="input-group" ng-if="renglonTabla.camposRenglon[1].esActivo">
+                                    <span class="input-group-btn">
+                                        <select name="valor" ng-model="renglonTabla.camposRenglon[1].hecho.ValorHecho" class="form-control" ng-options="tipoInversion.clave as tipoInversion.descripcion  for tipoInversion  in catalogoTipoInversion " ng-blur="renglonTabla.camposRenglon[1].esActivo=false">
+                                            <option value="">{{'ETIQUETA_SELECCIONAR_OPCION' | translate}}</option>
+                                        </select>
+                                    </span>
+                                </div>
+
+                                <div ng-if="!renglonTabla.camposRenglon[1].esActivo && renglonTabla.camposRenglon[1].hecho.ValorHecho!=''" ng-dblclick="renglonTabla.camposRenglon[1].esActivo=true" style="min-width:100px;text-align:center;">
+                                    <span>
+                                        {{renglonTabla.camposRenglon[1].hecho.ValorHecho}}
+                                    </span>
+                                </div>
+
+                                <div ng-if="!renglonTabla.camposRenglon[1].esActivo && renglonTabla.camposRenglon[1].hecho.ValorHecho==''" ng-dblclick="renglonTabla.camposRenglon[1].esActivo=true" style="min-width:100px;text-align:center;">
+                                    <span>
+                                        Seleccione una opci&oacute;n
+                                    </span>
+                                </div>
+
+                            </td>
+
+                            <!-- ##################  CAMPO 1 -  Emisora  -->
+
+                            <td>
+                                <div ng-if="renglonTabla.camposRenglon[2].esActivo">
+                                    <input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[2].hecho.ValorHecho" ng-blur="renglonTabla.camposRenglon[2].esActivo=false">
+                                </div>
+                                <div class="campo_vacio" ng-if="!renglonTabla.camposRenglon[2].esActivo && renglonTabla.camposRenglon[2].hecho.ValorHecho==''" ng-dblclick="renglonTabla.camposRenglon[2].esActivo=true">
+                                    <span translate="ETIQUETA_VACIO"></span>
+                                </div>
+                                <div style="min-width:100px;" ng-if="!renglonTabla.camposRenglon[2].esActivo && renglonTabla.camposRenglon[2].hecho.ValorHecho!='' " ng-dblclick=" renglonTabla.camposRenglon[2].esActivo=true">
+                                    <span>{{renglonTabla.camposRenglon[2].hecho.ValorHecho}}</span>
+                                </div>
+                            </td>
+
+                            <!-- ##################  CAMPO 2 -  Serie  -->
+
+                            <td>
+                                <div ng-if="renglonTabla.camposRenglon[3].esActivo">
+                                    <input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[3].hecho.ValorHecho" ng-blur="renglonTabla.camposRenglon[3].esActivo=false">
+                                </div>
+                                <div class="campo_vacio" ng-if="!renglonTabla.camposRenglon[3].esActivo && renglonTabla.camposRenglon[3].hecho.ValorHecho==''" ng-dblclick="renglonTabla.camposRenglon[3].esActivo=true">
+                                    <span translate="ETIQUETA_VACIO"></span>
+                                </div>
+                                <div style="min-width:100px;" ng-if="!renglonTabla.camposRenglon[3].esActivo && renglonTabla.camposRenglon[3].hecho.ValorHecho!='' " ng-dblclick=" renglonTabla.camposRenglon[3].esActivo=true">
+                                    <span>{{renglonTabla.camposRenglon[3].hecho.ValorHecho}}</span>
+                                </div>
+                            </td>
+
+                            <!-- ##################  CAMPO 3 -  Cupon  -->
+
+                            <td>
+                                <div ng-if="renglonTabla.camposRenglon[4].esActivo">
+                                    <input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[4].hecho.ValorHecho" ng-blur="renglonTabla.camposRenglon[4].esActivo=false">
+                                </div>
+                                <div class="campo_vacio" ng-if="!renglonTabla.camposRenglon[4].esActivo && renglonTabla.camposRenglon[4].hecho.ValorHecho==''" ng-dblclick="renglonTabla.camposRenglon[4].esActivo=true">
+                                    <span translate="ETIQUETA_VACIO"></span>
+                                </div>
+                                <div style="min-width:100px;" ng-if="!renglonTabla.camposRenglon[4].esActivo && renglonTabla.camposRenglon[4].hecho.ValorHecho!='' " ng-dblclick=" renglonTabla.camposRenglon[4].esActivo=true">
+                                    <span>{{renglonTabla.camposRenglon[4].hecho.ValorHecho}}</span>
+                                </div>
+                            </td>
+
+                            <!-- ##################  CAMPO 4 -  Tipo de valor  -->
+
+
+                            <td>
+                                <div ng-if="renglonTabla.camposRenglon[5].esActivo">
+                                    <input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[5].hecho.ValorHecho" ng-blur="renglonTabla.camposRenglon[5].esActivo=false">
+                                </div>
+                                <div class="campo_vacio" ng-if="!renglonTabla.camposRenglon[5].esActivo && renglonTabla.camposRenglon[5].hecho.ValorHecho==''" ng-dblclick="renglonTabla.camposRenglon[5].esActivo=true">
+                                    <span translate="ETIQUETA_VACIO"></span>
+                                </div>
+                                <div style="min-width:100px;" ng-if="!renglonTabla.camposRenglon[5].esActivo && renglonTabla.camposRenglon[5].hecho.ValorHecho!='' " ng-dblclick=" renglonTabla.camposRenglon[5].esActivo=true">
+                                    <span>{{renglonTabla.camposRenglon[5].hecho.ValorHecho}}</span>
+                                </div>
+                            </td>
+
+                            <!-- ##################  CAMPO 5 -  Código de identificación  -->
+
+                            <td>
+                                <div ng-if="renglonTabla.camposRenglon[6].esActivo">
+                                    <input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[6].hecho.ValorHecho" ng-blur="renglonTabla.camposRenglon[6].esActivo=false">
+                                </div>
+                                <div class="campo_vacio" ng-if="!renglonTabla.camposRenglon[6].esActivo && renglonTabla.camposRenglon[6].hecho.ValorHecho==''" ng-dblclick="renglonTabla.camposRenglon[6].esActivo=true">
+                                    <span translate="ETIQUETA_VACIO"></span>
+                                </div>
+                                <div style="min-width:100px;" ng-if="!renglonTabla.camposRenglon[6].esActivo && renglonTabla.camposRenglon[6].hecho.ValorHecho!='' " ng-dblclick=" renglonTabla.camposRenglon[6].esActivo=true">
+                                    <span>{{renglonTabla.camposRenglon[6].hecho.ValorHecho}}</span>
+                                </div>
+                            </td>
+
+                            <!-- ##################  CAMPO 6 -  Tasa al valuar  -->
+
+                            <td>
+                                <div ng-if="renglonTabla.camposRenglon[7].esActivo">
+                                    <input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[7].hecho.ValorHecho" xbrl:auto-numeric="" opciones-auto-numeric="{ vMin: '1', vMax: '999999', mDec: '3', aPad: false }" ng-blur="renglonTabla.camposRenglon[7].esActivo=false">
+                                </div>
+                                <div class="campo_vacio" ng-if="!renglonTabla.camposRenglon[7].esActivo && renglonTabla.camposRenglon[7].hecho.ValorHecho==''" ng-dblclick="renglonTabla.camposRenglon[7].esActivo=true">
+                                    <span translate="ETIQUETA_VACIO"></span>
+                                </div>
+                                <div style="min-width:100px;" ng-if="!renglonTabla.camposRenglon[7].esActivo && renglonTabla.camposRenglon[7].hecho.ValorHecho!='' " ng-dblclick=" renglonTabla.camposRenglon[7].esActivo=true">
+                                    <span>{{renglonTabla.camposRenglon[7].hecho.ValorHecho}}</span>
+                                </div>
+                            </td>
+
+                            <!-- ##################  CAMPO 7 -  Tipo de tasa  -->
+
+
+                            <td>
+
+                                <div class="input-group" ng-if="renglonTabla.camposRenglon[8].esActivo">
+                                    <span class="input-group-btn">
+                                        <select name="valor" ng-model="renglonTabla.camposRenglon[8].hecho.ValorHecho" class="form-control" ng-options="tipoTasa.clave as tipoTasa.descripcion  for tipoTasa  in catalogoTipoTasa " ng-blur="renglonTabla.camposRenglon[8].esActivo=false">
+                                            <option value="">{{'ETIQUETA_SELECCIONAR_OPCION' | translate}}</option>
+                                        </select>
+                                    </span>
+                                </div>
+
+                                <div ng-if="!renglonTabla.camposRenglon[8].esActivo && renglonTabla.camposRenglon[8].hecho.ValorHecho!=''" ng-dblclick="renglonTabla.camposRenglon[8].esActivo=true" style="min-width:100px;text-align:center;">
+                                    <span>
+                                        {{renglonTabla.camposRenglon[8].hecho.ValorHecho}}
+                                    </span>
+                                </div>
+
+                                <div ng-if="!renglonTabla.camposRenglon[8].esActivo && renglonTabla.camposRenglon[8].hecho.ValorHecho==''" ng-dblclick="renglonTabla.camposRenglon[8].esActivo=true" style="min-width:100px;text-align:center;">
+                                    <span>
+                                        Seleccione una opci&oacute;n
+                                    </span>
+                                </div>
+
+                            </td>
+
+                            <!-- ##################  CAMPO 8 -  Agrupacion  -->
+
+                            <td>
+                                <div ng-if="renglonTabla.camposRenglon[9].esActivo">
+                                    <input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[9].hecho.ValorHecho" ng-blur="renglonTabla.camposRenglon[9].esActivo=false">
+                                </div>
+                                <div class="campo_vacio" ng-if="!renglonTabla.camposRenglon[9].esActivo && renglonTabla.camposRenglon[9].hecho.ValorHecho==''" ng-dblclick="renglonTabla.camposRenglon[9].esActivo=true">
+                                    <span translate="ETIQUETA_VACIO"></span>
+                                </div>
+                                <div style="min-width:100px;" ng-if="!renglonTabla.camposRenglon[9].esActivo && renglonTabla.camposRenglon[9].hecho.ValorHecho!='' " ng-dblclick=" renglonTabla.camposRenglon[9].esActivo=true">
+                                    <span>{{renglonTabla.camposRenglon[9].hecho.ValorHecho}}</span>
+                                </div>
+                            </td>
+
+                            <!-- ##################  CAMPO 9 -  Calif. ó bursatilidad  -->
+
+                            <td>
+
+                                <div class="input-group" ng-if="renglonTabla.camposRenglon[10].esActivo">
+                                    <span class="input-group-btn">
+                                        <select name="valor" ng-model="renglonTabla.camposRenglon[10].hecho.ValorHecho" class="form-control" ng-options="bursatilidad.clave as bursatilidad.descripcion  for bursatilidad  in catalogoBursatilidad " ng-blur="renglonTabla.camposRenglon[10].esActivo=false">
+                                            <option value="">{{'ETIQUETA_SELECCIONAR_OPCION' | translate}}</option>
+                                        </select>
+                                    </span>
+                                </div>
+
+                                <div ng-if="!renglonTabla.camposRenglon[10].esActivo && renglonTabla.camposRenglon[10].hecho.ValorHecho!=''" ng-dblclick="renglonTabla.camposRenglon[10].esActivo=true" style="min-width:100px;text-align:center;">
+                                    <span>
+                                        {{renglonTabla.camposRenglon[10].hecho.ValorHecho}}
+                                    </span>
+                                </div>
+
+                                <div ng-if="!renglonTabla.camposRenglon[10].esActivo && renglonTabla.camposRenglon[10].hecho.ValorHecho==''" ng-dblclick="renglonTabla.camposRenglon[10].esActivo=true" style="min-width:100px;text-align:center;">
+                                    <span>
+                                        Seleccione una opci&oacute;n
+                                    </span>
+                                </div>
+
+                            </td>
+
+                            <!-- ##################  CAMPO 10 -  Cantidad de titulos operados  -->
+
+                            <td>
+                                <div ng-if="renglonTabla.camposRenglon[11].esActivo">
+                                    <input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[11].hecho.ValorHecho" xbrl:auto-numeric="" opciones-auto-numeric="{ vMin: '1', vMax: '999999999999', mDec: '0', aPad: false }" ng-blur="renglonTabla.camposRenglon[11].esActivo=false">
+                                </div>
+                                <div class="campo_vacio" ng-if="!renglonTabla.camposRenglon[11].esActivo && renglonTabla.camposRenglon[11].hecho.ValorHecho==''" ng-dblclick="renglonTabla.camposRenglon[11].esActivo=true">
+                                    <span translate="ETIQUETA_VACIO"></span>
+                                </div>
+                                <div style="min-width:100px;" ng-if="!renglonTabla.camposRenglon[11].esActivo && renglonTabla.camposRenglon[11].hecho.ValorHecho!='' " ng-dblclick=" renglonTabla.camposRenglon[11].esActivo=true">
+                                    <span>{{renglonTabla.camposRenglon[11].hecho.ValorHecho}}</span>
+                                </div>
+                            </td>
+
+                            <!-- ##################  CAMPO 11 -  Cantidad de titulos liquidados  -->
+
+                            <td>
+                                <div ng-if="renglonTabla.camposRenglon[12].esActivo">
+                                    <input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[12].hecho.ValorHecho" xbrl:auto-numeric="" opciones-auto-numeric="{ vMin: '1', vMax: '999999999999', mDec: '0', aPad: false }" ng-blur="renglonTabla.camposRenglon[12].esActivo=false">
+                                </div>
+                                <div class="campo_vacio" ng-if="!renglonTabla.camposRenglon[12].esActivo && renglonTabla.camposRenglon[12].hecho.ValorHecho==''" ng-dblclick="renglonTabla.camposRenglon[12].esActivo=true">
+                                    <span translate="ETIQUETA_VACIO"></span>
+                                </div>
+                                <div style="min-width:100px;" ng-if="!renglonTabla.camposRenglon[12].esActivo && renglonTabla.camposRenglon[12].hecho.ValorHecho!='' " ng-dblclick=" renglonTabla.camposRenglon[12].esActivo=true">
+                                    <span>{{renglonTabla.camposRenglon[12].hecho.ValorHecho}}</span>
+                                </div>
+                            </td>
+
+                            <!-- ##################  CAMPO 12 -  Total titulos emision  -->
+
+                            <td>
+                                <div ng-if="renglonTabla.camposRenglon[13].esActivo">
+                                    <input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[13].hecho.ValorHecho" xbrl:auto-numeric="" opciones-auto-numeric="{ vMin: '1', vMax: '999999999999999999', mDec: '0', aPad: false }" ng-blur="renglonTabla.camposRenglon[13].esActivo=false">
+                                </div>
+                                <div class="campo_vacio" ng-if="!renglonTabla.camposRenglon[13].esActivo && renglonTabla.camposRenglon[13].hecho.ValorHecho==''" ng-dblclick="renglonTabla.camposRenglon[13].esActivo=true">
+                                    <span translate="ETIQUETA_VACIO"></span>
+                                </div>
+                                <div style="min-width:100px;" ng-if="!renglonTabla.camposRenglon[13].esActivo && renglonTabla.camposRenglon[13].hecho.ValorHecho!='' " ng-dblclick=" renglonTabla.camposRenglon[13].esActivo=true">
+                                    <span>{{renglonTabla.camposRenglon[13].hecho.ValorHecho}}</span>
+                                </div>
+                            </td>
+
+                            <!-- ##################  CAMPO 13 -  Costo prom unit de adq  -->
+
+                            <td>
+                                <div ng-if="renglonTabla.camposRenglon[14].esActivo">
+                                    <input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[14].hecho.ValorHecho" xbrl:auto-numeric="" opciones-auto-numeric="{ vMin: '0', vMax: '9999999999999', mDec: '6', aPad: false }" ng-blur="renglonTabla.camposRenglon[14].esActivo=false">
+                                </div>
+                                <div class="campo_vacio" ng-if="!renglonTabla.camposRenglon[14].esActivo && renglonTabla.camposRenglon[14].hecho.ValorHecho==''" ng-dblclick="renglonTabla.camposRenglon[14].esActivo=true">
+                                    <span translate="ETIQUETA_VACIO"></span>
+                                </div>
+                                <div style="min-width:100px;" ng-if="!renglonTabla.camposRenglon[14].esActivo && renglonTabla.camposRenglon[14].hecho.ValorHecho!='' " ng-dblclick=" renglonTabla.camposRenglon[14].esActivo=true">
+                                    <span>{{renglonTabla.camposRenglon[14].hecho.ValorHecho}}</span>
+                                </div>
+                            </td>
+
+                            <!-- ##################  CAMPO 14 -  Costo total adquisición -->
+                            <td>
+                                <div ng-if="renglonTabla.camposRenglon[15].esActivo">
+                                    <input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[15].hecho.ValorHecho" xbrl:auto-numeric="" opciones-auto-numeric="{ vMin: '0', vMax: '999999999999999999', mDec: '0', aPad: false }" ng-blur="renglonTabla.camposRenglon[15].esActivo=false">
+                                </div>
+                                <div class="campo_vacio" ng-if="!renglonTabla.camposRenglon[15].esActivo && renglonTabla.camposRenglon[15].hecho.ValorHecho==''" ng-dblclick="renglonTabla.camposRenglon[15].esActivo=true">
+                                    <span translate="ETIQUETA_VACIO"></span>
+                                </div>
+                                <div style="min-width:100px;" ng-if="!renglonTabla.camposRenglon[15].esActivo && renglonTabla.camposRenglon[15].hecho.ValorHecho!='' " ng-dblclick=" renglonTabla.camposRenglon[15].esActivo=true">
+                                    <span>{{renglonTabla.camposRenglon[15].hecho.ValorHecho}}</span>
+                                </div>
+                            </td>
+
+                            <!-- ##################  CAMPO 15 -  Valor razonable ó contable unitario -->
+
+                            <td>
+                                <div ng-if="renglonTabla.camposRenglon[16].esActivo">
+                                    <input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[16].hecho.ValorHecho" xbrl:auto-numeric="" opciones-auto-numeric="{ vMin: '0', vMax: '9999999999999', mDec: '6', aPad: false }" ng-blur="renglonTabla.camposRenglon[16].esActivo=false">
+                                </div>
+                                <div class="campo_vacio" ng-if="!renglonTabla.camposRenglon[16].esActivo && renglonTabla.camposRenglon[16].hecho.ValorHecho==''" ng-dblclick="renglonTabla.camposRenglon[16].esActivo=true">
+                                    <span translate="ETIQUETA_VACIO"></span>
+                                </div>
+                                <div style="min-width:100px;" ng-if="!renglonTabla.camposRenglon[16].esActivo && renglonTabla.camposRenglon[16].hecho.ValorHecho!='' " ng-dblclick=" renglonTabla.camposRenglon[16].esActivo=true">
+                                    <span>{{renglonTabla.camposRenglon[16].hecho.ValorHecho}}</span>
+                                </div>
+                            </td>
+
+                            <!-- ##################  CAMPO 16 -  Valor razonable ó contable total -->
+                            <td>
+                                <div ng-if="renglonTabla.camposRenglon[17].esActivo">
+                                    <input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[17].hecho.ValorHecho" xbrl:auto-numeric="" opciones-auto-numeric="{ vMin: '0', vMax: '999999999999999999', mDec: '0', aPad: false }" ng-blur="renglonTabla.camposRenglon[17].esActivo=false">
+                                </div>
+                                <div class="campo_vacio" ng-if="!renglonTabla.camposRenglon[17].esActivo && renglonTabla.camposRenglon[17].hecho.ValorHecho==''" ng-dblclick="renglonTabla.camposRenglon[17].esActivo=true">
+                                    <span translate="ETIQUETA_VACIO"></span>
+                                </div>
+                                <div style="min-width:100px;" ng-if="!renglonTabla.camposRenglon[17].esActivo && renglonTabla.camposRenglon[17].hecho.ValorHecho!='' " ng-dblclick=" renglonTabla.camposRenglon[17].esActivo=true">
+                                    <span>{{renglonTabla.camposRenglon[17].hecho.ValorHecho}}</span>
+                                </div>
+                            </td>
+
+                            <!-- ##################  CAMPO 17 -  Días por vencer -->
+
+                            <td>
+                                <div ng-if="renglonTabla.camposRenglon[18].esActivo">
+                                    <input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[18].hecho.ValorHecho" xbrl:auto-numeric="" opciones-auto-numeric="{ vMin: '0', vMax: '99999', mDec: '0', aPad: false }" ng-blur="renglonTabla.camposRenglon[18].esActivo=false">
+                                </div>
+                                <div class="campo_vacio" ng-if="!renglonTabla.camposRenglon[18].esActivo && renglonTabla.camposRenglon[18].hecho.ValorHecho==''" ng-dblclick="renglonTabla.camposRenglon[18].esActivo=true">
+                                    <span translate="ETIQUETA_VACIO"></span>
+                                </div>
+                                <div style="min-width:100px;" ng-if="!renglonTabla.camposRenglon[18].esActivo && renglonTabla.camposRenglon[18].hecho.ValorHecho!='' " ng-dblclick=" renglonTabla.camposRenglon[18].esActivo=true">
+                                    <span>{{renglonTabla.camposRenglon[18].hecho.ValorHecho}}</span>
+                                </div>
+                            </td>
+
+                            <!-- ##################  CAMPO 19 -  Var -->
+
+                            <td>
+                                <div ng-if="renglonTabla.camposRenglon[19].esActivo">
+                                    <input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[19].hecho.ValorHecho" ng-blur="renglonTabla.camposRenglon[19].esActivo=false">
+                                </div>
+                                <div class="campo_vacio" ng-if="!renglonTabla.camposRenglon[19].esActivo && renglonTabla.camposRenglon[19].hecho.ValorHecho==''" ng-dblclick="renglonTabla.camposRenglon[19].esActivo=true">
+                                    <span translate="ETIQUETA_VACIO"></span>
+                                </div>
+                                <div style="min-width:100px;" ng-if="!renglonTabla.camposRenglon[19].esActivo && renglonTabla.camposRenglon[19].hecho.ValorHecho!='' " ng-dblclick=" renglonTabla.camposRenglon[19].esActivo=true">
+                                    <span>{{renglonTabla.camposRenglon[19].hecho.ValorHecho}}</span>
+                                </div>
+                            </td>
+
+                            <!-- ##################  CAMPO 20 -  Contraparte reporto prestamo derivado -->
+
+                            <td>
+                                <div ng-if="renglonTabla.camposRenglon[20].esActivo">
+                                    <input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[20].hecho.ValorHecho" ng-blur="renglonTabla.camposRenglon[20].esActivo=false">
+                                </div>
+                                <div class="campo_vacio" ng-if="!renglonTabla.camposRenglon[20].esActivo && renglonTabla.camposRenglon[20].hecho.ValorHecho==''" ng-dblclick="renglonTabla.camposRenglon[20].esActivo=true">
+                                    <span translate="ETIQUETA_VACIO"></span>
+                                </div>
+                                <div style="min-width:100px;" ng-if="!renglonTabla.camposRenglon[20].esActivo && renglonTabla.camposRenglon[20].hecho.ValorHecho!='' " ng-dblclick=" renglonTabla.camposRenglon[20].esActivo=true">
+                                    <span>{{renglonTabla.camposRenglon[20].hecho.ValorHecho}}</span>
+                                </div>
+                            </td>
+
+                            <!-- ##################  CAMPO 21 -  Tipo de contrato -->
+                            <td>
+
+                                <div class="input-group" ng-if="renglonTabla.camposRenglon[21].esActivo">
+                                    <span class="input-group-btn">
+                                        <select name="valor" ng-model="renglonTabla.camposRenglon[21].hecho.ValorHecho" class="form-control" ng-options="contrato.clave as contrato.descripcion  for contrato  in catalogoTipoContrato " ng-blur="renglonTabla.camposRenglon[21].esActivo=false">
+                                            <option value="">{{'ETIQUETA_SELECCIONAR_OPCION' | translate}}</option>
+                                        </select>
+                                    </span>
+                                </div>
+
+                                <div ng-if="!renglonTabla.camposRenglon[21].esActivo && renglonTabla.camposRenglon[21].hecho.ValorHecho!=''" ng-dblclick="renglonTabla.camposRenglon[21].esActivo=true" style="min-width:100px;text-align:center;">
+                                    <span>
+                                        {{renglonTabla.camposRenglon[21].hecho.ValorHecho}}
+                                    </span>
+                                </div>
+
+                                <div ng-if="!renglonTabla.camposRenglon[21].esActivo && renglonTabla.camposRenglon[21].hecho.ValorHecho==''" ng-dblclick="renglonTabla.camposRenglon[21].esActivo=true" style="min-width:100px;text-align:center;">
+                                    <span>
+                                        Seleccione una opci&oacute;n
+                                    </span>
+                                </div>
+
+                            </td>
+
+                            <!-- ##################  CAMPO 22 -  Pais  -->
+                            <td>
+                                <div ng-if="renglonTabla.camposRenglon[22].esActivo">
+                                    <input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[22].hecho.ValorHecho" ng-blur="renglonTabla.camposRenglon[22].esActivo=false">
+                                </div>
+                                <div class="campo_vacio" ng-if="!renglonTabla.camposRenglon[22].esActivo && renglonTabla.camposRenglon[22].hecho.ValorHecho==''" ng-dblclick="renglonTabla.camposRenglon[22].esActivo=true">
+                                    <span translate="ETIQUETA_VACIO"></span>
+                                </div>
+                                <div style="min-width:100px;" ng-if="!renglonTabla.camposRenglon[22].esActivo && renglonTabla.camposRenglon[22].hecho.ValorHecho!='' " ng-dblclick=" renglonTabla.camposRenglon[22].esActivo=true">
+                                    <span>{{renglonTabla.camposRenglon[22].hecho.ValorHecho}}</span>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+    <input type="hidden" id="ultimoCampo" >
+</xbrl-contenedor-formato>

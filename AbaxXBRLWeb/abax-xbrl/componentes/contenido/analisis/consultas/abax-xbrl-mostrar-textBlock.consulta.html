@@ -1,0 +1,36 @@
+﻿<div id="{{id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div class="row m-t-sm">
+                    <div class="col-sm-8 m-b-xs">
+                        <h4 class="modal-title"> <span class="font-bold">Detalle de información</span></h4>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <p>
+                        <span class="font-bold">{{descripcionConcepto}}</span>
+                    </p>
+                </div>
+
+                <div>
+
+                    <div>
+                        <div>
+                            <div class="celdaAnchoFijo textBlockLimit div-default divTextBlockMaximo" id="divAreaTexto">{{valorHecho}}</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">{{'ETIQUETA_BOTON_CERRAR' | translate}}</button>
+
+            </div>
+        </div>
+    </div>
+</div>

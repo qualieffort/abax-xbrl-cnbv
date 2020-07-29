@@ -1,0 +1,40 @@
+﻿<div>
+    <div>
+        <i style="cursor:pointer; float:right;margin-right:-20px;"
+           id="{{idBotonOperaciones}}"
+           class="{{clases}}">
+        </i>
+
+        <i style="cursor:pointer; float:right;margin-right:-20px;margin-top:20px;"
+           id="{{idBotonMostrarTextoCompleto}}"
+           class="{{claseMostrarTextoCompleto}}">
+        </i>
+
+        <div id="descargar_nota_{{idHecho}}" style="cursor:pointer;float:right;margin-right:-20px;margin-top:40px;" data-toggle="tooltip" data-placement="right" title="{{'EDITOR_XBRL_TITULO_DESCARGAR_NOTA'|translate}}">
+            <i class="fa fa-download"></i>
+        </div>
+
+        <div id="cargar_nota_{{idHecho}}" style="cursor:pointer;float:right;margin-right:-20px;margin-top:60px;" data-toggle="tooltip" data-placement="right" title="{{'EDITOR_XBRL_TITULO_CARGAR_NOTA'|translate}}">
+            <i class="fa fa-upload"></i>
+        </div>
+
+        <div id="borrar_nota_{{idHecho}}" style="cursor:pointer;float:right;margin-right:-20px;margin-top:80px;" data-toggle="tooltip" data-placement="right" title="{{'EDITOR_XBRL_TITULO_BORRAR_NOTA'|translate}}">
+            <i class="fa fa-trash text-danger"></i>
+        </div>
+    </div>
+
+    <div class="campoTextBlock">
+        <div id="{{idHecho}}">
+            <div class="celdaAnchoFijo textBlockLimit div-default divTextBlockMaximo" id="divAreaTexto{{idBotonMostrarTextoCompleto}}" style="overflow-y:visible">
+                <iframe scrolling="no"  id="frame_{{idPlugin}}" frameborder="0" style="width:100%;"/>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div id="nota_{{idPlugin}}" class="estiloNotaPieHecho" data-toggle="tooltip" data-placement="top" title="{{'EDITOR_XBRL_TITULO_NOTAS_PIE_PAGINA'|translate}}">
+            <i class="i i-popup text-warning-dk" style="cursor:pointer; float:left;"></i>
+        </div>
+    </div>
+</div>
+

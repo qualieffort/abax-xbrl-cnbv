@@ -1,0 +1,7 @@
+﻿{
+	"ContextosPlantillaPorId" : #definicionContextos,
+	
+	"UnidadesPlantillaPorId" : #definicionUnidades,
+            
+	"HechosPlantillaPorId" : #definicionHechos
+}

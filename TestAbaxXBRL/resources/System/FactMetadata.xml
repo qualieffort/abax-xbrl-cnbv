@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Project: Xbrl Processing Engine
+Copyright (c) 2011  EDGAR(r) Online, Inc.
+
+EDGAR(r) is a federally registered trademark of the U.S. Securities and Exchange Commission. EDGAR 
+Online is not affiliated with or approved by the U.S. Securities and Exchange Commission.
+-->
+
+
+<MethodSet name="EditingPattern" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Metadata.xsd">	
+	<!-- FACT -->
+	<Method name="CreateChildFact" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Fact.CreateChildFact">
+		<DomainObjectArgumentSelector name="conceptDO" value="0" type="DomainObject" allowNull="False"/> 
+		<DomainObjectArgumentSelector name="value" value="1" type="String" allowNull="True"/> 
+		<DomainObjectArgumentSelector name="factDO" value="." type="DomainObject" allowNull="False"/> 
+		<ConditionSet Fail="Empty" testValue="tupleFactDO">
+			<!-- given factDO, check if factDO is classified as TupleFact
+			-->
+			<DtsQuerySelector saveDO="tupleFactDO">
+				<DomainObjectSelector saveDO="startDO" value="factDO"/>
+				<ConstantSelector value="/-'relationship://ubmatrix.com/Xbrl/Instance/Relationship#ConceptDefinesFact'/'domain://ubmatrix.com/Xbrl/Taxonomy#TupleConcept'"/>				
+			</DtsQuerySelector>
+			<Failure>
+				<CreateMemo doUri="memo://ubmatrix.com/Edit/#IsNotTupleFact">
+					<DomainObjectSelector saveDO="particle1" value="factDO"/>
+				</CreateMemo>	
+			</Failure>
+		</ConditionSet>
+		<!-- comment out for now because if element is using substitution group, this query won't work
+		<ConditionSet Fail="Empty" testValue="tupleConceptDO">
+			<DtsQuerySelector saveDO="tupleConceptDO">
+				<DomainObjectSelector saveDO="startDO" value="factDO"/>
+				<ConstantSelector value="/-'relationship://ubmatrix.com/Xbrl/Instance/Relationship#ConceptDefinesFact'/'domain://ubmatrix.com/Xbrl/Taxonomy#TupleConcept'/+'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#TupleContainsConcept'"/>				
+				<DomainObjectSelector saveDO="toEndDO" value="conceptDO"/>
+			</DtsQuerySelector>
+			<Failure>
+				<CreateMemo doUri="memo://ubmatrix.com/Edit/#TupleContainsConceptDoesNotExist">
+					<DtsQuerySelector saveDO="particle1">
+						<DomainObjectSelector saveDO="startDO" value="factDO"/>
+						<ConstantSelector value="/-'relationship://ubmatrix.com/Xbrl/Instance/Relationship#ConceptDefinesFact'/'domain://ubmatrix.com/Xbrl/Taxonomy#TupleConcept'"/>
+					</DtsQuerySelector>
+					<DomainObjectSelector saveDO="particle2" value="conceptDO"/>
+				</CreateMemo>	
+			</Failure>
+		</ConditionSet>
+		-->
+		<CreateDomainObject saveDO="fact" doUri="domain://ubmatrix.com/Xbrl/Instance#Fact">
+			<DomainObjectSelector saveDO="schemaDO" value="conceptDO"/>
+			<DomainObjectSelector saveDO="value" value="value"/>
+		</CreateDomainObject>
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#InstanceSpecifiesFact">
+			<DtsQuerySelector saveDO="From">
+				<DomainObjectSelector saveDO="startDO" value="factDO"/>
+				<ConstantSelector value="/-'relationship://ubmatrix.com/Xbrl/Instance/Relationship#InstanceSpecifiesFact'/'domain://ubmatrix.com/Xbrl/Instance#Instance'"/>
+			</DtsQuerySelector>
+			<DomainObjectSelector saveDO="To" value="fact"/>
+		</CreateRelationship>
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#ConceptDefinesFact">
+			<DomainObjectSelector saveDO="From" value="conceptDO"/>
+			<DomainObjectSelector saveDO="To" value="fact"/>
+		</CreateRelationship>		
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#TupleContainsFact">
+			<DomainObjectSelector saveDO="From" value="factDO"/>
+			<DomainObjectSelector saveDO="To" value="fact"/>
+		</CreateRelationship>		
+		<Return>
+			<DomainObjectSelector saveDO="fact" value="fact"/>
+		</Return>
+	</Method>
+
+	<!-- Question: is this all we need? 
+	-->
+	<Method name="DisconnectChildFact" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Fact.DisconnectChildFact">
+		<DomainObjectArgumentSelector name="factDO" value="." type="DomainObject" allowNull="False"/> 
+		<DomainObjectArgumentSelector name="childfactDO" value="0" type="DomainObject" allowNull="False"/> 
+		<ConditionSet testValue="tupleFactDO" Fail="Empty">
+			<!-- given factDO, check if factDO is classified as TupleFact
+			-->
+			<DtsQuerySelector saveDO="tupleFactDO">
+				<DomainObjectSelector saveDO="startDO" value="factDO"/>
+				<ConstantSelector value="/-'relationship://ubmatrix.com/Xbrl/Instance/Relationship#ConceptDefinesFact'/'domain://ubmatrix.com/Xbrl/Taxonomy#TupleConcept'"/>				
+			</DtsQuerySelector>
+			<Failure>
+				<CreateMemo doUri="memo://ubmatrix.com/Edit/#IsNotTupleFact">
+					<DomainObjectSelector saveDO="particle1" value="factDO"/>
+				</CreateMemo>	
+			</Failure>
+		</ConditionSet>
+		<RemoveDomainObject>
+			<!-- disconnect tuplefact with childfact relationship
+			-->
+			<DtsQuerySelector saveDO="RemoveDomainObject">				
+				<DomainObjectSelector saveDO="startDO" value="factDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#TupleContainsFact'"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+	</Method>
+	<Method name="SetConcept" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Fact.SetConcept">
+		<DomainObjectArgumentSelector name="conceptDO" value="0" type="DomainObject" allowNull="False"/> 
+		<DomainObjectArgumentSelector name="factDO" value="." type="DomainObject" allowNull="False"/> 
+		<RemoveDomainObject>
+			<!-- get conceptDO from factDO
+			-->
+			<DtsQuerySelector saveDO="RemoveDomainObject">				
+				<DomainObjectSelector saveDO="startDO" value="factDO"/>
+				<ConstantSelector value="/-'relationship://ubmatrix.com/Xbrl/Instance/Relationship#ConceptDefinesFact'"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#ConceptDefinesFact">
+			<DomainObjectSelector saveDO="From" value="conceptDO"/>
+			<DomainObjectSelector saveDO="To" value="factDO"/>
+		</CreateRelationship>		
+	</Method>
+	<Method name="SetUnit" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Fact.SetUnit">
+		<DomainObjectArgumentSelector name="factDO" value="." type="DomainObject" allowNull="False"/> 
+		<DomainObjectArgumentSelector name="unitDO" value="0" type="DomainObject" allowNull="False"/> 
+		<ConditionSet Fail="Empty" testValue="itemFactDO">
+			<DtsQuerySelector saveDO="itemFactDO">
+				<DomainObjectSelector saveDO="startDO" value="factDO"/>
+				<ConstantSelector value="/-'relationship://ubmatrix.com/Xbrl/Instance/Relationship#ConceptDefinesFact'/'domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept'"/>				
+			</DtsQuerySelector>
+			<Failure>
+				<CreateMemo doUri="memo://ubmatrix.com/Edit/Instance/#IsNotItemFact">
+					<DomainObjectSelector saveDO="particle1" value="factDO"/>
+				</CreateMemo>	
+			</Failure>
+		</ConditionSet>
+		<ConditionSet Fail="Empty" testValue="factInstanceUnitDO">
+			<DtsQuerySelector saveDO="factInstanceUnitDO">
+				<DomainObjectSelector saveDO="startDO" value="factDO"/>
+				<ConstantSelector value="/-'relationship://ubmatrix.com/Xbrl/Instance/Relationship#InstanceSpecifiesFact'/'domain://ubmatrix.com/Xbrl/Instance#Instance'/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#InstanceSpecifiesUnit'"/>
+				<DomainObjectSelector saveDO="toEndDO" value="unitDO"/>
+			</DtsQuerySelector>
+			<Failure>
+				<CreateMemo doUri="memo://ubmatrix.com/Edit/Instance/#InstanceSpecifiesUnitDoesNotExist">
+					<DtsQuerySelector saveDO="particle1">
+						<DomainObjectSelector saveDO="startDO" value="factDO"/>
+						<ConstantSelector value="/-'relationship://ubmatrix.com/Xbrl/Instance/Relationship#InstanceSpecifiesFact'/'domain://ubmatrix.com/Xbrl/Instance#Instance'"/>
+					</DtsQuerySelector>
+					<DomainObjectSelector saveDO="particle2" value="unitDO"/>
+				</CreateMemo>	
+			</Failure>
+		</ConditionSet>
+		<ConditionSet Fail="NotEmpty" testValue="factUnitDO">
+			<DtsQuerySelector saveDO="factUnitDO">
+				<DomainObjectSelector saveDO="startDO" value="factDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#FactSpecifiesUnit'"/>
+			</DtsQuerySelector>
+			<Failure>
+				<RemoveDomainObject>
+					<DomainObjectSelector saveDO="RemoveDomainObject" value="factUnitDO"/>
+				</RemoveDomainObject>
+			</Failure>
+		</ConditionSet>
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#FactSpecifiesUnit">
+			<DomainObjectSelector saveDO="From" value="factDO"/>
+			<DomainObjectSelector saveDO="To" value="unitDO"/>
+		</CreateRelationship>
+		
+		<!-- add measure relationships beteen fact and unit measures -->
+		<RunMethod name="CreateMeasureRelationships">
+			<ConstantSelector saveDO="methodName" value="CreateMeasureRelationships"/>
+			<DomainObjectSelector saveDO="methodWorkingDO" value="factDO"/>
+			<DomainObjectSelector saveDO="methodArg0" value="unitDO"/>
+		</RunMethod>
+		
+	</Method>
+	<Method name="DisconnectUnit" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Fact.DisconnectUnit">
+		<DomainObjectArgumentSelector name="factDO" value="." type="DomainObject" allowNull="False"/> 
+		<RemoveDomainObject>
+			<!-- get unitDO <-> factDO
+			-->
+			<DtsQuerySelector saveDO="RemoveDomainObject">
+				<DomainObjectSelector saveDO="startDO" value="factDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#FactSpecifiesUnit'"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+	</Method>
+	<Method name="DisconnectConcept" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Fact.DisconnectConcept">
+		<DomainObjectArgumentSelector name="factDO" value="." type="DomainObject" allowNull="False"/> 
+		<DomainObjectArgumentSelector name="conceptDO" value="0" type="DomainObject" allowNull="False"/> 
+		<RemoveDomainObject>
+			<!-- get contextDO from factDO
+			-->
+			<DtsQuerySelector saveDO="RemoveDomainObject">
+				<DomainObjectSelector saveDO="startDO" value="factDO"/>
+				<ConstantSelector value="/-'relationship://ubmatrix.com/Xbrl/Instance/Relationship#ConceptDefinesFact'"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+	</Method>
+	<Method name="SetContext" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Fact.SetContext">
+		<DomainObjectArgumentSelector name="factDO" value="." type="DomainObject" allowNull="False"/> 
+		<DomainObjectArgumentSelector name="contextDO" value="0" type="DomainObject" allowNull="False"/> 
+		<ConditionSet Fail="Empty" testValue="itemFactDO">
+			<DtsQuerySelector saveDO="itemFactDO">
+				<DomainObjectSelector saveDO="startDO" value="factDO"/>
+				<ConstantSelector value="/-'relationship://ubmatrix.com/Xbrl/Instance/Relationship#ConceptDefinesFact'/'domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept'"/>				
+			</DtsQuerySelector>
+			<Failure>
+				<CreateMemo doUri="memo://ubmatrix.com/Edit/#IsNotItemFact">
+					<DomainObjectSelector saveDO="particle1" value="factDO"/>
+				</CreateMemo>						
+			</Failure>
+		</ConditionSet>		
+		<ConditionSet Fail="NotEmpty" testValue="factContextDO">
+			<DtsQuerySelector saveDO="factContextDO">
+				<DomainObjectSelector saveDO="startDO" value="factDO"/>
+				<ConstantSelector value="/-'relationship://ubmatrix.com/Xbrl/Instance/Relationship#ContextScopesFact'"/>
+			</DtsQuerySelector>
+			<Failure>
+				<RunMethod name="DisconnectContext">
+					<ConstantSelector saveDO="methodName" value="DisconnectContext"/>
+					<DomainObjectSelector saveDO="methodWorkingDO" value="factDO"/>
+					<DomainObjectSelector saveDO="methodArg0" value="contextDO"/>
+				</RunMethod>
+			</Failure>
+		</ConditionSet>
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#ContextScopesFact">
+			<DomainObjectSelector saveDO="From" value="contextDO"/>
+			<DomainObjectSelector saveDO="To" value="factDO"/>
+		</CreateRelationship>
+		
+		<!-- add dimensional relational relationships beteen fact and context segment/scenario descendants -->
+		<RunMethod name="CreateDimensionalRelationships">
+			<ConstantSelector saveDO="methodName" value="CreateDimensionalRelationships"/>
+			<DomainObjectSelector saveDO="methodWorkingDO" value="factDO"/>
+			<DomainObjectSelector saveDO="methodArg0" value="contextDO"/>
+		</RunMethod>
+			
+	</Method>
+	<Method name="DisconnectContext" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Fact.DisconnectContext">
+		<DomainObjectArgumentSelector name="factDO" value="." type="DomainObject" allowNull="False"/> 
+		<DomainObjectArgumentSelector name="contextDO" value="0" type="DomainObject" allowNull="False"/> 
+		<RemoveDomainObject>
+			<!-- get contextDO from factDO
+			-->
+			<DtsQuerySelector saveDO="RemoveDomainObject">
+				<DomainObjectSelector saveDO="startDO" value="factDO"/>
+				<ConstantSelector value="/-'relationship://ubmatrix.com/Xbrl/Instance/Relationship#ContextScopesFact'"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+		
+				<!-- add dimensional relational relationships beteen fact and context segment/scenario descendants -->
+		<RunMethod name="RemoveDimensionalRelationships">
+			<ConstantSelector saveDO="methodName" value="RemoveDimensionalRelationships"/>
+			<DomainObjectSelector saveDO="methodWorkingDO" value="factDO"/>
+		</RunMethod>
+
+	</Method>
+	<Method name="SetFraction" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Fact.SetFraction">
+		<DomainObjectArgumentSelector name="factDO" value="." type="DomainObject" allowNull="False"/> 
+		<DomainObjectArgumentSelector name="numerator" value="0" type="String" allowNull="True"/> 
+		<DomainObjectArgumentSelector name="denominator" value="1" type="String" allowNull="True"/> 
+		<ConditionSet Fail="Empty" testValue="itemFactDO">
+			<!-- given factDO, check if factDO is classified as ItemFact
+			-->
+			<DtsQuerySelector saveDO="itemFactDO">
+				<DomainObjectSelector saveDO="startDO" value="factDO"/>
+				<ConstantSelector value="/-'relationship://ubmatrix.com/Xbrl/Instance/Relationship#ConceptDefinesFact'/'domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept'"/>				
+			</DtsQuerySelector>
+			<Failure>
+				<CreateMemo doUri="memo://ubmatrix.com/Edit/Instance/#IsNotItemFact">
+					<DomainObjectSelector saveDO="particle1" value="factDO"/>
+				</CreateMemo>	
+			</Failure>
+		</ConditionSet>
+		<ConditionSet Fail="Empty" testValue="factNumeratorDO">
+			<!-- given factDO, check if the numeratorDO is already hooked up with the factDO or not
+			-->		
+			<DtsQuerySelector saveDO="factNumeratorDO">
+				<DomainObjectSelector saveDO="startDO" value="factDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesNumerator'/'domain://ubmatrix.com/Xbrl/Instance#Numerator'"/>
+			</DtsQuerySelector>
+			<Failure>
+				<RunMethod name="CreateNumerator" saveDO="factNumeratorDO">
+					<ConstantSelector name="methodName" value="CreateNumerator"/>
+					<DomainObjectSelector saveDO="methodWorkingDO" value="factDO"/>
+				</RunMethod>
+			</Failure>
+			<Success>
+				<RunMethod name="SetValue">
+				    <ConstantSelector saveDO="methodName" value="SetValue"/>
+				    <DomainObjectSelector saveDO="methodWorkingDO" value="factNumeratorDO"/>
+				    <DomainObjectSelector saveDO="methodArg0" value="numerator"/>
+				</RunMethod>			
+			</Success>
+		</ConditionSet>
+		<ConditionSet Fail="Empty" testValue="factDenominatorDO">
+			<!-- given factDO, check if the denominator is already hooked up with the factDO or not
+			-->		
+			<DtsQuerySelector saveDO="factDenominatorDO">
+				<DomainObjectSelector saveDO="startDO" value="factDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesDenominator'/'domain://ubmatrix.com/Xbrl/Instance#Denominator'"/>
+			</DtsQuerySelector>
+			<Failure>
+				<RunMethod name="CreateDenominator" saveDO="factDenominatorDO">
+					<ConstantSelector name="methodName" value="CreateDenominator"/>
+					<DomainObjectSelector saveDO="methodWorkingDO" value="factDO"/>
+				</RunMethod>
+			</Failure>
+			<Success>
+				<RunMethod name="SetValue">
+				    <ConstantSelector saveDO="methodName" value="SetValue"/>
+				    <DomainObjectSelector saveDO="methodWorkingDO" value="factDenominatorDO"/>
+				    <DomainObjectSelector saveDO="methodArg0" value="denominator"/>
+				</RunMethod>			
+			</Success>
+		</ConditionSet>
+	</Method>
+
+	<Method name="CreateNumerator" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Fact.CreateNumerator">
+		<DomainObjectArgumentSelector name="factDO" value="." type="DomainObject" allowNull="False"/> 
+		<CreateDomainObject saveDO="numeratorDO" doUri="domain://ubmatrix.com/Xbrl/Instance#Numerator">
+			<ConstantSelector saveDO="schemaDO" value="&amp;http://www.xbrl.org/2003/instance#fractionItemType#numerator"/>
+		</CreateDomainObject>
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesNumerator">
+			<DomainObjectSelector saveDO="From" value="factDO"/>
+			<DomainObjectSelector saveDO="To" value="numeratorDO"/>
+		</CreateRelationship>
+		<Return>
+			<DomainObjectSelector saveDO="numeratorDO" value="numeratorDO"/>
+		</Return>
+	</Method>
+	<Method name="AddNumerator" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Fact.AddNumerator">
+		<DomainObjectArgumentSelector name="factDO" value="." type="DomainObject" allowNull="False"/> 
+		<DomainObjectArgumentSelector name="numeratorDO" value="0" type="DomainObject" allowNull="False"/> 
+		<ConditionSet Fail="NotEmpty" testValue="factNumeratorDO">
+			<!-- given factDO, check if the numeratorDO is already hooked up with the factDO or not
+			-->		
+			<DtsQuerySelector saveDO="factNumeratorDO">
+				<DomainObjectSelector saveDO="startDO" value="factDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesNumerator'"/>
+				<DomainObjectSelector saveDO="toEndDO" value="numeratorDO"/>
+			</DtsQuerySelector>
+			<Failure>
+				<CreateMemo doUri="memo://ubmatrix.com/Edit/Instance/#RelationshipHasAlreadyBuilt">
+					<DomainObjectSelector saveDO="particle1" value="relationshipsDO"/>	
+				</CreateMemo>						
+			</Failure>
+		</ConditionSet>
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesNumerator">
+			<DomainObjectSelector saveDO="From" value="factDO"/>
+			<DomainObjectSelector saveDO="To" value="numeratorDO"/>
+		</CreateRelationship>
+	</Method>	
+	<Method name="RemoveNumerator" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Fact.RemoveNumerator">
+		<DomainObjectArgumentSelector name="factDO" value="." type="DomainObject" allowNull="False"/> 
+		<ConditionSet Fail="Empty" testValue="numeratorDO" saveDO="numeratorDO">
+			<DtsQuerySelector saveDO="numeratorDO">
+				<DomainObjectSelector saveDO="startDO" value="factDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesNumerator'/'domain://ubmatrix.com/Xbrl/Instance#Numerator'"/>
+			</DtsQuerySelector>
+			<Failure>
+				<CreateMemo doUri="memo://ubmatrix.com/Edit/Instance/#FactDoesNotHaveNumerator">
+					<DomainObjectSelector saveDO="particle1" value="factDO"/>
+				</CreateMemo>	
+			</Failure>
+			<Return>
+				<DomainObjectSelector saveDO="numeratorDO" value="numeratorDO"/>
+			</Return>
+		</ConditionSet>
+		<RemoveDomainObject>
+			<!-- get factDO <-> numeratorDO
+			-->
+			<DtsQuerySelector saveDO="RemoveDomainObject">
+				<DomainObjectSelector saveDO="startDO" value="factDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesNumerator'"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+		<RemoveDomainObject>
+			<DomainObjectSelector saveDO="RemoveDomainObject" value="numeratorDO"/>
+		</RemoveDomainObject>
+	</Method>
+
+	<Method name="CreateDenominator" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Fact.CreateDenominator">
+		<DomainObjectArgumentSelector name="factDO" value="." type="DomainObject" allowNull="False"/> 
+		<CreateDomainObject saveDO="denominatorDO" doUri="domain://ubmatrix.com/Xbrl/Instance#Denominator">
+			<ConstantSelector saveDO="schemaDO" value="&amp;http://www.xbrl.org/2003/instance#fractionItemType#denominator"/>
+		</CreateDomainObject>
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesDenominator">
+			<DomainObjectSelector saveDO="From" value="factDO"/>
+			<DomainObjectSelector saveDO="To" value="denominatorDO"/>
+		</CreateRelationship>
+		<Return>
+			<DomainObjectSelector saveDO="denominatorDO" value="denominatorDO"/>
+		</Return>
+	</Method>
+	<!-- Question: I am calling this metadata "Add" rather than "Set" because the template says one fact can have more than one Denominator
+	-->
+	<Method name="AddDenominator" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Fact.AddDenominator">
+		<DomainObjectArgumentSelector name="factDO" value="." type="DomainObject" allowNull="False"/> 
+		<DomainObjectArgumentSelector name="denominatorDO" value="0" type="DomainObject" allowNull="False"/> 
+		<ConditionSet Fail="NotEmpty" testValue="factDenominatorDO">
+			<!-- given factDO, check if the numeratorDO is already hooked up with the factDO or not
+			-->		
+			<DtsQuerySelector saveDO="factDenominatorDO">
+				<DomainObjectSelector saveDO="startDO" value="factDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesDenominator'"/>
+				<DomainObjectSelector saveDO="toEndDO" value="denominatorDO"/>
+			</DtsQuerySelector>
+			<Failure>
+				<CreateMemo doUri="memo://ubmatrix.com/Edit/Instance/RelationshipHasAlreadyBuilt">
+					<DomainObjectSelector saveDO="particle1" value="relationshipsDO"/>
+				</CreateMemo>						
+			</Failure>
+		</ConditionSet>
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesDenominator">
+			<DomainObjectSelector saveDO="From" value="factDO"/>
+			<DomainObjectSelector saveDO="To" value="denominatorDO"/>
+		</CreateRelationship>
+	</Method>	
+	<Method name="RemoveDenominator" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Fact.RemoveDenominator">
+		<DomainObjectArgumentSelector name="factDO" value="." type="DomainObject" allowNull="False"/> 
+		<ConditionSet Fail="Empty" testValue="denominatorDO" saveDO="denominatorDO">
+			<DtsQuerySelector saveDO="denominatorDO">
+				<DomainObjectSelector saveDO="startDO" value="factDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesDenominator'/'domain://ubmatrix.com/Xbrl/Instance#Denominator'"/>
+			</DtsQuerySelector>
+			<Failure>
+				<CreateMemo doUri="memo://ubmatrix.com/Edit/Instance/#FactDoesNotHaveDenominator">
+					<DomainObjectSelector saveDO="particle1" value="factDO"/>
+				</CreateMemo>	
+			</Failure>
+			<Return>
+				<DomainObjectSelector saveDO="denominatorDO" value="denominatorDO"/>
+			</Return>
+		</ConditionSet>
+		<RemoveDomainObject>
+			<!-- get factDO <-> denominatorDO
+			-->
+			<DtsQuerySelector saveDO="RemoveDomainObject">
+				<DomainObjectSelector saveDO="startDO" value="factDO"/>
+				<ConstantSelector value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesDenominator'"/>
+			</DtsQuerySelector>
+		</RemoveDomainObject>
+		<RemoveDomainObject>
+			<DomainObjectSelector saveDO="RemoveDomainObject" value="denominatorDO"/>
+		</RemoveDomainObject>
+	</Method>
+
+</MethodSet>
+
+<!--
+The contents of this file are subject to the End-User Software License Agreement (the "License"). You may not use this 
+file except in compliance with the License. A current copy of the License is available by contacting product support.
+
+Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights and limitations under the License.
+-->

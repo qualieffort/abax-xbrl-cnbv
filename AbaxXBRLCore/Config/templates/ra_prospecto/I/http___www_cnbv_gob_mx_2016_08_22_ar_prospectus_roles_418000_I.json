@@ -1,0 +1,52 @@
+{
+	"ContextosPlantillaPorId" : {
+  "ctx_2014": {
+    "Id": "ctx_2014",
+    "Periodo": {
+      "Tipo": 1,
+      "FechaInstante": "#fecha_2014_12_31",
+      "FechaInicio": "",
+      "FechaFin": ""
+    },
+    "Entidad": {
+      "Id": "#nombreEntidad",
+      "EsquemaId": "#esquemaEntidad",
+      "ContieneInformacionDimensional": false,
+      "Segmento": null,
+      "ValoresDimension": []
+    },
+    "ContieneInformacionDimensional": false,
+    "Escenario": null,
+    "ValoresDimension": []
+  }
+},
+	
+	"UnidadesPlantillaPorId" : {},
+            
+	"HechosPlantillaPorId" : {
+  "ar_pros_GeneralDataIssuerOfTheReferenceValues_6688e312-0bb5-4d6f-8bee-2c32448c5f3f": {
+    "Id": "ar_pros_GeneralDataIssuerOfTheReferenceValues_6688e312-0bb5-4d6f-8bee-2c32448c5f3f",
+    "IdConcepto": "ar_pros_GeneralDataIssuerOfTheReferenceValues",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_StockMarketInformation_484ad189-9d70-47ce-8642-8f35a050f577": {
+    "Id": "ar_pros_StockMarketInformation_484ad189-9d70-47ce-8642-8f35a050f577",
+    "IdConcepto": "ar_pros_StockMarketInformation",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  }
+}
+}

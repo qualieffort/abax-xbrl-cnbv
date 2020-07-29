@@ -1,0 +1,198 @@
+{
+	"ContextosPlantillaPorId" : {
+   "ctx_2014": {
+    "Id": "ctx_2014",
+    "Periodo": {
+      "Tipo": 1,
+      "FechaInstante": "#fecha_2014_12_31",
+      "FechaInicio": "",
+      "FechaFin": ""
+    },
+    "Entidad": {
+      "Id": "#nombreEntidad",
+      "EsquemaId": "#esquemaEntidad",
+      "ContieneInformacionDimensional": false,
+      "Segmento": null,
+      "ValoresDimension": []
+    },
+    "ContieneInformacionDimensional": false,
+    "Escenario": null,
+    "ValoresDimension": []
+  }
+},
+
+  "UnidadesPlantillaPorId": {
+    "pesos": {
+      "Id": "pesos",
+      "Tipo": 1,
+      "Medidas": [
+        {
+          "Nombre": "#medida_MXN",
+          "EspacioNombres": "#medida_http___www_xbrl_org_2003_iso4217"
+        }
+      ],
+      "MedidasDenominador": [],
+      "MedidasNumerador": []
+    },
+
+    "PURE": {
+      "Id": "PURE",
+      "Tipo": 1,
+      "Medidas": [
+        {
+          "Nombre": "#medida_pure",
+          "EspacioNombres": "#medida_http___www_xbrl_org_2003_instance"
+        }
+      ],
+      "MedidasDenominador": [],
+      "MedidasNumerador": []
+    }
+  },
+            
+	"HechosPlantillaPorId" : {
+  "ar_pros_ReferenceIncorporationFinancialInformation_c75946f3-3485-454a-b416-fdf2d841570d": {
+    "Id": "ar_pros_ReferenceIncorporationFinancialInformation_c75946f3-3485-454a-b416-fdf2d841570d",
+    "IdConcepto": "ar_pros_ReferenceIncorporationFinancialInformation",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultReferenceIncorporationFinancialInformation"
+    },
+    "ar_pros_ReferenceIncorporationFinancialInformationText_c75946f3-3485-454a-b416-fdf2d841570d": {
+    "Id": "ar_pros_ReferenceIncorporationFinancialInformationText_c75946f3-3485-454a-b416-fdf2d841570d",
+    "IdConcepto": "ar_pros_ReferenceIncorporationFinancialInformationText",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+        "Valor": "#valorDefaultReferenceIncorporationFinancialInformationText"
+   },
+  "ar_pros_SelectedFinancialInformationDisclosure_a061f5f1-8c78-4156-bdf8-dbeed50c75b0": {
+    "Id": "ar_pros_SelectedFinancialInformationDisclosure_a061f5f1-8c78-4156-bdf8-dbeed50c75b0",
+    "IdConcepto": "ar_pros_SelectedFinancialInformationDisclosure",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_SelectedQuarterlyFinancialInformation_88948703-7c3d-40ba-9a51-a9df4b4f4a20": {
+    "Id": "ar_pros_SelectedQuarterlyFinancialInformation_88948703-7c3d-40ba-9a51-a9df4b4f4a20",
+    "IdConcepto": "ar_pros_SelectedQuarterlyFinancialInformation",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_InformationInCaseOfIssuesGuaranteedBySubsidiariesOfTheIssuer_a126f33c-a14a-4dad-9f2b-c398b7f87e9d": {
+    "Id": "ar_pros_InformationInCaseOfIssuesGuaranteedBySubsidiariesOfTheIssuer_a126f33c-a14a-4dad-9f2b-c398b7f87e9d",
+    "IdConcepto": "ar_pros_InformationInCaseOfIssuesGuaranteedBySubsidiariesOfTheIssuer",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_FinancialInformationByBusinessLine_d92192ed-b7f3-4d79-ac22-75f327e795ca": {
+    "Id": "ar_pros_FinancialInformationByBusinessLine_d92192ed-b7f3-4d79-ac22-75f327e795ca",
+    "IdConcepto": "ar_pros_FinancialInformationByBusinessLine",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_RelevantCreditReport_409b9004-7d2d-48f9-a28b-944f3cbd3797": {
+    "Id": "ar_pros_RelevantCreditReport_409b9004-7d2d-48f9-a28b-944f3cbd3797",
+    "IdConcepto": "ar_pros_RelevantCreditReport",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_CommentsAndManagementAnalysisOnOperatingResults_da818f7d-df73-491c-bd01-da2b5d7193ed": {
+    "Id": "ar_pros_CommentsAndManagementAnalysisOnOperatingResults_da818f7d-df73-491c-bd01-da2b5d7193ed",
+    "IdConcepto": "ar_pros_CommentsAndManagementAnalysisOnOperatingResults",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_OperationResults_3cdedc04-da93-439d-a610-5941bbc6a04b": {
+    "Id": "ar_pros_OperationResults_3cdedc04-da93-439d-a610-5941bbc6a04b",
+    "IdConcepto": "ar_pros_OperationResults",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+    "ar_pros_FinancialPositionLiquidityAndCapitalResources_2061338e-fe66-40e0-ad41-c6f3bc7e0eaa": {
+      "Id": "ar_pros_FinancialPositionLiquidityAndCapitalResources_2061338e-fe66-40e0-ad41-c6f3bc7e0eaa",
+      "IdConcepto": "ar_pros_FinancialPositionLiquidityAndCapitalResources",
+      "IdContextoPlantilla": "ctx_2014",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+  "ar_pros_InternalControl_b0b9713c-685a-4a02-afb4-3e59341c5144": {
+    "Id": "ar_pros_InternalControl_b0b9713c-685a-4a02-afb4-3e59341c5144",
+    "IdConcepto": "ar_pros_InternalControl",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_EstimatesCriticalAccountingProvisionsOrReserves_a669aaf3-585e-4a07-80d0-0c5e0ea9f722": {
+    "Id": "ar_pros_EstimatesCriticalAccountingProvisionsOrReserves_a669aaf3-585e-4a07-80d0-0c5e0ea9f722",
+    "IdConcepto": "ar_pros_EstimatesCriticalAccountingProvisionsOrReserves",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  }
+}
+}

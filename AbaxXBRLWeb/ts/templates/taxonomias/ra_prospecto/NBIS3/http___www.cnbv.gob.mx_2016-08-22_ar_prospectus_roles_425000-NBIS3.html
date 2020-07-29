@@ -1,0 +1,79 @@
+<xbrl-contenedor-formato xbrl:rol-uri="{{xbrlRol.Uri}}" orientacion="landscape" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+    <!---<div id="contenedorTablaExcel" class="table-responsive">
+    <table class="table table-striped b-t b-light" xbrl:tabla-excel selector="td:not(:first-child)" selector-contenedor-x="#contenedorFormatos" selector-contenedor-y="#contenedorFormatos" tab-index="1" on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)" on-after-paste="onAfterPaste(valorPegado, x, y)" on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)">
+        <thead>
+            <tr>
+                <th class="th-sortable" data-toggle="class">{{'EDITOR_XBRL_TITULO_CONCEPTO' | translate}}</th>
+                <th style="min-width: 230px; width: 230px;">
+                {{'EDITOR_XBRL_TITULO' | translate}}<br />
+                {{ definicionPlantilla.obtenerVariablePorId("medida_MXN")}}<br />
+                {{::definicionPlantilla.obtenerVariablePorId("fecha_2014_12_31")}}
+                </th>
+            </tr>
+        </thead>
+        <tbody>--->
+    <table class="tablaAnchoFijo" cellspacing="5">
+        <tbody>
+            <tr>
+                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_FinancialInformationOfTheTrust" xbrl:nivel-indentacion="0"></b></td>
+                <td style="text-align:left; width:50%; height:40px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                 
+                    <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SelectedFinancialInformationOfTheTrust" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                    <div class="bloqueTexto"><xbrl:campo-captura  xbrl:id-hecho-plantilla="ar_pros_SelectedFinancialInformationOfTheTrust_e108acd3-6e22-4992-a5fa-175b2c40533b"></xbrl:campo-captura></div>
+                </td>
+               
+            </tr>
+            <tr>
+                <td colspan="2">
+                
+                    <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_RelevantCreditReportTrust" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                    <div class="bloqueTexto"><xbrl:campo-captura  xbrl:id-hecho-plantilla="ar_pros_RelevantCreditReportTrust_cd3f258a-476a-4096-8ce7-4a93621c7abe"></xbrl:campo-captura></div>
+                </td>
+                  
+            </tr>
+            <tr>
+                <td colspan="2">
+               
+                    <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_CommentsAndManagementAnalysisOnTrustOperatingResults" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                    <div class="bloqueTexto"><xbrl:campo-captura  xbrl:id-hecho-plantilla="ar_pros_CommentsAndManagementAnalysisOnTrustOperatingResults_e1eef2fc-1993-4282-8da7-8b0a3f2406fb"></xbrl:campo-captura></div>
+                </td>
+               
+            </tr>
+            <tr>
+                <td colspan="2">
+              
+                    <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_OperationResultsTrust" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                    <div class="bloqueTexto"><xbrl:campo-captura  xbrl:id-hecho-plantilla="ar_pros_OperationResultsTrust_50de8b63-e569-42e9-8c91-a8114e74e4ad"></xbrl:campo-captura></div>
+                </td>
+                 
+            </tr>
+            <tr>
+                <td colspan="2">
+               
+                    <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_FinancialPositionLiquidityAndCapitalResourcesTrust" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                    <div class="bloqueTexto"><xbrl:campo-captura  xbrl:id-hecho-plantilla="ar_pros_FinancialPositionLiquidityAndCapitalResourcesTrust_d985a30a-7042-4f0c-adc2-f37865246e09"></xbrl:campo-captura></div>
+                </td>
+                 
+            </tr>
+            <tr>
+                <td colspan="2">
+                 
+                    <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_InternalControlTrust" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                    <div class="bloqueTexto"><xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_InternalControlTrust_793f7ca9-8287-4015-9c21-bb1ea929933b"></xbrl:campo-captura></div>
+                </td>
+                
+            </tr>
+            <tr>
+                <td colspan="2">
+                 
+                    <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_EstimatesCriticalAccountingProvisionsOrReservesTrust" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                    <div class="bloqueTexto"><xbrl:campo-captura  xbrl:id-hecho-plantilla="ar_pros_EstimatesCriticalAccountingProvisionsOrReservesTrust_3bfbed87-b0a5-4fee-ab5c-3b030587ca5e" xbrl:ultimo="true"></xbrl:campo-captura></div>
+                </td>
+            </tr>         
+        </tbody>
+    </table>
+   
+</xbrl-contenedor-formato>

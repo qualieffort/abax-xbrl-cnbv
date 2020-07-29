@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+
+<!--
+Project: Xbrl Processing Engine
+Copyright (c) 2011  EDGAR(r) Online, Inc.
+
+EDGAR(r) is a federally registered trademark of the U.S. Securities and Exchange Commission. EDGAR 
+Online is not affiliated with or approved by the U.S. Securities and Exchange Commission.
+-->
+
+
+<TemplateDictionary name="XBRL Formula Templates"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink"
+	xsi:noNamespaceSchemaLocation="MessageTemplateDictionary.xsd">
+
+	<Cloakers>
+		<Cloaker id = "StandardFormatter" implementationUri ="ubmatrix.xbrl.messaging.transform.cloaker.StandardMessageCloaker" />
+	</Cloakers>
+
+	<Formatters>
+		<Formatter id = "StandardFormatter" implementationUri ="ubmatrix.xbrl.messaging.transform.formatter.StandardMessageFormatter" />
+	</Formatters>
+
+	<Localizers>
+		<Localizer id = "StandardLocalizer" implementationUri ="ubmatrix.xbrl.messaging.transform.cloaker.StandardMessageLocalizer" />
+	</Localizers>
+
+	<Notifiers>
+		<Notifier id = "StandardNotifier" implementationUri ="ubmatrix.xbrl.messaging.transform.cloaker.StandardMessageNotifier" />
+	</Notifiers>
+
+	<Transforms>
+		<AssignmentTransform id = "StandardAssignmentTransform">
+			<Formatter idRef="StandardFormatter" />	
+			<Localizer idRef="StandardLocalizer" />	
+		</AssignmentTransform>
+
+		<NotificationTransform id = "StandardNotificationTransform">
+			<Notifier idRef="StandardNotifier" />	
+		</NotificationTransform>
+	</Transforms>
+
+	<MessageTemplate memoUri="memo://ubmatrix.com/Validation/Instance#UnitRefAttributeMustOccurInNumericItem">
+
+		<!-- The index set for this memo classification.  The index set 
+		defines the indexing keys for this memo in the Semantic Memo Queue.
+		-->
+		<Indices>
+	        <Index classificationUri="Instance Document" />
+    	    <Index classificationUri="Unit" />
+        	<Index classificationUri="Fact" />
+        	<Index classificationUri="Monetary" />
+        	<Index classificationUri="Numeric" />
+        	<Index classificationUri="XBRL 2.1" />
+		</Indices>
+
+		<!-- 
+		A memo queue assignment transform typically filters incoming memos.  
+		Only memos that pass through an assignment transform post to the Semantic Memo Queue.
+		 -->
+		<Assignment idref="StandardAssignmentTransform" />
+
+		<!-- 
+		A memo queue notification filter filters outgoing memos.  
+		 -->
+		<Notification idref="StandardAssignmentTransform" />
+
+		<!-- 
+		The following messages are replaced by memos of this
+		classification URI. Replaced memos are still registered
+		with the Semantic Memo Queue, but are not searchable
+		unless cloaking is disabled.
+		 -->
+		<Replaces>
+			<Specific memoUri="memo://ubmatrix.com/Validation/Instance#UnitRefAttributeMustResolveUnit" />
+			<Specific memoUri="memo://ubmatrix.com/Validation/Instance#NumericItemMustUseContextRefAndUnitRefAttribute" />
+			<Specific memoUri="memo://ubmatrix.com/Xbrl/Common/Xml/SchemaValidation#SchemaValidationError" />
+		</Replaces>
+
+		<!-- 
+		A set of scrubbers for fixing artifacts in the document that
+		lead to this memo. 
+		 -->
+		<Scrubbers>
+			<Scrubber name="AddMissingUnitRefToUnitScrubber" description="Associate unit {0} with numeric fact {1}." implementationUri="ubmatrix.xbrl.messaging.transform.scrubber.instance.fact.src.AddMissingUnitRefToFactScrubber" />
+		</Scrubbers>
+
+	</MessageTemplate>
+
+	<MessageTemplate memoUri="memo://ubmatrix.com/Validation/Instance#UnitRefAttributeMustResolveUnit">
+
+		<!-- The index set for this memo classification.  The index set 
+		defines the indexing keys for this memo in the Semantic Memo Queue.
+		-->
+		<Indices>
+	        <Index classificationUri="Instance Document" />
+    	    <Index classificationUri="Unit" />
+        	<Index classificationUri="Fact" />
+        	<Index classificationUri="Monetary" />
+        	<Index classificationUri="Numeric" />
+        	<Index classificationUri="XBRL 2.1" />
+		</Indices>
+
+		<!-- 
+		A memo queue assignment transform typically filters incoming memos.  
+		Only memos that pass through an assignment transform post to the Semantic Memo Queue.
+		 -->
+		<Assignment idref="StandardAssignmentTransform" />
+
+		<!-- 
+		A memo queue notification filter filters outgoing memos.  
+		 -->
+		<Notification idref="StandardAssignmentTransform" />
+
+		<!-- 
+		The following messages are replaced by memos of this
+		classification URI. Replaced memos are still registered
+		with the Semantic Memo Queue, but are not searchable
+		unless cloaking is disabled.
+		 -->
+		<Replaces>
+			<Specific memoUri="memo://ubmatrix.com/Xbrl/Common/Xml/SchemaValidation#SchemaValidationError" />
+		</Replaces>
+
+		<!-- 
+		A set of scrubbers for fixing artifacts in the document that
+		lead to this memo. 
+		 -->
+		<Scrubbers>
+			<Scrubber name="AddMissingUnitRefToUnitScrubber" description="Associate unit {0} with numeric fact {1}." implementationUri="ubmatrix.xbrl.messaging.transform.scrubber.instance.fact.src.AddMissingUnitRefToFactScrubber" />
+		</Scrubbers>
+
+	</MessageTemplate>
+
+	<MessageTemplate memoUri="memo://ubmatrix.com/Validation/Instance#NumericItemMustUseContextRefAndUnitRefAttribute">
+
+		<!-- The index set for this memo classification.  The index set 
+		defines the indexing keys for this memo in the Semantic Memo Queue.
+		-->
+		<Indices>
+	        <Index classificationUri="Instance Document" />
+    	    <Index classificationUri="Unit" />
+        	<Index classificationUri="Fact" />
+        	<Index classificationUri="Monetary" />
+        	<Index classificationUri="Numeric" />
+        	<Index classificationUri="XBRL 2.1" />
+		</Indices>
+
+		<!-- 
+		A memo queue assignment transform typically filters incoming memos.  
+		Only memos that pass through an assignment transform post to the Semantic Memo Queue.
+		 -->
+		<Assignment idref="StandardAssignmentTransform" />
+
+		<!-- 
+		A memo queue notification filter filters outgoing memos.  
+		 -->
+		<Notification idref="StandardAssignmentTransform" />
+
+		<!-- 
+		The following messages are replaced by memos of this
+		classification URI. Replaced memos are still registered
+		with the Semantic Memo Queue, but are not searchable
+		unless cloaking is disabled.
+		 -->
+		<Replaces>
+			<Specific memoUri="memo://ubmatrix.com/Xbrl/Common/Xml/SchemaValidation#SchemaValidationError" />
+		</Replaces>
+
+		<!-- 
+		A set of scrubbers for fixing artifacts in the document that
+		lead to this memo. 
+		 -->
+		<Scrubbers>
+			<Scrubber name="AddMissingUnitRefToUnitScrubber" description="Associate unit {0} with numeric fact {1}." implementationUri="ubmatrix.xbrl.messaging.transform.scrubber.instance.fact.src.AddMissingUnitRefToFactScrubber" />
+		</Scrubbers>
+
+	</MessageTemplate>
+
+</TemplateDictionary>
+
+<!--
+The contents of this file are subject to the End-User Software License Agreement (the "License"). You may not use this 
+file except in compliance with the License. A current copy of the License is available by contacting product support.
+
+Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights and limitations under the License.
+-->

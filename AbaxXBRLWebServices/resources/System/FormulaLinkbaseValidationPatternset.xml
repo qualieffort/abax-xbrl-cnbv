@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<!--
+Project: Xbrl Processing Engine
+Copyright (c) 2011  EDGAR(r) Online, Inc.
+
+EDGAR(r) is a federally registered trademark of the U.S. Securities and Exchange Commission. EDGAR 
+Online is not affiliated with or approved by the U.S. Securities and Exchange Commission.
+-->
+
+
+<!-- Formula Linkbase validation patterns --> 
+<PatternSet
+    name="Formula Linkbase Validation Patterns"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ValidationPatterns.xsd" >
+
+	<!-- http://www.xbrl.org/2005/linkbase/formula/error#undefinedNamespacePrefix -->
+	<!-- XPath expressions in formula can only refer to defined prefixes -->
+	<!-- Not necessary, the xpath processor will do this check
+	<Pattern id="xbrlfle_undefinedNamespacePrefix"
+			 name="ValidateFormulaDoesNotReferenceUndefinedPrefixes"
+			 method="DtsXPath"
+			 value="/'http://www.xbrl.org/2004/linkbase/formula#formula'ValidateFormulaDoesNotReferenceUndefinedPrefixes()">
+		<Failure severity="error" />
+	</Pattern>
+	-->
+	
+	<!-- http://www.xbrl.org/2005/linkbase/formula/error#undefinedVariable -->
+	<!-- XPath expressions in formula can only refer to defined variables -->
+	<!-- Not necessary, the xpath processor will do this check
+	<Pattern id="xbrlfle_undefinedVariable"
+			 name="ValidateFormulaDoesNotReferenceUndefinedVariables"
+			 method="DtsXPath"
+			 value="/'http://www.xbrl.org/2004/linkbase/formula#formula'ValidateFormulaDoesNotReferenceUndefinedVariables()">
+		<Failure severity="error" />
+	</Pattern>
+	-->
+	
+	<!-- http://www.xbrl.org/2005/linkbase/formula/error#redefinedVariable -->
+	<!-- formula variable names cannot be redefined -->
+	<Pattern id="xbrlfle_redefinedVariable"
+			 name="ValidateFormulaDoesNotRedefineVariables"
+			 method="DtsXPath"
+			 value="/'http://www.xbrl.org/2004/linkbase/formula#formula'ValidateFormulaDoesNotRedefineVariables()">
+		<Failure severity="error" />
+	</Pattern>
+	
+	<!-- http://www.xbrl.org/2005/linkbase/formula/error#resultUnitDisallowed -->
+	<!-- formula must not contain resultUnit if formulaArc 'from' points to nonnumeric concept -->
+	<Pattern id="xbrlfle_resultUnitDisallowed"
+			 name="ValidateFormulaArcFromNonNumericConceptSpecifiesFormulaWithNoResultUnit"
+			 method="DtsXPath"
+			 value="/'http://www.xbrl.org/2004/arcrole/item-formula'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/'http://www.xbrl.org/2004/linkbase/formula#formulaArc'ValidateFormulaArcFromNonNumericConceptSpecifiesFormulaWithNoResultUnit()">
+		<Failure severity="error" />
+	</Pattern>
+
+	<!-- http://www.xbrl.org/2005/linkbase/formula/error#resultPrecisionDisallowed -->
+	<!-- formula must not contain resultPrecision if formulaArc 'from' points to nonnumeric concept -->
+	<Pattern id="xbrlfle_resultPrecisionDisallowed"
+			 name="ValidateFormulaArcFromNonNumericConceptSpecifiesFormulaWithNoResultPrecision"
+			 method="DtsXPath"
+			 value="/'http://www.xbrl.org/2004/arcrole/item-formula'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/'http://www.xbrl.org/2004/linkbase/formula#formulaArc'ValidateFormulaArcFromNonNumericConceptSpecifiesFormulaWithNoResultPrecision()">
+		<Failure severity="error" />
+	</Pattern>
+
+	<!-- http://www.xbrl.org/2005/linkbase/formula/error#resultDecimalDisallowed -->
+	<!-- formula must not contain resultDecimal if formulaArc 'from' points to nonnumeric concept -->
+	<Pattern id="xbrlfle_resultDecimalDisallowed"
+			 name="ValidateFormulaArcFromNonNumericConceptSpecifiesFormulaWithNoResultDecimal"
+			 method="DtsXPath"
+			 value="/'http://www.xbrl.org/2004/arcrole/item-formula'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/'http://www.xbrl.org/2004/linkbase/formula#formulaArc'ValidateFormulaArcFromNonNumericConceptSpecifiesFormulaWithNoResultDecimal()">
+		<Failure severity="error" />
+	</Pattern>
+
+	<!-- http://www.xbrl.org/2005/linkbase/formula/error#resultContextRequired -->
+	<!-- formula must contain resultContext if arcrole is item-formula -->
+	<Pattern id="xbrlfle_resultContextRequired"
+			 name="ValidateFormulaArcFromItemConceptSpecifiesFormulaWithResultContext"
+			 method="DtsXPath"
+			 value="/'http://www.xbrl.org/2004/arcrole/item-formula'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/'http://www.xbrl.org/2004/linkbase/formula#formulaArc'ValidateFormulaArcFromItemConceptSpecifiesFormulaWithResultContext()">
+		<Failure severity="error" />
+	</Pattern>
+
+	<!-- http://www.xbrl.org/2005/linkbase/formula/error#resultUnitRequired -->
+	<!-- formula must contain resultUnit if formulaArc 'from' points to numeric concept -->
+	<Pattern id="xbrlfle_resultUnitRequired"
+			 name="ValidateFormulaArcFromNumericConceptSpecifiesFormulaWithResultUnit"
+			 method="DtsXPath"
+			 value="/'http://www.xbrl.org/2004/arcrole/item-formula'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/'http://www.xbrl.org/2004/linkbase/formula#formulaArc'ValidateFormulaArcFromNumericConceptSpecifiesFormulaWithResultUnit()">
+		<Failure severity="error" />
+	</Pattern>
+
+	<!-- http://www.xbrl.org/2005/linkbase/formula/error#resultPrecisionOrDecimalRequired -->
+	<!-- formula must contain resultPrecision or resultDecimal if formulaArc 'from' points to numeric concept -->
+	<Pattern id="xbrlfle_resultPrecisionOrDecimalRequired"
+			 name="ValidateFormulaArcFromNumericConceptSpecifiesFormulaWithResultPrecisionOrDecimal"
+			 method="DtsXPath"
+			 value="/'http://www.xbrl.org/2004/arcrole/item-formula'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/'http://www.xbrl.org/2004/linkbase/formula#formulaArc'ValidateFormulaArcFromNumericConceptSpecifiesFormulaWithResultPrecisionOrDecimal()">
+		<Failure severity="error" />
+	</Pattern>
+
+	<!-- http://www.xbrl.org/2005/linkbase/formula/error#formulaItemSourceInvalid -->
+	<!-- formulaArc must have a non-abstract item concept on the 'from' side -->
+	<Pattern id="xbrlfle_formulaItemSourceInvalid"
+			 name="ValidateFormulaArcHasNonAbstractItemConceptOnFromSide"
+			 method="DtsXPath"
+			 value="/'http://www.xbrl.org/2004/arcrole/item-formula'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/'http://www.xbrl.org/2004/linkbase/formula#formulaArc'ValidateFormulaArcHasNonAbstractItemConceptOnFromSide()">
+		<Failure severity="error" />
+	</Pattern>
+
+	<!-- http://www.xbrl.org/2005/linkbase/formula/error#formulaItemTargetInvalid -->
+	<!-- formulaArc must have a formula on the 'to' side -->
+	<Pattern id="xbrlfle_formulaItemTargetInvalid"
+			 name="ValidateFormulaArcHasFormulaOnToSide"
+			 method="DtsXPath"
+			 value="/'http://www.xbrl.org/2004/arcrole/item-formula'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/'http://www.xbrl.org/2004/linkbase/formula#formulaArc'ValidateFormulaArcHasFormulaOnToSide()">
+		<Failure severity="error" />
+	</Pattern>
+	
+	<!-- http://www.xbrl.org/2005/linkbase/formula/error#contextInconsistentWithItemPeriodType -->
+	<!-- formula must produce a context with a period compatible with the period type of the concept on the 'from' side -->
+	<!-- runtime validation, not static linkbase validation -->
+
+	<!-- http://www.xbrl.org/2005/linkbase/formula/error#contextInconsistentWithItemType -->
+	<!-- This is not well-defined, so is not implemented.  -->
+
+	<!-- http://www.xbrl.org/2005/linkbase/formula/error#resultUnitInconsistentWithItemType -->
+	<!-- This is not well-defined, so is not implemented.  -->
+
+	<!-- http://www.xbrl.org/2005/linkbase/formula/error#formulaItemMultipleSources -->
+	<!-- This simply does not make sense; trying to get this restriction removed.  -->
+
+	<!-- http://www.xbrl.org/2005/linkbase/formula/error#formulaItemMultipleTargets -->
+	<!-- This simply does not make sense; trying to get this restriction removed.  -->
+
+</PatternSet>
+
+<!--
+The contents of this file are subject to the End-User Software License Agreement (the "License"). You may not use this 
+file except in compliance with the License. A current copy of the License is available by contacting product support.
+
+Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights and limitations under the License.
+-->

@@ -1,0 +1,124 @@
+{
+	"ContextosPlantillaPorId" : {
+  "cxt": {
+    "Id": "cxt",
+    "Periodo": {
+      "Tipo": 1,
+      "FechaInstante": "#fecha_2014_12_31",
+      "FechaInicio": "",
+      "FechaFin": ""
+    },
+    "Entidad": {
+      "Id": "#nombreEntidad",
+      "EsquemaId": "#esquemaEntidad",
+      "ContieneInformacionDimensional": false,
+      "Segmento": null,
+      "ValoresDimension": []
+    },
+    "ContieneInformacionDimensional": false,
+    "Escenario": null,
+    "ValoresDimension": []
+  }
+},
+	
+	"UnidadesPlantillaPorId" : {},
+            
+	"HechosPlantillaPorId" : {
+  "ar_pros_ReferenceIncorporationAdministrator_3308b9e6-a00d-41de-abf7-e8ea9c23feb6": {
+    "Id": "ar_pros_ReferenceIncorporationAdministrator_3308b9e6-a00d-41de-abf7-e8ea9c23feb6",
+    "IdConcepto": "ar_pros_ReferenceIncorporationAdministrator",
+    "IdContextoPlantilla": "cxt",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_HistoryAndDevelopmentOfTrustPropertyAdministrator_16738143-e64e-43f2-b293-cd581d8de359": {
+    "Id": "ar_pros_HistoryAndDevelopmentOfTrustPropertyAdministrator_16738143-e64e-43f2-b293-cd581d8de359",
+    "IdConcepto": "ar_pros_HistoryAndDevelopmentOfTrustPropertyAdministrator",
+    "IdContextoPlantilla": "cxt",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_BusinessOverviewAdministrator_ef69b728-7871-49ac-a21c-b51583d6d7b1": {
+    "Id": "ar_pros_BusinessOverviewAdministrator_ef69b728-7871-49ac-a21c-b51583d6d7b1",
+    "IdConcepto": "ar_pros_BusinessOverviewAdministrator",
+    "IdContextoPlantilla": "cxt",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_MainActivityAdministrator_86b81842-4ee2-4e3d-9ce2-058f761f1bb2": {
+    "Id": "ar_pros_MainActivityAdministrator_86b81842-4ee2-4e3d-9ce2-058f761f1bb2",
+    "IdConcepto": "ar_pros_MainActivityAdministrator",
+    "IdContextoPlantilla": "cxt",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_HumanResourcesAdministrator_bf5ae2d5-38c0-4777-93e7-d8a605a32ce7": {
+    "Id": "ar_pros_HumanResourcesAdministrator_bf5ae2d5-38c0-4777-93e7-d8a605a32ce7",
+    "IdConcepto": "ar_pros_HumanResourcesAdministrator",
+    "IdContextoPlantilla": "cxt",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_CorporateStructureAdministrator_3a8d5a5c-11f4-4cad-9976-f06f6c8f89a2": {
+    "Id": "ar_pros_CorporateStructureAdministrator_3a8d5a5c-11f4-4cad-9976-f06f6c8f89a2",
+    "IdConcepto": "ar_pros_CorporateStructureAdministrator",
+    "IdContextoPlantilla": "cxt",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_JudicialAdministrativeOrArbitrationProceedingsAdministrator_be18904c-4308-4d41-9270-3c42756ebbb4": {
+    "Id": "ar_pros_JudicialAdministrativeOrArbitrationProceedingsAdministrator_be18904c-4308-4d41-9270-3c42756ebbb4",
+    "IdConcepto": "ar_pros_JudicialAdministrativeOrArbitrationProceedingsAdministrator",
+    "IdContextoPlantilla": "cxt",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_DirectorsAndShareholdersAdministrator_248b83b8-3776-4a4b-94f2-e4e562393e2e": {
+    "Id": "ar_pros_DirectorsAndShareholdersAdministrator_248b83b8-3776-4a4b-94f2-e4e562393e2e",
+    "IdConcepto": "ar_pros_DirectorsAndShareholdersAdministrator",
+    "IdContextoPlantilla": "cxt",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  }
+}
+}

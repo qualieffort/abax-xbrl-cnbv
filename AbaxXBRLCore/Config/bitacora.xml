@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+
+  <object id="ProxyCreator" type="Spring.Aop.Framework.AutoProxy.DefaultAdvisorAutoProxyCreator, Spring.Aop"/>
+
+  <object id="AdoAdvisor" type="Spring.Aop.Support.RegularExpressionMethodPointcutAdvisor, Spring.Aop">
+    <property name="advice" ref="BitacoraAuditoriaInterceptor"/>
+    <property name="patterns">
+      <list>
+        <value>.*RegistrarAcceso.*</value>
+        <value>.*GuardarUsuario.*</value>
+        <value>.*BorrarUsuario.*</value>
+        <value>.*BorrarLogicamenteUsuario.*</value>
+        <value>.*GuardarGrupoUsuarios.*</value>
+        <value>.*BorrarGrupoUsuarios.*</value>
+        <value>.*BorrarGrupoUsuariosLogico.*</value>
+        <value>.*GuardarGrupoUsuariosRol.*</value>
+        <value>.*BorrarGrupoUsuariosRol.*</value>
+        <value>.*BorrarGrupoUsuariosRolPorIdGrupo.*</value>
+        <value>.*GuardarUsuarioGrupo.*</value>
+        <value>.*BorrarUsuarioGrupo.*</value>
+        <value>.*BorrarUsuarioGrupopPorGrupo.*</value>
+        <value>.*GuardarUsuarioRol.*</value>
+        <value>.*BorrarUsuarioRol.*</value>
+        <value>.*BorrarRolesUsuario.*</value>
+        <value>.*GuardarUsuarioEmpresa.*</value>
+        <value>.*BorrarUsuarioEmpresa.*</value>
+        <value>.*GuardarRol.*</value>
+        <value>.*BorrarRol.*</value>
+        <value>.*BorrarLogicamenteRol.*</value>
+        <value>.*GuardarEmpresa.*</value>
+        <value>.*BorrarEmpresa.*</value>
+        <value>.*BorrarEmpresaLogicamente.*</value>
+        <value>.*GuardarGrupoUsuariosRolBulk.*</value>
+
+        <value>.*RegistrarAccesoAuditoria.*</value>
+        <value>.*EnvioCorreoOlvidoContrasena.*</value>
+
+        <value>.*ModificarPassword.*</value>
+        <value>.*RegistrarAcceso.*</value>
+
+
+        <value>.*Activar.*</value>
+        <value>.*Bloquear.*</value>
+        <value>.*Desactivar.*</value>
+        <value>.*Desbloquear.*</value>
+        <value>.*GuardarUsuarioGrupoBulk.*</value>
+
+        <value>.*GuardarDocumentoInstancia.*</value>
+        <value>.*EliminarDocumentoInstancia.*</value>
+        <value>.*ActualizarDocumentoInstancia.*</value>
+        <value>.*ObtenerFormatoCaptura.*</value>
+        <value>.*ObtenerFormatoCapturaHistorico.*</value>
+        <value>.*BloquearLiberarDocumentoInstancia.*</value>
+        <value>.*ObtenerFormatoCapturaHistorico.*</value>
+        <value>.*GenerarXbrl.*</value>
+        <value>.*ImportarDatosDeExcel.*</value>
+        <value>.*ExportarFormatoAExcel.*</value>
+        <value>.*ImportarFormatoExcel.*</value>
+        <value>.*ImportarNotasDeDocumentoWord.*</value>
+        <value>.*GuardarDocumentoInstanciaXBRL.*</value>
+        <value>.*ValidarDocumentoInstanciaXBRL.*</value>
+        <value>.*DistribuirDocumentoInstanciaXBRL.*</value>
+
+        <value>.*ActualizaRelacionGrupoEmpresas.*</value>
+
+        <value>.*GuardarTipoEmpresa.*</value>
+        <value>.*BorrarTipoEmpresa.*</value>
+        <value>.*BorrarTipoEmpresaLogicamente.*</value>
+        <value>.*AsignarTiposEmpresa.*</value>
+
+        <value>.*GuardarTaxonomiaXbrl.*</value>
+        <value>.*BorrarTaxonomiaXbrl.*</value>
+        <value>.*AsignarTaxonomias.*</value>
+
+        <value>.*AsignarFiduciarios.*</value>
+        <value>.*ActualizarParametroSistema.*</value>
+
+        <value>.*GuardarListaNotificacion.*</value>
+        <value>.*BorrarListaNotificacion.*</value>
+        <value>.*GuardarDestinatarioNotificacion.*</value>
+        <value>.*BorrarDestinatarioNotificacion.*</value>
+        
+        <value>.*ObtenRegistrosReporteExcel.*</value>
+        <value>.*GuardaConsultaRepositorio.*</value>
+        <value>.*ActualizarConsultaRepositorio.*</value>
+
+      </list>
+    </property>
+  </object>
+
+  <object id="BitacoraAuditoriaInterceptor" type="AbaxXBRLCore.Services.Implementation.BitacoraAuditoriaInterceptor" >
+    <property name="RegistroAuditoriaRepository" ref="RegistroAuditoriaRepository"></property>
+  </object>
+
+
+
+</objects>

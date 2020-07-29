@@ -1,0 +1,57 @@
+
+<xbrl-contenedor-formato xbrl:rol-uri="{{::xbrlRol.Uri}}" orientacion="landscape" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+<div id="contenedorTablaExcel" class="table-responsive">
+    <table class="table table-striped b-t b-light" xbrl:tabla-excel xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" selector="td:not(:first-child)" selector-contenedor-x="#contenedorTablaExcel" selector-contenedor-y="#contenedorFormatos" tab-index="1" on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)" on-after-paste="onAfterPaste(valorPegado, x, y)" on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)">
+        <thead>
+            <tr>
+                <th class="th-sortable" data-toggle="class">
+                    {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Concepto' : 'Concept' }} 
+                </th>
+                <th style="min-width: 230px; width: 230px;">
+                    {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Trimestre A&ntilde;o Actual' : 'Quarter Current Year' }} <br /> 
+                    {{ ::definicionPlantilla.obtenerVariablePorId("medida_MXN_sin_contexto")}}<br />
+                    {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2014_07_01")}} - {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2014_09_30")}}
+                </th>
+                <th style="min-width: 230px; width: 230px;">
+                    {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Acumulado A&ntilde;o Actual' : 'Accumulated Current Year' }} <br /> 
+                    {{ ::definicionPlantilla.obtenerVariablePorId("medida_MXN_sin_contexto")}}<br />
+                    {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2014_01_01")}} - {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2014_09_30")}}
+                </th>
+                <th style="min-width: 230px; width: 230px;">
+                    {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Trimestre A&ntilde;o Anterior' : 'Previous Quarter Year' }} <br />  
+                    {{ ::definicionPlantilla.obtenerVariablePorId("medida_MXN_sin_contexto")}}<br />
+                    {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2013_07_01")}} - {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2013_09_30")}}
+                </th>
+                <th style="min-width: 230px; width: 230px;">
+                    {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Acumulado A&ntilde;o Anterior' : 'Accumulated Previous Year' }} <br /> 
+                    {{ ::definicionPlantilla.obtenerVariablePorId("medida_MXN_sin_contexto")}}<br />
+                    {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2013_01_01")}} - {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2013_09_30")}}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_DepreciacionAmortizacionOperativa" xbrl:nivel-indentacion="2">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A43df0da2-99d6-4619-a19e-a7d40dfbbbab">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ada14441f-36dc-463c-8a40-1639fc5ba9e7">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A69adb933-8934-4975-ad8d-d168d0648991">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A12ade865-cea7-4da6-be79-3e795b8e8882" xbrl:ultimo="true">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</xbrl-contenedor-formato>

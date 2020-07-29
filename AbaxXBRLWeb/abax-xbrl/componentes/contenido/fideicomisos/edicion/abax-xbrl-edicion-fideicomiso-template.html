@@ -1,0 +1,70 @@
+﻿<section>
+    <section class="vbox">
+        <section class="scrollable padder">
+            <section class="row m-b-md">
+                <div class="col-sm-6">
+                    <h3 class="m-b-xs text-black">{{'TITULO_CATALOGO_FIDEICOMISOS' | translate}}</h3>
+                </div>
+            </section>
+            <section class="panel panel-default">
+                <header class="panel-heading font-bold" ng-if="editando" >{{'TITULO_EDITAR_FIDEICOMISO' | translate}}</header>
+                <header class="panel-heading font-bold" ng-if="!editando">{{'TITULO_REGISTRAR_FIDEICOMISO' | translate}}</header>
+                <form name="fideicomisoForm" class="form-horizontal">
+                    <div class="panel-body">
+
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="ClaveFideicomiso">{{'ETIQUETA_CLAVE_FIDEICOMISO' | translate}}:</label>
+                            <div class="col-sm-10">
+                                <div class="row">
+                                    <div class="col-md-4" ng-class="{ 'has-error' : fideicomisoForm.ClaveFideicomiso.$invalid }">
+                                        <input type="text" id="ClaveFideicomiso" name="ClaveFideicomiso" placeholder="{{'PLACE_HOLDER_CLAVE_FIDEICOMISO' | translate}}" class="form-control" ng-model="entidad.ClaveFideicomiso" ng-required="true" />
+                                    </div>
+                                    <p ng-show="fideicomisoForm.ClaveFideicomiso.$invalid" class="help-block">{{'ETIQUETA_CAMPO_REQUERIDO' | translate}}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="Descripcion">{{'ETIQUETA_DESCRIPCION' | translate}}:</label>
+                            <div class="col-sm-10">
+                                <div class="row">
+                                    <div class="col-md-4" ng-class="{ 'has-error' : fideicomisoForm.Descripcion.$invalid }">
+                                        <input type="text" id="Descripcion" name="Descripcion" placeholder="{{'PLACE_HOLDER_DESCRIPCION_FIDEICOMISO' | translate}}" class="form-control" ng-model="entidad.Descripcion" ng-required="true" />
+                                    </div>
+                                    <p ng-show="fideicomisoForm.Descripcion.$invalid" class="help-block">{{'ETIQUETA_CAMPO_REQUERIDO' | translate}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="panel-footer">
+                        <div class="row wrapper">
+                            <div class="col-sm-12 text-right">
+                                <button type="button" ui-sref="inicio.fideicomisos" class="btn btn-default" ng-disabled="guardando">
+                                    <i class="i i-back"></i>
+                                    {{'ETIQUETA_BOTON_CANCELAR' | translate}}
+                                </button>
+                                
+                                <button type="button" 
+                                        class="btn btn-primary" 
+                                        ng-click="guardar()" 
+                                        ng-hide="guardando" 
+                                        ng-disabled="fideicomisoForm.$invalid" >
+                                    <i class="fa fa-save"></i>
+                                    {{'ETIQUETA_BOTON_GUARDAR' | translate}}
+                                </button>
+                                <button type="button" disabled class="btn btn-primary " ng-if="guardando">
+                                    <i class="fa fa-refresh fa-spin"></i>
+                                    {{'MENSAJE_INFO_GUARDANDO' | translate}} ...
+                                </button>
+                            </div>
+                        </div>
+                    </footer>
+                </form>
+            </section>
+        </section>
+    </section>
+</section>

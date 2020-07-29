@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:ems="http://www.springframework.net/ems">
+
+  <object id="ValidarDocumentoInstanciaService" type="AbaxXBRLCore.Services.Implementation.ValidarDocumentoInstanciaSimpleService, AbaxXBRLCore"  >
+    <property name="CodificacionRequerida" value="ISO-8859-1"/>
+    <property name="ValidadorFactory" ref="ValidadorFactory"/>
+    <property name="CacheTaxonomia" ref="CacheTaxonomia"/>
+    <property name="EmpresaRepository" ref="EmpresaRepository"/>
+    <property name="ParametroSistemaService" ref="ParametroSistemaService"/>
+  </object>
+
+  <object id="ValidadorFactory" type="AbaxXBRLCore.Validador.Impl.ValidadorArchivoInstanciaXBRLSpringFactory">
+    <property name="Validadores">
+      <dictionary  key-type="string"  value-type="AbaxXBRLCore.Validador.IValidadorArchivoInstanciaXBRL">
+        <entry key="http://emisnet.bmv.com.mx/taxonomy/mx-ifrs-2014-12-05/full_ifrs_mc_mx_ics_entry_point_2014-12-05.xsd" value-ref="ValidadorIFRS"/>
+        <entry key="http://emisnet.bmv.com.mx/taxonomy/mx-ifrs-2014-12-05/full_ifrs_mc_mx_cp_entry_point_2014-12-05.xsd" value-ref="ValidadorIFRS"/>
+        <entry key="http://emisnet.bmv.com.mx/taxonomy/mx-ifrs-2014-12-05/full_ifrs_mc_mx_sapib_entry_point_2014-12-05.xsd" value-ref="ValidadorIFRS"/>
+        <entry key="http://emisnet.bmv.com.mx/taxonomy/mx-ifrs-2014-12-05/full_ifrs_mc_mx_fibras_entry_point_2014-12-05.xsd" value-ref="ValidadorIFRS"/>
+        <entry key="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/mx-ifrs-2018-08-20/full_ifrs_mc_mx_fibras_entry_point_2016-08-22.xsd" value-ref="ValidadorIFRS"/>
+
+        <entry key="http://emisnet.bmv.com.mx/taxonomy/mx-ifrs-fid-2015-06-30/ccd/full_ifrs_ccd_entry_point_2015-06-30.xsd" value-ref="ValidadorFIDE"/>
+        <entry key="http://emisnet.bmv.com.mx/taxonomy/mx-ifrs-fid-2015-06-30/deuda/full_ifrs_deuda_entry_point_2015-06-30.xsd" value-ref="ValidadorFIDE"/>
+        <entry key="http://emisnet.bmv.com.mx/taxonomy/mx-ifrs-fid-2015-06-30/trac/full_ifrs_trac_entry_point_2015-06-30.xsd" value-ref="ValidadorFIDE"/>
+        <entry key="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/mx-ifrs-fid-2018-08-20/ccd/full_ifrs_ccd_entry_point_2016-08-22.xsd" value-ref="ValidadorFIDE"/>
+
+        <entry key="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/mx-ifrs-2019-01-01/full_ifrs_mc_mx_ics_entry_point_2019-01-01.xsd" value-ref="ValidadorIFRS"/>
+        <entry key="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/mx-ifrs-2019-01-01/full_ifrs_mc_mx_cp_entry_point_2019-01-01.xsd" value-ref="ValidadorIFRS"/>
+        <entry key="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/mx-ifrs-2019-01-01/full_ifrs_mc_mx_sapib_entry_point_2019-01-01.xsd" value-ref="ValidadorIFRS"/>
+        <entry key="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/mx-ifrs-2019-01-01/full_ifrs_mc_mx_fibras_aa_entry_point_2019-01-01.xsd" value-ref="ValidadorIFRS"/>
+
+
+        <entry key="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/ra-prospecto-2016-08-22/ar_N_entry_point_2016-08-22.xsd"     value-ref="ValidadorReporteAnual"/>
+      <entry key="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/ra-prospecto-2016-08-22/ar_NBIS_entry_point_2016-08-22.xsd"  value-ref="ValidadorReporteAnual"/>
+      <entry key="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/ra-prospecto-2016-08-22/ar_NBIS1_entry_point_2016-08-22.xsd" value-ref="ValidadorReporteAnual"/>
+      <entry key="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/ra-prospecto-2016-08-22/ar_NBIS2_entry_point_2016-08-22.xsd" value-ref="ValidadorReporteAnual"/>
+      <entry key="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/ra-prospecto-2016-08-22/ar_NBIS3_entry_point_2016-08-22.xsd" value-ref="ValidadorReporteAnual"/>
+      <entry key="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/ra-prospecto-2016-08-22/ar_NBIS4_entry_point_2016-08-22.xsd" value-ref="ValidadorReporteAnual"/>
+      <entry key="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/ra-prospecto-2016-08-22/ar_NBIS5_entry_point_2016-08-22.xsd" value-ref="ValidadorReporteAnual"/>
+      <entry key="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/ra-prospecto-2016-08-22/ar_O_entry_point_2016-08-22.xsd"     value-ref="ValidadorReporteAnual"/>
+      <entry key="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/ra-prospecto-2016-08-22/pros_H_entry_point_2016-08-22.xsd"     value-ref="ValidadorProspecto"/>
+      <entry key="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/ra-prospecto-2016-08-22/pros_HBIS_entry_point_2016-08-22.xsd"  value-ref="ValidadorProspecto"/>
+      <entry key="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/ra-prospecto-2016-08-22/pros_HBIS1_entry_point_2016-08-22.xsd" value-ref="ValidadorProspecto"/>
+      <entry key="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/ra-prospecto-2016-08-22/pros_HBIS2_entry_point_2016-08-22.xsd" value-ref="ValidadorProspecto"/>
+      <entry key="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/ra-prospecto-2016-08-22/pros_HBIS3_entry_point_2016-08-22.xsd" value-ref="ValidadorProspecto"/>
+      <entry key="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/ra-prospecto-2016-08-22/pros_HBIS4_entry_point_2016-08-22.xsd" value-ref="ValidadorProspecto"/>
+      <entry key="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/ra-prospecto-2016-08-22/pros_HBIS5_entry_point_2016-08-22.xsd" value-ref="ValidadorProspecto"/>
+      <entry key="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/ra-prospecto-2016-08-22/pros_L_entry_point_2016-08-22.xsd"     value-ref="ValidadorProspecto"/>
+      <entry key="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/ra-prospecto-2016-08-22/pros_I_entry_point_2016-08-22.xsd"     value-ref="ValidadorProspecto"/>
+      
+      <entry key="http://cnbv.xbrl.mx/taxonomy/ra-prospecto-2016-08-22/ar_N_entry_point_2016-08-22.xsd"     value-ref="ValidadorReporteAnual"/>
+      <entry key="http://cnbv.xbrl.mx/taxonomy/ra-prospecto-2016-08-22/ar_NBIS_entry_point_2016-08-22.xsd"  value-ref="ValidadorReporteAnual"/>
+      <entry key="http://cnbv.xbrl.mx/taxonomy/ra-prospecto-2016-08-22/ar_NBIS1_entry_point_2016-08-22.xsd" value-ref="ValidadorReporteAnual"/>
+      <entry key="http://cnbv.xbrl.mx/taxonomy/ra-prospecto-2016-08-22/ar_NBIS2_entry_point_2016-08-22.xsd" value-ref="ValidadorReporteAnual"/>
+      <entry key="http://cnbv.xbrl.mx/taxonomy/ra-prospecto-2016-08-22/ar_NBIS3_entry_point_2016-08-22.xsd" value-ref="ValidadorReporteAnual"/>
+      <entry key="http://cnbv.xbrl.mx/taxonomy/ra-prospecto-2016-08-22/ar_NBIS4_entry_point_2016-08-22.xsd" value-ref="ValidadorReporteAnual"/>
+      <entry key="http://cnbv.xbrl.mx/taxonomy/ra-prospecto-2016-08-22/ar_NBIS5_entry_point_2016-08-22.xsd" value-ref="ValidadorReporteAnual"/>
+      <entry key="http://cnbv.xbrl.mx/taxonomy/ra-prospecto-2016-08-22/ar_O_entry_point_2016-08-22.xsd"     value-ref="ValidadorReporteAnual"/>
+      <entry key="http://cnbv.xbrl.mx/taxonomy/ra-prospecto-2016-08-22/pros_H_entry_point_2016-08-22.xsd"     value-ref="ValidadorProspecto"/>
+      <entry key="http://cnbv.xbrl.mx/taxonomy/ra-prospecto-2016-08-22/pros_HBIS_entry_point_2016-08-22.xsd"  value-ref="ValidadorProspecto"/>
+      <entry key="http://cnbv.xbrl.mx/taxonomy/ra-prospecto-2016-08-22/pros_HBIS1_entry_point_2016-08-22.xsd" value-ref="ValidadorProspecto"/>
+      <entry key="http://cnbv.xbrl.mx/taxonomy/ra-prospecto-2016-08-22/pros_HBIS2_entry_point_2016-08-22.xsd" value-ref="ValidadorProspecto"/>
+      <entry key="http://cnbv.xbrl.mx/taxonomy/ra-prospecto-2016-08-22/pros_HBIS3_entry_point_2016-08-22.xsd" value-ref="ValidadorProspecto"/>
+      <entry key="http://cnbv.xbrl.mx/taxonomy/ra-prospecto-2016-08-22/pros_HBIS4_entry_point_2016-08-22.xsd" value-ref="ValidadorProspecto"/>
+      <entry key="http://cnbv.xbrl.mx/taxonomy/ra-prospecto-2016-08-22/pros_HBIS5_entry_point_2016-08-22.xsd" value-ref="ValidadorProspecto"/>
+      <entry key="http://cnbv.xbrl.mx/taxonomy/ra-prospecto-2016-08-22/pros_L_entry_point_2016-08-22.xsd"     value-ref="ValidadorProspecto"/>
+      <entry key="http://cnbv.xbrl.mx/taxonomy/ra-prospecto-2016-08-22/pros_I_entry_point_2016-08-22.xsd"     value-ref="ValidadorProspecto"/>
+        
+      <entry key="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/eventos-relevantes-2017-08-01/rel_news_common_representative_view_entry_point_2017-08-01.xsd"     value-ref="ValidadorEventosRelevantes"/>
+      <entry key="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/eventos-relevantes-2017-08-01/rel_news_investment_funds_view_entry_point_2017-08-01.xsd"     value-ref="ValidadorEventosRelevantes"/>
+      <entry key="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/eventos-relevantes-2017-08-01/rel_news_issuer_view_entry_point_2017-08-01.xsd"     value-ref="ValidadorEventosRelevantes"/>
+      <entry key="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/eventos-relevantes-2017-08-01/rel_news_rating_agency_view_entry_point_2017-08-01.xsd"     value-ref="ValidadorEventosRelevantes"/>
+      <entry key="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/eventos-relevantes-2017-08-01/rel_news_trust_issuer_view_entry_point_2017-08-01.xsd"     value-ref="ValidadorEventosRelevantes"/>
+      
+      <entry key="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/anexot-2016-08-22/annext_entry_point_2016-08-22.xsd"     value-ref="ValidadorAnexoT"/>    
+
+      </dictionary>
+    </property>
+  </object>
+
+  <object id="ValidadorIFRS" type="AbaxXBRLCore.Validador.Impl.ValidadorArchivoInstanciaIFRSXBRL">
+    <property name="EmpresaRepository" ref="EmpresaRepository"/>
+  </object>
+  <object id="ValidadorFIDE" type="AbaxXBRLCore.Validador.Impl.ValidadorArchivoInstanciaFIDUXBRL">
+    <property name="EmpresaRepository" ref="EmpresaRepository"/>
+  </object>
+  <object id="ValidadorReporteAnual" type="AbaxXBRLCore.Validador.Impl.ValidadorArchivoInstanciaReporteAnual">
+    <property name="EmpresaRepository" ref="EmpresaRepository"/>
+  </object>
+  <object id="ValidadorProspecto" type="AbaxXBRLCore.Validador.Impl.ValidadorArchivoInstanciaProspecto">
+    <property name="EmpresaRepository" ref="EmpresaRepository"/>
+  </object>
+  <object id="ValidadorEventosRelevantes" type="AbaxXBRLCore.Validador.Impl.ValidadorArchivoInstanciaEventosRelevantes">
+    <property name="EmpresaRepository" ref="EmpresaRepository"/>
+  </object>
+  <object id="ValidadorAnexoT" type="AbaxXBRLCore.Validador.Impl.ValidadorArchivoInstanciaAnexoT">
+    <property name="EmpresaRepository" ref="EmpresaRepository"/>
+  </object>
+  
+
+  <object id="AlmacenarDocumentoInstanciaService"  type="AbaxXBRLCore.Services.Implementation.AlmacenarDocumentoInstanciaService, AbaxXBRLCore">
+
+    <property name="CacheTaxonomia" ref="CacheTaxonomia"/>
+
+    <property name="DocumentoInstanciaRepository" ref="DocumentoInstanciaRepository"/>
+    <property name="DtsDocumentoInstanciaRepository" ref="DtsDocumentoInstanciaRepository"/>
+    <property name="VersionDocumentoInstanciaRepository" ref="VersionDocumentoInstanciaRepository"/>
+    <property name="BitacoraVersionDocumentoRepository" ref="BitacoraVersionDocumentoRepository"/>
+    <property name="EmpresaRepository" ref="EmpresaRepository"/>
+	  <property name="ArchivoDocumentoInstanciaRepository" ref="ArchivoDocumentoInstanciaRepository"/>
+    <property name="BitacoraDistribucionDocumentoRepository" ref="BitacoraDistribucionDocumentoRepository"/>
+
+  </object>
+
+
+
+  <object id="DistribucionJsonLocal" type="AbaxXBRLCore.Distribucion.Impl.DistribucionJsonXBRL">
+    <property name="RutaDestino" value="${rutaAlmacenJson}"></property>
+    <property name="NombreArchivoIndice" value="${nombreArchivoIndiceVisor}"/>
+    <property name="DocumentoInstanciaRepository" ref="DocumentoInstanciaRepository"/>
+    <property name="ClaveDistribucion" value="JsonLocal"/>
+    <property name="ArchivoDocumentoInstanciaRepository" ref="ArchivoDocumentoInstanciaRepository"/>
+    <property name="EmpresaRepository" ref="EmpresaRepository"/>
+  </object>
+
+
+  <object id="ProcesarDistribucionDocumentoXBRLService" type="AbaxXBRLCore.Distribucion.Impl.ProcesarDistribucionDocumentoXBRLServiceImpl">
+    <property name="Distribuciones">
+      <list element-type="AbaxXBRLCore.Distribucion.IDistribucionDocumentoXBRL">
+		<ref object="DistribucionJsonLocal"/>
+        <ref object="DistribucionExportarExcelLocal"/>
+        <ref object="DistribucionExportarPDFLocal"></ref>
+        <!--<ref object="DistribucionAlmacenarMongoDB"></ref>-->
+        <ref object="DistribucionAlmacenarSQLDB"></ref>
+        <ref object="DistribucionExportarWordLocal"></ref>
+        <ref object="DistribucionCellStore"></ref>
+        <ref object="DistribucionAlmacenarSQLDBFile"></ref>
+      </list>
+    </property>
+    <property name="VersionDocumentoInstanciaRepository" ref="VersionDocumentoInstanciaRepository"/>
+    <property name="BitacoraVersionDocumentoRepository" ref="BitacoraVersionDocumentoRepository"/>
+    <property name="BitacoraDistribucionDocumentoRepository" ref="BitacoraDistribucionDocumentoRepository"/>
+    <property name="CacheTaxonomia" ref="CacheTaxonomia"/>
+
+    <property name="ParametroSistemaRepository" ref="ParametroSistemaRepository"/>
+    <property name="ListaNotificacionRepository" ref="ListaNotificacionRepository"/>
+    <property name="MailUtil" ref="EnvioMailUtil"/>
+    <property name="DocumentoInstanciaRepository" ref="DocumentoInstanciaRepository"/>
+
+  
+    <property name="TemplateMailExito" value="\Templates\DistribucionExito.html"/>
+    <property name="TemplateMailError" value="\Templates\DistribucionError.html"/>
+  
+  </object>
+
+  <object id="DistribucionExportarExcelLocal" type="AbaxXBRLCore.Distribucion.Impl.DistribucionExportarExcelXBRL">
+    <property name="RutaDestino" value="${rutaAlmacenExcel}"></property>
+    <property name="ExportadorDocumentoInstancia" ref="ImportadorExportadorArchivosPlantilla"/>
+    <property name="ClaveDistribucion" value="ExcelLocal"/>
+    <property name="ArchivoDocumentoInstanciaRepository" ref="ArchivoDocumentoInstanciaRepository"/>
+  </object>
+
+  <object id="DistribucionExportarPDFLocal" type="AbaxXBRLCore.Distribucion.Impl.DistribucionExportarPdfXBRL">
+    <property name="RutaDestino" value="${rutaAlmacenPDF}"></property>
+    <property name="ExportadorDocumentoInstancia" ref="ImportadorExportadorArchivosPlantilla"/>
+	<property name="ReporteBuilderFactoryService" ref="ReporteBuilderFactory"/>
+	<property name="ExportadorDocumentoInstanciaFactoryService" ref="ExportadorDocumentoInstanciaFactory"/>
+    <property name="ClaveDistribucion" value="PDFLocal"/>
+    <property name="ArchivoDocumentoInstanciaRepository" ref="ArchivoDocumentoInstanciaRepository"/>
+  </object>
+
+
+  <object id="DistribucionExportarWordLocal" type="AbaxXBRLCore.Distribucion.Impl.DistribucionExportarWordXBRL">
+    <property name="RutaDestino" value="${rutaAlmacenPDF}"></property>
+    <property name="ExportadorDocumentoInstancia" ref="ImportadorExportadorArchivosPlantilla"/>
+	<property name="ReporteBuilderFactoryService" ref="ReporteBuilderFactory"/>
+	<property name="ExportadorDocumentoInstanciaFactoryService" ref="ExportadorDocumentoInstanciaFactory"/>
+    <property name="ClaveDistribucion" value="WordLocal"/>
+    <property name="ArchivoDocumentoInstanciaRepository" ref="ArchivoDocumentoInstanciaRepository"/>
+  </object>
+
+  <!--<object id="DistribucionAlmacenarMongoDB" type="AbaxXBRLCore.Distribucion.Impl.DistribucionAlmacenarMongoDBXBRL">
+    <property name="BlockStoreHechoService" ref="BlockStoreHechoService"/>
+    <property name="ClaveDistribucion" value="MongoDB"/>
+  </object>-->
+
+  <object id="DistribucionCellStore" type="AbaxXBRLCore.Distribucion.Impl.DistribucionCellStoreXBRL">
+    <property name="AbaxXBRLCellStoreService" ref="AbaxXBRLCellStoreService"/>
+    <property name="ClaveDistribucion" value="CellSotreDB"/>
+  </object>
+
+  <object id="DistribucionAlmacenarSQLDB" type="AbaxXBRLCore.Distribucion.Impl.DistribucionAlmacenarSQLBDXBRL">
+    <property name="DocumentoInstanciaService" ref="DocumentoInstanciaService"/>
+    <property name="VersionDocumentoInstanciaRepository" ref="VersionDocumentoInstanciaRepository"/>
+    
+    <property name="ClaveDistribucion" value="SQLDB"/>
+  </object>
+
+  <object id="DistribucionAlmacenarSQLDBFile" type="AbaxXBRLCore.Distribucion.Impl.DistribucionAlmacenarSQLBDXBRLFile">
+    <property name="DocumentoInstanciaService" ref="DocumentoInstanciaService"/>
+    <property name="VersionDocumentoInstanciaRepository" ref="VersionDocumentoInstanciaRepository"/>
+
+    <property name="ClaveDistribucion" value="SQLAttachment"/>
+  </object>
+  
+  <!-- -->
+  <object name="ProcesarDocumentoXBRLMessageListener"
+          type="AbaxXBRLCore.Distribucion.Ems.ProcesarDocumentoXBRLMessageListener">
+    <property name="ProcesarDistribucionDocumentoXBRLService" ref="ProcesarDistribucionDocumentoXBRLService" />
+    <property name="ParametroSistemaService" ref="ParametroSistemaService" />
+    <property name="ProcesarDocumentoXBRLEmsGateway" ref="ProcesarDocumentoXBRLGateway"/>
+  </object>
+  
+  <ems:listener-container connection-factory="EMSTibcoConnectionFactory" concurrency="1">
+    <ems:listener ref="ProcesarDocumentoXBRLMessageListener" destination="${nombreProcesarXBRLQueue}" />
+  </ems:listener-container>
+  <!-- -->
+</objects>

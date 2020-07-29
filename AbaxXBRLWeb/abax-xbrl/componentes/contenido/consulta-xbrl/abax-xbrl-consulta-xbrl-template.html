@@ -1,0 +1,420 @@
+﻿<section>
+    <section class="vbox">
+        <section class="scrollable">
+            <section class="panel panel-default">
+                <header class="panel-heading">
+                    <ul class="nav nav-tabs nav-tabs-dark pull-right">
+                        <li class="active"><a href="#tab1" data-toggle="tab" aria-expanded="true">{{'ETIQUETA_TAXONOMIA' | translate}}</a></li>
+                        <li class=""><a href="#tab2" data-toggle="tab" aria-expanded="false">{{'ETIQUETA_FILTROS' | translate}}</a></li>
+                        <li class=""><a href="#tab3" id="consultaRepositorio" data-toggle="tab" aria-expanded="false">{{'ETIQUETA_RESULTADOS' | translate}}</a></li>
+                    </ul>
+                    <span class="font-bold">{{'TITULO_CONSULTA_SITUACION_FINANCIERA' | translate}}</span>
+                </header>
+                <div id="panelConsultaXBRL" class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab1">
+                            <div class="col-lg-4">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <span class="font-bold">{{'ETIQUETA_TAXONOMIA' | translate}}</span>
+                                        <select id="espacioNombres" ng-model="EspacioNombresSeleccionado" class="form-control" placeholder="{{'ETIQUETA_ESPACIO_NOMBRES' | translate}}" ng-change="obtenerRolesPorEspacioDeNombres(); obtenerEntidades();">
+                                            <option ng-repeat="espacioNombres in EspaciosDeNombresLlaveValor" value="{{espacioNombres.llave}}">{{espacioNombres.valor}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <span class="font-bold">{{'ETIQUETA_ROLES' | translate}}</span>
+                                        <select id="roles" ng-model="RolSeleccionado" class="form-control" placeholder="{{'ETIQUETA_ROLES' | translate}}" ng-change="obtenerConceptosPorTaxonomiaYRol()">
+                                            <option ng-repeat="roles in RolesLlaveValor" value="{{roles.llave}}">{{roles.valor}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <input id="filtroNombreConcepto" type="text" class="form-control" placeholder="{{'ETIQUETA_FILTRAR_NOMBRE_CONCEPTO' | translate}}" />
+                                            <span class="input-group-btn">
+                                                <button id="btnFiltrarConceptos" type="button" class="btn btn-default">
+                                                    <i class="fa fa-search">
+                                                    </i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="treeTableConceptos" class="tree-table-holder">
+
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="btn-toolbar bg-primary dker" style="margin-left: 0px;">
+                                    <div class="btn-group">
+                                        <button ng-click="agregarRenglon()" type="button" class="btn btn-default"><i class="i i-add-to-list"></i></button>
+                                        <button id="dedentButton" type="button" class="btn btn-default"><i class="fa fa-dedent"></i></button>
+                                        <button id="indentButton" type="button" class="btn btn-default"><i class="fa fa-indent"></i></button>
+                                        <button id="deleteButton" type="button" class="btn btn-default"><i class="fa fa-trash-o"></i></button>
+                                    </div>
+                                    <div class="btn-group">
+                                        <button ng-click="guardarConsulta()" type="button" class="btn btn-default"><i class="fa fa-save"></i></button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <input id="filtroNombreConceptoConsulta" type="text" class="form-control" placeholder="{{'ETIQUETA_FILTRAR_NOMBRE_CONCEPTO' | translate}}" />
+                                            <span class="input-group-btn">
+                                                <button id="btnFiltrarConceptosConsulta" type="button" class="btn btn-default">
+                                                    <i class="fa fa-search">
+                                                    </i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="treeTableConsulta" class="tree-table-holder">
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="tab-pane" id="tab2">
+                            <div class="col-lg-4">
+                                <div class="row">
+                                    <div class="col-md-12" style="border-bottom:1px solid #ecf0f1;margin-bottom:10px;padding-bottom:10px;font-size:18px;">
+                                        <span>{{'ETIQUETA_FILTROS_MAYUSCULA' | translate}}</span>
+                                    </div>
+                                </div>
+
+                                <div class="row espacioRowConsulta">
+                                    <div class="col-md-12">
+                                        <p>
+                                            <b style="color:red;">*</b>&nbsp;
+                                            {{'ETIQUETA_AGREGAR_GRUPO_ENTIDAD' | translate}}
+                                        </p>
+
+                                        <div ng-repeat="grupo in gruposEntidades" class="grupoEntidadConsulta">
+                                            <a href="javascript:void(0)" ng-click="asignarGrupoEntidad(grupo)">{{grupo.Nombre}}</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row espacioRowConsulta">
+                                    <div class="col-md-12">
+                                        <p><b style="color:red;">*</b>&nbsp;{{'ETIQUETA_AGREGAR_ENTIDAD' | translate}}</p>
+
+                                        <select chosen width="'100%'" id="cmbEntidades"
+                                                data-placeholder="{{'ETIQUETA_SELECCIONAR_ENTIDAD' | translate}}"
+                                                ng-model="IdEntidad"
+                                                class="form-control"
+                                                ng-options="entidad as entidad.IdEntidad for entidad in entidades"
+                                                ng-change="asignarEntidad()">
+                                            <option value="">--{{'ETIQUETA_SELECCIONAR_ENTIDAD' | translate}}--</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row espacioRowConsulta">
+                                    <div class="col-md-12">
+                                        <p>{{'ETIQUETA_AGREGAR_FIDEICOMISO' | translate}}</p>
+
+                                        <select chosen width="'100%'" id="cmbFideicomisos"
+                                                data-placeholder="{{'ETIQUETA_SELECCIONAR_FIDEICOMISO' | translate}}"
+                                                ng-model="IdFideicomiso"
+                                                class="form-control"
+                                                ng-options="fideicomiso for fideicomiso in fideicomisos"
+                                                ng-change="asignarFideicomiso()">
+                                            <option value="">--{{'ETIQUETA_SELECCIONAR_FIDEICOMISO' | translate}}--</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row espacioRowConsulta">
+                                    <div class="col-md-12">
+                                        <p><b style="color:red;">*</b>&nbsp;{{'ETIQUETA_AGREGAR_FECHA_REPORTE' | translate}}</p>
+
+                                        <select chosen width="'100%'" id="cmbFechasReporte"
+                                                data-placeholder="{{'ETIQUETA_SELECCIONAR_FECHA_REPORTE' | translate}}"
+                                                ng-model="IdFechaReporte"
+                                                class="form-control"
+                                                ng-options="mostrarFechaConFormato(fechaReporte,'YYYY-MM-DD') for fechaReporte in fechasReporte"
+                                                ng-change="asignarFechaReporte()">
+                                            <option value="">--{{'ETIQUETA_SELECCIONAR_FECHA_REPORTE' | translate}}--</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row espacioRowConsulta">
+                                    <div class="col-md-12">
+                                        <p>{{'ETIQUETA_AGREGAR_TRIMESTRE' | translate}}</p>
+
+                                        <select chosen width="'100%'" id="cmbTrimestres"
+                                                data-placeholder="{{'ETIQUETA_SELECCIONAR_TRIMESTRE' | translate}}"
+                                                ng-model="IdTrimestre"
+                                                class="form-control"
+                                                ng-options="trimestre for trimestre in trimestres"
+                                                ng-change="asignarTrimestre()">
+                                            <option value="">--{{'ETIQUETA_SELECCIONAR_TRIMESTRE' | translate}}--</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row espacioRowConsulta">
+                                    <div class="col-md-12">
+                                        <p>{{'ETIQUETA_AGREGAR_UNIDAD' | translate}}</p>
+
+                                        <select chosen width="'100%'" id="cmbUnidades"
+                                                data-placeholder="{{'ETIQUETA_SELECCIONAR_UNIDADES' | translate}}"
+                                                ng-model="IdMedida"
+                                                class="form-control"
+                                                ng-options="medidaConsulta as medidaConsulta.Nombre for medidaConsulta in medidas"
+                                                ng-change="asignarUnidad()">
+                                            <option value="">--{{'ETIQUETA_SELECCIONAR_UNIDADES' | translate}}--</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row espacioRowConsulta">
+
+                                    <div class="col-md-12" style="margin-bottom:10px">
+                                        <p>{{'ETIQUETA_AGREGAR_PERIODO' | translate}}</p>
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <p>{{'ETIQUETA_FECHA_INICIAL' | translate}}</p>
+                                        <input type="text" id="FechaInicial" ng-model="FechaInicial" class="form-control" ng-change="asignarPeriodo()" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{'ETIQUETA_FECHA_FINAL' | translate}}</p>
+                                        <input type="text" id="FechaFinal" ng-model="FechaFinal" class="form-control" ng-change="asignarPeriodo()" />
+
+
+                                    </div>
+                                    <div class="col-md-12" style="padding-top: 10px;font-size: smaller;">
+
+                                        <p style="color:red" ng-if="FechaInicial.length==0 && FechaFinal.length!=0">{{'ETIQUETA_VALIDACION_FECHA_INICIAL' | translate}}</p>
+                                        <p style="color:red" ng-if="FechaInicial.length!=0 && FechaFinal.length==0">{{'ETIQUETA_VALIDACION_FECHA_FINAL' | translate}}</p>
+                                        <p style="color:gray" ng-if="(!FechaInicial && !FechaInicial) || (FechaInicial.length==0 && FechaFinal.length==0)">{{'ETIQUETA_VALIDACION_PERIODO' | translate}}</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-lg-8">
+                                <div class="row">
+                                    <div class="col-md-12" style="border-bottom:1px solid #ecf0f1;margin-bottom:10px;padding-bottom:10px;font-size:18px;">
+                                        <span>{{'ETIQUETA_FILTROS_SELECCIONADOS' | translate}}</span>
+                                    </div>
+                                </div>
+                                <div class="row" ng-if="(entidadesConsulta.length==0 && gruposEntidadesConsulta.length==0) || fechasReporteConsulta.length==0">
+                                    <div class="alert alert-warning alert-block">
+                                        <h4><i class="fa fa-bell-alt"></i>{{'ETIQUETA_FILTROS_GENERICOS' | translate}}</h4>
+                                        <p>{{'ETIQUETA_ERROR_GENERAR_CONSULTA_POR_FILTRO' | translate}}</p>
+                                    </div>
+                                </div>
+                                <div id="ContenedorFiltrosDefinidos">
+                                    <div class="row" style="min-height:110px;">
+                                        <p>{{'ETIQUETA_ENTIDADES_O_GRUPOS' | translate}}</p>
+
+                                        <a href="javascript:void(0);" 
+                                           class="alert alert-info"
+                                           id="entidadConsultaItem-{{$index}}" 
+                                           style="float:left;margin-left:10px;margin-right:10px;" 
+                                           ng-repeat="entidad in entidadesConsulta">
+                                            <button type="button" ng-click="eliminarEntidadConsulta(entidad)" class="close" data-dismiss="alert">×</button>
+                                            <strong>{{entidad.IdEntidad}}</strong>
+                                        </a>
+                                        <a href="javascript:void(0);" 
+                                           class="alert alert-success" 
+                                           id="grupoConsultaItem-{{$index}}"
+                                           style="float:left;margin-left:10px;margin-right:10px;" 
+                                           ng-repeat="grupoEntidad in gruposEntidadesConsulta">
+                                            <button type="button" ng-click="eliminarGrupoEntidadConsulta(grupoEntidad)" class="close" data-dismiss="alert">×</button>
+                                            <strong>{{grupoEntidad.Nombre}}</strong>
+                                        </a>
+                                    </div>
+
+                                    <div class="row">
+                                        <p>{{'ETIQUETA_FIDEICOMISOS' | translate | uppercase}}</p>
+
+                                        <a href="javascript:void(0);"
+                                           class="alert alert-warning alert-block"
+                                           style="float:left;margin-left:10px;margin-right:10px;"
+                                           id="fideicomisoConsultaItem-{{$index}}"
+                                           ng-repeat="fideicomiso in fideicomisosConsulta">
+                                            <button type="button" ng-click="eliminarFideicomiso(fideicomiso)" class="close" data-dismiss="alert">×</button>
+                                            <strong>{{fideicomiso}}</strong>
+                                        </a>
+                                    </div>
+
+                                    <div class="row">
+                                        <p>{{'ETIQUETA_FECHAS_REPORTE' | translate}}</p>
+
+                                        <a href="javascript:void(0);"
+                                           class="alert alert-warning alert-block"
+                                           style="float:left;margin-left:10px;margin-right:10px;"
+                                           id="fechaReporteConsultaItem-{{$index}}"
+                                           ng-repeat="fechaReporte in fechasReporteConsulta">
+                                            <button type="button" ng-click="eliminarFechaPeriodo(fechaReporte)" class="close" data-dismiss="alert">×</button>
+                                            <strong>{{mostrarFechaConFormato(fechaReporte,'YYYY-MM-DD')}}</strong>
+                                        </a>
+                                    </div>
+
+                                    <div class="row">
+                                        <p>{{'ETIQUETA_TRIMESTRES' | translate}}</p>
+                                        <a href="javascript:void(0);"
+                                           class="alert alert-warning alert-block"
+                                           style="float:left;margin-left:10px;margin-right:10px;"
+                                           id="trimestreConsultaItem-{{$index}}"
+                                           ng-repeat="trimestre in trimestresConsulta">
+                                            <button type="button" ng-click="eliminarTrimestre(trimestre)" class="close" data-dismiss="alert">×</button>
+                                            <strong>{{trimestre}}</strong>
+                                        </a>
+                                    </div>
+
+                                    <div class="row">
+                                        <p>{{'ETIQUETA_UNIDADES' | translate}}</p>
+
+                                        <a href="javascript:void(0);" 
+                                           class="alert alert-warning alert-block" 
+                                           style="float:left;margin-left:10px;margin-right:10px;"
+                                           id="unidadConsultaItem-{{$index}}"
+                                           ng-repeat="medidaConsulta in medidasConsulta">
+                                            <button type="button" ng-click="eliminarMedida(medidaConsulta)" class="close" data-dismiss="alert">×</button>
+                                            <strong>{{medidaConsulta.Nombre}}</strong>
+                                        </a>
+                                    </div>
+
+                                    <div class="row" style="min-height:110px;">
+                                        <p>{{'ETIQUETA_PERIODOS' | translate}}</p>
+
+                                        <a class="alert alert-warning alert-block" 
+                                             style="float:left;margin-left:10px;margin-right:10px;"
+                                             id="periodoConsultaItem-{{$index}}"
+                                             href="javascript:void(0);"
+                                             ng-repeat="periodoConsulta in periodosConsulta">
+                                            <button type="button" ng-click="eliminarPeriodo(periodoConsulta)" class="close" data-dismiss="alert">×</button>
+                                            <strong>{{mostrarFechaConFormato(periodoConsulta.FechaInicio,'YYYY-MM-DD')}} {{'ETIQUETA_AL' | translate}} {{mostrarFechaConFormato(periodoConsulta.FechaFin,'YYYY-MM-DD')}}</strong>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane text-center" id="tab3">
+                            <div class="col-lg-12" ng-hide="!estaCargandoDatosConsulta">
+                                <div class="row">
+                                    <div class="alert alert-warning alert-block">
+                                        <h4>
+                                            <i class="fa fa-refresh fa-spin"></i>
+                                            {{'MESSAGE_INFO_CONSULTANDO_INFORMACION' | translate}} ...
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12" ng-hide="estaCargandoDatosConsulta">
+                                
+                                <div class="row" id="mensajeFiltroGenerico">
+                                    <div class="alert alert-warning alert-block">
+                                        <h4><i class="fa fa-bell-alt"></i>{{'ETIQUETA_FILTROS_GENERICOS' | translate}}</h4>
+                                        <p>{{'ETIQUETA_ERROR_GENERAR_CONSULTA_POR_FILTRO' | translate}}</p>
+                                    </div>
+                                </div>
+
+                                <div class="row" id="mensajeSinInformacion" style="display:none">
+                                    <div class="alert alert-warning alert-block">
+                                        <h4><i class="fa fa-bell-alt"></i>{{'ETIQUETA_CONSULTA_SIN_RESULTADOS' | translate}}</h4>
+                                        <p>{{'ETIQUETA_NO_ENCONTRO_INFORMACION' | translate}}</p>
+                                    </div>
+                                </div>
+
+
+                                <div class="row" id="filtrosConsulta">
+                                    <div class="col-lg-6" style="text-align:left">
+                                        {{'ETIQUETA_MOSTRAR' | translate}}
+                                        <select id="numeroRegistrosPagina"
+                                                ng-model="paginacion.RegistrosPorPagina"
+                                                ng-change="mostrarConsulta()">
+                                            <option selected="selected" value="100">100</option>
+                                            <option value="200">200</option>
+                                            <option value="500">500</option>
+                                        </select>
+                                        {{'ETIQUETA_HECHOS_POR_PAGINA' | translate}}
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div style="text-align:right">
+                                            <a href="#"
+                                               class="btn btn-sm btn-info"
+                                               id="exportarReporteWord" ng-hide="procesandoReporteWord">
+                                                <i class="i fa-fw i-file-word"></i>
+                                                {{'ETIQUETA_EXPORTAR' | translate}}
+                                            </a>
+                                            <a href="#"
+                                               class="btn btn-sm btn-info"
+                                               id="exportarReporteWord" disabled ng-if="procesandoReporteWord">
+                                                <i class="fa fa-refresh fa-spin"></i>
+                                                {{'ETIQUETA_EXPORTAR' | translate}}
+                                            </a>
+
+                                            <a href="#"
+                                               class="btn btn-sm btn-info"
+                                               id="exportarReporteExcel" ng-hide="procesandoReporte">
+                                                <i class="i fa-fw i-file-excel"></i>
+                                                {{'ETIQUETA_EXPORTAR' | translate}}
+                                            </a>
+                                            <a href="#"
+                                               class="btn btn-sm btn-info"
+                                               id="exportarReporteExcel" disabled ng-if="procesandoReporte">
+                                                <i class="fa fa-refresh fa-spin"></i>
+                                                {{'ETIQUETA_EXPORTAR' | translate}}
+                                            </a>
+                                            <a href="javascript:void(0);"
+                                               class="btn btn-sm btn-info"
+                                               id="refrescarDatosRepositorio">
+                                                <i class="fa-fw fa fa-refresh"></i>
+                                                {{'ETIQUETA_BOTON_REFRESCAR_DATOS' | translate}}
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">{{'ETIQUETA_SE_MUESTRAN' | translate}}<b>{{paginacion.RegistrosMostrando}}</b>{{'ETIQUETA_HECHOS_TOTALES' | translate}}<b>{{paginacion.TotalRregistros}}</b></div>
+                                        <div class="row col-lg-12" 
+                                             id="mostrarDimensiones"
+                                             style="cursor:pointer; font-weight:bold; text-align:left; margin-left: 10px;">
+                                            <span class="muestraDi" style="display:none;">
+                                                <i class="fa fa-eye"  style="font-size: 15px;"></i>
+                                                {{'ETIQUETA_MOSTRAR_DIMENSIONES' | translate}}
+                                            </span>
+                                            <span class="ocultaDi">
+                                                <i class="fa fa-eye-slash" style="font-size: 15px;"></i>
+                                                {{'ETIQUETA_OCULTAR_DIMENSIONES' | translate}}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+
+                                
+
+                                <div class="row" id="resultadoConsulta">
+                                    <div id="elementosEstructuraDocumento"></div>
+                                    <div class="text-center">
+                                        <ul class="pagination pagination-sm" style="margin:0;">
+                                            <!-- li><a href="#"><i class="fa fa-chevron-left"></i></a></!--li -->
+                                            <li ng-repeat="pagina in  paginacion.NumeroPaginas track by $index"><a href="#" ng-click="mostrarConsulta($index+1)">{{$index+1}}</a></li>
+                                            <!-- li><a href="#"><i class="fa fa-chevron-right"></i></a></li -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="panel-footer text-right bg-light lter">
+                    &nbsp;
+                </footer>
+            </section>
+        </section>
+    </section>
+</section>

@@ -1,0 +1,27 @@
+﻿<form name="agregarMiembroVCCForm" ng-submit="agregarMiembroDimensionAplicacionRetroactiva()" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true" ng-click="cerrarDialogo()">&times;</button>
+        <div class="row m-t-sm">
+            <div class="col-sm-10 m-b-xs">
+                <h4 class="modal-title">Agregar miembro de la Dimensión Aplicación Retroactiva al Documento Instancia XBRL</h4>
+            </div>
+        </div>
+    </div>
+    <div class="modal-body">
+        <div>
+            <p>Selecciones el miembro de la dimensión Aplicación Retroactiva a agregar al documento.</p>
+            <div class="form-group">
+                <label>Miembro a agregar</label>
+                <select class="form-control m-b" ng-model="informacionDimensiones.idMiembroDimensionAplicacionRetroactivoAgregar">
+                    <option ng-repeat="idMiembroDimension in informacionDimensiones.idsMiembrosDimensionAplicacionRetroactivaPorAgregar" value="{{idMiembroDimension}}">{{informacionDimensiones.obtenerEtiquetaMiembroDimensionAplicacionRetroactiva(idMiembroDimension, documentoInstancia.xbrlIdioma.ClaveIdioma)}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div>
+            <button type="button" class="btn btn-default" ng-click="cerrarDialogo()">Cancelar</button>
+            <button type="submit" class="btn btn-s-md btn-warning">Agregar miembro</button>
+        </div>
+    </div>
+</form>

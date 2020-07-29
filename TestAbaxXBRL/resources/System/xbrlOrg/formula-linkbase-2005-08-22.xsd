@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema 
+	targetNamespace="http://www.xbrl.org/2004/linkbase/formula" 
+	xmlns="http://www.w3.org/2001/XMLSchema" 
+	xmlns:link="http://www.xbrl.org/2003/linkbase" 
+	xmlns:xl="http://www.xbrl.org/2003/XLink" 
+	xmlns:xlink="http://www.w3.org/1999/xlink" 
+	xmlns:flink="http://www.xbrl.org/2004/linkbase/formula" 
+	elementFormDefault="qualified">
+	
+	<import namespace="http://www.xbrl.org/2003/XLink" schemaLocation="xl-2003-12-31.xsd"/>
+	<import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="xbrl-linkbase-2003-12-31.xsd"/>
+	
+	<annotation>
+		<appinfo>
+			<link:arcroleType arcroleURI="http://www.xbrl.org/2004/arcrole/item-formula" id="item-formula" cyclesAllowed="any">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>flink:formulaArc</link:usedOn>
+			</link:arcroleType>
+		</appinfo>
+	</annotation>
+
+	<!--                 formulaLink             -->
+	<element name="formulaLink" type="xl:extendedType" substitutionGroup="xl:extended">
+		<annotation>
+			<documentation>
+				The typical structure of a formulaLink is:
+					formulaLink
+					loc of item concept
+					formula resource
+					formulaArc xlink:arcrole="item-formula"
+			</documentation>
+		</annotation>
+	</element>
+	<!--                 formula             -->
+	<complexType name="formulaType">
+		<complexContent mixed="true">
+			<extension base="xl:resourceType">
+				<sequence>
+					<element ref="flink:variable" minOccurs="0" maxOccurs="unbounded"/>
+					<element ref="flink:resultDescription"/>
+				</sequence>
+				<attribute name="name" type="QName" use="required"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="formula" type="flink:formulaType" substitutionGroup="xl:resource">
+		<annotation>
+			<documentation>
+				This element defines formulae for calculations. Variables are local to a particular formula.
+			</documentation>
+		</annotation>
+	</element>
+	<!--                 variable            -->
+	<complexType name="variableType">
+		<attribute name="name" type="QName" use="required"/>
+		<attribute name="id" type="ID" use="optional"/>
+		<attribute name="select" type="string" use="required"/>
+	</complexType>
+	<element name="variable" type="flink:variableType">
+		<annotation>
+			<documentation>
+				This element defines variables for use in formulas. Variables are local to a particular formula.	
+			</documentation>
+		</annotation>
+	</element>
+	<!--                 resultDescription    -->
+	<complexType name="resultDescriptionType">
+		<sequence>
+			<element ref="flink:resultValue"/>
+			<element ref="flink:resultContext" minOccurs="0"/>
+			<element ref="flink:resultUnit" minOccurs="0"/>
+			<choice>
+				<element ref="flink:resultPrecision" minOccurs="0"/>
+				<element ref="flink:resultDecimal" minOccurs="0"/>
+			</choice>
+			<element ref="flink:resultAttribute" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+		<attribute name="id" type="ID" use="optional"/>
+	</complexType>
+	<element name="resultDescription" type="flink:resultDescriptionType">
+		<annotation>
+			<documentation>
+				This element defines the result description a fact created by a formula.
+			</documentation>
+		</annotation>
+	</element>
+	<!--                 resultValue            -->
+	<complexType name="resultValueType">
+		<attribute name="id" type="ID" use="optional"/>
+		<attribute name="select" type="string" use="required"/>
+	</complexType>
+	<element name="resultValue" type="flink:resultValueType">
+		<annotation>
+			<documentation>
+				This element defines values for the results of formulas. 
+			</documentation>
+		</annotation>
+	</element>
+	<!--                 resultContext            -->
+	<complexType name="resultContextType">
+		<attribute name="id" type="ID" use="optional"/>
+		<attribute name="select" type="string" use="required"/>
+	</complexType>
+	<element name="resultContext" type="flink:resultContextType">
+		<annotation>
+			<documentation>
+				This element defines XBRL contexts for the item values of formulas.
+			</documentation>
+		</annotation>
+	</element>
+	<!--                 resultUnit            -->
+	<complexType name="resultUnitType">
+		<attribute name="id" type="ID" use="optional"/>
+		<attribute name="select" type="string" use="required"/>
+	</complexType>
+	<element name="resultUnit" type="flink:resultUnitType">
+		<annotation>
+			<documentation>
+				This element defines XBRL units for the item values of formulas.
+			</documentation>
+		</annotation>
+	</element>
+	<!--                 resultPrecision            -->
+	<complexType name="resultPrecisionType">
+		<attribute name="id" type="ID" use="optional"/>
+		<attribute name="select" type="string" use="required"/>
+	</complexType>
+	<element name="resultPrecision" type="flink:resultPrecisionType">
+		<annotation>
+			<documentation>
+				This element defines XBRL precison attribute for the item values of formulas.
+			</documentation>
+		</annotation>
+	</element>
+	<!--                 resultDecimal            -->
+	<complexType name="resultDecimalType">
+		<attribute name="id" type="ID" use="optional"/>
+		<attribute name="select" type="string" use="required"/>
+	</complexType>
+	<element name="resultDecimal" type="flink:resultDecimalType">
+		<annotation>
+			<documentation>
+				This element defines XBRL decimals attribute for the item values of formulas.
+			</documentation>
+		</annotation>
+	</element>
+	<!--               resultAttribute           -->
+	<complexType name="resultAttributeType">
+		<attribute name="name" type="QName" use="required"/>
+		<attribute name="select" type="string" use="optional"/>
+	</complexType>
+	<element name="resultAttribute" type="flink:resultAttributeType">
+		<annotation>
+			<documentation>
+			This element defines a named (and optionally valued) attribute 
+			to be added to the new item in the output instance.
+			</documentation>
+		</annotation>
+	</element>
+	<!--                 formulaArc             -->
+	<element name="formulaArc" type="xl:arcType" substitutionGroup="xl:arc">
+		<annotation>
+			<documentation>
+				item-formula arcs use xlink:from = the label of a locator that points to an 
+				item element in a schema.  This element will receive the values.
+				xlink:to = the label of a locator of a formula. A formula is not a local
+				resource of a formulaLink.
+			</documentation>
+		</annotation>
+	</element>
+</schema>

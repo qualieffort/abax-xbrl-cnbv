@@ -1,0 +1,36 @@
+﻿<div id="{{idVentanaCargadorNota}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form name="formaImportarNotasDocumento" novalidate>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <div class="row m-t-sm">
+                        <div class="col-sm-10 m-b-xs">
+                            <h4 class="modal-title">{{'EDITOR_XBRL_CARGAR_NOTA_WORD'|translate}}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>{{'EDITOR_XBRL_SELECCIONAR_ARCHIVO_CARGAR' | translate}}:</label>
+
+                        <input id="archivoWord" type="file" ng-model="archivoNotasDocumentoInstanciaImportado" ng-file-select="mostrarNombreInput($files)" ng-multiple="false" accept="{{extensionesPermitidas}}" class="filestyle" data-icon="false" data-classbutton="btn btn-default" data-classinput="form-control inline v-middle input-s" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);">
+
+                        <div class="bootstrap-filestyle input-group">
+                            <input type="text" class="form-control " disabled value="{{nombreArchivoSeleccionado}}">
+                            <span class="group-span-filestyle input-group-btn" tabindex="0">
+                                <label for="archivoWord" class="btn btn-default ">{{'ETIQUETA_SELECCIONE'|translate}}</label>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">{{'ETIQUETA_BOTON_CANCELAR' | translate}}</button>
+                        <button type="button" class="btn btn-s-md btn-warning" id="cargarNota_{{idVentanaCargadorNota}}">{{'EDITOR_XBRL_CARGAR_NOTA' | translate}}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

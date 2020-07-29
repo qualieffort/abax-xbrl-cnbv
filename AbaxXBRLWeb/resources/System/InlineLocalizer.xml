@@ -1,0 +1,1561 @@
+﻿<?xml version="1.0" encoding="utf-8"?> 
+
+<!--
+    * Constants for Inline XBRL memos
+-->
+
+<!DOCTYPE InlneLocalizer [
+
+<!-- Used to control the base location of specifications anchors -->
+
+<!ENTITY UBmatrix                "http://docs.ubmatrix.com">
+<!ENTITY InlineXBRLSpecUri       "http://www.xbrl.org/Specification/inlineXBRL-part1/REC-2010-04-20/inlineXBRL-part1-REC-2010-04-20+corrected-errata-2011-08-17.html">
+<!ENTITY InlineXBRLSpecUri1-1    "http://www.xbrl.org/specification/inlinexbrl-part1/rec-2013-11-18/inlinexbrl-part1-rec-2013-11-18.html">
+<!ENTITY XBRLSpecUri             "http://www.xbrl.org/Specification/XBRL-2.1/REC-2003-12-31/XBRL-2.1-REC-2003-12-31+corrected-errata-2013-02-20.html">
+<!ENTITY XBRLDimensionSpecUri    "http://www.xbrl.org/specification/dimensions/rec-2012-01-25/dimensions-rec-2006-09-18+corrected-errata-2012-01-25-clean.html">
+
+]>
+
+<localization xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Localizer.xsd">
+
+    <!-- Inline 1.0 messages -->
+
+    <!--
+        * Numeric fact has both decimals and precision attributes.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>fact QName</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>value</li>
+        * </ol>
+    -->
+    <!-- c_DecimalsAndPrecision -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#DecimalsAndPrecision">
+        <LocalizedString xml:lang="en">Inline XBRL: Fact {0} in document {1} at line {2}, column {3}, with value {4} has both decimals and precsion attributes.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e5078</Uri>
+        </Reference>
+    </uri>
+
+
+    <!--
+        * Duplicate arc role detected - usually informational.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>QName</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>href value</li>
+        * <li>existing document name</li>
+        * <li>existing line number</li>
+        * <li>existing column number</li>
+        * </ol>
+        *
+    -->
+    <!-- c_DuplicateArcRole -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#DuplicateArcRole">
+        <LocalizedString xml:lang="en">Inline XBRL: Duplicate Arc Role definition detected in document {1} at line {2}, column {3} with value {4}. Existing definition in document {5} at line {6}, column {7}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e7450</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+     * Duplicate context defintion.
+     * <br/><br/>
+     * Particles<br/>
+     * <ol>
+     * <li>QName</id>
+     * <li>document name</li>
+     * <li>line number</li>
+     * <li>column number</li>
+     * <li>id</li>
+     * <li>existing document name</li>
+     * <li>existing line number</li>
+     * <li>existing column number</li>
+     * </ol>
+     -->
+    <!-- c_DuplicateContext -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#DuplicateContext">
+        <LocalizedString xml:lang="en">Inline XBRL: Duplicate Context definition detected in document {1} at line {2}, column {3} with value {4}. Existing definition in document {5} at line {6}, column {7}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e7450</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+     * Duplicate fact - same information specified as a fact elsewhere.
+     * <br/><br/>
+     * Particles<br/>
+     * <ol>
+     * <li>QName</li>
+     * <li>document name</li>
+     * <li>line number</li>
+     * <li>column number</li>
+     * <li>context</li>
+     * <li>value</li>
+     * <li>existing document name</li>
+     * <li>existing fact line number</li>
+     * <li>existing fact column number</li>
+     * <li>existing fact context</li>
+     * <li>existing fact value</li>
+     * </ol>
+     -->
+    <!-- c_DuplicateFact -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#DuplicateFact">
+        <LocalizedString xml:lang="en">Inline XBRL: Duplicate fact definition detected for {0} in document {1} at line {2}, column {3} with context {4} and value {5}. Existing definition in document {6} at line {7}, column {8} with context {9} and value {10}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e7704</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+        * Duplicate fact removed - same information specified as a fact elsewhere.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>QName</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>context</li>
+        * <li>value</li>
+        * <li>existing document name</li>
+        * <li>existing fact line number</li>
+        * <li>existing fact column number</li>
+        * <li>existing fact context</li>
+        * <li>existing fact value</li>
+        * </ol>
+    -->
+    <!-- c_DuplicateFactRemoved -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#DuplicateFactRemoved">
+        <LocalizedString xml:lang="en">Inline XBRL: Duplicate fact definition removed for {0} in document {1} at line {2}, column {3} with context {4} and value {5}. Existing definition in document {6} at line {7}, column {8} with context {9} and value {10} has been retained.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e7704</Uri>
+        </Reference>
+    </uri>
+    
+    <!--
+        * Duplicate fraction element - bad nesting of tags.
+        * Will always be in the same document.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>QName</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>existing fact line number</li>
+        * <li>existing fact column number</li>
+        * </ol>
+    -->
+    <!-- c_DuplicateFractionElement -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#DuplicateFractionElement">
+        <LocalizedString xml:lang="en">Inline XBRL: Duplicate fraction element detected for {0} in document {1} at line {2}, column {3}. Existing definition at line {4}, column {5}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e3013</Uri>
+        </Reference>
+    </uri>
+    
+    <!--
+     * Duplicate footnote definition.
+     * <br/><br/>
+     * Particles<br/>
+     * <ol>
+     * <li>QName</li>
+     * <li>document name</li>
+     * <li>line number</li>
+     * <li>column number</li>
+     * <li>footnote id</li>
+     * <li>existing document name</li>
+     * <li>existing footnote line number</li>
+     * <li>existing footnote column number</li>
+     * </ol>
+     -->
+    <!-- c_DuplicateFootnote -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#DuplicateFootnote">
+        <LocalizedString xml:lang="en">Inline XBRL: Duplicate footnote definition detected in document {1} at line {2}, column {3} with id={4}. Existing definition in document {5} at line {6}, column {7}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e1791</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+        * Duplicate value for element id.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>QName</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>element id</li>
+        * <li>existing document name</li>
+        * <li>existing element line number</li>
+        * <li>existing element column number</li>
+        * <li>existing element QName</li>
+        * </ol>
+    -->
+    <!-- c_DuplicateId -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#DuplicateId">
+        <LocalizedString xml:lang="en">Inline XBRL: Duplicate id detected for element {0} in document {1} at line {2}, column {3} with id={4}. Existing definition in document {5} at line {6}, column {7} on element {8}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#dle5181</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+        * Duplicate linkbase definition - usually informational.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>QName</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>existing href</li>
+        * <li>existing document name</li>
+        * <li>existing line number</li>
+        * <li>existing column number</li>
+        * </ol>
+    -->
+    <!-- c_DuplicateLinkbaseRef -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#DuplicateLinkbaseRef">
+        <LocalizedString xml:lang="en">Inline XBRL: Duplicate Linkbase reference detected in document {1} at line {2}, column {3} with value {4}. Existing definition in document {5} at line {6}, column {7}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e6819</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+     * Duplicate role definition - usually informational.
+     * <br/><br/>
+     * Particles<br/>
+     * <ol>
+     * <li>QName</li>
+     * <li>document name</li>
+     * <li>line number</li>
+     * <li>column number</li>
+     * <li>existing document name</li>
+     * <li>existing href</li>
+     * <li>existing line number</li>
+     * <li>existing column number</li>
+     * </ol>
+     -->
+    <!-- c_DuplicateRole -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#DuplicateRole">
+        <LocalizedString xml:lang="en">Inline XBRL: Duplicate Role definition detected in document {1} at line {2}, column {3} with value {4}. Existing definition in document {5} at line {6}, column {7}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e7354</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+     * Duplicate schema ref - usually informational.
+     * <br/><br/>
+     * Particles<br/>
+     * <ol>
+     * <li>QName</li>
+     * <li>document name</li>
+     * <li>line number</li>
+     * <li>column number</li>
+     * <li>existing href</li>
+     * <li>existing document name</li>
+     * <li>existing line number</li>
+     * <li>existing column number</li>
+     * </ol>
+     -->
+    <!-- c_DuplicateSchemaRef -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#DuplicateSchemaRef">
+        <LocalizedString xml:lang="en">Inline XBRL: Duplicate SchemaRef definition detected in document {1} at line {2}, column {3} with value {4}. Existing definition in document {5} at line {6}, column {7}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e6819</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+     * Duplicate tuple definition.
+     * <br/><br/>
+     * Particles<br/>
+     * <ol>
+     * <li>tuple QName</li>
+     * <li>document name</li>
+     * <li>line number</li>
+     * <li>column number</li>
+     * <li>tuple id</li>
+     * <li>existing document name</li>
+     * <li>existing tuple line number</li>
+     * <li>existing tuple column number</li>
+     * </ol>
+     -->
+    <!-- c_DuplicateTuple -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#DuplicateTuple">
+        <LocalizedString xml:lang="en">Inline XBRL: Duplicate tuple definition {0} detected in document {1} at line {2}, column {3} with id={4}. Existing definition in document {5} at line {6}, column {7}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e8466</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+     * Duplicate tuple member definition.
+     * <br/><br/>
+     * Particles<br/>
+     * <ol>
+     * <li>fact QName</li>
+     * <li>document name</li>
+     * <li>line number</li>
+     * <li>column number</li>
+     * <li>tuple reference</li>
+     * <li>existing document name</li>
+     * <li>existing member line number</li>
+     * <li>existing member column number</li>
+     * </ol>
+     -->
+    <!-- c_DuplicateTupleMember -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#DuplicateTupleMember">
+        <LocalizedString xml:lang="en">Inline XBRL: Duplicate tuple member {0} detected in document {1} at line {2}, column {3} for tuple {4}. Existing definition in document {5} at line {6}, column {7}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e8466</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+        * Duplicate unit definition.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>QName</id>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>id</li>
+        * <li>existing document name</li>
+        * <li>existing line number</li>
+        * <li>existing column number</li>
+        * </ol>
+    -->
+    <!-- c_DuplicateUnit -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#DuplicateUnit">
+        <LocalizedString xml:lang="en">Inline XBRL: Duplicate Unit definition detected in document {1} at line {2}, column {3} with value {4}. Existing definition in document {5} at line {6}, column {7}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e7481</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+        * Equivalent context - different ids but equal otherwise.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>QName</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>id</li>
+        * <li>equivalent document name</li>
+        * <li>equivalent line number</li>
+        * <li>equivalent column number</li>
+        * <li>equivalent id</li>
+        * </ol>
+    -->
+    <!-- c_EquivalentContext -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#EquivalentContext">
+        <LocalizedString xml:lang="en">Inline XBRL: Equivalent Context definition {0} detected in document {1} at line {2}, column {3} with id={4}. Existing definition in document {5} at line {6}, column {7} with id={8}
+            .</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+        * Equivalent unit - different ids but equal otherwise.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>QName</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>id</li>
+        * <li>equivalent document name</li>
+        * <li>equivalent line number</li>
+        * <li>equivalent column number</li>
+        * <li>equivalent id</li>
+        * </ol>
+    -->
+    <!-- c_EquivalentUnit -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#EquivalentUnit">
+        <LocalizedString xml:lang="en">Inline XBRL: Equivalent Unit definition detected in document {1} at line {2}, column {3} with id={4}. Existing definition in document {5} at line {6}, column {7} with id={8}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+        * Maximum error count exceeded.
+    -->
+    <!-- c_ErrorCountExceeded -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#ErrorCountExceeded">
+        <LocalizedString xml:lang="en">Inline XBRL: Maximum number of errors exceeded.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+        * Illegal attribute for element id.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>element QName</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>attribute name</li>
+        * </ol>
+    -->
+    <!-- c_IllegalAttribute -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#IllegalAttribute">
+        <LocalizedString xml:lang="en">Inline XBRL: Illegal attribute detected for element {0} in document {1} at line {2}, column {3}, attribute name {4}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+        * Illegal value for attribute.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>element QName</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>attribute name</li>
+        * <li>attribute value</li>
+        * </ol>
+    -->
+    <!-- c_IllegalAttributeValue -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#IllegalAttributeValue">
+        <LocalizedString xml:lang="en">Inline XBRL: Illegal attribute value detected for element {0} in document {1} at line {2}, column {3}, attribute name {4}, attribute value {5}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;</Uri>
+        </Reference>
+    </uri>
+    
+    <!--
+        * Input document is not XHTML.
+        * This error is produced when it is required that the input document is XHTML
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>root tag</li>
+        * <li>document name</li>
+        * </ol>
+    -->
+    <!-- c_InputDocumentIsNotXTHML -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#InputDocumentIsNotXTHML">
+        <LocalizedString xml:lang="en">Inline XBRL: Input document {1} is not XHTML. Root element {0} detected.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e1131</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+     * Invalid dimension element - missing attributes or empty member.
+     * <br/><br/>
+     * Particles<br/>
+     * <ol>
+     * <li>QName</li>
+     * <li>document name</li>
+     * <li>line number</li>
+     * <li>column number</li>
+     * </ol>
+    -->
+    <!-- c_InvalidDimensionElement -->
+	<uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#InvalidDimensionElement">
+        <LocalizedString xml:lang="en">Inline XBRL: Invalid dimension element {0} in document {1} at line {2}, column {3}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&XBRLDimensionSpecUri;#sec-validity-of-dimensions</Uri>
+        </Reference>
+    </uri>
+ 
+
+    <!--
+        * Invalid fraction element - bad nesting of tags.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>QName</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * </ol>
+    -->
+    <!-- c_InvalidFractionElement -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#InvalidFractionElement">
+        <LocalizedString xml:lang="en">Inline XBRL: Invalid fraction element {0} in document {1} at line {2}, column {3}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e3013</Uri>
+        </Reference>
+    </uri>
+ 
+    <!--
+        * Href value of linkbase reference is not allowed.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>element QName</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>href></li>
+        * </ol>
+    -->
+    <!-- c_InvalidLinkbaseRef -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#InvalidLinkbaseRef">
+        <LocalizedString xml:lang="en">Inline XBRL: Invalid linkbase href value for {0} in document {1} at line {2}, column {3}, href={4}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+        * Invalid value for numeric item.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>fact QName</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>value</li>
+        * </ol>
+    -->
+    <!-- c_InvalidNumeric -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#InvalidNumeric">
+        <LocalizedString xml:lang="en">Inline XBRL: Invalid numeric data detected in fact {0} in document {1} at line {2}, column {3}, with value of {4}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e4351</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+        * Href value of schemaRef reference is not allowed.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>element QName</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>href></li>
+        * </ol>
+    -->
+    <!-- c_InvalidSchemaRef -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#InvalidSchemaRef">
+        <LocalizedString xml:lang="en">Inline XBRL: Invalid schema href value for {0} in document {1} at line {2}, column {3}, href={4}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;</Uri>
+        </Reference>
+    </uri>
+    
+    <!--
+        * Missing fraction element - missing children.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>QName</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * </ol>
+    -->
+    <!-- c_MissingFractionElement -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#MissingFractionElement">
+        <LocalizedString xml:lang="en">Inline XBRL: Missing fraction element for {0} in document {1} at line {2}, column {3}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e3013</Uri>
+        </Reference>
+    </uri>
+    
+    <!--
+        * Footnote has no id attribute.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>fact QName</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * </ol>
+    -->
+    <!-- c_MissingFootnoteId -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#MissingFootnoteId">
+        <LocalizedString xml:lang="en">Inline XBRL: Missing id detected on Footnote in document {1} at line {2}, column {3}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e1764</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+        * Footnote has no lang attribute in scope. 
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>fact QName</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>footnote id</li>
+        * </ol>
+    -->
+    <!-- c_MissingFootnoteLang -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#MissingFootnoteLang">
+        <LocalizedString xml:lang="en">Inline XBRL: No lang attribute in scope for Footnote in document {1} at line {2}, column {3} with id={4}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e1791</Uri>
+        </Reference>
+    </uri>
+    
+    <!--
+        * Output document has no schemaRef.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>output document name - empty if default</li>
+        * </ol>
+    -->
+    <!-- c_MissingSchemaRef -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#MissingSchemaRef">
+        <LocalizedString xml:lang="en">Inline XBRL: No schemaRef definition found in output document. Output target='{0}'</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e7066</Uri>
+        </Reference>
+    </uri>
+    
+    <!--
+        * Tuple has no id attribute.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>fact name</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * </ol>
+    -->
+    <!-- c_MissingTupleId -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#MissingTupleId">
+        <LocalizedString xml:lang="en">Inline XBRL: Missing id detected on Tuple definition {0} in document {1} at line {2}, column {3}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e8466</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+        * Tuple without members.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>tuple name</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>tuple id</li>
+        * </ol>
+    -->
+    <!-- c_TupleMissingMembers -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#MissingTupleMembers">
+        <LocalizedString xml:lang="en">Inline XBRL: Tuple {0} in document {1} at line {2}, column {3} has no members and is not nil.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e8466</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+        * Tuple member without order attribute.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>fact QName</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>tuple reference</li>
+        * </ol>
+    -->
+    <!-- c_TupleMissingOrder -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#MissingTupleOrder">
+        <LocalizedString xml:lang="en">Inline XBRL: Missing order attribute detected on tuple member {0} in document {1} at line {2}, column {3} for tuple with id={4}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e8799</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+        * Tuple member without tuple reference.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>fact name</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>tuple order</li>
+        * </ol>
+    -->
+    <!-- c_TupleMissingRef -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#MissingTupleRef">
+        <LocalizedString xml:lang="en">Inline XBRL: Missing tupleRef attribute detected on tuple member {0} in document {1} at line {2}, column {3} for tuple with order={4}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e8466</Uri>
+        </Reference>
+    </uri>
+
+    <!-- 
+        * Multiple output targets defined for single output processing
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>fact name</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>value</li>
+        * </ol>
+    -->
+    <!-- c_MultipleOutputTargets -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#MultipleOutputTargets">
+        <LocalizedString xml:lang="en">Inline XBRL: Multiple output targets detected on fact {0} in document {1} at line {2}, column {3}, target name is {4}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;</Uri>
+        </Reference>
+    </uri>
+    
+    <!--
+        * Application halted processing.
+    -->
+        <!-- c_ProcessingHalted -->
+        <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#ProcessingHalted">
+        <LocalizedString xml:lang="en">Inline XBRL: Application halted processing.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see documentation.</Text>
+            <Uri>&UBmatrix;</Uri>
+        </Reference>
+    </uri>
+        
+    <!--
+        * Numeric fact has neither decimals nor precision and is not nil.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>fact name</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>value</li>
+        * </ol>
+    -->
+    <!-- c_RequiresDecimalsOrPrecision -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#RequiresDecimalsOrPrecision">
+        <LocalizedString xml:lang="en">Inline XBRL: Missing decimals or precision attribute detected on fact {0} in document {1} at line {2}, column {3} with value {4}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e5432</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+        * Numeric fact is nil and has either decimals or precision.
+        * Fraction numerator or denominator fact is nil and has either decimals or precision.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>fact Qname</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * </ol>
+    -->
+    <!-- c_RequiresNoDecimalsOrPrecision -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#RequiresNoDecimalsOrPrecision">
+        <LocalizedString xml:lang="en">Inline XBRL: Decimals or precision attributes detected for fact {0} in document {1} at line {2}, column {3} that has xsi:nil='true' or is part of a fraction.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e5432</Uri>
+        </Reference>
+    </uri>
+    
+    <!--
+        * Invalid data for specified inline XBRL transformation.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>fact name</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>fact value</li>
+        * <li>format attribute value</li>
+        * </ol>
+    -->
+    <!-- c_InvalidTransformation -->
+
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#TransformationInvalid">
+        <LocalizedString xml:lang="en">Inline XBRL: Invalid data detected in fact {0} in document {1} at line {2}, column {3}, with value {4} for transformation of {5}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e8861</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+        * Unknown inline XBRL transformation specified.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>fact name</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>fact value</li>
+        * <li>format attribute value</li>
+        * </ol>
+    -->
+    <!-- c_UnknownTransformation -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#TransformationUnknown">
+        <LocalizedString xml:lang="en">Inline XBRL: Unknown transformation detected in fact {0} in document {1} at line {2}, column {3}, with value {4} for transformation of {5}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e8950</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+        * Tuple is nil but has members.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>fact name</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>tuple id</li>
+        * </ol>
+    -->
+    <!-- c_TupleIsNilAndHasChildren -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#TupleIsNilAndHasChildren">
+        <LocalizedString xml:lang="en">Inline XBRL: Nil tuple {0} in document {1} at line {2}, column {3} with tuple id={4} has tuple members.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e8466</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+     * Tuple structure is recursive.
+     * <br/><br/>
+     * Particles<br/>
+     * <ol>
+     * <li>fact name</li>
+     * <li>document name</li>
+     * <li>line number</li>
+     * <li>column number</li>
+     * <li>tuple id</li>
+     * </ol>
+     -->
+    <!-- c_TupleRecursion -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#TupleRecursion">
+        <LocalizedString xml:lang="en">Inline XBRL: Recursive tuple structure detected in tuple {0} in document {1} at line {2}, column {3} with tuple id={4}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e8466</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+        * Custom arc role referenced but not defined.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>footnote QName</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>id of missing role</li>
+        * <li>footnote id</li>
+        * </ol>
+    -->
+    <!-- c_UndeclaredArcRole -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#UndeclaredArcRole">
+        <LocalizedString xml:lang="en">Inline XBRL: Undeclared arc role, footnote {5} in document {1} at line {2}, column {3} references arc role with value of {4}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e1866</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+        * Context referenced but not defined.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>fact name</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>missing id</li>
+        * </ol>
+    -->
+    <!-- c_UndeclaredContext -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#UndeclaredContext">
+        <LocalizedString xml:lang="en">Inline XBRL: Undeclared Context, fact {0} in document {1} at line {2}, column {3} references context with id={4}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e6407</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+        * Footnote referenced but not defined.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>fact QName</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>id of missing footnote</li>
+        * </ol>
+    -->
+    <!-- c_UndeclaredFootnote -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#UndeclaredFootnote">
+        <LocalizedString xml:lang="en">Inline XBRL: Undeclared Footnote, fact {0} in document {1} at line {2}, column {3} references footnote with id={4}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#dle6407</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+        * Custom footnote role referenced but not defined.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>footnote name</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>id of missing role</li>
+        * </ol>
+    -->
+    <!-- c_UndeclaredFootnoteRole -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#UndeclaredFootnoteRole">
+        <LocalizedString xml:lang="en">Inline XBRL: Undeclared footnote role, footnote {1} in document {1} at line {2}, column {3} references footnote role with value of {4}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e1866</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+        * Custom link role referenced but not defined.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>footnote QName</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>id of missing role</li>
+        * <li>id of footnote</li>
+        * </ol>
+    -->
+    <!-- c_UndeclaredLinkRole -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#UndeclaredLinkRole">
+        <LocalizedString xml:lang="en">Inline XBRL: Undeclared link role, footnote {5} in document {1} at line {2}, column {3} references link role with value of {4}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e1866</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+        * Tuple referenced but not defined.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>fact QName</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>tuple id</li>
+        * </ol>
+    -->
+    <!-- c_UndeclaredTuple -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#UndeclaredTuple">
+        <LocalizedString xml:lang="en">Inline XBRL: Undeclared tuple, fact {0} in document {1} at line {2}, column {3} references tuple with id={4}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e6407</Uri>
+        </Reference>
+    </uri>
+
+
+    <!--
+        * Unit referenced but not defined.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>fact name</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>unit id</li>
+        * </ol>
+    -->
+    <!-- c_UndeclaredUnit -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#UndeclaredUnit">
+        <LocalizedString xml:lang="en">Inline XBRL: Undeclared Unit, fact {0} in document {1} at line {2}, column {3} references unit with id={4}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e5078</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+        * Context defined but not referenced.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>fact name</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>context id</li>
+        * </ol>
+    -->
+    <!-- c_UnusedContext -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#UnusedContext">
+        <LocalizedString xml:lang="en">Inline XBRL: Unused Context, {0} in document {1} at line {2}, column {3} with id={4}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;</Uri>
+        </Reference>
+    </uri>
+    
+    <!--
+        * Footnote defined but not referenced.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>fact name</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>footnote id</li>
+        * </ol>
+    -->
+    <!-- c_UnusedFootnote -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#UnusedFootnote">
+        <LocalizedString xml:lang="en">Inline XBRL: Unused Footnote, {0} in document {1} at line {2}, column {3} with id={4}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+        * Unit defined but not referenced.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>fact name</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>unit id</li>
+        * </ol>
+    -->
+    <!-- c_UnusedUnit -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#UnusedUnit">
+        <LocalizedString xml:lang="en">Inline XBRL: Unused Unit, {0} in document {1} at line {2}, column {3} with id={4}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;</Uri>
+        </Reference>
+    </uri>
+    
+    <!--
+     * SAX Parser error.
+     * <br/><br/>
+     * Particles<br/>
+     * <ol>
+     * <li>message</li>
+     * <li>document name</li>
+     * <li>line number</li>
+     * <li>column number</li>
+     * </ol>
+     -->
+    <!-- c_XMLValidationError -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#XMLValidation">
+        <LocalizedString xml:lang="en">Inline XBRL: XML Schema validation error detected in document {1} at line {2}, column {3}, message is {0}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e598</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+        * SAX Parser error.
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>message</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>localised message - if there is one</li>
+        * </ol>
+    -->
+    <!-- c_XMLParsingError -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#XMLParsingError">
+        <LocalizedString xml:lang="en">Inline XBRL: XML Parsing error detected in document {1} at line {2}, column {3}, message is {0}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri;#d1e598</Uri>
+        </Reference>
+    </uri>
+
+
+    <!-- Inline 1.1 messages -->
+
+
+    <!--
+     * Inline XBRL 1.1
+     * Continuation circular reference.
+     * <br/><br/>
+     * Particles<br/>
+     * <ol>
+     * <li>QName</li>
+     * <li>document name</li>
+     * <li>line number</li>
+     * <li>column number</li>
+     * <li>ref id</li>
+     * </ol>
+     -->
+    <!-- c_ContinuationCycles -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#ContinuationCycles">
+        <LocalizedString xml:lang="en">Inline XBRL: Continuation chain has circular references, detected on element {0}, in document {1} at line {2}, column {3}, reference {5}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri1-1;#d1e598</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+     * Inline XBRL 1.1
+     * Duplicate continuation id.
+     * <br/><br/>
+     * Particles<br/>
+     * <ol>
+     * <li>QName</li>
+     * <li>document name</li>
+     * <li>line number</li>
+     * <li>column number</li>
+     * <li>continuation id</li>
+     * <li>existing document name</li>
+     * <li>existing line number</li>
+     * <li>existing column number</li>
+     * <li>existing element QName</li>
+     * </ol>
+     -->
+    <!-- c_DuplicateContinuationId -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#DuplicateContinuationId">
+        <LocalizedString xml:lang="en">Inline XBRL: Duplicate continuation id detected in document {1} at line {2}, column {3} for element {0}. Existing definition in document {5} at line {6}, column {7}, element {8}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri1-1;#d1e598</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+     * Inline XBRL 1.1
+     * Illegal content in nonFraction
+     * 
+     * <br/><br/>
+     * Particles<br/>
+     * <ol>
+     * <li>element QName</li>
+     * <li>document name</li>
+     * <li>line number</li>
+     * <li>column number</li>
+     * </ol>
+     -->
+     <!-- c_IllegalContent -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#IllegalContent">
+        <LocalizedString xml:lang="en">Inline XBRL: Illegal content in element {0}, in document {1} at line {2}, column {3}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri1-1;#d1e598</Uri>
+        </Reference>
+    </uri>
+    
+    <!--
+     * Inline XBRL 1.1
+     * Inconsistent attributes in nesting
+     * 
+     * <br/><br/>
+     * Particles<br/>
+     * <ol>
+     * <li>element QName</li>
+     * <li>document name</li>
+     * <li>line number</li>
+     * <li>column number</li>
+     * <li>element QName</li>
+     * <li>line number</li>
+     * <li>column number</li>
+     * </ol>
+     -->
+     <!-- c_InconsistentAttributesInNesting -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#InconsistentAttributesInNesting">
+        <LocalizedString xml:lang="en">Inline XBRL: Inconsistent attributes in nested items, detected in element {0} in document {1} at line {2}, column {3}. Parent element is {4} at line {5}, column {6}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri1-1;#d1e598</Uri>
+        </Reference>
+    </uri>
+    
+    <!-- Inline XBRL V1.1
+        * Invalid format value - nested nonFraction format attributes do not match
+        * <br/><br/>
+        * Particles<br/>
+        * <ol>
+        * <li>QName</li>
+        * <li>document name</li>
+        * <li>line number</li>
+        * <li>column number</li>
+        * <li>format</li>
+        * <li>parent line number</li>
+        * <li>parent column number</li>
+        * <li>parent format value</li>
+        * </ol>
+    -->
+    <!-- c_InconsistentFormatValue -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#InconsistentFormatValue">
+        <LocalizedString xml:lang="en">Inline XBRL: Inconsistent format values for nested nonFraction elements at {0} in document {1} at line {2}, column {3}. Value {4} does not match {7}, at line {5}, column{6}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri1-1;#d1e5415</Uri>
+        </Reference>
+    </uri>
+        
+    <!--
+     * Inline XBRL 1.1
+     * Invalid element nesting
+     * 
+     * <br/><br/>
+     * Particles<br/>
+     * <ol>
+     * <li>element QName</li>
+     * <li>document name</li>
+     * <li>line number</li>
+     * <li>column number</li>
+     * <li>element QName</li>
+     * <li>line number</li>
+     * <li>column number</li>
+     * </ol>
+     -->
+    <!-- c_InvalidElementNesting -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#InvalidElementNesting">
+        <LocalizedString xml:lang="en">Inline XBRL: Invlaid nesting detected for element {0} in document {1} at line {2}, column {3}. Parent element is {4} at line {5}, column {6}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri1-1;#ex-nonNumeric</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+     * Inline XBRL 1.1
+     * 
+     * Relationship element is not correct type.
+     * <br/><br/>
+     * Particles<br/>
+     * <ol>
+     * <li>fact name</li>
+     * <li>document name</li>
+     * <li>line number</li>
+     * <li>column number</li>
+     * <li>id of element</li>
+     * <li>qname of element
+     * </ol>
+     -->
+    <!-- c_InvalidRelationshipElement -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#InvalidRelationshipElement">
+        <LocalizedString xml:lang="en">Inline XBRL: Invalid element for relationship {0} detected in document {1} at line {2}, column {3}, for element {5} with id {4}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri1-1;#d1e7739</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+     * Inline XBRL 1.1
+     * Output document set has no headers.
+     * <br/><br/>
+     * No particles<br/>
+     -->
+    <!-- c_MissingHeader -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#MissingHeader">
+        <LocalizedString xml:lang="en">Inline XBRL: No inline XBRL header elements were found.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri1-1;#d1e4222</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+     * Inline XBRL 1.1
+     * Output document set has no resources.
+     * <br/><br/>
+     * No particles<br/>
+     -->
+    <!-- c_MissingResources -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#MissingResources">
+        <LocalizedString xml:lang="en">Inline XBRL: No inline XBRL resources elements were found.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri1-1;#d1e8741</Uri>
+        </Reference>
+    </uri>
+    
+    <!--
+     * Inline XBRL 1.1
+     * 
+     * Relationship has mixed fact / footnote content
+     * <br/><br/>
+     * Particles<br/>
+     * <ol>
+     * <li>relationship name</li>
+     * <li>document name</li>
+     * <li>line number</li>
+     * <li>column number</li>
+     * </ol>
+     -->
+    <!-- c_MixedRelationshipElements -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#MixedRelationshipElements">
+        <LocalizedString xml:lang="en">Inline XBRL: Target contains mixed footnote and facts in relationship {0} in document {1} at line {2}, column {3}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri1-1;#d1e8153</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+     * Inline XBRL 1.1
+     * No inline XBRL content found
+     * Informational memo 
+     --> 
+    <!-- c_NoInlineContent -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#NoInlineXBRLContent">
+        <LocalizedString xml:lang="en">Inline XBRL: No inline XBRL content was found.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri1-1;</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+     * Inline XBRL 1.1
+     * Nested Nil Values
+     * 
+     * <br/><br/>
+     * Particles<br/>
+     * <ol>
+     * <li>element QName</li>
+     * <li>document name</li>
+     * <li>line number</li>
+     * <li>column number</li>
+     * <li>element QName</li>
+     * <li>line number</li>
+     * <li>column number</li>
+     * </ol>
+     -->
+     <!-- c_NestedNilValues -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#NestedNilValues">
+        <LocalizedString xml:lang="en">Inline XBRL: Nested nil facts detected in element {0} in document {1} at line {2}, column {3}. Parent element is {4} at line {5}, column {6}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri1-1;#d1e5220</Uri>
+        </Reference>
+    </uri>
+
+     <!--
+      * Inline XBRL 1.1
+      * 
+      * Numeric overflow for numeric item.
+      * <br/><br/>
+      * Particles<br/>
+      * <ol>
+      * <li>fact name</li>
+      * <li>document name</li>
+      * <li>line number</li>
+      * <li>column number</li>
+      * <li>value</li>
+      * </ol>
+      -->
+     <!-- c_NumericOverflow -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#NumericOverflow">
+        <LocalizedString xml:lang="en">Inline XBRL: Numeric overflow/underflow after scaling detected for fact {0} in document {1} at line {2}, column {3}, value is {4}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri1-1;</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+     * Inline XBRL 1.1
+     * 
+     * Relationship cycle - same elememt in to and from
+     * <br/><br/>
+     * Particles<br/>
+     * <ol>
+     * <li>fact name</li>
+     * <li>document name</li>
+     * <li>line number</li>
+     * <li>column number</li>
+     * <li>id of element</li>
+     * </ol>
+     -->
+    <!-- c_RelationshipCycle -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#RelationshipCycle">
+        <LocalizedString xml:lang="en">Inline XBRL: Element appears on both sides of relationship, fact {0} with id {4} detected in document {1} at line {2}, column {3}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri1-1;#d1e8153</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+     * Inline XBRL 1.1
+     * Continuation referenced but not defined.
+     * <br/><br/>
+     * Particles<br/>
+     * <ol>
+     * <li>fact QName</li>
+     * <li>document name</li>
+     * <li>line number</li>
+     * <li>column number</li>
+     * <li>missing id</li>
+     * </ol>
+     -->
+    <!-- c_UndeclaredContinuation -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#UndeclaredContinuation">
+        <LocalizedString xml:lang="en">Inline XBRL: Undeclared continuation with id {4} referenced by element {0} in document {1} at line {2}, column {3}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri1-1;#d1e1498</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+     * Inline XBRL 1.1
+     * 
+     * Relationship element referenced but not defined.
+     * <br/><br/>
+     * Particles<br/>
+     * <ol>
+     * <li>relationship name</li>
+     * <li>document name</li>
+     * <li>line number</li>
+     * <li>column number</li>
+     * <li>id of missing element</li>
+     * </ol>
+     -->
+    <!-- c_UndeclaredRelationshipElement -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#UndeclaredRelationshipElement">
+        <LocalizedString xml:lang="en">Inline XBRL: Undeclared element referenced in relationship {0} in document {1} at line {2}, column {3}, referenced element id is {4}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri1-1;#d1e8268</Uri>
+        </Reference>
+    </uri>
+
+    <!--
+     * Inline XBRL 1.1.
+     * Continuation defined but not referenced.
+     * <br/><br/>
+     * Particles<br/>
+     * <ol>
+     * <li>element name</li>
+     * <li>document name</li>
+     * <li>line number</li>
+     * <li>column number</li>
+     * <li>continuation id</li>
+     * </ol>
+     -->
+    <!-- c_UnusedContinuation -->
+    <uri id="memo://ubmatrix.com/Xbrl/InlineXBRL#UnusedContinuation">
+        <LocalizedString xml:lang="en">Inline XBRL: Unused continutaion with id {4} detected in document {1} at line {2}, column {3}.</LocalizedString>
+        <Reference>
+            <Text xml:lang="en">For more information, see Inline XBRL documentation.</Text>
+            <Uri>&InlineXBRLSpecUri1-1;#d1e1498</Uri>
+        </Reference>
+    </uri>
+
+
+
+    <!-- Required by the schema but not referenced by code -->
+    <locale id="InlineXBRL">
+        <LocalizedString xml:lang="en">Inline XBRL: Inline XBRL Placeholder</LocalizedString>
+    </locale>
+
+</localization>
+
+
+
+
+
+
+
+

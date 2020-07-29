@@ -1,0 +1,124 @@
+{
+	"ContextosPlantillaPorId" : {
+  "ctx": {
+    "Id": "ctx",
+    "Periodo": {
+      "Tipo": 1,
+      "FechaInstante": "#fecha_2014_12_31",
+      "FechaInicio": "",
+      "FechaFin": ""
+    },
+    "Entidad": {
+      "Id": "#nombreEntidad",
+      "EsquemaId": "#esquemaEntidad",
+      "ContieneInformacionDimensional": false,
+      "Segmento": null,
+      "ValoresDimension": []
+    },
+    "ContieneInformacionDimensional": false,
+    "Escenario": null,
+    "ValoresDimension": []
+  }
+},
+	
+	"UnidadesPlantillaPorId" : {},
+            
+	"HechosPlantillaPorId" : {
+  "ar_pros_ReferenceIncorporationFinancialInformationOfTheTrust_6c7cd10e-1924-438f-be16-a019446e23a0": {
+    "Id": "ar_pros_ReferenceIncorporationFinancialInformationOfTheTrust_6c7cd10e-1924-438f-be16-a019446e23a0",
+    "IdConcepto": "ar_pros_ReferenceIncorporationFinancialInformationOfTheTrust",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_SelectedFinancialInformationOfTheTrust_e108acd3-6e22-4992-a5fa-175b2c40533b": {
+    "Id": "ar_pros_SelectedFinancialInformationOfTheTrust_e108acd3-6e22-4992-a5fa-175b2c40533b",
+    "IdConcepto": "ar_pros_SelectedFinancialInformationOfTheTrust",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_RelevantCreditReportTrust_cd3f258a-476a-4096-8ce7-4a93621c7abe": {
+    "Id": "ar_pros_RelevantCreditReportTrust_cd3f258a-476a-4096-8ce7-4a93621c7abe",
+    "IdConcepto": "ar_pros_RelevantCreditReportTrust",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_CommentsAndManagementAnalysisOnTrustOperatingResults_e1eef2fc-1993-4282-8da7-8b0a3f2406fb": {
+    "Id": "ar_pros_CommentsAndManagementAnalysisOnTrustOperatingResults_e1eef2fc-1993-4282-8da7-8b0a3f2406fb",
+    "IdConcepto": "ar_pros_CommentsAndManagementAnalysisOnTrustOperatingResults",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_OperationResultsTrust_50de8b63-e569-42e9-8c91-a8114e74e4ad": {
+    "Id": "ar_pros_OperationResultsTrust_50de8b63-e569-42e9-8c91-a8114e74e4ad",
+    "IdConcepto": "ar_pros_OperationResultsTrust",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_FinancialPositionLiquidityAndCapitalResourcesTrust_d985a30a-7042-4f0c-adc2-f37865246e09": {
+    "Id": "ar_pros_FinancialPositionLiquidityAndCapitalResourcesTrust_d985a30a-7042-4f0c-adc2-f37865246e09",
+    "IdConcepto": "ar_pros_FinancialPositionLiquidityAndCapitalResourcesTrust",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_InternalControlTrust_793f7ca9-8287-4015-9c21-bb1ea929933b": {
+    "Id": "ar_pros_InternalControlTrust_793f7ca9-8287-4015-9c21-bb1ea929933b",
+    "IdConcepto": "ar_pros_InternalControlTrust",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_EstimatesCriticalAccountingProvisionsOrReservesTrust_3bfbed87-b0a5-4fee-ab5c-3b030587ca5e": {
+    "Id": "ar_pros_EstimatesCriticalAccountingProvisionsOrReservesTrust_3bfbed87-b0a5-4fee-ab5c-3b030587ca5e",
+    "IdConcepto": "ar_pros_EstimatesCriticalAccountingProvisionsOrReservesTrust",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  }
+}
+}

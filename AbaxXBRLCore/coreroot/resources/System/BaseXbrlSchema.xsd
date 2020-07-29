@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Project: Xbrl Processing Engine
+Version: 4
+
+Copyright (c) 2011  EDGAR(r) Online, Inc.
+
+EDGAR(r) is a federally registered trademark of the U.S. Securities and Exchange Commission. EDGAR 
+Online is not affiliated with or approved by the U.S. Securities and Exchange Commission.
+-->
+
+<xs:schema 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xbrli="http://www.xbrl.org/2003/instance" 
+	xmlns:link="http://www.xbrl.org/2003/linkbase" 
+	xmlns:flink="http://www.xbrl.org/2004/linkbase/formula"
+	xmlns:xlink="http://www.w3.org/1999/xlink" 
+	xmlns:UBmatrixRole="http://www.xbrl.org/2003/role" 
+	targetNamespace="http://www.xbrl.org/2003/role" 
+	elementFormDefault="qualified" 
+	attributeFormDefault="unqualified">
+	
+	<xs:annotation>
+		<xs:appinfo>
+			<!-- linkbaseRef roles -->
+			<link:roleType id="BaseXbrlSchema.role.calculationLinkbaseRef" roleURI="http://www.xbrl.org/2003/role/calculationLinkbaseRef">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:linkbaseRef</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.definitionLinkbaseRef" roleURI="http://www.xbrl.org/2003/role/definitionLinkbaseRef">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:linkbaseRef</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.labelLinkbaseRef" roleURI="http://www.xbrl.org/2003/role/labelLinkbaseRef">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:linkbaseRef</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.presentationLinkbaseRef" roleURI="http://www.xbrl.org/2003/role/presentationLinkbaseRef">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:linkbaseRef</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.referenceLinkbaseRef" roleURI="http://www.xbrl.org/2003/role/referenceLinkbaseRef">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:linkbaseRef</link:usedOn>
+			</link:roleType>
+			<!-- extended link roles -->
+			<link:roleType roleURI="http://www.xbrl.org/2003/role/link" id="BaseXbrlSchema.role.link">
+				<link:definition>This is a standard role definition</link:definition>
+			</link:roleType>
+			<!-- standard arcroles -->
+			<!-- set cyclesAllowed to 'any'; optimizes cycle detection algorithm -->
+			<link:arcroleType arcroleURI="http://www.xbrl.org/2003/arcrole/concept-label" id="BaseXbrlSchema.arcRole.concept-label" cyclesAllowed="any">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:labelArc</link:usedOn>
+			</link:arcroleType>
+			<!-- cyclesAllowed has no meaning -->
+			<!-- set cyclesAllowed to 'any'; optimizes cycle detection algorithm -->
+			<link:arcroleType arcroleURI="http://www.xbrl.org/2003/arcrole/concept-reference" id="BaseXbrlSchema.arcRole.concept-reference" cyclesAllowed="any">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:referenceArc</link:usedOn>
+			</link:arcroleType>
+			<!-- 5.2.4.2.1 says no directed cycles; this means no cycles -->
+			<link:arcroleType arcroleURI="http://www.xbrl.org/2003/arcrole/fact-footnote" id="BaseXbrlSchema.arcRole.fact-footnote" cyclesAllowed="any">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:footnoteArc</link:usedOn>
+			</link:arcroleType>
+			<!-- 5.2.4.2.1 says no directed cycles; this means no cycles -->
+			<link:arcroleType arcroleURI="http://www.xbrl.org/2003/arcrole/parent-child" id="BaseXbrlSchema.arcRole.parent-child" cyclesAllowed="undirected">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:presentationArc</link:usedOn>
+			</link:arcroleType>
+			<!-- Spec isn't explicit; therefore anything goes -->
+			<link:arcroleType arcroleURI="http://www.xbrl.org/2003/arcrole/summation-item" id="BaseXbrlSchema.arcRole.summation-item" cyclesAllowed="any">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:calculationArc</link:usedOn>
+			</link:arcroleType>
+			<!-- 5.2.6.2.1 says no directed cycles -->
+			<link:arcroleType arcroleURI="http://www.xbrl.org/2003/arcrole/general-special" id="BaseXbrlSchema.arcRole.general-special" cyclesAllowed="undirected">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:definitionArc</link:usedOn>
+			</link:arcroleType>
+			<!-- 5.2.6.2.2 Only undirected cycles -->
+			<link:arcroleType arcroleURI="http://www.xbrl.org/2003/arcrole/essence-alias" id="BaseXbrlSchema.arcRole.essence-alias" cyclesAllowed="undirected">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:definitionArc</link:usedOn>
+			</link:arcroleType>
+			<!-- 5.2.6.2.3 any cycles are semantically valid -->
+			<link:arcroleType arcroleURI="http://www.xbrl.org/2003/arcrole/similar-tuples" id="BaseXbrlSchema.arcRole.similar-tuples" cyclesAllowed="any">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:definitionArc</link:usedOn>
+			</link:arcroleType>
+			<!-- 5.2.6.2.3 any cycles are allowed -->
+			<link:arcroleType arcroleURI="http://www.xbrl.org/2003/arcrole/requires-element" id="BaseXbrlSchema.arcRole.requires-element" cyclesAllowed="any">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:definitionArc</link:usedOn>
+			</link:arcroleType>
+			<!-- cyclesAllowed has no meaning -->
+			<!-- set cyclesAllowed to 'any'; optimizes cycle detection algorithm -->
+			<link:arcroleType arcroleURI="http://www.w3.org/1999/xlink/properties/linkbase" id="BaseXbrlSchema.arcRole.xlink-linkbase" cyclesAllowed="any">
+				<link:definition>This is a standard role definition</link:definition>
+			</link:arcroleType>
+			<!-- label roles -->
+			<link:roleType id="BaseXbrlSchema.role.label" roleURI="http://www.xbrl.org/2003/role/label">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:label</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.terseLabel" roleURI="http://www.xbrl.org/2003/role/terseLabel">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:label</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.verboseLabel" roleURI="http://www.xbrl.org/2003/role/verboseLabel">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:label</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.positiveLabel" roleURI="http://www.xbrl.org/2003/role/positiveLabel">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:label</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.positiveTerseLabel" roleURI="http://www.xbrl.org/2003/role/positiveTerseLabel">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:label</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.positiveVerboseLabel" roleURI="http://www.xbrl.org/2003/role/positiveVerboseLabel">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:label</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.negativeLabel" roleURI="http://www.xbrl.org/2003/role/negativeLabel">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:label</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.negativeTerseLabel" roleURI="http://www.xbrl.org/2003/role/negativeTerseLabel">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:label</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.negativeVerboseLabel" roleURI="http://www.xbrl.org/2003/role/negativeVerboseLabel">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:label</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.zeroLabel" roleURI="http://www.xbrl.org/2003/role/zeroLabel">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:label</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.zeroTerseLabel" roleURI="http://www.xbrl.org/2003/role/zeroTerseLabel">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:label</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.zeroVerboseLabel" roleURI="http://www.xbrl.org/2003/role/zeroVerboseLabel">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:label</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.totalLabel" roleURI="http://www.xbrl.org/2003/role/totalLabel">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:label</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.periodStartLabel" roleURI="http://www.xbrl.org/2003/role/periodStartLabel">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:label</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.periodEndLabel" roleURI="http://www.xbrl.org/2003/role/periodEndLabel">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:label</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.documentation" roleURI="http://www.xbrl.org/2003/role/documentation">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:label</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.definitionGuidance" roleURI="http://www.xbrl.org/2003/role/definitionGuidance">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:label</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.disclosureGuidance" roleURI="http://www.xbrl.org/2003/role/disclosureGuidance">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:label</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.presentationGuidance" roleURI="http://www.xbrl.org/2003/role/presentationGuidance">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:label</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.measurementGuidance" roleURI="http://www.xbrl.org/2003/role/measurementGuidance">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:label</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.commentaryGuidance" roleURI="http://www.xbrl.org/2003/role/commentaryGuidance">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:label</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.exampleGuidance" roleURI="http://www.xbrl.org/2003/role/exampleGuidance">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:label</link:usedOn>
+			</link:roleType>
+			<!-- reference roles -->
+			<link:roleType id="BaseXbrlSchema.role.reference" roleURI="http://www.xbrl.org/2003/role/reference">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:reference</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.definitionRef" roleURI="http://www.xbrl.org/2003/role/definitionRef">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:reference</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.disclosureRef" roleURI="http://www.xbrl.org/2003/role/disclosureRef">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:reference</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.mandatoryDisclosureRef" roleURI="http://www.xbrl.org/2003/role/mandatoryDisclosureRef">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:reference</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.recommendedDisclosureRef" roleURI="http://www.xbrl.org/2003/role/recommendedDisclosureRef">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:reference</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.unspecifiedDisclosureRef" roleURI="http://www.xbrl.org/2003/role/unspecifiedDisclosureRef">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:reference</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.presentationRef" roleURI="http://www.xbrl.org/2003/role/presentationRef">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:reference</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.measurementRef" roleURI="http://www.xbrl.org/2003/role/measurementRef">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:reference</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.commentaryRef" roleURI="http://www.xbrl.org/2003/role/commentaryRef">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:reference</link:usedOn>
+			</link:roleType>
+			<link:roleType id="BaseXbrlSchema.role.exampleRef" roleURI="http://www.xbrl.org/2003/role/exampleRef">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:reference</link:usedOn>
+			</link:roleType>
+			<!-- footnote roles -->
+			<link:roleType id="BaseXbrlSchema.role.footnote" roleURI="http://www.xbrl.org/2003/role/footnote">
+				<link:definition>This is a standard role definition</link:definition>
+				<link:usedOn>link:footnote</link:usedOn>
+			</link:roleType>
+		</xs:appinfo>
+	</xs:annotation>
+</xs:schema>
+
+<!--
+The contents of this file are subject to the End-User Software License Agreement (the "License"). You may not use this 
+file except in compliance with the License. A current copy of the License is available by contacting product support.
+
+Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights and limitations under the License.
+-->

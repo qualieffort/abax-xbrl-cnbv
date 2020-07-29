@@ -1,0 +1,130 @@
+﻿<section class="panel panel-default">
+    <header class="panel-heading">
+        {{'TITULO_CATALOGO_DE_EMPRESAS' | translate}}
+    </header>
+    <div class="row wrapper">
+        <div class="col-sm-3" ng-if="existenEmpresas">
+            <button type="button"
+                    class="btn btn-sm btn-default"
+                    ng-if="tieneFacultad(FacultadesEnum.ExportarDatosEmpresa)"
+                    ng-click="descargaArchivo()"
+                    ng-hide="exportando">
+                <i class="i i-file-excel"></i>
+                {{'ETIQUETA_EXPORTAR' | translate}}
+            </button>
+            <button type="button" class="btn btn-sm btn-default" ng-if="exportando" disabled>
+                <i class="fa fa-refresh fa-spin"></i>
+                {{'MENSAJE_INFO_EXPORTANDO' | translate}} ...
+            </button>
+        </div>
+        <div class="col-sm-3" ng-if="!existenEmpresas">
+            <button type="button"
+                    class="btn btn-sm btn-default" disabled>
+                <i class="i i-file-excel"></i>
+                {{'ETIQUETA_EXPORTAR' | translate}}
+            </button>
+        </div>
+
+        <div class="col-lg-4">
+            <!--input type="search" name="search" placeholder="{{'PLACE_HOLDER_BUSCAR_EMISORA' | translate}}" class="input-sm form-control input-s-lg inline v-middle" ng-model="empresaBuscada" />-->
+        </div>
+
+        <div class="col-lg-4 text-right">
+            <a ui-sref="inicio.empresa.agrega" class="btn btn-sm btn-default" ng-if="tieneFacultad(FacultadesEnum.InsertarEmpresas)"><i class="i i-add-to-list"></i> {{'ETIQUETA_BOTON_REGISTRAR_NUEVA_EMPRESA' | translate}}</a>
+        </div>
+    </div>
+</section>
+<section class="panel panel-default">
+    <header class="panel-heading bg-light">
+        {{'ETIQUETA_LISTADO_EMPRESAS' | translate}}
+    </header>
+
+    <!--<div class="panel-body font-bold" style="background: #eeeeee; padding-left: 30px" ng-if="cargandoEmpresas">
+        <i class="fa fa-refresh fa-spin"></i>
+        {{'MENSAJE_INFO_CARGANDO_EMPRESAS' | translate}} ...
+    </div>
+    <div class="panel-body font-bold" style="background: #eeeeee; padding-left: 30px" ng-if="!cargandoEmpresas && !existenEmpresas">
+        {{'MENSAJE_INFO_SIN_RESULTADOS' | translate}}
+    </div>-->
+
+    <!--ng-if="!cargandoEmpresas && existenEmpresas"-->
+    <table id="tablaEmpresa" class="table table-striped b-t b-light" style="margin-bottom: 0px !important;" datatable="" dt-options="opcionesDataTableEmpresas">
+        <thead class="table-bordered">
+            <tr>
+                <th style="text-align:center;">{{'ETIQUETA_RFC' | translate}}</th>
+                <th style="text-align:center;">{{'ETIQUETA_CVE_PIZARRA' | translate}}</th>
+                <th style="text-align:center;">{{'ETIQUETA_ALIAS_CLAVE_COTIZACION' | translate}}</th>
+                <th style="text-align:center;">{{'ETIQUETA_RAZON_SOCIAL' | translate}}</th>
+                <th style="text-align:center;">{{'ETIQUETA_FIDUCIARIO_EMISOR' | translate}}</th>
+                <th style="text-align:center;">{{'ETIQUETA_ES_REPRESENTANTE_COMUN' | translate}}</th>
+                <th style="text-align:center;">{{'ETIQUETA_ES_FIDEICOMITENTE' | translate}}</th>
+                <th style="text-align:center;">{{'ETIQUETA_ES_REPRESENTANTE_COMUN' | translate}}</th>
+                <th style="text-align:center;">{{'TITULO_GRUPO_EMPRESA' | translate}}</th>
+                <th style="text-align:center;">{{'TITULO_TIPO_EMPRESA' | translate}}</th>
+                <th style="text-align:center;">{{'TITULO_FIDEICOMITENTE' | translate}}</th>
+                <th style="text-align:center;">{{'TITULO_REP_COMUN' | translate}}</th>
+                <th style="text-align:center;">{{'ETIQUETA_EDITAR' | translate}}</th>
+                <th style="text-align:center;">{{'ETIQUETA_BORRAR' | translate}}</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th style="text-align:center;">{{'ETIQUETA_RFC' | translate}}</th>
+                <th style="text-align:center;">{{'ETIQUETA_CVE_PIZARRA' | translate}}</th>
+                <th style="text-align:center;">{{'ETIQUETA_ALIAS_CLAVE_COTIZACION' | translate}}</th>
+                <th style="text-align:center;">{{'ETIQUETA_RAZON_SOCIAL' | translate}}</th>
+                <th style="text-align:center;">{{'ETIQUETA_FIDUCIARIO_EMISOR' | translate}}</th>
+                <th style="text-align:center;">{{'ETIQUETA_ES_REPRESENTANTE_COMUN' | translate}}</th>
+                <th style="text-align:center;">{{'ETIQUETA_ES_FIDEICOMITENTE' | translate}}</th>
+                <th style="text-align:center;">{{'ETIQUETA_ES_REPRESENTANTE_COMUN' | translate}}</th>
+                <th style="text-align:center;">{{'TITULO_GRUPO_EMPRESA' | translate}}</th>
+                <th style="text-align:center;">{{'TITULO_TIPO_EMPRESA' | translate}}</th>
+                <th style="text-align:center;">{{'TITULO_FIDEICOMITENTE' | translate}}</th>
+                <th style="text-align:center;">{{'TITULO_REP_COMUN' | translate}}</th>
+                <th style="text-align:center;">{{'ETIQUETA_EDITAR' | translate}}</th>
+                <th style="text-align:center;">{{'ETIQUETA_BORRAR' | translate}}</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <footer class="panel-footer">
+        <div class="row">
+            <div class="col-sm-3" ng-if="existenEmpresas">
+                <button type="button"
+                        class="btn btn-sm btn-default"
+                        ng-if="tieneFacultad(FacultadesEnum.ExportarDatosEmpresa)"
+                        ng-click="descargaArchivo()"
+                        ng-hide="exportando">
+                    <i class="i i-file-excel"></i>
+                    {{'ETIQUETA_EXPORTAR' | translate}}
+                </button>
+                <button type="button" class="btn btn-sm btn-default" ng-if="exportando" disabled>
+                    <i class="fa fa-refresh fa-spin"></i>
+                    {{'MENSAJE_INFO_EXPORTANDO' | translate}} ...
+                </button>
+            </div>
+            <div class="col-sm-3" ng-if="!existenEmpresas">
+                <button type="button"
+                        class="btn btn-sm btn-default" disabled>
+                    <i class="i i-file-excel"></i>
+                    {{'ETIQUETA_EXPORTAR' | translate}}
+                </button>
+            </div>
+            <div class="col-sm-4 text-center">
+            </div>
+            <div class="col-sm-4 text-right text-center-xs">
+            </div>
+        </div>
+    </footer>
+</section>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        function changePositionPaginate() {
+            $("#tablaEmpresa").find("thead").remove();
+        }
+
+        setInterval(changePositionPaginate, 100);
+    });
+</script>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+    <complexType>
+      <complexContent>
+        <restriction base="anyType">
+          <sequence>
+              <element ref="" minOccurs="1" maxOccurs="1" />
+          </sequence>              
+          <attribute name="id" type="ID" use="optional" />
+        </restriction>
+      </complexContent>
+    </complexType>
+</schema>

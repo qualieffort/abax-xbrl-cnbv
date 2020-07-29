@@ -1,0 +1,52 @@
+﻿<section>
+    <section class="vbox">
+        <section class="scrollable padder">
+            <div class="panel b-a">
+                <div class="panel-heading b-b">Migración Documento</div>
+                <div class="panel-body" ng-if="tieneFacultadMigrar">
+                    <div class="h3 m-b font-thin">Actualización Documentos Instancia</div>
+
+                    <div class="row">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-6">
+                            <p>
+                                Este proceso generara una nueva versión para todos los documentos existentes en la BD con los contextos actualizados.
+                            </p>
+                            <p>
+                                Se recomienda arduamente generar un respaldo de la BD en el estado actual antes de iniciar este proceso.
+                            </p>
+                            <p>
+                                Este proceso demora algunos minutos, se debe notificar a los usuarios que no accedan a la aplicación hasta que este haya concluido. 
+                            </p>
+                            <br />
+                            <a href="javascript:void(0);" ui-sref="inicio.panelControl" class="btn btn-default">
+                                Cancelar
+                            </a>
+                            <button type="button" class="btn btn-warning" ng-if="!migrando" ng-click="migrar()">Migrar Documentos</button>
+                            <button type="button" class="btn btn-warning" ng-if="migrando" disabled>
+                                <i class="fa fa-refresh fa-spin"></i>
+                                Migrando Documentos ...
+                            </button>
+
+
+                        </div>
+                        <div class="col-sm-4"></div>
+                    </div>
+                </div>
+                <div class="panel-body" ng-if="!tieneFacultadMigrar">
+                    <div class="row">
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-4">
+                            <div class="h3 m-b font-thin">No tiene privilegios suficientes para acceder a esta sección.</div>
+                            <br/>
+                            <a href="javascript:void(0);" ui-sref="inicio.panelControl" class="btn btn-warning" >
+                                Aceptar
+                            </a>
+                        </div>
+                        <div class="col-sm-4"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</section>

@@ -1,0 +1,132 @@
+﻿<section>
+    <section class="vbox">
+        <section class="scrollable padder">
+            <section class="panel panel-default">
+                <header class="panel-heading">
+                    {{'TITULO_CATALOGO_DE_ROLES' | translate}}
+                </header>
+                <div class="row wrapper">
+                    <div class="col-sm-3" ng-if="existeRoles">
+                        <button type="button"
+                                class="btn btn-sm btn-default"
+                                ng-if="tieneFacultad(FacultadesEnum.ExportarDatosRoles)"
+                                ng-click="exportaAExcel()"
+                                ng-hide="exportando">
+                            <i class="i i-file-excel"></i>
+                            {{'ETIQUETA_EXPORTAR' | translate}}
+                        </button>
+                        <button type="button" class="btn btn-sm btn-default" ng-if="exportando" disabled>
+                            <i class="fa fa-refresh fa-spin"></i>
+                            {{'MENSAJE_INFO_EXPORTANDO' | translate}} ...
+                        </button>
+                    </div>
+                    <div class="col-sm-3" ng-if="!existeRoles">
+                        <button type="button"
+                                class="btn btn-sm btn-default" disabled>
+                            <i class="i i-file-excel"></i>
+                            {{'ETIQUETA_EXPORTAR' | translate}}
+                        </button>
+                    </div>
+
+
+                    <div class="col-sm-5 m-b-xs text-center">
+                        <input type="text" name="search" ng-model="rolBuscado" placeholder="{{'ETIQUETA_BUSCAR_ROL' | translate}}" class="input-sm form-control input-s-lg inline v-middle" id="nombre" />
+                    </div>
+                    <div class="col-sm-4 m-b-xs text-right">
+                        <button name="create"
+                                class="btn btn-sm btn-default"
+                                ng-click="irRegistrarNuevoRol()"
+                                ng-if="tieneFacultad(FacultadesEnum.InsertarRoles)" >
+                            <i class="i i-add-to-list"></i> {{'ETIQUETA_BOTON_REGISTRAR_NUEVO_ROL' | translate}}
+                         </button>
+                    </div>
+                </div>
+            </section>
+            <section class="panel panel-default">
+                <header class="panel-heading bg-light">
+                    {{'ETIQUETA_LISTADO_ROLES' | translate}}
+                </header>
+                    
+                <div class="panel-body font-bold" style="background: #eeeeee; padding-left: 30px" ng-if="cargandoRoles">
+                    <i class="fa fa-refresh fa-spin"></i>
+                    {{'MENSAJE_INFO_CARGANDO_ROLES' | translate}} ...
+                </div>
+                <div class="panel-body font-bold" style="background: #eeeeee; padding-left: 30px" ng-if="!cargandoRoles && !existeRoles">
+                    {{'MENSAJE_INFO_SIN_RESULTADOS' | translate}}
+                </div>
+                <div ng-if="!cargandoRoles && existeRoles">
+                    <table id="tablaRoles" class="table table-striped b-t b-light" datatable="" dt-options="opcionesDataTableRoles">
+                        <thead>
+                            <tr>
+                                <th class="th-sortable" data-toggle="class" style="text-align:center;width:20%;">{{'ETIQUETA_NOMBRE'|translate}}</th>
+                                <th class="th-sortable" data-toggle="class" style="text-align:center;width:50%;">{{'ETIQUETA_DESCRIPCION' | translate }}</th>
+                                <th class="th-sortable" data-toggle="class" style="text-align: center;width:10%;" ng-if="tieneFacultad(FacultadesEnum.AsignarFacultadesRoles)">{{'ETIQUETA_FACULTADES' | translate}}</th>
+                                <th class="th-sortable" data-toggle="class" style="text-align: center;width:10%;" ng-if="tieneFacultad(FacultadesEnum.EditarRoles)">{{'ETIQUETA_EDITAR' | translate}}</th>
+                                <th class="th-sortable" data-toggle="class" style="text-align: center;width:10%;" ng-if="tieneFacultad(FacultadesEnum.EliminarRoles)">{{'ETIQUETA_BORRAR' | translate}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="rol in listadoRoles">
+                                <td style="text-align:center;">{{rol.Nombre}}</td>
+                                <td style="text-align:center;">{{rol.Descripcion}}</td>
+                                <td class="text-center" ng-if="tieneFacultad(FacultadesEnum.AsignarFacultadesRoles)">
+
+                                    <a title="{{'ETIQUETA_FACULTADES' | translate}}" href="javascript:void(0);" ng-click="irAsignarFacultades(rol)" class="btn btn-rounded btn-sm btn-icon btn-default">
+                                        <i class="i i-flow-tree"></i>
+                                    </a>
+
+                                </td>
+                                <td class="text-center" ng-if="tieneFacultad(FacultadesEnum.EditarRoles)">
+
+                                    <a title="{{'ETIQUETA_EDITAR' | translate}}" href="javascript:void(0);" ng-click="irEditarRol(rol)" class="btn btn-rounded btn-sm btn-icon btn-default">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+
+                                </td>
+                                <td class="text-center" ng-if="tieneFacultad(FacultadesEnum.EliminarRoles)">
+
+                                    <a title="{{'ETIQUETA_BORRAR' | translate}}" href="javascript:void(0)" ng-click="eliminarRol(rol)" class="btn btn-rounded btn-sm btn-icon btn-danger">
+                                        <i class="fa fa-trash-o"></i>
+                                    </a>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <footer class="panel-footer ">
+                    <div class="row">
+                        <div class="col-sm-4 hidden-xs">
+                            <div class="col-sm-3" ng-if="existeRoles">
+                                <button type="button"
+                                        class="btn btn-sm btn-default"
+                                        ng-if="tieneFacultad(FacultadesEnum.ExportarDatosRoles)"
+                                        ng-click="exportaAExcel()"
+                                        ng-hide="exportando">
+                                    <i class="i i-file-excel"></i>
+                                    {{'ETIQUETA_EXPORTAR' | translate}}
+                                </button>
+                                <button type="button" class="btn btn-sm btn-default" ng-if="exportando" disabled>
+                                    <i class="fa fa-refresh fa-spin"></i>
+                                    {{'MENSAJE_INFO_EXPORTANDO' | translate}} ...
+                                </button>
+                            </div>
+                            <div class="col-sm-3" ng-if="!existeRoles">
+                                <button type="button"
+                                        class="btn btn-sm btn-default" disabled>
+                                    <i class="i i-file-excel"></i>
+                                    {{'ETIQUETA_EXPORTAR' | translate}}
+                                </button>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-4 text-center">
+                            <small class="text-muted inline m-t-sm m-b-sm"></small>
+                        </div>
+                        <div class="col-sm-4 text-right text-center-xs"></div>
+                    </div>
+                </footer>
+            </section>
+        </section>
+    </section>
+</section>

@@ -1,0 +1,678 @@
+{
+  "IdConceptos": [
+    "ifrs_mx-cor_20160822_OutstandingBalanceDetail"
+  ],
+  "PlantillasContextos": {
+    "BankingMember_ZeroToSixMonthsMember": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2016_03_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_BankingMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:BankingMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_ZeroToSixMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:ZeroToSixMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_SevenToTwelveMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:SevenToTwelveMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_BankingMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:BankingMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_ThirteenToEightTeenMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:ThirteenToEightTeenMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_BankingMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:BankingMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_NineTeenToThirtySixMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:NineTeenToThirtySixMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_BankingMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:BankingMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_ThirtySevenMonthsOrMoreMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:ThirtySevenMonthsOrMoreMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_BankingMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:BankingMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_ZeroToSixMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:ZeroToSixMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_BankingMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:BankingMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_SevenToTwelveMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:SevenToTwelveMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_BankingMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:BankingMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_ThirteenToEightTeenMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:ThirteenToEightTeenMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_BankingMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:BankingMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_NineTeenToThirtySixMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:NineTeenToThirtySixMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_BankingMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:BankingMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_ThirtySevenMonthsOrMoreMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:ThirtySevenMonthsOrMoreMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_BankingMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:BankingMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_ZeroToSixMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:ZeroToSixMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_TotalBankingMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TotalBankingMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_SevenToTwelveMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:SevenToTwelveMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_TotalBankingMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TotalBankingMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_ThirteenToEightTeenMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:ThirteenToEightTeenMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_TotalBankingMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TotalBankingMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_NineTeenToThirtySixMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:NineTeenToThirtySixMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_TotalBankingMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TotalBankingMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_ThirtySevenMonthsOrMoreMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:ThirtySevenMonthsOrMoreMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_TotalBankingMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TotalBankingMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_ZeroToSixMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:ZeroToSixMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_SotckMarketMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:SotckMarketMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_SevenToTwelveMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:SevenToTwelveMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_SotckMarketMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:SotckMarketMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_ThirteenToEightTeenMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:ThirteenToEightTeenMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_SotckMarketMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:SotckMarketMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_NineTeenToThirtySixMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:NineTeenToThirtySixMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_SotckMarketMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:SotckMarketMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_ThirtySevenMonthsOrMoreMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:ThirtySevenMonthsOrMoreMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_SotckMarketMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:SotckMarketMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_ZeroToSixMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:ZeroToSixMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_PrivatePlacementsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:PrivatePlacementsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_SevenToTwelveMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:SevenToTwelveMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_PrivatePlacementsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:PrivatePlacementsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_ThirteenToEightTeenMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:ThirteenToEightTeenMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_PrivatePlacementsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:PrivatePlacementsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_NineTeenToThirtySixMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:NineTeenToThirtySixMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_PrivatePlacementsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:PrivatePlacementsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_ThirtySevenMonthsOrMoreMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:ThirtySevenMonthsOrMoreMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_PrivatePlacementsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:PrivatePlacementsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_ZeroToSixMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:ZeroToSixMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_OtherCurrentAndNonCurrentLiabilitiesWithCostMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:OtherCurrentAndNonCurrentLiabilitiesWithCostMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_SevenToTwelveMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:SevenToTwelveMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_OtherCurrentAndNonCurrentLiabilitiesWithCostMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:OtherCurrentAndNonCurrentLiabilitiesWithCostMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_ThirteenToEightTeenMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:ThirteenToEightTeenMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_OtherCurrentAndNonCurrentLiabilitiesWithCostMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:OtherCurrentAndNonCurrentLiabilitiesWithCostMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_NineTeenToThirtySixMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:NineTeenToThirtySixMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_OtherCurrentAndNonCurrentLiabilitiesWithCostMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:OtherCurrentAndNonCurrentLiabilitiesWithCostMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_ThirtySevenMonthsOrMoreMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:ThirtySevenMonthsOrMoreMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_OtherCurrentAndNonCurrentLiabilitiesWithCostMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:OtherCurrentAndNonCurrentLiabilitiesWithCostMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_ZeroToSixMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:ZeroToSixMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_TotalOtherCurrentAndNonCurrentLiabilitiesWithCostInNationalCurrencyMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TotalOtherCurrentAndNonCurrentLiabilitiesWithCostInNationalCurrencyMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_SevenToTwelveMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:SevenToTwelveMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_TotalOtherCurrentAndNonCurrentLiabilitiesWithCostInNationalCurrencyMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TotalOtherCurrentAndNonCurrentLiabilitiesWithCostInNationalCurrencyMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_ThirteenToEightTeenMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:ThirteenToEightTeenMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_TotalOtherCurrentAndNonCurrentLiabilitiesWithCostInNationalCurrencyMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TotalOtherCurrentAndNonCurrentLiabilitiesWithCostInNationalCurrencyMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_NineTeenToThirtySixMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:NineTeenToThirtySixMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_TotalOtherCurrentAndNonCurrentLiabilitiesWithCostInNationalCurrencyMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TotalOtherCurrentAndNonCurrentLiabilitiesWithCostInNationalCurrencyMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_ThirtySevenMonthsOrMoreMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:ThirtySevenMonthsOrMoreMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_TotalOtherCurrentAndNonCurrentLiabilitiesWithCostInNationalCurrencyMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TotalOtherCurrentAndNonCurrentLiabilitiesWithCostInNationalCurrencyMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_ZeroToSixMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:ZeroToSixMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_TotalStockMarketListedInTheStockMarketAndPrivatePlacementsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TotalStockMarketListedInTheStockMarketAndPrivatePlacementsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_SevenToTwelveMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:SevenToTwelveMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_TotalStockMarketListedInTheStockMarketAndPrivatePlacementsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TotalStockMarketListedInTheStockMarketAndPrivatePlacementsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_ThirteenToEightTeenMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:ThirteenToEightTeenMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_TotalStockMarketListedInTheStockMarketAndPrivatePlacementsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TotalStockMarketListedInTheStockMarketAndPrivatePlacementsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_NineTeenToThirtySixMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:NineTeenToThirtySixMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_TotalStockMarketListedInTheStockMarketAndPrivatePlacementsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TotalStockMarketListedInTheStockMarketAndPrivatePlacementsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_ThirtySevenMonthsOrMoreMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:ThirtySevenMonthsOrMoreMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_TotalStockMarketListedInTheStockMarketAndPrivatePlacementsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TotalStockMarketListedInTheStockMarketAndPrivatePlacementsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_ZeroToSixMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:ZeroToSixMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_GrandTotalLiabilitiesMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:GrandTotalLiabilitiesMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_SevenToTwelveMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:SevenToTwelveMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_GrandTotalLiabilitiesMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:GrandTotalLiabilitiesMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_ThirteenToEightTeenMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:ThirteenToEightTeenMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_GrandTotalLiabilitiesMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:GrandTotalLiabilitiesMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_NineTeenToThirtySixMonthsMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:NineTeenToThirtySixMonthsMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_GrandTotalLiabilitiesMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:GrandTotalLiabilitiesMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_ThirtySevenMonthsOrMoreMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:ThirtySevenMonthsOrMoreMember"
+        },
+        {
+          "Explicita": true,
+          "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+          "IdItemMiembro": "ifrs_mx-cor_20160822_GrandTotalLiabilitiesMember",
+          "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis",
+          "QNameItemMiembro": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:GrandTotalLiabilitiesMember"
+        }
+      ]
+    }
+  },
+  "PlantillaDimensiones": {
+    "ifrs_mx-cor_20160822_LiabilitiesSequenceTypedAxis": {
+      "PrefijoValor": "<ifrs_mx-cor_20160822:LiabilitiesSequenceDomain xmlns:ifrs_mx-cor_20160822=\"http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22\">",
+      "SubfijoValor": "</ifrs_mx-cor_20160822:LiabilitiesSequenceDomain>",
+      "EtiquetaNuevoElemento": "3",
+      "Explicita": false,
+      "IdDimension": "ifrs_mx-cor_20160822_LiabilitiesSequenceTypedAxis",
+      "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:LiabilitiesSequenceTypedAxis"
+    },
+    "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis": {
+      "PrefijoValor": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:",
+      "SubfijoValor": "",
+      "EtiquetaNuevoElemento": "BankingMember",
+      "Explicita": true,
+      "IdDimension": "ifrs_mx-cor_20160822_TypesOfLiabilitiesAxis",
+      "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TypesOfLiabilitiesAxis"
+    },
+    "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis": {
+      "PrefijoValor": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:",
+      "SubfijoValor": "",
+      "EtiquetaNuevoElemento": "ZeroToSixMonthsMember",
+      "Explicita": true,
+      "IdDimension": "ifrs_mx-cor_20160822_TimeIntervalBreakdownOfLiabilitiesAxis",
+      "QNameDimension": "http://cnbv.gob.mx/ifrs_mx-cor_20160822/full_ifrs_mx-cor_2016-08-22:TimeIntervalBreakdownOfLiabilitiesAxis"
+    }
+  },
+  "DimensionesDinamicas": [
+    "ifrs_mx-cor_20160822_LiabilitiesSequenceTypedAxis"
+  ],
+  "MaxColumnasVertical": 6,
+  "MaxColumnasHorizontal": 0,
+  "TamanoHoja": "Letter"
+}

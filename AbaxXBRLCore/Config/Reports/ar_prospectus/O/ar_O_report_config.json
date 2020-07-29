@@ -1,0 +1,23 @@
+//http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/411000-AR
+//http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/412000-O
+//http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/413000-O
+//http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/419000-O
+//http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/424000-O
+//http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/427000-O
+//http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/430000-O
+//http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/431000-O
+//http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/roles/432000-O
+
+{
+	"PeriodosPorRol": {
+		"411000-AR"	: ["periodo_actual"],
+		"412000-O"	: ["periodo_actual"],
+		"413000-O"	: ["periodo_actual"],
+		"419000-O"	: ["periodo_actual"],
+		"424000-O"	: ["periodo_actual"],
+		"427000-O"	: ["periodo_actual"],
+		"430000-O"	: ["periodo_actual"],
+		"431000-O"	: ["periodo_actual"],
+		"432000-O"	: ["periodo_actual"]
+	}
+}

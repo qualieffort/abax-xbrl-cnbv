@@ -1,0 +1,1365 @@
+
+<xbrl-contenedor-formato xbrl:rol-uri="{{::xbrlRol.Uri}}" orientacion="portrait" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+<div id="contenedorTablaExcel" class="table-responsive">
+    <table class="table table-striped b-t b-light" xbrl:tabla-excel selector="td:not(:first-child)" selector-contenedor-x="#contenedorTablaExcel" selector-contenedor-y="#contenedorFormatos" tab-index="1" on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)" on-after-paste="onAfterPaste(valorPegado, x, y)" on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)" xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura">
+        <thead>
+            <tr>
+                <th class="th-sortable" data-toggle="class">
+                    {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Concepto' : 'Concept' }}   
+                </th>
+                <th style="min-width: 230px; width: 230px;">
+                    {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Cierre Trimestre Actual' : 'Close Current Quarter' }} <br />
+                    {{ ::definicionPlantilla.obtenerVariablePorId("medida_MXN_sin_contexto")}}<br />
+                    {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2014_09_30")}}
+                </th>
+                <th style="min-width: 230px; width: 230px;">
+                    {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Cierre Ejercicio Anterior' : 'Close Previous Year' }} <br />
+                    {{ ::definicionPlantilla.obtenerVariablePorId("medida_MXN_sin_contexto")}}<br />
+                    {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2013_12_31")}}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_CashAndCashEquivalents" xbrl:nivel-indentacion="3">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A2f3b2596-d2db-40f1-9909-5e4d8d8e0d32">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A46ef21e9-5a4c-49e8-8940-7b45d11631cd">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_ShorttermInvestmentsClassifiedAsCashEquivalents" xbrl:nivel-indentacion="3">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A3e8a3a77-e019-434b-a63f-3b2bbc5e7b07">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A6441ac85-3cd1-4e0a-a4be-7816ec5f2695" xbrl:ultimo="true">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_CurrentFinancialAssetsAvailableforsale" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A9618164b-3f62-4aa0-8b7e-cdf46f081911">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aa433c121-91f0-4511-9a57-6c8acf8b7488">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_CurrentFinancialAssetsAtFairValueThroughProfitOrLossClassifiedAsHeldForTrading" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Af863789b-98e3-41d3-874c-bb429ea603ab">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A3e2a44be-0e57-454f-b9c3-0944b156edce">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_CurrentHeldtomaturityInvestments" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ab0a87123-3d30-4564-9e32-63777cb3f62d">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ad86a6b06-c6d0-4912-b7eb-73f7c126b7ae">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_ClientesNeto" xbrl:nivel-indentacion="3">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A38b3385d-3815-4e1c-885e-3070fdd95bed">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A6634964e-d0dd-43e7-b70d-68b113bada84">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_CurrentTradeReceivables" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A95b78302-621e-4524-91a9-b9b1df5adcf8">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A28475e2c-30d5-4580-84fc-9f2e84df8d0c">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_EstimacionparaCuentasIncobrablesClientes" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ac070aab8-b2d9-4fed-a1e2-372dc1f37a52">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A1f0f01ce-bbf0-4a51-865f-27bbabf80eba">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_OtrasCuentasporCobrarNeto" xbrl:nivel-indentacion="3">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ad2c2d573-0074-4c79-b1e6-e837d3f2987a">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A2ee9fef6-7a69-4580-be61-231eff00c8eb">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_OtherCurrentReceivables" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A9d1bca7f-690e-4d18-b669-0a04e81a0b29">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A3c33f9a0-4b61-4e68-9f4e-9821a5f7af8c">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_EstimacionparaCuentasIncobrablesOtrasCuentasporCobrar" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A5a13084b-2ba2-4fb2-93bd-9adf59aa7b23">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A22304208-165d-4402-afb9-0edc0ac34cdb">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_Inventories" xbrl:nivel-indentacion="3">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A9d2b0957-514d-4e37-9a50-2cbff73029e7">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ac1c4f75e-53c1-4c6c-8119-6a2a4d070080">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_CurrentBiologicalAssets" xbrl:nivel-indentacion="3">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Af456fa6a-9afc-4227-81fb-24df1de19626">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A2887bced-4eee-440d-968e-9b4e27fcb1b4">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_OtherCurrentNonfinancialAssets" xbrl:nivel-indentacion="3">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A27939e54-7abf-45bd-ab40-fc5a3234976e">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aa279f068-468f-41f3-80d0-d5bdbb1f9574">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_CurrentPrepayments" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A48b244ad-1e55-4d25-a41d-dc0ecf82f90a">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ad43fbc7d-2402-4c9b-b728-90c0d7007d80">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs-cp_1_CurrentDerivativeFinancialAssets" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A3057cc93-35cd-4f78-87ec-ba2623db5c4c">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A643d5211-9f5d-4685-bfed-a2ab6d68f6e4">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_ActivosMantenidosparaVenta" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A230f7aa6-fa4a-45c7-8ae3-43cfc4ed5ce1">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ae10aff70-e3aa-470d-a493-64180636fe42">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_DerechosLicenciasActivosCirculantes" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A00600220-d495-4c09-aab6-2e3c2b3e66cc">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A28f2c482-038e-49ba-982f-2c3685a857a9">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs-cp_1_OtherCurrentAssets" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A508c7578-b2d8-4acb-a81f-cf5b234ef4ad">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ad28c094d-a608-45ea-b5c3-70a55d812ee7">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_CurrentAssets" xbrl:nivel-indentacion="3">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aa13119a4-a39a-449a-bc29-f3278064c02a">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A300bc8ac-cee5-41e7-bde8-087f6a73d0a5">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_NoncurrentReceivables" xbrl:nivel-indentacion="3">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A808f7563-3bf3-42d6-96d7-27929936bb22">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A88d94039-a751-4441-aba3-e773017e2cd8">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_Inversiones" xbrl:nivel-indentacion="3">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aa7cc50be-dfb2-4cc2-a8ea-e0296bdb9fc6">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aacf89df9-d4eb-4b4b-9146-3da961d1919b">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_InvestmentsInSubsidiariesJointVenturesAndAssociates" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ad283ef79-6c0c-40a3-8ce6-a84b5bdc02bb">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Afa646bcc-c32d-469b-ad3f-45fd151df24e">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_NoncurrentHeldtomaturityInvestments" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A1bcc1845-2a4c-4b7e-a063-e2b11686d002">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A247c2863-eddd-4c23-9d96-50aa039f0618">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_NoncurrentFinancialAssetsAvailableforsale" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A3d8989f0-4008-416e-8990-c3cf74224778">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A233beb21-d488-4909-af4f-4933eb78422a">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_OtherNoncurrentFinancialAssets" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ab10310eb-85ce-4360-9295-f2fcc7810a6f">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A22842a77-401a-46dc-a0ab-17133b2c5b86">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_PropertyPlantAndEquipment" xbrl:nivel-indentacion="3">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A65b80217-6be6-4438-b4fe-8de2f39f85b0">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A1d3d0028-6ca0-4e7b-b400-3fe57df5c1c8">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_LandAndBuildings" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ab461b881-f1b2-489b-bd2b-ea8bdbf5c368">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A94803ecd-9bba-4b10-9f07-958294175aaa">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_Machinery" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A9a2750d9-0ea8-415c-bb73-dff3926638b5">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A5d46b5af-2853-41c8-9e81-a82dcdcae388">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_OtherPropertyPlantAndEquipment" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A754ef9f2-151c-44e5-887c-a6b7fdd0837a">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ab69ee2ad-c84e-4dcf-8577-fd3bc1b70464">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_DepreciacionAcumulada" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A9b1c6abf-541b-44d6-aa5a-97039912c965">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Adbf62ed3-0139-4b34-a0c3-2c4fa7d417b6">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_ConstructionInProgress" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A88ae4239-e6d5-4ad2-9153-49478148fa35">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ae4254883-64cf-4fbb-ac8c-581dd667d416">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_InvestmentProperty" xbrl:nivel-indentacion="3">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aeadce704-ffd6-46f1-872b-e37285d62faf">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A3a1567b5-3585-41b9-91e7-9d3688def7eb">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_NoncurrentBiologicalAssets" xbrl:nivel-indentacion="3">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ad272026d-8f50-41bb-8792-f7104fc2b6ed">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A70235e09-3d18-49e0-a347-c61f5975738c">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_IntangibleAssetsAndGoodwill" xbrl:nivel-indentacion="3">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A9f9f2353-2a96-4470-a0df-993e2b18821c">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A61296189-30da-4859-862d-9a198ec02759">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_Goodwill" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A7a0a78cf-8a04-4e06-bd33-36bf30763966">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ab6c1c331-e817-4d62-a3fa-e14bbf9eb9bd">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_BrandNames" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A29e99969-4edd-4f43-930c-005f9e4901f0">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ac3bb8d73-8e06-48a1-ac27-834fa463822d">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_LicencesAndFranchises" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ae785e137-0e5e-4e1f-be8e-1904d5643329">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A2088a0f4-203b-43c5-80a1-00aaf872bd6c">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_CopyrightsPatentsAndOtherIndustrialPropertyRightsServiceAndOperatingRights" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aa8018719-ce34-4291-8089-a6c9b77a5884">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A72f90f46-f236-4170-9e84-097c88b6c0ae">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_OtherIntangibleAssets" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A67d4b69d-39f0-4963-ac96-8d40734b3289">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A964d171e-18c9-49f8-9e9b-5b496fd33bfa">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_DeferredTaxAssets" xbrl:nivel-indentacion="3">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aa41f1e2a-17d7-48db-9f04-7163090d2ebf">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A454086ca-897d-4fda-91e5-bd2731e39412">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_OtherNoncurrentNonfinancialAssets" xbrl:nivel-indentacion="3">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ad2323349-3096-4a69-b146-316464acb248">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A39f9d77f-5bd6-4b07-848c-5cc691d490c1">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_NoncurrentPrepayments" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ab0c63c30-ebcd-492d-909b-d2b86f516cbb">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ae4679249-bb87-4120-9b49-9c9d494ee32a">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs-cp_1_NoncurrentDerivativeFinancialAssets" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Afb8d21b4-d6df-4804-82e6-42958d071d44">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A5c25c441-cf7f-478e-9ffd-4c1506167b13">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs-cp_1_NoncurrentRecognisedAssetsDefinedBenefitPlan" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A26e45922-418a-4ed9-92e0-9ad7b5e844e5">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A1cf873bb-73f6-4c25-8106-80335214c930">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_NoncurrentAssetsOrDisposalGroupsClassifiedAsHeldForSale" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A57a7a799-7a0c-4e81-9b31-c313c6f2bc47">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Acf646098-86d3-44e8-8298-ec4e0b8f20fd">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_CargosDiferidosNeto" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A7020a223-2d29-454c-ac83-d7e984c45a52">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Afbc2402e-6d70-4de3-b0c6-3d02309c0076">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs-cp_1_OtherNoncurrentAssets" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A6065f45f-da80-4a15-a4e9-726be2387712">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A75dc2b7a-b733-454a-9a68-3c6a7d217ab4">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_NoncurrentAssets" xbrl:nivel-indentacion="3">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A4c468c0b-ddb2-4bff-a198-527adde3a6df">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Acea60ec2-04a5-4b85-94b1-2475a7e68f23">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_Assets" xbrl:nivel-indentacion="2">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A5e3b474b-c779-421f-b122-7bb8383cb830">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A4694036c-22df-40f7-ac9f-2b96011c6ae9">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_CreditosBancariosCirculantes" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aaeae143e-3f36-4efd-8d2b-714b6aaec445">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A4848b8ed-be8a-470b-8c6c-ab9b032bb3f4">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_CreditosBursatilesCirculantes" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A6181d259-52a9-4ef6-b9b5-c17a95b8f3b1">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Acd0db217-8d52-42a0-9a1a-aac666f2eabd">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_OtherCurrentFinancialLiabilities" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ad54cf9c3-1ec0-4926-8415-9ffaa790185c">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A26242b3f-cd73-4a40-9c7d-d55f532cb23c">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_TradeAndOtherCurrentPayables" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ae8a38c70-4e8e-427d-a00b-5a1732d41655">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Acfa6b417-1520-483d-a977-55a3d1c2a506">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_CurrentTaxLiabilitiesCurrent" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A9cb5aa9b-d258-45c6-ba98-4fa13c5060d1">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A9c57dde7-8ca4-4a5d-8048-167fe8cd9f8d">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_ImpuestosUtilidadporPagar" xbrl:nivel-indentacion="5">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A8ad12564-cdb8-4ae8-a260-b5abecb0f01c">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A28581ade-e600-4df2-8c34-a8d145625837">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_OtrosImpuestosporPagar" xbrl:nivel-indentacion="5">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A3995fd1d-d652-43ad-ab8c-b1c1d5c31230">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ac520bfa7-444a-48fa-acac-b09b54666adc">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_OtrosPasivosCirculantes" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A59572318-b493-4c5f-b2f4-95407c6a8a5a">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A28935600-5acb-416e-8b75-31aa583d2157">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_InteresesporPagar" xbrl:nivel-indentacion="5">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Afb109de5-2936-4879-9509-d9b1bec63446">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A7bab9611-d462-4e03-82af-a283ef2c4891">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs-cp_1_CurrentDerivativeFinancialLiabilities" xbrl:nivel-indentacion="5">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A9d568dd5-caf2-4598-bd96-0b8ba34a704d">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aaf157c51-ecec-4923-9bc0-57e7b2734833">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_DeferredIncomeClassifiedAsCurrent" xbrl:nivel-indentacion="5">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aa8b7d2db-1290-4021-bce5-754943c7e44e">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A2725352f-903d-4a64-bb6d-ab03443eec4a">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_CurrentProvisionsForEmployeeBenefits" xbrl:nivel-indentacion="5">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A9912f190-bc89-4ccf-8b85-e16df81aa77c">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A3eea0ce3-d68c-4f5c-b784-57b87d9dce47">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_CurrentProvisions" xbrl:nivel-indentacion="5">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A3f38643e-4bed-465b-9932-5ecea2f03495">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A0b06246d-a218-426b-8a5f-4fcee54dc62a">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_PasivosRelacionadosconActivosMantenidosparaVentaCirculantesCirculantes" xbrl:nivel-indentacion="5">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aa68a79e4-fc24-49d4-9c9e-6ee0140797bc">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A5e3e5e1b-e346-4cb5-8389-7e5fdd4ce765">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs-cp_1_OtherCurrentLiabilities" xbrl:nivel-indentacion="5">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Adb6a9a79-503e-47dd-8227-d461b2132dd4">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A8401cf6a-8098-4c32-82ce-5919c7466be3">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_CurrentLiabilities" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aa8e04ea6-7db2-41b6-9546-53f875ef0589">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A1e8bc57c-8811-4f09-aab2-f652960e6a18">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_CreditosBancariosNoCirculantes" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A4832b5ab-a203-4fb8-a07a-8efd60cc5551">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aed52527e-98b8-48b4-bc45-3865b8774fda">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_CreditosBursatilesNoCirculantes" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A51843292-302f-40ae-8a24-5a0a1e635cbb">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A05353295-adc4-46c6-bd37-15bb043ea631">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_OtherNoncurrentFinancialLiabilities" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ad932849d-d55c-42e4-844f-cb7b676c09b5">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A59fe38de-648a-443e-8670-d209e33e3b1c">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_DeferredTaxLiabilities" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A762e1dad-cfb5-48e8-970c-082cff9248fd">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A483b5d8e-ff14-4fb2-aa39-85f314d60a64">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_OtrosPasivosNoCirculantes" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A7704b33b-7d7b-4bde-9434-b262e64b7e82">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A7c660adc-1a38-410b-a09d-0fe87ce9da3e">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs-cp_1_NoncurrentDerivativeFinancialLiabilities" xbrl:nivel-indentacion="5">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Abc7cda7b-e012-4d6f-88bb-8192d8f6a3f2">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A511c556c-f064-4519-bd0d-4fe96e10b8b3">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_DeferredIncomeClassifiedAsNoncurrent" xbrl:nivel-indentacion="5">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A1a53ae7d-cf59-4f39-be4f-11490323f23b">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aff79be3a-2c85-4dcd-b161-7cbfd04c38b2">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_NoncurrentProvisionsForEmployeeBenefits" xbrl:nivel-indentacion="5">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A43f22127-a7e6-4106-838b-5885d1c1cb95">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Af43ce5ad-19c3-4474-b841-4c8e4fdf0631">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_OtherLongtermProvisions" xbrl:nivel-indentacion="5">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aff97aacb-1a72-4055-aabf-9738bd852f3f">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Abdbef7f9-c35a-4292-898a-05e46721dfe4">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_PasivosRelacionadosconActivosMantenidosparaVentaCirculantesNoCirculantes" xbrl:nivel-indentacion="5">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ac9d5f378-fed8-4d38-8d7f-baa2ed372ab8">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Af01bb55a-c41c-4157-8b94-178ff3667172">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs-cp_1_OtherNoncurrentLiabilities" xbrl:nivel-indentacion="5">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A6fed73f3-b0bf-4632-939f-464a407290e0">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aa5ea5423-49f5-4c0a-a419-99a861886631">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_NoncurrentLiabilities" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A1ff22857-815c-4a3b-b05c-e6bc03040765">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ae547dc5e-93a4-434b-b603-686fb0fbcc97">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_Liabilities" xbrl:nivel-indentacion="3">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ace39d2c8-0862-4f72-b1c2-7e98356a5500">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A86dea7af-fd55-4589-bda7-4e20d9a1fee9">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_EquityAttributableToOwnersOfParent" xbrl:nivel-indentacion="3">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ae8bb3028-dc9a-4767-b4e7-c983e61202c3">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A118104e1-744e-469b-8f98-4abad376ecb9">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_IssuedCapital" xbrl:nivel-indentacion="3">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ac6830655-50e5-4ee8-be19-8ca30e0986cd">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A4ccf663f-be1a-45e5-9cac-19d26b009c48">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_TreasuryShares" xbrl:nivel-indentacion="3">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A231cc884-29eb-4bf9-a423-16150d0820c0">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A73d36612-4ba0-4149-8ab5-22cf357a6323">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_SharePremium" xbrl:nivel-indentacion="3">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aa4fd1a06-6a2f-4326-9f14-f782e77e184b">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A2c997502-bd43-48f2-b2ae-611b0a250a8d">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs-cp_1_AdditionalPaidinCapital" xbrl:nivel-indentacion="3">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A793c6b50-0321-4d43-853c-b7661eb46d81">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A69985a79-f3d8-4623-b1ec-1b3ff2a0ae21">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_OtherEquityInterest" xbrl:nivel-indentacion="3">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A3e5e1919-6e7b-453e-9021-70850c9ca8c1">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A2d97a961-7df6-4ef0-bb4f-71a17f090c80">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_RetainedEarnings" xbrl:nivel-indentacion="3">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Af8446323-9c0b-4b3d-86be-25c4868dfb92">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ac93dc524-2d13-444c-b24e-7100eaa11226">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs-cp_1_CapitalReserve" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A3bb7db7b-378c-40a3-a98a-bb82c43d72d4">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aec7ab3a4-24a5-4003-8a11-cda66dbfe36c">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_OtrasReservas" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A7ac332d8-b24b-4956-b012-2997899cf842">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A07b434f8-95f5-43f6-9ae6-b35803609caf">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_ResultadosEjerciciosAnteriores" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Abbc54bdd-57dd-407d-a685-25c6649dddad">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A693e968f-28ed-4eb5-8255-79722fd4f356">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_ResultadoEjercicio" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A539e7d39-5ccd-4e86-9118-93fcda25e18b">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A75a9b40d-6863-49c3-b887-098da11b052c">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_OtrosUtilidadesRetenidas" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A9b3f708a-a0df-4c65-933a-58555559e05b">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Abfd63527-dfe2-4bd5-a473-2f53fce60d28">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs-cp_1_AccumulatedOtherComprehensiveIncome" xbrl:nivel-indentacion="3">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A110976d3-a14c-4abc-8d27-b3d1b2ce3c68">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A3f5156b6-36b7-44b7-a209-6733deec73ad">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_RevaluationSurplus" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A76fe0e37-6887-4328-a3bc-a90992cca559">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A559c8c8a-fd17-44b1-b2e0-b8429dc3370c">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_GananciasPerdidasActuarialesporObligacionesLaborales" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A4e40fa41-8db4-4fc5-b138-20b44c5ddb40">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Abafb0678-8ce5-416f-8e5b-d74eb85fa244">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_ReserveOfExchangeDifferencesOnTranslation" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ac56938d1-e1f0-44b0-b1bd-0a39d32798c1">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A2660bb84-8baa-42a8-afa1-32693933786d">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_ReserveOfGainsAndLossesOnRemeasuringAvailableforsaleFinancialAssets" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A12870218-b7ae-4730-b589-cbb07b2899f0">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aad2abde0-c594-4755-8b94-c70bd52ed984">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_ReserveOfCashFlowHedges" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A8e572319-5ced-4bb8-abc6-e2e72b9d1dc6">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Af21a036b-b797-467a-9f4c-143d92f25155">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_CambiosValorRazonableOtrosActivosdeOtrosResultadosIntegralesAcumulados" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aa306df62-6abc-4585-b31a-6594179e7551">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A11665475-97ac-4879-b043-298231963f5a">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_ReserveOfGainsAndLossesFromInvestmentsInEquityInstruments" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Af91e6ae0-1c25-471b-9c4f-fcab3d3f666e">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ae0871002-e6b9-48b4-b985-b53a5ae913a8">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="mx-ifrs-ics_OtrosResultadosIntegrales" xbrl:nivel-indentacion="4">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Af1dc3637-6dc4-4e50-ab71-5558c691deee">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A3cd881bc-9a2c-439a-b865-79ae76eec6a7">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_NoncontrollingInterests" xbrl:nivel-indentacion="3">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Aac6a5494-0018-4b13-b550-3cd0c5ab1589">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A45b30349-2221-403c-b6d3-991f63941ea2">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_Equity" xbrl:nivel-indentacion="3">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ab1183d43-2eae-44d7-a1b1-92cc114b03bd">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Af785719f-9071-4c46-b38a-f71bd40cf9af">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_EquityAndLiabilities" xbrl:nivel-indentacion="2">
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A636c7cbc-75cc-4fc2-9d42-5766c2093ab8">
+                    </xbrl:campo-captura>
+                </td>
+                <td>
+                    <xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A0fb15b84-f27b-4f60-a342-606d278ccec7">
+                    </xbrl:campo-captura>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</xbrl-contenedor-formato>

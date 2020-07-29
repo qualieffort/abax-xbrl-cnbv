@@ -1,0 +1,54 @@
+{
+  "IdConceptos": [
+    "ar_pros_AdministratorName",
+    "ar_pros_AdministratorFirstName",
+    "ar_pros_AdministratorSecondName",
+    "ar_pros_AdministratorPosition",
+    "ar_pros_AdministratorAge",
+    "ar_pros_AdministratorMaximumStudiesDegree",
+    "ar_pros_AdministratorMainResponsabilities",
+    "ar_pros_AdministratorRelationship"
+  ],
+  "PlantillasContextos": {
+    "GovernorMember": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfCompanyAdministratorsAxis",
+          "IdItemMiembro": "ar_pros_GovernorMember",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfCompanyAdministratorsAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:GovernorMember"
+        }
+      ]
+    }
+  },
+  "PlantillaDimensiones": {
+    "ar_pros_TypeOfCompanyAdministratorsAxis": {
+      "PrefijoValor": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:",
+      "SubfijoValor": "",
+      "EtiquetaNuevoElemento": "GovernorMember",
+      "Explicita": true,
+      "IdDimension": "ar_pros_TypeOfCompanyAdministratorsAxis",
+      "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfCompanyAdministratorsAxis"
+    },
+    "ar_pros_CompanyAdministratorsSecuenceTypedAxis": {
+      "PrefijoValor": "<ar_pros:CompanyAdministratorsSequenceDomain xmlns:ar_pros=\"http://www.cnbv.gob.mx/2016-08-22/ar_prospectus\">",
+      "SubfijoValor": "</ar_pros:CompanyAdministratorsSequenceDomain>",
+      "EtiquetaNuevoElemento": "1",
+      "Explicita": false,
+      "IdDimension": "ar_pros_CompanyAdministratorsSecuenceTypedAxis",
+      "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:CompanyAdministratorsSecuenceTypedAxis"
+    }
+  },
+  "DimensionesDinamicas": [
+    "ar_pros_CompanyAdministratorsSecuenceTypedAxis"
+  ],
+  "MaxColumnasVertical": 6,
+  "MaxColumnasHorizontal": 0,
+  "TamanoHoja": "Letter"
+}

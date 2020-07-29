@@ -1,0 +1,130 @@
+﻿<section>
+    <section class="vbox">
+        <section class="scrollable padder">
+            <div class="m-b-md">
+                <h3 class="m-b-none">{{'TITULO_CONSULTA_AL_REPOSITORIO_INFORMACION' | translate}}</h3>
+            </div>
+            <section class="panel panel-default">
+
+
+                <header class="panel-heading bg-light">
+                    <strong>{{'ETIQUETA_ELEMENTO_CONSULTADO' |  translate}}:</strong>
+
+                    <select chosen width="'25%'"
+                            data-placeholder="{{'ETIQUETA_SELECCIONAR_TAXONOMIA' | translate}}"
+                            ng-model="IdTaxonomiaXbrlRepositorio"
+                            ng-options="taxonomia.IdTaxonomiaXbrl as taxonomia.Nombre for taxonomia in taxonomiasRepositorio"
+                            ng-change="cargarConceptosTaxonomia()">
+                        <option value="">--{{'ETIQUETA_SELECCIONAR_TAXONOMIA' | translate}}--</option>
+                    </select>
+
+
+                    <select chosen width="'25%'"
+                            ng-options="k as v for (k,v) in diccionarioConceptos"
+                            ng-model="conceptoBusqueda"
+                            style="display: none;"></select>
+
+                    <div style="white-space: nowrap; padding-right: 5px; float: right">
+                        <button class="btn btn-sm btn-default"
+                                type="button"
+                                ng-click="buscarHechosConcepto()">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{'ETIQUETA_BOTON_BUSCAR' | translate}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </button>
+                    </div>
+                </header>
+            </section>
+
+            <section class="panel panel-default">
+                <header class="panel-heading bg-light">
+                    {{'TITULO_LISTA_HECHOS_ENCONTRADOS' | translate}}
+                </header>
+
+                <div class="panel-body font-bold" style="padding-left: 30px;" ng-if="cargandoHechos">
+                    <i class="fa fa-refresh fa-spin"></i>
+                    {{'MENSAJE_INFO_BUSCANDO_HECHOS_CONCEPTO_SELECCIONADO' | translate}}
+                </div>
+
+                <div class="panel-body font-bold" style="padding-left: 30px;" ng-if="!cargandoHechos && !existenHechos">
+                    {{'MENSAJE_INFO_SIN_RESULTADOS_CONSULTA_REPOSITORIO' | translate}}.
+                </div>
+
+                <div class="table-responsive" ng-if="!cargandoHechos && existenHechos">
+                    <table class="table table-striped b-t b-light" id="tablaDocumentosInstanciaPropios" datatable="" dt-options="dataTableOptions">
+                        <thead>
+                            <tr>
+                                <th width="20px" class="th-sortable" data-toggle="class" style="text-align: center;">{{'ETIQUETA_ESTADO'|translate}}</th>
+                                <th class="th-sortable" data-toggle="class">
+                                    {{'ETIQUETA_DOCUMENTO' | translate}}
+                                </th>
+                                <th class="th-sortable" data-toggle="class">
+                                    {{'ETIQUETA_ENTIDAD_REPORTA' | translate}}
+                                </th>
+                                <th class="th-sortable" data-toggle="class" style="text-align: center; min-width: 180px; width: 180px;">{{'ETIQUETA_FECHA_CREACION'|translate}}</th>
+                                <th class="th-sortable" data-toggle="class" style="min-width: 180px; width: 180px;" ng-repeat="contexto in contextosResultado">
+                                    {{'ETIQUETA_CONTEXTO' | translate}}
+                                    <br />
+                                    <strong ng-if="contexto.FechaInicio && contexto.FechaInicio != null" style="white-space: nowrap;">
+                                        {{formateaFecha(contexto.FechaInicio)}} - {{formateaFecha(contexto.FechaFin)}}
+                                    </strong>
+                                    <strong ng-if="!contexto.FechaInicio || contexto.FechaInicio == null" style="white-space: nowrap;">
+                                        {{formateaFecha(contexto.FechaFin)}}
+                                    </strong>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr ng-repeat="documento in resultadoConsulta">
+                                <td>
+                                    <span class="fa-stack pull-left m-r-sm" style="margin-top: 5px; margin-left: 5px;" ng-if="documento.EsCorrecto">
+                                        <i class="fa fa-circle fa-stack-2x text-success"></i>
+                                        <i class="fa fa-check fa-stack-1x text-white"></i>
+                                    </span>
+                                    <span class="fa-stack pull-left m-r-sm" style="margin-top: 5px; margin-left: 5px;" ng-if="!documento.EsCorrecto">
+                                        <i class="fa fa-circle fa-stack-2x text-danger"></i><i class="fa fa-exclamation fa-stack-1x text-white"></i>
+                                    </span>
+                                </td>
+                                <td style="cursor: pointer" ng-click="cargarDocumentoInstancia(documento.IdDocumentoInstancia)">
+                                    <span ng-if="documento.TituloDocumento && documento.TituloDocumento.length > 0">
+                                        {{documento.TituloDocumento}}
+                                    </span>
+                                    <span ng-if="!documento.TituloDocumento || documento.TituloDocumento.length == 0">
+                                        {{'ETIQUETA_SIN_TITULO' | translate}}
+                                    </span>
+                                </td>
+                                <td>
+                                    {{documento.Entidad}}
+                                </td>
+                                <td style="text-align: center;">
+                                    {{formateaFecha(documento.FechaCreacion)}}
+                                </td>
+                                <td ng-repeat="hecho in documento.HechosEnDocumento">
+                                    <div>
+                                        <span ng-if="!hecho.EsHtml">
+                                            {{hecho.Valor}}
+                                        </span>
+                                        <span ng-if="hecho.EsHtml" ng-bind-html="hecho.Valor">
+
+                                        </span>
+                                    </div>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <footer class="panel-footer">
+                    <div class="row">
+                        <div class="col-sm-4 hidden-xs">
+                        </div>
+
+                        <div class="col-sm-4 text-right text-center-xs">
+                        </div>
+
+                    </div>
+                </footer>
+            </section>
+
+        </section>
+    </section>
+</section>

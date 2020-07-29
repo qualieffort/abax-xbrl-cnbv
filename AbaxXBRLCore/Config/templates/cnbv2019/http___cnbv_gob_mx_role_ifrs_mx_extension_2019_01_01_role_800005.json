@@ -1,0 +1,704 @@
+{
+  "ContextosPlantillaPorId": {
+                "trimestre_actual_total_ingresos_total_marcas_total_productos": {
+                    "Id": "trimestre_actual_total_ingresos_total_marcas_total_productos",
+                    "Periodo": {
+                        "Tipo": 2,
+                        "FechaInicio": "#fecha_2015_01_01",
+                        "FechaFin": "#fecha_2015_09_30",
+                        "FechaInstante": ""
+                    },
+                    "Entidad": {
+                        "Id": "#nombreEntidad",
+                        "EsquemaId": "#esquemaEntidad",
+                        "ContieneInformacionDimensional": false,
+                        "Segmento": null,
+                        "ValoresDimension": []
+                    },
+                    "ContieneInformacionDimensional": true,
+                    "Escenario": "<xbrli:segment xmlns:xbrli=\"http://www.xbrl.org/2003/instance\"><xbrldi:explicitMember dimension=\"ifrs_mx-cor_20141205:TipoDeIngresoEje\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\">ifrs_mx-cor_20141205:IngresosTotalesMiembro</xbrldi:explicitMember><xbrldi:typedMember dimension=\"ifrs_mx-cor_20141205:PrincipalesMarcasEje\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\"><ifrs_mx-cor_20141205:PrincipalesMarcasDomain xmlns:ifrs_mx-cor_20141205=\"http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05\">TODAS</ifrs_mx-cor_20141205:PrincipalesMarcasDomain></xbrldi:typedMember><xbrldi:typedMember dimension=\"ifrs_mx-cor_20141205:PrincipalesProductosOLineaDeProductosEje\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\"><ifrs_mx-cor_20141205:PrincipalesProductosOLineaDeProductosDomain xmlns:ifrs_mx-cor_20141205=\"http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05\">TODOS</ifrs_mx-cor_20141205:PrincipalesProductosOLineaDeProductosDomain></xbrldi:typedMember></xbrli:segment>",
+                    "ValoresDimension": [
+							{
+                                "Explicita": true,
+                                "IdDimension": "ifrs_mx-cor_20141205_TipoDeIngresoEje",
+                                "IdItemMiembro": "ifrs_mx-cor_20141205_IngresosTotalesMiembro",
+                                "QNameDimension": "http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05:TipoDeIngresoEje",
+                                "QNameItemMiembro": "http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05:IngresosTotalesMiembro",
+                                "ElementoMiembroTipificado": null
+                            },
+                            {
+                                "Explicita": false,
+                                "IdDimension": "ifrs_mx-cor_20141205_PrincipalesMarcasEje",
+                                "IdItemMiembro": null,
+                                "QNameDimension": "http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05:PrincipalesMarcasEje",
+                                "QNameItemMiembro": null,
+                                "ElementoMiembroTipificado": "<ifrs_mx-cor_20141205:PrincipalesMarcasDomain xmlns:ifrs_mx-cor_20141205=\"http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05\">TODAS</ifrs_mx-cor_20141205:PrincipalesMarcasDomain>"
+                            },
+                            {
+                                "Explicita": false,
+                                "IdDimension": "ifrs_mx-cor_20141205_PrincipalesProductosOLineaDeProductosEje",
+                                "IdItemMiembro": null,
+                                "QNameDimension": "http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05:PrincipalesProductosOLineaDeProductosEje",
+                                "QNameItemMiembro": null,
+                                "ElementoMiembroTipificado": "<ifrs_mx-cor_20141205:PrincipalesProductosOLineaDeProductosDomain xmlns:ifrs_mx-cor_20141205=\"http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05\">TODOS</ifrs_mx-cor_20141205:PrincipalesProductosOLineaDeProductosDomain>"
+                            }
+					]
+                },
+                "Context_Duration_IngresosNacionalesMiembro_TOTAL_TOTAL": {
+                    "Id": "Context_Duration_IngresosNacionalesMiembro_TOTAL_TOTAL",
+                    "Periodo": {
+                        "Tipo": 2,
+                        "FechaInicio": "#fecha_2015_01_01",
+                        "FechaFin": "#fecha_2015_09_30",
+                        "FechaInstante": ""
+                    },
+                    "Entidad": {
+                        "Id": "#nombreEntidad",
+                        "EsquemaId": "#esquemaEntidad",
+                        "ContieneInformacionDimensional": false,
+                        "Segmento": null,
+                        "ValoresDimension": [
+                            
+                        ]
+                    },
+                    "ContieneInformacionDimensional": true,
+                    "Escenario": "<xbrli:segment xmlns:xbrli=\"http://www.xbrl.org/2003/instance\"><xbrldi:explicitMember dimension=\"ifrs_mx-cor_20141205:TipoDeIngresoEje\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\">ifrs_mx-cor_20141205:IngresosNacionalesMiembro</xbrldi:explicitMember><xbrldi:typedMember dimension=\"ifrs_mx-cor_20141205:PrincipalesMarcasEje\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\"><ifrs_mx-cor_20141205:PrincipalesMarcasDomain xmlns:ifrs_mx-cor_20141205=\"http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05\">TODAS</ifrs_mx-cor_20141205:PrincipalesMarcasDomain></xbrldi:typedMember><xbrldi:typedMember dimension=\"ifrs_mx-cor_20141205:PrincipalesProductosOLineaDeProductosEje\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\"><ifrs_mx-cor_20141205:PrincipalesProductosOLineaDeProductosDomain xmlns:ifrs_mx-cor_20141205=\"http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05\">TODOS</ifrs_mx-cor_20141205:PrincipalesProductosOLineaDeProductosDomain></xbrldi:typedMember></xbrli:segment>",
+                    "ValoresDimension": [{
+                                "Explicita": true,
+                                "IdDimension": "ifrs_mx-cor_20141205_TipoDeIngresoEje",
+                                "IdItemMiembro": "ifrs_mx-cor_20141205_IngresosNacionalesMiembro",
+                                "QNameDimension": "http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05:TipoDeIngresoEje",
+                                "QNameItemMiembro": "http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05:IngresosNacionalesMiembro",
+                                "ElementoMiembroTipificado": null
+                            },
+                            {
+                                "Explicita": false,
+                                "IdDimension": "ifrs_mx-cor_20141205_PrincipalesMarcasEje",
+                                "IdItemMiembro": null,
+                                "QNameDimension": "http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05:PrincipalesMarcasEje",
+                                "QNameItemMiembro": null,
+                                "ElementoMiembroTipificado": "<ifrs_mx-cor_20141205:PrincipalesMarcasDomain xmlns:ifrs_mx-cor_20141205=\"http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05\">TODAS</ifrs_mx-cor_20141205:PrincipalesMarcasDomain>"
+                            },
+                            {
+                                "Explicita": false,
+                                "IdDimension": "ifrs_mx-cor_20141205_PrincipalesProductosOLineaDeProductosEje",
+                                "IdItemMiembro": null,
+                                "QNameDimension": "http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05:PrincipalesProductosOLineaDeProductosEje",
+                                "QNameItemMiembro": null,
+                                "ElementoMiembroTipificado": "<ifrs_mx-cor_20141205:PrincipalesProductosOLineaDeProductosDomain xmlns:ifrs_mx-cor_20141205=\"http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05\">TODOS</ifrs_mx-cor_20141205:PrincipalesProductosOLineaDeProductosDomain>"
+                            }]
+                },
+                "Context_Duration_IngresosPorExportacionMiembro_TOTAL_TOTAL": {
+                    "Id": "Context_Duration_IngresosPorExportacionMiembro_TOTAL_TOTAL",
+                    "Periodo": {
+                        "Tipo": 2,
+                        "FechaInicio": "#fecha_2015_01_01",
+                        "FechaFin": "#fecha_2015_09_30",
+                        "FechaInstante": ""
+                    },
+                    "Entidad": {
+                        "Id": "#nombreEntidad",
+                        "EsquemaId": "#esquemaEntidad",
+                        "ContieneInformacionDimensional": false,
+                        "Segmento": null,
+                        "ValoresDimension": [
+                            
+                        ]
+                    },
+                    "ContieneInformacionDimensional": true,
+                    "Escenario": "<xbrli:segment xmlns:xbrli=\"http://www.xbrl.org/2003/instance\"><xbrldi:explicitMember dimension=\"ifrs_mx-cor_20141205:TipoDeIngresoEje\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\">ifrs_mx-cor_20141205:IngresosPorExportacionMiembro</xbrldi:explicitMember><xbrldi:typedMember dimension=\"ifrs_mx-cor_20141205:PrincipalesMarcasEje\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\"><ifrs_mx-cor_20141205:PrincipalesMarcasDomain xmlns:ifrs_mx-cor_20141205=\"http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05\">TODAS</ifrs_mx-cor_20141205:PrincipalesMarcasDomain></xbrldi:typedMember><xbrldi:typedMember dimension=\"ifrs_mx-cor_20141205:PrincipalesProductosOLineaDeProductosEje\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\"><ifrs_mx-cor_20141205:PrincipalesProductosOLineaDeProductosDomain xmlns:ifrs_mx-cor_20141205=\"http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05\">TODOS</ifrs_mx-cor_20141205:PrincipalesProductosOLineaDeProductosDomain></xbrldi:typedMember></xbrli:segment>",
+                    "ValoresDimension": [
+					{
+                                "Explicita": true,
+                                "IdDimension": "ifrs_mx-cor_20141205_TipoDeIngresoEje",
+                                "IdItemMiembro": "ifrs_mx-cor_20141205_IngresosPorExportacionMiembro",
+                                "QNameDimension": "http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05:TipoDeIngresoEje",
+                                "QNameItemMiembro": "http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05:IngresosPorExportacionMiembro",
+                                "ElementoMiembroTipificado": null
+                            },
+                            {
+                                "Explicita": false,
+                                "IdDimension": "ifrs_mx-cor_20141205_PrincipalesMarcasEje",
+                                "IdItemMiembro": null,
+                                "QNameDimension": "http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05:PrincipalesMarcasEje",
+                                "QNameItemMiembro": null,
+                                "ElementoMiembroTipificado": "<ifrs_mx-cor_20141205:PrincipalesMarcasDomain xmlns:ifrs_mx-cor_20141205=\"http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05\">TODAS</ifrs_mx-cor_20141205:PrincipalesMarcasDomain>"
+                            },
+                            {
+                                "Explicita": false,
+                                "IdDimension": "ifrs_mx-cor_20141205_PrincipalesProductosOLineaDeProductosEje",
+                                "IdItemMiembro": null,
+                                "QNameDimension": "http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05:PrincipalesProductosOLineaDeProductosEje",
+                                "QNameItemMiembro": null,
+                                "ElementoMiembroTipificado": "<ifrs_mx-cor_20141205:PrincipalesProductosOLineaDeProductosDomain xmlns:ifrs_mx-cor_20141205=\"http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05\">TODOS</ifrs_mx-cor_20141205:PrincipalesProductosOLineaDeProductosDomain>"
+                            }
+					]
+                },
+                "Context_Duration_IngresosDeSubsidiariasEnElExtranjeroMiembro_TOTAL_TOTAL": {
+                    "Id": "Context_Duration_IngresosDeSubsidiariasEnElExtranjeroMiembro_TOTAL_TOTAL",
+                    "Periodo": {
+                        "Tipo": 2,
+                        "FechaInicio": "#fecha_2015_01_01",
+                        "FechaFin": "#fecha_2015_09_30",
+                        "FechaInstante": ""
+                    },
+                    "Entidad": {
+                        "Id": "#nombreEntidad",
+                        "EsquemaId": "#esquemaEntidad",
+                        "ContieneInformacionDimensional": false,
+                        "Segmento": null,
+                        "ValoresDimension": [
+                            
+                        ]
+                    },
+                    "ContieneInformacionDimensional": true,
+                    "Escenario": "<xbrli:segment xmlns:xbrli=\"http://www.xbrl.org/2003/instance\"><xbrldi:explicitMember dimension=\"ifrs_mx-cor_20141205:TipoDeIngresoEje\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\">ifrs_mx-cor_20141205:IngresosDeSubsidiariasEnElExtranjeroMiembro</xbrldi:explicitMember><xbrldi:typedMember dimension=\"ifrs_mx-cor_20141205:PrincipalesMarcasEje\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\"><ifrs_mx-cor_20141205:PrincipalesMarcasDomain xmlns:ifrs_mx-cor_20141205=\"http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05\">TODAS</ifrs_mx-cor_20141205:PrincipalesMarcasDomain></xbrldi:typedMember><xbrldi:typedMember dimension=\"ifrs_mx-cor_20141205:PrincipalesProductosOLineaDeProductosEje\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\"><ifrs_mx-cor_20141205:PrincipalesProductosOLineaDeProductosDomain xmlns:ifrs_mx-cor_20141205=\"http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05\">TODOS</ifrs_mx-cor_20141205:PrincipalesProductosOLineaDeProductosDomain></xbrldi:typedMember></xbrli:segment>",
+                    "ValoresDimension": [
+						{
+                                "Explicita": true,
+                                "IdDimension": "ifrs_mx-cor_20141205_TipoDeIngresoEje",
+                                "IdItemMiembro": "ifrs_mx-cor_20141205_IngresosDeSubsidiariasEnElExtranjeroMiembro",
+                                "QNameDimension": "http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05:TipoDeIngresoEje",
+                                "QNameItemMiembro": "http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05:IngresosDeSubsidiariasEnElExtranjeroMiembro",
+                                "ElementoMiembroTipificado": null
+                            },
+                            {
+                                "Explicita": false,
+                                "IdDimension": "ifrs_mx-cor_20141205_PrincipalesMarcasEje",
+                                "IdItemMiembro": null,
+                                "QNameDimension": "http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05:PrincipalesMarcasEje",
+                                "QNameItemMiembro": null,
+                                "ElementoMiembroTipificado": "<ifrs_mx-cor_20141205:PrincipalesMarcasDomain xmlns:ifrs_mx-cor_20141205=\"http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05\">TODAS</ifrs_mx-cor_20141205:PrincipalesMarcasDomain>"
+                            },
+                            {
+                                "Explicita": false,
+                                "IdDimension": "ifrs_mx-cor_20141205_PrincipalesProductosOLineaDeProductosEje",
+                                "IdItemMiembro": null,
+                                "QNameDimension": "http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05:PrincipalesProductosOLineaDeProductosEje",
+                                "QNameItemMiembro": null,
+                                "ElementoMiembroTipificado": "<ifrs_mx-cor_20141205:PrincipalesProductosOLineaDeProductosDomain xmlns:ifrs_mx-cor_20141205=\"http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05\">TODOS</ifrs_mx-cor_20141205:PrincipalesProductosOLineaDeProductosDomain>"
+                            }
+					]
+                }
+            },
+  "UnidadesPlantillaPorId": {
+    "Peso_Mx": {
+      "Id": "Peso_Mx",
+      "Tipo": 1,
+      "Medidas": [
+        {
+          "Nombre": "#medida_MXN",
+          "EspacioNombres": "#medida_http___www_xbrl_org_2003_iso4217"
+        }
+      ],
+      "MedidasDenominador": [],
+      "MedidasNumerador": []
+    }
+  },
+  "HechosPlantillaPorId": {
+    "Ac53c1485-c468-47a9-bbf8-04d90332f49e": {
+      "Id": "Ac53c1485-c468-47a9-bbf8-04d90332f49e",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "trimestre_actual_total_ingresos_total_marcas_total_productos",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "A6519bf39-9bd3-4bc8-a100-83adbed489cd": {
+      "Id": "A6519bf39-9bd3-4bc8-a100-83adbed489cd",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosNacionalesMiembro_TOTAL_TOTAL",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "A710b15d5-8ad0-485a-93a5-9893b33b0327": {
+      "Id": "A710b15d5-8ad0-485a-93a5-9893b33b0327",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosPorExportacionMiembro_TOTAL_TOTAL",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "A7a665c9e-3026-4158-a5c6-ddb9da0117f4": {
+      "Id": "A7a665c9e-3026-4158-a5c6-ddb9da0117f4",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosDeSubsidiariasEnElExtranjeroMiembro_TOTAL_TOTAL",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "A28389ee3-a46b-43ef-b6fa-3b6a5a707098": {
+      "Id": "A28389ee3-a46b-43ef-b6fa-3b6a5a707098",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "trimestre_actual_total_ingresos_gasolina_magna",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "Ad12a4b3d-f3b3-4495-9ce6-8d26a5ccf887": {
+      "Id": "Ad12a4b3d-f3b3-4495-9ce6-8d26a5ccf887",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "trimestre_actual_total_ingreso_gasolina_premium",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "Aec9582e2-ca0f-4090-91f3-64689d0a64c4": {
+      "Id": "Aec9582e2-ca0f-4090-91f3-64689d0a64c4",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosTotalesMiembro_GASOLINA_TOTAL",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "A4dd4c4d3-821d-4b13-b6c5-a11ab3e09412": {
+      "Id": "A4dd4c4d3-821d-4b13-b6c5-a11ab3e09412",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosNacionalesMiembro_GASOLINA_MAGNA",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "Aa9c6f7f6-7e8e-498e-997c-952a5200aeaf": {
+      "Id": "Aa9c6f7f6-7e8e-498e-997c-952a5200aeaf",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosNacionalesMiembro_GASOLINA_PREMIUM",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "A299b2d4c-2583-4b9c-bd3e-298ae0cc368f": {
+      "Id": "A299b2d4c-2583-4b9c-bd3e-298ae0cc368f",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosNacionalesMiembro_GASOLINA_TOTAL",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "Ab53cebdc-6f88-42c8-8bac-9dfff34aef0a": {
+      "Id": "Ab53cebdc-6f88-42c8-8bac-9dfff34aef0a",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosNacionalesMiembro_GASOLINA_MAGNA_2",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "Adbf25d8f-4277-486b-9610-a1cfc68d8395": {
+      "Id": "Adbf25d8f-4277-486b-9610-a1cfc68d8395",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosNacionalesMiembro_GASOLINA_PREMIUM_2",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "A897bad4d-82bb-44d0-9157-809bc3267acf": {
+      "Id": "A897bad4d-82bb-44d0-9157-809bc3267acf",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosNacionalesMiembro_GASOLINA_TODOS",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "Af502624c-e674-499d-97f6-2556132122b9": {
+      "Id": "Af502624c-e674-499d-97f6-2556132122b9",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosNacionalesMiembro_TODAS_TODOS",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "A2e44d5bb-a97f-4845-8465-a42674d6d4b2": {
+      "Id": "A2e44d5bb-a97f-4845-8465-a42674d6d4b2",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosPorExportacionMiembro_TODAS_TODOS",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "Adbd1aeca-4c8b-4a37-be89-8bdbe4957388": {
+      "Id": "Adbd1aeca-4c8b-4a37-be89-8bdbe4957388",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosDeSubsidiariasEnElExtranjeroMiembro_TODAS_TODOS",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "A60d69478-a894-421e-9fce-ecc6ba3a2617": {
+      "Id": "A60d69478-a894-421e-9fce-ecc6ba3a2617",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosTotalesMiembro_GASOLINA_MAGNA",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "Ae16f43b6-e0d4-4c8c-b7c8-f104f1712763": {
+      "Id": "Ae16f43b6-e0d4-4c8c-b7c8-f104f1712763",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosTotalesMiembro_GASOLINA_PREMIUM",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "A964bd2bc-e28d-4de8-ab40-5fe6e71bbafa": {
+      "Id": "A964bd2bc-e28d-4de8-ab40-5fe6e71bbafa",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosTotalesMiembro_GASOLINA_TODOS",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "A5f948037-68f1-4b5a-ad25-5d92360ecbfe": {
+      "Id": "A5f948037-68f1-4b5a-ad25-5d92360ecbfe",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosTotalesMiembro_TODAS_TODOS",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "A3e4a5aab-59ac-4221-ae70-789a3b23edbe": {
+      "Id": "A3e4a5aab-59ac-4221-ae70-789a3b23edbe",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosNacionalesMiembro_GASOLINA_MAGNA_3",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "Af7d0e06a-3efc-4fe2-94d3-fd7d71b49745": {
+      "Id": "Af7d0e06a-3efc-4fe2-94d3-fd7d71b49745",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosNacionalesMiembro_GASOLINA_PREMIUM_3",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "Ac86dfe44-6a61-4efb-998e-1c3b4de8320f": {
+      "Id": "Ac86dfe44-6a61-4efb-998e-1c3b4de8320f",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosNacionalesMiembro_GASOLINA_TODOS_2",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "A25aa4b8e-d2e8-4271-870a-06433b7a155a": {
+      "Id": "A25aa4b8e-d2e8-4271-870a-06433b7a155a",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosNacionalesMiembro_TODAS_TODOS_2",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "A188c4346-1641-4923-8f87-633d0719b881": {
+      "Id": "A188c4346-1641-4923-8f87-633d0719b881",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosPorExportacionMiembro_TODAS_TODOS_2",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "Ad78fbe96-a817-4b43-9e4e-d2b066a61ab3": {
+      "Id": "Ad78fbe96-a817-4b43-9e4e-d2b066a61ab3",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosDeSubsidiariasEnElExtranjeroMiembro_TODAS_TODOS_2",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "A7e7802ff-519b-48e2-b57f-66fa616545f5": {
+      "Id": "A7e7802ff-519b-48e2-b57f-66fa616545f5",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosTotalesMiembro_GASOLINA_MAGNA_2",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "A3a82718c-cb84-418f-8191-5d026732e5b9": {
+      "Id": "A3a82718c-cb84-418f-8191-5d026732e5b9",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosTotalesMiembro_GASOLINA_PREMIUM_2",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "A28126885-d5de-4d41-ae65-5a97628c76a5": {
+      "Id": "A28126885-d5de-4d41-ae65-5a97628c76a5",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosTotalesMiembro_GASOLINA_TODOS_2",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "Ae4d8a520-74e7-4764-9b6e-243f14731b55": {
+      "Id": "Ae4d8a520-74e7-4764-9b6e-243f14731b55",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosTotalesMiembro_TODAS_TODOS_2",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "A61773842-be18-4461-8f93-d027d19df462": {
+      "Id": "A61773842-be18-4461-8f93-d027d19df462",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosNacionalesMiembro_GASOLINA_MAGNA_4",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "Ae512d61e-d5a1-4564-843e-c5872a96ca61": {
+      "Id": "Ae512d61e-d5a1-4564-843e-c5872a96ca61",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosNacionalesMiembro_GASOLINA_PREMIUM_4",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "A0902c59f-ec24-47ae-805a-8ea80af73619": {
+      "Id": "A0902c59f-ec24-47ae-805a-8ea80af73619",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosNacionalesMiembro_GASOLINA_TODOS_3",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "A0e34be2b-463c-4a61-ae9b-a5373ad734f4": {
+      "Id": "A0e34be2b-463c-4a61-ae9b-a5373ad734f4",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosNacionalesMiembro_TODAS_TODOS_3",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "A1020a7ab-046a-43ff-a3f1-0aef83f6adcd": {
+      "Id": "A1020a7ab-046a-43ff-a3f1-0aef83f6adcd",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosPorExportacionMiembro_GASOLINA_TODOS",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "A9c43be91-21bd-4ac8-ae7a-6676ae21cd87": {
+      "Id": "A9c43be91-21bd-4ac8-ae7a-6676ae21cd87",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosPorExportacionMiembro_TODAS_TODOS_3",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "Ad4d66a28-55f1-4e97-970f-dbdce0ab9014": {
+      "Id": "Ad4d66a28-55f1-4e97-970f-dbdce0ab9014",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosDeSubsidiariasEnElExtranjeroMiembro_GASOLINA_TODOS",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "A876082e7-b8bf-4f74-a145-257cd88d4467": {
+      "Id": "A876082e7-b8bf-4f74-a145-257cd88d4467",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosDeSubsidiariasEnElExtranjeroMiembro_TODAS_TODOS_3",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "Adc765c52-ea59-4d7a-ab74-ac8859c784d9": {
+      "Id": "Adc765c52-ea59-4d7a-ab74-ac8859c784d9",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosTotalesMiembro_GASOLINA_MAGNA_3",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "A9c32b075-bcbd-4328-9f43-8ee0976d4230": {
+      "Id": "A9c32b075-bcbd-4328-9f43-8ee0976d4230",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosTotalesMiembro_GASOLINA_PREMIUM_3",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "A4bb31a5c-e589-4d86-b7e6-e4cda5580c9e": {
+      "Id": "A4bb31a5c-e589-4d86-b7e6-e4cda5580c9e",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosTotalesMiembro_GASOLINA_TODOS_3",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "Ae39ab9d6-3744-42df-9851-45e862a7d9d7": {
+      "Id": "Ae39ab9d6-3744-42df-9851-45e862a7d9d7",
+      "IdConcepto": "ifrs_mx-cor_20141205_ImporteDeIngresos",
+      "IdContextoPlantilla": "Context_Duration_IngresosTotalesMiembro_TODAS_TODOS_3",
+      "Hechos": [],
+      "IdUnidadPlantilla": "Peso_Mx",
+      "Decimales": "-3",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    }
+  }
+}

@@ -1,0 +1,107 @@
+<xbrl-contenedor-formato xbrl:rol-uri="{{::xbrlRol.Uri}}" orientacion="portrait" xbrl:ocultar-titulo-rol="true" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+    <br />
+    <br />
+    <h4>{{xbrlRol.Nombre}}</h4>
+    <br />
+    
+    <table class="tablaAnchoFijo" cellspacing="5">
+        <tbody>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="sds_Caratula" xbrl:nivel-indentacion="0"></b></td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">&nbsp;</td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="sds_DatosBasicos" xbrl:nivel-indentacion="1"></b></td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">&nbsp;</td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="sds_NumeroDeIdentificacionTributaria" xbrl:nivel-indentacion="2"></b></td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="A16f89a05-f534-4922-b9cb-2d47ebc9e7ee"></xbrl:campo-captura></td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td style="text-align:left; width:50%;"><span><b><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs-full_NameOfReportingEntityOrOtherMeansOfIdentification" xbrl:nivel-indentacion="2"></b></span></td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="A3a56b50c-b317-4ea0-af19-f4e8fa47c190"></xbrl:campo-captura></td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="sds_ActividadPrincipalRealizadaDuranteElEjercicioSegunCiiu4" xbrl:nivel-indentacion="2"></b></td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="A865c3099-a531-4521-a4c8-9312d5d04ad7"></xbrl:campo-captura></td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td style="text-align:left; width:50%;"><label><b><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="sds_TipoSocietario" xbrl:nivel-indentacion="2"></b></label></td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="A90cc842b-fca9-470a-97eb-b031f6b968dd"></xbrl:campo-captura></td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td style="text-align:left; width:50%;"><label><b><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="sds_FechaDeCorte" xbrl:nivel-indentacion="2"></b></label></td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="Af96ce6c6-b113-4a3c-b615-cbe0ee3bf02b"></xbrl:campo-captura></td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td style="text-align:left; width:50%;"><label><b><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="sds_DepartamentoDeLaDireccionDelDomicilio" xbrl:nivel-indentacion="2"></b></label></td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="A8b2123fd-59a1-4b27-8c51-88c171767e6e"></xbrl:campo-captura></td>
+            </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td style="text-align:left; width:50%;"><label><b><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="sds_CiudadDeLaDireccionDelDomicilio" xbrl:nivel-indentacion="2"></b></label></td>
+                <td style="text-align:left; width:50%;" class="celdaVacia"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="A19d17cc6-80a5-442b-be4b-7e7dbe6eb391" xbrl:ultimo="true"></xbrl:campo-captura></td>
+            </tr>
+            
+        </tbody>
+    </table>
+    <br />
+    <h4>[010010] Representante legal, contador y revisor fiscal tabla</h4>
+    <br />
+    <div id="contenedorTablaExcel" class="table-responsive">
+        <table class="table table-striped b-t b-light" xbrl:tabla-excel xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" selector="td:not(:first-child)" selector-contenedor-x="#contenedorTablaExcel" selector-contenedor-y="#contenedorFormatos" tab-index="1" on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)" on-after-paste="onAfterPaste(valorPegado, x, y)" on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)">
+            
+            <thead>
+                <tr>
+                    <th style="width:30%; text-align:center; background-color: #f9f9f9; vertical-align:bottom; border-right: 1px solid #dddddd;" rowspan="2">
+                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                xbrl:id-concepto="sds_RepresentanteRevisoryContador" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;">
+                    </th>
+
+                    <th colspan="4" text-align:center; background-color #f9f9f9; vertical-align:bottom; border-right 1px solid #dddddd;">
+                        <xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                            <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="sds_TipoDeContraparteEje" xbrl:nivel-indentacion="2" xbrl:style="font-weight:800;">
+                            </xbrl:etiqueta-concepto>
+                    </th>
+                </tr>
+                <tr>
+                    <th style="text-align:center; vertical-align:bottom; background-color: #f9f9f9; border-right: 1px solid #dddddd;min-width:250px;">
+                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                xbrl:id-concepto="sds_RepresentantePrincipalMiembro" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;">
+                    </th>
+
+                    <th style="text-align:center; vertical-align:bottom; background-color: #f9f9f9; border-right: 1px solid #dddddd;min-width:250px;">
+                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                xbrl:id-concepto="sds_PrimerSuplenteMiembro" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;">
+                    </th>
+
+                    <th style="text-align:center; vertical-align:bottom; background-color: #f9f9f9; border-right: 1px solid #dddddd;min-width:250px;">
+                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                xbrl:id-concepto="sds_ContadorMiembro" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;">
+                    </th>
+
+                    <th style="text-align:center; vertical-align:bottom; background-color: #f9f9f9; border-right: 1px solid #dddddd;min-width:250px;">
+                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                xbrl:id-concepto="sds_RevisorFiscalPrincipalMiembro" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;">
+                    </th>
+                </tr>
+            </thead>
+            
+            
+            
+            <tbody>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"><td><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="sds_DocumentosTabla" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto></td>                                                                                                        <td>&nbsp;</td>                                                                                                   <td>&nbsp;</td>                                                                                                   <td>&nbsp;</td>                                                                                                   <td>&nbsp;</td>                                                                                                   </tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"><td><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="sds_DocumentosPardidas" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto></td>                                                                                                     <td>&nbsp;</td>                                                                                                   <td>&nbsp;</td>                                                                                                   <td>&nbsp;</td>                                                                                                   <td>&nbsp;</td>                                                                                                   </tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"><td><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="sds_TipoDeDocumento" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></td>                                                                                                                                      <td><xbrl:campo-captura xbrl:id-hecho-plantilla="A594da310-a20c-4598-89a2-839a7ae5bc51"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Aab58b4c3-308f-4126-9b69-bb5533bd5e99"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Adb4b3bb7-dfdb-43c8-9bf1-d886fc2d9441"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Ae50f544f-7273-47f9-823b-f8811965dda8"></xbrl:campo-captura></td></tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"><td><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="sds_NumeroDeDocumento" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></td>                                                                                                                                    <td><xbrl:campo-captura xbrl:id-hecho-plantilla="Abebb6c47-caac-42c8-a5ee-861b0dbb5a90"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A03426edc-506d-4b10-be26-77ab7a4d60f5"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A17d1015b-1cb5-4f4d-8816-4bae5d7b9250"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A750a237c-88b9-4c00-a658-0cdfa1f703e1"></xbrl:campo-captura></td></tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"><td><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="sds_Nombres" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></td>                                                                                                                                              <td><xbrl:campo-captura xbrl:id-hecho-plantilla="A17273bd5-ac97-4f74-a2ab-7e46579f75bf"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A9d3b6f0f-ffa8-49e6-9fef-69b855b8d5a1"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A4e4d5fee-2d62-4bd2-92ba-0b9f688c433e"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Aeebec904-36b7-4459-8e0a-90896aa1f11a"></xbrl:campo-captura></td></tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"><td><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="sds_Appellidos" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></td>                                                                                                                                           <td><xbrl:campo-captura xbrl:id-hecho-plantilla="A36e113d0-2fc7-4fb0-b8f2-54bc9cad02ea"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Ac3143e40-1a1e-40f9-8ecb-c91ee095f00f"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Afaae2b46-017a-4e47-8584-d6d27622efc0"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Ace10aa72-d890-4052-9dac-a555e69343b1"></xbrl:campo-captura></td></tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"><td><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="sds_TarjetaProfesional" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></td>                                                                                                                                   <td>&nbsp;</td>                                                                                                   <td>&nbsp;</td>                                                                                                   <td><xbrl:campo-captura xbrl:id-hecho-plantilla="A570da63e-661f-486b-9e89-fa2c277cc0fb"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A958bc326-d92e-4515-9c46-ad0f87e236a5" xbrl:ultimo="true"></xbrl:campo-captura></td></tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"><td><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="sds_Email" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></td>                                                                                                                                                <td><xbrl:campo-captura xbrl:id-hecho-plantilla="B36e113d0-2fc7-4fb0-b8f2-54bc9cad02ea"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Bc3143e40-1a1e-40f9-8ecb-c91ee095f00f"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Bfaae2b46-017a-4e47-8584-d6d27622efc0"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Bce10aa72-d890-4052-9dac-a555e69343b1"></xbrl:campo-captura></td>                                                                                                   </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    
+</xbrl-contenedor-formato>

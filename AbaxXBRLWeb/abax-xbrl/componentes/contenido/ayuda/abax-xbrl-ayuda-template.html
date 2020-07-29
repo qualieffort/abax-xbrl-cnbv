@@ -1,0 +1,58 @@
+﻿
+<section>
+    <section class="vbox">
+        <section class="scrollable padder">
+            <div>
+                <section class="panel panel-default">
+
+                    <header class="panel-heading ng-binding">
+                        <h3> {{'TITULO_MATERIAL_APOYO' | translate}} </h3>
+                        {{'VERSION' | translate}} {{versionApp}}
+                    </header>
+
+                    <div class="dataTables_wrapper no-footer">
+                        <div style="float:right">
+
+                        
+                            <a href="ManualUsuarioAbaxXBRLCBYV.pdf" download class="btn btn-rounded">
+                                <i class="fa  fa-cloud-download"></i> {{'DESCARGAR_MANUAL' | translate}}
+                            </a></div>
+                        <table class="table table-striped b-t b-light dataTable no-footer">
+                            <thead class="table-bordered">
+                                <tr>
+                                    <td align="right" width="20%">
+                                        <h4> {{'ETIQUETA_BOTON_BUSCAR' | translate}}</h4>
+                                    </td>
+                                    <td align="left" width="80%">
+                                        <div style="height:100%; padding:6px;">
+                                            <input class="input-sm form-control input-s-lg inline v-middle ng-pristine ng-valid ng-touched" placeholder="{{'PLACE_HOLDER_BUSCAR' | translate}}" type="text" ng-model="buscarCont">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="table table-striped b-t b-light dataTable no-footer">
+                            <tbody class="table-bordered">
+                                <tr role="row"
+                                    ng-repeat="material in ayuda.ListadoAyuda | filter: ajustarFiltro ">
+                                    <td width="20%">
+                                        <a href="#" ng-click="mostrarVideo(material.urlVideo)" class="entry-img">
+                                            <img ng-src="{{material.urlImagen}}" alt="video" width="200">
+                                        </a>
+                                    </td>
+                                    <td width="80%">
+                                        <div class="entry-description">
+                                            <h4><span ng-bind-html="toTrustedHTML(material.Titulo)"></span></h4>
+                                            <div style="text-align:justify;" ng-bind-html="toTrustedHTML(material.Contenido)"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </section>
+            </div>
+        </section>
+    </section>
+</section>

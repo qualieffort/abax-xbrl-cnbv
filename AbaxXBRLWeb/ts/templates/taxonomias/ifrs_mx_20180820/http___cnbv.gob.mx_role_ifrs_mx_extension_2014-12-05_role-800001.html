@@ -1,0 +1,1012 @@
+<xbrl-contenedor-formato xbrl:rol-uri="{{xbrlRol.Uri}}" orientacion="landscape" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+    <div oc-lazy-load="abaxXbrlDesgloseCreditosViewerCNBV">
+        <div id="contenedorDesgloseCreditos" class="table-responsive dinamicTable mainDT" style="overflow:hidden;" xbrl:desglose-creditos-cnbv>
+            <table>
+                <thead style="border-bottom: 2px solid #dddddd;">
+                    <tr>
+                        <td xbrl:dt-column="conceptos" class="celdaFijaDesgloseCreditos" style="text-align:center; vertical-align:middle;">
+                            <button xbrl:dt-boton-maximizar type="button" class="btn btn-s-md btn-info btn-rounded">
+                                <i class="fa fa-arrows-alt"></i>
+                                {{'ETIQUETA_EXPANDIR' | translate}}
+                            </button>
+                            <button xbrl:dt-boton-restaurar type="button" style="display:none;" class="btn btn-s-md btn-info btn-rounded">
+                                <i class="fa fa-compress"></i>
+                                {{'ETIQUETA_CONTRAER' | translate}}
+                            </button>
+                            <br/>
+                            <br />
+                            <label class="tituloDesglose">
+                                <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_InstitucionEje" xbrl:nivel-indentacion="0" />
+                            </label>
+                        </td>
+                        <td>
+                            <div class="scrollableXHidden">
+                                <table id="tablaTitulosDesgloseCredito" class="table table-striped b-t b-light titulosEC" style="height:100%; margin: 0;">
+                                    <thead class="titulosEC">
+                                        <tr>
+                                            <th xbrl:dt-column="dtC0" class="tituloC" rowspan="3"><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_InstitucionExtranjeraSiNo" xbrl:nivel-indentacion="0" /></th>
+                                            <th xbrl:dt-column="dtC1" class="tituloA" rowspan="3"><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_FechaDeFirmaContrato" xbrl:nivel-indentacion="0" /></th>
+                                            <th xbrl:dt-column="dtC2" class="tituloA" rowspan="3"><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_FechaDeVencimiento" xbrl:nivel-indentacion="0" /></th>
+                                            <th xbrl:dt-column="dtC3" class="tituloA" rowspan="3"><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_TasaDeInteresYOSobretasa" xbrl:nivel-indentacion="0" /></th>
+                                            <th class="tituloA" colspan="6"><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_MonedaNacionalMiembro" xbrl:nivel-indentacion="0" /></th>
+                                            <th class="tituloA" colspan="6"><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_MonedaExtranjeraMiembro" xbrl:nivel-indentacion="0" /></th>
+                                        </tr>
+                                        <tr>
+                                            <th class="tituloD" colspan="6"><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_IntervaloDeTiempoEje" xbrl:nivel-indentacion="0" /></th>
+                                            <th class="tituloD" colspan="6"><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_IntervaloDeTiempoEje" xbrl:nivel-indentacion="0" /></th>
+                                        </tr>
+                                        <tr>
+                                            <th xbrl:dt-column="dtC4" class="tituloA"><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_AnoActualMiembro" xbrl:nivel-indentacion="0" /></th>
+                                            <th xbrl:dt-column="dtC5" class="tituloA"><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_Hasta1AnoMiembro" xbrl:nivel-indentacion="0" /></th>
+                                            <th xbrl:dt-column="dtC6" class="tituloA"><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_Hasta2AnosMiembro" xbrl:nivel-indentacion="0" /></th>
+                                            <th xbrl:dt-column="dtC7" class="tituloA"><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_Hasta3AnosMiembro" xbrl:nivel-indentacion="0" /></th>
+                                            <th xbrl:dt-column="dtC8" class="tituloA"><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_Hasta4AnosMiembro" xbrl:nivel-indentacion="0" /></th>
+                                            <th xbrl:dt-column="dtC9" class="tituloA"><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_Hasta5AnosOMasMiembro" xbrl:nivel-indentacion="0" /></th>
+                                            <th xbrl:dt-column="dtC10" class="tituloA"><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_AnoActualMiembro" xbrl:nivel-indentacion="0" /></th>
+                                            <th xbrl:dt-column="dtC11" class="tituloA"><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_Hasta1AnoMiembro" xbrl:nivel-indentacion="0" /></th>
+                                            <th xbrl:dt-column="dtC12" class="tituloA"><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_Hasta2AnosMiembro" xbrl:nivel-indentacion="0" /></th>
+                                            <th xbrl:dt-column="dtC13" class="tituloA"><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_Hasta3AnosMiembro" xbrl:nivel-indentacion="0" /></th>
+                                            <th xbrl:dt-column="dtC14" class="tituloA"><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_Hasta4AnosMiembro" xbrl:nivel-indentacion="0" /></th>
+                                            <th xbrl:dt-column="dtC15" class="tituloA"><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_Hasta5AnosOMasMiembro" xbrl:nivel-indentacion="0" /></th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td xbrl:dt-column="conceptos" style="border-right:2px solid #dddddd;">
+                            <div class="scrollableYHidden">
+                                <table id="tablaEntidadesDesgloseCreditos" class="table table-striped b-t b-light">
+                                    <tbody>
+                                        <tr>
+                                            <td class="conceptoAbstracto">
+                                                <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                                        xbrl:id-concepto="ifrs_mx-cor_20141205_BancariosSinopsis"
+                                                                        xbrl:nivel-indentacion="0">
+                                            </td>
+                                        </tr>
+
+                                        <!--ifrs_mx-cor_20141205_ComercioExteriorBancarios-->
+                                        <tr >
+                                            <td class="conceptoPrimarioAbstracto">
+                                                <div class="contenedorEntidadDesgloseCreditos">
+                                                    <span class="etiqueta-desglose">
+                                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_ComercioExteriorBancarios" xbrl:nivel-indentacion="1">
+                                                    </span>
+                                                    <button type="button"
+                                                            class="btn-info btn-desglose-credito btn-plus"
+                                                            ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                                            ng-click="agregarValorDimensionInstitucion('ifrs_mx-cor_20141205_ComercioExteriorBancarios')">
+                                                        <i class="fa fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+
+                                        </tr>
+                                        
+                                        <tr xbrl:total-concepto-abstracto="ifrs_mx-cor_20141205_ComercioExteriorBancarios">
+                                            <td class="totalConceptoAbstractoPrimario"><span>TOTAL</span></td>
+                                        </tr>
+                                        <!--ifrs_mx-cor_20141205_ConGarantiaBancarios-->
+                                        <tr >
+                                            <td class="conceptoPrimarioAbstracto">
+                                                <div class="contenedorEntidadDesgloseCreditos">
+                                                    <span class="etiqueta-desglose">
+                                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoinstancia.xbrlidioma.claveidioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_ConGarantiaBancarios" xbrl:nivel-indentacion="3">
+                                                    </span>
+                                                    <button type="button"
+                                                            ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                                            class="btn-info btn-desglose-credito btn-plus"
+                                                            ng-click="agregarValorDimensionInstitucion('ifrs_mx-cor_20141205_ConGarantiaBancarios')">
+                                                        <i class="fa fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr xbrl:total-concepto-abstracto="ifrs_mx-cor_20141205_ConGarantiaBancarios">
+                                            <td class="totalConceptoAbstractoPrimario"><span>TOTAL</span></td>
+                                        </tr>
+                                        <!--ifrs_mx-cor_20141205_BancaComercial-->
+                                        <tr >
+                                            <td class="conceptoPrimarioAbstracto">
+                                                <div class="contenedorEntidadDesgloseCreditos">
+                                                    <span class="etiqueta-desglose">
+                                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_BancaComercial" xbrl:nivel-indentacion="3">
+                                                    </span>
+                                                    <button type="button"
+                                                            ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                                            class="btn-info btn-desglose-credito btn-plus"
+                                                            ng-click="agregarValorDimensionInstitucion('ifrs_mx-cor_20141205_BancaComercial')">
+                                                        <i class="fa fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr xbrl:total-concepto-abstracto="ifrs_mx-cor_20141205_BancaComercial">
+                                            <td class="totalConceptoAbstractoPrimario"><span>TOTAL</span></td>
+                                        </tr>
+                                        <!--ifrs_mx-cor_20141205_OtrosBancarios-->
+                                        <tr >
+                                            <td class="conceptoPrimarioAbstracto">
+                                                <div class="contenedorEntidadDesgloseCreditos">
+                                                    <span class="etiqueta-desglose">
+                                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_OtrosBancarios" xbrl:nivel-indentacion="3">
+                                                    </span>
+                                                    <button type="button"
+                                                            ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                                            class="btn-info btn-desglose-credito btn-plus"
+                                                            ng-click="agregarValorDimensionInstitucion('ifrs_mx-cor_20141205_OtrosBancarios')">
+                                                        <i class="fa fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr xbrl:total-concepto-abstracto="ifrs_mx-cor_20141205_OtrosBancarios">
+                                            <td class="totalConceptoAbstractoPrimario"><span>TOTAL</span></td>
+                                        </tr>
+                                        <!--ifrs_mx-cor_20141205_TotalBancario-->
+                                        <tr >
+                                            <td class="totalConceptoAbstracto">
+                                                <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_TotalBancarios" xbrl:nivel-indentacion="3">
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="conceptoAbstracto">
+                                                <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                                        xbrl:id-concepto="ifrs_mx-cor_20141205_BursatilesYColocacionesPrivadasSinopsis"
+                                                                        xbrl:nivel-indentacion="0">
+                                            </td>
+                                        </tr>
+
+                                        <!--ifrs_mx-cor_20141205_BursatilesListadasEnBolsaQuirografarios-->
+                                        <tr >
+                                            <td class="conceptoPrimarioAbstracto">
+                                                <div class="contenedorEntidadDesgloseCreditos">
+                                                    <span class="etiqueta-desglose">
+                                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_BursatilesListadasEnBolsaQuirografarios" xbrl:nivel-indentacion="1">
+                                                    </span>
+                                                    <button type="button"
+                                                            ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                                            class="btn-info btn-desglose-credito btn-plus"
+                                                            ng-click="agregarValorDimensionInstitucion('ifrs_mx-cor_20141205_BursatilesListadasEnBolsaQuirografarios')">
+                                                        <i class="fa fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr xbrl:total-concepto-abstracto="ifrs_mx-cor_20141205_BursatilesListadasEnBolsaQuirografarios">
+                                            <td class="totalConceptoAbstractoPrimario"><span>TOTAL</span></td>
+                                        </tr>
+                                        <!--ifrs_mx-cor_20141205_BursatilesListadasEnBolsaConGarantia-->
+                                        <tr >
+                                            <td class="conceptoPrimarioAbstracto">
+                                                <div class="contenedorEntidadDesgloseCreditos">
+                                                    <span class="etiqueta-desglose">
+                                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_BursatilesListadasEnBolsaConGarantia" xbrl:nivel-indentacion="1">
+                                                    </span>
+                                                    <button type="button"
+                                                            ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                                            class="btn-info btn-desglose-credito btn-plus"
+                                                            ng-click="agregarValorDimensionInstitucion('ifrs_mx-cor_20141205_BursatilesListadasEnBolsaConGarantia')">
+                                                        <i class="fa fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr xbrl:total-concepto-abstracto="ifrs_mx-cor_20141205_BursatilesListadasEnBolsaConGarantia">
+                                            <td class="totalConceptoAbstractoPrimario"><span>TOTAL</span></td>
+                                        </tr>
+                                        <!--ifrs_mx-cor_20141205_ColocacionesPrivadasQuirografarios-->
+                                        <tr >
+                                            <td class="conceptoPrimarioAbstracto">
+                                                <div class="contenedorEntidadDesgloseCreditos">
+                                                    <span class="etiqueta-desglose">
+                                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_ColocacionesPrivadasQuirografarios" xbrl:nivel-indentacion="1">
+                                                    </span>
+                                                    <button type="button"
+                                                            ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                                            class="btn-info btn-desglose-credito btn-plus"
+                                                            ng-click="agregarValorDimensionInstitucion('ifrs_mx-cor_20141205_ColocacionesPrivadasQuirografarios')">
+                                                        <i class="fa fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr xbrl:total-concepto-abstracto="ifrs_mx-cor_20141205_ColocacionesPrivadasQuirografarios">
+                                            <td class="totalConceptoAbstractoPrimario"><span>TOTAL</span></td>
+                                        </tr>
+                                        <!--ifrs_mx-cor_20141205_ColocacionesPrivadasConGarantia-->
+                                        <tr >
+                                            <td class="conceptoPrimarioAbstracto">
+                                                <div class="contenedorEntidadDesgloseCreditos">
+                                                    <span class="etiqueta-desglose">
+                                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_ColocacionesPrivadasConGarantia" xbrl:nivel-indentacion="1">
+                                                    </span>
+                                                    <button type="button"
+                                                            ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                                            class="btn-info btn-desglose-credito btn-plus"
+                                                            ng-click="agregarValorDimensionInstitucion('ifrs_mx-cor_20141205_ColocacionesPrivadasConGarantia')">
+                                                        <i class="fa fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr xbrl:total-concepto-abstracto="ifrs_mx-cor_20141205_ColocacionesPrivadasConGarantia">
+                                            <td class="totalConceptoAbstractoPrimario"><span>TOTAL</span></td>
+                                        </tr>
+                                        <tr >
+                                            <td class="totalConceptoAbstracto">
+                                                <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_TotalBursatilesListadasEnBolsaYColocacionesPrivadas" xbrl:nivel-indentacion="3">
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="conceptoAbstracto">
+                                                <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                                        xbrl:id-concepto="ifrs_mx-cor_20141205_OtrosPasivosCirculantesYNoCirculantesConCostoSinopsis"
+                                                                        xbrl:nivel-indentacion="0">
+                                            </td>
+                                        </tr>
+
+                                        <!--ifrs_mx-cor_20141205_OtrosPasivosCirculantesYNoCirculantesConCosto-->
+                                        <tr >
+                                            <td class="conceptoPrimarioAbstracto">
+                                                <div class="contenedorEntidadDesgloseCreditos">
+                                                    <span class="etiqueta-desglose">
+                                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_OtrosPasivosCirculantesYNoCirculantesConCosto" xbrl:nivel-indentacion="1">
+                                                    </span>
+                                                    <button type="button"
+                                                            ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                                            class="btn-info btn-desglose-credito btn-plus"
+                                                            ng-click="agregarValorDimensionInstitucion('ifrs_mx-cor_20141205_OtrosPasivosCirculantesYNoCirculantesConCosto')">
+                                                        <i class="fa fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr xbrl:total-concepto-abstracto="ifrs_mx-cor_20141205_OtrosPasivosCirculantesYNoCirculantesConCosto">
+                                            <td class="totalConceptoAbstractoPrimario"><span>TOTAL</span></td>
+                                        </tr>
+                                        <tr >
+                                            <td class="totalConceptoAbstracto">
+                                                <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_TotalOtrosPasivosCirculantesYNoCirculantesConCosto" xbrl:nivel-indentacion="3">
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="conceptoAbstracto">
+                                                <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                                        xbrl:id-concepto="ifrs_mx-cor_20141205_ProveedoresSinopsis"
+                                                                        xbrl:nivel-indentacion="0">
+                                            </td>
+                                        </tr>
+
+
+                                        <!--ifrs_mx-cor_20141205_Proveedores-->
+                                        <tr >
+                                            <td class="conceptoPrimarioAbstracto">
+                                                <div class="contenedorEntidadDesgloseCreditos">
+                                                    <span class="etiqueta-desglose">
+                                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_Proveedores" xbrl:nivel-indentacion="1">
+                                                    </span>
+                                                    <button type="button"
+                                                            ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                                            class="btn-info btn-desglose-credito btn-plus"
+                                                            ng-click="agregarValorDimensionInstitucion('ifrs_mx-cor_20141205_Proveedores')">
+                                                        <i class="fa fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr xbrl:total-concepto-abstracto="ifrs_mx-cor_20141205_Proveedores">
+                                            <td class="totalConceptoAbstractoPrimario"><span>TOTAL</span></td>
+                                        </tr>
+                                        <tr >
+                                            <td class="totalConceptoAbstracto">
+                                                <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_TotalProveedores" xbrl:nivel-indentacion="3">
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="conceptoAbstracto">
+                                                <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                                                        xbrl:id-concepto="ifrs_mx-cor_20141205_OtrosPasivosCirculantesYNoCirculantesSinCostoSinopsis"
+                                                                        xbrl:nivel-indentacion="0">
+                                            </td>
+                                        </tr>
+
+
+                                        <!--ifrs_mx-cor_20141205_OtrosPasivosCirculantesYNoCirculantesSinCosto-->
+                                        <tr >
+                                            <td class="conceptoPrimarioAbstracto">
+                                                <div class="contenedorEntidadDesgloseCreditos">
+                                                    <span class="etiqueta-desglose">
+                                                        <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_OtrosPasivosCirculantesYNoCirculantesSinCosto" xbrl:nivel-indentacion="1">
+                                                    </span>
+                                                    <button type="button"
+                                                            ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                                            class="btn-info btn-desglose-credito btn-plus"
+                                                            ng-click="agregarValorDimensionInstitucion('ifrs_mx-cor_20141205_OtrosPasivosCirculantesYNoCirculantesSinCosto')">
+                                                        <i class="fa fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr xbrl:total-concepto-abstracto="ifrs_mx-cor_20141205_OtrosPasivosCirculantesYNoCirculantesSinCosto">
+                                            <td class="totalConceptoAbstractoPrimario"><span>TOTAL</span></td>
+                                        </tr>
+                                        <tr >
+                                            <td class="totalConceptoAbstracto">
+                                                <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_TotalOtrosPasivosCirculantesYNoCirculantesSinCosto" xbrl:nivel-indentacion="3">
+                                            </td>
+                                        </tr>
+                                        <tr >
+                                            <td class="totalConceptoAbstracto">
+                                                <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_TotalDeCreditos" xbrl:nivel-indentacion="2">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="contenedorTablaExcelDinamicaDesglose" class="scrollableXYAuto">
+                                <table class="table table-striped b-t b-light"
+                                       xbrl:tabla-excel
+                                       
+                                       selector="td"
+                                       selector-contenedor-x="#contenedorTablaExcelDinamicaDesglose"
+                                       selector-contenedor-y="#contenedorTablaExcelDinamicaDesglose"
+                                       tab-index="1"
+                                       on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)"
+                                       on-after-paste="onAfterPaste(valorPegado, x, y)"
+                                       on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)">
+                                    <tbody>
+                                        <tr>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                        </tr>
+                                        <!--ifrs_mx-cor_20141205_ComercioExteriorBancarios-->
+                                        <tr >
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                        </tr>
+
+                                        <!-- Dato jquery-->
+
+                                        
+
+                                        <tr id="ifrs_mx-cor_20141205_ComercioExteriorBancarios">
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aed23ded0-aabe-4b40-a429-5fe1a25f5b2f"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ae1cf8748-796e-4349-ba2a-5537ef3f75b0"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aceb1b6bb-4f39-4b22-b280-33f517354a13"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A549ad715-8ea1-4cd0-bfd0-6c1e2761ec45"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A66c2e935-113d-4002-8d95-a0a0117241d7"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A5bfdc86f-bb0c-4be4-9746-733b322beb09"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aa68f4583-b2e3-4fdf-ba34-d98b7afa0076"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A101e6198-857a-4cfd-ab47-dd43c1bb8a54"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A0cd35eff-b9c8-4aa6-bcd0-0deaab677a25"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Afd574bd1-c07f-4e9c-ba48-76cfaae3f334"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ab22084bb-7eda-45ce-8b1e-d64ade38e1e6"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A4bfad4a8-7c8d-4cf8-84b1-d1e2588af8ff"></xbrl:campo-captura></td>
+                                        </tr>
+                                        <!--ifrs_mx-cor_20141205_ConGarantiaBancarios-->
+                                        <tr >
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                        </tr>
+
+                                        
+
+                                        <tr id="ifrs_mx-cor_20141205_ConGarantiaBancarios">
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ab39a3863-f377-4e10-a645-49a985e51777"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A95e5ace1-0e30-4ead-bb6b-ba6f3e96275d"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aa28e4457-c774-4c8c-8112-c5a0f0f4313b"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A0d09bc98-91d4-4145-9eb7-6dff1e8e89f1"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Add7f86d2-e7f8-42ee-8310-a8f443589404"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aefd40601-efdb-4ea6-880d-d2080c9c4546"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Abe05c5ea-be61-4e80-b37a-8e8337bec4f5"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A58e4374c-6269-4180-9f70-ceda82988bf5"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ae6ee2a4f-8c1d-4750-a2c9-9e61183bed9e"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A48f7c213-48e5-465b-8093-27e831909751"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ab2f3a4f7-9b22-4380-a381-4872fdfc85b2"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ad21a4a60-df8a-457f-a7d2-48d02667ce89"></xbrl:campo-captura></td>
+                                        </tr>
+                                        <!--ifrs_mx-cor_20141205_BancaComercial-->
+                                        <tr >
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                        </tr>
+                                        
+                                        
+
+                                        <tr id="ifrs_mx-cor_20141205_BancaComercial">
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ae15eaf05-2d2d-4b8b-b128-e7ddd0507bdf"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aab98d045-2942-45af-a43d-828f0e35f09a"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aef76a393-e514-4ccc-9d1e-32f0ff744d2b"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A7bd60a6f-1f9f-4f68-9aa8-01bcc574d547"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A79f971b5-9f97-4c23-96a1-84936c3c2e1c"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Afb1778a0-8af2-4356-9b44-42115f705dbe"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A80e10137-914e-4b5c-930f-913b15563e89"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ade6dbaff-14e3-4b8a-a209-acd9504a93e4"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A021ae1b3-db27-4fef-acc6-d76b03428f88"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A3c7f5501-ed57-4ec8-870e-4d09cd8255c7"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A26420d6e-a500-4de0-91b7-878328071865"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A572dc1c5-0a94-4d39-bbc2-88b456cd3177"></xbrl:campo-captura></td>
+                                        </tr>
+                                        <!--ifrs_mx-cor_20141205_OtrosBancarios-->
+                                        <tr >
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                        </tr>
+                                        
+                                        
+
+                                        <tr id="ifrs_mx-cor_20141205_OtrosBancarios">
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A3ad3c358-5ca8-44c7-9975-254da30a179b"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A38d47e4f-9f78-4d6d-b694-54706786bd42"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A5346823c-9133-4289-81a9-57623ae2a222"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A0c2cf8bb-51c9-4813-bc77-11007f647867"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ad712e2f2-6a02-40e2-a960-0741352767d3"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A370916a3-691f-4feb-ba44-5e6fe2af2c32"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A93362408-e098-4356-b188-1141cb023721"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aa277c127-1aa3-42bc-9425-22974d285e7d"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A413f99e8-8e97-4623-bdde-d13026999e4f"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Af51b12e2-6a51-4ba0-99b2-9ad00a2f5f69"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A302dfa71-6e69-4c41-84cc-b2ec29078a2f"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A0ff2c55d-258d-4303-9a7b-2d01f22a6adc"></xbrl:campo-captura></td>
+                                        </tr>
+                                        <!--ifrs_mx-cor_20141205_TotalBancario-->
+                                        <tr >
+                                            <td class="totalConceptoAbstracto">&nbsp;</td>
+                                            <td class="totalConceptoAbstracto">&nbsp;</td>
+                                            <td class="totalConceptoAbstracto">&nbsp;</td>
+                                            <td class="totalConceptoAbstracto">&nbsp;</td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aca64e3b3-fa22-4cd0-b955-cef75636a114"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A89699297-4969-408d-bc08-8811fff8bbcd"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A7685cc91-8c90-413d-8810-9cb4da4b099e"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Af974ac1f-6515-4f3f-be33-67d1e2158e06"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A7c004c33-f25d-4460-b132-bad6254cdf12"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A8acc66b8-1d9d-4881-9806-dc26a87a91ba"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A09d699a6-aa18-4ef5-93a3-f7785530f447"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A404d68b2-5866-4c33-aabf-f35730d81f4b"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ad1994d07-1d9b-4b70-abba-9eb207519f7e"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ac35d6cde-740f-41f8-a252-49b768f9506f"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A64703d6c-896e-4fcd-95b7-517a3d0d1301"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aadf32d85-76fa-4ca6-ad6f-b2c4c680da62"></xbrl:campo-captura></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                        </tr>
+                                        <!--ifrs_mx-cor_20141205_BursatilesListadasEnBolsaQuirografarios-->
+                                        <tr >
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                        </tr>
+                                        
+                                        <tr id="ifrs_mx-cor_20141205_BursatilesListadasEnBolsaQuirografarios">
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Add74e734-3df6-4401-9722-d0cc41f8a73e"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Abfe74cec-3547-468b-ac72-a38aee9150da"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ac4e3bb27-f006-4124-9362-f46ca6f9f0b0"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A4d45bf27-b893-4c48-bf43-7d3889aa579c"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A95c316dc-e97d-4e48-b204-cb5dd13f1757"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A8a0a4cf4-33f8-4524-9421-086030acb8b7"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A13c327fc-495f-4fbb-a253-c8d569eb1540"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ad8721b79-7a59-4e35-a904-16497b4b099c"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aff496113-0cf9-4ed6-a033-e6cf18dd5a78"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ad3bc3ea4-f05e-41b9-8f84-551adf73c2e0"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A8aa16693-c59c-4e76-9521-3565cd7a60a8"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ad6f0acc8-598d-4440-8204-70356dccfc14"></xbrl:campo-captura></td>
+                                        </tr>
+                                        <!--ifrs_mx-cor_20141205_BursatilesListadasEnBolsaConGarantia-->
+                                        <tr >
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                        </tr>
+                                        
+                                        
+                                        <tr id="ifrs_mx-cor_20141205_BursatilesListadasEnBolsaConGarantia">
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A17526737-2b48-4d69-9cff-a40868e85ed8"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A38276d63-4333-4954-b7a1-03ced5794abc"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A4b42c25a-acf2-49b8-bc99-247106fe74fa"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A7834388f-583a-44c5-95de-0803f3223076"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aaaa728dd-c1b6-44cf-8c3a-463b4458d4df"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ac6a65f6f-5721-4912-bcc9-e76f9179f0a3"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A4f8ba656-2d77-4586-bc18-99987d8aefd9"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A99a6ec3b-ab6b-4ecd-94d1-58560fbbcc21"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A24b1f7cf-b0bf-42a0-b489-112ede423f19"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A76de0b1b-88bf-46b1-90d4-e78a35f3ac00"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A1edfe008-5fa2-4148-b5c5-6d038c15145f"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Abc6ab7f4-c2a0-4e3d-be6d-6d6088074357"></xbrl:campo-captura></td>
+                                        </tr>
+                                        <!--ifrs_mx-cor_20141205_ColocacionesPrivadasQuirografarios-->
+                                        <tr >
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                        </tr>
+                                        
+                                        <tr id="ifrs_mx-cor_20141205_ColocacionesPrivadasQuirografarios">
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A6d33a69c-bae8-42a1-bcaa-3bda4cc3faca"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aa2409641-d09a-4ceb-94ad-1df393a5c5bf"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A0bc5579c-c9a9-4ae6-9f24-f99955654b19"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Afb5c9513-a8e6-4075-893a-9cfd81cf865b"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A06fd6a5a-4200-4be0-81a7-86d9e979d0df"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A94c3bf47-2dab-4175-bb0d-f174fcc7b15d"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A9930919b-600b-4ccf-9444-e9c7d54f9569"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Abdcd9c10-f19c-477f-b6a0-9902a2a305c8"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A5065d9ae-47f0-41dd-b165-0f7105a30704"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A3b0c264d-049b-4357-9c1c-32b5c1fd7af5"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A609a2c20-24a6-4a4f-80b9-774b9f214bf2"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A8e8fb88c-a7cb-4486-85c6-e89a1b12e132"></xbrl:campo-captura></td>
+                                        </tr>
+                                        <!--ifrs_mx-cor_20141205_ColocacionesPrivadasConGarantia-->
+                                        <tr >
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                        </tr>
+                                        
+                                        
+                                        <tr id="ifrs_mx-cor_20141205_ColocacionesPrivadasConGarantia">
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A5a6b4e0b-03e5-40c0-9ebc-333ffa368e16"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A0799e381-a211-4690-92c9-edc2e6211d98"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A4d3805e1-efd0-405a-b48f-74caeeff7fb5"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A6aa9fd64-5095-45b3-afcf-3352758a9067"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A464fddd9-88c5-4ede-ba68-432a92e42630"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ad4242fbf-b266-4185-bc21-cc90463e9f37"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A91569251-8dad-49b3-a8d6-9110b0a149ba"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A52b93ed4-bbd9-4bc8-b5d3-4533b73c7b2c"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ae45f49a9-551d-4d7f-a201-aab0cb760bf3"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A9e5b37e4-78ab-44dc-ab05-d8509fa38240"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Abfa0ff9d-1001-4232-80a7-36f203810bd1"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aba3da9bf-d09b-4a3b-b7c5-b7d24986a8f4"></xbrl:campo-captura></td>
+                                        </tr>
+                                        <tr >
+                                            <td class="totalConceptoAbstracto">&nbsp;</td>
+                                            <td class="totalConceptoAbstracto">&nbsp;</td>
+                                            <td class="totalConceptoAbstracto">&nbsp;</td>
+                                            <td class="totalConceptoAbstracto">&nbsp;</td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A58821c10-4cc5-4045-9a0f-5cb22be2b754"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A48f89e74-41a8-4500-b134-17a4dcfda976"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aeab4bdec-7147-423e-9c12-26ea7681ddaa"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aa7ec6689-b6f1-4cd2-8beb-15bb853c7f0e"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A3516e825-4ebb-4d2e-997c-18e334fd3adc"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ad80046ca-89ce-4ce1-96a0-e96f359a4973"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Afe3a79e6-5a9f-4320-9bda-9924412da64a"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ab167668c-e780-46dd-9918-9d84e77d3893"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A8db271f0-032b-478e-9096-0683df6cc2f5"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Afe398542-1f9c-4782-aa11-888a338a9968"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aa08fff0e-83c1-4eeb-afe5-99cb6775595c"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A70547b77-1aac-4da9-bfda-740454effe83"></xbrl:campo-captura></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                        </tr>
+                                        <!--ifrs_mx-cor_20141205_OtrosPasivosCirculantesYNoCirculantesConCosto-->
+                                        <tr >
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                        </tr>
+
+                                        
+                                        
+                                        <tr id="ifrs_mx-cor_20141205_OtrosPasivosCirculantesYNoCirculantesConCosto">
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ac43c146d-8653-4ab7-9114-ad72985684fc"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A76e181fc-cbf2-4881-bc2e-bc2c507c2e7e"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A3c4b0903-0d0c-4ef8-af79-a11bc064dfcb"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A5e36450e-bab6-452b-9049-b49904502c76"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A3e06eea2-9721-4a68-b276-ab2c20e70c7d"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A302560c2-6cdc-45bf-b8fa-438305c53c96"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aa850679a-8800-42c8-9b9e-0a477abf598e"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aefe7f575-eee7-4e90-913e-c518230cb56e"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A42c9a70d-310c-4079-8e3a-811eb454c153"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A4b4a4e78-4557-4eaf-bfef-90151200bb45"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ae9fda990-0eaf-4bc3-badb-76256964b8f1"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A853ce805-b533-45c5-9ecb-743d0fb1c7f6"></xbrl:campo-captura></td>
+                                        </tr>
+                                        <tr >
+                                            <td class="totalConceptoAbstracto">&nbsp;</td>
+                                            <td class="totalConceptoAbstracto">&nbsp;</td>
+                                            <td class="totalConceptoAbstracto">&nbsp;</td>
+                                            <td class="totalConceptoAbstracto">&nbsp;</td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ae64a1156-86d1-4a2c-a853-468a13e1c117"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A38b3f29f-56a5-4cc8-9d24-527a620817f3"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A7f1add6d-5845-4ff6-9776-35117fcd5fcd"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A85be1465-6137-4471-afeb-b90c59b936fa"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aa9795839-d199-431b-a3fe-f19ad5bafce0"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A07294872-ae52-41fc-a196-aabb3e18a952"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aad8cef2b-4a13-4653-b75a-41cb9fc3f74a"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ad22ab803-b605-4109-8d53-efa4d23ca1ec"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A68366925-1216-4ffa-be53-55d77f33b8a9"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Af33a2209-1016-4bfe-9b31-d4c38a2628a6"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aea27b9c3-b231-4047-879d-5b1721e79921"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ade7035e7-a338-493f-9124-8324c4e7d3d8"></xbrl:campo-captura></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                        </tr>
+                                        <!--ifrs_mx-cor_20141205_Proveedores-->
+                                        <tr >
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                        </tr>
+                                        
+                                        
+                                        <tr id="ifrs_mx-cor_20141205_Proveedores">
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aa04bdb5e-6f92-4124-9b25-bd7b6c4508f6"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A83ca7371-876f-4d11-8abd-6dfaaefdab5e"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ab54133c7-a3d8-4a48-ad2a-b7364f018475"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ae053149f-a907-4d5a-acff-9b34334c8c5b"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aad7fe80b-08fe-4021-b9ee-8ea16edc4784"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ababd6dd9-bdd0-4c65-b00f-878b88b6c482"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A4c350cbf-e610-43bc-9a16-b1e7c7b83dc0"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aef198c53-9e5f-42e2-8e32-579216672492"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A9e5cf122-727f-470e-8469-1c13ad3487d7"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A5abbbe93-be84-44ef-9eb6-e296040788d1"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A0aa3beb7-5b9a-4a0e-b93d-241dd0306dad"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ad57ca6a9-ab6e-401f-b44c-67313ca3e01e"></xbrl:campo-captura></td>
+                                        </tr>
+                                        <tr >
+                                            <td class="totalConceptoAbstracto">&nbsp;</td>
+                                            <td class="totalConceptoAbstracto">&nbsp;</td>
+                                            <td class="totalConceptoAbstracto">&nbsp;</td>
+                                            <td class="totalConceptoAbstracto">&nbsp;</td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Af5e0e8b2-6506-4e37-ad08-f3535d4d6e8d"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A8b1c8cf8-8387-4f05-ac9e-0860b3291c15"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A5b0cfcf9-87cf-491e-a22a-abb8f977e7d4"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A10bd5121-9831-4666-b1e1-34a434863b01"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A90fb9a75-9442-4d23-b2ce-74e334ae96a8"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Af951a6d1-d477-4a11-b5a3-0dcf7b51643b"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A0c989d4b-e091-426b-84b1-cf9317ab1108"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A58ccea62-39ea-4bc7-a5fa-2f4090085ee1"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aaf1793ec-357c-4a86-b48c-18ff33904c07"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A8647f624-d9cb-42a2-93fb-7b14e9bc20e3"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ab05d975f-3343-4044-aaa0-8f3310c6ad98"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A758a736b-e9da-49ff-ac90-f55947d113ac"></xbrl:campo-captura></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                            <td class="conceptoAbstracto">&nbsp;</td>
+                                        </tr>
+                                        <!--ifrs_mx-cor_20141205_OtrosPasivosCirculantesYNoCirculantesSinCosto-->
+                                        <tr >
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                            <td class="conceptoPrimarioAbstracto">&nbsp;</td>
+                                        </tr>
+                                        
+                                        
+                                        <tr id="ifrs_mx-cor_20141205_OtrosPasivosCirculantesYNoCirculantesSinCosto">
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario">&nbsp;</td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A2ca48737-eb8f-47c3-a0eb-ca53c0074710"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aa8bee53e-f674-41d0-91f9-7fe3c531f94e"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ab5844eb2-64a6-4496-8f66-14474b07b90e"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A0700f2de-363e-43dd-ba40-29e48c0ae77c"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ad4152fcb-dc45-4d15-bfbc-641abdaf3933"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A0c295ec0-443a-4810-91aa-0dc1e21fb395"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A9d3e04d2-3c22-4d2f-bf50-159a010a9163"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ae2a20471-dd0d-4fdb-9503-1ce065536309"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aae99d9d9-6474-410a-a91d-1d45a8991310"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A30c1aa5c-a14b-4e13-86f9-0e3a5badcd35"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A7b9c211b-d0cf-4f3e-a0d5-0edd1134018e"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstractoPrimario"><xbrl:campo-captura xbrl:id-hecho-plantilla="A3708032d-240c-4b0c-aff0-018a159dd3e4"></xbrl:campo-captura></td>
+                                        </tr>
+                                        <tr >
+                                            <td class="totalConceptoAbstracto">&nbsp;</td>
+                                            <td class="totalConceptoAbstracto">&nbsp;</td>
+                                            <td class="totalConceptoAbstracto">&nbsp;</td>
+                                            <td class="totalConceptoAbstracto">&nbsp;</td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A0bb0945a-5b09-4807-a0b9-a1784c231c8c"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A651b04e9-460f-4cf8-af62-d0e04d3191c1"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Af203779f-d330-4e20-ac15-ab7fc0ff7107"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Adbf91354-eaa0-4b34-b0f9-16a2b595cf01"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A7cfad089-b20a-4972-99a7-47efa27bdf75"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A1acf76d8-4ea1-4222-a50d-7ec2d6cce08c"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aa8741f8e-f9b3-47ae-8c3d-aa8781d87ab1"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A7c35ff78-fad3-4da8-a987-d2f97259cc86"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aa6632825-0243-47e7-94fd-414bf58dfaa3"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A4f327abf-da1f-47d3-ab13-4dc9e390030f"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A729bf3ec-f6e6-4b8c-853e-a77af8ec1205"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Af777ead0-dcb3-4346-8ee4-bea5fb6c58fb"></xbrl:campo-captura></td>
+                                        </tr>
+                                        <tr >
+                                            <td class="totalConceptoAbstracto">&nbsp;</td>
+                                            <td class="totalConceptoAbstracto">&nbsp;</td>
+                                            <td class="totalConceptoAbstracto">&nbsp;</td>
+                                            <td class="totalConceptoAbstracto">&nbsp;</td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A05e076fd-76bb-4f98-b796-1d51d8969a71"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A00e4143b-b948-4bdc-bcba-c81726dd51c9"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ad3fa1e03-4e75-4ad8-9ba8-70b2ad1ec5bf"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Afc40a099-4294-4ed2-94dd-5664f33ff782"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Afe04692d-3bd8-4ba6-a4ae-322d6ba74897"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aff3187d4-f756-4c59-8c18-c6246af31e21"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Af6758249-a5fe-448c-80e7-b11045f2b739"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A17349ec8-7955-479a-9a7a-437074ba41a8"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ad2167506-3ac2-4b42-bb22-1366788be082"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A5908b8cc-87f8-4727-9c59-0cf35439e7ac"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A4ad761ec-d442-4516-9b5f-0670eafa90fb"></xbrl:campo-captura></td>
+                                            <td class="totalConceptoAbstracto"><xbrl:campo-captura xbrl:id-hecho-plantilla="A6407240f-5a98-4b8f-bb43-ee83da32bed2"></xbrl:campo-captura></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</xbrl-contenedor-formato>

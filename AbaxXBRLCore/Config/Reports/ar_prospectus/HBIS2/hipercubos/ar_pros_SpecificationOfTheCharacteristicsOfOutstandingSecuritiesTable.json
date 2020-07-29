@@ -1,0 +1,38 @@
+{
+  "IdConceptos": [
+    "ar_pros_Class",
+    "ar_pros_EquitySerie",
+    "ar_pros_SerieType",
+    "ar_pros_SerieNumberOfStocks",
+    "ar_pros_SerieStockExhangesWhereTheyAreRegistered",
+    "ar_pros_SerieTickerFromTheSourceMarket",
+    "ar_pros_SerieTypeOfOperation",
+    "ar_pros_SerieObservations"
+  ],
+  "PlantillasContextos": {
+    "DEFAULT": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": []
+    }
+  },
+  "PlantillaDimensiones": {
+    "ar_pros_SeriesTypedAxis": {
+      "PrefijoValor": "<ar_pros:SerieDomain xmlns:ar_pros=\"http://www.cnbv.gob.mx/2016-08-22/ar_prospectus\">",
+      "SubfijoValor": "</ar_pros:SerieDomain>",
+      "EtiquetaNuevoElemento": "serieA",
+      "Explicita": false,
+      "IdDimension": "ar_pros_SeriesTypedAxis",
+      "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:SeriesTypedAxis"
+    }
+  },
+  "DimensionesDinamicas": [
+    "ar_pros_SeriesTypedAxis"
+  ],
+  "MaxColumnasVertical": 6,
+  "MaxColumnasHorizontal": 0,
+  "TamanoHoja": "Letter"
+}

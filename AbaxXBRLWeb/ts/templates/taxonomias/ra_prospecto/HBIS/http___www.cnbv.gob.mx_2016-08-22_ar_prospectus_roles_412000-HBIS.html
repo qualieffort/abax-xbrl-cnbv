@@ -1,0 +1,1192 @@
+<xbrl-contenedor-formato xbrl:rol-uri="{{xbrlRol.Uri}}" orientacion="landscape" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+    <table class="tablaAnchoFijo" cellspacing="5">
+        <tbody>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_LeafletCoverAbstract" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;">&nbsp;</td>
+            </tr>
+            <tr ng-if="documentoInstancia.ParametrosConfiguracion['tipoReporte'] == 'pp' || documentoInstancia.ParametrosConfiguracion['tipoReporte'] == 'pe'">
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_PlacementProspectus" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_PlacementProspectus_5564a409-e776-40bb-981b-f5c4dadfee5c"></xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr ng-if="documentoInstancia.ParametrosConfiguracion['tipoReporte'] == 'pp' || documentoInstancia.ParametrosConfiguracion['tipoReporte'] == 'pe'">
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ProspectusLegend" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label>
+                        <b>:</b>
+                    </div>
+                    <div class="bloqueTexto" style="width:100%">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_ProspectusLegend_88df3ca4-cae1-4e60-b1cc-838b576ffba9"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr ng-if="documentoInstancia.ParametrosConfiguracion['tipoReporte'] == 'fo'">
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_Brochure" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_Brochure_d5f67ed5-c703-4159-b744-b6aca5fa8e98"></xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_TheMentionOfBeingPublicOffering" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto" style="width:100%">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_TheMentionOfBeingPublicOffering_cfbac6fe-1f8f-49ae-b8ac-fa74d134462f"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_LimitedPublicOffering" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_LimitedPublicOffering_20840062-6d0b-4d5a-a3dc-622cc7adcea4"></xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_IssuanceUnderArt13OfTheCUE" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_IssuanceUnderArt13OfTheCUE_f1db512f-8844-464d-8840-dd1551faec30"></xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_TypeOfOffer" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_TypeOfOffer_64745a5c-dc04-4f7e-835a-a826b8255148"></xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_TypeOfInstrument" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_TypeOfInstrumentDescription-0000-0000-0000-0000000000"></xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_DenominationOfTheIssuer" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_DenominationOfTheIssuer_f94b56d4-6b02-4d91-8ef7-02736f5566ab"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_Ticker" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_Ticker_8161d0f2-1944-4700-85e3-0f96b933d2f3"></xbrl:campo-captura>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <!--Hipercubo de Series-->
+    <table class="tablaAnchoFijo" cellspacing="5" ng-if="definicionPlantilla.VariablesDocumentoInstancia['esTipoInstrumentoAcciones'] == 'true'">
+        <tbody>
+            <tr>
+                <td style="text-align:left; width:80%;">
+                    <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_NumberAndCharacteristicsOfTheSecuritiesBeingOfferedAbstract" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                </td>
+                <td style="text-align:left; width:20%; height:40px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_NumberAndCharacteristicsOfTheSecuritiesBeingOfferedTable" xbrl:nivel-indentacion="2" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <div>
+        <xbrl:tabla-hipercubo xbrl:id-tabla-hipercubo="hiperCuboSeries"
+                              xbrl:dependencias="['ts/templates/taxonomias/ra_prospecto/HBIS/extensiones/433004_D_ConfiguracionHipercubos.js']"
+                              xbrl:configuracion="http___www_cnbv_gob_mx_2016_08_22_ar_prospectus_roles_433004_D_ar_pros_NumberAndCharacteristicsOfTheSecuritiesBeingOfferedTableHBis"
+                              ng-if="definicionPlantilla.VariablesDocumentoInstancia['esTipoInstrumentoAcciones'] == 'true'">
+            <div id="contenedorTablaExcel" class="table-responsive">
+                <table class="hipercubo table table-striped b-t b-light"
+                       xbrl:tabla-excel selector="td"
+                       selector-contenedor-x="#contenedorFormatos"
+                       selector-contenedor-y="#contenedorFormatos"
+                       tab-index="1"
+                       on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)"
+                       on-after-paste="onAfterPaste(valorPegado, x, y)"
+                       on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)"
+                       xbrl:tabla-scrolleable="">
+                    <thead class="estiloA">
+                        <tr>
+                            <th class="no-padder">
+                                <div class="table">
+                                    <div class="row">
+                                        <div class="cell-concepto">
+                                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SeriesTypedAxis" xbrl:nivel-indentacion="3" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                        </div>
+                                        <div class="cell-button-agregar-dimension">
+                                            <button type="button"
+                                                    class="btn-info btn-desglose-credito btn-plus"
+                                                    ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                                    xbrl:agregar-miembro-dimension="ar_pros_SeriesTypedAxis">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </th>
+                            <th xbrl:repite-miembros-dimension="ar_pros_SeriesTypedAxis" class="no-padder cortar-texto-700px">
+                                <div class="table">
+                                    <div class="row">
+                                        <div class="cell-campo-captura ">
+                                            <xbrl:campo-texto-dimension xbrl:alias-dimension="ar_pros_SeriesTypedAxis" xbrl:alias-miembro="$aliasMiembroRepeat"></xbrl:campo-texto-dimension>
+                                        </div>
+                                        <div class="cell-button-eliminar-dimension">
+                                            <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_SeriesTypedAxis"
+                                                    xbrl:alias-miembro="$aliasMiembroRepeat">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SecuritiesBeingOfferedLineItems" xbrl:nivel-indentacion="2" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                            </td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_SeriesTypedAxis">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_Class" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                            </td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_SeriesTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_Class" xbrl:contexto-plantilla="P0" xbrl:contexto-miembros-dimension="{'ar_pros_SeriesTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_Series" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                            </td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_SeriesTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_Series" xbrl:contexto-plantilla="P0" xbrl:contexto-miembros-dimension="{'ar_pros_SeriesTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_Type" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                            </td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_SeriesTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_Type" xbrl:contexto-plantilla="P0" xbrl:contexto-miembros-dimension="{'ar_pros_SeriesTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_NominalValue" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                            </td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_SeriesTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_NominalValue" xbrl:contexto-plantilla="P0" xbrl:contexto-miembros-dimension="{'ar_pros_SeriesTypedAxis': '$aliasMiembroRepeat'}" xbrl:alias-unidad="MXN" xbrl:decimales="0" xbrl:valor-default="0"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_NumberOfValues" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                            </td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_SeriesTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_NumberOfValues" xbrl:contexto-plantilla="P0" xbrl:contexto-miembros-dimension="{'ar_pros_SeriesTypedAxis': '$aliasMiembroRepeat'}" xbrl:alias-unidad="MXN" xbrl:decimales="0" xbrl:valor-default="0"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_TickerOfTheOriginStockMarket" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                            </td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_SeriesTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_TickerOfTheOriginStockMarket" xbrl:contexto-plantilla="P0" xbrl:contexto-miembros-dimension="{'ar_pros_SeriesTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_TypeOfOperation" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                            </td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_SeriesTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_TypeOfOperation" xbrl:contexto-plantilla="P0" xbrl:contexto-miembros-dimension="{'ar_pros_SeriesTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_Observations" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                            </td>
+                            <td xbrl:repite-miembros-dimension="ar_pros_SeriesTypedAxis">
+                                <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_Observations" xbrl:contexto-plantilla="P0" xbrl:contexto-miembros-dimension="{'ar_pros_SeriesTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </xbrl:tabla-hipercubo>
+    </div>
+    <!--Termina Hipercubo de Series-->
+    <br />
+    <table class="tablaAnchoFijo" cellspacing="5">
+        <tbody>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_NameOfTheReferenceCurrencyInWhichTheIssueIsMade" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_NameOfTheReferenceCurrencyInWhichTheIssueIsMade_bc345cab-c9b8-4df5-8306-5f36f1b3c35f"></xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ExchangeRateUDIValue" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_ExchangeRateUDIValue_95faa017-e888-4fd9-964b-40bd5bd074b9"></xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_PlacementPriceValues" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_PlacementPriceValues_06f201bb-2cf7-43d3-9a6e-f6d00d2ab2a0"></xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_TotalAmountOfTheOffer" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_TotalAmountOfTheOffer_7945f392-9434-41a1-ac7c-c0bdbcfc1130"></xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_TotalAmountProgramRegistration" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_TotalAmountProgramRegistration_f8158cdf-90be-4314-b986-5d2258ce0fb5"></xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_LifeOfTheProgram" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_LifeOfTheProgram_6a902f13-3ea0-4494-a37a-a5c5d26eb1e9"></xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_DateOfPublicationOfTenderNotice" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_DateOfPublicationOfTenderNotice_e54a7dfe-33b7-46e2-b5a2-35ab85760ee2"></xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_PeriodOrDateOfTheOffer" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_PeriodOrDateOfTheOffer_7d007fad-87ed-49e2-8814-9407064e590b"></xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ClosingDateBookOrAuction" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_ClosingDateBookOrAuction_0f77ce37-72eb-4d13-8f16-bea600377245"></xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_DateOfRegisterInTheStockExchange" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_DateOfRegisterInTheStockExchange_630cc337-1c9b-4fb7-8f0a-e194e5cf28f0"></xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SettlementDate" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_SettlementDate_37ddc8ef-6db5-4e4a-884f-3e20d7a5ff5e"></xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_NetResourceThatWillGetTheIssuerWithThePlacement" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_NetResourceThatWillGetTheIssuerWithThePlacement_28495163-09e9-4ec0-82c1-849c07999791"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <!--Inicia Participantes de la Oferta-->
+    <div>
+        <table class="tablaAnchoFijo" cellspacing="5">
+            <tbody>
+                <tr>
+                    <td>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_NameOfTheUnderWriter" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ParticipantsInTheOfferAbstract" xbrl:nivel-indentacion="2" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <xbrl:tabla-hipercubo xbrl:id-tabla-hipercubo="hiperCuboParticipante"
+                              xbrl:dependencias="['ts/templates/taxonomias/ra_prospecto/H/extensiones/414000_H_ConfiguracionHipercubos.js']"
+                              xbrl:configuracion="http___www_cnbv_gob_mx_2016_08_22_ar_prospectus_roles_414000_H_ar_pros_ParticipantsInTheOfferTable">
+            <div id="contenedorTablaExcel" class="table-responsive">
+                <table class="hipercubo table table-striped b-t b-light" xbrl:tabla-excel selector="td:not(:first-child)" selector-contenedor-x="#contenedorFormatos"
+                       selector-contenedor-y="#contenedorFormatos" tab-index="1" on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)"
+                       on-after-paste="onAfterPaste(valorPegado, x, y)" on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)"
+                       cellpadding="0" cellspacing="0">
+                    <colgroup>
+                        <col width="420" class="titulo-dinamico" />
+                        <col width="210" />
+                        <col />
+                        <col />
+                        <col />
+                    </colgroup>
+                    <thead class="bg-gris">
+                        <tr>
+                            <th>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ParticipantsInTheOfferTable" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="border-right-top">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ParticipantName" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="estiloA">
+                        <tr>
+                            <td class="no-padder">
+                                <div class="table">
+                                    <div class="row">
+                                        <div class="cell-concepto">
+                                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_BrokerageCommissionsAndPlacementMember" xbrl:nivel-indentacion="5" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                        </div>
+                                        <!--<div class="cell-button-agregar-dimension">
+                                            <button type="button"
+                                                    class="btn-info btn-plus"
+                                                    ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                                    xbrl:agregar-miembro-dimension="ar_pros_ParticipantsInTheOfferSequenceTypedAxis"
+                                                    xbrl:agrupar-por="{'ar_pros_TypeOfParticipationsInTheOfferAxis':'BrokerageCommissionsAndPlacementMember'}">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>-->
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr xbrl:repite-miembros-dimension="ar_pros_ParticipantsInTheOfferSequenceTypedAxis" xbrl:agrupar-por="{'ar_pros_TypeOfParticipationsInTheOfferAxis':'BrokerageCommissionsAndPlacementMember'}">
+                            <td class="no-padder">
+                                <div class="table">
+                                    <div class="row">
+                                        <div class="cell-campo-captura">
+                                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ParticipantName" xbrl:contexto-plantilla="BrokerageCommissionsAndPlacementMember" xbrl:contexto-miembros-dimension="{'ar_pros_ParticipantsInTheOfferSequenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                        </div>
+                                        <!--<div class="cell-button-eliminar-dimension">
+                                            <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_ParticipantsInTheOfferSequenceTypedAxis" xbrl:alias-miembro="$aliasMiembroRepeat">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>-->
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="no-padder">
+                                <div class="table">
+                                    <div class="row">
+                                        <div class="cell-concepto">
+                                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_TrustFeesMember" xbrl:nivel-indentacion="5" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                        </div>
+                                        <!--<div class="cell-button-agregar-dimension">
+                                            <button type="button"
+                                                    class="btn-info btn-plus"
+                                                    ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                                    xbrl:agregar-miembro-dimension="ar_pros_ParticipantsInTheOfferSequenceTypedAxis"
+                                                    xbrl:agrupar-por="{'ar_pros_TypeOfParticipationsInTheOfferAxis':'CommonRepresentativeMember'}">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>-->
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr xbrl:repite-miembros-dimension="ar_pros_ParticipantsInTheOfferSequenceTypedAxis" xbrl:agrupar-por="{'ar_pros_TypeOfParticipationsInTheOfferAxis':'TrustFeesMember'}">
+                            <td class="no-padder">
+                                <div class="table">
+                                    <div class="row">
+                                        <div class="cell-campo-captura">
+                                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ParticipantName" xbrl:contexto-plantilla="TrustFeesMember" xbrl:contexto-miembros-dimension="{'ar_pros_ParticipantsInTheOfferSequenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                        </div>
+                                        <!--<div class="cell-button-eliminar-dimension">
+                                            <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_ParticipantsInTheOfferSequenceTypedAxis" xbrl:alias-miembro="$aliasMiembroRepeat">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>-->
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </xbrl:tabla-hipercubo>
+    </div>
+    <!--Termina Participantes de la Oferta-->
+    <br />
+    <table class="tablaAnchoFijo" cellspacing="5">
+        <tbody>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_NamesOfTheParticipantsInTheSyndicateIntermediaries" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_NamesOfTheParticipantsInTheSyndicateIntermediaries_e4f544c6-2a5d-4762-9ab9-5cf45ed3dc0c"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SerieDepositary" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_SerieDepositary_a38b341c-0655-4d39-b0bc-ac44fc91eec5"></xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_LegalBasisOfTheTaxRegimeApplicable" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto" style="width:100%">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_LegalBasisOfTheTaxRegimeApplicable_61ac9b66-da14-4f31-9045-8bb5cd515a5c"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_TheMentionOfTheSecuritiesAreRegisteredInTheRNV" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto" style="width:100%">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_TheMentionOfTheSecuritiesAreRegisteredInTheRNV_9e740204-6ae5-4eb5-b32e-724f90f6af48"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_LegendArticle86OfTheLMV" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto" style="width:100%">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_LegendArticle86OfTheLMV_ed7c502c-2355-4ecf-a9a7-447b686b08fd"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_NumberOfRegister" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_NumberOfRegister_538b124c-3e1b-4e7e-adb4-9bdec788eb24"></xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_PlaceAndDateOfPublicationOfTheProspectusSupplementProspectus" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto" style="width:100%">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_PlaceAndDateOfPublicationOfTheProspectusSupplementProspectus_ee4110d9-056c-4aa3-98a9-ba7562023181"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_OfficeNumberAndDateOfAuthorizationOfTheCommission" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto" style="width:100%">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_OfficeNumberAndDateOfAuthorizationOfTheCommission_10d0053f-90fd-4131-ac1d-399553b27dce"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_LegendDocumentAvailableWithTheUnderwriter" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto" style="width:100%">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_LegendDocumentAvailableWithTheUnderwriter_3d54a988-36ef-4282-a70d-734d2720e7d0"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ProspectusSupplementBrochure" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_ProspectusSupplementBrochure_92357217-876f-4e7d-8635-39e61e86845a"></xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_LegendProspectusSupplementBrochure" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto" style="width:100%">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_LegendProspectusSupplementBrochure_cb4f1f5b-a685-40d2-94fb-5aac717ff1c6"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ShouldIncludeTheNameOfAnyOtherThirdPartyNotProvidedForInTheLMV" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_ShouldIncludeTheNameOfAnyOtherThirdPartyNotProvidedForInTheLMV_a037f5e6-45ae-4a4c-8e6c-f54503b1c186"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_NumberOfSharesRepresentingTheCapitalOfTheIssuer" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_NumberOfSharesRepresentingTheCapitalOfTheIssuer_e9b7533e-9447-4846-bdf5-11ba76b2bf26"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_WhereAppropriateHowTheyShouldExerciseTheOverallotment" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_WhereAppropriateHowTheyShouldExerciseTheOverallotment_f7279b4e-5bf2-4da0-8015-bf3f13632954"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_PercentageOfShareCapitalRepresentedByTheSharesOfTheOffer" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_PercentageOfShareCapitalRepresentedByTheSharesOfTheOffer_090d2cfb-6ca9-4362-a3df-375ea96ec5df"></xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_WhereAppropriatePercentageIncludingOver-AllotmentOptionAfterTheOffer" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_WhereAppropriatePercentageIncludingOver-AllotmentOptionAfterTheOffer_5130abd8-e2a4-495d-93c9-c122d5492ee4"></xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_DiscloseWhetherSimultaneouslyToThePublicOffering" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_DiscloseWhetherSimultaneouslyToThePublicOffering_4494e58f-ef86-4d6e-82e4-c8a4fc414561"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_InTheCaseOfCreditsAbstract" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_NumberOfTrust" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_NumberOfTrust_84a372ba-e6ee-4c5f-b795-db805053e04c"></xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_DataRelatingToTheIndenture" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_DataRelatingToTheIndenture_d6304180-42fa-440f-98c2-e14c2d954548"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <!--Inicia Participantes de la Oferta-->
+    <div>
+        <table class="tablaAnchoFijo" cellspacing="5">
+            <tbody>
+                <tr>
+                    <td>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_NameOfTrusteeAbstract" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ParticipantsInTheOfferAbstract" xbrl:nivel-indentacion="2" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <xbrl:tabla-hipercubo xbrl:id-tabla-hipercubo="hiperCuboParticipante"
+                              xbrl:dependencias="['ts/templates/taxonomias/ra_prospecto/H/extensiones/414000_H_ConfiguracionHipercubos.js']"
+                              xbrl:configuracion="http___www_cnbv_gob_mx_2016_08_22_ar_prospectus_roles_414000_H_ar_pros_ParticipantsInTheOfferTable">
+            <div id="contenedorTablaExcel" class="table-responsive">
+                <table class="hipercubo table table-striped b-t b-light" xbrl:tabla-excel selector="td:not(:first-child)" selector-contenedor-x="#contenedorFormatos"
+                       selector-contenedor-y="#contenedorFormatos" tab-index="1" on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)"
+                       on-after-paste="onAfterPaste(valorPegado, x, y)" on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)"
+                       cellpadding="0" cellspacing="0">
+                    <colgroup>
+                        <col width="420" class="titulo-dinamico" />
+                        <col width="210" />
+                        <col />
+                        <col />
+                        <col />
+                    </colgroup>
+                    <thead class="bg-gris">
+                        <tr>
+                            <th>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ParticipantsInTheOfferTable" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="border-right-top">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ParticipantName" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="estiloA">
+                        <tr>
+                            <td class="no-padder">
+                                <div class="table">
+                                    <div class="row">
+                                        <div class="cell-concepto">
+                                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_BrokerageCommissionsAndPlacementMember" xbrl:nivel-indentacion="5" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                        </div>
+                                        <!--<div class="cell-button-agregar-dimension">
+                                            <button type="button"
+                                                    class="btn-info btn-plus"
+                                                    ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                                    xbrl:agregar-miembro-dimension="ar_pros_ParticipantsInTheOfferSequenceTypedAxis"
+                                                    xbrl:agrupar-por="{'ar_pros_TypeOfParticipationsInTheOfferAxis':'BrokerageCommissionsAndPlacementMember'}">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>-->
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr xbrl:repite-miembros-dimension="ar_pros_ParticipantsInTheOfferSequenceTypedAxis" xbrl:agrupar-por="{'ar_pros_TypeOfParticipationsInTheOfferAxis':'BrokerageCommissionsAndPlacementMember'}">
+                            <td class="no-padder">
+                                <div class="table">
+                                    <div class="row">
+                                        <div class="cell-campo-captura">
+                                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ParticipantName" xbrl:contexto-plantilla="BrokerageCommissionsAndPlacementMember" xbrl:contexto-miembros-dimension="{'ar_pros_ParticipantsInTheOfferSequenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                        </div>
+                                        <!--<div class="cell-button-eliminar-dimension">
+                                            <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_ParticipantsInTheOfferSequenceTypedAxis" xbrl:alias-miembro="$aliasMiembroRepeat">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>-->
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="no-padder">
+                                <div class="table">
+                                    <div class="row">
+                                        <div class="cell-concepto">
+                                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_TrustFeesMember" xbrl:nivel-indentacion="5" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                        </div>
+                                        <!--<div class="cell-button-agregar-dimension">
+                                            <button type="button"
+                                                    class="btn-info btn-plus"
+                                                    ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                                    xbrl:agregar-miembro-dimension="ar_pros_ParticipantsInTheOfferSequenceTypedAxis"
+                                                    xbrl:agrupar-por="{'ar_pros_TypeOfParticipationsInTheOfferAxis':'CommonRepresentativeMember'}">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>-->
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr xbrl:repite-miembros-dimension="ar_pros_ParticipantsInTheOfferSequenceTypedAxis" xbrl:agrupar-por="{'ar_pros_TypeOfParticipationsInTheOfferAxis':'TrustFeesMember'}">
+                            <td class="no-padder">
+                                <div class="table">
+                                    <div class="row">
+                                        <div class="cell-campo-captura">
+                                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ParticipantName" xbrl:contexto-plantilla="TrustFeesMember" xbrl:contexto-miembros-dimension="{'ar_pros_ParticipantsInTheOfferSequenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                        </div>
+                                        <!--<div class="cell-button-eliminar-dimension">
+                                            <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_ParticipantsInTheOfferSequenceTypedAxis" xbrl:alias-miembro="$aliasMiembroRepeat">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>-->
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </xbrl:tabla-hipercubo>
+    </div>
+    <!--Termina Participantes de la Oferta-->
+    <br />
+    <table class="tablaAnchoFijo" cellspacing="5">
+        <tbody>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_Settlor" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_Settlor_5a3af6bb-938e-4187-9c6d-3ebb48a5c1f7"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_TrusteesInFirstPlace" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto" style="width:100%">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_TrusteesInFirstPlace_eff7308f-caea-45f9-91d5-bfa69527b295"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_TrusteesInSecondPlace" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto" style="width:100%">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_TrusteesInSecondPlace_b206ddc2-de0c-4a4a-8c4c-0b5078924058"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_TrusteesInThirdPlace" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto" style="width:100%">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_TrusteesInThirdPlace_c8a3876a-2837-426f-893d-0f71d548cc73"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_OtherTrustees" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto" style="width:100%">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_OtherTrustees_5faf46fd-3f0f-4fa5-b81d-71ad60d75664"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_AssetsRightsOrValuesUnderATrust" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_AssetsRightsOrValuesUnderATrust_a27570e9-ccdb-475e-9916-aec5dedcee2d"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <!--Inicia Participantes de la Oferta-->
+    <div>
+        <table class="tablaAnchoFijo" cellspacing="5">
+            <tbody>
+                <tr>
+                    <td>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_NameOfTheCommonRepresentativeOfTheHoldersOfSecurities" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ParticipantsInTheOfferAbstract" xbrl:nivel-indentacion="2" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <xbrl:tabla-hipercubo xbrl:id-tabla-hipercubo="hiperCuboParticipante"
+                              xbrl:dependencias="['ts/templates/taxonomias/ra_prospecto/H/extensiones/414000_H_ConfiguracionHipercubos.js']"
+                              xbrl:configuracion="http___www_cnbv_gob_mx_2016_08_22_ar_prospectus_roles_414000_H_ar_pros_ParticipantsInTheOfferTable">
+            <div id="contenedorTablaExcel" class="table-responsive">
+                <table class="hipercubo table table-striped b-t b-light" xbrl:tabla-excel selector="td:not(:first-child)" selector-contenedor-x="#contenedorFormatos"
+                       selector-contenedor-y="#contenedorFormatos" tab-index="1" on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)"
+                       on-after-paste="onAfterPaste(valorPegado, x, y)" on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)"
+                       cellpadding="0" cellspacing="0">
+                    <colgroup>
+                        <col width="420" class="titulo-dinamico" />
+                        <col width="210" />
+                        <col />
+                        <col />
+                        <col />
+                    </colgroup>
+                    <thead class="bg-gris">
+                        <tr>
+                            <th>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ParticipantsInTheOfferTable" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="border-right-top">
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ParticipantName" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="estiloA">
+                        <tr>
+                            <td class="no-padder">
+                                <div class="table">
+                                    <div class="row">
+                                        <div class="cell-concepto">
+                                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_BrokerageCommissionsAndPlacementMember" xbrl:nivel-indentacion="5" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                        </div>
+                                        <!--<div class="cell-button-agregar-dimension">
+                                            <button type="button"
+                                                    class="btn-info btn-plus"
+                                                    ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                                    xbrl:agregar-miembro-dimension="ar_pros_ParticipantsInTheOfferSequenceTypedAxis"
+                                                    xbrl:agrupar-por="{'ar_pros_TypeOfParticipationsInTheOfferAxis':'BrokerageCommissionsAndPlacementMember'}">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>-->
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr xbrl:repite-miembros-dimension="ar_pros_ParticipantsInTheOfferSequenceTypedAxis" xbrl:agrupar-por="{'ar_pros_TypeOfParticipationsInTheOfferAxis':'BrokerageCommissionsAndPlacementMember'}">
+                            <td class="no-padder">
+                                <div class="table">
+                                    <div class="row">
+                                        <div class="cell-campo-captura">
+                                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ParticipantName" xbrl:contexto-plantilla="BrokerageCommissionsAndPlacementMember" xbrl:contexto-miembros-dimension="{'ar_pros_ParticipantsInTheOfferSequenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                        </div>
+                                        <!--<div class="cell-button-eliminar-dimension">
+                                            <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_ParticipantsInTheOfferSequenceTypedAxis" xbrl:alias-miembro="$aliasMiembroRepeat">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>-->
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="no-padder">
+                                <div class="table">
+                                    <div class="row">
+                                        <div class="cell-concepto">
+                                            <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_TrustFeesMember" xbrl:nivel-indentacion="5" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                        </div>
+                                        <!--<div class="cell-button-agregar-dimension">
+                                            <button type="button"
+                                                    class="btn-info btn-plus"
+                                                    ng-hide="documentoInstancia.BloquearCamposCaptura"
+                                                    xbrl:agregar-miembro-dimension="ar_pros_ParticipantsInTheOfferSequenceTypedAxis"
+                                                    xbrl:agrupar-por="{'ar_pros_TypeOfParticipationsInTheOfferAxis':'CommonRepresentativeMember'}">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>-->
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr xbrl:repite-miembros-dimension="ar_pros_ParticipantsInTheOfferSequenceTypedAxis" xbrl:agrupar-por="{'ar_pros_TypeOfParticipationsInTheOfferAxis':'TrustFeesMember'}">
+                            <td class="no-padder">
+                                <div class="table">
+                                    <div class="row">
+                                        <div class="cell-campo-captura">
+                                            <xbrl:campo-captura-hecho-dimension xbrl:id-concepto="ar_pros_ParticipantName" xbrl:contexto-plantilla="TrustFeesMember" xbrl:contexto-miembros-dimension="{'ar_pros_ParticipantsInTheOfferSequenceTypedAxis': '$aliasMiembroRepeat'}"></xbrl:campo-captura-hecho-dimension>
+                                        </div>
+                                        <!--<div class="cell-button-eliminar-dimension">
+                                            <button type="button" class="btn-danger btn-eliminar-dimension" xbrl:eliminar-miembro-dimension="ar_pros_ParticipantsInTheOfferSequenceTypedAxis" xbrl:alias-miembro="$aliasMiembroRepeat">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>-->
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </xbrl:tabla-hipercubo>
+    </div>
+    <!--Termina Participantes de la Oferta-->
+    <br />
+    <table class="tablaAnchoFijo" cellspacing="5">
+        <tbody>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_WhereAppropriateValuatoryOpinion" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_WhereAppropriateValuatoryOpinion_bfe2efa2-53c6-4a3c-9afd-5d564e3c7b0c"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_IssuanceUnderArt13OfTheCUELegend" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto" style="width:100%">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_IssuanceUnderArt13OfTheCUELegend_bfe2efa2-53c6-4a3c-9afd-5d564e3c7b0d" xbrl:ultimo="true"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <table class="tablaAnchoFijo" cellspacing="5">
+        <tbody>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ForeingIssuer" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_ForeingIssuer_34492c0c-864f-4cad-bb3d-8ddb978d16af"></xbrl:campo-captura>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="etiquetaConceptoTitulo">
+                        <label>
+                            <b>
+                                <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_MentioningwhetherOrNotHaveCollateral" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                            </b>
+                        </label><b>:</b>
+                    </div>
+                    <div class="bloqueTexto" style="width:100%">
+                        <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_MentioningwhetherOrNotHaveCollateral_beec5e3c-4d79-44b5-b904-dd469f840887"></xbrl:campo-captura>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;">
+                    <b>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_MentioningPartialOrTotalDependencePros" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b>
+                </td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+                    <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_MentioningPartialOrTotalDependencePros_0e30184d-f1d3-41de-87d6-55d53484b0f5"
+                                        xbrl:ultimo="true"></xbrl:campo-captura>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</xbrl-contenedor-formato>

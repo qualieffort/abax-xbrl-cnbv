@@ -1,0 +1,40 @@
+﻿<section class="m-b-lg">
+    <header class="wrapper"></header>
+    <div class="panel panel-default">
+        <div class="panel-heading text-right">
+            <div class="btn-group">
+                <button type="button" class="btn btn-link btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <i class="i i-world"></i>
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" style="min-width: 0">
+                    <li><a ng-click="cambiarIdioma('es')">Español</a></li>
+                    <li><a ng-click="cambiarIdioma('en')">English</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="list-group" ng-keypress="onKeyPressListener($event)">
+            <div class="list-group-item">
+                <input type="email" name="email" id="email" placeholder="{{'PLACE_HOLDER_CORREO_ELECTRONICO' | translate}}" class="form-control no-border" ng-model="credencial.Correo" ng-if="!esSSO">
+                <input type="text" name="usuario" id="usuario" placeholder="{{'PLACE_HOLDER_USUARIO' | translate}}" class="form-control no-border" ng-model="credencial.Usuario" ng-if="esSSO">
+            </div>
+            <div class="list-group-item">
+                <input type="password" name="password" id="password" placeholder="{{'PLACE_HOLDER_CONTRASENA' | translate}}" class="form-control no-border" ng-model="credencial.Password">
+            </div>
+            <!--
+        <div class="list-group-item">
+            <label class="checkbox m-n i-checks">
+                <input type="checkbox" value="true" ng-model="credencial.AceptoTerminosCondiciones">><i></i>
+                <a href="" ng-click="mostrarTerminosUso()">{{'ETIQUETA_ACEPTO_TERMINOS_CONDICIONES' | translate}}</a>
+            </label>
+        </div>
+        -->
+        </div>
+    </div>
+        <button type="button" class="btn btn-lg btn-primary btn-block" ng-click="autentificar()" ng-hide="autenticando">{{'ETIQUETA_BOTON_INICIAR_SESION' | translate}}</button>
+        <button type="button" class="btn btn-lg btn-primary btn-block bloqueado" disabled ng-if="autenticando">
+            <i class="fa fa-refresh fa-spin"></i> {{'MENSAJE_INFO_AUTENTICANDO' | translate}} ...
+        </button>
+    <div class="text-center m-t m-b" ng-if="!esSSO"><a href="javascript:void(0);" ng-click="muestraOlvidoContrasena()"><small>{{'ETIQUETA_OLVIDO_PASSWORD' | translate}}</small></a></div>
+        <div class="line line-dashed"></div>
+</section>

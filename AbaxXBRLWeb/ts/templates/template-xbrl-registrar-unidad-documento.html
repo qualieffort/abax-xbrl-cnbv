@@ -1,0 +1,236 @@
+﻿<div>
+    <form name="formaRegistroUnidad">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="cerrarDialogo()">&times;</button>
+            <h4> {{'EDITOR_GENERICO_REGISTRAR_UNIDAD_DOC_INSTANCIA' | translate}} </h4>
+        </div>
+        <div class="modal-body">
+
+            <section class="scrollable wrapper w-f">
+                <div class="row form-group">
+                    <label class="col-sm-2 control-label">{{'EDITOR_GENERICO_IDENTIFICADOR_UNIDAD' | translate}}</label>
+                    <div class="col-sm-10">
+                        <div class="row">
+                            <div class="col-md-8" ng-class="{ 'has-error' : formaRegistroUnidad.IdUnidadDocumento.$invalid }">
+                                <input name="IdUnidadDocumento" type="text" ng-model="unidadDocumento.Id" ng-required="true" class="form-control" />
+                                <p ng-show="formaRegistroUnidad.IdUnidadDocumento.$invalid && !formaRegistroUnidad.IdUnidadDocumento.$pristine" class="help-block">{{'EDITOR_GENERICO_IDENTIFICADOR_UNIDAD_REQUERIDO' | translate}}.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+
+                <div class="row form-group">
+                    <label class="col-sm-2 control-label">{{'EDITOR_GENERICO_TIPO_UNIDAD' | translate}}</label>
+                    <div class="col-sm-10">
+                        <div class="row">
+                            <div class="col-md-4" ng-class="{ 'has-error' : formaRegistroUnidad.Tipo.$invalid }">
+                                <select name="Tipo" ng-model="unidadDocumento.Tipo" ng-required="true" class="form-control" ng-options="tipoUnidad.idTipoValor as tipoUnidad.etiqueta  for tipoUnidad in ListaTiposUnidad" ng-change="manejarOnChange()"></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+
+                <div class="row" ng-if="unidadDocumento.Tipo==1">
+                    <div class="col-sm-12">
+                        <h4>
+                            {{'EDITOR_GENERICO_LISTA_UNIDADADES' | translate}}
+                            <input type="button" value="{{'EDITOR_XBRL_NUEVA_MEDIDA' | translate}}" ng-click="RegistrarMedida()" class="btn btn-default" style="float:right;width:160px;" >
+                        </h4>
+
+                        <hr/>
+
+                        <div class="col-sm-12 input-group">
+                            <div ng-if="!unidadDocumento.Medidas || unidadDocumento.Medidas.length==0">
+                                {{'EDITOR_GENERICO_SIN_MEDIDAS' | translate}}.
+                            </div>
+                            <table ng-if="unidadDocumento.Medidas" style="width:750px;">
+                                <tr ng-repeat="medida in unidadDocumento.Medidas" style="height:50px;">
+                                    <td>
+                                        <a class="btn btn-rounded btn-icon btn-danger" style="float:right;margin-left:15px;" href="#" ng-click="EliminarMedida($index,'MEDIDA')" title="{{'EDITOR_GENERICO_ELIMINAR_MEDIDA'| translate}}">
+                                            <i class="fa fa-trash-o" style="cursor:pointer;"></i>
+                                        </a>
+
+                                        <a class="btn btn-rounded btn-icon" ng-class="{'btn-warning' : medida.EsMedidaPersonalizada, 'btn-default' : !medida.EsMedidaPersonalizada}"
+                                           style="float:right;margin-left:15px;" href="#" ng-click="CambiarMedidaPersonalizada(medida)" title="{{'EDITOR_GENERICO_PERSONALIZAR_MEDIDA' | translate}}">
+                                            <i class="fa fa-cog" style="cursor:pointer;"></i>
+                                        </a>
+
+                                        <div ng-if="!medida.EsMedidaPersonalizada" ng-class="{ 'has-error' : formaRegistroUnidad.medida{{$index}}.$invalid }">
+                                            <select name="medida{{$index}}" ng-model="medida.Nombre" class="form-control" ng-options="codigoMoneda.codigo as codigoMoneda.descripcion  for codigoMoneda in ListaCodigosMoneda" style="width:500px" ng-required="true">
+                                                <option value="">-- {{'ETIQUETA_SELECCIONAR_OPCION' | translate}} --</option>
+                                            </select>
+                                            
+                                        </div>
+                                        <div ng-if="medida.EsMedidaPersonalizada" class="col-sm-10">
+
+                                            <div class="row form-group">
+                                                <label class="col-sm-2 control-label">{{'EDITOR_GENERICO_NAME_SPACE' | translate}}</label>
+                                                <div class="col-sm-8">
+                                                    <div class="row">
+                                                        <div class="col-md-12" ng-class="{ 'has-error' : formaRegistroUnidad.espacioNombres{{$index}}.$invalid }">
+                                                            <input name="espacioNombres{{$index}}" type="text" ng-model="medida.EspacioNombres" ng-required="true" class="form-control" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row form-group">
+                                                <label class="col-sm-2 control-label">{{'ETIQUETA_NOMBRE' | translate}}</label>
+                                                <div class="col-sm-8">
+                                                    <div class="row">
+                                                        <div class="col-md-12" ng-class="{ 'has-error' : formaRegistroUnidad.nombrePersonalizado{{$index}}.$invalid }">
+                                                            <input name="nombrePersonalizado{{$index}}" type="text" ng-model="medida.Nombre" ng-required="true" class="form-control" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">&nbsp;</div>
+                </div>
+
+
+                <!-- Para el manejo de divisoria  -->
+
+                <div class="row" ng-if="unidadDocumento.Tipo==2">
+                    <div class="col-sm-12">
+                        <h4>
+                            {{'EDITOR_GENERICO_LISTADO_NUMERADORES' | translate}}
+                            <input type="button" value="{{'EDITOR_GENERICO_NUEVO_NUMERADOR' | translate}}" ng-click="RegistrarNumerador()" class="btn btn-default" style="float:right;width:160px;">
+                        </h4>
+
+                        <hr />
+
+                        <div class="col-sm-12 input-group">
+                            <div ng-if="!unidadDocumento.MedidasNumerador || unidadDocumento.MedidasNumerador.length==0">
+                                {{'EDITOR_GENERICO_SIN_NUMERADORES'|translate}}.
+                            </div>
+                            <table ng-if="unidadDocumento.MedidasNumerador" style="width:750px;">
+                                <tr ng-repeat="medida in unidadDocumento.MedidasNumerador" style="height:50px;">
+                                    <td>
+                                        <a class="btn btn-rounded btn-icon btn-danger" style="float:right;margin-left:15px;" href="#" ng-click="EliminarMedida($index,'NUMERADOR')" title="{{'EDITOR_GENERICO_ELIMINAR_NUMERADOR'|translate}}">
+                                            <i class="fa fa-trash-o" style="cursor:pointer;"></i>
+                                        </a>
+
+                                        <a class="btn btn-rounded btn-icon" ng-class="{'btn-warning' : medida.EsMedidaPersonalizada, 'btn-default' : !medida.EsMedidaPersonalizada}"
+                                           style="float:right;margin-left:15px;" href="#" ng-click="CambiarMedidaPersonalizada(medida)" title="{{'EDITOR_GENERICO_PERSONALIZAR_NUMERADOR' | translate}}">
+                                            <i class="fa fa-cog" style="cursor:pointer;"></i>
+                                        </a>
+
+                                        <div ng-if="!medida.EsMedidaPersonalizada" ng-class="{ 'has-error' : formaRegistroUnidad.medida{{$index}}.$invalid }">
+                                            <select name="medida{{$index}}" ng-model="medida.Nombre" class="form-control" ng-options="codigoMoneda.codigo as codigoMoneda.descripcion  for codigoMoneda in ListaCodigosMoneda" style="width:500px" ng-required="true">
+                                                <option value="">-- {{'ETIQUETA_SELECCIONAR_OPCION' | translate}} --</option>
+                                            </select>
+                                        </div>
+                                        <div ng-if="medida.EsMedidaPersonalizada" class="col-sm-10">
+
+                                            <div class="row form-group">
+                                                <label class="col-sm-2 control-label">{{'EDITOR_GENERICO_NAME_SPACE' | translate}}</label>
+                                                <div class="col-sm-8">
+                                                    <div class="row">
+                                                        <div class="col-md-12" ng-class="{ 'has-error' : formaRegistroUnidad.espacioNombres{{$index}}.$invalid }">
+                                                            <input name="espacioNombres{{$index}}" type="text" ng-model="medida.EspacioNombres" ng-required="true" class="form-control" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row form-group">
+                                                <label class="col-sm-2 control-label">{{'ETIQUETA_NOMBRE' | translate}}</label>
+                                                <div class="col-sm-8">
+                                                    <div class="row">
+                                                        <div class="col-md-12" ng-class="{ 'has-error' : formaRegistroUnidad.nombrePersonalizado{{$index}}.$invalid }">
+                                                            <input name="nombrePersonalizado{{$index}}" type="text" ng-model="medida.Nombre" ng-required="true" class="form-control" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">&nbsp;</div>
+                </div>
+
+
+                <div class="row" ng-if="unidadDocumento.Tipo==2">
+                    <div class="col-sm-12">
+                        <h4>
+                            {{'EDITOR_GENERICO_LISTADO_DENOMINADORES' | translate}}
+                            <input type="button" value="{{'EDITOR_GENERICO_NUEVO_DENOMINADOR' | translate}}" ng-click="RegistrarDenominador()" class="btn btn-default" style="float:right;width:160px;">
+                        </h4>
+
+                        <hr /> 
+                        <div class="col-sm-12 input-group">
+                            <div ng-if="!unidadDocumento.MedidasDenominador || unidadDocumento.MedidasDenominador.length==0">
+                                {{'EDITOR_GENERICO_SIN_DENOMINADORES' | translate}}.
+                            </div>
+                            <table ng-if="unidadDocumento.MedidasDenominador" style="width:750px;">
+                                <tr ng-repeat="medida in unidadDocumento.MedidasDenominador" style="height:50px;">
+                                    <td>
+                                        <a class="btn btn-rounded btn-icon btn-danger" style="float:right;margin-left:15px;" href="#" ng-click="EliminarMedida($index,'DENOMINADOR')" title="{{'EDITOR_GENERICO_ELIMINAR_DENOMINADOR' | translate}}">
+                                            <i class="fa fa-trash-o" style="cursor:pointer;"></i>
+                                        </a>
+
+                                        <a class="btn btn-rounded btn-icon" ng-class="{'btn-warning' : medida.EsMedidaPersonalizada, 'btn-default' : !medida.EsMedidaPersonalizada}"
+                                           style="float:right;margin-left:15px;" href="#" ng-click="CambiarMedidaPersonalizada(medida)" title="{{'EDITOR_GENERICO_PERSONALIZAR_DENOMINADOR'|translate}}">
+                                            <i class="fa fa-cog" style="cursor:pointer;"></i>
+                                        </a>
+
+                                        <div ng-if="!medida.EsMedidaPersonalizada" ng-class="{ 'has-error' : formaRegistroUnidad.medida{{$index}}.$invalid }">
+                                            <select name="medida{{$index}}" ng-model="medida.Nombre" class="form-control" ng-options="codigoMoneda.codigo as codigoMoneda.descripcion  for codigoMoneda in ListaCodigosMoneda" style="width:500px" ng-required="true">
+                                                <option value="">-- {{'ETIQUETA_SELECCIONAR_OPCION' | translate}} --</option>
+                                            </select>
+                                        </div>
+                                        <div ng-if="medida.EsMedidaPersonalizada" class="col-sm-10">
+
+                                            <div class="row form-group">
+                                                <label class="col-sm-2 control-label">{{'EDITOR_GENERICO_NAME_SPACE' | translate}}</label>
+                                                <div class="col-sm-8">
+                                                    <div class="row">
+                                                        <div class="col-md-12" ng-class="{ 'has-error' : formaRegistroUnidad.espacioNombres{{$index}}.$invalid }">
+                                                            <input name="espacioNombres{{$index}}" type="text" ng-model="medida.EspacioNombres" ng-required="true" class="form-control" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row form-group">
+                                                <label class="col-sm-2 control-label">{{'ETIQUETA_NOMBRE' | translate}}</label>
+                                                <div class="col-sm-8">
+                                                    <div class="row">
+                                                        <div class="col-md-12" ng-class="{ 'has-error' : formaRegistroUnidad.nombrePersonalizado{{$index}}.$invalid }">
+                                                            <input name="nombrePersonalizado{{$index}}" type="text" ng-model="medida.Nombre" ng-required="true" class="form-control" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">&nbsp;</div>
+                </div>
+                 
+            </section>
+
+        </div>
+        <div class="modal-footer">
+            <input type="button" value="{{'ETIQUETA_BOTON_CERRAR' | translate}}" ng-click="cerrarDialogo()" class="btn btn-default">
+            <input type="button" value="{{'ETIQUETA_REGISTRAR' | translate}}" ng-click="RegistrarUnidad()" class="btn btn-primary" ng-disabled="formaRegistroUnidad.$invalid">
+
+        </div>
+    </form>
+</div>

@@ -1,0 +1,25 @@
+﻿<tr id="{{idNota}}">
+    <td>
+        <div id="visorSelect_{{idNota}}">
+            {{valorSelect}}
+        </div>
+        <div id="editorSelect_{{idNota}}" class="none">
+            <select class="form-control" id="select_{{idNota}}">
+                {{opcionesIdiomas}}
+            </select>
+        </div>
+    </td>
+
+    <td>
+
+        <i class="fa fa-trash-o  text-danger"
+           style="cursor:pointer; float:right;margin-right:-20px;"
+           id="eliminar_{{idNota}}">
+        </i>
+
+        <div style="min-height:100px;" id="editorText_{{idNota}}">
+            <textarea name="text_{{idNota}}" id="text_{{idNota}}" style="resize:none; width: 100%" rows="10">{{informacionNota}}</textarea>
+        </div>
+    </td>
+
+</tr>

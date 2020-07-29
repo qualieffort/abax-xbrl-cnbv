@@ -1,0 +1,73 @@
+﻿<section>
+    <section class="vbox">
+        <section class="scrollable padder">
+            <section class="row m-b-md">
+                <div class="col-sm-6">
+                    <h3 class="m-b-xs text-black">
+                        {{'TITULO_CATALOGO_GRUPO_EMPRESAS' | translate}}
+                    </h3>
+                </div>
+            </section>
+            <section class="panel panel-default">
+                <header class="panel-heading font-bold" ng-if="editando">{{'TITULO_EDITANDO' | translate}}</header>
+                <header class="panel-heading font-bold" ng-if="!editando">{{'TITULO_NUEVO_ELEMENTO' | translate}}</header>
+                <form name="formulario" class="form-horizontal">
+                    <div class="panel-body">
+
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="Nombre">{{'ETIQUETA_NOMBRE' | translate}}:</label>
+                            <div class="col-sm-10">
+                                <div class="row">
+                                    <div class="col-md-4" ng-class="{ 'has-error' : formulario.Nombre.$invalid }">
+                                        <input type="text" id="Nombre" name="Nombre" placeholder="{{'PLACE_HOLDER_NOMBRE_GRUPO_EMPRESAS' | translate}}" class="form-control" ng-model="entidad.Nombre" ng-required="true" />
+                                    </div>
+                                    <p ng-show="formulario.Nombre.$invalid" class="help-block">
+                                        <i class="fa fa-exclamation-circle"></i>
+                                        {{'MENSAJE_ERROR_CAMPO_NOMBRE_REQUERIDO' | translate}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="Descripcion">{{'ETIQUETA_DESCRIPCION' | translate}}:</label>
+                            <div class="col-sm-10">
+                                <div class="row">
+                                    <div class="col-md-4" ng-class="{ 'has-error' : formulario.Descripcion.$invalid }">
+                                        <input type="text" id="Descripcion" name="Descripcion" placeholder="{{'PLACE_HOLDER_DESCRIPCION_GRUPO_EMPRESAS' | translate}}" class="form-control" ng-model="entidad.Descripcion" ng-required="true" />
+                                    </div>
+                                    <p ng-show="formulario.Descripcion.$invalid" class="help-block">
+                                        <i class="fa fa-exclamation-circle"></i>
+                                        {{'MENSAJE_ERROR_CAMPO_DESCRIPCION_REQUERIDO' | translate}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="panel-footer">
+                        <div class="row wrapper">
+                            <div class="col-sm-12 text-right">
+                                <a href="javascript:void(0);" ui-sref="inicio.listaGrupoEmpresas" class="btn btn-default">
+                                    <i class="i i-back"></i>
+                                    {{'ETIQUETA_BOTON_CANCELAR' | translate}}
+                                </a>
+                                <button type="button" ng-if="puedePersistir" class="btn btn-primary" ng-click="guardar()" ng-hide="estaGuardando" ng-disabled="formulario.$invalid">
+                                    <i class="fa fa-save"></i>
+                                    {{'ETIQUETA_BOTON_GUARDAR' | translate}}
+                                </button>
+                                <button type="button" disabled class="btn btn-primary " ng-if="estaGuardando">
+                                    <i class="fa fa-refresh fa-spin"></i>
+                                    {{'MENSAJE_INFO_GUARDANDO' | translate}} ...
+                                </button>
+                            </div>
+                        </div>
+                    </footer>
+                </form>
+            </section>
+        </section>
+    </section>
+</section>

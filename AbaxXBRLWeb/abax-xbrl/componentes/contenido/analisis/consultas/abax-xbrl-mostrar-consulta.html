@@ -1,0 +1,168 @@
+﻿<section>
+    <section class="scrollable padder">
+        <div>
+            <div class="m-b-md" style="height:50px">
+                <div class="col-sm-8 m-b-sm">
+                    <h3 class="m-b-none">{{'ETIQUETA_CONSULTA_ANALISIS_INFORMACION' | translate}}</h3>
+                </div>
+            </div>
+            <section class="panel panel-default">
+                <header class="panel-heading bg-light">
+                    {{'ETIQUETA_RESULTADO_CONSULTA'| translate}}
+                    <i class="fa fa-info-sign text-muted" data-toggle="tooltip" data-placement="bottom" data-title="ajax to load the data."></i>
+                </header>
+
+                <div class="table-responsive" style="overflow:hidden;">
+                    <div class="panel-body font-bold" style="background: #eeeeee; padding-left: 30px" ng-if="ejecutandoConsulta">
+                        <i class="fa fa-refresh fa-spin"></i>
+                        {{'MENSAJE_INFO_CARGANDO_CONSULTAS' | translate}} ...
+                    </div>
+
+                    
+
+                    <div class="col-lg-12" style="padding-bottom:15px;padding-top:15px;">
+
+                        <div id="guardar" style="float:right;z-index: 10;right: 20px;position: absolute;" ng-if="consultaAnalisis.PendienteGuardar" >
+                            <a href="#" class="btn btn-rounded btn-sm btn-primary" ng-click="guardarConsultaConfiguracion()"><i class="fa fa-save"></i> {{'ETIQUETA_BOTON_GUARDAR' | translate}}</a>
+                        </div>
+
+                        <ul class="breadcrumbDetalleOperaciones">
+                            <li class="esActiva" ><a ng-click="agregarEmpresa()">{{'CONSULTA_ANALISIS_AGREGAR_EMPRESA' | translate}}</a></li>
+                            <li class="esActiva" ng-if="consultaAnalisis.ConsultaAnalisisEntidad.length>0"><a ng-click="agregarPeriodo()">{{'CONSULTA_ANALISIS_AGREGAR_PERIODO' | translate}}</a></li>
+                            <li class="esActiva" ng-if="consultaAnalisis.ConsultaAnalisisPeriodo.length>0"><a ng-click="agregarConcepto()">{{'CONSULTA_ANALISIS_AGREGAR_CONCEPTO' | translate}}</a></li>
+                        </ul>
+
+                        
+
+                    </div>
+
+
+                    <div class="dinamicTable mainDT">
+
+                        <table>
+                            <thead class="table-bordered" style="background-color: #f9fafc;">
+                                <tr>
+                                    <td xbrl:dt-column="conceptos">
+                                        <table style="width:100%; height:100%; border: 0; max-width:400px; min-width:300px;" class="table table-striped b-t b-light">
+                                            <thead>
+                                                <tr>
+                                                    <th style="border: 0;text-align:center;">
+                                                        <a href="#" class="btn btn-s-md btn-success btn-rounded" ng-click="realizarConsulta()" ng-if="consultaAnalisis.ConsultaAnalisisConcepto.length>0">
+                                                            <i class="fa fa-refresh fa-spin" ng-if="ejecutandoConsulta"></i>
+                                                            <i class="fa fa-fw fa-play" ng-if="!ejecutandoConsulta"></i>
+                                                            {{'CONSULTA_ANALISIS_EJECUTAR_CONSULTA' | translate}}
+                                                        </a>
+                                                        <br />
+                                                    </th>
+                                                </tr>
+
+                                            </thead>
+                                        </table>
+                                    </td>
+                                    <td style="border-left: 1px solid #eaeef1;">
+                                        <div class="scrollableXHidden">
+                                            <table class="table table-striped b-t b-light" style="border: 0; margin:0; height:100%;">
+                                                <thead>
+
+                                                    <tr>
+                                                        <th class="dtData" colspan="{{entidad.NumeroColumnas}}" ng-repeat="entidad in consultaAnalisis.ConsultaAnalisisEntidad" ng-if="consultaAnalisis.ConsultaAnalisisEntidad.length>0" style="text-align:center;background-color:{{entidad.Color}}">
+                                                            {{entidad.NombreEntidad}}
+                                                        </th>
+
+                                                        <th class="dtData" colspan="1" ng-if="consultaAnalisis.ConsultaAnalisisEntidad.length==0" style="background-color:{{entidad.Color}}">
+                                                            1. {{'CONSULTA_ANALISIS_AGREGAR_EMPRESA' | translate}}
+                                                        </th>
+
+                                                    </tr>
+
+
+
+                                                    <tr class="titulosContextos">
+                                                        <th ng-repeat="contexto in contextos" class="dtData" xbrl:dt-column="{{$index}}" style="background-color:{{contexto.Color}}" ng-if="consultaAnalisis.ConsultaAnalisisPeriodo.length>0">
+                                                            {{contexto.NombreContexto}}
+                                                        </th>
+                                                        <th class="dtData" xbrl:dt-column="0" ng-if="consultaAnalisis.ConsultaAnalisisPeriodo.length==0">
+                                                            2. {{'CONSULTA_ANALISIS_AGREGAR_PERIODO' | translate}}
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td xbrl:dt-column="conceptos">
+                                        <div class="scrollableYHidden" style="max-width:400px;">
+                                            <table class="table table-striped b-t b-light" ng-if="consultaAnalisis.ConsultaAnalisisConcepto.length>0">
+                                                <tbody id="cuerpoTablaConceptos"></tbody>
+                                            </table>
+
+                                            <table class="table table-striped b-t b-light" ng-if="consultaAnalisis.ConsultaAnalisisConcepto.length==0">
+                                                <tbody id="cuerpoTablaConceptosSinInformacion">
+                                                    <tr xbrl:dt-row="0" id="renglonConcepto">
+                                                        <td id="celdaConceptoReferencia" style="font-weight:bold;">3. {{'CONSULTA_ANALISIS_SELECCION_CONCEPTO' | translate}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </td>
+                                    <td style="width:100%;">
+                                        <div class="scrollableXYAuto">
+                                            <table class="table table-striped b-t b-light" ng-if="consultaAnalisis.ConsultaAnalisisConcepto.length>0">
+                                                <tbody id="cuerpoTablaHechos"></tbody>
+                                            </table>
+
+                                            <table class="table table-striped b-t b-light" ng-if="consultaAnalisis.ConsultaAnalisisConcepto.length==0">
+                                                <tbody id="cuerpoTablaHechosSinInformacion">
+                                                    <tr xbrl:dt-row="0" id="renglonHecho">
+                                                        <td xbrl:dt-column="0" id="celdaHecho" style="max-width:300px;height:35px;" ng-repeat="contexto in contextos" ng-if="contextos.length>0">
+                                                            <span id="hecho"></span>
+                                                        </td>
+                                                        <td xbrl:dt-column="0" id="celdaHecho" style="max-width:300px;height:35px;" ng-if="contextos.length == 0">
+                                                            <span id="hecho"></span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <footer class="panel-footer">
+                    <div class="row">
+                        <div class="col-sm-4 hidden-xs" ng-if="">
+                            <input type="button" value="{{'ETIQUETA_BOTON_EXPORTAR_EXCEL' | translate}}" class="btn btn-sm btn-default" ng-click="descargaArchivo()" ng-hide="exportando || cargandoPantalla" />
+                            <button type="button" class="btn btn-sm btn-default" ng-if="exportando" disabled>
+                                {{'MENSAJE_INFO_EXPORTANDO' | translate}} ...
+                            </button>
+                        </div>
+                        <div class="col-sm-4 text-center">
+                        </div>
+                        <div class="col-sm-4 text-right text-center-xs">
+                        </div>
+                    </div>
+                </footer>
+
+            </section>
+        </div>
+        <table style="display:none">
+            <tr xbrl:dt-row="indiceRenglon" id="renglonConcepto">
+                <td id="celdaConcepto"></td>
+            </tr>
+
+            <tr xbrl:dt-row="indiceRenglon" id="renglonHecho">
+                <td xbrl:dt-column="indiceColumna" id="celdaHecho" style="max-width:300px;">
+                    <span id="hecho"></span>
+                </td>
+            </tr>
+
+        </table>
+    </section>
+</section>

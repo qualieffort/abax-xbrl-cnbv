@@ -1,0 +1,31 @@
+﻿<button class="btn btn-default"
+        style="width:40px;"
+        type="button"
+        ng-mousedown="manejarMousedownBoton()"
+        ng-click="procesoRaizBotonCaptura.Accion()"
+        ng-if="tieneProcesosBotonCampoCaptura && !mostrarToolBar">
+    
+    <i class="text-default fa {{procesoRaizBotonCaptura.Icono}}" ng-class="{{procesoRaizBotonCaptura.ClaseIcono}}"></i>
+</button>
+
+<button id="toolbar-button-{{toolBarId}}"
+        class="btn btn-default"
+        style="width:40px;"
+        type="button"
+        ng-mousedown="manejarMousedownBoton()"
+        ng-if="tieneProcesosBotonCampoCaptura && mostrarToolBar"
+        xbrl:toolbar-tip
+        xbrl:toolbar-content-id="toolbar-content-{{toolBarId}}"
+        xbrl:toolbar-position="top"
+        xbrl:toolbar-hide-onclic="true">
+    <i class="text-default fa fa-wrench"></i>
+    
+    <div style="display:none; visibility:hidden;" xbrl:toolbar-tip-content>
+        <div id="toolbar-content-{{toolBarId}}">
+            <a href="javascript:void(0);" ng-repeat="item in mapaProcesosBotonCampoCaptura" ng-click="item.Accion()" style="padding: 5px;">
+                <i id="item-toolbar-{{toolBarId}}-{{item.id}}" class="text-default fa {{item.Icono}}" ng-class="{{item.ClaseIcono}}"></i>
+            </a>
+        </div>
+    </div>
+    
+</button>

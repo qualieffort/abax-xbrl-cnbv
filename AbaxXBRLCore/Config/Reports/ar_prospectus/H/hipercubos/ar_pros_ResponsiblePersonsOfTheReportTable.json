@@ -1,0 +1,497 @@
+{
+  "IdConceptos": [
+    "ar_pros_ResponsiblePersonName",
+    "ar_pros_ResponsiblePersonPosition",
+    "ar_pros_ResponsiblePersonInstitution",
+    "ar_pros_ExternalAuditorCkdsFibersAndFiberCerpisEA2N11Member",
+    "ar_pros_ResponsiblePersonLegend",
+    "ar_pros_SignIssuanceUnderArt13OfTheCUE",
+    "ar_pros_ResponsiblePersonInstitutionExternalAuditor",
+    "ar_pros_OtherInstitutionExternalAuditor",
+    "ar_pros_ResponsiblePersonInstitutionBacherlorOfLaws",
+    "ar_pros_OtherInstitutionBacherlorOfLaws"
+  ],
+  "PlantillasContextos": {
+    "MembersOfTheBoardOfDirectorsA2N1Member": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+          "IdItemMiembro": "ar_pros_MembersOfTheBoardOfDirectorsA2N1Member",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:MembersOfTheBoardOfDirectorsA2N1Member"
+        }
+      ]
+    },
+    "MembersOfTheBoardOfDirectorsAuditCommitteeA2N1Member": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+          "IdItemMiembro": "ar_pros_MembersOfTheBoardOfDirectorsAuditCommitteeA2N1Member",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:MembersOfTheBoardOfDirectorsAuditCommitteeA2N1Member"
+        }
+      ]
+    },
+    "CommissionerA2N2Member": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+          "IdItemMiembro": "ar_pros_CommissionerA2N2Member",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:CommissionerA2N2Member"
+        }
+      ]
+    },
+    "CeoCfoAndGeneralCounselOrTheirEquivalentsA2N3Member": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+          "IdItemMiembro": "ar_pros_CeoCfoAndGeneralCounselOrTheirEquivalentsA2N3Member",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:CeoCfoAndGeneralCounselOrTheirEquivalentsA2N3Member"
+        }
+      ]
+    },
+    "UnderwriterA2N4Member": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+          "IdItemMiembro": "ar_pros_UnderwriterA2N4Member",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:UnderwriterA2N4Member"
+        }
+      ]
+    },
+    "Underwriter2RepresentativesA2N4Member": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+          "IdItemMiembro": "ar_pros_Underwriter2RepresentativesA2N4Member",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:Underwriter2RepresentativesA2N4Member"
+        }
+      ]
+    },
+    "UnderwriterSharesA2N4Member": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+          "IdItemMiembro": "ar_pros_UnderwriterSharesA2N4Member",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:UnderwriterSharesA2N4Member"
+        }
+      ]
+    },
+    "UnderwriterSharesAnd2RepresentativesA2N4Member": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+          "IdItemMiembro": "ar_pros_UnderwriterSharesAnd2RepresentativesA2N4Member",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:UnderwriterSharesAnd2RepresentativesA2N4Member"
+        }
+      ]
+    },
+    "UnderwriterRestrictedOfferA2N4Member": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+          "IdItemMiembro": "ar_pros_UnderwriterRestrictedOfferA2N4Member",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:UnderwriterRestrictedOfferA2N4Member"
+        }
+      ]
+    },
+    "UnderwriterRestrictedAnd2RepresentativesOfferA2N4Member": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+          "IdItemMiembro": "ar_pros_UnderwriterRestrictedAnd2RepresentativesOfferA2N4Member",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:UnderwriterRestrictedAnd2RepresentativesOfferA2N4Member"
+        }
+      ]
+    },
+    "UnderwriterPublicOfferSharesAndRestrictedA2N4Member": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+          "IdItemMiembro": "ar_pros_UnderwriterPublicOfferSharesAndRestrictedA2N4Member",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:UnderwriterPublicOfferSharesAndRestrictedA2N4Member"
+        }
+      ]
+    },
+    "UnderwriterSharesRestrictedPublicOfferingAnd2RepresentativesA2N4Member": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+          "IdItemMiembro": "ar_pros_UnderwriterSharesRestrictedPublicOfferingAnd2RepresentativesA2N4Member",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:UnderwriterSharesRestrictedPublicOfferingAnd2RepresentativesA2N4Member"
+        }
+      ]
+    },
+    "ExternalAuditorRepresentativeAndAuditorA2N5Member": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+          "IdItemMiembro": "ar_pros_ExternalAuditorRepresentativeAndAuditorA2N5Member",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:ExternalAuditorRepresentativeAndAuditorA2N5Member"
+        }
+      ]
+    },
+    "LegalRepresentativeOrAvalGuarantorA3NEMember": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+          "IdItemMiembro": "ar_pros_LegalRepresentativeOrAvalGuarantorA3NEMember",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:LegalRepresentativeOrAvalGuarantorA3NEMember"
+        }
+      ]
+    },
+    "OtherResponsiblePersonMember": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+          "IdItemMiembro": "ar_pros_OtherResponsiblePersonMember",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:OtherResponsiblePersonMember"
+        }
+      ]
+    },
+    "BachelorOfLawsA2N6Member": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+          "IdItemMiembro": "ar_pros_BachelorOfLawsA2N6Member",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:BachelorOfLawsA2N6Member"
+        }
+      ]
+    },
+    "LegalRepresentativeOfTheGuarantorA2N7Member": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+          "IdItemMiembro": "ar_pros_LegalRepresentativeOfTheGuarantorA2N7Member",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:LegalRepresentativeOfTheGuarantorA2N7Member"
+        }
+      ]
+    },
+    "LegalRepresentativeOfTheGuarantor2RepresentativesA2No7Member": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+          "IdItemMiembro": "ar_pros_LegalRepresentativeOfTheGuarantor2RepresentativesA2No7Member",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:LegalRepresentativeOfTheGuarantor2RepresentativesA2No7Member"
+        }
+      ]
+    },
+    "LegalRepresentativeOfAvalA2N7Member": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+          "IdItemMiembro": "ar_pros_LegalRepresentativeOfAvalA2N7Member",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:LegalRepresentativeOfAvalA2N7Member"
+        }
+      ]
+    },
+    "LegalRepresentativeOfAval2RepresentativesA2N7Member": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+          "IdItemMiembro": "ar_pros_LegalRepresentativeOfAval2RepresentativesA2N7Member",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:LegalRepresentativeOfAval2RepresentativesA2N7Member"
+        }
+      ]
+    },
+    "LegalRepresentativeOfTheTrustA2N8Member": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+          "IdItemMiembro": "ar_pros_LegalRepresentativeOfTheTrustA2N8Member",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:LegalRepresentativeOfTheTrustA2N8Member"
+        }
+      ]
+    },
+    "LegalRepresentativeOfTheTrust2RepresentativesA2N8Member": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+          "IdItemMiembro": "ar_pros_LegalRepresentativeOfTheTrust2RepresentativesA2N8Member",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:LegalRepresentativeOfTheTrust2RepresentativesA2N8Member"
+        }
+      ]
+    },
+    "DirectGeneralChiefFinancialOfficerAndGeneralCounselRepresentingTheSettlorOrWhoSupplyGoodsToTheTrustA2N9Member": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+          "IdItemMiembro": "ar_pros_DirectGeneralChiefFinancialOfficerAndGeneralCounselRepresentingTheSettlorOrWhoSupplyGoodsToTheTrustA2N9Member",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:DirectGeneralChiefFinancialOfficerAndGeneralCounselRepresentingTheSettlorOrWhoSupplyGoodsToTheTrustA2N9Member"
+        }
+      ]
+    },
+    "CommonRepresentativeTrustSecuritiesOtherThanSharesA2N10Member": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+          "IdItemMiembro": "ar_pros_CommonRepresentativeTrustSecuritiesOtherThanSharesA2N10Member",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:CommonRepresentativeTrustSecuritiesOtherThanSharesA2N10Member"
+        }
+      ]
+    },
+    "CommonRepresentativeTrustSecuritiesOtherThanSharesAnd2RepresentativesA2N10Member": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+          "IdItemMiembro": "ar_pros_CommonRepresentativeTrustSecuritiesOtherThanSharesAnd2RepresentativesA2N10Member",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:CommonRepresentativeTrustSecuritiesOtherThanSharesAnd2RepresentativesA2N10Member"
+        }
+      ]
+    },
+    "ExternalAuditorCkdsFibersAndFiberCerpisEA2N11Member": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+          "IdItemMiembro": "ar_pros_ExternalAuditorCkdsFibersAndFiberCerpisEA2N11Member",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:ExternalAuditorCkdsFibersAndFiberCerpisEA2N11Member"
+        }
+      ]
+    },
+    "StructuringAgentA2N12Member": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+          "IdItemMiembro": "ar_pros_StructuringAgentA2N12Member",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:StructuringAgentA2N12Member"
+        }
+      ]
+    },
+    "StructuringAgent2RepresentativesA2N12Member": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+          "IdItemMiembro": "ar_pros_StructuringAgent2RepresentativesA2N12Member",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:StructuringAgent2RepresentativesA2N12Member"
+        }
+      ]
+    }
+  },
+"PlantillaDimensiones": {
+    "ar_pros_TypeOfResponsibleFigureAxis": {
+      "PrefijoValor": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:",
+      "SubfijoValor": "",
+      "EtiquetaNuevoElemento": "CeoCfoAndGeneralCounselOrTheirEquivalentsA33N11Member",
+      "Explicita": true,
+      "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+      "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis"
+    },
+    "ar_pros_ResponsiblePersonsSequenceTypedAxis": {
+      "PrefijoValor": "<ar_pros:ResponsiblePersonSequenceDomain xmlns:ar_pros=\"http://www.cnbv.gob.mx/2016-08-22/ar_prospectus\">",
+      "SubfijoValor": "</ar_pros:ResponsiblePersonSequenceDomain>",
+      "EtiquetaNuevoElemento": "1",
+      "Explicita": false,
+      "IdDimension": "ar_pros_ResponsiblePersonsSequenceTypedAxis",
+      "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:ResponsiblePersonsSequenceTypedAxis"
+    },
+  "ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis": {
+    "PrefijoValor": "<ar_pros:ResponsiblePersonInstitutionSequenceDomain xmlns:ar_pros=\"http://www.cnbv.gob.mx/2016-08-22/ar_prospectus\">",
+    "SubfijoValor": "</ar_pros:ResponsiblePersonInstitutionSequenceDomain>",
+    "EtiquetaNuevoElemento": "1",
+    "Explicita": false,
+    "IdDimension": "ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis",
+    "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:ResponsiblePersonsInstitutionSequenceTypedAxis"
+  }
+  },
+  "DimensionesDinamicas": [
+    "ar_pros_ResponsiblePersonsSequenceTypedAxis",
+    "ar_pros_ResponsiblePersonsInstitutionSequenceTypedAxis"
+  ],
+  "MaxColumnasVertical": 6,
+  "MaxColumnasHorizontal": 0,
+  "TamanoHoja": "Letter"
+}

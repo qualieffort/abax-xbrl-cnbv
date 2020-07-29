@@ -1,0 +1,33 @@
+﻿<div>
+    <section id="content" class="m-t-lg wrapper-md animated fadeInUp">
+        <br>
+        <br>
+        <br>
+        <div class="container aside-xl">
+            <a class="" href="">
+                <img ng-src="images/{{abaxStyle.imagenHorizontal}}" class="m-r-sm" alt="scale">
+            </a>
+            <div ui-view="loginFormView"></div>
+        </div>
+    </section>
+    <footer id="footer">
+        <div class="text-center padder">
+            <p style="font-size: 12px;">
+                {{'ETIQUETA_VERSION' | translate}}:  {{versionApp}}
+            </p>
+            <br/>
+            <p>
+                <small>
+                    Abax XBRL © 2017
+                    <span ng-if="mostrarTerminosCondiciones">
+                        &nbsp; &nbsp;
+                        <a href="javascript:void(0);" ng-click="mostrarTerminosUso()">{{'ETIQUETA_LIGA_TERMINOS_DE_USO' | translate}}</a>
+                        {{'ETIQUETA_AND' | translate}}
+                        <a href="" ng-click="mostrarAvisoPrivacidad()">{{'ETIQUETA_LIGA_AVISO_PRIVASIDAD' | translate}}</a>
+
+                    </span>
+                </small>
+            </p>
+        </div>
+    </footer>
+</div>

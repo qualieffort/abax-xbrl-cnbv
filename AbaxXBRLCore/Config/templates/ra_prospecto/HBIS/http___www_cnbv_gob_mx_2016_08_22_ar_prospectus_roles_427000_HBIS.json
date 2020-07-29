@@ -1,0 +1,100 @@
+{
+	"ContextosPlantillaPorId" : {
+  "ctx_2014": {
+    "Id": "ctx_2014",
+    "Periodo": {
+      "Tipo": 1,
+      "FechaInstante": "#fecha_2014_12_31",
+      "FechaInicio": "",
+      "FechaFin": ""
+    },
+    "Entidad": {
+      "Id": "#nombreEntidad",
+      "EsquemaId": "#esquemaEntidad",
+      "ContieneInformacionDimensional": false,
+      "Segmento": null,
+      "ValoresDimension": []
+    },
+    "ContieneInformacionDimensional": false,
+    "Escenario": null,
+    "ValoresDimension": []
+  }
+},
+	
+	"UnidadesPlantillaPorId" : {},
+            
+	"HechosPlantillaPorId" : {
+  "ar_pros_ReferenceIncorporationAdministration_0e65d890-0e8d-40c4-b367-8950780db928": {
+    "Id": "ar_pros_ReferenceIncorporationAdministration_0e65d890-0e8d-40c4-b367-8950780db928",
+    "IdConcepto": "ar_pros_ReferenceIncorporationAdministration",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_ExternalAuditors_0aba69a4-bff1-450c-9893-9d39bc04515d": {
+    "Id": "ar_pros_ExternalAuditors_0aba69a4-bff1-450c-9893-9d39bc04515d",
+    "IdConcepto": "ar_pros_ExternalAuditors",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_TransactionsWithRelatedParties_1332fca8-8e99-4ba0-a848-8881ebce4554": {
+    "Id": "ar_pros_TransactionsWithRelatedParties_1332fca8-8e99-4ba0-a848-8881ebce4554",
+    "IdConcepto": "ar_pros_TransactionsWithRelatedParties",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_AdministratorsAndShareholders_f5b08ec0-16ab-4d84-b811-62ecf8d230f8": {
+    "Id": "ar_pros_AdministratorsAndShareholders_f5b08ec0-16ab-4d84-b811-62ecf8d230f8",
+    "IdConcepto": "ar_pros_AdministratorsAndShareholders",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_AssociationAndOtherAgreements_f602aa20-7ad7-4605-8725-3cc02ea79bd6": {
+    "Id": "ar_pros_AssociationAndOtherAgreements_f602aa20-7ad7-4605-8725-3cc02ea79bd6",
+    "IdConcepto": "ar_pros_AssociationAndOtherAgreements",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_OtherCorporateGovernancePractices_047693ad-0ff4-4e26-8338-9e8a0271a3d6": {
+    "Id": "ar_pros_OtherCorporateGovernancePractices_047693ad-0ff4-4e26-8338-9e8a0271a3d6",
+    "IdConcepto": "ar_pros_OtherCorporateGovernancePractices",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  }
+}
+}

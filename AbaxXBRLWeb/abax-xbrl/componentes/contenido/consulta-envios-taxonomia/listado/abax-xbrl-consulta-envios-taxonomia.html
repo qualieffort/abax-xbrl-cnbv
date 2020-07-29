@@ -1,0 +1,201 @@
+﻿<section>
+    <section class="vbox">
+        <section class="scrollable padder" style="padding-bottom: 100px;">
+            <section class="panel panel-default">
+                <header class="panel-heading">
+                    {{'ETIQUETA_CONSULTA_ENVIOS_TAXONOMIA' | translate}}
+                </header>
+                <div class="row wrapper">
+                    <div class="col-lg-3">
+                        <select class="input-sm form-control input-s-lg v-middle"
+                                ng-options="taxonomia as taxonomia.Nombre for taxonomia in taxonomias"
+                                ng-model="aTaxonomia"
+                                style="display:none;"
+                                data-placeholder="{{'PLACE_HOLDER_TAXONOMIA' | translate}}"
+                                ng-change="refreshData()"
+                                chosen
+                                width="'300px'"
+                                allow-single-deselect="true">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="col-lg-3">
+                        <select class="input-sm form-control input-s-lg v-middle"
+                                ng-options="grupoEmpresa as grupoEmpresa.Nombre for grupoEmpresa in grupoEmpresas"
+                                ng-model="aGrupoEmpresa"
+                                style="display:none;"
+                                data-placeholder="{{'PLACE_HOLDER_GRUPO_EMPRESAS' | translate}}"
+                                ng-change="refreshData()"
+                                chosen
+                                width="'300px'"
+                                allow-single-deselect="true">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="col-lg-3">
+                        <select class="input-sm form-control input-s-lg v-middle"
+                                ng-options="tipoEmpresa as tipoEmpresa.Nombre for tipoEmpresa in tipoEmpresas"
+                                ng-model="aTipoEmpresa"
+                                style="display:none;"
+                                data-placeholder="{{'PLACE_HOLDER_TIPO_EMPRESAS' | translate}}"
+                                ng-change="refreshData()"
+                                chosen
+                                width="'300px'"
+                                allow-single-deselect="true">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="col-lg-3">
+                        <select class="input-sm form-control input-s-lg v-middle"
+                                ng-options="emisora as emisora.NombreCorto for emisora in emisoras"
+                                ng-model="aEmisora"
+                                style="display:none;"
+                                data-placeholder="{{'PLACE_HOLDER_EMISORA' | translate}}"
+                                ng-change="refreshData()"
+                                chosen
+                                width="'300px'"
+                                allow-single-deselect="true">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <br /><br />
+                    <br />
+                    <div class="col-lg-3">
+                        <select class="input-sm form-control input-s-lg v-middle"
+                                ng-options="fideicomiso for fideicomiso in numeroFideicomisos"
+                                ng-model="aNumeroFideicomiso"
+                                style="display:none;"
+                                data-placeholder="{{'PLACE_HOLDER_NUMERO_FIDEICOMISO' | translate}}"
+                                ng-change="refreshData()"
+                                chosen
+                                width="'300px'"
+                                allow-single-deselect="true">
+                            <option value=""></option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <input type="text"
+                               placeholder="{{'PLACE_HOLDER_FECHA_RECEPCION_INICIO' | translate}}"
+                               ng-model="aFechaCreacionInicial"
+                               ng-change="refreshData()"
+                               class=" input-sm form-control input-s-lg inline v-middle datepicker-input form-control"
+                               datepicker-popup="dd/MM/yyyy"
+                               current-text="{{'ETIQUETA_HOY'| translate}}"
+                               clear-text="{{'ETIQUETA_LIMPIAR'| translate}}"
+                               close-text="{{'ETIQUETA_BOTON_CERRAR'| translate}}"
+                               is-open="datePikerOpenRangoInicial"
+                               style="width:300px; max-width:100%"
+                               ng-click="muestraDatePikerRangoInicial($event)"
+                               id="aFechaTest" />
+                    </div>
+
+        
+                    <div class="col-lg-3">
+                        <input type="text"
+                               name="fecha"
+                               placeholder="{{'PLACE_HOLDER_FECHA_RECEPCION_FINAL' | translate}}"
+                               ng-model="aFechaCreacionFinal"
+                               ng-change="refreshData()"
+                               class=" input-sm form-control input-s-lg inline v-middle datepicker-input form-control"
+                               datepicker-popup="dd/MM/yyyy"
+                               current-text="{{'ETIQUETA_HOY'| translate}}"
+                               clear-text="{{'ETIQUETA_LIMPIAR'| translate}}"
+                               close-text="{{'ETIQUETA_BOTON_CERRAR'| translate}}"
+                               is-open="datePikerOpenRangoFinal"
+                               style="width:300px; max-width:100%"
+                               ng-click="muestraDatePikerRangoFinal($event)"
+                               id="fecha" />
+                    </div>
+
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-3">
+                        <div ng-if="existeElementos">
+                            <button type="button"
+                                    class="btn btn-sm btn-default"
+                                    ng-if="tieneFacultad(FacultadesEnum.ExportarDatosBitacora)"
+                                    style="width:300px; max-width:100%"
+                                    ng-click="exportaAExcel()"
+                                    ng-hide="exportando">
+                                <i class="i i-file-excel"></i>
+                                {{'ETIQUETA_EXPORTAR' | translate}}
+                            </button>
+                            <button type="button" class="btn btn-sm btn-default" ng-if="exportando" style="width:200px" disabled>
+                                <i class="fa fa-refresh fa-spin"></i>
+                                {{'MENSAJE_INFO_EXPORTANDO' | translate}} ...
+                            </button>
+                        </div>
+                        <div class="col-sm-3" ng-if="!existeElementos">
+                            <button type="button" style="width:200px"
+                                    class="btn btn-sm btn-default" disabled>
+                                <i class="i i-file-excel"></i>
+                                {{'ETIQUETA_EXPORTAR' | translate}}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="panel panel-default">
+                <header class="panel-heading bg-light">{{'TITULO_HISTORIAL_ACTIVIDAD'| translate}}</header>
+
+                <table class="table table-striped b-t b-light" datatable="" dt-options="opcionesDataTableLocal">
+                    <thead>
+                        <tr>
+                            <th class="th-sortable" data-toggle="class" style="text-align:center; max-width:15%;" width="15%">{{'NOMBRE_COLUMNA_EMISORA' | translate}}</th>
+                            <th class="th-sortable" data-toggle="class" style="text-align:center; max-width:15%;" width="15%">{{'NOMBRE_RAZON_SOCIAL' | translate}}</th>
+                            <th class="th-sortable" data-toggle="class" style="text-align:center; max-width:15%;" width="15%">{{'NOMBRE_NUMERO_FIDEICOMISO' | translate}}</th>
+                            <th class="th-sortable" data-toggle="class" style="text-align:center; max-width:15%;" width="15%">{{'NOMBRE_COLUMNA_FECHA_REPORTE' | translate}}</th>
+                            <th class="th-sortable" data-toggle="class" style="text-align:center; max-width:15%;" width="15%">{{'NOMBRE_TAXONOMIA' | translate}}</th>
+                            <th class="th-sortable" data-toggle="class" style="text-align:center; max-width:15%;" width="15%">{{'NOMBRE_FECHA_RECEPCION' | translate}}</th>
+
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th class="th-sortable" data-toggle="class" style="text-align:center;">{{'NOMBRE_COLUMNA_EMISORA' | translate}}</th>
+                            <th class="th-sortable" data-toggle="class" style="text-align:center;">{{'NOMBRE_RAZON_SOCIAL' | translate}}</th>
+                            <th class="th-sortable" data-toggle="class" style="text-align:center;">{{'NOMBRE_NUMERO_FIDEICOMISO' | translate}}</th>
+                            <th class="th-sortable" data-toggle="class" style="text-align:center;">{{'NOMBRE_COLUMNA_FECHA_REPORTE' | translate}}</th>
+                            <th class="th-sortable" data-toggle="class" style="text-align:center;">{{'NOMBRE_TAXONOMIA' | translate}}</th>
+                            <th class="th-sortable" data-toggle="class" style="text-align:center;">{{'NOMBRE_FECHA_RECEPCION' | translate}}</th>
+
+                        </tr>
+                    </tfoot>
+
+                </table>
+
+                <div class="panel-body font-bold" style=" padding-left: 30px"></div>
+                <footer class="panel-footer">
+                    <div class="row">
+                        <div class="col-sm-4 hidden-xs">
+                            <div ng-if="existeElementos">
+                                <button type="button"
+                                        class="btn btn-sm btn-default"
+                                        ng-if="tieneFacultad(FacultadesEnum.ExportarDatosBitacora)"
+                                        style="width:200px; max-width:200%"
+                                        ng-click="exportaAExcel()"
+                                        ng-hide="exportando">
+                                    <i class="i i-file-excel"></i>
+                                    {{'ETIQUETA_EXPORTAR' | translate}}
+                                </button>
+                                <button type="button" class="btn btn-sm btn-default" ng-if="exportando" style="width:180px" disabled>
+                                    <i class="fa fa-refresh fa-spin"></i>
+                                    {{'MENSAJE_INFO_EXPORTANDO' | translate}} ...
+                                </button>
+                            </div>
+                            <div class="col-sm-3" ng-if="!existeElementos">
+                                <button type="button" style="width:180px"
+                                        class="btn btn-sm btn-default" disabled>
+                                    <i class="i i-file-excel"></i>
+                                    {{'ETIQUETA_EXPORTAR' | translate}}
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 text-center"></div>
+                        <div class="col-sm-4 text-right text-center-xs"></div>
+                    </div>
+                </footer>
+            </section>
+        </section>
+    </section>
+</section>

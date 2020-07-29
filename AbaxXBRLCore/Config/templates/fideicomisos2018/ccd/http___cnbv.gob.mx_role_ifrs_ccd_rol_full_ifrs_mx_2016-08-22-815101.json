@@ -1,0 +1,281 @@
+{
+	"ContextosPlantillaPorId" : {
+  "ct1": {
+    "Id": "ct1",
+    "Periodo": {
+      "Tipo": 1,
+      "FechaInstante": "#fecha_2015_09_30",
+      "FechaInicio": "",
+      "FechaFin": ""
+    },
+    "Entidad": {
+      "Id": "#nombreEntidad",
+      "EsquemaId": "#esquemaEntidad",
+      "ContieneInformacionDimensional": false,
+      "Segmento": null,
+      "ValoresDimension": []
+    },
+    "ContieneInformacionDimensional": false,
+    "Escenario": null,
+    "ValoresDimension": []
+  }
+},
+	
+	"UnidadesPlantillaPorId" : {
+  "pure": {
+    "Id": "pure",
+    "Tipo": 1,
+    "Medidas": [
+      {
+        "Nombre": "#medida_pure",
+        "EspacioNombres": "#medida_http___www_xbrl_org_2003_instance"
+      }
+    ],
+    "MedidasDenominador": [],
+    "MedidasNumerador": []
+  },
+  "mxn": {
+    "Id": "mxn",
+    "Tipo": 1,
+    "Medidas": [
+      {
+        "Nombre": "#medida_MXN",
+        "EspacioNombres": "#medida_http___www_xbrl_org_2003_iso4217"
+      }
+    ],
+    "MedidasDenominador": [],
+    "MedidasNumerador": []
+  }
+},
+
+  "HechosPlantillaPorId": {
+    "ifrs_mx-cor_20160822_IndebtednessLevelAtTheEndOfTheQuarter_2785b06f-1525-4335-abe0-2a1b6b4fa119": {
+      "Id": "ifrs_mx-cor_20160822_IndebtednessLevelAtTheEndOfTheQuarter_2785b06f-1525-4335-abe0-2a1b6b4fa119",
+      "IdConcepto": "ifrs_mx-cor_20160822_IndebtednessLevelAtTheEndOfTheQuarter",
+      "IdContextoPlantilla": "ct1",
+      "Hechos": [],
+      "IdUnidadPlantilla": "pure",
+      "Decimales": "1",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "ifrs_mx-cor_20160822_CorrectivePlanSummaryText_100082018": {
+      "Id": "ifrs_mx-cor_20160822_CorrectivePlanSummaryText_100082018",
+      "IdConcepto": "ifrs_mx-cor_20160822_CorrectivePlanSummaryText",
+      "IdContextoPlantilla": "ct1",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "ifrs_mx-cor_20160822_TotalFunding_007d5bb7-422c-4f47-a4a4-d73934dee7d6": {
+      "Id": "ifrs_mx-cor_20160822_TotalFunding_007d5bb7-422c-4f47-a4a4-d73934dee7d6",
+      "IdConcepto": "ifrs_mx-cor_20160822_TotalFunding",
+      "IdContextoPlantilla": "ct1",
+      "Hechos": [],
+      "IdUnidadPlantilla": "mxn",
+      "Decimales": "0",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "ifrs_mx-cor_20160822_TotalDebtInSecurities_2ee11baa-f584-4c37-ab14-d7acc21c48bd": {
+      "Id": "ifrs_mx-cor_20160822_TotalDebtInSecurities_2ee11baa-f584-4c37-ab14-d7acc21c48bd",
+      "IdConcepto": "ifrs_mx-cor_20160822_TotalDebtInSecurities",
+      "IdContextoPlantilla": "ct1",
+      "Hechos": [],
+      "IdUnidadPlantilla": "mxn",
+      "Decimales": "0",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "ifrs_mx-cor_20160822_TotalUnpaidAccruedInterest_21bf852b-580a-4b21-ad53-308a7c8e49c3": {
+      "Id": "ifrs_mx-cor_20160822_TotalUnpaidAccruedInterest_21bf852b-580a-4b21-ad53-308a7c8e49c3",
+      "IdConcepto": "ifrs_mx-cor_20160822_TotalUnpaidAccruedInterest",
+      "IdContextoPlantilla": "ct1",
+      "Hechos": [],
+      "IdUnidadPlantilla": "mxn",
+      "Decimales": "0",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "A6c45b2fe-654a-4bb8-be6b-af393acb8cb5": {
+      "Id": "A6c45b2fe-654a-4bb8-be6b-af393acb8cb5",
+      "IdConcepto": "ifrs-full_Assets",
+      "IdContextoPlantilla": "ct1",
+      "Hechos": [],
+      "IdUnidadPlantilla": "mxn",
+      "Decimales": "0",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "ifrs_mx-cor_20160822_TotalCreditsLoansOrNotRelevantFunding_d7fc8bd1-f225-4391-8f33-2aa5419c1a01": {
+      "Id": "ifrs_mx-cor_20160822_TotalCreditsLoansOrNotRelevantFunding_d7fc8bd1-f225-4391-8f33-2aa5419c1a01",
+      "IdConcepto": "ifrs_mx-cor_20160822_TotalCreditsLoansOrNotRelevantFunding",
+      "IdContextoPlantilla": "ct1",
+      "Hechos": [],
+      "IdUnidadPlantilla": "mxn",
+      "Decimales": "0",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "ifrs_mx-cor_20160822_LeverageLevelText_8081f31d-6430-4ceb-9960-845fe428aaf9": {
+      "Id": "ifrs_mx-cor_20160822_LeverageLevelText_8081f31d-6430-4ceb-9960-845fe428aaf9",
+      "IdConcepto": "ifrs_mx-cor_20160822_LeverageLevelText",
+      "IdContextoPlantilla": "ct1",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "ifrs_mx-cor_20160822_LeverageLevel_59649681-5a21-4bde-92c6-90bfcab37dbd": {
+      "Id": "ifrs_mx-cor_20160822_LeverageLevel_59649681-5a21-4bde-92c6-90bfcab37dbd",
+      "IdConcepto": "ifrs_mx-cor_20160822_LeverageLevel",
+      "IdContextoPlantilla": "ct1",
+      "Hechos": [],
+      "IdUnidadPlantilla": "pure",
+      "Decimales": "2",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "ifrs_mx-cor_20160822_EquitySecurities_e8a685dd-2a66-4b3c-bca8-4c0a8d8bf790": {
+      "Id": "ifrs_mx-cor_20160822_EquitySecurities_e8a685dd-2a66-4b3c-bca8-4c0a8d8bf790",
+      "IdConcepto": "ifrs_mx-cor_20160822_EquitySecurities",
+      "IdContextoPlantilla": "ct1",
+      "Hechos": [],
+      "IdUnidadPlantilla": "mxn",
+      "Decimales": "0",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "ifrs_mx-cor_20160822_CoverageRateDebtServiceText_5810733e-f718-433b-b833-7d22df3ab786": {
+      "Id": "ifrs_mx-cor_20160822_CoverageRateDebtServiceText_5810733e-f718-433b-b833-7d22df3ab786",
+      "IdConcepto": "ifrs_mx-cor_20160822_CoverageRateDebtServiceText",
+      "IdContextoPlantilla": "ct1",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "ifrs_mx-cor_20160822_CoverageRateDebtService_df592dcc-9d40-44bd-97ca-e898688415f6": {
+      "Id": "ifrs_mx-cor_20160822_CoverageRateDebtService_df592dcc-9d40-44bd-97ca-e898688415f6",
+      "IdConcepto": "ifrs_mx-cor_20160822_CoverageRateDebtService",
+      "IdContextoPlantilla": "ct1",
+      "Hechos": [],
+      "IdUnidadPlantilla": "pure",
+      "Decimales": "2",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "ifrs_mx-cor_20160822_LiquidAssets_98d628f2-73ca-487c-a5fa-be91b1cb2d14": {
+      "Id": "ifrs_mx-cor_20160822_LiquidAssets_98d628f2-73ca-487c-a5fa-be91b1cb2d14",
+      "IdConcepto": "ifrs_mx-cor_20160822_LiquidAssets",
+      "IdContextoPlantilla": "ct1",
+      "Hechos": [],
+      "IdUnidadPlantilla": "mxn",
+      "Decimales": "0",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "ifrs_mx-cor_20160822_EstimatedOperatingIncome_797d88c0-5f35-4ee3-90ae-79bff5d1971b": {
+      "Id": "ifrs_mx-cor_20160822_EstimatedOperatingIncome_797d88c0-5f35-4ee3-90ae-79bff5d1971b",
+      "IdConcepto": "ifrs_mx-cor_20160822_EstimatedOperatingIncome",
+      "IdContextoPlantilla": "ct1",
+      "Hechos": [],
+      "IdUnidadPlantilla": "mxn",
+      "Decimales": "0",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "ifrs_mx-cor_20160822_RevolvingCreditLines_b484d945-02e9-490f-b096-2e96451c5e66": {
+      "Id": "ifrs_mx-cor_20160822_RevolvingCreditLines_b484d945-02e9-490f-b096-2e96451c5e66",
+      "IdConcepto": "ifrs_mx-cor_20160822_RevolvingCreditLines",
+      "IdContextoPlantilla": "ct1",
+      "Hechos": [],
+      "IdUnidadPlantilla": "mxn",
+      "Decimales": "0",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "ifrs_mx-cor_20160822_CapitalAmortizationOfTheCreditPortfolio_b484d945-02e9-490f-b096-2e96451c5e66": {
+      "Id": "ifrs_mx-cor_20160822_CapitalAmortizationOfTheCreditPortfolio_b484d945-02e9-490f-b096-2e96451c5e66",
+      "IdConcepto": "ifrs_mx-cor_20160822_CapitalAmortizationOfTheCreditPortfolio",
+      "IdContextoPlantilla": "ct1",
+      "Hechos": [],
+      "IdUnidadPlantilla": "mxn",
+      "Decimales": "0",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "ifrs_mx-cor_20160822_Distributions_b484d945-02e9-490f-b096-2e96451c5e66": {
+      "Id": "ifrs_mx-cor_20160822_Distributions_b484d945-02e9-490f-b096-2e96451c5e66",
+      "IdConcepto": "ifrs_mx-cor_20160822_Distributions",
+      "IdContextoPlantilla": "ct1",
+      "Hechos": [],
+      "IdUnidadPlantilla": "mxn",
+      "Decimales": "0",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "ifrs_mx-cor_20160822_PlannedAmortizationOfPrincipalOfFinancing_b484d945-02e9-490f-b096-2e96451c5e66": {
+      "Id": "ifrs_mx-cor_20160822_PlannedAmortizationOfPrincipalOfFinancing_b484d945-02e9-490f-b096-2e96451c5e66",
+      "IdConcepto": "ifrs_mx-cor_20160822_PlannedAmortizationOfPrincipalOfFinancing",
+      "IdContextoPlantilla": "ct1",
+      "Hechos": [],
+      "IdUnidadPlantilla": "mxn",
+      "Decimales": "0",
+      "Precision": null,
+      "Valor": "#valorDefaultNumerico",
+      "ValorNumerador": null,
+      "ValorDenominador": null
+    },
+    "ifrs_mx-cor_20160822_CommentsOnAnnexAA_6c46e936-9aa4-42f1-bb6f-bc9ccc2a4398": {
+      "Id": "ifrs_mx-cor_20160822_CommentsOnAnnexAA_6c46e936-9aa4-42f1-bb6f-bc9ccc2a4398",
+      "IdConcepto": "ifrs_mx-cor_20160822_CommentsOnAnnexAA",
+      "IdContextoPlantilla": "ct1",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    }
+  }
+}

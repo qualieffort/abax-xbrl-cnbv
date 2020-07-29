@@ -1,0 +1,34 @@
+{
+  "IdConceptos": [
+    "ar_pros_InvestorName",
+    "ar_pros_InvestorAdress",
+    "ar_pros_InvestorPhone",
+    "ar_pros_InvestorMail"
+  ],
+  "PlantillasContextos": {
+    "DEFAULT": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2012_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": []
+    }
+  },
+  "PlantillaDimensiones": {
+    "ar_pros_InvestorRelationshipSequenceTypedAxis": {
+      "PrefijoValor": "<ar_pros:InvestorRelationsSequenceDomain xmlns:ar_pros=\"http://www.cnbv.gob.mx/2016-08-22/ar_prospectus\">",
+      "SubfijoValor": "</ar_pros:InvestorRelationsSequenceDomain>",
+      "EtiquetaNuevoElemento": "1",
+      "Explicita": false,
+      "IdDimension": "ar_pros_InvestorRelationshipSequenceTypedAxis",
+      "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:InvestorRelationshipSequenceTypedAxis"
+    }
+  },
+  "DimensionesDinamicas": [
+    "ar_pros_InvestorRelationshipSequenceTypedAxis"
+  ],
+  "MaxColumnasVertical": 6,
+  "MaxColumnasHorizontal": 0,
+  "TamanoHoja": "Letter"
+}

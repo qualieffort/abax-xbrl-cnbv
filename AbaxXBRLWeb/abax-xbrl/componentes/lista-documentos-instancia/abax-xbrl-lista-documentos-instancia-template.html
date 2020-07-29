@@ -1,0 +1,339 @@
+﻿<section>
+    <section class="vbox">
+        <section class="scrollable padder">
+            <section class="panel panel-default">
+                <header class="panel-heading" translate="TITULO_DOCUMENTOS_INSTANCIA_XBRL"></header>
+                <div class="row wrapper">
+                    <div class="col-sm-4 m-b-xs">
+                        <select class="input-sm form-control input-s-sm v-middle"
+                                ng-model="emisoraSeleccionada"
+                                ng-options="emisora as emisora.NombreCorto for emisora in emisoras"
+                                style="display:none; max-width:100%"
+                                data-placeholder="{{'PLACE_HOLDER_SELECCIONE_EMISORA' | translate}}"
+                                chosen
+                                width="'300px'"
+                                allow-single-deselect="true">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4 m-b-xs">
+                        <input type="text"
+                               class="form-control"
+                               placeholder="{{'PLACE_HOLDER_FECHA' | translate}}"
+                               datepicker-popup="dd/MM/yyyy"
+                               current-text="{{'ETIQUETA_HOY'| translate}}"
+                               clear-text="{{'ETIQUETA_LIMPIAR'| translate}}"
+                               close-text="{{'ETIQUETA_BOTON_CERRAR'| translate}}"
+                               is-open="datePikerOpen"
+                               style="width:300px; max-width:100%"
+                               ng-click="muestraDatePiker($event)"
+                               ng-model="fecha" />
+                        </div>
+                    <div class="col-sm-4" style="text-align:right">
+                        <button class="btn btn-sm btn-default" id="agregarContexto" type="button" ui-sref="inicio.editorXBRL" translate="ETIQUETA_CREAR_DOCUMENTO_INSTANCIA_XBRL" ng-show="tieneFacultadGuardarDocumentoInstancia"></button>
+                        <br ng-show="::tieneFacultadMigrarVersiondocumentos" />
+                        <br ng-show="::tieneFacultadMigrarVersiondocumentos" />
+                        <a class="btn btn-sm btn-default" style="width:223px" href="javascript:void(0);" ui-sref="inicio.generarVersionActualizadaDocumentosInstancia" ng-show="::tieneFacultadMigrarVersiondocumentos">
+                            {{'ETIQUETA_MIGRAR_DOCUMENTOS' | translate}}
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section class="panel panel-default">
+                <header class="panel-heading bg-light" translate="ETIQUETA_LISTADO_DE_DOCUMENTOS_INSTANCIA"></header>
+                <section class="panel panel-default">
+                    <header class="panel-heading bg-light">
+                        <ul class="nav nav-tabs nav-tabs-dark">
+                            <li ng-class="tab3"><a ng-click="mostrarTab(false,false,true)" data-toggle="tab" translate="ETIQUETA_DOCUMENTOS_RECIBIDOS"></a></li>
+                            <li ng-class="tab1"><a ng-click="mostrarTab(true,false,false)" data-toggle="tab" translate="ETIQUETA_MIS_DOCUMENTOS"></a></li>
+                            <li ng-class="tab2"><a ng-click="mostrarTab(false,true,false)" data-toggle="tab" translate="ETIQUETA_DOCUMENTOS_COMPARTIDOS"></a></li>
+                            <li class="">&nbsp;</li>
+                        </ul>
+                    </header>
+                    <div class="panel-body">
+                        <div class="tab-content">
+
+                            <div id="envios" class="tab-pane" ng-class="tab3">
+                                <div class="panel-body font-bold" style="background: #eeeeee; padding-left: 30px" ng-if="cargandoDocumentosRecibidos">
+                                    <i class="fa fa-refresh fa-spin"></i>
+                                    {{'MENSAJE_INFO_CARGANDO_DOCUMENTOS_ENVIOS' | translate}} ...
+                                </div>
+                                <div class="panel-body font-bold" style="background: #eeeeee; padding-left: 30px" ng-if="!cargandoDocumentosRecibidos && !existenDocumentosRecibidos">
+                                    {{'MENSAJE_INFO_SIN_RESULTADOS' | translate}}
+                                </div>
+                                <div ng-if="!cargandoDocumentosRecibidos && existenDocumentosRecibidos">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="dataTables_length">
+                                                <label>
+                                                    {{'ETIQUETA_MOSTRAR' | translate}}
+                                                    <select class="" ng-model="paginacionRecibidos.RegistrosPorPagina" ng-change="cargaDocumentosRecibidos()">
+                                                        <option value="10">10</option>
+                                                        <option value="25">25</option>
+                                                        <option value="50">50</option>
+                                                        <option value="100">100</option>
+                                                    </select>
+                                                    {{'ETIQUETA_MINUSCULAS_REGISTROS' | translate}}
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6" ></div>
+                                    </div>
+                                    <table class="table table-striped b-t b-light">
+                                        <thead>
+                                            <tr>
+                                                <th width="140" class="th-sortable" data-toggle="class" style="text-align:center;" translate="ETIQUETA_EMISORA">
+                                                    <span class="th-sort">
+                                                        <i class="fa fa-sort-down text"></i>
+                                                        <i class="fa fa-sort-up text-active"></i>
+                                                        <i class="fa fa-sort"></i>
+                                                    </span>
+                                                </th>
+                                                <th class="th-sortable" data-toggle="class" translate="ETIQUETA_NOMBRE_DOCUMENTO">
+                                                    <span class="th-sort">
+                                                        <i class="fa fa-sort-down text"></i>
+                                                        <i class="fa fa-sort-up text-active"></i>
+                                                        <i class="fa fa-sort"></i>
+                                                    </span>
+                                                </th>
+                                                <th class="th-sortable" data-toggle="class" style="text-align:center;" translate="ETIQUETA_FECHA_CREACION"></th>
+                                                <th class="th-sortable" data-toggle="class" style="text-align:center;" translate="ETIQUETA_TAXONOMIA"></th>
+                                                <th width="20px" class="th-sortable" data-toggle="class" style="text-align:center;" translate="ETIQUETA_MOSTRAR" ng-if="::tieneFacultadEditarDocumentoInstancia"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr dir-paginate="documento in paginacionRecibidos.ListaRegistros | itemsPerPage: paginacionRecibidos.RegistrosPorPagina"
+                                                total-items="paginacionRecibidos.TotalRregistros"
+                                                current-page="paginacionRecibidos.PaginaActual">
+                                                <td style="text-align:center;">{{documento.ClaveEmisora}}</td>
+                                                <td>{{documento.Titulo}}</td>
+                                                <td style="text-align:center;">{{documento.FechaCreacion}}</td>
+
+                                                <td ng-if="!documento.Taxonomia || documento.Taxonomia.length == 0">{{'ETIQUETA_TAXONOMIA_DESCONOCIDA' | translate }}</td>
+                                                <td ng-if="documento.Taxonomia && documento.Taxonomia.length > 0">{{documento.Taxonomia}}</td>
+
+
+                                                <td style="text-align:center;">
+                                                    <a href="javascript:void(0);" ng-click="cargarDocumentoInstanciaVisor(documento.IdDocumentoInstancia)" class="btn btn-rounded btn-sm btn-icon btn-default">
+                                                        <i class="fa fa-eye"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <dir-pagination-controls on-page-change="pageChangedRecibidos(newPageNumber)"></dir-pagination-controls>
+                                </div>
+                                <footer class="panel-footer">
+                                    <div class="row">
+                                        <div class="col-sm-4 hidden-xs">
+                                        </div>
+                                        <div class="col-sm-4 text-center">
+                                        </div>
+                                        <div class="col-sm-4 text-right text-center-xs">
+                                        </div>
+                                    </div>
+                                </footer>
+                            </div>
+
+                            <div class="tab-pane" id="propios" ng-class="tab1">
+                                <div class="panel-body font-bold" style="background: #eeeeee; padding-left: 30px" ng-if="cargandoDocumentosUsuario">
+                                    <i class="fa fa-refresh fa-spin"></i>
+                                    {{'MENSAJE_INFO_CARGANDO_DOCUMENTOS' | translate}} ...
+                                </div>
+                                <div class="panel-body font-bold" style="background: #eeeeee; padding-left: 30px" ng-if="!cargandoDocumentosUsuario && !existenDocumentosUsuario">
+                                    {{'MENSAJE_INFO_SIN_RESULTADOS' | translate}}
+                                </div>
+                                <div ng-if="!cargandoDocumentosUsuario && existenDocumentosUsuario">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="dataTables_length">
+                                                <label>
+                                                    {{'ETIQUETA_MOSTRAR' | translate}}
+                                                    <select class="" ng-model="paginacionPropios.RegistrosPorPagina" ng-change="cargaDocumentosPropios()">
+                                                        <option value="10">10</option>
+                                                        <option value="25">25</option>
+                                                        <option value="50">50</option>
+                                                        <option value="100">100</option>
+                                                    </select>
+                                                    {{'ETIQUETA_MINUSCULAS_REGISTROS' | translate}}
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6"></div>
+                                    </div>
+                                    <table class="table table-striped b-t b-light">
+                                        <thead>
+                                            <tr>
+                                                <th width="140" class="th-sortable" data-toggle="class" style="text-align:center;" translate="ETIQUETA_EMISORA">
+                                                    <span class="th-sort">
+                                                        <i class="fa fa-sort-down text"></i>
+                                                        <i class="fa fa-sort-up text-active"></i>
+                                                        <i class="fa fa-sort"></i>
+                                                    </span>
+                                                </th>
+                                                <th class="th-sortable" data-toggle="class" translate="ETIQUETA_NOMBRE_DOCUMENTO">
+                                                    <span class="th-sort">
+                                                        <i class="fa fa-sort-down text"></i>
+                                                        <i class="fa fa-sort-up text-active"></i>
+                                                        <i class="fa fa-sort"></i>
+                                                    </span>
+                                                </th>
+                                                <th class="th-sortable" data-toggle="class" style="text-align:center;" translate="ETIQUETA_FECHA_CREACION"></th>
+                                                <th class="th-sortable" data-toggle="class" style="text-align:center;" translate="ETIQUETA_TAXONOMIA"></th>
+                                                <th class="th-sortable" data-toggle="class" style="text-align:center;" translate="ETIQUETA_USUARIO_ULTIMA_MODIFICACION"></th>
+                                                <th class="th-sortable" data-toggle="class" style="text-align:center;" translate="ETIQUETA_FECHA_ULTIMA_MODIFICACION"></th>
+                                                <th class="th-sortable" data-toggle="class" style="text-align:center;" translate="ETIQUETA_ESTADO"></th>
+                                                <th width="20px" class="th-sortable" data-toggle="class" style="text-align:center;" translate="ETIQUETA_EDITAR" ng-if="::tieneFacultadEditarDocumentoInstancia"></th>
+                                                <th width="20px" class="th-sortable" data-toggle="class" style="text-align:center;" translate="ETIQUETA_VISOR_DOCUMENTO" ng-if="::tieneFacultadVisorGenerico"></th>
+                                                <th width="20px" class="th-sortable" data-toggle="class" style="text-align:center;" translate="ETIQUETA_ELIMINAR" ng-if="::tieneFacultadEliminarDocumentoInstancia"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr dir-paginate="documento in paginacionPropios.ListaRegistros | itemsPerPage: paginacionPropios.RegistrosPorPagina"
+                                                total-items="paginacionPropios.TotalRregistros"
+                                                current-page="paginacionPropios.PaginaActual">
+                                                <td style="text-align:center;">{{documento.ClaveEmisora}}</td>
+                                                <td>{{documento.Titulo}}</td>
+                                                <td style="text-align:center;">{{documento.FechaCreacion}}</td>
+
+                                                <td ng-if="!documento.Taxonomia || documento.Taxonomia.length == 0">{{'ETIQUETA_TAXONOMIA_DESCONOCIDA' | translate }}</td>
+                                                <td ng-if="documento.Taxonomia && documento.Taxonomia.length > 0">{{documento.Taxonomia}}</td>
+
+                                                <td>
+                                                    {{documento.UsuarioUltMod.Nombre + ' ' + documento.UsuarioUltMod.ApellidoPaterno + ' ' + (documento.UsuarioUltMod.ApellidoMaterno ? documento.UsuarioUltMod.ApellidoMaterno : ' ')}}
+                                                </td>
+                                                <td style="text-align:center;">{{documento.FechaUltMod}}</td>
+                                                <td>
+                                                    <span class="fa-stack pull-left m-r-sm" style="margin-top: 5px; margin-left: 5px;" ng-if="documento.EsCorrecto">
+                                                        <i class="fa fa-circle fa-stack-2x text-success"></i>
+                                                        <i class="fa fa-check fa-stack-1x text-white"></i>
+                                                    </span>
+                                                    <span class="fa-stack pull-left m-r-sm" style="margin-top: 5px; margin-left: 5px;" ng-if="!documento.EsCorrecto">
+                                                        <i class="fa fa-circle fa-stack-2x text-danger"></i><i class="fa fa-exclamation fa-stack-1x text-white"></i>
+                                                    </span>
+                                                </td>
+                                                <td style="text-align:center;" ng-if="::tieneFacultadEditarDocumentoInstancia">
+                                                    <a href="javascript:void(0);" ng-click="cargarDocumentoInstancia(documento.IdDocumentoInstancia)" class="btn btn-rounded btn-sm btn-icon btn-default">
+                                                        <i class="fa fa-pencil"></i>
+                                                    </a>
+                                                </td>
+
+                                                <td style="text-align:center;" ng-if="::tieneFacultadVisorGenerico">
+                                                    <a href="" ng-click="visorDocumentoUsuario(documento.IdDocumentoInstancia)" class="btn btn-rounded btn-sm btn-icon btn-default"><i class="fa fa-eye"></i></a>
+                                                </td>
+
+                                                <td style="text-align:center;" ng-if="::tieneFacultadEliminarDocumentoInstancia">
+                                                    <a href="" ng-click="eliminaDocumentoUsuario(documento.IdDocumentoInstancia)" class="btn btn-rounded btn-sm btn-icon btn-danger"><i class="fa fa-trash-o"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <dir-pagination-controls on-page-change="pageChangedPropios(newPageNumber)"></dir-pagination-controls>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="compartidos" ng-class="tab2">
+                                <div class="panel-body font-bold" style="background: #eeeeee; padding-left: 30px" ng-if="cargandoDocumentosCompartidos">
+                                    <i class="fa fa-refresh fa-spin"></i>
+                                    {{'MENSAJE_INFO_CARGANDO_DOCUMENTOS_COMPARTIDOS' | translate}} ...
+                                </div>
+                                <div class="panel-body font-bold" style="background: #eeeeee; padding-left: 30px" ng-if="!cargandoDocumentosCompartidos && !existenDocumentosCompartidos">
+                                    {{'MENSAJE_INFO_SIN_RESULTADOS' | translate}}
+                                </div>
+                                <div ng-if="!cargandoDocumentosCompartidos && existenDocumentosCompartidos">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="dataTables_length">
+                                                <label>
+                                                    {{'ETIQUETA_MOSTRAR' | translate}}
+                                                    <select class="" ng-model="paginacionCompartidos.RegistrosPorPagina" ng-change="cargaDocumentosCompartidos()">
+                                                        <option value="10">10</option>
+                                                        <option value="25">25</option>
+                                                        <option value="50">50</option>
+                                                        <option value="100">100</option>
+                                                    </select>
+                                                    {{'ETIQUETA_MINUSCULAS_REGISTROS' | translate}}
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6"></div>
+                                    </div>
+                                    <table class="table table-striped b-t b-light">
+                                        <thead>
+                                            <tr>
+                                                <th width="140" class="th-sortable" data-toggle="class" style="text-align:center;" translate="ETIQUETA_EMISORA">
+                                                    <span class="th-sort">
+                                                        <i class="fa fa-sort-down text"></i>
+                                                        <i class="fa fa-sort-up text-active"></i>
+                                                        <i class="fa fa-sort"></i>
+                                                    </span>
+                                                </th>
+                                                <th class="th-sortable" data-toggle="class" translate="ETIQUETA_NOMBRE_DOCUMENTO">
+                                                    <span class="th-sort">
+                                                        <i class="fa fa-sort-down text"></i>
+                                                        <i class="fa fa-sort-up text-active"></i>
+                                                        <i class="fa fa-sort"></i>
+                                                    </span>
+                                                </th>
+                                                <th class="th-sortable" data-toggle="class" style="text-align:center;" translate="ETIQUETA_FECHA_CREACION"></th>
+                                                <th class="th-sortable" data-toggle="class" style="text-align:center;" translate="ETIQUETA_TAXONOMIA"></th>
+                                                <th class="th-sortable" data-toggle="class" style="text-align:center;" translate="ETIQUETA_USUARIO_ULTIMA_MODIFICACION"></th>
+                                                <th class="th-sortable" data-toggle="class" style="text-align:center;" translate="ETIQUETA_FECHA_ULTIMA_MODIFICACION"></th>
+                                                <th class="th-sortable" data-toggle="class" style="text-align:center;" translate="ETIQUETA_ESTADO"></th>
+                                                <th width="20px" class="th-sortable" data-toggle="class" style="text-align:center;" translate="ETIQUETA_EDITAR" ng-if="::tieneFacultadEditarDocumentoInstancia"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr dir-paginate="documento in paginacionCompartidos.ListaRegistros | itemsPerPage: paginacionCompartidos.RegistrosPorPagina"
+                                                total-items="paginacionCompartidos.TotalRregistros"
+                                                current-page="paginacionCompartidos.PaginaActual">
+                                                <td style="text-align:center;">{{documento.ClaveEmisora}}</td>
+                                                <td>{{documento.Titulo}}</td>
+                                                <td style="text-align:center;">{{documento.FechaCreacion}}</td>
+
+                                                <td ng-if="!documento.Taxonomia || documento.Taxonomia.length == 0">{{'ETIQUETA_TAXONOMIA_DESCONOCIDA' | translate }}</td>
+                                                <td ng-if="documento.Taxonomia && documento.Taxonomia.length > 0">{{documento.Taxonomia}}</td>
+
+                                                <td>
+                                                    {{documento.UsuarioUltMod.Nombre + ' ' + documento.UsuarioUltMod.ApellidoPaterno + ' ' + (documento.UsuarioUltMod.ApellidoMaterno ? documento.UsuarioUltMod.ApellidoMaterno : ' ')}}
+                                                </td>
+                                                <td style="text-align:center;">{{documento.FechaUltMod}}</td>
+                                                <td>
+                                                    <span class="fa-stack pull-left m-r-sm" style="margin-top: 5px; margin-left: 5px;" ng-if="documento.EsCorrecto">
+                                                        <i class="fa fa-circle fa-stack-2x text-success"></i>
+                                                        <i class="fa fa-check fa-stack-1x text-white"></i>
+                                                    </span>
+                                                    <span class="fa-stack pull-left m-r-sm" style="margin-top: 5px; margin-left: 5px;" ng-if="!documento.EsCorrecto">
+                                                        <i class="fa fa-circle fa-stack-2x text-danger"></i><i class="fa fa-exclamation fa-stack-1x text-white"></i>
+                                                    </span>
+                                                </td>
+                                                <td style="text-align:center;" ng-if="tieneFacultadEditarDocumentoInstancia">
+                                                    <a href="javascript:void(0);" ng-click="cargarDocumentoInstancia(documento.IdDocumentoInstancia)" class="btn btn-rounded btn-sm btn-icon btn-default">
+                                                        <i class="fa fa-pencil"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <dir-pagination-controls on-page-change="pageChangedCompartidos(newPageNumber)"></dir-pagination-controls>
+                                </div>
+                                <footer class="panel-footer">
+                                    <div class="row">
+                                        <div class="col-sm-4 hidden-xs">
+                                        </div>
+                                        <div class="col-sm-4 text-center">
+                                        </div>
+                                        <div class="col-sm-4 text-right text-center-xs">
+                                        </div>
+                                    </div>
+                                </footer>
+                            </div>
+                            
+
+
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </section>
+    </section>
+</section>

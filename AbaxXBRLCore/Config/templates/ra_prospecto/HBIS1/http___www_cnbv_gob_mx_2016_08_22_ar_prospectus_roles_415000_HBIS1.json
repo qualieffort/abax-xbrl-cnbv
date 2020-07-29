@@ -1,0 +1,184 @@
+{
+	"ContextosPlantillaPorId" : {
+  "ctx": {
+    "Id": "ctx",
+    "Periodo": {
+      "Tipo": 1,
+      "FechaInstante": "#fecha_2014_12_31",
+      "FechaInicio": "",
+      "FechaFin": ""
+    },
+    "Entidad": {
+      "Id": "#nombreEntidad",
+      "EsquemaId": "#esquemaEntidad",
+      "ContieneInformacionDimensional": false,
+      "Segmento": null,
+      "ValoresDimension": []
+    },
+    "ContieneInformacionDimensional": false,
+    "Escenario": null,
+    "ValoresDimension": []
+  }
+},
+	
+	"UnidadesPlantillaPorId" : {},
+            
+	"HechosPlantillaPorId" : {
+  "ar_pros_ReferenceIncorporationSecuritizationTransaction_81b1b1b5-dab1-45d9-a2e5-2e6f8746641f": {
+    "Id": "ar_pros_ReferenceIncorporationSecuritizationTransaction_81b1b1b5-dab1-45d9-a2e5-2e6f8746641f",
+    "IdConcepto": "ar_pros_ReferenceIncorporationSecuritizationTransaction",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_GeneralDescription_ee8a4f06-1e01-4bb5-be8b-abf10f006ee4": {
+    "Id": "ar_pros_GeneralDescription_ee8a4f06-1e01-4bb5-be8b-abf10f006ee4",
+    "IdConcepto": "ar_pros_GeneralDescription",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_TechnicalCommittee_7c8270f9-963c-45ce-8aff-192c437cd06c": {
+    "Id": "ar_pros_TechnicalCommittee_7c8270f9-963c-45ce-8aff-192c437cd06c",
+    "IdConcepto": "ar_pros_TechnicalCommittee",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_TrustEstate_a8b53e9f-b28d-4065-a04f-3b6f801a64f9": {
+    "Id": "ar_pros_TrustEstate_a8b53e9f-b28d-4065-a04f-3b6f801a64f9",
+    "IdConcepto": "ar_pros_TrustEstate",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_DescriptionOfTheAssetsInTrust_af47e355-5296-41d2-8e9f-39185667d57e": {
+    "Id": "ar_pros_DescriptionOfTheAssetsInTrust_af47e355-5296-41d2-8e9f-39185667d57e",
+    "IdConcepto": "ar_pros_DescriptionOfTheAssetsInTrust",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_EvolutionOfTheAssetsInTrust_c7a1d07d-8ff6-43d0-b071-07f090e170ef": {
+    "Id": "ar_pros_EvolutionOfTheAssetsInTrust_c7a1d07d-8ff6-43d0-b071-07f090e170ef",
+    "IdConcepto": "ar_pros_EvolutionOfTheAssetsInTrust",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_ContractsAndAgreements_bae9b4bd-ab9a-4389-9e10-e6a12a51672e": {
+    "Id": "ar_pros_ContractsAndAgreements_bae9b4bd-ab9a-4389-9e10-e6a12a51672e",
+    "IdConcepto": "ar_pros_ContractsAndAgreements",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_JudicialAdministrativeOrArbitrationProceedings_cc68730b-adf5-46e1-915f-dabf814d0799": {
+    "Id": "ar_pros_JudicialAdministrativeOrArbitrationProceedings_cc68730b-adf5-46e1-915f-dabf814d0799",
+    "IdConcepto": "ar_pros_JudicialAdministrativeOrArbitrationProceedings",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_FutureEstimates_e3078e2d-09ce-4e40-b002-16757a09baa1": {
+    "Id": "ar_pros_FutureEstimates_e3078e2d-09ce-4e40-b002-16757a09baa1",
+    "IdConcepto": "ar_pros_FutureEstimates",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_SettlorsOrOriginators_af71c38f-58f1-4d43-ad82-281c6aba57d9": {
+    "Id": "ar_pros_SettlorsOrOriginators_af71c38f-58f1-4d43-ad82-281c6aba57d9",
+    "IdConcepto": "ar_pros_SettlorsOrOriginators",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_RelevantDebtors_3431a5a5-7b42-4d89-9e33-c3d2a2d3442a": {
+    "Id": "ar_pros_RelevantDebtors_3431a5a5-7b42-4d89-9e33-c3d2a2d3442a",
+    "IdConcepto": "ar_pros_RelevantDebtors",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_TrustAssetsAdministrators_15658730-58ae-4941-9a6d-c7c4edd75f31": {
+    "Id": "ar_pros_TrustAssetsAdministrators_15658730-58ae-4941-9a6d-c7c4edd75f31",
+    "IdConcepto": "ar_pros_TrustAssetsAdministrators",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_OtherThirdPartiesObligatedWithTheTrust_68737485-4ea3-4728-8e24-f372cb8dacc5": {
+    "Id": "ar_pros_OtherThirdPartiesObligatedWithTheTrust_68737485-4ea3-4728-8e24-f372cb8dacc5",
+    "IdConcepto": "ar_pros_OtherThirdPartiesObligatedWithTheTrust",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  }
+}
+}

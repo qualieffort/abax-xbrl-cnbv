@@ -1,0 +1,129 @@
+﻿<section>
+    <section class="vbox">
+        <section class="scrollable padder">
+            <section class="panel panel-default">
+                <header class="panel-heading">
+                    {{tituloDestinatarios}}
+                </header>
+                <div class="row wrapper">
+                    <div class="col-sm-3">
+                        <div class="col-sm-3" ng-if="existenElementos">
+                            <button type="button"
+                                    class="btn btn-sm btn-default"
+                                    ng-click="exportaAExcel()"
+                                    ng-if="puedeExportarExcel"
+                                    ng-hide="estaExportandoExcel">
+                                <i class="i i-file-excel"></i>
+                                {{'ETIQUETA_EXPORTAR' | translate}}
+                            </button>
+                            <button type="button" class="btn btn-sm btn-default" ng-if="estaExportandoExcel" disabled>
+                                <i class="fa fa-refresh fa-spin"></i>
+                                {{'MENSAJE_INFO_EXPORTANDO' | translate}} ...
+                            </button>
+                        </div>
+                        <div class="col-sm-3" ng-if="!existenElementos">
+                            <button type="button"
+                                    class="btn btn-sm btn-default" disabled>
+                                <i class="i i-file-excel"></i>
+                                {{'ETIQUETA_EXPORTAR' | translate}}
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 m-b-xs text-center">
+                        &nbsp;
+                    </div>
+                    <div class="col-sm-4 m-b-xs text-right">
+                        <button type="button"
+                                name="create"
+                                class="btn btn-sm btn-default"
+                                ng-click="irRegistrarNuevoElemento()"
+                                ng-if="puedeRegistrarNuevoElemento">
+                            <i class="i i-add-to-list"></i>
+                            {{'ETIQUETA_BOTON_AGREGAR_DESTINATARIO' | translate}}
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section class="panel panel-default">
+                <header class="panel-heading bg-light">
+                    {{'TITULO_LISTADO_DESTINATARIOS' | translate}}
+                </header>
+
+                <div class="panel-body font-bold" style="background: #eeeeee; padding-left: 30px" ng-if="estaCargandoListadoElementos">
+                    <i class="fa fa-refresh fa-spin"></i>
+                    {{'MENSAJE_INFO_CARGANDO_ELEMENTOS' | translate}} ...
+                </div>
+                <div class="panel-body font-bold text-danger style=" background #eeeeee; padding-left 30px" ng-if="!estaCargandoListadoElementos && !existenElementos">
+                    <i class="fa fa-warning"></i>
+                    {{'MENSAJE_WARNING_NO_EXISTEN_ELEMENTOS_LISTAR' | translate}}
+                </div>
+                <div ng-if="!estaCargandoListadoElementos && existenElementos">
+                    <table id="listadoElementos" class="table table-striped b-t b-light" datatable="" dt-options="opcionesDataTableActual">
+                        <thead>
+                            <tr>
+                                <th class="th-sortable" data-toggle="class" style="text-align:center;width:40%;">{{'ETIQUETA_NOMBRE'|translate}}</th>
+                                <th class="th-sortable" data-toggle="class" style="text-align:center;width:40%;">{{'ETIQUETA_CORREO_ELECTRONICO' | translate}}</th>
+                                <th class="th-sortable" data-toggle="class" style="text-align: center;width:10%;" ng-if="puedeEditar">{{'ETIQUETA_EDITAR' | translate}}</th>
+                                <th class="th-sortable" data-toggle="class" style="text-align: center;width:10%;" ng-if="puedeBorrar">{{'ETIQUETA_BORRAR' | translate}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="elemento in listadoElementos">
+                                <td style="text-align:center;">{{elemento.Nombre}}</td>
+                                <td style="text-align:center;">{{elemento.CorreoElectronico}}</td>
+                                <td class="text-center" ng-if="puedeEditar">
+                                    <a title="{{'ETIQUETA_EDITAR' | translate}}" href="javascript:void(0);" ng-click="irEditar(elemento)" class="btn btn-rounded btn-sm btn-icon btn-default">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                </td>
+                                <td class="text-center" ng-if="puedeBorrar">
+
+                                    <a title="{{'ETIQUETA_BORRAR' | translate}}" href="javascript:void(0)" ng-click="eliminar(elemento)" class="btn btn-rounded btn-sm btn-icon btn-danger">
+                                        <i class="fa fa-trash-o"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <footer class="panel-footer ">
+                    <div class="row">
+                        <div class="col-sm-4 hidden-xs">
+                            <div class="col-sm-3" ng-if="existenElementos">
+                                <button type="button"
+                                        class="btn btn-sm btn-default"
+                                        ng-click="exportaAExcel()"
+                                        ng-if="puedeExportarExcel"
+                                        ng-hide="estaExportandoExcel">
+                                    <i class="i i-file-excel"></i>
+                                    {{'ETIQUETA_EXPORTAR' | translate}}
+                                </button>
+                                <button type="button" class="btn btn-sm btn-default" ng-if="estaExportandoExcel" disabled>
+                                    <i class="fa fa-refresh fa-spin"></i>
+                                    {{'MENSAJE_INFO_EXPORTANDO' | translate}} ...
+                                </button>
+                            </div>
+                            <div class="col-sm-3" ng-if="!existenElementos">
+                                <button type="button"
+                                        class="btn btn-sm btn-default" disabled>
+                                    <i class="i i-file-excel"></i>
+                                    {{'ETIQUETA_EXPORTAR' | translate}}
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 text-center">
+                            <small class="text-muted inline m-t-sm m-b-sm"></small>
+                        </div>
+                        <div class="col-sm-4 text-right text-center-xs">
+                            <a href="javascript:void(0);" ui-sref="{{estadoVistaListasNotificacion}}" class="btn btn-default">
+                                <i class="i i-back"></i>
+                                {{'ETIQUETA_BOTON_REGRESAR' | translate}}
+                            </a>
+                        </div>
+                    </div>
+                </footer>
+            </section>
+        </section>
+    </section>
+</section>

@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1DD1DB2D-E049-437D-8E7A-3302502A30C4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AbaxXBRL</RootNamespace>
+    <AssemblyName>AbaxXBRL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\AbaxXBRL.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\packages\Common.Logging.1.2.0\lib\1.0\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Aop">
+      <HintPath>..\packages\Spring.Aop.1.3.2\lib\net40\Spring.Aop.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core">
+      <HintPath>..\packages\Spring.Core.1.3.2\lib\net40\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data">
+      <HintPath>..\packages\Spring.Data.1.3.2\lib\net40\Spring.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Messaging.Ems">
+      <HintPath>..\packages\Spring.Messaging.Ems.1.3.2\lib\net40\Spring.Messaging.Ems.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constantes\CodigoErrorConstantes.cs" />
+    <Compile Include="Constantes\ConstantesGenerales.cs" />
+    <Compile Include="Constantes\EspacioNombresConstantes.cs" />
+    <Compile Include="Constantes\EtiquetasXBRLConstantes.cs" />
+    <Compile Include="Constantes\LinkbasesXBRL.cs" />
+    <Compile Include="Constantes\PTVConstantes.cs" />
+    <Compile Include="Constantes\TipoArco.cs" />
+    <Compile Include="Constantes\TipoElementoContexto.cs" />
+    <Compile Include="Constantes\TiposCicloArco.cs" />
+    <Compile Include="Constantes\TiposDatoXBRL.cs" />
+    <Compile Include="Constantes\TiposUso.cs" />
+    <Compile Include="Constantes\TokenTaskHelper.cs" />
+    <Compile Include="Taxonomia\ApuntadorElementoXBRL.cs" />
+    <Compile Include="Taxonomia\ArchivoImportadoDocumento.cs" />
+    <Compile Include="Taxonomia\ArcRoleType.cs" />
+    <Compile Include="Taxonomia\Cache\IEstrategiaCacheTaxonomia.cs" />
+    <Compile Include="Taxonomia\ConceptItem.cs" />
+    <Compile Include="Taxonomia\Context.cs" />
+    <Compile Include="Taxonomia\ConceptHypercubeItem.cs" />
+    <Compile Include="Taxonomia\ConceptDimensionItem.cs" />
+    <Compile Include="Taxonomia\Dimensiones\Dimension.cs" />
+    <Compile Include="Taxonomia\Dimensiones\Hipercubo.cs" />
+    <Compile Include="Taxonomia\Dimensiones\MiembroDimension.cs" />
+    <Compile Include="Taxonomia\Documentation.cs" />
+    <Compile Include="Taxonomia\Concept.cs" />
+    <Compile Include="Taxonomia\ElementoXBRL.cs" />
+    <Compile Include="Taxonomia\ElementoXBRLExterno.cs" />
+    <Compile Include="Taxonomia\Entity.cs" />
+    <Compile Include="Taxonomia\Common\AbaxXbrlException.cs" />
+    <Compile Include="Taxonomia\Impl\EstrategiaCacheTaxonomiaMemoria.cs" />
+    <Compile Include="Taxonomia\Scenario.cs" />
+    <Compile Include="Taxonomia\Fact.cs" />
+    <Compile Include="Taxonomia\FactFractionItem.cs" />
+    <Compile Include="Taxonomia\FactItem.cs" />
+    <Compile Include="Taxonomia\FactNumericItem.cs" />
+    <Compile Include="Taxonomia\FactTuple.cs" />
+    <Compile Include="Taxonomia\IDocumentoInstanciaXBRL.cs" />
+    <Compile Include="Taxonomia\Impl\DocumentoInstanciaXBRL.cs" />
+    <Compile Include="Taxonomia\InformacionAdicionalContexto.cs" />
+    <Compile Include="Taxonomia\Linkbases\ArbolLinkbase.cs" />
+    <Compile Include="Taxonomia\Linkbases\Arco.cs" />
+    <Compile Include="Taxonomia\Linkbases\ArcoCalculo.cs" />
+    <Compile Include="Taxonomia\Linkbases\ArcoDefinicion.cs" />
+    <Compile Include="Taxonomia\Linkbases\ArcoEtiqueta.cs" />
+    <Compile Include="Taxonomia\Linkbases\ArcoPresentacion.cs" />
+    <Compile Include="Taxonomia\Linkbases\ArcoReferencia.cs" />
+    <Compile Include="Taxonomia\Linkbases\ConectorLinkbase.cs" />
+    <Compile Include="Taxonomia\Linkbases\CustomExtendedLink.cs" />
+    <Compile Include="Taxonomia\Linkbases\ElementoLocalizable.cs" />
+    <Compile Include="Taxonomia\Linkbases\Etiqueta.cs" />
+    <Compile Include="Taxonomia\Linkbases\Linkbase.cs" />
+    <Compile Include="Taxonomia\Linkbases\LinkbaseCalculo.cs" />
+    <Compile Include="Taxonomia\Linkbases\LinkbaseDefinicion.cs" />
+    <Compile Include="Taxonomia\Linkbases\LinkbaseEtiqueta.cs" />
+    <Compile Include="Taxonomia\Linkbases\LinkbasePresentacion.cs" />
+    <Compile Include="Taxonomia\Linkbases\LinkbaseReferencia.cs" />
+    <Compile Include="Taxonomia\Linkbases\Localizador.cs" />
+    <Compile Include="Taxonomia\Linkbases\NodoLinkbase.cs" />
+    <Compile Include="Taxonomia\Linkbases\NotaAlPie.cs" />
+    <Compile Include="Taxonomia\Linkbases\Recurso.cs" />
+    <Compile Include="Taxonomia\Linkbases\Referencia.cs" />
+    <Compile Include="Taxonomia\Linkbases\ReferenciaParte.cs" />
+    <Compile Include="Taxonomia\IManejadorErroresXBRL.cs" />
+    <Compile Include="Taxonomia\Impl\ManejadorErroresCargaTaxonomia.cs" />
+    <Compile Include="Taxonomia\Impl\TaxonomiaXBRL.cs" />
+    <Compile Include="Taxonomia\ITaxonomiaXBRL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Taxonomia\ConceptTuple.cs" />
+    <Compile Include="Taxonomia\Measure.cs" />
+    <Compile Include="Taxonomia\Period.cs" />
+    <Compile Include="Taxonomia\RoleType.cs" />
+    <Compile Include="Taxonomia\Segment.cs" />
+    <Compile Include="Taxonomia\Unit.cs" />
+    <Compile Include="Taxonomia\Validador\CodigosErrorXBRL.cs" />
+    <Compile Include="Taxonomia\Validador\IGrupoValidadoresTaxonomia.cs" />
+    <Compile Include="Taxonomia\Validador\Impl\ValidadorDimensionesDocumentoInstancia.cs" />
+    <Compile Include="Taxonomia\Validador\Impl\GrupoValidadoresTaxonomia.cs" />
+    <Compile Include="Taxonomia\Validador\Impl\ValidadorDocumentoInstancia.cs" />
+    <Compile Include="Taxonomia\Validador\Impl\ValidadorDuplicadosDocumentoInstancia.cs" />
+    <Compile Include="Taxonomia\Validador\Impl\ValidadorTaxonomia.cs" />
+    <Compile Include="Taxonomia\Validador\Impl\ValidadorTaxonomiaDinemsional.cs" />
+    <Compile Include="Taxonomia\Validador\IValidadorDocumentoInstancia.cs" />
+    <Compile Include="Taxonomia\Validador\IValidadorTaxonomia.cs" />
+    <Compile Include="Taxonomia\Validador\IValidadorTaxonomiaDimensional.cs" />
+    <Compile Include="Taxonomia\Validador\IValidadorXBRL.cs" />
+    <Compile Include="Util\UnitsUtil.cs" />
+    <Compile Include="Util\UrlUtil.cs" />
+    <Compile Include="Util\XmlUtil.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,128 @@
+﻿<section>
+    <section class="vbox">
+        <section class="scrollable padder" style="padding-bottom: 100px;">
+            <section class="panel panel-default">
+                <header class="panel-heading">
+                    {{ 'TITULO_REPORTE_CALCULO_DE_MATERIALIDAD' | translate}}
+                </header>
+                <div class="row wrapper">
+                    <div class="col-lg-3">
+                        <span class="font-bold ng-binding">{{'PLACE_HOLDER_CLAVE_COTIZACION_OTROS_REPORTES' | translate}}</span>
+                        <select class="input-sm form-control input-s-lg v-middle"
+                                ng-options="emisora as emisora.NombreCorto for emisora in emisoras"
+                                ng-model="emisoraSeleccionada"
+                                style="display:none;"
+                                data-placeholder="{{'ETIQUETA_SELECCIONAR_OPCION' | translate}}"                                
+                                chosen
+                                width="'300px'"
+                                allow-single-deselect="true">
+                            <option value=""></option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <span class="font-bold ng-binding">{{'PLACE_HOLDER_TIPO_REPORTE_OTROS_REPORTES' | translate}}</span>
+                        <select class="input-sm form-control input-s-lg v-middle"
+                                ng-options="tipoInstrumento as tipoInstrumento.valor for tipoInstrumento in listaTiposInstrumento"
+                                ng-model="tipoInstrumentoSeleccionado"
+                                style="display:none;"
+                                data-placeholder="{{'ETIQUETA_SELECCIONAR_OPCION' | translate}}"
+                                chosen
+                                width="'300px'"
+                                allow-single-deselect="true">
+                            <option value=""></option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <span class="font-bold ng-binding">{{'MONEDA' | translate}}</span>
+                        <select class="input-sm form-control input-s-lg v-middle"
+                                ng-options="moneda as moneda.valor for moneda in listaMonedas"
+                                ng-model="monedaSeleccionada"
+                                style="display:none;"
+                                data-placeholder="{{'ETIQUETA_SELECCIONAR_OPCION' | translate}}"
+                                chosen
+                                width="'300px'"
+                                allow-single-deselect="true">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                                              
+                    <br /><br />
+                    <br />         
+                    
+                    <div class="col-lg-3">
+                        <span class="font-bold ng-binding">{{'PLACE_HOLDER_FECHA' | translate}}</span>
+                        <input type="text"
+                               name="fecha"
+                               placeholder="{{'PLACE_HOLDER_FECHA_REPORTE' | translate}}"
+                               ng-model="fechaSeleccionada"
+                               ng-change="refreshData()"
+                               class=" input-sm form-control input-s-lg inline v-middle datepicker-input form-control"
+                               datepicker-popup="dd/MM/yyyy"
+                               current-text="{{'ETIQUETA_HOY'| translate}}"
+                               clear-text="{{'ETIQUETA_LIMPIAR'| translate}}"
+                               close-text="{{'ETIQUETA_BOTON_CERRAR'| translate}}"
+                               is-open="datePikerOpen"
+                               style="width:300px; max-width:100%"
+                               ng-click="muestraDatePiker($event)"
+                               id="fecha" />
+                    </div>         
+
+                    <div class="col-lg-3">
+                        <span class="font-bold ng-binding">{{'PLACE_HOLDER_MONTO_OPERACION_REPORTE_CALCULO_DE_MATERIALIDAD' | translate}}</span>
+                        <input type="number"
+                               placeholder="{{'PLACE_HOLDER_MONTO_OPERACION_REPORTE_CALCULO_DE_MATERIALIDAD' | translate}}"
+                               ng-model="montoDeOperacion"                               
+                               style="width:300px; max-width:100%"                                
+                        />
+                        <!--ng-keyup="formatearTextoAMoneda()"-->
+                    </div>
+
+                    <div class="col-lg-3">
+                        <span class="font-bold ng-binding">{{'PLACE_HOLDER_TIPO_CAMBIO_REPORTE_CALCULO_DE_MATERIALIDAD' | translate}}</span>
+                        <input type="number"
+                               placeholder="{{'PLACE_HOLDER_TIPO_CAMBIO_REPORTE_CALCULO_DE_MATERIALIDAD'| translate}}"
+                               ng-model="tipoDeCambio" 
+                               style="width:300px; max-width:100%"
+                        />
+                    </div>
+
+                    <br /><br />
+                    <br />  
+
+                    <div class="col-lg-6 form-group">
+                        <span class="font-bold ng-binding">{{'ETIQUETA_DESCRIPCION' | translate}}</span>                        
+                        <textarea name="textComentarios" class="form-control" rows="6" 
+                                  placeholder="{{'TECLEA_DESCRIPCION' | translate}}" 
+                                  ng-model="noticia"
+                                  style="resize:none;">            
+                        </textarea>
+                        <!--<p ng-show="guardarConsultaForm.textComentarios.$invalid && !guardarConsultaForm.textComentarios.$pristine" class="help-block">{{'ETIQUETA_DESCRIPCION_REQUERIDO'|translate}}</p>-->
+                    </div>
+                    
+                    <div class="col-lg-3">
+                        <!--ng-if="existeElementos"-->
+                        <div>
+                            <button type="button"
+                                    class="btn btn-sm btn-default"
+                                    ng-if="tieneFacultad(FacultadesEnum.ExportarDatosBitacora)"
+                                    style="width:300px; max-width:100%"
+                                    ng-click="exportaAExcel()"
+                                    ng-disabled="!(emisoraSeleccionada != undefined && tipoInstrumentoSeleccionado != undefined && monedaSeleccionada != undefined && fechaSeleccionada != undefined && noticia != undefined &&  montoDeOperacion != undefined && tipoDeCambio != undefined )"
+                                    ng-hide="exportando">
+                                <i class="i i-file-excel"></i>
+                                {{'ETIQUETA_EXPORTAR' | translate}}
+                            </button>
+                            <button type="button" class="btn btn-sm btn-default" ng-if="exportando" style="width:200px" disabled>
+                                <i class="fa fa-refresh fa-spin"></i>
+                                {{'MENSAJE_INFO_EXPORTANDO' | translate}} ...
+                            </button>
+                        </div>
+                    </div>                                       
+                </div>
+            </section>
+
+        </section>
+    </section>
+</section>

@@ -1,0 +1,124 @@
+{
+	"ContextosPlantillaPorId" : {
+  "ctx_2014": {
+    "Id": "ctx_2014",
+    "Periodo": {
+      "Tipo": 1,
+      "FechaInstante": "#fecha_2014_12_31",
+      "FechaInicio": "",
+      "FechaFin": ""
+    },
+    "Entidad": {
+      "Id": "#nombreEntidad",
+      "EsquemaId": "#esquemaEntidad",
+      "ContieneInformacionDimensional": false,
+      "Segmento": null,
+      "ValoresDimension": []
+    },
+    "ContieneInformacionDimensional": false,
+    "Escenario": null,
+    "ValoresDimension": []
+  }
+},
+	
+	"UnidadesPlantillaPorId" : {},
+            
+	"HechosPlantillaPorId" : {
+  "ar_pros_IssuerLogo_9f1b4f10-f4a7-4c11-8c8f-4964370baed0": {
+    "Id": "ar_pros_IssuerLogo_9f1b4f10-f4a7-4c11-8c8f-4964370baed0",
+    "IdConcepto": "ar_pros_IssuerLogo",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_NameOfTheIssuer_f1560716-0140-49a4-84b0-1a204d990c95": {
+    "Id": "ar_pros_NameOfTheIssuer_f1560716-0140-49a4-84b0-1a204d990c95",
+    "IdConcepto": "ar_pros_NameOfTheIssuer",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_AdressOfTheIssuer_6489380c-370f-4750-b1bf-f786fc9f0e45": {
+    "Id": "ar_pros_AdressOfTheIssuer_6489380c-370f-4750-b1bf-f786fc9f0e45",
+    "IdConcepto": "ar_pros_AdressOfTheIssuer",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_Ticker_aa330478-9b01-436f-b937-d1bdebc42c7d": {
+    "Id": "ar_pros_Ticker_aa330478-9b01-436f-b937-d1bdebc42c7d",
+    "IdConcepto": "ar_pros_Ticker",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_TheMentionThatTheValuesOfTheIssuerAreRegistered_5f6a2746-371a-4bec-810a-1f710ffdeed2": {
+    "Id": "ar_pros_TheMentionThatTheValuesOfTheIssuerAreRegistered_5f6a2746-371a-4bec-810a-1f710ffdeed2",
+    "IdConcepto": "ar_pros_TheMentionThatTheValuesOfTheIssuerAreRegistered",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_Article86LegendOfTheLmv_4e3e32db-c0e4-4db1-95bc-542c740c5e60": {
+    "Id": "ar_pros_Article86LegendOfTheLmv_4e3e32db-c0e4-4db1-95bc-542c740c5e60",
+    "IdConcepto": "ar_pros_Article86LegendOfTheLmv",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_AnnualReportCueLegend_f3e8a54b-3d2b-490b-8c5d-c6f14418a41e": {
+    "Id": "ar_pros_AnnualReportCueLegend_f3e8a54b-3d2b-490b-8c5d-c6f14418a41e",
+    "IdConcepto": "ar_pros_AnnualReportCueLegend",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_PeriodRepresenting_782fccaf-4e66-4068-b1a8-0e07ccd57770": {
+    "Id": "ar_pros_PeriodRepresenting_782fccaf-4e66-4068-b1a8-0e07ccd57770",
+    "IdConcepto": "ar_pros_PeriodRepresenting",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  }
+}
+}

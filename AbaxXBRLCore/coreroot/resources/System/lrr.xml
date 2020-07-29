@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<!--
+Project: Xbrl Processing Engine
+Copyright (c) 2011  EDGAR(r) Online, Inc.
+
+EDGAR(r) is a federally registered trademark of the U.S. Securities and Exchange Commission. EDGAR 
+Online is not affiliated with or approved by the U.S. Securities and Exchange Commission.
+-->
+
+
+<XBRLMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<LabelRoles>
+     <LabelRole>
+          <SortOrder>1</SortOrder>
+          <Type>label</Type>
+          <URI21>http://www.xbrl.org/2005/role/restatedLabel</URI21>
+          <Name>FRTA role label</Name>
+          <Documentation>FRTA label for restated</Documentation>
+     </LabelRole>
+     <LabelRole>
+          <SortOrder>1</SortOrder>
+          <Type>label</Type>
+          <URI21>http://www.xbrl.org/2005/role/recRole</URI21>
+          <Name>FRTA role label</Name>
+          <Documentation>FRTA label for rec</Documentation>
+     </LabelRole>
+     <LabelRole>
+          <SortOrder>1</SortOrder>
+          <Type>label</Type>
+          <URI21>http://www.xbrl.org/2004/role/restatedLabel</URI21>
+          <Name>FRTA role label</Name>
+          <Documentation>FRTA label for restated</Documentation>
+     </LabelRole>
+</LabelRoles>
+</XBRLMetadata>
+
+<!--
+The contents of this file are subject to the End-User Software License Agreement (the "License"). You may not use this 
+file except in compliance with the License. A current copy of the License is available by contacting product support.
+
+Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights and limitations under the License.
+-->

@@ -1,0 +1,360 @@
+<xbrl-contenedor-formato xbrl:rol-uri="{{xbrlRol.Uri}}" orientacion="landscape" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+    <div oc-lazy-load="abaxXBRLEstadoVariacionesViewerCNBV">
+        <div class="row wrapper" xbrl:estado-variaciones-capital-contable-cnbv>
+            <div class="col-sm-6 m-b-xs">
+                &nbsp;
+            </div>
+            <div class="col-sm-6">
+                <table style="float: right;">
+                    <tr>
+                        <td style="padding-right:20px;">
+                            <div class="radio i-checks">
+                                <label>
+                                    <input type="radio" ng-model="informacionDimensiones.temporalFecha" value="fechaActual" ng-change="mostrarAcumulado('');">
+                                    <i></i>
+                                    {{'ECPAT_ACUMULADO_ACTUAL' | translate}}
+                                </label>
+                            </div>
+                        </td>
+                        <td ng-if="definicionPlantilla.ParametrosConfiguracion['primerAnioFideicomiso']=='false'">
+                            <div class="radio i-checks" style="float:right;">
+                                <label>
+                                    <input type="radio" ng-model="informacionDimensiones.temporalFecha" value="fechaAnterior" ng-change="mostrarAcumulado();">
+                                    <i></i>
+                                    {{'ECPAT_ACUMULADO_ANTERIOR' | translate}}
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div id="contenedorEstadoVariaciones" style="overflow: hidden;">
+            <div id="contenedorTablaExcelDinamica" class="acumulado table-responsive dinamicTable mainDT" style="overflow:hidden;">
+                <table>
+                    <thead style="border-bottom: 2px solid #dddddd;">
+                        <tr>
+                            <td xbrl:dt-column="conceptos" class="celdaFijaDesgloseCreditos" style="text-align:center; vertical-align:middle;">
+                                <button xbrl:dt-boton-maximizar type="button" class="btn btn-s-md btn-info btn-rounded">
+                                    <i class="fa fa-arrows-alt"></i>
+                                    {{'ETIQUETA_EXPANDIR' | translate}}
+                                </button>
+                                <button xbrl:dt-boton-restaurar type="button" style="display:none;" class="btn btn-s-md btn-info btn-rounded">
+                                    <i class="fa fa-compress"></i>
+                                    {{'ETIQUETA_CONTRAER' | translate}}
+                                </button>
+                            </td>
+                            <td>
+                                <div class="scrollableXHidden">
+                                    <table class="table table-striped b-t b-light titulosEC" style="height:100%; margin: 0;">
+                                        <thead class="titulosEC">
+                                            <tr>
+                                                <th colspan="6" style="text-align: center; background-color: #f9f9f9; border-bottom: 0px solid #f9f9f9;min-width: 1380px; width: 1380px;"><xbrl:etiqueta-concepto xbrl:max-falso-length="36" xbrl:id-concepto="ifrs-full_EquityMember" xbrl:nivel-indentacion="0" /></th>
+                                                <th xbrl:dt-column="dtC6" style="min-width: 230px; width: 230px;" rowspan="4" class="tituoBordeDerechoSinSuperiorEstadoCambios tituloEC">&nbsp;&nbsp;&nbsp;</th>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="4" style="min-width: 920px; width: 920px;text-align: center; background-color: #f9f9f9; border-bottom: 0px solid #f9f9f9;"><xbrl:etiqueta-concepto xbrl:max-falso-length="36" xbrl:id-concepto="ifrs-full_EquityAttributableToOwnersOfParentMember" xbrl:nivel-indentacion="0" /></th>
+                                                <th xbrl:dt-column="dtC4" style="min-width: 230px; width: 230px;" rowspan="3" class="tituoBordeDerechoSinSuperiorEstadoCambios tituloEC">&nbsp;&nbsp;&nbsp;</th>
+                                                <th xbrl:dt-column="dtC5" style="min-width: 230px; width: 230px;" rowspan="3" class="tituoBordeDerechoConSuperiorEstadoCambios tituloEC"><xbrl:etiqueta-concepto xbrl:max-falso-length="36" xbrl:id-concepto="ifrs-full_NoncontrollingInterestsMember" xbrl:nivel-indentacion="0" /></th>
+                                            </tr>
+
+                                            <tr>
+                                                <th xbrl:dt-column="dtC0" rowspan="2" style="min-width: 230px; width: 230px;" class="tituoBordeDerechoEstadoCambios tituloEC"><xbrl:etiqueta-concepto xbrl:max-falso-length="36" xbrl:id-concepto="ifrs-full_IssuedCapitalMember" xbrl:nivel-indentacion="0" /></th>
+                                                <th xbrl:dt-column="dtC1" rowspan="2" style="min-width: 230px; width: 230px;" class="tituoBordeDerechoEstadoCambios tituloEC"><xbrl:etiqueta-concepto xbrl:max-falso-length="36" xbrl:id-concepto="ifrs-full_RetainedEarningsMember" xbrl:nivel-indentacion="0" /></th>
+                                                <th style="text-align: center; background-color: #f9f9f9; border-bottom: 0px solid #f9f9f9;"><xbrl:etiqueta-concepto xbrl:max-falso-length="36" xbrl:id-concepto="ifrs-full_OtherReservesMember" xbrl:nivel-indentacion="0" /></th>
+                                                <th xbrl:dt-column="dtC3" rowspan="2" style="min-width: 230px; width: 230px;" class="tituoBordeDerechoEstadoCambios tituloEC">&nbsp;&nbsp;&nbsp;</th>
+                                            </tr>
+                                            <tr>
+                                                <th xbrl:dt-column="dtC2" style="min-width: 230px; width: 230px;" class="tituoBordeDerechoEstadoCambios tituloEC"><xbrl:etiqueta-concepto xbrl:max-falso-length="36" xbrl:id-concepto="mx_ccd_OtherComprehensiveIncomeMember" xbrl:nivel-indentacion="0" /></th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td xbrl:dt-column="conceptos" style="border-right:2px solid #dddddd;">
+                                <div class="scrollableYHidden">
+                                    <table class="table table-striped b-t b-light">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <xbrl:etiqueta-concepto xbrl:max-falso-length="48" xbrl:id-concepto="ifrs-full_StatementOfChangesInEquityAbstract" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+
+                                                    <xbrl:etiqueta-concepto xbrl:max-falso-length="48" xbrl:id-concepto="ifrs-full_StatementOfChangesInEquityLineItems" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <xbrl:etiqueta-concepto xbrl:max-falso-length="48" xbrl:id-concepto="ifrs-full_Equity" xbrl:rol-etiqueta="http://www.xbrl.org/2003/role/periodStartLabel" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <xbrl:etiqueta-concepto xbrl:max-falso-length="48" xbrl:id-concepto="ifrs-full_ChangesInEquityAbstract" xbrl:nivel-indentacion="2" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <xbrl:etiqueta-concepto xbrl:max-falso-length="48" xbrl:id-concepto="ifrs-full_ComprehensiveIncomeAbstract" xbrl:nivel-indentacion="3" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <xbrl:etiqueta-concepto xbrl:max-falso-length="48" xbrl:id-concepto="ifrs-full_ProfitLoss" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <xbrl:etiqueta-concepto xbrl:max-falso-length="48" xbrl:id-concepto="ifrs-full_OtherComprehensiveIncome" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <xbrl:etiqueta-concepto xbrl:max-falso-length="48" xbrl:id-concepto="ifrs-full_ComprehensiveIncome" xbrl:rol-etiqueta="http://www.xbrl.org/2003/role/totalLabel" xbrl:nivel-indentacion=" 4"></xbrl:etiqueta-concepto>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <xbrl:etiqueta-concepto xbrl:max-falso-length="48" xbrl:id-concepto="ifrs-full_IssueOfEquity" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <xbrl:etiqueta-concepto xbrl:max-falso-length="48" xbrl:id-concepto="ifrs-full_DividendsPaid" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <xbrl:etiqueta-concepto xbrl:max-falso-length="48" xbrl:id-concepto="mx_ccd_NetContributionOfHoldersOfIssuanceAndPlacementCosts" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <xbrl:etiqueta-concepto xbrl:max-falso-length="48" xbrl:id-concepto="ifrs-full_IncreaseDecreaseThroughTransfersAndOtherChangesEquity" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <xbrl:etiqueta-concepto xbrl:max-falso-length="48" xbrl:id-concepto="ifrs-full_ChangesInEquity" xbrl:nivel-indentacion="3" xbrl:rol-etiqueta="http://www.xbrl.org/2003/role/totalLabel"></xbrl:etiqueta-concepto>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <xbrl:etiqueta-concepto xbrl:max-falso-length="48" xbrl:id-concepto="ifrs-full_Equity" xbrl:rol-etiqueta="http://www.xbrl.org/2003/role/periodEndLabel" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div id="scorllDtContainer" class="scrollableXYAuto">
+
+
+                                    <table class="table table-striped b-t b-light" style="margin: 0;"
+                                           xbrl:tabla-excel
+                                           xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura"
+                                           selector="td"
+                                           selector-contenedor-x="#scorllDtContainer"
+                                           selector-contenedor-y="#scorllDtContainer"
+                                           tab-index="1"
+                                           on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)"
+                                           on-after-paste="onAfterPaste(valorPegado, x, y)"
+                                           on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)">
+                                        <tbody>
+                                            <tr><td style="min-width: 230px; width: 230px;">&nbsp;</td><td style="min-width: 230px; width: 230px;">&nbsp;</td><td style="min-width: 230px; width: 230px;">&nbsp;</td><td style="min-width: 230px; width: 230px;">&nbsp;</td><td style="min-width: 230px; width: 230px;">&nbsp;</td><td style="min-width: 230px; width: 230px;">&nbsp;</td><td style="min-width: 230px; width: 230px;">&nbsp;</td></tr>
+                                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                                            <tr><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Af5bb65df-9c85-484b-9fa5-d5b452d5ac39" xbrl:crear-hecho="false" xbrl:crear-hecho-dblclick="false"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A1bd35fab-7a02-44ec-b2f9-ff90d723f27c" xbrl:crear-hecho="false" xbrl:crear-hecho-dblclick="false"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A6113eaf3-c07a-48e1-affe-ea46c0361e6e" xbrl:crear-hecho="false" xbrl:crear-hecho-dblclick="false"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A09446792-fc5e-4163-982f-509a73316cc7" xbrl:crear-hecho="false" xbrl:crear-hecho-dblclick="false"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A4cc4efda-98e4-4ffe-b26a-5fa676f44626" xbrl:crear-hecho="false" xbrl:crear-hecho-dblclick="false"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A48990467-ec48-470c-91ec-ba4a773f8829" xbrl:crear-hecho="false" xbrl:crear-hecho-dblclick="false"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Ac972dc0d-206b-4272-ab5f-5da6ff13708c" xbrl:crear-hecho="false" xbrl:crear-hecho-dblclick="false"></xbrl:campo-captura></td></tr>
+                                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                                            <tr><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A67d65113-6fd0-494e-ab12-0c82be13ef9d"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A50e6593a-b004-49ab-b7b8-612cc494b034"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Aebc76050-dcb8-4798-87a4-486aac5dd4bb"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Ae02d37db-7ebc-4e39-82a6-4ad52450a3cd"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A4b75d55c-1b46-46a7-b3d1-cf14e9202e13"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A0043bbe9-e0c8-40ea-ab36-c30008f77e2e"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A92d5a42f-5ed0-47a5-af6d-7a4e49eaa730"></xbrl:campo-captura></td></tr>
+                                            <tr><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Af214cf0e-adf9-44ce-a83e-7e8f86303b6e"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Aee1d117f-c73b-4e41-a59c-49ba6df105e8"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A5294b059-2c50-459e-94d4-79846325796b"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A60c96668-93c2-414b-ad39-d3cc929dfded"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A1bf9a59a-5343-4340-8c76-9bb8b5d9135c"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A6284cd18-91f1-4cab-b226-cf51e282e9de"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A6718d3d5-c721-4116-acc5-4f22e9bdf3ed"></xbrl:campo-captura></td></tr>
+                                            <tr><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A8929b305-ac57-4f05-9517-e4265b3e5180"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A67531d41-585a-42a1-b126-b0f703fb6586"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A9098c5b8-7047-4365-9a35-1652b3cb3655"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A4c7a1b88-a722-4f3f-8ab0-c17196fcb36f"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A1bb1efc5-0c86-40d9-9874-221cfac32730"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A108eb64c-938e-4ab4-8fee-1e945077a9e0"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A79e169f8-9d81-4f76-b769-11dbab1b904a"></xbrl:campo-captura></td></tr>
+                                            <tr><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A03ab0fa9-feb0-4ca6-bc53-c200f6cb648c"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A16e84325-9bb9-49a3-bcb2-5d1afff11ad0"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A7a5ecb22-a0c2-4dbc-af53-8636eeec5ab8"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A22bc4821-56b7-4f6e-8e6a-0fe8237051fa"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A1de656c7-471b-4fac-9648-0f421a77fa38"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Aa151a5ca-3dd8-4903-9098-fae53c2e468c"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A74135e9d-067d-4f1c-81a6-d457dc13f829"></xbrl:campo-captura></td></tr>
+                                            <tr><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Adecc989d-5ed2-4661-9155-66fe13a4ed14"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Abf67f12e-ca02-4e5a-8879-b0bda3e3a161"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A5adc93d1-95e0-454b-8a98-2a6c086900e9"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Af67b3346-d95d-43f8-ad28-85dbf796b2af"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A530f5c1e-9af4-4161-8dc3-e5b17383e5eb"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A69d2bb13-d645-4647-b94a-8399e743e101"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Ad2e161c6-3481-40c8-b5a6-f404349e38d5"></xbrl:campo-captura></td></tr>
+                                            <tr><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A51e4ca7e-4876-4246-92e7-e54a1b042e97"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A57a78378-9e58-4e0a-a2af-39e30af6f6db"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Ae3ce4bf6-670f-4de5-900a-f79a9d84e24f"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A6083003d-2b53-4a72-85c0-d932a6161d7d"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A6ead75f0-e0b9-47ae-831d-af2b7e906a5d"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A07a68cfd-0e95-46b2-a9da-e281c87349f2"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A0f11850a-6a7d-4f1b-9fd3-5ca2f3f8d75d"></xbrl:campo-captura></td></tr>
+                                            <tr><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Aa469dec7-98ca-4196-8d66-38ae84815d1e"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A4ac3a683-a3ca-4c42-8a7d-adbe21a2a0ec"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Ab581203d-c25a-4d0b-8006-f20d84dcc199"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Ae8c0dc93-91e1-49e8-9ad4-7e9df08a42f3"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A972f87af-6b70-4c51-aa92-4f518d032873"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A7f566175-bf07-456b-8392-99d97966ee07"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A7e2ee034-e2dd-4fc0-87e7-a552a5131c4a"></xbrl:campo-captura></td></tr>
+                                            <tr><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A49d11de6-a350-4454-9efa-37a24148bfed"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A8aabbc21-c023-48f3-9f1a-cb296ed336b0"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A01964e49-2a57-49c7-be03-814a1db41726"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Aedeedee1-1b40-40d4-a0eb-35b1138fe835"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A5737420a-641b-48de-b301-85ce422ac6e0"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A3750ab31-d861-4449-86f8-5c4f29a8b1e5"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A5970a1c4-eba0-41e0-8218-1d405e1c8df7"></xbrl:campo-captura></td></tr>
+                                            <tr><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Aed116159-35a0-4ef5-bf77-4c56c423cede"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A9b6ce674-487c-4ce6-bcdd-556ab037ab8e"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A3cd315a9-2b02-4589-87c3-53c235bc37c3"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A2e16a23d-502e-4998-a443-d25dcab8a9fc"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Af99b3142-e706-48f2-be70-117f396eae54"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A66f8845e-0ba4-4f16-940e-215033dc0b52"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Ab861cf3c-eb47-46da-95e7-735861723029"></xbrl:campo-captura></td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="contenedorTablaExcelDinamicaAcumuladoAnterior" class="acumulado table-responsive dinamicTable mainDT" style="display:none; overflow:hidden;">
+                <table>
+                    <thead style="border-bottom: 2px solid #dddddd;">
+                        <tr>
+                            <td xbrl:dt-column="conceptos" class="celdaFijaDesgloseCreditos" style="text-align:center; vertical-align:middle;">
+                                <button xbrl:dt-boton-maximizar type="button" class="btn btn-s-md btn-info btn-rounded">
+                                    <i class="fa fa-arrows-alt"></i>
+                                    {{'ETIQUETA_EXPANDIR' | translate}}
+                                </button>
+                                <button xbrl:dt-boton-restaurar type="button" style="display:none;" class="btn btn-s-md btn-info btn-rounded">
+                                    <i class="fa fa-compress"></i>
+                                    {{'ETIQUETA_CONTRAER' | translate}}
+                                </button>
+                            </td>
+                            <td>
+                                <div class="scrollableXHidden">
+                                    <table class="table table-striped b-t b-light titulosEC" style="height:100%; margin: 0;">
+                                        <thead class="titulosEC">
+                                            <tr>
+                                                <th colspan="6" style="text-align: center; background-color: #f9f9f9; border-bottom: 0px solid #f9f9f9;min-width: 1380px; width: 1380px;"><xbrl:etiqueta-concepto xbrl:max-falso-length="36" xbrl:id-concepto="ifrs-full_EquityMember" xbrl:nivel-indentacion="0" /></th>
+                                                <th xbrl:dt-column="dtC6" style="min-width: 230px; width: 230px;" rowspan="4" class="tituoBordeDerechoSinSuperiorEstadoCambios tituloEC">&nbsp;</th>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="4" style="min-width: 920px; width: 920px;text-align: center; background-color: #f9f9f9; border-bottom: 0px solid #f9f9f9;"><xbrl:etiqueta-concepto xbrl:max-falso-length="36" xbrl:id-concepto="ifrs-full_EquityAttributableToOwnersOfParentMember" xbrl:nivel-indentacion="0" /></th>
+                                                <th xbrl:dt-column="dtC4" style="min-width: 230px; width: 230px;" rowspan="3" class="tituoBordeDerechoSinSuperiorEstadoCambios tituloEC">&nbsp;</th>
+                                                <th xbrl:dt-column="dtC5" style="min-width: 230px; width: 230px;" rowspan="3" class="tituoBordeDerechoConSuperiorEstadoCambios tituloEC"><xbrl:etiqueta-concepto xbrl:max-falso-length="36" xbrl:id-concepto="ifrs-full_NoncontrollingInterestsMember" xbrl:nivel-indentacion="0" /></th>
+                                            </tr>
+
+                                            <tr>
+                                                <th xbrl:dt-column="dtC0" rowspan="2" style="min-width: 230px; width: 230px;" class="tituoBordeDerechoEstadoCambios tituloEC"><xbrl:etiqueta-concepto xbrl:max-falso-length="36" xbrl:id-concepto="ifrs-full_IssuedCapitalMember" xbrl:nivel-indentacion="0" /></th>
+                                                <th xbrl:dt-column="dtC1" rowspan="2" style="min-width: 230px; width: 230px;" class="tituoBordeDerechoEstadoCambios tituloEC"><xbrl:etiqueta-concepto xbrl:max-falso-length="36" xbrl:id-concepto="ifrs-full_RetainedEarningsMember" xbrl:nivel-indentacion="0" /></th>
+                                                <th style="text-align: center; background-color: #f9f9f9; border-bottom: 0px solid #f9f9f9;"><xbrl:etiqueta-concepto xbrl:max-falso-length="36" xbrl:id-concepto="ifrs-full_OtherReservesMember" xbrl:nivel-indentacion="0" /></th>
+                                                <th xbrl:dt-column="dtC3" rowspan="2" style="min-width: 230px; width: 230px;" class="tituoBordeDerechoEstadoCambios tituloEC">&nbsp;</th>
+                                            </tr>
+                                            <tr>
+                                                <th xbrl:dt-column="dtC2" style="min-width: 230px; width: 230px;" class="tituoBordeDerechoEstadoCambios tituloEC"><xbrl:etiqueta-concepto xbrl:max-falso-length="36" xbrl:id-concepto="mx_ccd_OtherComprehensiveIncomeMember" xbrl:nivel-indentacion="0" /></th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td xbrl:dt-column="conceptos" style="border-right:2px solid #dddddd;">
+                                <div class="scrollableYHidden">
+                                    <table class="table table-striped b-t b-light">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <xbrl:etiqueta-concepto xbrl:max-falso-length="48" xbrl:id-concepto="ifrs-full_StatementOfChangesInEquityAbstract" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+
+                                                    <xbrl:etiqueta-concepto xbrl:max-falso-length="48" xbrl:id-concepto="ifrs-full_StatementOfChangesInEquityLineItems" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <xbrl:etiqueta-concepto xbrl:max-falso-length="48" xbrl:id-concepto="ifrs-full_Equity" xbrl:rol-etiqueta="http://www.xbrl.org/2003/role/periodStartLabel" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <xbrl:etiqueta-concepto xbrl:max-falso-length="48" xbrl:id-concepto="ifrs-full_ChangesInEquityAbstract" xbrl:nivel-indentacion="2" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <xbrl:etiqueta-concepto xbrl:max-falso-length="48" xbrl:id-concepto="ifrs-full_ComprehensiveIncomeAbstract" xbrl:nivel-indentacion="3" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <xbrl:etiqueta-concepto xbrl:max-falso-length="48" xbrl:id-concepto="ifrs-full_ProfitLoss" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <xbrl:etiqueta-concepto xbrl:max-falso-length="48" xbrl:id-concepto="ifrs-full_OtherComprehensiveIncome" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <xbrl:etiqueta-concepto xbrl:max-falso-length="48" xbrl:id-concepto="ifrs-full_ComprehensiveIncome" xbrl:nivel-indentacion="4"></xbrl:etiqueta-concepto>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <xbrl:etiqueta-concepto xbrl:max-falso-length="48" xbrl:id-concepto="ifrs-full_IssueOfEquity" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <xbrl:etiqueta-concepto xbrl:max-falso-length="48" xbrl:id-concepto="ifrs-full_DividendsPaid" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <xbrl:etiqueta-concepto xbrl:max-falso-length="48" xbrl:id-concepto="mx_ccd_NetContributionOfHoldersOfIssuanceAndPlacementCosts" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <xbrl:etiqueta-concepto xbrl:max-falso-length="48" xbrl:id-concepto="ifrs-full_IncreaseDecreaseThroughTransfersAndOtherChangesEquity" xbrl:nivel-indentacion="3"></xbrl:etiqueta-concepto>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <xbrl:etiqueta-concepto xbrl:max-falso-length="48" xbrl:id-concepto="ifrs-full_ChangesInEquity" xbrl:nivel-indentacion="3" xbrl:rol-etiqueta="http://www.xbrl.org/2003/role/totalLabel"></xbrl:etiqueta-concepto>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <xbrl:etiqueta-concepto xbrl:max-falso-length="48" xbrl:id-concepto="ifrs-full_Equity" xbrl:rol-etiqueta="http://www.xbrl.org/2003/role/periodEndLabel" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="scrollableXYAuto">
+                                    <table class="table table-striped b-t b-light" style="margin: 0;"
+                                           xbrl:tabla-excel
+                                           xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura"
+                                           selector="td"
+                                           selector-contenedor-x="#contenedorTablaExcelDinamicaAcumuladoAnterior tbody tr td div.scrollableXYAuto"
+                                           selector-contenedor-y="#contenedorTablaExcelDinamicaAcumuladoAnterior tbody tr td div.scrollableXYAuto"
+                                           tab-index="1"
+                                           on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)"
+                                           on-after-paste="onAfterPaste(valorPegado, x, y)"
+                                           on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)">
+                                        <tbody>
+                                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                                            <tr><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A0a454af8-1746-4647-870b-185196d45fc1" xbrl:crear-hecho="false" xbrl:crear-hecho-dblclick="false"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A487b430b-8085-43dd-bf13-224fa5f4614e" xbrl:crear-hecho="false" xbrl:crear-hecho-dblclick="false"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Acc835fc5-66cb-471a-b13e-c507b4f772a2" xbrl:crear-hecho="false" xbrl:crear-hecho-dblclick="false"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A28fa2e7b-5586-446b-9e6a-aa02647013c9" xbrl:crear-hecho="false" xbrl:crear-hecho-dblclick="false"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A72d0d167-3161-4eeb-874f-574268a42492" xbrl:crear-hecho="false" xbrl:crear-hecho-dblclick="false"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A8aad1ad7-0065-407d-ad72-702016eceb66" xbrl:crear-hecho="false" xbrl:crear-hecho-dblclick="false"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A0a848658-e91d-4a53-b881-b770db8abf51" xbrl:crear-hecho="false" xbrl:crear-hecho-dblclick="false"></xbrl:campo-captura></td></tr>
+                                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                                            <tr><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A74d8cfc6-0e24-472e-953f-5323e8401581"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A1ae001df-59da-4b4f-8d31-abbf52e59dab"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A3af9721d-bcae-464c-997c-a81fda7b9c7f"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A6fbbc488-bb13-4f44-94a8-fd4f859ecd81"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A8a87225a-bb12-4a17-8445-e5ceabd7263c"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A766b4c15-422e-435a-9be9-cd1c7f0f4a5d"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A11bc8b71-773e-4668-a85e-d2dd75e78ab2"></xbrl:campo-captura></td></tr>
+                                            <tr><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A02c95396-882c-4c87-b656-0becd74cf438"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A217fb1c2-8c46-4925-a8df-f82e178ed19c"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Af30adb9a-3039-426e-b677-9a658264e63f"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A6f6de1e9-10f9-40ca-bad0-77eb4885c89b"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Abc86233b-708d-4d32-9faf-ed6a7a1244fb"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A473e6f4a-1d8d-4c6f-9133-badebd914433"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Aacd493a4-bb50-457d-a29f-ad59a0aefee2"></xbrl:campo-captura></td></tr>
+                                            <tr><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Aeb0fc04d-2450-4ffc-b0fb-1efd8be43f8e"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Ab95b3ecc-f662-4c01-adef-95649016ddf3"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A738a13a7-4f39-48c6-a7d8-1d27403009c9"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A4de17535-9a73-4003-8cd2-8f304eab051b"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A328b7792-77fe-4109-9bc7-588fddbcffca"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A215af508-cd48-40d3-9003-36440a8a608e"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A7c7d051a-a1ea-4a55-98f8-f0516599f85f"></xbrl:campo-captura></td></tr>
+                                            <tr><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Ae12e32b1-5a41-470c-b4b7-46c2ca995f84"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A5a6484eb-bf96-4c77-b50a-02b5c6ed0238"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Aaf159b80-9c78-4148-88f7-77c222d9edf8"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Abe070f74-0e8a-430b-91cd-3dfcac3d02cd"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A2768b927-7561-4b94-8196-991f0242e750"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A469c89e4-a414-4dc7-b395-f8a82c421779"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A21de8186-2d95-449d-a9c4-6d38521ddc3d"></xbrl:campo-captura></td></tr>
+                                            <tr><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A1e844022-06e8-464b-b41b-9337dfcc8fac"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A699840f6-6da1-44a0-b830-d4fef69b3d12"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Adb66a52e-d098-4ebe-b0c4-9493da39eb7f"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A220067f9-f273-429b-9a7f-4fd8fba85982"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A05e11682-ce30-4fea-af54-aaa0638f0db1"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Ac70cdc5e-ddc8-4530-9ad9-d12ee4d35b3e"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Ad7e987da-8eb0-4b64-9678-c051fc7f987a"></xbrl:campo-captura></td></tr>
+                                            <tr><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Afedebf4e-1aa7-43a7-956f-bf7d233e719e"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A486829b8-022c-4cdc-8c35-e410d245ed89"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Aafb311c3-79be-4040-8bbc-b40992ad810e"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Adab88e59-3f41-4b5a-ae8f-1a8912b700ed"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A23bce1ef-088b-422b-84ae-ba802fc52da5"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Aa2a8aac3-c03c-4850-9e51-c4fbe4998303"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A0c9ede52-e938-41b5-8e28-0f97ddc6a116"></xbrl:campo-captura></td></tr>
+                                            <tr><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A0f840642-9dae-435f-9681-6a1cefb86fd5"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A38c52956-8bb1-4146-b055-f01c6e5a63f4"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A9d618c01-dd28-4502-9347-59c26c213454"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Ae140c508-951e-44e3-a46b-3ef40220bc7c"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A315958e7-0351-4c82-8f9c-75da300cb26e"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A62079149-0d03-47f4-95d1-b7d2494fdc0c"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Aff74111e-3ac4-4b47-8798-9413299655fe"></xbrl:campo-captura></td></tr>
+                                            <tr><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A2a667d58-1f10-4e78-a93e-70e5011e0c1c"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A78268308-97a1-46d7-ae8e-183345f9e00c"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Af027df7f-64e7-4c51-900f-c46ff5c24249"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A9c9720de-c02d-4395-9ab1-d8ac71920f51"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Afa287dde-2322-4b85-a85d-9f136d46a7e8"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Ab9e23b2e-ab90-4e29-8f43-cfbc6d1699ae"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Ae1f0e2b1-08a9-493b-90b0-4ca9b77b2b93"></xbrl:campo-captura></td></tr>
+                                            <tr><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A46a42c7b-ab54-4c06-ac07-725df5945ece"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Ab278d728-27ec-4954-b367-54ee098649e8"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A4ffb714f-a402-4ee5-a28f-8c36c969943f"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A4e18767a-8b55-4d69-aeab-9d5c8b1179a8"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A8879fc5b-2b1e-44e9-bec0-7bd33f8813b1"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A26760715-22a1-4dc3-bcb5-2bce3d7b9623"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A8e8e9fd5-3ea5-4fdb-814a-c079d940c6e6"></xbrl:campo-captura></td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</xbrl-contenedor-formato>

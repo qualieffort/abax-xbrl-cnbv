@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<!--
+Project: Xbrl Processing Engine
+Copyright (c) 2011  EDGAR(r) Online, Inc.
+
+EDGAR(r) is a federally registered trademark of the U.S. Securities and Exchange Commission. EDGAR 
+Online is not affiliated with or approved by the U.S. Securities and Exchange Commission.
+-->
+
+
+<PatternSet
+
+    name="TaxonomyValidationPatterns"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ValidationPatterns.xsd" >
+
+    <Pattern id="vr_205_09" 
+        			name="ValidateArcRoleUsedOnElements" 
+        			method="DtsXPath" 
+        			value="ValidateArcRoleUsedOnElements()">
+                 <Failure severity="error">
+                            <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#UsedOnDoesNotMatchWithSpecifiedArc" />
+                 </Failure>
+    </Pattern>           
+
+<!-- 
+    <Pattern id="ValidateAppInfoAgainstSchema" 
+      			name="ValidateAppInfoAgainstSchema" 
+      			method="DtsXPath" 
+      			value="validateappinfo()">      			      
+         <Failure>
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Taxonomy#SchemaFailedToValidateAgainstSchema" />
+         </Failure>
+    </Pattern>
+
+    <Pattern id="ValidateElementsAgainstSchema" 
+      			name="ValidateElementsAgainstSchema" 
+      			method="DtsXPath" 
+      			value="validateelements()">      			      
+         <Failure>
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Taxonomy#SchemaFailedToValidateAgainstSchema" />
+         </Failure>
+    </Pattern>
+-->
+
+    <Pattern id="vr_266" 
+    			name="ValidateRoleS_Equal" 
+    			method="DtsXPath" 
+    			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#Role'!IsXbrl_S_Equal()">   
+             <Failure severity="error">
+                        <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#RoleElementsWithSameRoleURIAttributeMustBeS_Equal" />
+             </Failure>
+    </Pattern>
+
+<!-- Not required to be checked as of 2008-07-02 xbrl specification
+    <Pattern id="vr_267" 
+    			name="ValidateXlinkRoleAttributeMustBeAbsoluteUri" 
+    			method="DtsXPath" 
+    			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#Role'!IsAbsoluteUri(roleURI)">   
+             <Failure severity="error">
+                        <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#XlinkRoleAttributeMustBeAbsoluteUri" />
+             </Failure>
+    </Pattern>
+-->
+
+    <Pattern id="vr_280" 
+    			name="ValidateArcroleS_Equal" 
+    			method="DtsXPath" 
+    			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#Arcrole'!IsXbrl_S_Equal()">   
+             <Failure severity="error">
+                        <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#ArcroleElementsWithSameArcroleURIAttributeMustBeS_Equal" />
+             </Failure>
+    </Pattern>
+
+    <Pattern id="vr_263" 
+			name="ValidateRoleTypeDefinedByThisSpecificatinMustNotBeRedefinedUsingRoleTypeElement" 
+			method="DtsXPath" 
+			value="ValidateRoleType(ValidateRole)">		
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Taxonomy#RoleTypeDefinedByThisSpecificatinMustNotBeRedefinedUsingRoleTypeElement" />
+         </Failure>
+    </Pattern>  
+
+    <Pattern id="vr_264" 
+			name="ValidateThereMustNotBeMoreThanOneRoleTypeElementWithSameRoleUriAttribute" 
+			method="DtsXPath" 
+			value="ValidateRoleURIAttribute(ValidateRole)">		
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Taxonomy#ThereMustNotBeMoreThanOneRoleTypeElementWithSameRoleUriAttribute" />
+         </Failure>
+    </Pattern>  
+
+
+    <Pattern id="vr_277" 
+			name="ValidateArcroleTypeDefinedByThisSpecificatinMustNotBeRedefinedUsingRoleTypeElement" 
+			method="DtsXPath" 
+			value="ValidateRoleType(ValidateArcrole)">		
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Taxonomy#ArcroleTypeDefinedByThisSpecificatinMustNotBeRedefinedUsingRoleTypeElement" />
+         </Failure>
+    </Pattern>  
+
+    <Pattern id="vr_278" 
+			name="ValidateThereMustNotBeMoreThanOneArcroleTypeElementWithSameRoleUriAttribute" 
+			method="DtsXPath" 
+			value="ValidateRoleURIAttribute(ValidateArcrole)">		
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Taxonomy#ThereMustNotBeMoreThanOneArcroleTypeElementWithSameRoleUriAttribute" />
+         </Failure>
+    </Pattern>  
+
+    <Pattern id="vr_143" 
+      			name="ValidateXlinkArcroleAttributeMustHaveFixedContent" 
+      			method="DtsXPath" 
+      			value="/+'relationship://ubmatrix.com/Xbrl/Relationship#LinkbaseReference'/^-'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/'*'Exclude(http://www.w3.org/1999/xlink/properties/linkbase)">      			      
+               <Failure severity="error">
+                          <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Instance#XlinkArcroleAttributeMustHaveFixedContent" />
+               </Failure>
+    </Pattern>
+
+    <!--Pattern id="ValidateTupleConceptMustNotHaveOtherThanConcept" 
+			name="ValidateTupleConceptMustNotHaveOtherThanConcept" 
+			method="DtsXPath" 
+			value="/+'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#TupleContainsConcept'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#Concept)">			
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Taxonomy#TupleConceptHasOtherThanConcept" />
+         </Failure>
+    </Pattern-->  
+ 
+<!-- This is now commented but may be required in the best practices
+    <Pattern id="ValidateTupleConceptMustNotBeEmpty" 
+ 			name="ValidateTupleConceptMustNotBeEmpty" 
+ 			method="DtsXPath" 
+ 			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#TupleConcept'[not(hasPath(/+'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#TupleContainsConcept'))]">			
+          <Failure severity="warning">
+                     <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Taxonomy#TupleConceptIsEmpty" />
+          </Failure>
+    </Pattern>  
+-->
+
+    <!-- The spec says that we should check for concepts only , not to have duplicate id -->
+    <!-- commenting this pattern as per cliff's mail 
+    <Pattern id="DomainObjectHasUniqueID" 
+			name="DomainObjectHasUniqueID" 
+			method="DtsXPath" 
+			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#Concept'!DomainObjectHasUniqueID()">			
+         <Failure severity="warning">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Taxonomy#DomainObjectDoesNotHaveUniqueID" />
+         </Failure>
+    </Pattern>  
+   -->
+
+<!-- 
+    <Pattern id="ValidateRelationshipEndpoints" 
+			name="ValidateRelationshipEndpoints" 
+			method="DtsXPath" 
+			value="RelationshipHasValidEndpoints()">			
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Taxonomy#InvalidRelationshipEndpoint" />
+         </Failure>
+    </Pattern>  
+-->
+
+<!-- 
+    <Pattern id="ValidateRelationshipEndpointCardinality" 
+			name="ValidateRelationshipEndpointCardinality" 
+			method="DtsXPath" 
+			value="RelationshipHasValidEndpointCardinality()">			
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Taxonomy#InvalidRelationshipEndpointCardinality" />
+         </Failure>
+    </Pattern> 
+-->
+
+
+    <Pattern id="vr_215_1" 
+			name="ValidateTupleDoesNotHavePeriodTypeAttribute" 
+			method="DtsXPath" 
+			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#TupleConcept'[hasAttr('http://www.xbrl.org/2003/instance#periodType')]">			
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Taxonomy#TupleContainsPeriodTypeAttribute" />
+         </Failure>
+    </Pattern>
+
+    <Pattern id="vr_215_2" 
+			name="ValidateTupleDoesNotHaveBalanceAttribute" 
+			method="DtsXPath" 
+			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#TupleConcept'[hasAttr('http://www.xbrl.org/2003/instance#balance')]">			
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Taxonomy#TupleContainsBalanceAttribute" />
+         </Failure>
+    </Pattern>   
+
+    <Pattern id="vr_250" 
+			name="ValidateNonMonetaryItemTypeMustNotHaveBalanceAttribute" 
+			method="DtsXPath" 
+			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept'[hasAttr('http://www.xbrl.org/2003/instance#balance')]!IsMonetary()">			
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Taxonomy#NonMonetaryItemTypeMustNotHaveBalanceAttribute" />
+         </Failure>
+    </Pattern>     
+    
+    
+    <Pattern id="vr_252" 
+			name="ValidateItemTypesMustBeXbrlDataType" 
+			method="DtsXPath" 
+			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept'!IsXbrlDataType()">			
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Taxonomy#ItemTypesMustBeXbrlDataType" />
+         </Failure>
+    </Pattern> 
+    
+    
+    <Pattern id="vr_246_item" 
+			name="ValidateItemSubstitutionGroupHasPeriodTypeAttribute" 
+			method="DtsXPath" 
+			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept'[not(hasAttr('http://www.xbrl.org/2003/instance#periodType'))]">			
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Taxonomy#ItemTypesMustHavePeriodAttribute" />
+         </Failure>
+    </Pattern>    
+
+
+    <!-- changed: value="/+'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#ConceptSpecifiesDatatype'/'domain://ubmatrix.com/Xbrl/Taxonomy#Datatype'[hasAttr('id')]"> -->
+    <!-- value="/'domain://ubmatrix.com/Xbrl/Taxonomy#Concept'[not(hasAttr('id'))]"> -->
+    <!-- value="/+'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#ConceptSpecifiesDatatype'/'domain://ubmatrix.com/Xbrl/Taxonomy#Datatype'[hasAttr('id')]"> -->
+
+    <Pattern id="vr_243" 
+			name="ValidateConceptDefinitionHasID" 
+			method="DtsXPath" 
+			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#Concept'[not(hasAttr('id'))]">			
+			
+         <Failure severity="warning">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Taxonomy#ConceptDefinitionDoesNotHaveID" />
+         </Failure>
+    </Pattern>  
+    
+
+    <Pattern id="CB_Conformance_104-17"
+			name="TuplesMustNotSpecifyNestedAnonymousTypes" 
+			method="DtsXPath" 
+			value="/+'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#TupleContainsConcept'/'domain://ubmatrix.com/Xbrl/Taxonomy#LocalTupleConcept'/+'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#ConceptSpecifiesDatatype'/'domain://ubmatrix.com/Xbrl/Taxonomy#AnonymousComplexDatatype'">
+         <Failure severity="error">
+             <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Taxonomy#TuplesMustNotSpecifyNestedAnonymousTypes" />
+         </Failure>
+    </Pattern>  
+    
+
+    <!-- open issue -->
+    <!--
+    <Pattern id="SC_Conformance_104-09-10"
+    		name="TuplesMustNotHaveInvalidAtribute" 
+    		method="DtsXPath" 
+    		value="/'domain://ubmatrix.com/Xbrl/Instance#Fact'[/-'relationship://ubmatrix.com/Xbrl/Instance/Relationship#ConceptDefinesFact'/'domain://ubmatrix.com/Xbrl/Taxonomy#TupleConcept']ValidateTupleAttribute()">
+         <Failure severity="error">
+               <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Taxonomy#TuplesHaveInvalidAttribute" />
+         </Failure>
+    </Pattern>  
+    -->
+
+
+
+    <Pattern id="vr_roleDeclared" 
+    			name="ValidateRoleEquivalency" 
+    			method="DtsXPath" 
+    			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#Role'ValidateRoleEquivalency()">
+             <Failure severity="error">
+                        <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#InvalidUsedOnElements" />
+             </Failure>
+    </Pattern>       
+    
+    
+    <Pattern id="ValidateNonEmptyTargetNamespace" 
+          			name="ValidateNonEmptyTargetNamespace" 
+          			method="DtsXPath"           			
+          			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#Taxonomy'/+'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#TaxonomyDefinedByTargetNamespace'/'domain://ubmatrix.com/Xbrl/Namespace#Namespace'[value() == '']">      			      
+                   <Failure severity="error">
+                              <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Taxonomy#EmptyTargetNamespace" />
+                   </Failure>
+    </Pattern>
+
+       <Pattern id="vr_essense_alias_same_periodType" 
+			name="ValidateEssenceAliasFactsHaveSamePeriodType" 
+			method="DtsXPath" 
+			value="validateEssenceAliasArcsForPeriodType()">
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Instance#EssenceAliasFactsDoNotHaveSameInstantPeriodType" />
+         </Failure>
+    </Pattern>                   
+
+       <Pattern id="local_concept_are_global_and_item_or_tuple" 
+			name="ValidateLocalConceptsAreGlobalReferencesAndItemOrTuple" 
+			method="DtsXPath" 
+			value="validateLocalConceptsAreGlobalReferencesAndItemOrTuple()">
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Taxonomy#LocalConceptsAreNotGlobalReferencesAndItemOrTuple" />
+         </Failure>
+    </Pattern>                   
+
+    <Pattern id="TaxonomyDoesNotTargetLinkbase" 
+			name="TaxonomyDoesNotTargetLinkbase" 
+			method="DtsXPath" 
+			value="/'relationship://ubmatrix.com/Xbrl/Relationship#TaxonomyReferencesLinkbase'[not(to()=='domain://ubmatrix.com/Xbrl/Linkbase#ExternalLinkbase')]">
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Peek/Peek#ReferenceDocumentDifferentFromExpectType" />
+         </Failure>
+    </Pattern>                   
+
+    <Pattern id="TaxonomyDoesNotTargetTaxonomy" 
+			name="TaxonomyDoesNotTargetTaxonomy" 
+			method="DtsXPath" 
+			value="/'relationship://ubmatrix.com/Xbrl/Relationship#TaxonomyReferencesTaxonomy'[not(to()=='domain://ubmatrix.com/Xbrl/Taxonomy#Taxonomy')]">
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Peek/Peek#ReferenceDocumentDifferentFromExpectType" />
+         </Failure>
+    </Pattern>                   
+
+ </PatternSet>
+ 
+<!--
+The contents of this file are subject to the End-User Software License Agreement (the "License"). You may not use this 
+file except in compliance with the License. A current copy of the License is available by contacting product support.
+
+Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights and limitations under the License.
+-->

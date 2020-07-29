@@ -1,0 +1,198 @@
+{
+	"ContextosPlantillaPorId" : {
+  "ctx": {
+    "Id": "ctx",
+    "Periodo": {
+      "Tipo": 1,
+      "FechaInstante": "#fecha_2014_12_31",
+      "FechaInicio": "",
+      "FechaFin": ""
+    },
+    "Entidad": {
+      "Id": "#nombreEntidad",
+      "EsquemaId": "#esquemaEntidad",
+      "ContieneInformacionDimensional": false,
+      "Segmento": null,
+      "ValoresDimension": []
+    },
+    "ContieneInformacionDimensional": false,
+    "Escenario": null,
+    "ValoresDimension": []
+  }
+},
+
+  "UnidadesPlantillaPorId": {
+
+    "PURE": {
+      "Id": "PURE",
+      "Tipo": 1,
+      "Medidas": [
+        {
+          "Nombre": "#medida_pure",
+          "EspacioNombres": "#medida_http___www_xbrl_org_2003_instance"
+        }
+      ],
+      "MedidasDenominador": [],
+      "MedidasNumerador": []
+    }
+  },
+
+  "HechosPlantillaPorId": {
+    "ar_pros_ReferenceIncorporationAdministrator_34d888ca-bec9-4733-b8a2-edff40b0beda": {
+      "Id": "ar_pros_ReferenceIncorporationAdministrator_34d888ca-bec9-4733-b8a2-edff40b0beda",
+      "IdConcepto": "ar_pros_ReferenceIncorporationAdministrator",
+      "IdContextoPlantilla": "ctx",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "ar_pros_HistoryAndDevelopmentOfTrustPropertyAdministrator_efad51aa-a484-400b-880d-6307350e73e3": {
+      "Id": "ar_pros_HistoryAndDevelopmentOfTrustPropertyAdministrator_efad51aa-a484-400b-880d-6307350e73e3",
+      "IdConcepto": "ar_pros_HistoryAndDevelopmentOfTrustPropertyAdministrator",
+      "IdContextoPlantilla": "ctx",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "ar_pros_MainActivity_9833227a-35f3-4d04-80c0-96dab6b62210": {
+      "Id": "ar_pros_MainActivity_9833227a-35f3-4d04-80c0-96dab6b62210",
+      "IdConcepto": "ar_pros_MainActivity",
+      "IdContextoPlantilla": "ctx",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "ar_pros_HumanResourcesAdministrator_4b963207-8c82-425c-a82b-dbe3a8cc4086": {
+      "Id": "ar_pros_HumanResourcesAdministrator_4b963207-8c82-425c-a82b-dbe3a8cc4086",
+      "IdConcepto": "ar_pros_HumanResourcesAdministrator",
+      "IdContextoPlantilla": "ctx",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "ar_pros_CorporateStructure_f798b521-dae5-49d1-9038-16873cb0efb5": {
+      "Id": "ar_pros_CorporateStructure_f798b521-dae5-49d1-9038-16873cb0efb5",
+      "IdConcepto": "ar_pros_CorporateStructure",
+      "IdContextoPlantilla": "ctx",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "ar_pros_JudicialAdministrativeOrArbitrationProceedingsAdministrator_9fb6076b-9439-4e7f-838f-7d03630f888f": {
+      "Id": "ar_pros_JudicialAdministrativeOrArbitrationProceedingsAdministrator_9fb6076b-9439-4e7f-838f-7d03630f888f",
+      "IdConcepto": "ar_pros_JudicialAdministrativeOrArbitrationProceedingsAdministrator",
+      "IdContextoPlantilla": "ctx",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "ar_pros_DirectorsAndShareholdersAdministrator_7a3d9af8-bf9f-44dd-b72d-9be7d19062e7": {
+      "Id": "ar_pros_DirectorsAndShareholdersAdministrator_7a3d9af8-bf9f-44dd-b72d-9be7d19062e7",
+      "IdConcepto": "ar_pros_DirectorsAndShareholdersAdministrator",
+      "IdContextoPlantilla": "ctx",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "TotalPercentageOfMenAsRelevantDirectors_0000-0000-0000-0000-20180116": {
+      "Id": "TotalPercentageOfMenAsRelevantDirectors_0000-0000-0000-0000-20180116",
+      "IdConcepto": "ar_pros_TotalPercentageOfMenAsRelevantDirectors",
+      "IdContextoPlantilla": "ctx",
+      "Hechos": [],
+      "IdUnidadPlantilla": "PURE",
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": "2",
+      "Valor": "#valorDefaultNumerico"
+    },
+    "TotalPercentageOfWomenAsRelevantDirectors_0000-0000-0000-0000-20180116": {
+      "Id": "TotalPercentageOfWomenAsRelevantDirectors_0000-0000-0000-0000-20180116",
+      "IdConcepto": "ar_pros_TotalPercentageOfWomenAsRelevantDirectors",
+      "IdContextoPlantilla": "ctx",
+      "Hechos": [],
+      "IdUnidadPlantilla": "PURE",
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": "2",
+      "Valor": "#valorDefaultNumerico"
+    },
+    "TotalPercentageOfMenAsCounselors_0000-0000-0000-0000-20180116": {
+      "Id": "TotalPercentageOfMenAsCounselors_0000-0000-0000-0000-20180116",
+      "IdConcepto": "ar_pros_TotalPercentageOfMenAsCounselors",
+      "IdContextoPlantilla": "ctx",
+      "Hechos": [],
+      "IdUnidadPlantilla": "PURE",
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": "2",
+      "Valor": "#valorDefaultNumerico"
+    },
+    "TotalPercentageOfWomenAsCounselors_0000-0000-0000-0000-20180116": {
+      "Id": "TotalPercentageOfWomenAsCounselors_0000-0000-0000-0000-20180116",
+      "IdConcepto": "ar_pros_TotalPercentageOfWomenAsCounselors",
+      "IdContextoPlantilla": "ctx",
+      "Hechos": [],
+      "IdUnidadPlantilla": "PURE",
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": "2",
+      "Valor": "#valorDefaultNumerico"
+    },
+    "HasAPolicyOrProgramOfLaborInclusion_0000-0000-0000-0000-20180116": {
+      "Id": "HasAPolicyOrProgramOfLaborInclusion_0000-0000-0000-0000-20180116",
+      "IdConcepto": "ar_pros_HasAPolicyOrProgramOfLaborInclusion",
+      "IdContextoPlantilla": "ctx",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultHasAPolicyOrProgramOfLaborInclusion"
+    },
+    "DescriptionOfThePolicyOrProgramOfLaborInclusion_0000-0000-0000-0000-20180116": {
+      "Id": "DescriptionOfThePolicyOrProgramOfLaborInclusion_0000-0000-0000-0000-20180116",
+      "IdConcepto": "ar_pros_DescriptionOfThePolicyOrProgramOfLaborInclusion",
+      "IdContextoPlantilla": "ctx",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    }
+  }
+}

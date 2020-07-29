@@ -1,0 +1,23 @@
+﻿{
+    "PeriodosPorRol": {
+        "105000": [ "trim_actual" ],
+        "110000": [ "trim_actual" ],
+        "210000": [ "cierre_trim_actual", "cierre_trim_anio_anterior", "inicio_trim_anio_anterior" ],
+        "310000": [ "acum_anio_actual", "acum_anio_anterior", "trim_anio_actual", "trim_anio_anterior" ],
+        "410000": [ "acum_anio_actual", "acum_anio_anterior", "trim_anio_actual", "trim_anio_anterior" ],
+        "520000": [ "acum_anio_actual", "acum_anio_anterior" ],
+      "610000": [ "ifrs-full_IssuedCapitalMember", "ifrs-full_SharePremiumMember", "ifrs-full_TreasurySharesMember", "ifrs-full_RetainedEarningsMember", "ifrs-full_RevaluationSurplusMember", "ifrs-full_ReserveOfExchangeDifferencesOnTranslationMember", "ifrs-full_ReserveOfCashFlowHedgesMember", "ifrs-full_ReserveOfGainsAndLossesOnHedgingInstrumentsThatHedgeInvestmentsInEquityInstrumentsMember", "ifrs-full_ReserveOfChangeInValueOfTimeValueOfOptionsMember", "ifrs-full_ReserveOfChangeInValueOfForwardElementsOfForwardContractsMember", "ifrs-full_ReserveOfChangeInValueOfForeignCurrencyBasisSpreadsMember", "ifrs-full_ReserveOfGainsAndLossesOnFinancialAssetsMeasuredAtFairValueThroughOtherComprehensiveIncomeMember", "ifrs-full_ReserveOfGainsAndLossesOnRemeasuringAvailableforsaleFinancialAssetsMember", "ifrs-full_ReserveOfSharebasedPaymentsMember", "ifrs-full_ReserveOfRemeasurementsOfDefinedBenefitPlansMember", "ifrs-full_AmountRecognisedInOtherComprehensiveIncomeAndAccumulatedInEquityRelatingToNoncurrentAssetsOrDisposalGroupsHeldForSaleMember", "ifrs-full_ReserveOfGainsAndLossesFromInvestmentsInEquityInstrumentsMember", "ifrs-full_ReserveOfChangeInFairValueOfFinancialLiabilityAttributableToChangeInCreditRiskOfLiabilityMember", "ifrs-full_ReserveForCatastropheMember", "ifrs-full_ReserveForEqualisationMember", "ifrs-full_ReserveOfDiscretionaryParticipationFeaturesMember", "ifrs_mx-cor_20141205_OtrosResultadosIntegralesMiembro", "ifrs-full_OtherReservesMember", "ifrs-full_EquityAttributableToOwnersOfParentMember", "ifrs-full_NoncontrollingInterestsMember", "ifrs-full_EquityMember" ],
+        "700000": [ "cierre_trim_actual", "cierre_trim_anio_anterior", "inicio_trim_anio_anterior" ],
+        "700002": [ "acum_anio_actual", "acum_anio_anterior", "trim_anio_actual", "trim_anio_anterior" ],
+        "700003": [ "anio_actual", "anio_anterior" ],
+        "800003": [ "ifrs_mx-cor_20141205_DolaresMiembro", "ifrs_mx-cor_20141205_DolaresContravalorPesosMiembro", "ifrs_mx-cor_20141205_OtrasMonedasContravalorDolaresMiembro", "ifrs_mx-cor_20141205_OtrasMonedasContravalorPesosMiembro", "ifrs_mx-cor_20141205_TotalDePesosMiembro" ],
+        "800007": [ "trim_actual" ],
+        "800100": [ "cierre_trim_actual", "cierre_trim_anio_anterior", "inicio_trim_anio_anterior" ],
+        "800200": [ "acum_anio_actual", "acum_anio_anterior", "trim_anio_actual", "trim_anio_anterior" ],
+        "800201": [ "acum_anio_actual", "acum_anio_anterior", "trim_anio_actual", "trim_anio_anterior" ],
+        "800500": [ "trim_actual" ],
+        "800600": [ "trim_actual" ],
+        "813000": [ "trim_actual" ],
+        "815101": [ "cierre_trim_actual"]
+    }
+}

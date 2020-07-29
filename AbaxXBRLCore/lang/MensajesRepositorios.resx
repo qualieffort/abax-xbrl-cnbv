@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccionAuditableActualizar" xml:space="preserve">
+    <value>Accion Auditable Actualizada Correctamente</value>
+  </data>
+  <data name="AccionAuditableGuardar" xml:space="preserve">
+    <value>Accion Auditable Correctamente</value>
+  </data>
+  <data name="CategoriaFacultadActualizar" xml:space="preserve">
+    <value>Categoria Facultad  Actualizada Correctamente</value>
+  </data>
+  <data name="CategoriaFacultadGuardar" xml:space="preserve">
+    <value>Categoria Facultad Correctamente</value>
+  </data>
+  <data name="EmpresaActualizar" xml:space="preserve">
+    <value>Empresa Actualizada Correctamente</value>
+  </data>
+  <data name="EmpresaGuardar" xml:space="preserve">
+    <value>Empresa Registrada Correctamente</value>
+  </data>
+  <data name="FacultadActualizar" xml:space="preserve">
+    <value>Facultad  Actualizada Correctamente</value>
+  </data>
+  <data name="FacultadGuardar" xml:space="preserve">
+    <value>Facultad Correctamente</value>
+  </data>
+  <data name="GrupoUsuarioActualizar" xml:space="preserve">
+    <value>Grupo Usuarios  Actualizada Correctamente</value>
+  </data>
+  <data name="GrupoUsuarioGuardar" xml:space="preserve">
+    <value>Grupo Usuarios Correctamente"</value>
+  </data>
+  <data name="GrupoUsuarioRolActualizar" xml:space="preserve">
+    <value>Grupo Usuarios Rol  Actualizado Correctamente</value>
+  </data>
+  <data name="GrupoUsuarioRolGuardar" xml:space="preserve">
+    <value>Grupo Usuarios Rol Guardado Correctamente</value>
+  </data>
+  <data name="ModuloActualizar" xml:space="preserve">
+    <value>Modulo Actualizado Correctamente</value>
+  </data>
+  <data name="ModuloGuardar" xml:space="preserve">
+    <value>Modulo Guardado Correctamente</value>
+  </data>
+  <data name="RegistroAuditoriaActualizar" xml:space="preserve">
+    <value>Registro Auditoria Actualizado Correctamente</value>
+  </data>
+  <data name="RegistroAuditoriaGuardar" xml:space="preserve">
+    <value>Registro Auditoria Guardado Correctamente</value>
+  </data>
+  <data name="RolActualizar" xml:space="preserve">
+    <value>Rol Actualizado Correctamente</value>
+  </data>
+  <data name="RolFacultadGuardar" xml:space="preserve">
+    <value>RolFacultad Guardado Correctamente</value>
+  </data>
+  <data name="RolFacultarActualizar" xml:space="preserve">
+    <value>RolFacultad Actualizado Correctamente</value>
+  </data>
+  <data name="RolGuardar" xml:space="preserve">
+    <value>Rol Guardado Correctamente</value>
+  </data>
+  <data name="UsuarioActualizar" xml:space="preserve">
+    <value>MENSAJE_EXITO_USUARIO_ACTUALIZADO</value>
+  </data>
+  <data name="UsuarioEmpresaActualizar" xml:space="preserve">
+    <value>Usuario Empresa Actualizada Correctamente</value>
+  </data>
+  <data name="UsuarioEmpresaGuardar" xml:space="preserve">
+    <value>Usuario Empresa Registrada Correctamente</value>
+  </data>
+  <data name="UsuarioGrupoActualizar" xml:space="preserve">
+    <value>Usuario Grupo Actualizado Correctamente</value>
+  </data>
+  <data name="UsuarioGrupoGuardar" xml:space="preserve">
+    <value>Usuario Grupo Guardado Correctamente</value>
+  </data>
+  <data name="UsuarioGuardar" xml:space="preserve">
+    <value>MENSAJE_EXITO_USUARIO_REGISTRADO</value>
+  </data>
+  <data name="UsuarioRolActualizar" xml:space="preserve">
+    <value>Usuario Rol Actualizado Correctamente</value>
+  </data>
+  <data name="UsuarioRolGuardar" xml:space="preserve">
+    <value>Usuario Rol Guardado Correctamente</value>
+  </data>
+</root>

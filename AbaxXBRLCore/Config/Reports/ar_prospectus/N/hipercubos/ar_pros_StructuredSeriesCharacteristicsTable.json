@@ -1,0 +1,50 @@
+﻿{
+  "IdConceptos": [
+    "ar_pros_StructuredSeriesCharacteristicsLineItems",
+    "ar_pros_StructuredSeries",
+    "ar_pros_StructuredSeriesIssuanceDate",
+    "ar_pros_StructuredSeriesSettlementDate",
+    "ar_pros_StructuredSeriesTermOfTheIssuance",
+    "ar_pros_StructuredSeriesInterestPerformanceAndCalculationProcedure",
+    "ar_pros_StructuredSeriesPaymentFrequencyOfInterest",
+    "ar_pros_StructuredSeriesLocationAndPaymentOfInterestAndPrincipal",
+    "ar_pros_StructuredSeriesSubordinationOfTitlesIfAny",
+    "ar_pros_StructuredSeriesAmortizationAndEarlyAmortizationEarlyMaturityIfApplicable",
+    "ar_pros_StructuredSeriesGuaranteeIfAny",
+    "ar_pros_StructuredSeriesTrustIfAny",
+    "ar_pros_StructuredSeriesCommonRepresentative",
+    "ar_pros_StructuredSeriesDepositary",
+    "ar_pros_StructuredSeriesTaxRegime",
+    "ar_pros_SerieGuaranteedCapital",
+    "ar_pros_SerieUnderlyingAsset",
+    "ar_pros_SerieCalculationAgentIfAny",
+    "ar_pros_SerieMultiplierIfApplicable",
+    "ar_pros_StructuredSeriesObservations"
+  ],
+  "PlantillasContextos": {
+    "P0": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": []
+    }
+  },
+  "PlantillaDimensiones": {
+    "ar_pros_StructuredSeriesTypedAxis": {
+      "PrefijoValor": "<ar_pros:SerieDomain xmlns:ar_pros=\"http://www.cnbv.gob.mx/2016-08-22/ar_prospectus\">",
+      "SubfijoValor": "</ar_pros:SerieDomain>",
+      "EtiquetaNuevoElemento": "serie",
+      "Explicita": false,
+      "IdDimension": "ar_pros_StructuredSeriesTypedAxis",
+      "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:StructuredSeriesTypedAxis"
+    }
+  },
+  "DimensionesDinamicas": [
+    "ar_pros_StructuredSeriesTypedAxis"
+  ],
+  "MaxColumnasVertical": 6,
+  "MaxColumnasHorizontal": 0,
+  "TamanoHoja": "Letter"
+}

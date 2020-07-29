@@ -1,0 +1,220 @@
+{
+            "ContextosPlantillaPorId": {
+                "trimestre_acumulado_actual": {
+                    "Id": "trimestre_acumulado_actual",
+                    "Periodo": {
+                        "Tipo": 2,
+                        "FechaInicio": "#fecha_2015_01_01",
+                        "FechaFin": "#fecha_2015_09_30",
+                        "FechaInstante": ""
+                    },
+                    "Entidad": {
+                        "Id": "#nombreEntidad",
+                        "EsquemaId": "#esquemaEntidad",
+                        "ContieneInformacionDimensional": false,
+                        "Segmento": null,
+                        "ValoresDimension": []
+                    },
+                    "ContieneInformacionDimensional": false,
+                    "Escenario": null,
+                    "ValoresDimension": []
+                }
+            },
+
+            "UnidadesPlantillaPorId": {},
+
+            "HechosPlantillaPorId": {
+                "Aa5f09383-c7fa-4ede-a454-60bf2e5f7521": {
+                    "Id": "Aa5f09383-c7fa-4ede-a454-60bf2e5f7521",
+                    "IdConcepto": "ifrs-mc_ManagementCommentaryExplanatory",
+                    "IdContextoPlantilla": "trimestre_acumulado_actual",
+                    "Hechos": [],
+                    "IdUnidadPlantilla": null,
+                    "ValorNumerador": null,
+                    "ValorDenominador": null,
+                    "Precision": null,
+                    "Decimales": null,
+                    "Valor": "#valorDefaultNoNumerico"
+                },
+                "A14c3661c-2137-4d37-bfb7-cae8c0dabad8": {
+                    "Id": "A14c3661c-2137-4d37-bfb7-cae8c0dabad8",
+                    "IdConcepto": "ifrs-mc_DisclosureOfNatureOfBusinessExplanatory",
+                    "IdContextoPlantilla": "trimestre_acumulado_actual",
+                    "Hechos": [],
+                    "IdUnidadPlantilla": null,
+                    "ValorNumerador": null,
+                    "ValorDenominador": null,
+                    "Precision": null,
+                    "Decimales": null,
+                    "Valor": "#valorDefaultNoNumerico"
+                },
+                "A7f1ff79e-24d5-43f0-ae04-5e0262fb2624": {
+                    "Id": "A7f1ff79e-24d5-43f0-ae04-5e0262fb2624",
+                    "IdConcepto": "ifrs-mc_DisclosureOfManagementsObjectivesAndItsStrategiesForMeetingThoseObjectivesExplanatory",
+                    "IdContextoPlantilla": "trimestre_acumulado_actual",
+                    "Hechos": [],
+                    "IdUnidadPlantilla": null,
+                    "ValorNumerador": null,
+                    "ValorDenominador": null,
+                    "Precision": null,
+                    "Decimales": null,
+                    "Valor": "#valorDefaultNoNumerico"
+                },
+                "A7c8df741-76e8-4bd1-9c52-b948376df878": {
+                    "Id": "A7c8df741-76e8-4bd1-9c52-b948376df878",
+                    "IdConcepto": "ifrs-mc_DisclosureOfEntitysMostSignificantResourcesRisksAndRelationshipsExplanatory",
+                    "IdContextoPlantilla": "trimestre_acumulado_actual",
+                    "Hechos": [],
+                    "IdUnidadPlantilla": null,
+                    "ValorNumerador": null,
+                    "ValorDenominador": null,
+                    "Precision": null,
+                    "Decimales": null,
+                    "Valor": "#valorDefaultNoNumerico"
+                },
+                "A1d3fc3f2-7018-468f-b635-d6cf251aec33": {
+                    "Id": "A1d3fc3f2-7018-468f-b635-d6cf251aec33",
+                    "IdConcepto": "ifrs-mc_DisclosureOfResultsOfOperationsAndProspectsExplanatory",
+                    "IdContextoPlantilla": "trimestre_acumulado_actual",
+                    "Hechos": [],
+                    "IdUnidadPlantilla": null,
+                    "ValorNumerador": null,
+                    "ValorDenominador": null,
+                    "Precision": null,
+                    "Decimales": null,
+                    "Valor": "#valorDefaultNoNumerico"
+                },
+                "A6652a381-4dca-4871-b1c0-1d0c25e74b9e": {
+                    "Id": "A6652a381-4dca-4871-b1c0-1d0c25e74b9e",
+                    "IdConcepto": "ifrs-mc_DisclosureOfCriticalPerformanceMeasuresAndIndicatorsThatManagementUsesToEvaluateEntitysPerformanceAgainstStatedObjectivesExplanatory",
+                    "IdContextoPlantilla": "trimestre_acumulado_actual",
+                    "Hechos": [],
+                    "IdUnidadPlantilla": null,
+                    "ValorNumerador": null,
+                    "ValorDenominador": null,
+                    "Precision": null,
+                    "Decimales": null,
+                    "Valor": "#valorDefaultNoNumerico"
+                },
+                "Ae15e80eb-35e3-43f8-beac-9e408df57d00": {
+                    "Id": "Ae15e80eb-35e3-43f8-beac-9e408df57d00",
+                    "IdConcepto": "mx_ccd_OperationStructure",
+                    "IdContextoPlantilla": "trimestre_acumulado_actual",
+                    "Hechos": [],
+                    "IdUnidadPlantilla": null,
+                    "ValorNumerador": null,
+                    "ValorDenominador": null,
+                    "Precision": null,
+                    "Decimales": null,
+                    "Valor": "#valorDefaultNoNumerico"
+                },
+                "A648b5c7c-5aec-48b4-af04-c7070c03f77c": {
+                    "Id": "A648b5c7c-5aec-48b4-af04-c7070c03f77c",
+                    "IdConcepto": "mx_ccd_HeritageOfTheFund",
+                    "IdContextoPlantilla": "trimestre_acumulado_actual",
+                    "Hechos": [],
+                    "IdUnidadPlantilla": null,
+                    "ValorNumerador": null,
+                    "ValorDenominador": null,
+                    "Precision": null,
+                    "Decimales": null,
+                    "Valor": "#valorDefaultNoNumerico"
+                },
+                "Ae24ac1f2-237e-4219-b9c0-c8f7c051e170": {
+                    "Id": "Ae24ac1f2-237e-4219-b9c0-c8f7c051e170",
+                    "IdConcepto": "mx_ccd_ComplianceWithTheBusinessPlanAndInvestmentScheduleAndWhereAppropiateDisvestitures",
+                    "IdContextoPlantilla": "trimestre_acumulado_actual",
+                    "Hechos": [],
+                    "IdUnidadPlantilla": null,
+                    "ValorNumerador": null,
+                    "ValorDenominador": null,
+                    "Precision": null,
+                    "Decimales": null,
+                    "Valor": "#valorDefaultNoNumerico"
+                },
+                "Acee7af69-a151-406a-8df3-67bbf631e790": {
+                    "Id": "Acee7af69-a151-406a-8df3-67bbf631e790",
+                    "IdConcepto": "mx_ccd_Valuation",
+                    "IdContextoPlantilla": "trimestre_acumulado_actual",
+                    "Hechos": [],
+                    "IdUnidadPlantilla": null,
+                    "ValorNumerador": null,
+                    "ValorDenominador": null,
+                    "Precision": null,
+                    "Decimales": null,
+                    "Valor": "#valorDefaultNoNumerico"
+                },
+                "Ae8613279-18a5-461e-88f2-b62ee8185cd1": {
+                    "Id": "Ae8613279-18a5-461e-88f2-b62ee8185cd1",
+                    "IdConcepto": "mx_ccd_FeesCostsAndExpensesOfTheAdministratorOrOperator",
+                    "IdContextoPlantilla": "trimestre_acumulado_actual",
+                    "Hechos": [],
+                    "IdUnidadPlantilla": null,
+                    "ValorNumerador": null,
+                    "ValorDenominador": null,
+                    "Precision": null,
+                    "Decimales": null,
+                    "Valor": "#valorDefaultNoNumerico"
+                },
+                "A6aa8c858-9875-4e6f-ac9f-bf4b0cf36ef7": {
+                    "Id": "A6aa8c858-9875-4e6f-ac9f-bf4b0cf36ef7",
+                    "IdConcepto": "mx_ccd_RelevantDisclosureAboutThePeriod",
+                    "IdContextoPlantilla": "trimestre_acumulado_actual",
+                    "Hechos": [],
+                    "IdUnidadPlantilla": null,
+                    "ValorNumerador": null,
+                    "ValorDenominador": null,
+                    "Precision": null,
+                    "Decimales": null,
+                    "Valor": "#valorDefaultNoNumerico"
+                },
+                "Afefb0d44-8293-4994-acf6-832667f1d203": {
+                    "Id": "Afefb0d44-8293-4994-acf6-832667f1d203",
+                    "IdConcepto": "mx_ccd_OtherRequiredThirdToTheTrustOrSecurityHoldersIfAny",
+                    "IdContextoPlantilla": "trimestre_acumulado_actual",
+                    "Hechos": [],
+                    "IdUnidadPlantilla": null,
+                    "ValorNumerador": null,
+                    "ValorDenominador": null,
+                    "Precision": null,
+                    "Decimales": null,
+                    "Valor": "#valorDefaultNoNumerico"
+                },
+                "Aad7d3545-3907-4cc9-afab-c3aca861b6bc": {
+                    "Id": "Aad7d3545-3907-4cc9-afab-c3aca861b6bc",
+                    "IdConcepto": "mx_ccd_GeneralAssembliesOfShareholders",
+                    "IdContextoPlantilla": "trimestre_acumulado_actual",
+                    "Hechos": [],
+                    "IdUnidadPlantilla": null,
+                    "ValorNumerador": null,
+                    "ValorDenominador": null,
+                    "Precision": null,
+                    "Decimales": null,
+                    "Valor": "#valorDefaultNoNumerico"
+                },
+                "A1f28b714-9736-4081-81a3-ea3888c3441e": {
+                    "Id": "A1f28b714-9736-4081-81a3-ea3888c3441e",
+                    "IdConcepto": "mx_ccd_ExternalAuditorsAndIndependentAppraiser",
+                    "IdContextoPlantilla": "trimestre_acumulado_actual",
+                    "Hechos": [],
+                    "IdUnidadPlantilla": null,
+                    "ValorNumerador": null,
+                    "ValorDenominador": null,
+                    "Precision": null,
+                    "Decimales": null,
+                    "Valor": "#valorDefaultNoNumerico"
+                },
+                "Ab2aab6b5-fe34-4080-b2c3-fa21e5a0796a": {
+                    "Id": "Ab2aab6b5-fe34-4080-b2c3-fa21e5a0796a",
+                    "IdConcepto": "mx_ccd_TransactionsWithRelatedPartiesAndConflictsOfInterest",
+                    "IdContextoPlantilla": "trimestre_acumulado_actual",
+                    "Hechos": [],
+                    "IdUnidadPlantilla": null,
+                    "ValorNumerador": null,
+                    "ValorDenominador": null,
+                    "Precision": null,
+                    "Decimales": null,
+                    "Valor": "#valorDefaultNoNumerico"
+                }
+            },
+}

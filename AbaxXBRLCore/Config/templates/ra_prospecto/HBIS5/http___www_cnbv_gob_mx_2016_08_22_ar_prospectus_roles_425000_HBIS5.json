@@ -1,0 +1,64 @@
+{
+	"ContextosPlantillaPorId" : {
+  "cxt": {
+    "Id": "cxt",
+    "Periodo": {
+      "Tipo": 1,
+      "FechaInstante": "#fecha_2014_12_31",
+      "FechaInicio": "",
+      "FechaFin": ""
+    },
+    "Entidad": {
+      "Id": "#nombreEntidad",
+      "EsquemaId": "#esquemaEntidad",
+      "ContieneInformacionDimensional": false,
+      "Segmento": null,
+      "ValoresDimension": []
+    },
+    "ContieneInformacionDimensional": false,
+    "Escenario": null,
+    "ValoresDimension": []
+  }
+},
+	
+	"UnidadesPlantillaPorId" : {},
+            
+	"HechosPlantillaPorId" : {
+  "ar_pros_ReferenceIncorporationFinancialInformationOfTheTrust_1bcb5148-47ba-4898-a81a-2210d77dc416": {
+    "Id": "ar_pros_ReferenceIncorporationFinancialInformationOfTheTrust_1bcb5148-47ba-4898-a81a-2210d77dc416",
+    "IdConcepto": "ar_pros_ReferenceIncorporationFinancialInformationOfTheTrust",
+    "IdContextoPlantilla": "cxt",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_SelectedFinancialInformationOfTheCompaniesForWhichTheTrustInvests_b916ebd7-a6d0-436b-8b3f-9e945b589d71": {
+    "Id": "ar_pros_SelectedFinancialInformationOfTheCompaniesForWhichTheTrustInvests_b916ebd7-a6d0-436b-8b3f-9e945b589d71",
+    "IdConcepto": "ar_pros_SelectedFinancialInformationOfTheCompaniesForWhichTheTrustInvests",
+    "IdContextoPlantilla": "cxt",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_RelevantCreditReportTrust_69799cfc-5bb7-4353-87c5-c7243a0279a5": {
+    "Id": "ar_pros_RelevantCreditReportTrust_69799cfc-5bb7-4353-87c5-c7243a0279a5",
+    "IdConcepto": "ar_pros_RelevantCreditReportTrust",
+    "IdContextoPlantilla": "cxt",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  }
+}
+}

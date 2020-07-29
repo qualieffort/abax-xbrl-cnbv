@@ -1,0 +1,194 @@
+<xbrl-contenedor-formato xbrl:rol-uri="{{xbrlRol.Uri}}" orientacion="landscape" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+    <div id="contenedorTablaExcel" class="table-responsive">
+        <table class="table table-striped b-t b-light" xbrl:tabla-excel selector="td:not(:first-child)" selector-contenedor-x="#contenedorTablaExcel" selector-contenedor-y="#contenedorFormatos" tab-index="1" on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)" on-after-paste="onAfterPaste(valorPegado, x, y)" on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)">
+            <thead>
+                <tr>
+                    <th class="th-sortable" data-toggle="class">{{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Concepto' : 'Concept' }}  </th>
+                    <th style="min-width: 230px; width: 230px;">
+                        {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Trimestre A&ntilde;o Actual' : 'Quarter Current Year' }} <br /> 
+                        {{ ::definicionPlantilla.obtenerVariablePorId("medida_MXN_sin_contexto")}}<br />
+                        {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2015_07_01")}} - {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2015_09_30")}}
+                    </th>
+                    <th style="min-width: 230px; width: 230px;">
+                        {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Acumulado A&ntilde;o Actual' : 'Accumulated Current Year' }} <br /> 
+                        {{ ::definicionPlantilla.obtenerVariablePorId("medida_MXN_sin_contexto")}}<br />
+                        {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2015_01_01")}} - {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2015_09_30")}}
+                    </th>
+                    <th style="min-width: 230px; width: 230px;" ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'">
+                        {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Trimestre A&ntilde;o Anterior' : 'Previous Quarter Year' }} <br />
+                        {{ ::definicionPlantilla.obtenerVariablePorId("medida_MXN_sin_contexto")}}<br />
+                        {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2014_07_01")}} - {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2014_09_30")}}
+                    </th>
+                    <th style="min-width: 230px; width: 230px;" ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'">
+                        {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Acumulado A&ntilde;o Anterior' : 'Accumulated Previous Year' }} <br />
+                        {{ ::definicionPlantilla.obtenerVariablePorId("medida_MXN_sin_contexto")}}<br />
+                        {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2014_01_01")}} - {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2014_09_30")}}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_IncomeStatementAbstract" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;"></td>
+                    <td></td>
+                    <td></td>
+                    <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"></td>
+                    <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"></td>
+                </tr>
+                <tr>
+                    <td><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_ProfitLossAbstract" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></td>
+                    <td></td>
+                    <td></td>
+                    <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"></td>
+                    <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"></td>
+                </tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda"><td><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_Revenue" xbrl:nivel-indentacion="2"></td>																	<td><xbrl:campo-captura xbrl:id-hecho-plantilla="Ad1c06620-9daf-4154-845f-b09e5812adc3"></xbrl:campo-captura></td>  <td><xbrl:campo-captura xbrl:id-hecho-plantilla="Aaabc1338-51eb-49e8-a292-f172c31aa495"></xbrl:campo-captura></td>   <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="A96b3fa73-9c8d-440c-b1f4-5c5156a2634d"></xbrl:campo-captura></td>  <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="A305195b7-19be-469e-a0df-9834897af900"></xbrl:campo-captura></td>                     </tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda"><td><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_CostOfSales" xbrl:nivel-indentacion="2"></td>																<td><xbrl:campo-captura xbrl:id-hecho-plantilla="A3e083f9f-fc1c-4908-8781-98d175c98115"></xbrl:campo-captura></td>  <td><xbrl:campo-captura xbrl:id-hecho-plantilla="A63b62f32-0ef4-409a-8b36-5bb863dbbba2"></xbrl:campo-captura></td>   <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ad18efaa3-25de-4bd5-a591-019e1e3b55ef"></xbrl:campo-captura></td>  <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="A73f73d50-8e73-4891-be5d-8b7e8b429b17"></xbrl:campo-captura></td>                     </tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda"><td><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_GrossProfit" xbrl:nivel-indentacion="2"></td>																<td><xbrl:campo-captura xbrl:id-hecho-plantilla="Af3274e0b-25ad-4a3b-8aab-ea278b300fcb"></xbrl:campo-captura></td>  <td><xbrl:campo-captura xbrl:id-hecho-plantilla="A99e04cbb-4650-4941-b11c-8c02ab18801f"></xbrl:campo-captura></td>   <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="A89346158-370f-4c02-9441-1ff3941a613b"></xbrl:campo-captura></td>  <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="A9e408f9e-5c89-4668-8f10-547ec7c33b6b"></xbrl:campo-captura></td>                     </tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda"><td><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_DistributionCosts" xbrl:nivel-indentacion="2"></td>														<td><xbrl:campo-captura xbrl:id-hecho-plantilla="Ae1220f87-32d3-4f38-80bf-cc5114a49b23"></xbrl:campo-captura></td>  <td><xbrl:campo-captura xbrl:id-hecho-plantilla="A9ea98c8d-e0a1-4791-a61b-ad44adcb730d"></xbrl:campo-captura></td>   <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="A09766437-b3c0-4b38-ba48-fbd48323ba77"></xbrl:campo-captura></td>  <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ad37b1fb4-354b-442c-b985-a51ad2a68b26"></xbrl:campo-captura></td>                     </tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda"><td><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_AdministrativeExpense" xbrl:nivel-indentacion="2"></td>													<td><xbrl:campo-captura xbrl:id-hecho-plantilla="A04890b13-85d4-4f4a-a43d-2425c5ef5848"></xbrl:campo-captura></td>  <td><xbrl:campo-captura xbrl:id-hecho-plantilla="A7faf4ac7-b839-4369-bba6-49c879a2be28"></xbrl:campo-captura></td>   <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aff9f1842-beba-4bab-8971-2d702814c258"></xbrl:campo-captura></td>  <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="A1b988c88-908c-4185-8cab-151853786525"></xbrl:campo-captura></td>                     </tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda"><td><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_OtherIncome" xbrl:nivel-indentacion="2"></td>																<td><xbrl:campo-captura xbrl:id-hecho-plantilla="A84a2cb9a-8511-414d-8715-3978b45811aa"></xbrl:campo-captura></td>  <td><xbrl:campo-captura xbrl:id-hecho-plantilla="A5dab528e-04ad-458d-8a73-eee5faa37614"></xbrl:campo-captura></td>   <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="A517ec897-a1c2-45be-8630-f4ccaaa39986"></xbrl:campo-captura></td>  <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="A25f90d89-6848-4761-a6cb-983fcff7228b"></xbrl:campo-captura></td>                     </tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda"><td><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_OtherExpenseByFunction" xbrl:nivel-indentacion="2"></td>													<td><xbrl:campo-captura xbrl:id-hecho-plantilla="A9eaccbd1-046c-45cb-9815-f85e71e166dd"></xbrl:campo-captura></td>  <td><xbrl:campo-captura xbrl:id-hecho-plantilla="A67975df3-96fe-4fcb-83c6-d06ac1ea6a68"></xbrl:campo-captura></td>   <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="A3b37dbf0-0874-4b4c-93f7-383e4a506edf"></xbrl:campo-captura></td>  <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="Acff18ef8-01e7-4fb1-9606-1fc67d337878"></xbrl:campo-captura></td>                     </tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda"><td><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_ProfitLossFromOperatingActivities" xbrl:nivel-indentacion="2"></td>										<td><xbrl:campo-captura xbrl:id-hecho-plantilla="A7100144c-f15f-464e-a65c-ae7e6cd61a9e"></xbrl:campo-captura></td>  <td><xbrl:campo-captura xbrl:id-hecho-plantilla="Ad1c9efbc-8628-4501-89ce-e2b8c095f11b"></xbrl:campo-captura></td>   <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="A91e0a202-80c0-49b7-ac2c-075d66c67064"></xbrl:campo-captura></td>  <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ab230a58b-77c0-40ab-b39c-6af19995fb6f"></xbrl:campo-captura></td>                     </tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda"><td><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_FinanceIncome" xbrl:nivel-indentacion="2"></td>															<td><xbrl:campo-captura xbrl:id-hecho-plantilla="A5c926dd1-46f5-441c-b99c-e2f5b6729a39"></xbrl:campo-captura></td>  <td><xbrl:campo-captura xbrl:id-hecho-plantilla="Adf99c0e2-d0e3-46c8-adf6-9c4a5e638108"></xbrl:campo-captura></td>   <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="A98cdee9e-1e01-466f-bd27-f34efeec965e"></xbrl:campo-captura></td>  <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="A62e4e6e1-d3c2-4950-9827-b497434406bb"></xbrl:campo-captura></td>                     </tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda"><td><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_FinanceCosts" xbrl:nivel-indentacion="2"></td>															<td><xbrl:campo-captura xbrl:id-hecho-plantilla="A6f63e719-fc0a-4813-800e-b9e9c0dec363"></xbrl:campo-captura></td>  <td><xbrl:campo-captura xbrl:id-hecho-plantilla="Ad80f07dc-f142-4c51-9aeb-973262cd793f"></xbrl:campo-captura></td>   <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="A01af474c-8d2b-4214-99c2-1df5de9f9854"></xbrl:campo-captura></td>  <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="A8f9400ec-da2e-4a8f-9599-65fe27d779c8"></xbrl:campo-captura></td>                     </tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda"><td><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_ShareOfProfitLossOfAssociatesAndJointVenturesAccountedForUsingEquityMethod" xbrl:nivel-indentacion="2"></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A62016642-82b9-4591-a56e-c018e6ac4d7a"></xbrl:campo-captura></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="A249df818-8971-4e14-8052-4b1c15eaddf9"></xbrl:campo-captura></td> <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="A5858af3b-ca4e-4bac-b18d-cc20a6d5ce39"></xbrl:campo-captura></td>  <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="A251e373e-b309-4b41-8685-4d0496f928be"></xbrl:campo-captura></td>                     </tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda"><td><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_ProfitLossBeforeTax" xbrl:nivel-indentacion="2"></td>														<td><xbrl:campo-captura xbrl:id-hecho-plantilla="A9f748ea6-7074-44a5-924e-f588fb29feea"></xbrl:campo-captura></td>  <td><xbrl:campo-captura xbrl:id-hecho-plantilla="Ab89d84db-7591-4b50-9b37-e74f80c3e799"></xbrl:campo-captura></td>   <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ab29b1ad1-c5e8-4a99-a1bc-1f51d1ce25c9"></xbrl:campo-captura></td>  <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="A51aa308b-a5cc-468c-b03d-b53c49b5b767"></xbrl:campo-captura></td>                     </tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda"><td><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_IncomeTaxExpenseContinuingOperations" xbrl:nivel-indentacion="2"></td>									<td><xbrl:campo-captura xbrl:id-hecho-plantilla="Ac3ae128c-319a-46d1-9072-d779bf95b5d0"></xbrl:campo-captura></td>  <td><xbrl:campo-captura xbrl:id-hecho-plantilla="A5a8fea75-c925-4eb0-8a78-428bd367af9d"></xbrl:campo-captura></td>   <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="A5e34e876-2155-41e1-a5a2-c981ac350340"></xbrl:campo-captura></td>  <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="A9516c522-f0f8-4580-bf94-cd69e43521bb"></xbrl:campo-captura></td>                     </tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda"><td><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_ProfitLossFromContinuingOperations" xbrl:nivel-indentacion="2"></td>										<td><xbrl:campo-captura xbrl:id-hecho-plantilla="A16eaacf4-4143-4d21-affa-882fcbf80bf9"></xbrl:campo-captura></td>  <td><xbrl:campo-captura xbrl:id-hecho-plantilla="Ae3ae1171-1542-4191-9cdd-70307986d477"></xbrl:campo-captura></td>   <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="A25e60e13-8c26-4605-ab5d-db45fc895b50"></xbrl:campo-captura></td>  <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="A0d3845b1-5a61-4121-8b22-183cc958ed47"></xbrl:campo-captura></td>                     </tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda"><td><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_ProfitLossFromDiscontinuedOperations" xbrl:nivel-indentacion="2"></td>									<td><xbrl:campo-captura xbrl:id-hecho-plantilla="Af83e2525-82ce-4e20-ae95-08949eef8fa1"></xbrl:campo-captura></td>  <td><xbrl:campo-captura xbrl:id-hecho-plantilla="A573f0618-a080-49b0-8e0d-ee1f8c96751c"></xbrl:campo-captura></td>   <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="A000b313c-6c9f-434e-aa9e-8291cca3654d"></xbrl:campo-captura></td>  <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="A5ffa8eb2-ce1c-40b5-b352-3102b98ef75f"></xbrl:campo-captura></td>                     </tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda"><td><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_ProfitLoss" xbrl:nivel-indentacion="2"></td>																<td><xbrl:campo-captura xbrl:id-hecho-plantilla="A465e1b09-486e-4c92-ab2e-a05fc04d21b1"></xbrl:campo-captura></td>  <td><xbrl:campo-captura xbrl:id-hecho-plantilla="Aabae587d-e04d-4229-9426-ed722436f9d5"></xbrl:campo-captura></td>   <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="Af31cfe25-cc23-49b7-ab0c-a1cc4f39e157"></xbrl:campo-captura></td>  <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="A80034792-af8c-43f4-bf7a-0076c63f7550"></xbrl:campo-captura></td>                     </tr>
+                <tr>
+                    <td><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_ProfitLossAttributableToAbstract" xbrl:nivel-indentacion="1" xbrl:style="font-weight:800;"></td>
+                    <td></td>
+                    <td></td>
+                    <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"></td>
+                    <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"></td>
+                </tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda"><td><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_ProfitLossAttributableToOwnersOfParent" xbrl:nivel-indentacion="2"></td>									<td><xbrl:campo-captura xbrl:id-hecho-plantilla="A37bd93b5-15e3-4f3b-acae-46242b6e330e"></xbrl:campo-captura></td>  <td><xbrl:campo-captura xbrl:id-hecho-plantilla="A3dde8ac4-c1ff-48f0-9f9a-718242279dc3"></xbrl:campo-captura></td>   <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ad8b2ea05-3700-424a-93ae-e2ad71a43237"></xbrl:campo-captura></td>  <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="A3b97c124-3938-49fb-abd6-54d13b9bb963"></xbrl:campo-captura></td>                     </tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda"><td><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_ProfitLossAttributableToNoncontrollingInterests" xbrl:nivel-indentacion="2"></td>							<td><xbrl:campo-captura xbrl:id-hecho-plantilla="A3dfe035a-dcf6-47bf-8981-46068a8abf4b"></xbrl:campo-captura></td>  <td><xbrl:campo-captura xbrl:id-hecho-plantilla="Ad2d9e7ed-711e-425c-947e-202867971f84"></xbrl:campo-captura></td>   <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ad6b934cc-7c82-4cf3-a390-6defe22bd017"></xbrl:campo-captura></td>  <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="Af3e79a02-36c2-4838-b308-8859a1159006" xbrl:ultimo="true"></xbrl:campo-captura></td>                     </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <br /><br />
+        &nbsp;
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped b-t b-light tablaAnchoFijo">
+            <thead>
+                <tr>
+                    <th style="min-width: 165px; width: 230px;" class="th-sortable" data-toggle="class">{{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Concepto' : 'Concept' }}</th>
+                    <th style="min-width: 230px; width: 230px;">
+                        {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Trimestre A&ntilde;o Actual' : 'Quarter Current Year' }} <br />
+                        {{ ::definicionPlantilla.obtenerVariablePorId("medida_MXN_sin_contexto")}}<br />
+                        {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2015_07_01")}} - {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2015_09_30")}}
+                    </th>
+                    <th style="min-width: 230px; width: 230px;">
+                        {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Acumulado A&ntilde;o Actual' : 'Accumulated Current Year' }} <br />
+                        {{ ::definicionPlantilla.obtenerVariablePorId("medida_MXN_sin_contexto")}}<br />
+                        {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2015_01_01")}} - {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2015_09_30")}}
+                    </th>
+                    <th style="min-width: 230px; width: 230px;" ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'">
+                        {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Trimestre A&ntilde;o Anterior' : 'Previous Quarter Year' }} <br />
+                        {{ ::definicionPlantilla.obtenerVariablePorId("medida_MXN_sin_contexto")}}<br />
+                        {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2014_07_01")}} - {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2014_09_30")}}
+                    </th>
+                    <th style="min-width: 230px; width: 230px;" ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'">
+                        {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Acumulado A&ntilde;o Anterior' : 'Accumulated Previous Year' }} <br />
+                        {{ ::definicionPlantilla.obtenerVariablePorId("medida_MXN_sin_contexto")}}<br />
+                        {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2014_01_01")}} - {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2014_09_30")}}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_EarningsPerShareExplanatory" xbrl:nivel-indentacion="1" />
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbr:edicion-popup="true" xbrl:id-hecho-plantilla="A301b94a6-fc67-4976-bb69-5adb8e8ef544"></xbrl:campo-captura>
+                    </td>
+                    <td>
+                        <xbrl:campo-captura xbr:edicion-popup="true" xbrl:id-hecho-plantilla="Abb87ffed-f1e5-49d1-9a17-991cfba2e2b8"></xbrl:campo-captura>
+                    </td>
+                    <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'">
+                        <xbrl:campo-captura xbr:edicion-popup="true" xbrl:id-hecho-plantilla="A13812f78-f68c-4bb6-ab42-010eabda2115"></xbrl:campo-captura>
+                    </td>
+                    <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'">
+                        <xbrl:campo-captura xbr:edicion-popup="true" xbrl:id-hecho-plantilla="A92991f75-c1c3-48be-9078-36df38aaecc5"></xbrl:campo-captura>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <br /><br />
+        &nbsp;
+    </div>
+    <div id="contenedorTablaExcelShares" class="table-responsive">
+        <table class="table table-striped b-t b-light" xbrl:tabla-excel selector="td:not(:first-child)" selector-contenedor-x="#contenedorTablaExcelShares" selector-contenedor-y="#contenedorFormatos" tab-index="1" on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)" on-after-paste="onAfterPaste(valorPegado, x, y)" on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)">
+            <thead>
+                <tr>
+                    <th><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_EarningsPerShareTable" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;" /></th>
+                    <th colspan="4" style="text-align: center"><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_ClassesOfOrdinarySharesAxis" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;" /></th>
+                </tr>
+                <tr>
+                    <th>
+
+
+                    </th>
+                    <th colspan="4" style="text-align: center">
+                        <xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_OrdinarySharesMember" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;" />
+                    </th>
+                </tr>
+
+                <tr>
+                    <th class="th-sortable" data-toggle="class">{{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Concepto' : 'Concept' }}</th>
+                    <th style="min-width: 230px; width: 230px;">
+                        {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Trimestre A&ntilde;o Actual' : 'Quarter Current Year' }} <br />
+                        {{ ::definicionPlantilla.obtenerVariablePorId("medida_MXN_sin_contexto")}}<br />
+                        {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2015_07_01")}} - {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2015_09_30")}}
+                    </th>
+                    <th style="min-width: 230px; width: 230px;">
+                        {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Acumulado A&ntilde;o Actual' : 'Accumulated Current Year' }} <br />
+                        {{ ::definicionPlantilla.obtenerVariablePorId("medida_MXN_sin_contexto")}}<br />
+                        {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2015_01_01")}} - {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2015_09_30")}}
+                    </th>
+                    <th style="min-width: 230px; width: 230px;" ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'">
+                        {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Trimestre A&ntilde;o Anterior' : 'Previous Quarter Year' }} <br />
+                        {{ ::definicionPlantilla.obtenerVariablePorId("medida_MXN_sin_contexto")}}<br />
+                        {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2014_07_01")}} - {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2014_09_30")}}
+                    </th>
+                    <th style="min-width: 230px; width: 230px;" ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'">
+                        {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Acumulado A&ntilde;o Anterior' : 'Accumulated Previous Year' }} <br />
+                        {{ ::definicionPlantilla.obtenerVariablePorId("medida_MXN_sin_contexto")}}<br />
+                        {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2014_01_01")}} - {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2014_09_30")}}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_BasicEarningsPerShareAbstract" xbrl:nivel-indentacion="4" xbrl:style="font-weight:800;"></th>
+                    <th></th>
+                    <th></th>
+                    <th ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"></th>
+                    <th ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"></th>
+                </tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda"><td><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_BasicEarningsLossPerShareFromContinuingOperations" xbrl:nivel-indentacion="5"></td>							            <td><xbrl:campo-captura xbrl:id-hecho-plantilla="A45164545-921a-43f2-85e7-22538d8b8352"></xbrl:campo-captura></td>  <td><xbrl:campo-captura xbrl:id-hecho-plantilla="Ad1fae3b2-f817-47bf-8a5b-003fbdf1d4c6"></xbrl:campo-captura></td>   <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ae4cbc81f-d0c2-4283-8eef-67ba73c32f7a"></xbrl:campo-captura></td>  <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="A02d5a617-b18c-48cf-9c8d-17d803769e49"></xbrl:campo-captura></td>                     </tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda"><td><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_BasicEarningsLossPerShareFromDiscontinuedOperations" xbrl:nivel-indentacion="5"></td>						                <td><xbrl:campo-captura xbrl:id-hecho-plantilla="A73eb51b3-c685-4ab3-935b-6739a4272122"></xbrl:campo-captura></td>  <td><xbrl:campo-captura xbrl:id-hecho-plantilla="A22f880a9-e758-4359-adc1-1f8259030f11"></xbrl:campo-captura></td>   <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="Adece8869-2c5b-4021-a612-0acb87ffe11c"></xbrl:campo-captura></td>  <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="Accb28111-9c5c-4b5c-b796-64f8c3aa734c"></xbrl:campo-captura></td>                     </tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda"><td><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_BasicEarningsLossPerShare" xbrl:nivel-indentacion="5" xbrl:rol-etiqueta="http://www.xbrl.org/2003/role/totalLabel"></td>	<td><xbrl:campo-captura xbrl:id-hecho-plantilla="A93116e2a-ed5a-4fab-aadf-f381fb445142"></xbrl:campo-captura></td>  <td><xbrl:campo-captura xbrl:id-hecho-plantilla="Affdb573c-3301-43c1-8deb-fa51ff4ce1c2"></xbrl:campo-captura></td>   <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ad6f97d45-b04c-42b4-8da3-f66f79c11ae1"></xbrl:campo-captura></td>  <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="Abed700ec-2e5c-4035-8244-6005efd24e5d"></xbrl:campo-captura></td>                     </tr>
+                <tr>
+                    <td><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_DilutedEarningsPerShareAbstract" xbrl:nivel-indentacion="4" xbrl:style="font-weight:800;"></td>
+                    <td></td>
+                    <td></td>
+                    <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"></td>
+                    <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"></td>
+                </tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda"><td><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_DilutedEarningsLossPerShareFromContinuingOperations" xbrl:nivel-indentacion="5"></td>						                <td><xbrl:campo-captura xbrl:id-hecho-plantilla="A12277766-ef0b-4e53-96e5-afc779bc4d00"></xbrl:campo-captura></td>  <td><xbrl:campo-captura xbrl:id-hecho-plantilla="A94b2f563-be08-4e7e-a7f0-e4b926aade98"></xbrl:campo-captura></td>   <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="A684ba6aa-726f-44ed-9574-e22732fa1dd2"></xbrl:campo-captura></td>  <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ae220e6f8-08f3-4cc9-9d86-d66550a988ca"></xbrl:campo-captura></td>                     </tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda"><td><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_DilutedEarningsLossPerShareFromDiscontinuedOperations" xbrl:nivel-indentacion="5"></td>						            <td><xbrl:campo-captura xbrl:id-hecho-plantilla="A41fad473-1b9f-4178-975d-9ca7b42e024c"></xbrl:campo-captura></td>  <td><xbrl:campo-captura xbrl:id-hecho-plantilla="Aa0e6e68a-4305-4c0a-914c-6140e214b033"></xbrl:campo-captura></td>   <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="Ab0967183-49b3-4284-a6bf-e753cb7f4b99"></xbrl:campo-captura></td>  <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="A52347434-350e-45b8-8c4b-262232d6af64"></xbrl:campo-captura></td>                     </tr>
+                <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda"><td><xbrl:etiqueta-concepto xbrl:id-concepto="ifrs-full_DilutedEarningsLossPerShare" xbrl:nivel-indentacion="5" xbrl:rol-etiqueta="http://www.xbrl.org/2003/role/totalLabel"></td><td><xbrl:campo-captura xbrl:id-hecho-plantilla="Aef4f5138-49ba-42b9-8715-5d34f82fbb4b"></xbrl:campo-captura></td>  <td><xbrl:campo-captura xbrl:id-hecho-plantilla="A06956eba-b6b7-4efa-9f03-7db341cd395d" xbrl:ultimo="true"></xbrl:campo-captura></td>   <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="Aea1eb012-24b3-4e20-bd97-2d973e4e15ac"></xbrl:campo-captura></td>  <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:id-hecho-plantilla="Abdd4e5c0-c606-4bcd-be89-84ae74d283e5" xbrl:ultimo="true"></xbrl:campo-captura></td>  </tr>
+            </tbody>
+        </table>
+    </div>
+</xbrl-contenedor-formato>

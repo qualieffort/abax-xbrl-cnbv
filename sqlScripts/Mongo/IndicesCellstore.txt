@@ -1,0 +1,53 @@
+db.getCollection("Hecho").createIndex({"IdHecho":1});
+db.getCollection("Hecho").createIndex({"Taxonomia":1});
+db.getCollection("Hecho").createIndex({"IdEnvio":1});
+db.getCollection("Hecho").createIndex({"Concepto.IdConcepto":1});
+db.getCollection("Hecho").createIndex({"Concepto.Tipo":1});
+db.getCollection("Hecho").createIndex({"Concepto.TipoDato":1});
+db.getCollection("Hecho").createIndex({"Concepto.Etiquetas.Idioma":1});
+db.getCollection("Hecho").createIndex({"Concepto.Etiquetas.Rol":1});
+db.getCollection("Hecho").createIndex({"Concepto.Etiquetas.Valor":"text"});
+db.getCollection("Hecho").createIndex({"Entidad.IdEntidad":1});
+db.getCollection("Hecho").createIndex({"Entidad.Nombre": 1});
+db.getCollection("Hecho").createIndex({"Unidad.Tipo":1});
+db.getCollection("Hecho").createIndex({"Unidad.Medidas.Nombre":1, "Unidad.Medidas.EspacioNombres": 1});
+db.getCollection("Hecho").createIndex({"Unidad.MedidasNumerador.Nombre":1, "Unidad.MedidasNumerador.EspacioNombres": 1});
+db.getCollection("Hecho").createIndex({"Unidad.MedidasDenominador.Nombre":1, "Unidad.MedidasDenominador.EspacioNombres": 1});
+db.getCollection("Hecho").createIndex({"Periodo.TipoPeriodo":1});
+db.getCollection("Hecho").createIndex({"Periodo.FechaInicio":1});
+db.getCollection("Hecho").createIndex({"Periodo.FechaFin": 1});
+db.getCollection("Hecho").createIndex({"Periodo.FechaInstante": 1});
+db.getCollection("Hecho").createIndex({"Periodo.Alias": 1});
+db.getCollection("Hecho").createIndex({"RolesPresentacion.Uri":1});
+db.getCollection("Hecho").createIndex({"EsDimensional":1});
+db.getCollection("Hecho").createIndex({"EsNumerico":1});
+db.getCollection("Hecho").createIndex({"MiembrosDimensionales.Explicita":1});
+db.getCollection("Hecho").createIndex({"MiembrosDimensionales.IdDimension":1,"MiembrosDimensionales.QNameDimension":1, "MiembrosDimensionales.Explicita":1});
+db.getCollection("Hecho").createIndex({"MiembrosDimensionales.IdItemMiembro":1,"MiembrosDimensionales.QNameItemMiembro":1});
+db.getCollection("Hecho").createIndex({"MiembrosDimensionales.MiembroTipificado":"text","MiembrosDimensionales.BodyMiembroTipificado":"text"});
+db.getCollection("Hecho").createIndex({"MiembrosDimensionales.EtiquetasDimension.Idioma":1});
+db.getCollection("Hecho").createIndex({"MiembrosDimensionales.EtiquetasDimension.Rol":1});
+db.getCollection("Hecho").createIndex({"MiembrosDimensionales.EtiquetasDimension.Valor":"text"});
+db.getCollection("Hecho").createIndex({"MiembrosDimensionales.EtiquetasMiembroDimension.Idioma":1});
+db.getCollection("Hecho").createIndex({"MiembrosDimensionales.EtiquetasMiembroDimension.Rol":1});
+db.getCollection("Hecho").createIndex({"MiembrosDimensionales.EtiquetasMiembroDimension.Valor":"text"});
+
+db.getCollection("Envio").createIndex({"IdEnvio":1});
+db.getCollection("Envio").createIndex({"Taxonomia":1});
+db.getCollection("Envio").createIndex({"Entidad.IdEntidad":1, "Entidad.Esquema":1, "Entidad.Nombre": 1});
+db.getCollection("Envio").createIndex({"Periodo.Fecha":1, "Periodo.Ejercicio":1, "Periodo.Periodicidad": 1});
+db.getCollection("Envio").createIndex({"Parametros.Ano":1,"Parametros.Mes":1, "Parametros.Trimestre":1, "Parametros.Dictaminado":1, "Parametros.Consolidado":1});
+
+db.getCollection("RolPresentacion").createIndex({"IdRolPresentacion":1});
+db.getCollection("RolPresentacion").createIndex({"Taxonomia":1});
+db.getCollection("RolPresentacion").createIndex({"Uri":1});
+db.getCollection("RolPresentacion").createIndex({"Conceptos.IdConcepto":1, "Conceptos.EspacioNombres":1, "Conceptos.Tipo":1, "Conceptos.TipoDato":1});
+db.getCollection("RolPresentacion").createIndex({"Conceptos.Etiquetas.Idioma":1});
+db.getCollection("RolPresentacion").createIndex({"Conceptos.Etiquetas.Rol":1});
+db.getCollection("RolPresentacion").createIndex({"Conceptos.Etiquetas.Valor":"text"});
+
+db.getCollection("HechoSpotfire").createIndex({"IdHecho":1});
+db.getCollection("HechoSpotfire").createIndex({"IdEnvio":1});
+db.getCollection("HechoSpotfire").createIndex({"Entidad_Nombre":1});
+db.getCollection("HechoSpotfire").createIndex({"FechaDocumentoInstancia":1});
+	

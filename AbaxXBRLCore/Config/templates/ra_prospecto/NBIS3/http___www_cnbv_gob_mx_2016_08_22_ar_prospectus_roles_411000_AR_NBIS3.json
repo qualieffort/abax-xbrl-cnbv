@@ -1,0 +1,112 @@
+{
+	"ContextosPlantillaPorId" : {
+  "ctx": {
+    "Id": "ctx",
+    "Periodo": {
+      "Tipo": 1,
+      "FechaInstante": "#fecha_2014_12_31",
+      "FechaInicio": "",
+      "FechaFin": ""
+    },
+    "Entidad": {
+      "Id": "#nombreEntidad",
+      "EsquemaId": "#esquemaEntidad",
+      "ContieneInformacionDimensional": false,
+      "Segmento": null,
+      "ValoresDimension": []
+    },
+    "ContieneInformacionDimensional": false,
+    "Escenario": null,
+    "ValoresDimension": []
+  }
+},
+	
+	"UnidadesPlantillaPorId" : {},
+            
+	"HechosPlantillaPorId" : {
+  "ar_pros_AnnualReport_d92b499a-530e-477e-a9b0-4da9e6a932d4": {
+    "Id": "ar_pros_AnnualReport_d92b499a-530e-477e-a9b0-4da9e6a932d4",
+    "IdConcepto": "ar_pros_AnnualReport",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_LimitedPublicOffering_bdd18179-65ce-4636-be3e-4f976c3c3f78": {
+    "Id": "ar_pros_LimitedPublicOffering_bdd18179-65ce-4636-be3e-4f976c3c3f78",
+    "IdConcepto": "ar_pros_LimitedPublicOffering",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_TypeOfInstrument_a7423397-b3a8-4376-a0e5-252c24531663": {
+    "Id": "ar_pros_TypeOfInstrument_a7423397-b3a8-4376-a0e5-252c24531663",
+    "IdConcepto": "ar_pros_TypeOfInstrument",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_ForeingIssuer_d268b172-8631-476d-b31f-0f64d7268355": {
+    "Id": "ar_pros_ForeingIssuer_d268b172-8631-476d-b31f-0f64d7268355",
+    "IdConcepto": "ar_pros_ForeingIssuer",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_MentioningwhetherOrNotHaveCollateral_235cd753-1851-4322-805e-18781a628875": {
+    "Id": "ar_pros_MentioningwhetherOrNotHaveCollateral_235cd753-1851-4322-805e-18781a628875",
+    "IdConcepto": "ar_pros_MentioningwhetherOrNotHaveCollateral",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_MentioningPartialOrTotalDependence_5bd36a0d-2b74-471b-8427-54fdc0db61e6": {
+    "Id": "ar_pros_MentioningPartialOrTotalDependence_5bd36a0d-2b74-471b-8427-54fdc0db61e6",
+    "IdConcepto": "ar_pros_MentioningPartialOrTotalDependence",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_CompanyIncorporatedSoThatTheTrustMeetsItsPurpose_1ded68e6-865a-4a87-b11a-6eb145aaae10": {
+    "Id": "ar_pros_CompanyIncorporatedSoThatTheTrustMeetsItsPurpose_1ded68e6-865a-4a87-b11a-6eb145aaae10",
+    "IdConcepto": "ar_pros_CompanyIncorporatedSoThatTheTrustMeetsItsPurpose",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  }
+}
+}

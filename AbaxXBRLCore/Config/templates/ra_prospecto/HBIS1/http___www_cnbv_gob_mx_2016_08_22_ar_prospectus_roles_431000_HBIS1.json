@@ -1,0 +1,136 @@
+{
+	"ContextosPlantillaPorId" : {
+  "cxt_2": {
+    "Id": "cxt_2",
+    "Periodo": {
+      "Tipo": 1,
+      "FechaInstante": "#fecha_2014_12_31",
+      "FechaInicio": "",
+      "FechaFin": ""
+    },
+    "Entidad": {
+      "Id": "#nombreEntidad",
+      "EsquemaId": "#esquemaEntidad",
+      "ContieneInformacionDimensional": false,
+      "Segmento": null,
+      "ValoresDimension": []
+    },
+    "ContieneInformacionDimensional": true,
+    "Escenario": "<xbrli:scenario xmlns:xbrli=\"http://www.xbrl.org/2003/instance\"><xbrldi:explicitMember dimension=\"ar_pros:TypeOfResponsibleFigureAxis\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\">ar_pros:MembersOfTheBoardOfDirectorsA2N1Member</xbrldi:explicitMember><xbrldi:typedMember dimension=\"ar_pros:ResponsiblePersonsSequenceTypedAxis\" xmlns:xbrldi=\"http://xbrl.org/2006/xbrldi\"><ar_pros:ResponsiblePersonSequenceDomain xmlns:ar_pros=\"http://www.cnbv.gob.mx/2016-08-22/ar_prospectus\">2</ar_pros:ResponsiblePersonSequenceDomain></xbrldi:typedMember></xbrli:scenario>",
+    "ValoresDimension": [
+      {
+        "Explicita": true,
+        "IdDimension": "ar_pros_TypeOfResponsibleFigureAxis",
+        "IdItemMiembro": "ar_pros_MembersOfTheBoardOfDirectorsA2N1Member",
+        "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfResponsibleFigureAxis",
+        "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:MembersOfTheBoardOfDirectorsA2N1Member",
+        "ElementoMiembroTipificado": null
+      },
+      {
+        "Explicita": false,
+        "IdDimension": "ar_pros_ResponsiblePersonsSequenceTypedAxis",
+        "IdItemMiembro": null,
+        "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:ResponsiblePersonsSequenceTypedAxis",
+        "QNameItemMiembro": null,
+        "ElementoMiembroTipificado": "<ar_pros:ResponsiblePersonSequenceDomain xmlns:ar_pros=\"http://www.cnbv.gob.mx/2016-08-22/ar_prospectus\">2</ar_pros:ResponsiblePersonSequenceDomain>"
+      }
+    ]
+  },
+  "ctx": {
+    "Id": "ctx",
+    "Periodo": {
+      "Tipo": 1,
+      "FechaInstante": "#fecha_2014_12_31",
+      "FechaInicio": "",
+      "FechaFin": ""
+    },
+    "Entidad": {
+      "Id": "#nombreEntidad",
+      "EsquemaId": "#esquemaEntidad",
+      "ContieneInformacionDimensional": false,
+      "Segmento": null,
+      "ValoresDimension": []
+    },
+    "ContieneInformacionDimensional": false,
+    "Escenario": null,
+    "ValoresDimension": []
+  }
+},
+	
+	"UnidadesPlantillaPorId" : {},
+
+  "HechosPlantillaPorId": {
+    "ar_pros_ResponsiblePersonName_4eaa35ee-b539-40d7-822d-97b62536fe60": {
+      "Id": "ar_pros_ResponsiblePersonName_4eaa35ee-b539-40d7-822d-97b62536fe60",
+      "IdConcepto": "ar_pros_ResponsiblePersonName",
+      "IdContextoPlantilla": "cxt_2",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "ar_pros_ResponsiblePersonPosition_65daf1f4-cae1-45f7-b4ab-dfda88e3f9e6": {
+      "Id": "ar_pros_ResponsiblePersonPosition_65daf1f4-cae1-45f7-b4ab-dfda88e3f9e6",
+      "IdConcepto": "ar_pros_ResponsiblePersonPosition",
+      "IdContextoPlantilla": "cxt_2",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "ar_pros_ResponsiblePersonInstitution_ec1f954c-02b4-4476-a0e8-ad4683d8f131": {
+      "Id": "ar_pros_ResponsiblePersonInstitution_ec1f954c-02b4-4476-a0e8-ad4683d8f131",
+      "IdConcepto": "ar_pros_ResponsiblePersonInstitution",
+      "IdContextoPlantilla": "cxt_2",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "ar_pros_ResponsiblePersonLegend_fec0e347-5a3e-4ffe-bf76-9b9d8165c29c": {
+      "Id": "ar_pros_ResponsiblePersonLegend_fec0e347-5a3e-4ffe-bf76-9b9d8165c29c",
+      "IdConcepto": "ar_pros_ResponsiblePersonLegend",
+      "IdContextoPlantilla": "cxt_2",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "ar_pros_NameAndPositionsOfResponsiblePersonsPdf_b27fe595-4c54-4938-9f75-f1edb5741317": {
+      "Id": "ar_pros_NameAndPositionsOfResponsiblePersonsPdf_b27fe595-4c54-4938-9f75-f1edb5741317",
+      "IdConcepto": "ar_pros_NameAndPositionsOfResponsiblePersonsPdf",
+      "IdContextoPlantilla": "ctx",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "ar_pros_IssuanceUnderArt13OfTheCUELegendPDF_b27fe595-4c54-4938-9f75-f1edb5741317": {
+      "Id": "ar_pros_IssuanceUnderArt13OfTheCUELegendPDF_b27fe595-4c54-4938-9f75-f1edb5741317",
+      "IdConcepto": "ar_pros_IssuanceUnderArt13OfTheCUELegendPDF",
+      "IdContextoPlantilla": "ctx_2014",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    }
+  }
+}

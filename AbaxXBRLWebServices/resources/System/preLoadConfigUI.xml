@@ -1,0 +1,22 @@
+<panel id="innerPanel" layout="gridbaglayout">
+	<label text="Pre Load Configuration">
+		<gridbagconstraints id="spanRow" gridwidth="GridBagConstraints.REMAINDER" gridx="GridBagConstraints.RELATIVE" anchor="GridBagConstraints.LINE_START"/>
+	</label>
+	<separator>
+		<gridbagconstraints refid="spanRow" fill="GridBagConstraints.HORIZONTAL"/>
+	</separator>
+	<scrollpane id="tableScrollPane">
+		<gridbagconstraints refid="spanRow" />
+		<customtable id="customTable" initclass="ubmatrix.xbrl.tools.configui.src.utils.ui.PreloadConfigTableModel(Select|javax.swing.JRadioButton,Namespace)">
+		</customtable>
+	</scrollpane>
+	<button text="Add" action="addPreLoadAction">
+		<gridbagconstraints gridx="GridBagConstraints.RELATIVE" anchor="GridBagConstraints.LINE_START"/>
+	</button>
+	<button text="Edit" action="editPreLoadAction" >
+		<gridbagconstraints gridwidth="GridBagConstraints.RELATIVE" anchor="GridBagConstraints.LINE_START"/>
+	</button>
+	<button text="Delete" action="deletePreLoadAction" >
+		<gridbagconstraints gridwidth="GridBagConstraints.REMAINDER" anchor="GridBagConstraints.LINE_START"/>
+	</button>
+</panel>

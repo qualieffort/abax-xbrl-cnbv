@@ -1,0 +1,72 @@
+﻿<form name="guardarConsultaForm" ng-submit="guardarConsulta(guardarConsultaForm.$valid)" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true" ng-click="cerrarDialogo()">&times;</button>
+        <div class="row m-t-sm">
+            <div class="col-sm-10 m-b-xs">
+                <h4 class="modal-title"> {{'CONSULTA_ANALISIS_CONFIG_CONCEPTOS'| translate}} </h4>
+            </div>
+        </div>
+    </div>
+    <div class="modal-body">
+
+        <div ng-class="{ 'has-error' : !IdTaxonomiaXbrl}">
+            <p>{{'ETIQUETA_SELECCIONAR_TAXONOMIA'| translate}}:</p>
+            <select chosen width="'100%'"
+                    data-placeholder="{{'ETIQUETA_SELECCIONAR_TAXONOMIA' | translate}}"
+                    ng-model="IdTaxonomiaXbrl"
+                    ng-required="true"
+                    required class="form-control"
+                    ng-options="taxonomia.IdTaxonomiaXbrl as taxonomia.Nombre for taxonomia in taxonomiasConfiguracionConsulta"
+                    ng-change="cargarConceptosBusquedaCuenta()">
+                <option value="">--{{'ETIQUETA_SELECCIONAR_TAXONOMIA' | translate}}--</option>
+            </select>
+            <p ng-show="!IdTaxonomiaXbrl" class="help-block">{{'ETIQUETA_SELECCIONAR_TAXONOMIA' | translate}}.</p>
+        </div>
+        <p>&nbsp;</p>
+        <div>
+            <div ng-if="IdTaxonomiaXbrl">
+                <p>{{'ETIQUETA_CONFIGURACION_CONCEPTO_SELECCION' | translate}}</p>
+                <div style="padding-bottom:50px;">
+                    <div style="float:left;width:75%">
+                        <select chosen width="'100%'"
+                                data-placeholder="{{'PLACE_HOLDER_BUSCAR_CONCEPTO' | translate}}"
+                                ng-options="k as v for (k,v) in valoresSelectBusquedaCuenta"
+                                ng-model="conceptoSeleccionado"
+                                style="display: none;">
+                            <option value="">{{'ETIQUETA_SELECCIONAR_OPCION' | translate}}</option>
+                        </select>
+                    </div>
+
+                    <div style="float:left;width:20%;margin-left:10px;">
+                        <input type="button" class="btn btn-sm btn-default" value="Agregar" ng-click="agregarElementoConcepto(conceptoSeleccionado)" />
+                    </div>
+                </div>
+            </div>
+            <div style="height:{{alturaModal}}px; overflow-y: auto;">
+                <center>
+                    <table class="table table-striped b-t b-light " tabindex="1" style="-webkit-user-select: none;width:100%">
+                        <thead>
+                            <tr>
+                                <th>{{'EDITOR_XBRL_DESCRIPCION_CONCEPTO' | translate}}</th>
+                                <th width="10%">{{'ETIQUETA_ELIMINAR' | translate}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="concepto in consultaAnalisis.ConsultaAnalisisConcepto">
+                                <td>{{concepto.DescripcionConcepto}}</td>
+                                <td><a href="javascript:void(0)" class="btn btn-rounded btn-sm btn-icon btn-danger" ng-click="eliminarConcepto(concepto.IdConcepto)"><i class="fa fa-trash-o"></i></a></td>
+                            </tr>
+                            <tr ng-if="consultaAnalisis.ConsultaAnalisisConcepto.length==0"><td colspan="2"><p class="help-block">{{'ETIQUETA_SIN_CONFIGURACION_CONCEPTO_SELECCION' | translate}}</p></td></tr>
+                        </tbody>
+                    </table>
+                </center>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div>
+            <button type="button" class="btn btn-default" ng-click="cerrarDialogo()">{{'ETIQUETA_BOTON_CERRAR'|translate}}</button>
+        </div>
+    </div>
+</form>

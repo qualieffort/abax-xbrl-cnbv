@@ -1,0 +1,50 @@
+﻿<div class="table-responsive mainDT" style="overflow: hidden;" id="estructuraTabla">
+    <table id="tablaResultadoConsultaRepositorio" class="table table-striped b-t b-light"
+           xbrl:tabla-scrolleable>
+        <thead id="encabezadoTabla">
+
+            <tr id="renglonEncabezado">
+                <th class="encabezadoReporteGenerico" width="300px;" style="padding-top: 33px;">
+                    {{'ETIQUETA_CONCEPTO' | translate}}
+                </th>
+                <th class="encabezadoReporteGenerico columnaEncabezadoDimension" width="300px;" style="padding-top: 33px;" id="columnaEncabezadoDimension">
+                    {{'ETIQUETA_DIMENSION' | translate}}
+                </th>
+                <th id="columnaEstructuraDocumento" class="encabezadoReporteGenerico">
+
+                </th>
+            </tr>
+        </thead>
+
+        <tbody id="cuerpoFormato">
+            <tr id="renglonCuepoFormato">
+                <td class="etiquetaConcepto etiquetaConceptoReporteGenerico"></td>
+                <td class="etiquetaDimension columnaEncabezadoDimension"></td>
+
+                <td id="columnaHecho" class="columnaHecho">
+
+                    <div id="mostrarHechoVisor" style="display:block">
+                        <div style="text-align:right; padding-right:20px;min-height:25px;">
+                            <span class="text-default valorHecho" id="valorHecho"></span>
+                        </div>
+                    </div>
+
+                    <div id="sinHecho" class="campo_vacio">
+                        -
+                    </div>
+
+                    <div id="esAbstracto" style="display:none">
+                        
+                    </div>
+
+
+                    <div id="hechoTextBlockItemType" class="btn btn-default" style="margin: 0;padding: 0;min-width: 70px;">
+                        <i class="i i-eye2 text"></i>
+                        <span class="text">{{'ETIQUETA_VER' | translate}}</span>
+                    </div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

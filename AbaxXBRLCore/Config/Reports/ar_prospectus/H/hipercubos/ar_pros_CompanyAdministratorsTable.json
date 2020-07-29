@@ -1,0 +1,278 @@
+{
+  "IdConceptos": [
+    "ar_pros_AdministratorName",
+    "ar_pros_AdministratorFirstName",
+    "ar_pros_AdministratorSecondName",
+    "ar_pros_ForeignAdministrator",
+    "ar_pros_AdministratorDirectorshipType",
+    "ar_pros_AdministratorParticipateInCommittees",
+    "ar_pros_AdministratorDesignationDate",
+    "ar_pros_AdministratorAssemblyTypePros",
+    "ar_pros_AdministratorPeriodForWhichTheyWereElected",
+    "ar_pros_AdministratorPosition",
+    "ar_pros_AdministratorTimeWorkedInTheIssuer",
+    "ar_pros_AdministratorShareholding",
+    "ar_pros_AdministratorTimeWorkedInTheIssuerNumber",
+    "ar_pros_AdministratorAdditionalInformation",
+    "ar_pros_AdministratorGenderProspectoH",
+    "ar_pros_AdministratorWorksForTheIssuer",
+    "ar_pros_AdministratorParticipateInCommitteesAudit",
+    "ar_pros_CompaniesWithCollaborationAsRelevantManagerOrMemberOfTheBoardOfAdministrator",
+    "ar_pros_AdministratorParticipateInCommitteesCorporatePractices",
+    "ar_pros_AdministratorParticipateInCommitteesEvaluationAndCompensation",
+    "ar_pros_AdministratorParticipateInCommitteesOthers",
+    "ar_pros_CompaniesWithCollaborationHasRelationWithIssuerOfAdministrator"
+  ],
+  "PlantillasContextos": {
+    "IndependentMember": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfCompanyAdministratorsAxis",
+          "IdItemMiembro": "ar_pros_IndependentMember",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfCompanyAdministratorsAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:IndependentMember"
+        }
+      ]
+    },
+    "PatrimonialMember": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfCompanyAdministratorsAxis",
+          "IdItemMiembro": "ar_pros_PatrimonialMember",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfCompanyAdministratorsAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:PatrimonialMember"
+        }
+      ]
+    },
+    "PatrimonialIndependentMember": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfCompanyAdministratorsAxis",
+          "IdItemMiembro": "ar_pros_PatrimonialIndependentMember",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfCompanyAdministratorsAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:PatrimonialIndependentMember"
+        }
+      ]
+    },
+    "RelatedMember": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfCompanyAdministratorsAxis",
+          "IdItemMiembro": "ar_pros_RelatedMember",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfCompanyAdministratorsAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:RelatedMember"
+        }
+      ]
+    },
+    "RelevantDirectorsMember": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfCompanyAdministratorsAxis",
+          "IdItemMiembro": "ar_pros_RelevantDirectorsMember",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfCompanyAdministratorsAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:RelevantDirectorsMember"
+        }
+      ]
+    }
+  },
+  "PlantillaDimensiones": {
+    "ar_pros_TypeOfCompanyAdministratorsAxis": {
+      "PrefijoValor": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:",
+      "SubfijoValor": "",
+      "EtiquetaNuevoElemento": "IndependentMember",
+      "Explicita": true,
+      "IdDimension": "ar_pros_TypeOfCompanyAdministratorsAxis",
+      "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfCompanyAdministratorsAxis"
+    },
+    "ar_pros_CompanyAdministratorsSecuenceTypedAxis": {
+      "PrefijoValor": "<ar_pros:CompanyAdministratorsSequenceDomain xmlns:ar_pros=\"http://www.cnbv.gob.mx/2016-08-22/ar_prospectus\">",
+      "SubfijoValor": "</ar_pros:CompanyAdministratorsSequenceDomain>",
+      "EtiquetaNuevoElemento": "1",
+      "Explicita": false,
+      "IdDimension": "ar_pros_CompanyAdministratorsSecuenceTypedAxis",
+      "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:CompanyAdministratorsSecuenceTypedAxis"
+    }
+  },
+  "DimensionesDinamicas": [
+    "ar_pros_CompanyAdministratorsSecuenceTypedAxis"
+  ],
+  "MaxColumnasVertical": 6,
+  "MaxColumnasHorizontal": 0,
+  "TamanoHoja": "Letter",
+  "ConfiguracionPresentacion": {
+    "Administradores": {
+
+      "Tipo": "Tarjeta",
+      "IdsPlantillasContextos": [
+        "IndependentMember",
+        "PatrimonialMember",
+        "PatrimonialIndependentMember",
+        "RelatedMember"
+      ],
+      "Filas": [
+        {
+          "Tipo": "UnaFila",
+          "Celdas": [
+            {
+              "SoloValor": true,
+              "EsTitulo": true,
+              "ConcatenarValores": true,
+              "IdsConceptos": [ "ar_pros_AdministratorName", "ar_pros_AdministratorFirstName", "ar_pros_AdministratorSecondName" ],
+              "Colspan": 4
+            }
+          ]
+        },
+        {
+          "Tipo": "DosFilas",
+          "Celdas": [
+            { "IdConcepto": "ar_pros_ForeignAdministrator" },
+            { "IdConcepto": "ar_pros_AdministratorDirectorshipType" },
+            { "IdConcepto": "ar_pros_AdministratorDesignationDate" },
+            { "IdConcepto": "ar_pros_AdministratorAssemblyTypePros" }
+          ]
+        },
+        {
+          "Tipo": "DosFilas",
+          "Celdas": [
+            { "IdConcepto": "ar_pros_AdministratorPeriodForWhichTheyWereElected" },
+            { "IdConcepto": "ar_pros_AdministratorWorksForTheIssuer" },
+            { "IdConcepto": "ar_pros_AdministratorTimeWorkedInTheIssuerNumber" },
+            { "IdConcepto": "ar_pros_AdministratorShareholding" }
+          ]
+        },
+        {
+          "Tipo": "DosFilas",
+          "Celdas": [
+            {
+              "IdConcepto": "ar_pros_CompaniesWithCollaborationAsRelevantManagerOrMemberOfTheBoardOfAdministrator",
+              "Colspan": 4
+            }
+          ]
+        },
+        {
+          "Tipo": "DosFilas",
+          "Celdas": [
+            {
+              "IdConcepto": "ar_pros_CompaniesWithCollaborationHasRelationWithIssuerOfAdministrator",
+              "Colspan": 2
+            },
+            {
+              "IdConcepto": "ar_pros_AdministratorGenderProspectoH",
+              "Colspan": 2
+            }
+          ]
+        },
+        {
+          "Tipo": "DosFilas",
+          "Celdas": [
+            {
+              "IdConcepto": "ar_pros_AdministratorAdditionalInformation",
+              "Colspan": 4
+            }
+          ]
+        }
+      ]
+
+    },
+    "Directivos": {
+
+      "Tipo": "Tarjeta",
+      "IdsPlantillasContextos": ["RelevantDirectorsMember"],
+      "Filas": [
+        {
+          "Tipo": "UnaFila",
+          "Celdas": [
+            {
+              "SoloValor": true,
+              "EsTitulo": true,
+              "ConcatenarValores": true,
+              "IdsConceptos": [ "ar_pros_AdministratorName", "ar_pros_AdministratorFirstName", "ar_pros_AdministratorSecondName" ],
+              "Colspan": 4
+            }
+          ]
+        },
+        {
+          "Tipo": "DosFilas",
+          "Celdas": [
+            { "IdConcepto": "ar_pros_ForeignAdministrator" },
+            { "IdConcepto": "ar_pros_AdministratorDesignationDate" },
+            { "IdConcepto": "ar_pros_AdministratorPosition" },
+            { "IdConcepto": "ar_pros_AdministratorTimeWorkedInTheIssuerNumber" }
+          ]
+        },
+        {
+          "Tipo": "DosFilas",
+          "Celdas": [
+            {
+              "IdConcepto": "ar_pros_AdministratorShareholding",
+              "Colspan": 2
+            },
+            {
+              "IdConcepto": "ar_pros_AdministratorGenderProspectoH",
+              "Colspan": 2
+            }
+          ]
+        },
+        {
+          "Tipo": "DosFilas",
+          "Celdas": [
+            {
+              "IdConcepto": "ar_pros_CompaniesWithCollaborationAsRelevantManagerOrMemberOfTheBoardOfAdministrator",
+              "Colspan": 4
+            }
+          ]
+        },
+        {
+          "Tipo": "DosFilas",
+          "Celdas": [
+            {
+              "IdConcepto": "ar_pros_CompaniesWithCollaborationHasRelationWithIssuerOfAdministrator",
+              "Colspan": 4
+            }
+          ]
+        },
+        {
+          "Tipo": "DosFilas",
+          "Celdas": [
+            {
+              "IdConcepto": "ar_pros_AdministratorAdditionalInformation",
+              "Colspan": 4
+            }
+          ]
+        }
+      ]
+
+    }
+  }
+
+}

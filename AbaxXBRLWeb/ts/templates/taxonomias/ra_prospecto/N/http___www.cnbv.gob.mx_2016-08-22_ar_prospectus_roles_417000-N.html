@@ -1,0 +1,129 @@
+<xbrl-contenedor-formato xbrl:rol-uri="{{xbrlRol.Uri}}" orientacion="landscape" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+	<!--<div id="contenedorTablaExcel" class="table-responsive"> 
+	<table class="table table-striped b-t b-light" xbrl:tabla-excel selector="td:not(:first-child)" selector-contenedor-x="#contenedorFormatos" selector-contenedor-y="#contenedorFormatos" tab-index="1" on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)" on-after-paste="onAfterPaste(valorPegado, x, y)" on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)">
+		<thead>
+			<tr>
+				<th class="th-sortable" data-toggle="class">{{'EDITOR_XBRL_TITULO_CONCEPTO' | translate}}</th>
+				<th style="min-width: 230px; width: 230px;">
+				{{'EDITOR_XBRL_TITULO' | translate}}<br />
+				{{ definicionPlantilla.obtenerVariablePorId("medida_MXN")}}<br />
+				{{::definicionPlantilla.obtenerVariablePorId("fecha_2014_12_31")}}
+				</th>
+			</tr>
+		</thead>
+        <tbody>-->
+            <table class="tablaAnchoFijo" cellspacing="5">
+                <tbody>
+                    <tr>
+                        <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_TheIssuerAbstract" xbrl:nivel-indentacion="0"></b></td>
+                        <td style="text-align:left; width:50%; height:40px;">&nbsp;</td>
+                    </tr>                
+                    <tr>
+                        <td colspan="2">
+                        
+                            <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_HistoryAndDevelopmentOfTheIssuer" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                            <div class="bloqueTexto"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="ar_pros_HistoryAndDevelopmentOfTheIssuer_b3b8d4ea-f828-42fc-8d10-23f66bee293a"></xbrl:campo-captura></div>
+                        </td>
+                       
+                   </tr>
+                    <tr>
+                        <td colspan="2">
+                       
+                            <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_BusinessOverview" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                            <div class="bloqueTexto"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="ar_pros_BusinessOverview_a721a583-803e-4fd5-8337-e95636ba5252"></xbrl:campo-captura></div>
+                        </td>                     
+                    </tr>
+                    <tr>
+                        <td colspan="2">                     
+                            <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_MainActivity" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                            <div class="bloqueTexto"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="ar_pros_MainActivity_ea2ecc8a-3c4e-4123-ba2a-337f9397fe21"></xbrl:campo-captura></div>
+                        </td>                    
+                    </tr>
+                    <tr>
+                        <td colspan="2">                        
+                            <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_DistributionChannels" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                            <div class="bloqueTexto"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="ar_pros_DistributionChannels_add76682-d7b9-40e5-afe8-8c7b90237fa3"></xbrl:campo-captura></div>
+                        </td>                     
+                    </tr>
+                    <tr>
+                        <td colspan="2">                          
+                            <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_PatentsLicensesTrademarksAndOtherContracts" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                            <div class="bloqueTexto"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="ar_pros_PatentsLicensesTrademarksAndOtherContracts_82fef7d7-13e7-4cab-8a53-b2ae2cfc9ce2"></xbrl:campo-captura></div>
+                        </td>                      
+                    </tr>
+                    <tr>
+                        <td colspan="2">                      
+                            <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_MainCustomers" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                            <div class="bloqueTexto"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="ar_pros_MainCustomers_13fc0688-df9b-4eaa-9d12-d6a9abf976c8"></xbrl:campo-captura></div>
+                        </td>                        
+                    </tr>
+                    <tr>
+                        <td colspan="2">                      
+                            <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ApplicableLawAndTaxSituation" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                            <div class="bloqueTexto"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="ar_pros_ApplicableLawAndTaxSituation_e6b4030b-ad04-4a8b-8bd9-546ab0f9dfc5"></xbrl:campo-captura></div>
+                        </td>                      
+                    </tr>
+                    <tr>
+                        <td colspan="2">                      
+                            <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_HumanResources" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                            <div class="bloqueTexto"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="ar_pros_HumanResources_7dd2bafc-c780-4a06-a407-b67a7708ec81"></xbrl:campo-captura></div>
+                        </td>                        
+                    </tr>
+                    <tr>
+                        <td colspan="2">                       
+                            <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_EnvironmentalPerformance" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                            <div class="bloqueTexto"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="ar_pros_EnvironmentalPerformance_5c8bcdb4-c03e-4cf3-a7b8-8000f63dda01"></xbrl:campo-captura></div>
+                        </td>                      
+                    </tr>
+                    <tr>
+                        <td colspan="2">                     
+                            <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_IssuerMarketInformation" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                            <div class="bloqueTexto"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="ar_pros_IssuerMarketInformation_d233105d-3562-4695-86a7-8f7bf12f92b0"></xbrl:campo-captura></div>
+                        </td>                        
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                          
+                            <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_CorporateStructure" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                            <div class="bloqueTexto"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="ar_pros_CorporateStructure_11933a35-3932-44c0-b394-f0ebd4f722d2"></xbrl:campo-captura></div>
+                        </td>                       
+                    </tr>
+                    <tr>
+                        <td colspan="2">                      
+                            <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_DescriptionOfKeyAssets" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                            <div class="bloqueTexto"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="ar_pros_DescriptionOfKeyAssets_d9bb211a-7eb9-4506-9c80-b4b5c4bde2e5"></xbrl:campo-captura></div>
+                        </td>                     
+                    </tr>
+                    <tr>
+                        <td colspan="2">                       
+                            <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_JudicialAdministrativeOrArbitrationProceedings" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                            <div class="bloqueTexto"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="ar_pros_JudicialAdministrativeOrArbitrationProceedings_45dce72a-5303-467a-9698-3577ea472b5a"></xbrl:campo-captura></div>
+                        </td>                       
+                    </tr>
+                    <tr>
+                        <td colspan="2">                        
+                            <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_CapitalShares" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                            <div class="bloqueTexto"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="ar_pros_CapitalShares_7e065d0e-ca6d-4e45-a4a6-bed4a2ee4e1a"></xbrl:campo-captura></div>
+                        </td>                      
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                        
+                            <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_Dividends" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                            <div class="bloqueTexto"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="ar_pros_Dividends_b5700d64-03a6-41cb-8e1f-dad1a03bb943"></xbrl:campo-captura></div>
+                        </td>                        
+                    </tr>
+                    <tr>
+                        <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_InTheCaseOfForeignIssuersAbstract" xbrl:nivel-indentacion="0"></b></td>
+                        <td style="text-align:left; width:50%; height:40px;">&nbsp;</td>
+                    </tr>
+               
+                    <tr>
+                        <td colspan="2">                         
+                            <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ExchangeControlsAndOtherLimitations" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                            <div class="bloqueTexto"><xbrl:campo-captura xbrl:solo-lectura="{{documentoInstancia.BloquearCamposCaptura}}" xbrl:id-hecho-plantilla="ar_pros_ExchangeControlsAndOtherLimitations_ed06177a-983e-4fb6-b635-f22dc01dfd86" xbrl:ultimo="true"></xbrl:campo-captura></div>
+                        </td>                       
+                    </tr>
+                </tbody>
+            </table>
+</xbrl-contenedor-formato>

@@ -1,0 +1,19 @@
+﻿'{{idFormula}}': new model.DefinicionFormula().deserialize(
+                    {
+                        Id: '{{idFormula}}',
+                        TipoFormula: model.TipoFormula.ValueAssertion,
+                        Expresion: 'squeeze(size(variable1)) > 0',
+                        MensajeExito: 'La longitud del texto contenido en el hecho del {variable1} es mayor a 0 caracteres',
+                        MensajeError: 'La longitud del texto contenido en el hecho del {variable1} debería ser mayor a 0 caracteres',
+                        VariablesCoincidenPeriodo: false,
+                        DefinicionVariables: {
+                            'variable1': new model.DefinicionVariableFormula().deserialize({
+                                Id: 'variable1',
+                                IdConcepto: '{{idConcepto}}',
+                                PuedeCrearse: false,
+                                PuedeEliminarse: false,
+                                ConteoHechos: false{{configuracionDimensionCondicion}}
+                            })
+                        }
+                    }
+                    )

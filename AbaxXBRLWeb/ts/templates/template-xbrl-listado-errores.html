@@ -1,0 +1,30 @@
+﻿<section class="scrollable">
+    <div class="wrapper"><strong>Listado de Errores</strong></div>
+    <ul id="listaErroresValidacion" class="list-group no-bg no-borders auto">
+        <li class="list-group-item" ng-if="operaciones.NumeroErrores == 0">
+            <span class="fa-stack pull-left m-r-sm">
+                <i class="fa fa-circle fa-stack-2x text-success"></i>
+                <i class="fa fa-check fa-stack-1x text-white"></i>
+            </span>
+            <span class="clear">
+                {{'EDITOR_XBRL_SIN_ERRORES_FORMATO' | translate}}
+            </span>
+        </li>
+        <li class="list-group-item" ng-repeat="error in operaciones.Errores">
+            <span class="fa-stack pull-left m-r-sm">
+                <i class="fa fa-circle fa-stack-2x text-danger"></i>
+                <i class="fa fa-exclamation fa-stack-1x text-white"></i>
+            </span>
+            <a href="javascript:void(0);" class="clear" ng-click="presentarDetalleCalculo(error)" ng-if="!error.EsFormula && error.OperacionEjecutada" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                El valor del {{generarDescripcionErrorCalculo(error)}}: <span xbrl:auto-numeric opciones-auto-numeric="{ aSign: '$', pSign: 'p', vMin: '-99999999999999.00', nBracket: '(,)' }" expresion="modelo.Valor" modelo="error"></span> {{'EDITOR_XBRL_NO_COINCIDE_ERROR_CALCULO' | translate }}: <span xbrl:auto-numeric opciones-auto-numeric="{ aSign: '$', pSign: 'p', vMin: '-99999999999999.00', nBracket: '(,)' }" expresion="modelo.ValorCalculado" modelo="error"></span>
+            </a>
+            <a href="javascript:void(0);" class="clear" ng-click="presentarDetalleCalculo(error)" ng-if="!error.EsFormula && !error.OperacionEjecutada">
+                {{'EDITOR_XBRL_NO_ES_POSIBLE_VALIDAR_HECHO' | translate}}: {{error.Motivo}}.
+            </a>
+
+            <a href="javascript:void(0);" class="clear" ng-click="presentarDetalleCalculo(error)" ng-if="error.EsFormula" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                {{generarDescripcionErrorFormula(error)}}
+            </a>
+        </li>
+    </ul>
+</section>

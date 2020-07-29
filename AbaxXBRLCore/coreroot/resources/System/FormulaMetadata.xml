@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Project: Xbrl Processing Engine
+Copyright (c) 2011  EDGAR(r) Online, Inc.
+
+EDGAR(r) is a federally registered trademark of the U.S. Securities and Exchange Commission. EDGAR 
+Online is not affiliated with or approved by the U.S. Securities and Exchange Commission.
+-->
+
+
+<MethodSet name="FormulaPatterns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Metadata.xsd">
+
+	<Method name="formula_CreateContextWithoutPeriod" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Instance.formula_CreateContextWithoutPeriod">
+		<DomainObjectArgumentSelector name="instanceDO" value="." type="DomainObject" allowNull="False"/> 
+		<DomainObjectArgumentSelector name="identifierSchemeValue" value="0" type="String" allowNull="False" />
+		<DomainObjectArgumentSelector name="identifierValue" value="1" type="String" allowNull="False" />
+
+		<CreateDomainObject saveDO="contextDO" doUri="domain://ubmatrix.com/Xbrl/Instance#Context">
+			<ConstantSelector saveDO="schemaDO" value="&amp;http://www.xbrl.org/2003/instance#context"/>
+		</CreateDomainObject>
+
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#InstanceSpecifiesContext">
+			<DomainObjectSelector saveDO="From" value="instanceDO"/>
+			<DomainObjectSelector saveDO="To" value="contextDO"/>
+		</CreateRelationship>
+
+		<RunMethod name="SetEntityIdentifier">
+			<ConstantSelector saveDO="methodName" value="SetEntityIdentifier"/>
+			<DomainObjectSelector saveDO="methodWorkingDO" value="contextDO"/>
+			<DomainObjectSelector saveDO="methodArg0" value="identifierSchemeValue"/>
+			<DomainObjectSelector saveDO="methodArg1" value="identifierValue"/>
+		</RunMethod>	
+
+		<Return>
+			<DomainObjectSelector saveDO="contextDO" value="contextDO"/>
+		</Return>
+	</Method>
+	
+	<Method name="formula_CreateContextWithRange" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Instance.formula_CreateContextWithRange">
+		<DomainObjectArgumentSelector name="instanceDO" value="." type="DomainObject" allowNull="False"/> 
+		<DomainObjectArgumentSelector name="identifierSchemeValue" value="0" type="String" allowNull="False" />
+		<DomainObjectArgumentSelector name="identifierValue" value="1" type="String" allowNull="False" />
+		<DomainObjectArgumentSelector name="periodStartDate" value="2" type="String" allowNull="False" />
+		<DomainObjectArgumentSelector name="periodEndDate" value="3" type="String" allowNull="False" />
+
+		<RunMethod saveDO="contextDO" name="formula_CreateContextWithoutPeriod">
+			<ConstantSelector saveDO="methodName" value="formula_CreateContextWithoutPeriod"/>
+			<DomainObjectSelector saveDO="methodWorkingDO" value="instanceDO"/>
+			<DomainObjectSelector saveDO="methodArg0" value="identifierSchemeValue"/>
+			<DomainObjectSelector saveDO="methodArg1" value="identifierValue"/>
+		</RunMethod>
+		
+		<RunMethod name="SetPeriodRange">
+			<ConstantSelector saveDO="methodName" value="SetPeriodRange"/>
+			<DomainObjectSelector saveDO="methodWorkingDO" value="contextDO"/>
+			<DomainObjectSelector saveDO="methodArg0" value="periodStartDate"/>
+			<DomainObjectSelector saveDO="methodArg1" value="periodEndDate"/>
+		</RunMethod>
+
+		<Return>
+			<DomainObjectSelector saveDO="contextDO" value="contextDO"/>
+		</Return>
+	</Method>
+
+	<Method name="formula_CreateContextWithInstant" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Instance.formula_CreateContextWithInstant">
+		<DomainObjectArgumentSelector name="instanceDO" value="." type="DomainObject" allowNull="False"/> 
+		<DomainObjectArgumentSelector name="identifierSchemeValue" value="0" type="String" allowNull="False" />
+		<DomainObjectArgumentSelector name="identifierValue" value="1" type="String" allowNull="False" />
+		<DomainObjectArgumentSelector name="periodInstant" value="2" type="String" allowNull="False" />
+
+		<RunMethod saveDO="contextDO" name="formula_CreateContextWithoutPeriod">
+			<ConstantSelector saveDO="methodName" value="formula_CreateContextWithoutPeriod"/>
+			<DomainObjectSelector saveDO="methodWorkingDO" value="instanceDO"/>
+			<DomainObjectSelector saveDO="methodArg0" value="identifierSchemeValue"/>
+			<DomainObjectSelector saveDO="methodArg1" value="identifierValue"/>
+		</RunMethod>
+		
+		<RunMethod name="SetPeriodInstant">
+			<ConstantSelector saveDO="methodName" value="SetPeriodInstant"/>
+			<DomainObjectSelector saveDO="methodWorkingDO" value="contextDO"/>
+			<DomainObjectSelector saveDO="methodArg0" value="periodInstant"/>
+		</RunMethod>
+
+		<Return>
+			<DomainObjectSelector saveDO="contextDO" value="contextDO"/>
+		</Return>
+	</Method>
+
+	<Method name="formula_CreateContextWithForever" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Instance.formula_CreateContextWithForever">
+		<DomainObjectArgumentSelector name="instanceDO" value="." type="DomainObject" allowNull="False"/> 
+		<DomainObjectArgumentSelector name="identifierSchemeValue" value="0" type="String" allowNull="False" />
+		<DomainObjectArgumentSelector name="identifierValue" value="1" type="String" allowNull="False" />
+
+		<RunMethod saveDO="contextDO" name="formula_CreateContextWithoutPeriod">
+			<ConstantSelector saveDO="methodName" value="formula_CreateContextWithoutPeriod"/>
+			<DomainObjectSelector saveDO="methodWorkingDO" value="instanceDO"/>
+			<DomainObjectSelector saveDO="methodArg0" value="identifierSchemeValue"/>
+			<DomainObjectSelector saveDO="methodArg1" value="identifierValue"/>
+		</RunMethod>
+		
+		<RunMethod name="SetPeriodForever">
+			<ConstantSelector saveDO="methodName" value="SetPeriodForever"/>
+			<DomainObjectSelector saveDO="methodWorkingDO" value="contextDO"/>
+		</RunMethod>
+
+		<Return>
+			<DomainObjectSelector saveDO="contextDO" value="contextDO"/>
+		</Return>
+	</Method>
+
+	<Method name="formula_CreateUnit" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Instance.formula_CreateUnit">
+		<DomainObjectArgumentSelector name="instanceDO" value="." type="DomainObject" allowNull="False"/> 
+
+		<CreateDomainObject saveDO="unitDO" doUri="domain://ubmatrix.com/Xbrl/Instance#Unit">
+			<ConstantSelector saveDO="schemaDO" value="&amp;http://www.xbrl.org/2003/instance#unit"/>
+		</CreateDomainObject>
+
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#InstanceSpecifiesUnit">
+			<DomainObjectSelector saveDO="From" value="instanceDO"/>
+			<DomainObjectSelector saveDO="To" value="unitDO"/>
+		</CreateRelationship>
+
+		<Return>
+			<DomainObjectSelector saveDO="unitDO" value="unitDO"/>
+		</Return>
+	</Method>
+
+	<Method name="formula_AddMeasure" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Unit.formula_AddMeasure">
+		<DomainObjectArgumentSelector name="unitDO" value="." type="DomainObject" allowNull="False"/> 
+		<DomainObjectArgumentSelector name="measure" value="0" type="String" allowNull="False"/> 
+
+		<CreateDomainObject saveDO="measureDO" doUri="domain://ubmatrix.com/Xbrl/Instance#Measure">
+			<ConstantSelector saveDO="schemaDO" value="&amp;http://www.xbrl.org/2003/instance#unit#measure"/>
+			<DomainObjectSelector saveDO="value" value="measure"/>
+		</CreateDomainObject>
+
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesMeasure">
+			<DomainObjectSelector saveDO="From" value="unitDO"/>
+			<DomainObjectSelector saveDO="To" value="measureDO"/>
+		</CreateRelationship>
+	</Method>
+
+	<Method name="formula_AddMeasure" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Numerator.formula_AddMeasure">
+		<DomainObjectArgumentSelector name="numeratorDO" value="." type="DomainObject" allowNull="False"/> 
+		<DomainObjectArgumentSelector name="measure" value="0" type="String" allowNull="False"/> 
+
+		<CreateDomainObject saveDO="measureDO" doUri="domain://ubmatrix.com/Xbrl/Instance#Measure">
+			<ConstantSelector saveDO="schemaDO" value="&amp;http://www.xbrl.org/2003/instance#unit#measure"/>
+			<DomainObjectSelector saveDO="value" value="measure"/>
+		</CreateDomainObject>
+
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesMeasure">
+			<DomainObjectSelector saveDO="From" value="numeratorDO"/>
+			<DomainObjectSelector saveDO="To" value="measureDO"/>
+		</CreateRelationship>
+	</Method>
+
+	<Method name="formula_AddMeasure" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Denominator.formula_AddMeasure">
+		<DomainObjectArgumentSelector name="denominatorDO" value="." type="DomainObject" allowNull="False"/> 
+		<DomainObjectArgumentSelector name="measure" value="0" type="String" allowNull="False"/> 
+
+		<CreateDomainObject saveDO="measureDO" doUri="domain://ubmatrix.com/Xbrl/Instance#Measure">
+			<ConstantSelector saveDO="schemaDO" value="&amp;http://www.xbrl.org/2003/instance#unit#measure"/>
+			<DomainObjectSelector saveDO="value" value="measure"/>
+		</CreateDomainObject>
+
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#SpecifiesMeasure">
+			<DomainObjectSelector saveDO="From" value="denominatorDO"/>
+			<DomainObjectSelector saveDO="To" value="measureDO"/>
+		</CreateRelationship>
+	</Method>
+
+	<Method name="formula_CreateDescendant" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Segment.formula_CreateDescendant">
+		<DomainObjectArgumentSelector name="segmentDO" value="." type="DomainObject" allowNull="False"/> 
+		<DomainObjectArgumentSelector name="segmentDescendantSchemaVOUri" value="0" type="String" allowNull="False" /> 
+		<DomainObjectArgumentSelector name="parentDO" value="1" type="DomainObject" allowNull="False" /> 
+
+		<DtsQuerySelector saveDO="segmentDescendantSchemaDO">
+			<DomainObjectSelector saveDO="startValue" value="segmentDescendantSchemaVOUri"/>
+		</DtsQuerySelector>
+
+		<CreateDomainObject saveDO="descendantDO" doUri="domain://ubmatrix.com/Xbrl/Instance#SegmentDescendant">
+			<DomainObjectSelector saveDO="schemaDO" value="segmentDescendantSchemaDO"/>
+		</CreateDomainObject>
+
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Relationship#SchemaDefinesInstance">
+			<DomainObjectSelector saveDO="From" value="segmentDescendantSchemaDO"/>
+			<DomainObjectSelector saveDO="To" value="descendantDO"/>
+		</CreateRelationship>
+
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#SegmentHasDescendant">
+			<DomainObjectSelector saveDO="From" value="segmentDO"/>
+			<DomainObjectSelector saveDO="To" value="descendantDO"/>
+		</CreateRelationship>
+
+		<Return>
+			<DomainObjectSelector saveDO="descendantDO" value="descendantDO"/>
+		</Return>
+	</Method>	
+
+	<Method name="formula_CreateDescendant" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#SegmentDescendant.formula_CreateDescendant">
+		<DomainObjectArgumentSelector name="segmentDescendantDO" value="." type="DomainObject" allowNull="False" /> 
+		<DomainObjectArgumentSelector name="segmentDescendantSchemaVOUri" value="0" type="String" allowNull="False" /> 
+		<DomainObjectArgumentSelector name="segmentDO" value="1" type="DomainObject" allowNull="False"/>
+
+		<DtsQuerySelector saveDO="segmentDescendantSchemaDO">
+			<DomainObjectSelector saveDO="startValue" value="segmentDescendantSchemaVOUri"/>
+		</DtsQuerySelector>
+
+		<CreateDomainObject saveDO="descendantDO" doUri="domain://ubmatrix.com/Xbrl/Instance#SegmentDescendant">
+			<DomainObjectSelector saveDO="schemaDO" value="segmentDescendantSchemaDO"/>
+		</CreateDomainObject>
+
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Relationship#SchemaDefinesInstance">
+			<DomainObjectSelector saveDO="From" value="segmentDescendantSchemaDO"/>
+			<DomainObjectSelector saveDO="To" value="descendantDO"/>
+		</CreateRelationship>
+
+		<Return>
+			<DomainObjectSelector saveDO="descendantDO" value="descendantDO"/>
+		</Return>
+	</Method>		
+
+	<Method name="formula_CreateDescendant" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#Scenario.formula_CreateDescendant">
+		<DomainObjectArgumentSelector name="scenarioDO" value="." type="DomainObject" allowNull="False"/> 
+		<DomainObjectArgumentSelector name="scenarioDescendantSchemaVOUri" value="0" type="String" allowNull="False" /> 
+		<DomainObjectArgumentSelector name="parentDO" value="1" type="DomainObject" allowNull="False" /> 
+
+		<DtsQuerySelector saveDO="scenarioDescendantSchemaDO">
+			<DomainObjectSelector saveDO="startValue" value="scenarioDescendantSchemaVOUri"/>
+		</DtsQuerySelector>
+
+		<CreateDomainObject saveDO="descendantDO" doUri="domain://ubmatrix.com/Xbrl/Instance#ScenarioDescendant">
+			<DomainObjectSelector saveDO="schemaDO" value="scenarioDescendantSchemaDO"/>
+		</CreateDomainObject>
+
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Relationship#SchemaDefinesInstance">
+			<DomainObjectSelector saveDO="From" value="scenarioDescendantSchemaDO"/>
+			<DomainObjectSelector saveDO="To" value="descendantDO"/>
+		</CreateRelationship>
+
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Instance/Relationship#ScenarioHasDescendant">
+			<DomainObjectSelector saveDO="From" value="scenarioDO"/>
+			<DomainObjectSelector saveDO="To" value="descendantDO"/>
+		</CreateRelationship>
+
+		<Return>
+			<DomainObjectSelector saveDO="descendantDO" value="descendantDO"/>
+		</Return>
+	</Method>	
+
+	<Method name="formula_CreateDescendant" behaviorUri="behavior://ubmatrix.com/Xbrl/Instance#ScenarioDescendant.formula_CreateDescendant">
+		<DomainObjectArgumentSelector name="scenarioDescendantDO" value="." type="DomainObject" allowNull="False" /> 
+		<DomainObjectArgumentSelector name="scenarioDescendantSchemaVOUri" value="0" type="String" allowNull="False" /> 
+		<DomainObjectArgumentSelector name="scenarioDO" value="1" type="DomainObject" allowNull="False"/>
+
+		<DtsQuerySelector saveDO="scenarioDescendantSchemaDO">
+			<DomainObjectSelector saveDO="startValue" value="scenarioDescendantSchemaVOUri"/>
+		</DtsQuerySelector>
+
+		<CreateDomainObject saveDO="descendantDO" doUri="domain://ubmatrix.com/Xbrl/Instance#ScenarioDescendant">
+			<DomainObjectSelector saveDO="schemaDO" value="scenarioDescendantSchemaDO"/>
+		</CreateDomainObject>
+
+		<CreateRelationship doUri="relationship://ubmatrix.com/Xbrl/Relationship#SchemaDefinesInstance">
+			<DomainObjectSelector saveDO="From" value="scenarioDescendantSchemaDO"/>
+			<DomainObjectSelector saveDO="To" value="descendantDO"/>
+		</CreateRelationship>
+
+		<Return>
+			<DomainObjectSelector saveDO="descendantDO" value="descendantDO"/>
+		</Return>
+	</Method>		
+
+</MethodSet>
+
+<!--
+The contents of this file are subject to the End-User Software License Agreement (the "License"). You may not use this 
+file except in compliance with the License. A current copy of the License is available by contacting product support.
+
+Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights and limitations under the License.
+-->

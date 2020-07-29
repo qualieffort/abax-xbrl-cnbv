@@ -1,0 +1,51 @@
+{
+  "IdConceptos": [
+    "ar_pros_ShareholderNameCorporateName",
+    "ar_pros_ShareholderFirstName",
+    "ar_pros_ShareholderSecondName",
+    "ar_pros_ShareholderShareholding",
+    "ar_pros_ShareholderAdditionalInformation"
+  ],
+  "PlantillasContextos": {
+    "BeneficialShareholdersOfMoreThan10Member": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2014_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_TypeOfCompanyShareholdersAxis",
+          "IdItemMiembro": "ar_pros_BeneficialShareholdersOfMoreThan10Member",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfCompanyShareholdersAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:BeneficialShareholdersOfMoreThan10Member"
+        }
+      ]
+    }
+  },
+  "PlantillaDimensiones": {
+    "ar_pros_TypeOfCompanyShareholdersAxis": {
+      "PrefijoValor": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:",
+      "SubfijoValor": "",
+      "EtiquetaNuevoElemento": "BeneficialShareholdersOfMoreThan10Member",
+      "Explicita": true,
+      "IdDimension": "ar_pros_TypeOfCompanyShareholdersAxis",
+      "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:TypeOfCompanyShareholdersAxis"
+    },
+    "ar_pros_CompanyShareholdersSequenceTypedAxis": {
+      "PrefijoValor": "<ar_pros:CompanyShareholdersSequenceDomain xmlns:ar_pros=\"http://www.cnbv.gob.mx/2016-08-22/ar_prospectus\">",
+      "SubfijoValor": "</ar_pros:CompanyShareholdersSequenceDomain>",
+      "EtiquetaNuevoElemento": "1",
+      "Explicita": false,
+      "IdDimension": "ar_pros_CompanyShareholdersSequenceTypedAxis",
+      "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:CompanyShareholdersSequenceTypedAxis"
+    }
+  },
+  "DimensionesDinamicas": [
+    "ar_pros_CompanyShareholdersSequenceTypedAxis"
+  ],
+  "MaxColumnasVertical": 6,
+  "MaxColumnasHorizontal": 0,
+  "TamanoHoja": "Letter"
+}

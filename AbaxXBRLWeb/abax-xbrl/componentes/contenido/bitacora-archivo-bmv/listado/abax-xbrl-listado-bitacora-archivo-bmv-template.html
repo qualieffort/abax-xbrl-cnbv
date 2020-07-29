@@ -1,0 +1,167 @@
+﻿<section>
+    <section class="vbox">
+        <section class="scrollable padder">
+            <section class="panel panel-default">
+                <header class="panel-heading">
+                    {{'TITULO_BITACORA_ARCHIVOS_BMV' | translate}}
+                </header>
+                <div class="row wrapper">
+                    <div class="col-sm-4">
+                        <button type="button"
+                                class="btn btn-sm btn-default"
+                                ng-click="exportaAExcel()"
+                                ng-if="puedeExportarExcel"
+                                ng-hide="estaExportandoExcel">
+                            <i class="i i-file-excel"></i>
+                            {{'ETIQUETA_EXPORTAR' | translate}}
+                        </button>
+                        <button type="button" class="btn btn-sm btn-default" ng-if="estaExportandoExcel" disabled>
+                            <i class="fa fa-refresh fa-spin"></i>
+                            {{'MENSAJE_INFO_EXPORTANDO' | translate}} ...
+                        </button>
+                    </div>
+
+                    <div class="col-sm-7 m-b-xs text-center">
+                        <div class="row">
+                            <label for="filtroEstadoBitacora" class="col-sm-2">
+                                {{'ETIQUETA_ESTADO' | translate}}
+                            </label>
+                            <select name="filtroEstadoBitacora"
+                                    ng-model="filtroEstadoBitacora"
+                                    ng-change="onChangeFiltroEstado()"
+                                    ng-options="opcion as opcion.Etiqueta for opcion in opcionesFiltroEstado"
+                                    class="col-sm-3 m-b"></select>
+                        </div>
+                        
+                    </div>
+                    <div class="col-sm-1 m-b-xs text-right" id="botonesDerechaBitacoraVersionDocumentos">
+                        
+                        
+                        <button type="button"
+                                name="create"
+                                class="btn btn-sm btn-default debajo"
+                                ng-click="onChangeFiltroEstado()"
+                                ng-if="puedeReprocesarDocumentos"
+                                ng-hide="estaCargandoListadoElementos">
+                            <i class="fa fa-refresh"></i>
+                            {{'ETIQUETA_BOTON_REFRESCAR_DATOS' | translate}}
+                        </button>
+                        <button type="button"
+                                class="btn btn-sm btn-default debajo"
+                                ng-hide="!estaCargandoListadoElementos"
+                                disabled="disabled">
+                            <i class="fa fa-refresh fa-spin"></i>
+                            {{'MENSAJE_INFO_CARGANDO_DATOS' | translate}} ...
+                        </button>
+
+                    </div>
+                </div>
+            </section>
+            <section class="panel panel-default">
+                <header class="panel-heading bg-light">
+                    {{'ETIQUETA_LISTADO_ENVIOS' | translate}}
+                </header>
+
+                <div class="panel-body font-bold" style="background: #eeeeee; padding-left: 30px" ng-if="estaCargandoListadoElementos">
+                    <i class="fa fa-refresh fa-spin"></i>
+                    {{'MENSAJE_INFO_CARGANDO_ELEMENTOS' | translate}} ...
+                </div>
+                <div class="panel-body font-bold text-danger" style=" background: #eeeeee; padding-left: 30px" ng-if="!estaCargandoListadoElementos && !existenElementos">
+                    <i class="fa fa-warning"></i>
+                    {{'MENSAJE_WARNING_NO_EXISTEN_ELEMENTOS_LISTAR' | translate}}
+                </div>
+                <div ng-if="!estaCargandoListadoElementos && existenElementos">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="dataTables_length" id="DataTables_Table_0_length">
+                                <label>
+                                    {{'ETIQUETA_MOSTRAR' | translate}}
+                                    <select class="" ng-model="paginacion.RegistrosPorPagina" ng-change="obtenerListadoElementos()">
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                    </select> 
+                                    {{'ETIQUETA_MINUSCULAS_REGISTROS' | translate}}
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6" />
+                    </div>
+
+                    <div class="table-responsive">
+                        <table id="listadoElementos" class="table table-striped b-t b-light">
+                            <thead>
+                                <tr>
+
+                                    <th class="th-sortable" data-toggle="class">{{'ETIQUETA_FECHA_PROCESO' | translate }}</th>
+                                    <th class="th-sortable" data-toggle="class">{{'ETIQUETA_ESTADO' | translate }}</th>
+                                    <th class="th-sortable" data-toggle="class">{{'ETIQUETA_ARCHIVO_EMISORAS_PROCESADO' | translate }}</th>
+                                    <th class="th-sortable" data-toggle="class">{{'ETIQUETA_ARCHIVO_FIDEICOMISO_PROCESADO' | translate }}</th>
+                                    <th class="th-sortable" data-toggle="class">{{'ETIQUETA_NUMERO_REGISTROS_PROCESADOS_EMISORAS' | translate }}</th>
+                                    <th class="th-sortable" data-toggle="class">{{'ETIQUETA_NUMERO_REGISTROS_PROCESADOS_FIDEICOMISOS' | translate }}</th>
+                                    <th class="th-sortable" data-toggle="class">{{'ETIQUETA_NUMERO_REGISTROS_PROCESADOS_FIDEICOMISOS' | translate }}</th>
+                                    <th class="th-sortable" data-toggle="class">{{'TITULO_DETALLE' | translate }}</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody dir-paginate="elemento in listadoElementos | itemsPerPage: paginacion.RegistrosPorPagina"
+                                   total-items="paginacion.TotalRregistros"
+                                   current-page="paginacion.PaginaActual"
+                                   ng-class="{'seleccionado':elemento.Seleccionado,'sin-seleccionar':elemento.Seleccionado}">
+                                <tr class="documento">
+
+                                    <td style="text-align:center;">{{elemento.FechaRegistro}}</td>
+
+                                    <td style="text-align:center;">
+                                        <a href="javascript:void(0);" title="{{elemento.DescripcionEstado | translate}}" class="marcador-icono">
+                                            <i ng-if="elemento.Estatus == 0" class="fa fa-exclamation-circle text-warning icono"></i>
+                                            <i ng-if="elemento.Estatus == 1" class="fa fa-check-circle text-success icono"></i>
+                                            <i ng-if="elemento.Estatus == 2" class="fa fa-times-circle text-danger icono"></i>
+                                        </a>
+                                    </td>
+                                    <td style="text-align:center;">{{elemento.NombreArchivoEmisoras}}</td>
+                                    <td style="text-align:center;">{{elemento.NombreArchivoFideicomisos}}</td>
+                                    <td style="text-align:center;">{{elemento.NumeroEmisorasReportadas}}</td>
+                                    <td style="text-align:center;">{{elemento.NumeroFideicomisosReportados}}</td>
+                                    <td style="text-align:center;">{{elemento.NumeroFideicomisosReportados}}</td>
+                                    <td style="text-align:center;"><a ng-click="elemento.MostrarDetalle=!elemento.MostrarDetalle" class="btn btn-s-md btn-default btn-rounded">Ver</a></td>
+                                </tr>
+                                <tr class="documento" ng-show="elemento.MostrarDetalle">
+                                    <td colspan="8">
+                                        <json-formatter json="elemento.InformacionSalidaJson" open="1"></json-formatter>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <dir-pagination-controls on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
+                </div>
+                <footer class="panel-footer ">
+                    <div class="row">
+                        <div class="col-sm-4 hidden-xs">
+                            <button type="button"
+                                    class="btn btn-sm btn-default"
+                                    ng-click="exportaAExcel()"
+                                    ng-if="puedeExportarExcel"
+                                    ng-hide="estaExportandoExcel">
+                                <i class="i i-file-excel"></i>
+                                {{'ETIQUETA_EXPORTAR' | translate}}
+                            </button>
+                            <button type="button" class="btn btn-sm btn-default" ng-if="estaExportandoExcel" disabled>
+                                <i class="fa fa-refresh fa-spin"></i>
+                                {{'MENSAJE_INFO_EXPORTANDO' | translate}} ...
+                            </button>
+                        </div>
+                        <div class="col-sm-4 text-center">
+                            <small class="text-muted inline m-t-sm m-b-sm"></small>
+                        </div>
+                        <div class="col-sm-4 text-right text-center-xs"></div>
+                    </div>
+                </footer>
+            </section>
+        </section>
+    </section>
+</section>

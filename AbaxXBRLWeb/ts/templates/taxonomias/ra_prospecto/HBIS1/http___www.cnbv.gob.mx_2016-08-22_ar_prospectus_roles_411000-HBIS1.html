@@ -1,0 +1,91 @@
+<xbrl-contenedor-formato xbrl:rol-uri="{{xbrlRol.Uri}}" orientacion="landscape" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+
+        <table class="tablaAnchoFijo" cellspacing="5">
+
+            <tbody>
+                <tr>
+                    <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_GeneralDataAbstract" xbrl:nivel-indentacion="0"></b></td>
+                    <td style="text-align:left; width:50%; height:40px;">&nbsp;</td>
+                </tr>
+                <tr ng-if="documentoInstancia.ParametrosConfiguracion['tipoReporte'] == 'pp' || documentoInstancia.ParametrosConfiguracion['tipoReporte'] == 'pe'">
+                    <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_PlacementProspectus" xbrl:nivel-indentacion="1"></b></td>
+                    <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_PlacementProspectus_396ee96a-4022-4239-a86e-df9d36cc40cf"></xbrl:campo-captura></td>
+               </tr>
+                <tr ng-if="documentoInstancia.ParametrosConfiguracion['tipoReporte'] == 'pp' || documentoInstancia.ParametrosConfiguracion['tipoReporte'] == 'pe'">
+                    
+                    <td colspan="2">
+                        <div class="etiquetaConceptoTitulo">
+                            <label>
+                                <b>
+                                    <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ProspectusLegend" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                                </b>
+                            </label>
+                            <b>:</b>
+                        </div>
+                        <div class="bloqueTexto" style="width:100%">
+                            <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_ProspectusLegend_57d2c5d5-8a35-4c90-b5dd-8fe1b29a7089"></xbrl:campo-captura>
+                        </div>
+                    </td>
+                 </tr>
+                <tr ng-if="documentoInstancia.ParametrosConfiguracion['tipoReporte'] == 'pp' || documentoInstancia.ParametrosConfiguracion['tipoReporte'] == 'pe'">
+                    <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_OnlyEmission" xbrl:nivel-indentacion="2"></b></td>
+                    <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_OnlyEmission_f94a5de3-f508-4b46-a6bc-5738babb00d6"></xbrl:campo-captura></td>
+                </tr>
+                <tr ng-if="documentoInstancia.ParametrosConfiguracion['tipoReporte'] == 'su'">
+                    <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_Supplement" xbrl:nivel-indentacion="1"></b></td>
+                    <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_Supplement_cac26d6a-249a-418e-81ad-7c166c05e7e3"></xbrl:campo-captura></td>
+                </tr>
+                <tr ng-if="documentoInstancia.ParametrosConfiguracion['tipoReporte'] == 'su'">
+                    <td colspan="2">
+                        <div class="etiquetaConceptoTitulo">
+                            <label>
+                                <b>
+                                    <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SupplementLegend" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                                </b>
+                            </label>
+                            <b>:</b>
+                        </div>
+                        <div class="bloqueTexto" style="width:100%">
+                            <xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_SupplementLegend_ee15cb0b-608d-4039-8dfd-e7c7364e3783"></xbrl:campo-captura>
+                        </div>
+                    </td>
+                </tr>
+                <tr ng-if="documentoInstancia.ParametrosConfiguracion['tipoReporte'] == 'fo'">
+                    <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_Brochure" xbrl:nivel-indentacion="1"></b></td>
+                    <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_Brochure_5b7b4b4d-67de-4a6b-90fa-999f868bbd85"></xbrl:campo-captura></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="etiquetaConceptoTitulo"><label><b> <xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_RecentEvents" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></b></label><b>:</b></div>
+                        <div class="bloqueTexto"><xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_RecentEvents_d0143545-32ab-45da-8e36-fd7972852abc"></xbrl:campo-captura></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_IssuanceUnderArt13OfTheCUE" xbrl:nivel-indentacion="1"></b></td>
+                    <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_IssuanceUnderArt13OfTheCUE_2931c1f3-e179-4a15-a4bc-3bb3c6c82d24"></xbrl:campo-captura></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_LimitedPublicOffering" xbrl:nivel-indentacion="1"></b></td>
+                    <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_LimitedPublicOffering_54f65357-c03f-4807-9df3-72e435fcc4ef"></xbrl:campo-captura></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_TypeOfInstrument" xbrl:nivel-indentacion="1"></b></td>
+                    <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_TypeOfInstrumentDescription-0000-0000-0000-0000000000"></xbrl:campo-captura></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ForeingIssuer" xbrl:nivel-indentacion="1"></b></td>
+                    <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_ForeingIssuer_0c9582eb-f8e4-4c8d-9e1c-c80bc1605708"></xbrl:campo-captura></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_MentioningwhetherOrNotHaveCollateral" xbrl:nivel-indentacion="1"></b></td>
+                    <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_MentioningwhetherOrNotHaveCollateral_28b5ec08-1322-409b-9148-4790f4485884"></xbrl:campo-captura></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_MentioningPartialOrTotalDependencePros" xbrl:nivel-indentacion="1"></b></td>
+                    <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_MentioningPartialOrTotalDependencePros_259aae01-d2dd-4371-bb0f-ba7af86fe0eb" xbrl:ultimo="true"></xbrl:campo-captura></td>
+                </tr>
+       
+            </tbody>
+        </table>
+
+</xbrl-contenedor-formato>

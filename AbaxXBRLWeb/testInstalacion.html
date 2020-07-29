@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <form action="/ValidarHerramienta/ValidarServicios" method="post" enctype="multipart/form-data" name="frm">
+
+        <table>
+            <thead>
+                <tr width="100%">
+                    <th width="50%">Validación</th>
+                    <th width="50%">Parámetro de entrada</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="height:50px;">
+                    <td>Validación de correo electronico</td>
+                    <td>Correo: <input name="correoElectronico" id="correoElectronico" type="text" /></td>
+                </tr>
+                
+
+                <tr style="height:50px;">
+                    <td>Validación de permisos de carpeta</td>
+                    <td>Archivo:<input type="file" value="Archivo" name="archivo" id="archivo" /></td>
+                </tr>
+
+                <tr style="height:50px;">
+                    <td>Validación de conexión directorio Activo</td>
+                    <td>Id Usuario: <input name="idUsuario" id="idUsuario" type="text" /></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2"><hr /></td>
+                </tr>
+                <tr style="height:50px;">
+                    <td>Validación de conexión de Base de Datos</td>
+                    <td>Sin parametro requerido</td>
+                </tr>
+
+                <tr style="height:50px;">
+                    <td>Validación de Taxonomia</td>
+                    <td>Sin parametro requerido</td>
+                </tr>
+
+
+
+            </tbody>
+
+        </table>
+        
+        <input type="submit" value="Validar Herramienta" />
+
+    </form>
+</body>
+</html>

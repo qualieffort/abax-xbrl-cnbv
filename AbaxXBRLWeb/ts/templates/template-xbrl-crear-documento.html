@@ -1,0 +1,79 @@
+﻿<section>
+    <section class="vbox">
+        <section class="scrollable wrapper" slimscroll="{size: '10px', height: 'auto'}" slimscrolllistento="resize::resize">
+            <div class="m-b-md">
+                <h3 class="m-b-none">{{'ETIQUETA_CREAR_DOCUMENTO_INSTANCIA_XBRL' | translate}}</h3>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <section class="panel panel-default">
+                        <header class="panel-heading">
+                            <ul class="nav nav-tabs nav-tabs-dark font-bold">
+                                <li><a href="javascript:void();" data-toggle="tab1">{{'ETIQUETA_DOCUMENTO_A_CREAR' | translate}}</a></li>
+                                <li class="active"><a href="javascript:void();" data-toggle="tab2">{{'ETIQUETA_CARACTERISTICAS_DOCUMENTO' | translate}}</a></li>
+                            </ul>
+                        </header>
+
+
+                        <section class="panel-body">
+                            <p>{{'ETIQUETA_INDIQUE_COMO_CREAR_DOCUMENTO_INSTANCIA' | translate}}</p>
+                            <div class="line line-lg"></div>
+
+                            <div class="progress progress-xs m-t-md">
+                                <div class="progress-bar bg-success" style="width: 50%;"></div>
+                            </div>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="step1">
+
+                                    <div class="radio i-checks">
+                                        <label>
+                                            <input type="radio" name="tipoOrigen" id="tipoOrigenPlantilla" value="{{tipoOrigenPlantilla}}" ng-model="tipoCreacion">
+                                            <i></i>
+                                            {{'ETIQUETA_CREAR_DOCUMENTO_POR_PLANTILLA' | translate}}
+                                        </label>
+                                    </div>
+                                    <p>{{'ETIQUETA_CREAR_DOCUMENTO_POR_PLANTILLA_NOTA' | translate}}</p>
+                                    <div>&nbsp;</div>
+                                    <div class="radio i-checks">
+                                        <label>
+                                            <input type="radio" name="tipoOrigen" id="tipoOrigenImportar" value="{{tipoOrigenImportar}}" ng-model="tipoCreacion">
+                                            <i></i>
+                                            {{'ETIQUETA_IMPORTAR_DOCUMENTO_INSTANCIA' | translate}}
+                                        </label>
+                                    </div>
+                                    <p>{{'ETIQUETA_IMPORTAR_DOCUMENTO_INSTANCIA_NOTA' | translate}}</p>
+                                    <div>&nbsp;</div>
+                                    <!--div class="radio i-checks">
+                                        <label>
+                                            <input type="radio" name="tipoOrigen" id="tipoOrigenTaxonomia" value="{{tipoOrigenGenerico}}" ng-model="tipoCreacion">
+                                            <i></i>
+                                            {{'ETIQUETA_CREAR_DOCUMENTO_POR_EDITOR_ESTANDAR'| translate}}
+                                        </label>
+                                    </div-->
+                                    <!--p>{{'ETIQUETA_CREAR_DOCUMENTO_POR_EDITOR_ESTANDAR_NOTA'| translate}}</p-->
+                                </div>
+                                <div>&nbsp;</div>
+
+                                <div class="tab-pane" id="step3"></div>
+
+                            </div>
+                        </section>
+                        <footer class="panel-footer">
+                            <ul class="pager wizard m-b-sm">
+
+                                <li class="previous disabled"><a href="javascript:void();">{{'ETIQUETA_ANTERIOR' | translate}}</a></li>
+
+                                <li class="next">
+                                    <a href="javascript:void(0);" ui-sref="inicio.editorXBRL.elegirPlantilla" ng-if="tipoCreacion == tipoOrigenPlantilla">{{'ETIQUETA_SIGUIENTE' | translate}}</a>
+                                    <a href="javascript:void(0);" ui-sref="inicio.editorXBRL.importarArchivo" ng-if="tipoCreacion == tipoOrigenImportar">{{'ETIQUETA_SIGUIENTE' | translate}}</a>
+                                    <a href="javascript:void(0);" ui-sref="inicio.editorXBRL.elegirTaxonomia" ng-if="tipoCreacion == tipoOrigenGenerico">{{'ETIQUETA_SIGUIENTE' | translate}}</a>
+                                </li>
+                            </ul>
+                        </footer>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </section>
+</section>

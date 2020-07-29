@@ -1,0 +1,55 @@
+﻿
+<div class="modal-header">
+    <button type="button" class="close" aria-hidden="true" ng-click="cerrarDialogo()">&times;</button>
+    <div class="row m-t-sm">
+        <div class="col-sm-10 m-b-xs">
+            <h4 class="modal-title"> {{'CONSULTA_XBRL_SELECCIONE_DIMENSIONES'|translate}}  </h4>
+        </div>
+    </div>
+</div>
+<div class="modal-body" style="min-height: 500px;max-height: 500px;overflow: scroll;">
+
+
+    <div class="panel-group m-b" id="accordion2">
+        <div class="panel panel-default" ng-repeat="dimensionRenglon in dimensiones">
+            <div class="panel-heading">
+                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#{{dimensionRenglon.IdDimension}}">
+                    {{'CONSULTA_XBRL_DIMENSION' | translate}} - {{dimensionRenglon.EtiquetasConceptoDimension[idioma].Valor}}
+                </a>
+            </div>
+            <div id="{{dimensionRenglon.IdDimension}}" class="panel-collapse collapse" style="height: 0px;">
+                <div class="panel-body text-sm">
+                    
+                    <div class="row wrapper" style="background-color: rgba(50,50,50,0.05);font-weight:bold;border-bottom: thin #999999 solid;">
+                        <div class="col-sm-2">
+                            <label class="checkbox m-n i-checks">
+                                <input type="checkbox" class="checkall" ng-click="marcarTodosMiembrosDimension(dimensionRenglon.IdDimension)" ng-model="seleccionTodosMiembrosDimension[dimensionRenglon.IdDimension]"><i></i>
+                            </label>
+                        </div>
+                        <div class="col-sm-10">{{'CONSULTA_XBRL_MIEMBRO_DIMENSION' | translate}}</div>
+                    </div>
+
+                    <div class="renglonDimension row wrapper"  ng-repeat="miembroDimension in concepto.InformacionDimensionalPorConcepto[dimensionRenglon.IdDimension]" style="border-bottom: thin #999999 solid;">
+                        <div class="col-sm-2">
+                            <label class="checkbox m-n i-checks">
+                                <input type="checkbox" ng-click="seleccionarMiembroDimension(dimensionRenglon.IdDimension)" ng-model="listaMiembrosDimensionesChecks[dimensionRenglon.IdDimension][miembroDimension.IdItemMiembro]"><i></i>
+                            </label>
+                        </div>
+                        <div class="col-sm-10">{{miembroDimension.EtiquetasConceptoMiembroDimension[idioma].Valor}}</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+<div class="modal-footer">
+    <div ng-if="!guardado">
+        <button type="button" class="btn btn-default" ng-click="cerrarDialogo()">{{'ETIQUETA_BOTON_CANCELAR'|translate}}</button>
+        <button type="submit" class="btn btn-s-md btn-warning" ng-click="asignarValoresDimensionales()">{{'CONSULTA_XBRL_BTN_ACEPTAR'|translate}}</button>
+    </div>
+</div>

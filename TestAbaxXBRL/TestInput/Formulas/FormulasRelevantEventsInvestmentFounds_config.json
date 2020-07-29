@@ -1,0 +1,18 @@
+{
+	"investment_founds_Eventos_relevantes": {
+			"Requeridos_": {
+			"NombreFormula": "Requeridos_",
+			"Expresion":'(squeeze(size(variable1))) > 0 and (variable1 != "INF")',
+			"MensajeExito":"El hecho {variable1} debe ser reportado.",
+			"MensajeError":"El hecho {variable1} debe ser reportado.",
+			"VariablesIteracion":[
+					{"IdConcepto":"rel_news_Ticker", "ValorFallback":"INF"},
+					{"IdConcepto":"rel_news_Date", "ValorFallback":"INF"},
+					{"IdConcepto":"rel_news_BusinessName", "ValorFallback":"INF"},
+                    {"IdConcepto":"rel_news_ParticipantShortName", "ValorFallback":"INF"},
+                    {"IdConcepto":"rel_news_Place", "ValorFallback":"INF"},
+                    {"IdConcepto":"rel_news_Subject", "ValorFallback":"INF"},
+			]
+		}
+	}
+}

@@ -1,2 +1,3 @@
-# abax-xbrl-cnbv
-Módulo para validación procesamiento y almacenamiento en mongo DB para documentos XBRL para reguladores
+# AbaxXBRL
+
+Implementación de una plataforma de reporteo basada en XBRL.

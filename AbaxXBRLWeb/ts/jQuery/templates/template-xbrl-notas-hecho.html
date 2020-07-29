@@ -1,0 +1,44 @@
+﻿<div id="{{idVentanaNotasPieHecho}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
+
+    <div class="modal-dialog modal-lg aside-left">
+        <div class="modal-content" style="height: 100%;overflow-y: auto;overflow-x: hidden;border: none;border-radius: 0;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4> {{'EDITOR_XBRL_TITULO_NOTAS_PIE_PAGINA'| translate}} </h4>
+            </div>
+            <div class="modal-body">
+                <header class="header bg-white b-b clearfix">
+                    <div class="btn-toolbar" style="text-align:right">
+                        <input type="button" value="{{'EDITOR_XBRL_TREGISTRAR_NOTA'| translate}}" class="btn btn-default" id="registrarNota">
+                    </div>
+                </header>
+
+                <section id="contenedorFormatos" class="scrollable wrapper w-f">
+                    <p>{{'EDITOR_XBRL_LISTADO_NOTAS_PIE_PAGINA'|translate}}: {{descripcionHecho}}</p>
+
+                    <table class="table table-striped b-t b-light overflow-y">
+                        <thead>
+                            <tr>
+                                <th style="min-width:200px; width:50px;">Idioma</th>
+                                <th>{{'EDITOR_XBRL_NOTA_PIE_PAGINA' | translate}}</th>
+                            </tr>
+                        </thead>
+                        <tbody id="notasHecho">
+                            <tr id="mensajeHechoSinNotas">
+                                <td colspan="2">{{'EDITOR_XBRL_SIN_NOTAS_PIE_PAGINA' | translate}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </section>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">{{'ETIQUETA_BOTON_CERRAR' | translate}}</button>
+
+            </div>
+        </div>
+    </div>
+
+</div>

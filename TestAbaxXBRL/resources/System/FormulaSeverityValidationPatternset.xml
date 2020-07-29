@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<!--
+Project: Xbrl Processing Engine
+Copyright (c) 2011  EDGAR(r) Online, Inc.
+
+EDGAR(r) is a federally registered trademark of the U.S. Securities and Exchange Commission. EDGAR 
+Online is not affiliated with or approved by the U.S. Securities and Exchange Commission.
+-->
+
+
+<!-- Formula Severity validation patterns --> 
+<PatternSet
+    name="Formula Severity Validation Patterns"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ValidationPatterns.xsd" >
+
+	<!-- http://www.xbrl.org/Specification/assertion-severity/PWD-2014-08-13/assertion-severity-PWD-2014-08-13.html#error-assertion-severity-source -->
+	<!-- SeverityArc must have a Assertion on the 'from' side and severity on the 'to' side -->
+	<Pattern id="xbrlfle_assertionSatisfiedSeverityEndpointsInvalid"
+			 name="ValidateSatisfiedSeverityArcEndPoints"
+			 method="DtsXPath"
+			 value="/'http://xbrl.org/arcrole/2014/assertion-satisfied-severity'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/'http://xbrl.org/2008/generic#arc'ValidateSeverityArcEndPoints()">
+		<Failure severity="error" />
+	</Pattern>
+	<Pattern id="xbrlfle_assertionUnsatisfiedSeverityEndpointsInvalid"
+			 name="ValidateUnsatisfiedSeverityArcEndPoints"
+			 method="DtsXPath"
+			 value="/'http://xbrl.org/arcrole/2014/assertion-unsatisfied-severity'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/'http://xbrl.org/2008/generic#arc'ValidateSeverityArcEndPoints()">
+		<Failure severity="error" />
+	</Pattern>
+	<Pattern id="xbrlfle_multipleSeveritiesForAssertionSatisfied"
+			 name="ValidateMultipleSeveritiesForAssertionSatisfied"
+			 method="DtsXPath"
+			 value="/'http://xbrl.org/arcrole/2014/assertion-satisfied-severity'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/'http://xbrl.org/2008/generic#arc'ValidateMultipleSeveritiesForAssertionSatisfied()">
+		<Failure severity="error" />
+	</Pattern>
+	<Pattern id="xbrlfle_multipleSeveritiesForAssertionUnsatisfied"
+			 name="ValidateMultipleSeveritiesForAssertionUnsatisfied"
+			 method="DtsXPath"
+			 value="/'http://xbrl.org/arcrole/2014/assertion-unsatisfied-severity'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/'http://xbrl.org/2008/generic#arc'ValidateMultipleSeveritiesForAssertionUnsatisfied()">
+		<Failure severity="error" />
+	</Pattern>
+</PatternSet>
+
+<!--
+The contents of this file are subject to the End-User Software License Agreement (the "License"). You may not use this 
+file except in compliance with the License. A current copy of the License is available by contacting product support.
+
+Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights and limitations under the License.
+-->

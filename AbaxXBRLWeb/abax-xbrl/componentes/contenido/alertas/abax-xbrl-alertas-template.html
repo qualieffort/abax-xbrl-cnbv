@@ -1,0 +1,72 @@
+﻿<section>
+    <section class="vbox">
+        <section class="scrollable padder">
+            <section class="row m-b-md">
+                <div class="col-sm-6">
+                    <h3 class="m-b-xs text-black">{{'ETIQUETA_ALERTAS_RECIENTES' | translate}}</h3> 
+                </div>
+            </section>
+            <section class="panel panel-default">
+                <header class="panel-heading bg-light">
+                    {{'ETIQUETA_LISTTADO_ALERTAS_RECIENTES' | translate}}
+                </header>
+                <section class="panel panel-default">
+                    <div class="panel-body" ng-if="cargandoAlertas">
+                        <div ng-class="row">
+                            <p>
+                                <i class="fa fa-refresh fa-spin"></i>
+                                {{'MENSAJE_INFO_CARGANDO_ALERTAS' | translate}} ...
+                            </p>
+                        </div>
+                    </div>
+                    <div class="panel-body" ng-if="!existenAlertasUsuario && !cargandoAlertas">
+                        <div ng-class="row">
+                            <p><i class="fa fa-exclamation"></i> {{'MENSAJE_INFO_SIN_ETIQUETAS' | translate}}</p>
+                        </div>
+                    </div>
+                    <div ng-if="!cargandoAlertas && existenAlertasUsuario ">
+                        <table class="table table-striped b-t b-light" id="tablaAlertas" datatable="" dt-options="dataTableOptions">
+                            <thead>
+                                <tr>
+                                    <th class="th-sortable" data-toggle="class" style="text-align:center;">&nbsp;</th>
+                                    <th class="th-sortable" data-toggle="class">{{'ETIQUETA_ESTADO' | translate}}</th>
+                                    <th class="th-sortable" data-toggle="class">{{'ETIQUETA_FECHA_Y_HORA' | translate}}</th>
+                                    <th class="th-sortable" data-toggle="class">{{'ETIQUETA_DOCUMENTO' | translate}}</th>
+                                    <th class="th-sortable" data-toggle="class">{{'ETIQUETA_ALERTA' | translate}}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-if="!existenAlertasUsuario">
+                                    <td colspan="6">
+                                        {{'MENSAJE_INFO_NO_HAY_ALERTAS_USUARIO' | translate}}.
+                                    </td>
+                                </tr>
+                                <tr ng-if="existenAlertasUsuario" ng-repeat="alerta in alertas">
+                                    <td style="text-align:center;">
+                                        <span class="pull-left thumb-sm avatar m-r">
+                                            <img src="images/a0.png" alt="...">
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="fa-stack pull-left m-r-sm" style="margin-top: 5px; margin-left: 5px;" ng-if="alerta.DocumentoCorrecto">
+                                            <i class="fa fa-circle fa-stack-2x text-success"></i>
+                                            <i class="fa fa-check fa-stack-1x text-white"></i>
+                                        </span>
+                                        <span class="fa-stack pull-left m-r-sm" style="margin-top: 5px; margin-left: 5px;" ng-if="!alerta.DocumentoCorrecto">
+                                            <i class="fa fa-circle fa-stack-2x text-danger"></i><i class="fa fa-exclamation fa-stack-1x text-white"></i>
+                                        </span>
+                                    </td>
+                                    <td style="text-align:center;">{{formateaFechaHora(alerta.Fecha)}}</td>
+                                    <td style="cursor: pointer" ng-click="cargaDocumentoInstancia(alerta.IdDocumentoInstancia)">
+                                        {{alerta.TituloDocumentoInstancia}}
+                                    </td>
+                                    <td>{{alerta.Contenido}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </section>
+        </section>
+    </section>
+</section>

@@ -1,0 +1,142 @@
+﻿<div id="{{idDetalleReferenciaConcepto}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div class="row m-t-sm">
+                    <div class="col-sm-12 m-b-xs">
+                        <h4 class="modal-title"> <span class="font-bold">{{etiquetaConcepto}}</span></h4>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="modal-body">
+                <section class="panel panel-default">
+                    <header class="panel-heading bg-light">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a data-toggle="tab" href="#ref">{{'ETIQUETA_REFERENCIAS'|translate}}</a></li>
+                            <li><a data-toggle="tab" href="#xbrlinfo">{{'ETIQUETA_INFORMACION_XBRL'|translate}}</a></li>
+                        </ul>
+                    </header>
+
+
+                    <div class="panel-body" style="overflow: scroll">
+                        <div class="tab-content">
+                            <div id="ref" class="tab-pane fade in active">
+
+                                <div class="row m-t-sm">
+                                    <div class="col-sm-8 m-b-xs">
+                                        <p>{{'MENSAJE_REFERENCIA' | translate}}</p>
+                                    </div>
+                                    <div class="col-sm-2 m-b-xs">
+                                        <a href="javascript:void(0);" class="btn btn-rounded btn-sm btn-icon btn-default" id="{{idBtnReferenciaAtras}}"><i class="fa fa-arrow-left"></i></a>
+                                        &nbsp;&nbsp;&nbsp;
+                                        <a href="javascript:void(0);" class="btn btn-rounded btn-sm btn-icon btn-default" id="{{idBtnReferenciaAdelante}}"><i class="fa fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+
+
+                                <table class="table table-striped b-t b-light overflow-y">
+                                    <thead>
+                                        <tr>
+                                            <th style="min-width:50px; width:50px;">{{'ETIQUETA_PARTE' | translate}}</th>
+                                            <th style="min-width:200px; width:200px;">{{'ETIQUETA_VALOR' | translate}}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="{{idDetalleReferencias}}">
+                                        <tr id="tr_no_existe">
+                                            <td colspan="2">
+                                                {{'ETIQUETA_NO_EXISTEN_REFERENCIAS' | translate}}
+                                            </td>
+                                        </tr>
+                                        {{detalleReferencias}}
+
+                                    </tbody>
+                                </table>
+                                <div class="" id="seccionDocumentacion">
+                                    <b>{{'ETIQUETA_DOCUMENTACION' | translate}}:</b><br />
+                                    {{documentacion}}
+                                </div>
+                            </div>
+                            <div id="xbrlinfo" class="tab-pane fade">
+                                <p>{{'ETIQUETA_INFORMACION_ELEMENTO_XBRL' | translate}}</p>
+                                <br />
+                                <table class="table table-striped b-t b-light overflow-y">
+
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <b>{{'ETIQUETA_ESPACIO_NOMBRES_CONCEPTO' | translate}}</b>
+                                            </td>
+                                            <td>
+                                                {{espacioNombresConcepto}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <b>{{'ETIQUETA_NOMBRE_CONCEPTO' | translate}}</b>
+                                            </td>
+                                            <td>
+                                                {{nombreConcepto}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <b>{{'ETIQUETA_ID_CONCEPTO' | translate}}</b>
+                                            </td>
+                                            <td>
+                                                {{idConcepto}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <b>{{'ETIQUETA_TIPO_DATO_CONCEPTO' | translate}}</b>
+                                            </td>
+                                            <td>
+                                                {{tipoDatoConcepto}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <b>{{'ETIQUETA_TIPO_CONCEPTO' | translate}}</b>
+                                            </td>
+                                            <td>
+                                                {{tipoConcepto}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <b>{{'ETIQUETA_ABSTRACTO' | translate}}</b>
+                                            </td>
+                                            <td>
+                                                {{conceptoAbstracto}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <b>{{'ETIQUETA_ETIQUETAS' | translate}}</b>
+
+                                            </td>
+                                        </tr>
+                                        {{detalleEtiquetas}}
+                                    </tbody>
+                                </table>
+
+
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">{{'ETIQUETA_BOTON_CERRAR' | translate}}</button>
+
+            </div>
+        </div>
+    </div>
+</div>

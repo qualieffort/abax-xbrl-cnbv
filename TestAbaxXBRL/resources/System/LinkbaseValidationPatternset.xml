@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<!--
+Project: Xbrl Processing Engine
+Copyright (c) 2011  EDGAR(r) Online, Inc.
+
+EDGAR(r) is a federally registered trademark of the U.S. Securities and Exchange Commission. EDGAR 
+Online is not affiliated with or approved by the U.S. Securities and Exchange Commission.
+-->
+
+<PatternSet
+
+    name="LinkbaseValidationPatterns"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ValidationPatterns.xsd" >
+    <Pattern id="ValidateLinkbasesAgainstSchema" 
+			name="ValidateLinkbasesAgainstSchema" 
+			method="DtsXPath" 
+			value="ValidateLinkbases()">			
+         <Failure>
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Taxonomy#InstanceDocumentFailedToValidateLinkbasesAgainstSchema" />
+         </Failure>
+    </Pattern>     
+
+     <Pattern id="ValidateArcHasArcRole" 
+  			name="ValidateArcHasArcRole" 
+  			method="DtsXPath" 
+  			value="/'relationship://ubmatrix.com/Xbrl/Relationship#LinkbaseReference'[(hasAttr('http://www.w3.org/1999/xlink#arcrole')) and (attr('http://www.w3.org/1999/xlink#arcrole') != 'http://www.w3.org/1999/xlink/properties/linkbase')]">		
+           <Failure severity="error">
+                      <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#ArcDoesNotHaveArcRoleClassifies" />
+           </Failure>
+     </Pattern>  
+
+     <Pattern id="ValidateDuplicateArcRoleRef" 
+  			name="ValidateDuplicateArcRoleRef" 
+  			method="DtsXPath" 
+  			value="/'domain://ubmatrix.com/Xbrl/Linkbase#Linkbase'ValidateDuplicateArcRoleRef()">		
+           <Failure severity="error">
+                      <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#LinkbaseOrInstanceMustNotHaveDuplicateArcRoleRef" />
+           </Failure>
+     </Pattern>  
+
+     <Pattern id="ValidateDuplicateRoleRef" 
+  			name="ValidateDuplicateRoleRef" 
+  			method="DtsXPath" 
+  			value="/'domain://ubmatrix.com/Xbrl/Linkbase#Linkbase'ValidateDuplicateRoleRef()">		
+           <Failure severity="error">
+                      <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#LinkbaseOrInstanceMustNotHaveDuplicateRoleRef" />
+           </Failure>
+     </Pattern>  
+
+     <Pattern id="ValidateXbrlArcEquivalency" 
+  			name="ValidateXbrlArcEquivalency" 
+  			method="DtsXPath"   			
+  			value="ValidateXbrlArcEquivalency()">
+           <Failure severity="error">
+                      <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#DuplicateXbrlArc" />
+           </Failure>
+     </Pattern>  
+
+
+     <!-- Xlink arc equivalency does not pay attention to order or any such attributes. Within an extended link, if two arcs have same from and to, they are duplicate -->     
+      
+     <Pattern id="ValidateXLinkArcEquivalency" 
+   			name="ValidateXLinkArcEquivalency" 
+   			method="DtsXPath"    			
+   			value="/'domain://ubmatrix.com/Xbrl/Linkbase#Link'ValidateXLinkArcEquivalency()"
+   			processOverrides="false">
+   	   <Failure severity="warning">   
+		      <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#DuplicateXLinkArc" />
+           </Failure>
+     </Pattern>  
+
+
+     <!-- labelArc -->
+     <Pattern id="vr_labelArc_to_297" 
+			name="ValidateLabelArcToEndPoints" 
+			method="DtsXPath" 
+			value="/+'http://www.xbrl.org/2003/linkbase#labelArc'/'*'Exclude(http://www.xbrl.org/2003/linkbase#label)"
+			processOverrides="false">		
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#LabelArcToSideDoesNotHaveLabel" />
+         </Failure>
+    </Pattern>  
+    
+    <Pattern id="vr_labelArc_from_297" 
+			name="ValidateLabelArcFromEndPoints" 
+			method="DtsXPath" 
+			value="/-'http://www.xbrl.org/2003/linkbase#labelArc'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#Concept)"
+			processOverrides="false">		
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#LabelArcFromSideDoesNotHaveConcept" />
+         </Failure>
+    </Pattern>      
+    
+     <!-- referenceArc -->
+     <Pattern id="vr_referenceArc_to_305" 
+			name="ValidateReferenceArcToEndPoints" 
+			method="DtsXPath" 
+			value="/+'http://www.xbrl.org/2003/linkbase#referenceArc'/'*'Exclude(http://www.xbrl.org/2003/linkbase#reference)"
+			processOverrides="false">
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#ReferenceArcToSideDoesNotHaveReference" />
+         </Failure>
+    </Pattern>  
+    
+    <Pattern id="vr_referenceArc_from_305" 
+			name="ValidateReferenceArcFromEndPoints" 
+			method="DtsXPath" 
+			value="/-'http://www.xbrl.org/2003/linkbase#referenceArc'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#Concept)"
+			processOverrides="false">
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#ReferenceArcFromSideDoesNotHaveConcept" />
+         </Failure>
+    </Pattern>      
+
+    <!-- presentationArc -->
+    <Pattern id="vr_presentationArc_to_314" 
+			name="ValidatePresentationArcToEndPoints" 
+			method="DtsXPath" 
+			value="/+'http://www.xbrl.org/2003/linkbase#presentationArc'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#Concept)"
+			processOverrides="false">
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#PresentationArcToSideDoesNotHaveConcept" />
+         </Failure>
+    </Pattern>  
+    
+    <Pattern id="vr_presentationArc_from_314" 
+			name="ValidatePresentationArcFromEndPoints" 
+			method="DtsXPath" 
+			value="/-'http://www.xbrl.org/2003/linkbase#presentationArc'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#Concept)"
+			processOverrides="false">
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#PresentationArcFromSideDoesNotHaveConcept" />
+         </Failure>
+    </Pattern>      
+
+    <!-- calculationArc -->
+    <Pattern id="vr_calculationArc_to_325" 
+			name="ValidateCalculationArcToEndPoints" 
+			method="DtsXPath" 
+			value="/+'http://www.xbrl.org/2003/linkbase#calculationArc'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept)"
+			processOverrides="false">
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#CalculationArcToSideDoesNotHaveConcept" />
+         </Failure>
+    </Pattern>  
+    
+    <Pattern id="vr_calculationArc_from_325" 
+			name="ValidateCalculationArcFromEndPoints" 
+			method="DtsXPath" 
+			value="/-'http://www.xbrl.org/2003/linkbase#calculationArc'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept)"
+			processOverrides="false">
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#CalculationArcFromSideDoesNotHaveConcept" />
+         </Failure>
+    </Pattern>      
+
+    <Pattern id="vr_calculationArc_fromto_Numeric" 
+			name="ValidateCalculationArcFromEndPointAsNumeric" 
+			method="DtsXPath" 
+			value="/'http://www.xbrl.org/2003/linkbase#calculationArc'[/^-'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/'http://www.xbrl.org/2003/arcrole/summation-item']!endpointsAreDataType(xbrli:numeric)"
+			processOverrides="false">
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#CalculationArcEndPointInNotNumeric" />
+         </Failure>
+    </Pattern>      
+
+    <!-- footnoteArc -->   
+    <Pattern id="vr_footnoteArc_to_225" 
+   			name="ValidateCalculationArcToEndPoints" 
+   			method="DtsXPath" 
+   			value="/'http://www.xbrl.org/2003/arcrole/fact-footnote'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/+'http://www.xbrl.org/2003/linkbase#footnoteArc'/'*'Exclude(http://www.xbrl.org/2003/linkbase#footnote,SubstitutionGroup)"
+   			processOverrides="false">
+            <Failure severity="error">
+                       <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#FootnoteArcToSideDoesNotHaveFactFootnote" />
+            </Failure>
+    </Pattern>  
+       
+    <Pattern id="vr_footnoteArc_from_225" 
+   			name="ValidateCalculationArcFromEndPoints" 
+   			method="DtsXPath" 
+   			value="/'http://www.xbrl.org/2003/arcrole/fact-footnote'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/-'http://www.xbrl.org/2003/linkbase#footnoteArc'/'*'Exclude(domain://ubmatrix.com/Xbrl/Instance#Fact)"
+   			processOverrides="false">		
+            <Failure severity="error">
+                       <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#FootnoteArcFromSideDoesNotHaveFact" />
+            </Failure>
+    </Pattern>  
+    
+    <!-- definitionArc -->
+    <Pattern id="vr_definitionArc_to_335" 
+       			name="ValidateDefinitionArcToEndPoints" 
+       			method="DtsXPath" 
+       			value="/+'http://www.xbrl.org/2003/linkbase#definitionArc'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#Concept)"
+       			processOverrides="false">
+                <Failure severity="error">
+                           <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#DefinitionArcToSideDoesNotHaveConcept" />
+                </Failure>
+        </Pattern>  
+           
+        <Pattern id="vr_definitionArc_from_335" 
+       			name="ValidateDefinitionArcFromEndPoints" 
+       			method="DtsXPath" 
+       			value="/-'http://www.xbrl.org/2003/linkbase#definitionArc'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#Concept)"
+       			processOverrides="false">		
+                <Failure severity="error">
+                           <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#DefinitionArcFromSideDoesNotHaveConcept" />
+                </Failure>
+    </Pattern>  
+
+    <!-- 4 different arcroles for definitionArc -->
+    <Pattern id="vr_general_special_definitionArc_to_335" 
+   			name="ValidateGeneralSpecialDefinitionArcToEndPoints" 
+   			method="DtsXPath" 
+   			value="/'http://www.xbrl.org/2003/arcrole/general-special'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/+'http://www.xbrl.org/2003/linkbase#definitionArc'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#Concept)"
+   			processOverrides="false">		
+            <Failure severity="error">
+                       <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#GeneralSpecialDefinitionArcToSideDoesNotHaveConcept" />
+            </Failure>
+    </Pattern>      
+    
+    <Pattern id="vr_general_special_definitionArc_from_335" 
+   			name="ValidateGeneralSpecialDefinitionArcFromEndPoints" 
+   			method="DtsXPath" 
+   			value="/'http://www.xbrl.org/2003/arcrole/general-special'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/-'http://www.xbrl.org/2003/linkbase#definitionArc'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#Concept)"
+   			processOverrides="false">		
+            <Failure severity="error">
+                       <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#GeneralSpecialDefinitionArcFromSideDoesNotHaveConcept" />
+            </Failure>
+    </Pattern>      
+
+     <Pattern id="vr_essence_alias_definitionArc_equivelent_datatypes" 
+  			name="ValidateXLinkArc" 
+  			method="DtsXPath" 
+  			value="!EndpointsAreSameDataType(/'http://www.xbrl.org/2003/arcrole/essence-alias'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/-'http://www.xbrl.org/2003/linkbase#definitionArc')" >  			
+           <Failure severity="error">
+                      <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#EssenceAliasDefinitionArcHasEndpointsThatAreNotSameDatatype" />
+           </Failure>
+     </Pattern>    
+
+    <Pattern id="vr_essence_alias_definitionArc_to_335" 
+   			name="ValidateEssenceAliasDefinitionArcToEndPoints" 
+   			method="DtsXPath" 
+   			value="/'http://www.xbrl.org/2003/arcrole/essence-alias'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/+'http://www.xbrl.org/2003/linkbase#definitionArc'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept)"
+   			processOverrides="false">		
+            <Failure severity="error">
+                       <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#EssenceAliasDefinitionArcToSideDoesNotHaveConcept" />
+            </Failure>
+    </Pattern>      
+
+    
+    <Pattern id="vr_essence_alias_definitionArc_from_335" 
+   			name="ValidateEssenceAliasDefinitionArcFromEndPoints" 
+   			method="DtsXPath" 
+   			value="/'http://www.xbrl.org/2003/arcrole/essence-alias'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/-'http://www.xbrl.org/2003/linkbase#definitionArc'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept)"
+   			processOverrides="false">		
+            <Failure severity="error">
+                       <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#EssenceAliasDefinitionArcFromSideDoesNotHaveConcept" />
+            </Failure>
+    </Pattern>      
+    
+
+    <Pattern id="vr_similar_tuples_definitionArc_to_335" 
+   			name="ValidateSimilarTuplesDefinitionArcToEndPoints" 
+   			method="DtsXPath" 
+   			value="/'http://www.xbrl.org/2003/arcrole/similar-tuples'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/+'http://www.xbrl.org/2003/linkbase#definitionArc'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#TupleConcept)"
+   			processOverrides="false">		
+            <Failure severity="error">
+                       <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#SimilarTuplesDefinitionArcToSideDoesNotHaveConcept" />
+            </Failure>
+    </Pattern>      
+
+    
+    <Pattern id="vr_similar_tuples_definitionArc_from_335" 
+   			name="ValidateSimilarTuplesDefinitionArcFromEndPoints" 
+   			method="DtsXPath" 
+   			value="/'http://www.xbrl.org/2003/arcrole/similar-tuples'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/-'http://www.xbrl.org/2003/linkbase#definitionArc'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#TupleConcept)"
+   			processOverrides="false">		
+            <Failure severity="error">
+                       <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#SimilarTuplesDefinitionArcFromSideDoesNotHaveConcept" />
+            </Failure>
+    </Pattern>      
+
+
+    <Pattern id="vr_requires_element_definitionArc_to_335" 
+   			name="ValidateRequiresElementDefinitionArcToEndPoints" 
+   			method="DtsXPath" 
+   			value="/'http://www.xbrl.org/2003/arcrole/requires-element'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/+'http://www.xbrl.org/2003/linkbase#definitionArc'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#Concept)"
+   			processOverrides="false">		
+            <Failure severity="error">
+                       <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#RequiresElementDefinitionArcToSideDoesNotHaveConcept" />
+            </Failure>
+    </Pattern>      
+
+    
+    <Pattern id="vr_requires_element_definitionArc_from_335" 
+   			name="ValidateRequiresElementDefinitionArcFromEndPoints" 
+   			method="DtsXPath" 
+   			value="/'http://www.xbrl.org/2003/arcrole/requires-element'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/-'http://www.xbrl.org/2003/linkbase#definitionArc'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#Concept)"
+   			processOverrides="false">		
+            <Failure severity="error">
+                       <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#RequiresElementDefinitionArcFromSideDoesNotHaveConcept" />
+            </Failure>
+    </Pattern>      
+
+    <Pattern id="ValidateDisallowedLabelArcOverride" 
+			name="ValidateDisallowedLabelArcOverride" 
+			method="DtsXPath" 
+			value="/'http://www.xbrl.org/2003/linkbase#labelArc'ValidateDisallowedArcOverride()"
+			processOverrides="false" >		
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#IllegalUseOfArcOverride" />
+         </Failure>
+    </Pattern>   
+
+    <Pattern id="ValidateDisallowedReferenceArcOverride" 
+			name="ValidateDisallowedReferenceArcOverride" 
+			method="DtsXPath" 
+			value="/'http://www.xbrl.org/2003/linkbase#referenceArc'ValidateDisallowedArcOverride()">		
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#IllegalUseOfArcOverride" />
+         </Failure>
+    </Pattern>   
+     
+    <Pattern id="ValidateCycles" 
+			name="ValidateCycles" 
+			method="DtsXPath" 
+			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#Role'HasInvalidCycle()">		
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Taxonomy#InvalidCycleDetected" />
+         </Failure>
+    </Pattern>   
+    
+    <Pattern id="ValidateCalculationCycles" 
+			name="ValidateCalculationCycles" 
+			method="DtsXPath" 
+			value="/'domain://ubmatrix.com/Xbrl/Taxonomy#Role'HasInvalidCalculationCycle()">		
+         <Failure severity="warning">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Taxonomy#CalculationCycleDetected" />
+         </Failure>
+    </Pattern>      
+         
+    <Pattern id="vr_282_a" 
+    			name="ValidateXlinkArcRoleAtributeMustBeStandardOrCustomArcRoleType" 
+    			method="DtsXPath" 
+    			value="/'relationship://ubmatrix.com/Xbrl/Linkbase/Relationship#Arc'ValidateStandardOrCustomArcRoleType()">
+             <Failure severity="error">
+                        <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#XlinkArcRoleAtributeMustBeStandardOrCustomArcRoleType" />
+             </Failure>
+    </Pattern>
+    
+    <Pattern id="vr_282_b" 
+    			name="ValidateXlinkRoleAtributeMustBeStandardOrCustomRoleType" 
+    			method="DtsXPath" 
+    			value="/'domain://ubmatrix.com/Xbrl/Linkbase#Link'ValidateStandardOrCustomLinkRoleType()">
+             <Failure severity="error">
+                        <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#XlinkRoleAtributeMustBeStandardOrCustomRoleType" />
+             </Failure>
+    </Pattern>
+
+    <Pattern id="vr_282_c" 
+    			name="ValidateXlinkRoleAtributeMustBeStandardOrCustomRoleType" 
+    			method="DtsXPath" 
+    			value="/'domain://ubmatrix.com/Xbrl/Linkbase#Resource'ValidateStandardOrCustomResourceRoleType()">
+             <Failure severity="error">
+                        <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#XlinkRoleAtributeMustBeStandardOrCustomRoleType" />
+             </Failure>
+    </Pattern>
+
+    <Pattern id="vr_148" 
+      			name="ValidateCalculationLinkbaseRefMustContainOnlyCalculationLink" 
+      			method="DtsXPath" 
+      			value="/'http://www.xbrl.org/2003/role/calculationLinkbaseRef'/+'relationship://ubmatrix.com/Xbrl/Relationship#RoleClassifies'/+'relationship://ubmatrix.com/Xbrl/Relationship#LinkbaseReference'/'domain://ubmatrix.com/Xbrl/Linkbase#Linkbase'/+'relationship://ubmatrix.com/Xbrl/Relationship#LinkbaseContainsLink'/'*'Exclude(http://www.xbrl.org/2003/linkbase#calculationLink, FullName)">      			      
+               <Failure severity="error">
+                          <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#CalculationLinkbaseRefMustContainOnlyCalculationLink" />
+               </Failure>
+    </Pattern>
+
+
+    <Pattern id="vr_149" 
+      			name="ValidateDefinitionLinkbaseRefMustContainOnlyDefinitionLink"
+      			method="DtsXPath"       			      			
+      			value="/'http://www.xbrl.org/2003/role/definitionLinkbaseRef'/+'relationship://ubmatrix.com/Xbrl/Relationship#RoleClassifies'/+'relationship://ubmatrix.com/Xbrl/Relationship#LinkbaseReference'/'domain://ubmatrix.com/Xbrl/Linkbase#Linkbase'/+'relationship://ubmatrix.com/Xbrl/Relationship#LinkbaseContainsLink'/'*'Exclude(http://www.xbrl.org/2003/linkbase#definitionLink, FullName)">       			
+               <Failure severity="error">
+                          <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#DefinitionLinkbaseRefMustContainOnlyDefinitionLink" />
+               </Failure>
+    </Pattern>
+    
+
+    <Pattern id="vr_150" 
+      			name="ValidateLabelLinkbaseRefMustContainOnlyLabelLink"
+      			method="DtsXPath"       			
+      			value="/'http://www.xbrl.org/2003/role/labelLinkbaseRef'/+'relationship://ubmatrix.com/Xbrl/Relationship#RoleClassifies'/+'relationship://ubmatrix.com/Xbrl/Relationship#LinkbaseReference'/'domain://ubmatrix.com/Xbrl/Linkbase#Linkbase'/+'relationship://ubmatrix.com/Xbrl/Relationship#LinkbaseContainsLink'/'*'Exclude(http://www.xbrl.org/2003/linkbase#labelLink, FullName)">
+               <Failure severity="error">
+                          <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#LabelLinkbaseRefMustContainOnlyLabelLink" />
+               </Failure>
+    </Pattern>
+    
+    <!-- See 5.2.2.1 (labelLink), 5.2.3.1 (referenceLink), 5.2.4.1 (presentationLink), 5.2.5.1 (calculationLink), 5.2.6.1 (definitionLink) and 4.11.1.1 (footnodeLink) in the XBRL 2.1 specification,  -->
+    <Pattern id="vr_150_1" 
+      			name="ValidateStandardExtendedLinkMustContainOnlyStandardLocators"
+      			method="DtsXPath"       			
+      			value="ValidateStandardExtendedLinkMustContainOnlyStandardLocators()">
+               <Failure severity="error">
+                          <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#StandardExtendedLinkMustContainOnlyStandardLocator" />
+               </Failure>
+    </Pattern>
+    
+    <Pattern id="vr_150_2" 
+      			name="ValidateLocatorMustNotHaveStandardRole"
+      			method="DtsXPath"       			
+      			value="/'domain://ubmatrix.com/Xbrl/Linkbase#Locator'ValidateLocatorMustNotHaveStandardRole()">
+               <Failure severity="error">
+                          <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#LocatorMustNotHaveStandardRole" />
+               </Failure>
+    </Pattern>
+    
+    <Pattern id="vr_150_3" 
+      			name="ValidateLabelRole"
+      			method="DtsXPath"       			
+      			value="/'http://www.xbrl.org/2003/linkbase#label'ValidateLabelRole()">
+               <Failure severity="error">
+                          <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#LabelResourceMustHaveOnlyStandardLabelRoles" />
+               </Failure>
+    </Pattern>
+
+
+    <Pattern id="vr_151" 
+      			name="ValidatePresentationLinkbaseRefMustContainOnlyPresentationLink"
+      			method="DtsXPath"       			
+      			value="/'http://www.xbrl.org/2003/role/presentationLinkbaseRef'/+'relationship://ubmatrix.com/Xbrl/Relationship#RoleClassifies'/+'relationship://ubmatrix.com/Xbrl/Relationship#LinkbaseReference'/'domain://ubmatrix.com/Xbrl/Linkbase#Linkbase'/+'relationship://ubmatrix.com/Xbrl/Relationship#LinkbaseContainsLink'/'*'Exclude(http://www.xbrl.org/2003/linkbase#presentationLink, FullName)">
+               <Failure severity="error">
+                          <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#PresentationLinkbaseRefMustContainOnlyPresentationLink" />
+               </Failure>
+    </Pattern>
+
+
+    <Pattern id="vr_152" 
+      			name="ValidateReferenceLinkbaseRefMustContainOnlyReferenceLink"
+      			method="DtsXPath" 
+      			value="/'http://www.xbrl.org/2003/role/referenceLinkbaseRef'/+'relationship://ubmatrix.com/Xbrl/Relationship#RoleClassifies'/+'relationship://ubmatrix.com/Xbrl/Relationship#LinkbaseReference'/'domain://ubmatrix.com/Xbrl/Linkbase#Linkbase'/+'relationship://ubmatrix.com/Xbrl/Relationship#LinkbaseContainsLink'/'*'Exclude(http://www.xbrl.org/2003/linkbase#referenceLink, FullName)">
+               <Failure severity="error">
+                          <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#ReferenceLinkbaseRefMustContainOnlyReferenceLink" />
+               </Failure>
+    </Pattern>
+
+
+    <!-- similar to 272 -->
+<!--
+    <Pattern id="vr_290" 
+    			name="ValidateElementsMustBeIdentifiedWithUsedOnElementInArcroleTypeElement" 
+    			method="DtsXPath" 
+    			value="ValidateUsedOnElement(ValidateArcrole)">    			                                                        
+             <Failure severity="error">
+                        <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#ElementsMustBeIdentifiedWithUsedOnElementInArcroleTypeElement" />
+             </Failure>
+    </Pattern>
+    -->
+
+    <Pattern id="vr_299a" 
+			name="ValidateLabelHasXmlLangAttribute" 
+			method="DtsXPath" 
+			value="/'http://www.xbrl.org/2003/role/label'/+'relationship://ubmatrix.com/Xbrl/Relationship#RoleClassifies'/'http://www.xbrl.org/2003/linkbase#label'[not(hasAttr('http://www.w3.org/XML/1998/namespace#lang'))]">
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#LabelDoesNotHaveXmlLangAttribute" />
+         </Failure>
+    </Pattern>
+
+    
+    <Pattern id="vr_317a" 
+			name="ValidateParentChildArcsMustRelateConceptsInItemTupleSubstitutionGroup" 
+			method="DtsXPath" 
+			value="/'http://www.xbrl.org/2003/arcrole/parent-child'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/-'http://www.xbrl.org/2003/linkbase#presentationArc'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#Concept)">			
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#ParentChildArcsDoNotRelateConceptsInItemTupleSubstitutionGroup" />
+         </Failure>
+    </Pattern>   
+
+
+    <Pattern id="vr_317b" 
+			name="ValidateParentChildArcsMustRelateConceptsInItemTupleSubstitutionGroup" 
+			method="DtsXPath" 
+			value="/'http://www.xbrl.org/2003/arcrole/parent-child'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/+'http://www.xbrl.org/2003/linkbase#presentationArc'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#Concept)">			
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#ParentChildArcsDoNotRelateConceptsInItemTupleSubstitutionGroup" />
+         </Failure>
+    </Pattern>   
+
+  
+    <Pattern id="vr_326a" 
+			name="ValidateFromSummationItemConceptsInItemSubsitutionGroup" 
+			method="DtsXPath" 
+			
+			value="/-'http://www.xbrl.org/2003/linkbase#calculationArc'[attr('http://www.w3.org/1999/xlink#arcrole') == 'http://www.xbrl.org/2003/arcrole/summation-item']/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept)">
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#SummationItemConceptNotInItemSubstitutionGroup" />
+         </Failure>
+    </Pattern>   
+       
+    <Pattern id="vr_326b" 
+			name="ValidateToSummationItemConceptsInItemSubsitutionGroup" 
+			method="DtsXPath" 
+			
+			value="/+'http://www.xbrl.org/2003/linkbase#calculationArc'[attr('http://www.w3.org/1999/xlink#arcrole') == 'http://www.xbrl.org/2003/arcrole/summation-item']/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept)">
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#SummationItemConceptNotInItemSubstitutionGroup" />
+         </Failure>
+    </Pattern> 
+    
+    <Pattern id="vr_331" 
+			name="ValidateCalculationWeightMustNotBeZero" 
+			method="DtsXPath" 
+			value="/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#LinkContainsArc'/'http://www.xbrl.org/2003/linkbase#calculationArc'[attr('weight') == '0']">
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#CalculationWeightIsZero" />
+         </Failure>
+    </Pattern>   
+        
+    <Pattern id="vr_336a" 
+			name="ValidateFromGeneralSpecialArcMustPointToConceptsInTheItemSubstitutionGroup" 
+			method="DtsXPath" 
+			value="/'http://www.xbrl.org/2003/arcrole/general-special'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/-'http://www.xbrl.org/2003/linkbase#definitionArc'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept)">
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#SourceConceptOfGeneralSpecialArcDoesNotPointToConceptsInTheItemSubstitutionGroup" />
+         </Failure>
+    </Pattern>   
+
+    <Pattern id="vr_336b" 
+			name="ValidateToGeneralSpecialArcMustPointToConceptsInTheItemSubstitutionGroup" 
+			method="DtsXPath" 
+			value="/'http://www.xbrl.org/2003/arcrole/general-special'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/+'http://www.xbrl.org/2003/linkbase#definitionArc'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#ItemConcept)">
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#TargetConceptOfGeneralSpecialArcDoesNotPointToConceptsInTheItemSubstitutionGroup" />
+         </Failure>
+    </Pattern>  
+       
+        
+    <Pattern id="vr_342" 
+			name="ValidateEssenceAliasAreSameType" 
+			method="DtsXPath" 
+			value="/'http://www.xbrl.org/2003/arcrole/essence-alias'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/-'http://www.xbrl.org/2003/linkbase#definitionArc'!EndpointsAreSameType()">			
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#EssenceAliasAreNotSameType" />
+         </Failure>
+    </Pattern>           
+               
+    <Pattern id="vr_350a" 
+			name="ValidateFromSimilarTupleArcMustPointToTargetsInTupleSubstitutionGroup" 
+			method="DtsXPath" 
+			value="/'http://www.xbrl.org/2003/arcrole/similar-tuples'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/-'http://www.xbrl.org/2003/linkbase#definitionArc'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#TupleConcept)">			
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#SimularTupleArcDoesNotPointToTargetsInTupleSubstitutionGroup" />
+         </Failure>
+    </Pattern>   
+    
+    <Pattern id="vr_350b" 
+			name="ValidateToSimilarTupleArcMustPointToTargetsInTupleSubstitutionGroup" 
+			method="DtsXPath" 
+			value="/'http://www.xbrl.org/2003/arcrole/similar-tuples'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/+'http://www.xbrl.org/2003/linkbase#definitionArc'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#TupleConcept)">			
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#SimularTupleArcDoesNotPointToTargetsInTupleSubstitutionGroup" />
+         </Failure>
+    </Pattern>   
+
+    <Pattern id="vr_354a" 
+			name="ValidateToRequiresElementsArcMustPointToTargetsInTupleOrItemSubstitutionGroup" 
+			method="DtsXPath" 
+			value="/'http://www.xbrl.org/2003/arcrole/requires-element'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/+'http://www.xbrl.org/2003/linkbase#definitionArc'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#Concept)">			
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#RequiresElementsArcDoesNotPointToTargetsInTupleOrItemSubstitutionGroup" />
+         </Failure>
+     </Pattern>   
+
+     <Pattern id="vr_354b" 
+			name="ValidateFromRequiresElementsArcMustPointToTargetsInTupleOrItemSubstitutionGroup" 
+			method="DtsXPath" 
+			value="/'http://www.xbrl.org/2003/arcrole/requires-element'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/-'http://www.xbrl.org/2003/linkbase#definitionArc'/'*'Exclude(domain://ubmatrix.com/Xbrl/Taxonomy#Concept)">			
+         <Failure severity="error">
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#RequiresElementsArcDoesNotPointToTargetsInTupleOrItemSubstitutionGroup" />
+         </Failure>
+     </Pattern>      
+   
+    <!-- If you look at the tests in 208-balance.xml, all the tests say MUST or MUST NOT -->
+    <Pattern id="vr_balance" 
+    			name="ValidateConstraintsAmongBalanceAndCalculationArc" 
+    			method="DtsXPath" 
+    			value="ValidateConstraintsAmongBalanceAndCalculationArc()">
+             <Failure severity="error">
+                        <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#IllegalValuesOfWeightAttributeOnCalculationArc" />
+             </Failure>
+    </Pattern>       
+    
+    <!--    
+    <Pattern id="vr_roleDeclared" 
+    			name="ValidateRoleEquivalency" 
+    			method="DtsXPath" 
+    			value="ValidateRoleEquivalency()">
+             <Failure severity="error">
+                        <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#IdenticalRolesContainDifferentUsedOnElements" />
+             </Failure>
+    </Pattern>       
+    -->
+    
+    <Pattern id="vr_205_09" 
+        			name="ValidateRoleUsedOnElements" 
+        			method="DtsXPath" 
+        			value="ValidateRoleUsedOnElements()">
+                 <Failure severity="error">
+                            <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#UsedOnDoesNotMatchWithSpecifiedLink" />
+                 </Failure>
+    </Pattern>           
+
+    <Pattern id="PreferredLabel" 
+        			name="5.2.4.2.1  Preferred Label" 
+        			method="DtsXPath" 
+        			value="/'http://www.xbrl.org/2003/arcrole/parent-child'/+'relationship://ubmatrix.com/Xbrl/Relationship#ArcroleClassifies'/+'http://www.xbrl.org/2003/linkbase#presentationArc'ValidateXbrlPreferredLabel()">
+        <Failure severity="error">
+            <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#NoLabelForPreferredLabelUri" />
+        </Failure>
+    </Pattern>           
+
+    <Pattern id="LinkbaseRefRoleInvalid" 
+        			name="linkbaseRefRoleInvalid" 
+        			method="DtsXPath" 
+        			value="/'relationship://ubmatrix.com/Xbrl/Relationship#LinkbaseReference'ValidateLinkbaseRef()">
+        <Failure severity="error">
+            <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#LinkbaseRefHasInvalidTargetForRole" />
+        </Failure>
+    </Pattern>           
+       
+    <!--
+    Will need default value ?
+    <Pattern id="107" 
+			name="" 
+			method="DtsXPath" 
+			value="">			
+         <Failure>
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#" />
+         </Failure>
+    </Pattern>   
+    -->
+
+    <!--
+    Will need default value ?
+    <Pattern id="115" 
+			name="" 
+			method="DtsXPath" 
+			value="">			
+         <Failure>
+                    <Action saveDO="memo" method="CreateErrorMemo" uri="memo://ubmatrix.com/Validation/Linkbase#" />
+         </Failure>
+    </Pattern>   
+    -->
+
+</PatternSet>
+
+<!--
+The contents of this file are subject to the End-User Software License Agreement (the "License"). You may not use this 
+file except in compliance with the License. A current copy of the License is available by contacting product support.
+
+Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights and limitations under the License.
+-->

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Project: Xbrl Processing Engine
+Copyright (c) 2011  EDGAR(r) Online, Inc.
+
+EDGAR(r) is a federally registered trademark of the U.S. Securities and Exchange Commission. EDGAR 
+Online is not affiliated with or approved by the U.S. Securities and Exchange Commission.
+-->
+
+
+<Queries xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Query implementationUri="implementation://ubmatrix.com/Xbrl/Query#DTSPath" queryUri="query://ubmatrix.com/Xbrl/Behavior/Fact#Concept">
+    <QueryString>/-'relationship://ubmatrix.com/Xbrl/Instance/Relationship#ConceptDefinesFact'/'domain://ubmatrix.com/Xbrl/Taxonomy#Concept'</QueryString>
+  </Query>
+  <Query implementationUri="implementation://ubmatrix.com/Xbrl/Query#DTSPath" queryUri="query://ubmatrix.com/Xbrl/Behavior/Fact#GetContextOfItem">
+    <QueryString>/-'relationship://ubmatrix.com/Xbrl/Instance/Relationship#ContextScopesFact'/'domain://ubmatrix.com/Xbrl/Instance#Context'</QueryString>
+  </Query>
+  <Query implementationUri="implementation://ubmatrix.com/Xbrl/Query#DTSPath" queryUri="query://ubmatrix.com/Xbrl/Behavior/Concept#GetChildrenOfConcept">
+    <QueryString>/+'{arc}'/'domain://ubmatrix.com/Xbrl/Taxonomy#Concept'/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#ConceptDefinesFact'/'domain://ubmatrix.com/Xbrl/Instance#Fact'[attr('contextRef')=='{context}']</QueryString>
+    <Parameters>
+      <Parameter name="context" pos="1" />
+      <Parameter name="arc" pos="0" />
+    </Parameters>
+  </Query>
+  <Query implementationUri="implementation://ubmatrix.com/Xbrl/Query#DTSPath" queryUri="behavior://ubmatrix.com/Xbrl/Instance#Context.GetFacts">
+    <QueryString>/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#ContextScopesFact'/'domain://ubmatrix.com/Xbrl/Instance#Fact'</QueryString>
+  </Query>
+  <Query implementationUri="implementation://ubmatrix.com/Xbrl/Query#DTSPath" queryUri="query://ubmatrix.com/Xbrl/Behavior/Fact#GetChildrenOfFact">
+    <QueryString>/-'relationship://ubmatrix.com/Xbrl/Instance/Relationship#ConceptDefinesFact'/'domain://ubmatrix.com/Xbrl/Taxonomy#Concept'/+'{arc}'/'domain://ubmatrix.com/Xbrl/Taxonomy#Concept'/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#ConceptDefinesFact'/'domain://ubmatrix.com/Xbrl/Instance#Fact'[attr('contextRef')=='{context}']</QueryString>
+    <Parameters>
+      <Parameter name="context" pos="1" />
+      <Parameter name="arc" pos="0" />
+    </Parameters>
+  </Query>
+  <Query implementationUri="implementation://ubmatrix.com/Xbrl/Query#DTSPath" queryUri="query://ubmatrix.com/Xbrl/Query#LandItemsIn2003Context">
+    <QueryString>/'http://www.UBmatrix.com/Patterns/BasicCalculation#Land'[attr('contextRef')=='I-2003']</QueryString>
+  </Query>
+  <Query implementationUri="implementation://ubmatrix.com/Xbrl/Query#DTSPath" queryUri="query://ubmatrix.com/Xbrl/Behavior/Fact#GetUnitOfItem">
+    <QueryString>/+'relationship://ubmatrix.com/Xbrl/Instance/Relationship#FactSpecifiesUnit'/'domain://ubmatrix.com/Xbrl/Instance#Unit'</QueryString>
+  </Query>
+  <Query implementationUri="implementation://ubmatrix.com/Xbrl/Query#DTSPath" queryUri="query://ubmatrix.com/Xbrl/Behavior/Fact#IsFraction">
+    <QueryString>/-'relationship://ubmatrix.com/Xbrl/Instance/Relationship#ConceptDefinesFact'/'domain://ubmatrix.com/Xbrl/Taxonomy#Concept'/+'relationship://ubmatrix.com/Xbrl/Taxonomy/Relationship#ConceptSpecifiesDatatype'/'http://www.xbrl.org/2003/instance#fractionItemType'</QueryString>
+  </Query>
+</Queries>
+
+<!--
+The contents of this file are subject to the End-User Software License Agreement (the "License"). You may not use this 
+file except in compliance with the License. A current copy of the License is available by contacting product support.
+
+Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights and limitations under the License.
+-->

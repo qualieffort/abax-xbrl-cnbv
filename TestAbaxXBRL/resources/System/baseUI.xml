@@ -1,0 +1,35 @@
+<internalframe id="configUI" Visible="true" resizable="true" closable="true" maximizable="true" iconifiable="true" title="XPE Config UI">
+   	<splitpane>
+   		<scrollpane layout="gridbaglayout">
+   			<gridbagconstraints fill="GridBagConstraints.VERTICAL" gridwidth="GridBagConstraints.REMAINDER" gridx="GridBagConstraints.RELATIVE" anchor="GridBagConstraints.LINE_START"/>
+	   		<panel id="mainPanel" layout="gridbaglayout">
+	   			<gridbagconstraints fill="GridBagConstraints.VERTICAL" gridwidth="GridBagConstraints.REMAINDER" gridx="GridBagConstraints.RELATIVE" anchor="GridBagConstraints.LINE_START"/> 
+	   			<button id="loadConfig" Action="loadConfigAction" text="Load Configuration">
+	   				<gridbagconstraints id="leftPanelConstraints" gridwidth="GridBagConstraints.REMAINDER" gridx="GridBagConstraints.RELATIVE" anchor="GridBagConstraints.LINE_START"/>
+	   			</button>
+	   			<button id="saveConfig" Action="saveConfigAction" text="Save As">
+	   				<gridbagconstraints refid="leftPanelConstraints" />
+	   			</button>
+	   			<separator>
+					<gridbagconstraints refid="leftPanelConstraints" />
+				</separator>
+	   			<label text="Select a configuration option">
+					<gridbagconstraints refid="leftPanelConstraints" />
+	   			</label>
+	   			<separator>
+					<gridbagconstraints refid="leftPanelConstraints" />
+				</separator>
+		        <scrollPane>
+		        	<gridbagconstraints refid="leftPanelConstraints" />
+					<xtree id="configTree" initclass="java.lang.String(tree.xml|ubmatrix.xbrl.tools.configui.src.utils.ui.XTreeActionListener)">
+					</xtree> 
+		        </scrollPane>
+	        </panel>
+        </scrollpane>
+        <scrollpane>
+	        <panel id="detailsPanel" layout="flowlayout">
+	        	
+	        </panel>
+        </scrollpane>
+     </splitpane>
+</internalframe>

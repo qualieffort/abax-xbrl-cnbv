@@ -1,0 +1,114 @@
+﻿
+<aside class="aside-md bg-light dker b-r" ng-class="{'hide': !mostrarListaRoles}" id="subNav">
+    <section id="panelRolesTaxonomia" class="vbox">
+        <section class="w-f scrollable">
+            <div slimscroll="{size: '10px', height: 'auto', railVisible: true, alwaysVisible: true, distance: '0px', railOpacity: 0.2}" slimscrolllistento="resize::resize">
+                <div class="wrapper b-b header">{{'EDITOR_XBRL_TITULO_EDITOR' | translate}}</div>
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="b-b" ng-class="{'active':esFormatoActivo($index)}" ng-repeat="rol in ::documentoInstancia.Taxonomia.RolesPresentacion">
+                        <a class="navegacionFormatos" data-toggle="pill" ng-click="establecerFormatoActivo($index)">
+                            <i class="fa fa-chevron-right pull-right m-t-xs text-xs"></i>
+                            {{rol.Nombre}}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </section>
+</aside>
+<aside>
+
+    <section class="vbox">
+        <div id="clipboard-container" style="position: fixed; left: 0px; top: 0px; width: 0px; height:0px; z-index: 100; display: block; opacity:0;"></div>
+        <header class="header bg-white b-b clearfix">
+            <div class="row m-t-sm">
+                <div class="col-sm-8 m-b-sm">
+                    <div id="panelToolbar" class="btn-toolbar">
+                        <div class="input-group">
+                            <a ng-click="actualizarMostrarListaRoles()" class="btn btn-warning active"><i class="fa fa-caret-right text fa-lg"></i><i class="fa fa-caret-left text-active fa-lg"></i></a>
+                        </div>
+                        <div class="input-group">
+                            <button id="btnExportarDocumentoInstancia" type="button" ng-show="::tieneFacultad(FacultadesEnum.ExportarDocumentoInstancia)" title="Exportar documento instancia" class="btn btn-default" ng-click="exportarDocumentoInstancia()"><i class="i i-download3"></i></button>
+                        </div>
+                        <div class="input-group">
+                            <button id="btnHistorialEstadoFinanciero" ng-show="::tieneFacultad(FacultadesEnum.HistorialDocumentoInstancia)" type="button" class="btn btn-default" title="Historial" ng-click="presentarVersionesDocumentoInstancia()" ng-disabled="::documentoInstancia.IdDocumentoInstancia < 1 "><i class="i i-history"></i></button>
+                        </div>
+                        <div class="input-group">
+                            <button type="button" class="btn btn-default" title="Ayuda" ng-click="presentarIntro()"><i class="fa fa-question"></i></button>
+                            <button id="btnExpandirVista" type="button" class="btn" title="Expandir" ng-class="{'modoVistaExpandido' : documentoInstancia.modoVistaFormato == 'formatoExpandido', 'modoVistaNormal btn-default' : documentoInstancia.modoVistaFormato == 'formato'}" ng-click="expandirEditor()"><i class="fa fa-expand"></i></button>
+                            <button id="btnPantallaCompleta" type="button" class="btn modoVistaNormal btn-default" title="Pantalla completa" ng-click="mostrarPantallaCompletaDocumento()"><i class="i i-screen"></i></button>
+                        </div>
+
+                        <div id="btnCambiarIdiomaEtiquetas" class="dropdown" style="margin-left:5px;display:inline;">
+                            <button type="button" class="btn btn-default" title="Idioma" data-toggle="dropdown"><i class="i i-world"></i><span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li ng-repeat="idioma in ::documentoInstancia.Taxonomia.IdiomasTaxonomiaObjeto " ng-click="cambiarIdiomaDocumentoInstancia($index)"><a href="javascript:void(0);">{{idioma.DescripcionIdioma}}</a></li>
+                            </ul>
+                        </div>
+                        <div class="input-group">
+                            <button id="btnAgregarDocumentoComparar" type="button" class="btn btn-default" title="Agregar un Documento a Comparar" ng-click="presentarDocumentosParaComparar()"><i class="fa fa-exchange"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 m-b-sm">
+                    <div class="input-group" id="filtroEtiquetas">
+                        <input id="filtroTabla" type="text" class="form-control" placeholder="{{'PLACE_HOLDER_BUSCAR' | translate}}" ng-model="rolFormatoActivo.FiltroBusqueda">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">Ir!</button>
+                            <input id="auxMonedas" class="acurrency" type="hidden" />
+                        </span>
+                    </div>
+                </div>
+                <div class="col-sm-1 m-b-sm" id="indicadorEstadoValidacion">
+                    <xbrl:visor-boton-estado-validacion id="botoEstadoValidacion"></xbrl:visor-boton-estado-validacion>
+                </div>
+            </div>
+        </header>
+
+        <section id="splashInterno" class="scrollable wrapper w-f splash" style="display:none;">
+            <span class="helper"></span><img id="logoAnimado" ng-src="images/{{abaxStyle.imagenHorizontal}}" class="animated infinite flip" />
+        </section>
+
+        <section id="contenedorFormatos" class="scrollable wrapper w-f" ng-hide="::(panelActivo != PanelFormatos)" ng-intro-options="::opcionesIntro" ng-intro-method="::presentarIntro">
+            <xbrl:editor-formato xbrl:rol="rolFormatoActivo" xbrl:documento-solo-visor="true"></xbrl:editor-formato>
+        </section>
+
+        <section class="scrollable wrapper w-f" ng-hide="::(panelActivo != PanelUsuarios)">
+            <xbrl:usuarios-documento-instancia xbrl:id-documentoinstancia="::documentoInstancia.IdDocumentoInstancia" ng-if="::(panelActivo == PanelUsuarios)" xbrl:fn-lista-actualizada="establecerPanelActivoFormatos(false)"></xbrl:usuarios-documento-instancia>
+        </section>
+
+        <section class="scrollable wrapper w-f" ng-hide="::(panelActivo != PanelVersiones)">
+            <xbrl:historico-versiones xbrl:listado-versiones="::listaHistoricoVersiones" xbrl:fn-version-cargada="establecerPanelActivoFormatos(true)"></xbrl:historico-versiones>
+        </section>
+
+        <footer id="footerEditor" class="footer bg-white b-t">
+            <div class="row text-center-xs">
+                <div class="col-md-6">
+                    <p id="idDocumento" class="font-bold m-t">{{'EDITOR_XBRL_VERSION' | translate}} {{::documentoInstancia.Version}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{'EDITOR_XBRL_IDIOMA' | translate}} {{xbrlIdioma.DescripcionIdioma}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{'TITULO' | translate}} {{::documentoInstancia.Titulo}}</p>
+                </div>
+                <div class="col-md-6">
+                    <p class="font-bold m-t text-right">
+                        <span id="datosBloqueo" class="text-danger">
+                            <span ng-if="::(!documentoInstancia.Bloqueado)">{{'EDITOR_XBRL_DOCUMENTO_NO_BLOQUEADO' | translate}}</span>
+                            <span ng-if="::(documentoInstancia.Bloqueado && documentoInstancia.IdUsuarioBloqueo == idUsuarioActivo)">{{'EDITOR_XBRL_DOCUMENTO_DISPONIBLE_EDICION' | translate}}</span>
+                            <span ng-if="::(documentoInstancia.Bloqueado && documentoInstancia.IdUsuarioBloqueo != idUsuarioActivo)">{{'EDITOR_XBRL_DOCUMENTO_BLOQUEADO_POR' | translate}} {{::documentoInstancia.NombreUsuarioBloqueo}}</span>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    </section>
+</aside>
+<!-- side content -->
+
+<aside class="aside-md bg-white" ng-class="{'show' : mostrarEstadoValidacion,'hide':!mostrarEstadoValidacion}" id="sidebar">
+    <section class="vbox animated fadeInRight">
+        <section class="w-f scrollable">
+            <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="10px" data-railopacity="0.2">
+                <xbrl:listado-errores documento-instancia="::documentoInstancia" operaciones="::operacionesCalculo"></xbrl:listado-errores>
+            </div>
+        </section>
+    </section>
+</aside>
+<!-- / side content -->

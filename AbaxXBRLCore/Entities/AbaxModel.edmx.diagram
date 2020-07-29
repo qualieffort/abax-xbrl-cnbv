@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b05fd0bc0a1c450e8344086d86b63cf1" Name="Diagrama1" ZoomLevel="82">
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.AccionAuditable" Width="1.5" PointX="0.75" PointY="36.625" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.Alerta" Width="1.5" PointX="11.25" PointY="39.25" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.ArchivoTaxonomiaXbrl" Width="1.5" PointX="6" PointY="24.5" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.BitacoraDistribucionDocumento" Width="1.5" PointX="15.75" PointY="31.5" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.BitacoraVersionDocumento" Width="1.5" PointX="13.5" PointY="31.125" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.CategoriaFacultad" Width="1.5" PointX="3.75" PointY="72" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.ConsultaAnalisis" Width="1.5" PointX="0.75" PointY="4.125" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.ConsultaAnalisisConcepto" Width="1.5" PointX="3" PointY="7.625" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.ConsultaAnalisisEntidad" Width="1.5" PointX="3" PointY="1.25" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.ConsultaAnalisisPeriodo" Width="1.5" PointX="3" PointY="4" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.Contexto" Width="1.5" PointX="11.25" PointY="45.5" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.DocumentoInstancia" Width="1.5" PointX="9" PointY="29.5" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.DtsDocumentoInstancia" Width="1.5" PointX="11.25" PointY="24.5" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.Empresa" Width="1.5" PointX="0.75" PointY="30.5" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.Facultad" Width="1.5" PointX="6" PointY="71.75" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.Fideicomiso" Width="1.5" PointX="3" PointY="39.5" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.GrupoEmpresa" Width="1.5" PointX="3" PointY="34.125" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.GrupoUsuarios" Width="1.5" PointX="3" PointY="62.25" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.GrupoUsuariosRol" Width="1.5" PointX="5.25" PointY="65.375" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.Hecho" Width="1.5" PointX="13.5" PointY="38.75" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.Modulo" Width="1.5" PointX="0.75" PointY="39.125" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.NotaAlPie" Width="1.5" PointX="11.25" PointY="42.375" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.RegistroAuditoria" Width="1.5" PointX="3" PointY="30.125" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.RelacionEmpresas" Width="1.5" PointX="6" PointY="31.5" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.Rol" Width="1.5" PointX="3" PointY="65.625" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.RolFacultad" Width="1.5" PointX="8.25" PointY="66" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.TaxonomiaXbrl" Width="1.5" PointX="3.75" PointY="26.5" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.TipoDato" Width="1.5" PointX="11.25" PointY="28" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.TipoEmpresa" Width="1.5" PointX="6" PointY="28.625" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.TipoRelacionEmpresa" Width="1.5" PointX="3.75" PointY="36.875" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.Unidad" Width="1.5" PointX="11.25" PointY="49.875" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.Usuario" Width="1.5" PointX="0.75" PointY="23.625" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.UsuarioDocumentoInstancia" Width="1.5" PointX="11.25" PointY="35.5" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.UsuarioEmpresa" Width="1.5" PointX="6" PointY="34.75" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.UsuarioGrupo" Width="1.5" PointX="5.25" PointY="62.625" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.UsuarioRol" Width="1.5" PointX="5.25" PointY="69" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.VersionDocumentoInstancia" Width="1.5" PointX="11.25" PointY="31" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_RegistroAuditoria_AccionAuditable" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_Alerta_DocumentoInstancia" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_ArchivoTaxonomiaXbrl_TaxonomiaXbrl" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_BitacoraDistribucionDocumento_BitacoraVersionDocumento" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_Bitac_DocumentoInstancia" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_Bitac_VersionDoc" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_Facultad_CategoriaFacultad" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_ConsultaAnalisisConcepto_Consulta" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_ConsultaAnalisisEntidad_Consulta" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_ConsultaAnalisisPeriodo_Consulta" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_Contexto_DocumentoInstancia" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_Hecho_Contexto" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_DocumentoInstancia_Empresa" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_DocumentoInstancia_Usuario_Ult" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_DtsDocumentoInstancia_DocumentoInstancia" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_Hecho_DocumentoInstancia" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_NotaAlPie_DocumentoInstancia" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_Unidad_DocumentoInstancia" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_UsuarioDocumentoInstancia_DocumentoInstancia" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_VersionDocumentoInstancia_DocumentoInstancia" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_FideicomisoEmpresa" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_GrupoUsuarios_Empresa" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_RegistroAuditoria_Empresa" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_RelacionEmpresas_Primaria" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_RelacionEmpresas_Secundaria" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_Rol_Empresa" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_UsuarioEmpresa_Empresa" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_VersionDocumentoInstancia_Empresa" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_RolFacultad_Facultad1" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_GrupoUsuariosRol_GrupoUsuarios" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_UsuarioGrupo_GrupoUsuarios" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_GrupoUsuariosRol_Rol" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_Hecho_TipoDato" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_Hecho_Unidad" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_RegistroAuditoria_Modulo" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_RegistroAuditoria_Usuario" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_RelacionEmpresas_Tipo" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_RolFacultad_Rol" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_UsuarioRol_Rol" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_UsuarioDocumentoInstancia_Usuario" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_UsuarioEmpresa_Usuario" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_UsuarioGrupo_Usuario" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_UsuarioRol_Usuario" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_VersionDocumentoInstancia_Usuario" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.EmpresaGrupoEmpresa" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.EmpresaTipoEmpresa" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.TipoEmpresaTaxonomiaXbrl" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.ParametroSistema" Width="1.5" PointX="5.375" PointY="3.75" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.DestinatarioNotificacion" Width="1.5" PointX="7.625" PointY="7" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.ListaNotificacion" Width="1.5" PointX="5.375" PointY="6.875" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_Destinatario_Lista_Notificacion" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.ConsultaRepositorio" Width="1.5" PointX="5.375" PointY="0.75" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_ConsRepo_Usuario" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.TipoArchivo" Width="1.5" PointX="12" PointY="21.875" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.ArchivoDocumentoInstancia" Width="1.5" PointX="14.25" PointY="27.875" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK__ArchivoDo__IdDoc__634EBE90" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK__ArchivoDo__IdTip__6442E2C9" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FKDocInstanciaEmpresaEnvio" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.BitacoraProcesarArchivosBMV" Width="1.5" PointX="8" PointY="0.625" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.PeriodicidadReporte" Width="1.5" PointX="1.5" PointY="20.125" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_DocumentoInstancia_Period" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.ArchivoAdjuntoXbrl_" Width="1.5" PointX="11.25" PointY="18.125" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_ArchivoAdjuntoXbrl_DocumentoInstancia" />
+        <EntityTypeShape EntityType="AbaxXBRLCore.Entities.RepresentanteComunFideciomiso" Width="1.5" PointX="6.75" PointY="37.75" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_RepresentanteComunFideciomiso_Primaria" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_RepresentanteComunFideciomiso_Tipo" />
+        <AssociationConnector Association="AbaxXBRLCore.Entities.FK_RepresentanteComunFideciomiso_Secundaria" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

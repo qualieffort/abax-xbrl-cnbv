@@ -1,0 +1,20 @@
+db.getCollection('Hecho').aggregate([
+{"$match": { "EsNumerico" : false, "Concepto.TipoDato" : "http://www.xbrl.org/dtr/type/non-numeric:textBlockItemType", "Valor": {"$regex":/^[.\r\n]{0,5}$/}, 
+"Taxonomia":{"$regex":/^.*ar_prospectus.pros_.*$/} }},
+{"$group": { "_id": { Taxonomia: "$Taxonomia",ClaveEmisora:"$Entidad.Nombre" ,Concepto: "$Concepto.IdConcepto", Valor:"$Valor", Etiquetas:"$Concepto.Etiquetas"}} },
+{"$project": {
+    "_id.Taxonomia":1, 
+    "_id.ClaveEmisora":1, 
+    "_id.Concepto":1, 
+    "_id.Valor":1, 
+    "_id.Etiquetas":{"$filter":{
+      "input":"$_id.Etiquetas","as":"et","cond":{"$eq":["$$et.Idioma","es"]}}}
+    }
+},
+{"$group": { "_id": { Taxonomia: "$_id.Taxonomia",ClaveEmisora:"$_id.ClaveEmisora" ,Concepto: "$_id.Concepto", Valor:"$_id.Valor"}, Etiquetas:{$first: "$_id.Etiquetas.Valor"}}},/*
+{"$project": {
+    "datos":{"$concat":["$_id.Taxonomia",",","$_id.ClaveEmisora",",","$_id.Concepto",","]}
+   //,etiqueta:{"$add":[{"$map":{"input":"$Etiquetas", "as":"et", "in":"$$et.Valor"}}]}
+   //"etiqueta":{"$reduce":{"input":"$Etiquetas","initialValue":"", "in": {"$concat" : ["$$value", "$$this"]} }}
+}}*/ 
+])

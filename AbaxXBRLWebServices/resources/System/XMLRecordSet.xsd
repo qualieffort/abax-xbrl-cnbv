@@ -1,0 +1,145 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://www.ubmatrix.com/2007/xbrl/report"
+    targetNamespace="http://www.ubmatrix.com/2007/xbrl/report"
+    xmlns:xbrli="http://www.xbrl.org/2003/instance" elementFormDefault="qualified">
+    <xs:import namespace="http://www.xbrl.org/2003/instance"
+        schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+    <xs:complexType name="reportType">
+        <xs:choice maxOccurs="unbounded">
+            <xs:element name="parameters" type="parametersType" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="presentation" type="presentationType" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="concepts" type="conceptsType" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="references" type="referencesType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="primaryItems" type="primaryItemsType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="data" type="dataType" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="footnotes" type="footnotesType" minOccurs="0" maxOccurs="1"/>
+        </xs:choice>
+    </xs:complexType>
+    <xs:complexType name="parametersType">
+        <xs:sequence>
+            <xs:element name="parameter" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:attribute name="name" type="xs:string" use="required"/>
+                    <xs:attribute name="value" type="xs:string" use="required"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="dataType">
+        <xs:sequence>
+            <xs:element name="dimensions" type="refDimensionsType" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+        <xs:attribute name="id"  type="xs:ID" use="optional"/>
+        <xs:attribute name="computed"  type="xs:boolean" use="required"/>
+        <xs:attribute name="conceptName"  type="xs:string" use="required"/>
+        <xs:attribute name="conceptNS"  type="xs:anyURI" use="required"/>
+        <xs:attribute name="contextID"  type="xs:anyURI" use="required"/>
+        <xs:attribute name="unitID"  type="xs:anyURI" use="required"/>
+        <xs:attribute name="decimals"  type="xbrli:decimalsType" use="optional"/>
+        <xs:attribute name="precision"  type="xbrli:precisionType" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="refDimensionsType">
+         <xs:sequence>
+             <xs:element name="dimension" minOccurs="0" maxOccurs="unbounded">
+                 <xs:complexType>
+                     <xs:sequence>
+                         <xs:element name="member" minOccurs="1" maxOccurs="unbounded">
+                             <xs:complexType>
+                                 <xs:attribute name="ref" type="xs:IDREF" use="required"/>
+                             </xs:complexType>
+                        </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="ref" type="xs:IDREF" use="required"/>
+              </xs:complexType>
+           </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="presentationType">
+        <xs:sequence>
+            <xs:element name="concept" type="conceptRefType" minOccurs="0"
+                maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="conceptRefType">
+        <xs:sequence>
+            <xs:element name="concept" minOccurs="1"
+                maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="concept" type="conceptRefType" minOccurs="0" maxOccurs="unbounded" />
+                    </xs:sequence>
+                    <xs:attribute name="ref" type="xs:IDREF" use="required" />
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="itemRefType">    
+        <xs:attribute name="ref" type="xs:IDREF" use="required" />
+    </xs:complexType>
+    <xs:complexType name="primaryItemsType">
+        <xs:sequence>
+            <xs:element name="primaryItem" minOccurs="0"
+                maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="dimensions" type="refDimensionsType" minOccurs="0" maxOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="referencesType">
+        <xs:sequence>
+            <xs:element name="reference" minOccurs="0"
+                maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="concepts"  minOccurs="1" maxOccurs="1">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="concept" type="conceptRefType" minOccurs="1" maxOccurs="unbounded" />
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="footnotesType">
+        <xs:sequence>
+            <xs:element name="footnote" minOccurs="0"
+                maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="data"  minOccurs="1" maxOccurs="1">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="item" type="itemRefType" minOccurs="1" maxOccurs="unbounded" />
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attribute name="ref" type="xs:IDREF" use="required" />
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="conceptsType">
+        <xs:sequence>
+            <xs:element name="concept" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:attribute name="id" type="xs:ID" use="optional"/>
+                    <xs:attribute name="name" type="xs:string" use="required"/>
+                    <xs:attribute name="namespaceUri" type="xs:anyURI" use="required"/>
+                    <xs:attribute name="type" type="xs:QName" use="required"/>
+                    <xs:attribute name="substitutionGroup" type="xs:QName" use="required"/>
+                    <xs:attribute ref="xbrli:periodType" use="required"/>
+                    <xs:attribute name="nillable" type="xs:boolean" use="optional"/>
+                    <xs:attribute name="abstract" type="xs:boolean" use="optional"/>
+                    <xs:attribute name="label" type="xs:string" use="optional"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

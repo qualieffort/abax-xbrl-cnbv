@@ -1,0 +1,10 @@
+﻿<a href="#"
+   class="btn btn-icon b-2x btn-rounded"
+   ng-class="{'btn-success' : operacionesCalculo.NumeroErrores == 0 && operacionesCalculo.NumeroAdvertencias == 0, 'btn-danger' : operacionesCalculo.NumeroErrores > 0 , 'btn-warning':operacionesCalculo.NumeroAdvertencias > 0 && operacionesCalculo.NumeroErrores == 0}"
+   data-toggle="class:nav-xs, show, hide, show"
+   xbrl:blink modelo="operacionesCalculo"
+   expresion="modelo.NumeroErrores == 0"
+   ng-click="mostrarEstadoValidacion = !mostrarEstadoValidacion"
+   title="{{'TITLE_INDICADOR_ERRORES' | translate : '{errores: ' + operacionesCalculo.NumeroErrores + ', advertencias:' + operacionesCalculo.NumeroAdvertencias + '}'}}">
+    <i id="indicadorErroresFormato" class="fa" ng-class="{'fa-check' : operacionesCalculo.NumeroErrores == 0 && operacionesCalculo.NumeroAdvertencias == 0, 'fa-exclamation' : operacionesCalculo.NumeroErrores > 0, 'fa-warning' : operacionesCalculo.NumeroAdvertencias > 0 && operacionesCalculo.NumeroErrores == 0}"></i>
+</a>

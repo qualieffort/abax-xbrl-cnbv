@@ -1,0 +1,221 @@
+﻿<header class="bg-primary header header-md navbar navbar-fixed-top-xs box-shadow">
+    <div class="navbar-header aside-md dk">
+        <a class="btn btn-link visible-xs" href="javascript:void(0);" ng-click="toggleMenuNavegacion()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <a href="javascript:void(0);" class="navbar-brand" title="{{'ETIQUETA_VERSION' | translate}}:  {{versionApp}}">
+            <img ng-src="images/{{abaxStyle.imagenHorizontal}}" class="m-r-sm" alt="scale">
+        </a> 
+        <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".user">
+            <i class="fa fa-cog"></i>
+        </a>
+    </div>
+    <div class="utilerias-cabecera">
+    <!--Dropdown tooggle con el menú para -->
+    <ul class="nav navbar-nav hidden-xs">
+        <li class="dropdown" dropdown>
+            <a href="#" class="dropdown-toggle" dropdown-toggle>
+                <i class="i i-grid"></i>
+            </a>
+            <section class="dropdown-menu aside-lg bg-white on animated fadeInLeft" role="menu">
+                <div class="row m-l-none m-r-none m-t m-b text-center">
+                    <div class="col-xs-4">
+                        <div class="padder-v">
+                            <a data-bjax="true" href="javascript:void(0);" ui-sref="inicio.panelControl">
+                                <span class="m-b-xs block">
+                                    <i class="i i-statistics i-2x text-primary-lt"></i>
+                                </span>
+                                <small class="text-muted">{{'ETIQUETA_TABLERO_CONTROL' | translate}}</small>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-4" ng-if="tieneFacultad(FacultadesEnum.CrearDocumentoInstancia) && tieneFacultad(FacultadesEnum.GuardarDocumentoInstancia)">
+                        <div class="padder-v">
+                            <a data-bjax="true" href="javascript:void(0);" ui-sref="inicio.editorXBRL">
+                                <span class="m-b-xs block">
+                                    <i class="i i-code i-2x text-danger-lt"></i>
+                                </span>
+                                <small class="text-muted">{{'ETIQUETA_CREAR_DOCUMENTO' | translate}}</small>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-4" ng-if="tieneFacultad(FacultadesEnum.ListadoDocumentoInstancia)">
+                        <div class="padder-v">
+                            <a data-bjax="true" href="javascript:void(0);" ui-sref="inicio.listaDocumentosInstancia">
+                                <span class="m-b-xs block">
+                                    <i class="fa fa-th-list i-2x text-success-lt"></i>
+                                </span>
+                                <small class="text-muted">{{'ETIQUETA_LISTADO_DOCUMENTOS' | translate}}</small>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                    <div class="row m-l-none m-r-none m-t m-b text-center">
+                        <div class="col-xs-4">
+                            <div class="padder-v">
+                                <a data-bjax="true" href="javascript:void(0);" ui-sref="inicio.alertas">
+                                    <span class="m-b-xs block">
+                                        <i class="i i-chat3 i-2x text-info-lt"></i>
+                                    </span>
+                                    <small class="text-muted">{{'ETIQUETA_ALERTAS' | translate}}</small>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="padder-v">
+                                <a data-bjax="true" href="javascript:void(0);" ui-sref="inicio.consultaRepositorio">
+                                    <span class="m-b-xs block">
+                                        <i class="i i-meter i-2x text-muted"></i>
+                                    </span>
+                                    <small class="text-muted">{{'ETIQUETA_CONSULTA_REPOSITORIO' | translate}}</small>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-4">
+                            <div class="padder-v">
+                                <a data-bjax="true" href="{{urlSoporteTecnico}}" target="_blank">
+                                    <span class="m-b-xs block">
+                                        <i class="i i-info2 i-2x text-muted"></i>
+                                    </span>
+                                    <small class="text-muted">{{'ETIQUETA_SOPORTE_TECNICO' | translate}}</small>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-4">
+                            <div class="padder-v">
+                                <a data-bjax="true" href="javascript:void(0);" ui-sref="inicio.mostrarAyuda">
+                                    <span class="m-b-xs block">
+                                        <i class="i i-question2 i-2x text-muted"></i>
+                                    </span>
+                                    <small class="text-muted">{{'ETIQUETA_MOSTRAR_AYUDA' | translate}}</small>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-4">
+                            <div class="padder-v">
+                                <a href="javascript:void(0);" ng-click="cerrarSesion()">
+                                    <span class="m-b-xs block">
+                                        <i class="i i-logout i-2x text-warning-lter"></i>
+                                    </span>
+                                    <small class="text-muted">{{'ETIQUETA_CERRAR_SESION' | translate}}</small>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+        </li>
+    </ul>
+    
+
+        <ul class="nav navbar-nav hidden-xs">
+            <li>
+                <a href="{{urlVisorExterno}}" target="_blank">
+                    Visor XBRL Externo
+                </a>
+            </li>
+        </ul>
+
+
+
+    <!--Listado de alertas-->
+    <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user user">
+        <li class="dropdown" dropdown>
+            <a href="#" class="dropdown-toggle" dropdown-toggle>
+                <i class="i i-world"></i>
+            </a>
+            <ul class="dropdown-menu animated fadeInRight" role="menu">
+                <li>
+                    <span class="arrow top"></span>
+                    <a class="auto" href="" ng-click="cambiarIdioma('es')">
+                        ESPAÑOL
+                    </a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a class="auto" href="" ng-click="cambiarIdioma('en')">
+                        ENGLISH
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="hidden-xs" dropdown>
+            <a href="#" class="dropdown-toggle" dropdown-toggle>
+                <i class="i i-chat3"></i>
+            </a>
+            <section id="panelAlertas" class="dropdown-menu aside-xl animated flipInY" role="menu">
+                <!--Cuando no hay alertas-->
+                <section class="panel bg-white" ng-if="!existenAlertas">
+                    <div id="tituloAlertas" class="panel-heading b-light bg-light">
+                        <strong>{{'TITULO_DROPDOWN_NO_HA_RECIBIDO_NINGUNA_ALERTA_AUN' | translate}}.</strong>
+                    </div>
+                    <div id="listadoAlertas" class="list-group list-group-alt">
+                        <a href="javascript:void(0);" class="media list-group-item">
+                            <span class="media-body block m-b-none">
+                                {{'ETIQUETA_NO_HAY_ALERTAS_PARA_EL_USUARIO' | translate}}.
+                                <br />
+                            </span>
+                        </a>
+                    </div>
+                    <div class="panel-footer text-sm">
+                        <a href="#" class="pull-right">
+                            <i class="fa fa-times"></i>
+                        </a>
+                        <a href="javascript:void(0);" data-toggle="class:show animated fadeInRight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    </div>
+                </section>
+                <!--Cuando existen alertas-->
+                <section class="panel bg-white" ng-if="existenAlertas">
+                    <div id="tituloAlertas" class="panel-heading b-light bg-light">
+                        <strong>{{'ETIQUETA_ULTIMAS' | translate}} <span id="numeroAlertas" class="count">{{listadoAlertas.length}}</span> {{'ETIQUETA_SUBFIJO_ALERTAS_RECIBIDAS' | translate}}.</strong>
+                    </div>
+                    <div id="listadoAlertas" class="list-group list-group-alt">
+                        <a href="#" class="media list-group-item" ng-repeat="alerta  in listadoAlertas">
+                            <span class="pull-left thumb-sm avatar m-r">
+                                <img src="images/a0.png" alt="...">
+                                <i ng-class="alerta.DocumentoCorrecto ? 'on' : 'busy'" class="b-white bottom"></i>
+                            </span>
+                            <span class="clear">
+                                <span>{{alerta.NombreUsuario}}</span>
+                                <small class="text-bold clear">{{alerta.Fecha}}</small>
+                                <small class="text-muted clear text-ellipsis">{{alerta.Contenido}}</small>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="panel-footer text-sm">
+                        <a href="javascript:void(0);" class="pull-right"><i class="fa fa-times"></i></a>
+                        <a href="javascript:void(0);" ui-sref="inicio.alertas" ui-sref="inicio.alertas" data-bjax="true" data-toggle="class:show animated fadeInRight">{{'ETIQUETA_VER_TODAS_LAS_ALERTAS' | translate}}</a>
+                    </div>
+                </section>
+            </section>
+        </li>
+        <li class="dropdown" dropdown>
+            <a href="#" class="dropdown-toggle" dropdown-toggle>
+                <span class="thumb-sm avatar pull-left">
+                    <img src="images/a0.png" alt="...">
+                </span>
+                {{usuarioSesion.Nombre}} {{usuarioSesion.ApellidoPaterno}}  {{usuarioSesion.ApellidoMaterno}}
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu animated fadeInRight" role="menu">
+                <li ng-if="!sso">
+                    <span class="arrow top"></span>
+                    <a ui-sref="inicio.usuario.cambiarContrasena">
+                        {{'ETIQUETA_CAMBIAR_CONTRASENA' | translate}}
+                    </a>
+                </li>
+
+                <li class="divider" ng-if="!sso"></li>
+                <li>
+                    <a class="auto" href="" ng-click="cerrarSesion()">
+                        {{'ETIQUETA_CERRAR_SESION' | translate}}
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    </div>
+</header>

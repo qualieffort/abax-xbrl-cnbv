@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<xbrl xmlns="http://www.xbrl.org/2003/instance" 
+      xmlns:xlink="http://www.w3.org/1999/xlink" 
+      xmlns:link="http://www.xbrl.org/2003/linkbase" 
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xmlns:xbrli="http://www.xbrl.org/2003/instance"
+      xmlns:iso4217="http://www.xbrl.org/2003/iso4217"
+      xsi:schemaLocation="http://xbrl.org/2006/xbrldi xbrldi-2006.xsd">
+</xbrl>

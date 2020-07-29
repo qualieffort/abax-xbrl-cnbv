@@ -1,0 +1,17 @@
+{
+	"PeriodosPorRol": {
+    "301100": [
+      "periodo_actual",
+      "annext_LessThan1MonthOrLessThan30DaysMember",
+      "annext_Between31And60DaysOrBetween1AndUpTo2MonthsMember",
+      "annext_Between61And90DaysOrBetween2AndUpTo3MonthsMember",
+      "annext_Between91And120DaysOr3ToUpTo4MonthsMember",
+      "annext_Between121And150DaysOrFrom4To5MonthsMember",
+      "annext_Between151And180DaysOrBetween5AndUpTo6MonthsMember",
+      "annext_MoreThan180DaysOrMoreThan6MonthsMember",
+      "annext_InJudicialProcessMember",
+      "annext_ExtensionMember",
+      "annext_TotalMember"
+    ]
+	}
+}

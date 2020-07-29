@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+  
+  <object id="BlockStoreConsulta" type="AbaxXBRLBlockStore.BlockStore.BlockStoreConsulta">
+    <constructor-arg ref="Conexion"/>
+  </object>
+  
+  <object id="BlockStoreDocumentoInstancia" type="AbaxXBRLBlockStore.BlockStore.BlockStoreDocumentoInstancia">
+    <constructor-arg ref="Conexion"/>
+  </object>
+  
+  <!-- Detalle de servicios -->
+
+  <object id="BlockStoreHechoService" type="AbaxXBRLBlockStore.Services.BlockStoreHechoService">
+    <property name="BlockStoreDocumentoInstancia" ref="BlockStoreDocumentoInstancia"/>
+    <property name="BlockStoreConsulta" ref="BlockStoreConsulta"/>
+    
+    <property name="Collection" value="${BlockStoreHecho}"/>
+    <property name="CollectionDimension" value="${BlockStoreDimension}"/>
+    <property name="CollectionEmpresas" value="${BlockStoreEmpresa}"/>
+    <property name="CollectionUnidades" value="${BlockStoreUnidad}"/>
+    <property name="CollectionConcepto" value="${BlockStoreConcepto}"/>
+                
+  </object>
+  
+
+  <!-- Fin de detalle de servicios -->
+</objects>

@@ -1,0 +1,200 @@
+﻿<section>
+    <section class="vbox">
+        <section class="scrollable padder" style="padding-bottom: 100px;">
+            <section class="panel panel-default">
+                <header class="panel-heading">
+                    {{'TITULO_ADMINISTRADORES' | translate}}
+                </header>
+                <div class="row wrapper">
+                    <div class="col-lg-3">
+                        <select class="input-sm form-control input-s-lg v-middle"
+                                ng-options="taxonomia as taxonomia.Nombre for taxonomia in taxonomias"
+                                ng-model="aTaxonomia"
+                                style="display:none;"
+                                data-placeholder="{{'PLACE_HOLDER_TAXONOMIA' | translate}}"
+                                ng-change="refreshData()"
+                                chosen
+                                width="'300px'"
+                                allow-single-deselect="true">
+                            <option value=""></option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <select class="input-sm form-control input-s-lg v-middle"
+                                ng-options="grupoEmpresa as grupoEmpresa.Nombre for grupoEmpresa in grupoEmpresas"
+                                ng-model="aGrupoEmpresa"
+                                style="display:none;"
+                                data-placeholder="{{'PLACE_HOLDER_GRUPO_EMPRESAS' | translate}}"
+                                ng-change="refreshData()"
+                                chosen
+                                width="'300px'"
+                                allow-single-deselect="true">
+                            <option value=""></option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <select class="input-sm form-control input-s-lg v-middle"
+                                ng-options="emisora as emisora.NombreCorto for emisora in emisoras"
+                                ng-model="aEmisora"
+                                style="display:none;"
+                                data-placeholder="{{'PLACE_HOLDER_EMISORA' | translate}}"
+                                ng-change="refreshData()"
+                                chosen
+                                width="'300px'"
+                                allow-single-deselect="true">
+                            <option value=""></option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-3"></div>
+
+                    <br /><br />
+                    <br />
+
+                    <div class="col-lg-3">
+                        <input type="text"
+                               name="fecha"
+                               placeholder="{{'PLACE_HOLDER_FECHA_REPORTE' | translate}}"
+                               ng-model="aFecha"
+                               ng-change="refreshData()"
+                               class=" input-sm form-control input-s-lg inline v-middle datepicker-input form-control"
+                               datepicker-popup="dd/MM/yyyy"
+                               current-text="{{'ETIQUETA_HOY'| translate}}"
+                               clear-text="{{'ETIQUETA_LIMPIAR'| translate}}"
+                               close-text="{{'ETIQUETA_BOTON_CERRAR'| translate}}"
+                               is-open="datePikerOpen"
+                               style="width:300px; max-width:100%"
+                               ng-click="muestraDatePiker($event)"
+                               id="fecha" />
+                    </div>
+
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-3"></div>
+
+                    <div class="col-lg-3">
+                        <div ng-if="existeElementos">
+                            <button type="button"
+                                    class="btn btn-sm btn-default"
+                                    ng-if="tieneFacultad(FacultadesEnum.ExportarDatosBitacora)"
+                                    style="width:300px; max-width:100%"
+                                    ng-click="exportaAExcel()"
+                                    ng-hide="exportando">
+                                <i class="i i-file-excel"></i>
+                                {{'ETIQUETA_EXPORTAR' | translate}}
+                            </button>
+                            <button type="button" class="btn btn-sm btn-default" ng-if="exportando" style="width:200px" disabled>
+                                <i class="fa fa-refresh fa-spin"></i>
+                                {{'MENSAJE_INFO_EXPORTANDO' | translate}} ...
+                            </button>
+                        </div>
+                        <div class="col-sm-3" ng-if="!existeElementos">
+                            <button type="button" style="width:200px"
+                                    class="btn btn-sm btn-default" disabled>
+                                <i class="i i-file-excel"></i>
+                                {{'ETIQUETA_EXPORTAR' | translate}}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="panel panel-default">
+                <header class="panel-heading bg-light">{{'TITULO_ADMINISTRADORES'| translate}}</header>
+                <table id="tablaAdministradores" class="table table-striped b-t b-light" style="margin-bottom: 0px !important;" datatable="" dt-options="opcionesDataTableLocal">
+                    <thead>
+                        <tr>
+                            <th style="text-align:center; ">{{'PLACE_HOLDER_TAXONOMIA' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_FECHA_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_ENTIDAD_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_TIPO_ADMINISTRADOR_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_NOMBRE_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_APELLIDO_PATERNO_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_APELLIDO_MATERNO_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_APELLIDO_TIPO_CONSEJERO_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_AUDITORIA_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_PRACTICAS_SOCIETARIAS_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_EVALUACION_COMPENSACION_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_OTROS_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_FECHA_DESIGNACION_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_TIPO_ASAMBLEA_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_PERIODO_FUERON_ELECTOS_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_CARGO_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_TIEMPO_OCUPANDO_CARGO' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_PARTICIPACION_ACCIONARIA_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_SEXO_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_INFO_ADICIONAL' | translate}}</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th style="text-align:center; ">{{'PLACE_HOLDER_TAXONOMIA' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_FECHA_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_ENTIDAD_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_TIPO_ADMINISTRADOR_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_NOMBRE_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_APELLIDO_PATERNO_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_APELLIDO_MATERNO_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_APELLIDO_TIPO_CONSEJERO_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_AUDITORIA_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_PRACTICAS_SOCIETARIAS_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_EVALUACION_COMPENSACION_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_OTROS_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_FECHA_DESIGNACION_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_TIPO_ASAMBLEA_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_PERIODO_FUERON_ELECTOS_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_CARGO_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_TIEMPO_OCUPANDO_CARGO' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_PARTICIPACION_ACCIONARIA_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_SEXO_ADMINISTRADORES' | translate}}</th>
+                            <th  style="text-align:center; " >{{'ETIQUETA_INFO_ADICIONAL' | translate}}</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <div class="panel-body font-bold" style=" padding-left: 30px"></div>
+                <footer class="panel-footer">
+                    <div class="row">
+                        <div class="col-sm-4 hidden-xs">
+                            <div ng-if="existeElementos">
+                                <button type="button"
+                                        class="btn btn-sm btn-default"
+                                        ng-if="tieneFacultad(FacultadesEnum.ExportarDatosBitacora)"
+                                        style="width:200px; max-width:200%"
+                                        ng-click="exportaAExcel()"
+                                        ng-hide="exportando">
+                                    <i class="i i-file-excel"></i>
+                                    {{'ETIQUETA_EXPORTAR' | translate}}
+                                </button>
+                                <button type="button" class="btn btn-sm btn-default" ng-if="exportando" style="width:180px" disabled>
+                                    <i class="fa fa-refresh fa-spin"></i>
+                                    {{'MENSAJE_INFO_EXPORTANDO' | translate}} ...
+                                </button>
+                            </div>
+                            <div class="col-sm-3" ng-if="!existeElementos">
+                                <button type="button" style="width:180px"
+                                        class="btn btn-sm btn-default" disabled>
+                                    <i class="i i-file-excel"></i>
+                                    {{'ETIQUETA_EXPORTAR' | translate}}
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 text-center"></div>
+                        <div class="col-sm-4 text-right text-center-xs"></div>
+                    </div>
+                </footer>
+            </section>
+        </section>
+    </section>
+</section>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        function changePositionPaginate() {
+            $("#tablaAdministradores").find("thead").remove();
+        }
+
+        setInterval(changePositionPaginate, 100);
+    });
+</script>

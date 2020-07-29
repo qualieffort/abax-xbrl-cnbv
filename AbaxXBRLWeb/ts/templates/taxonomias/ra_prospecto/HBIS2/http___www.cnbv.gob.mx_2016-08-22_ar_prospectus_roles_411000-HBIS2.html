@@ -1,0 +1,132 @@
+<xbrl-contenedor-formato xbrl:rol-uri="{{xbrlRol.Uri}}" orientacion="landscape" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+	<table class="tablaAnchoFijo" cellspacing="5">
+		<tbody>
+			<tr>
+				<td style="text-align:left; width:50%;"><b>    
+					<xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_GeneralDataAbstract" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;"></xbrl:etiqueta-concepto>
+                </b></td>
+				<td style="text-align:left; width:50%; height:40px;">&nbsp;</td>
+			</tr>
+			<tr ng-if="documentoInstancia.ParametrosConfiguracion['tipoReporte'] == 'pp' || documentoInstancia.ParametrosConfiguracion['tipoReporte'] == 'pe'">
+				<td style="text-align:left; width:50%;"><b>     
+					<xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_PlacementProspectus" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                </b></td>
+				<td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+					<xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_PlacementProspectus_f0506b05-7f5c-4022-a157-8f5662f35f50"></xbrl:campo-captura>
+				</td>
+			</tr>
+			<tr ng-if="documentoInstancia.ParametrosConfiguracion['tipoReporte'] == 'pp' || documentoInstancia.ParametrosConfiguracion['tipoReporte'] == 'pe'">
+				<td colspan="2">
+					<div class="etiquetaConceptoTitulo"><label><b>
+						<xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ProspectusLegend" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                    </b></label><b>:</b></div>
+					<div class="bloqueTexto" style="width:100%">
+						<xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_ProspectusLegend_17d2e40e-e5b3-4fbd-91cd-067cd6ae58cf"></xbrl:campo-captura>
+					</div>
+				</td>
+			</tr>
+			<tr ng-if="documentoInstancia.ParametrosConfiguracion['tipoReporte'] == 'pp' || documentoInstancia.ParametrosConfiguracion['tipoReporte'] == 'pe'">
+				<td style="text-align:left; width:50%;"><b>     
+					<xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_OnlyEmission" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                </b></td>
+				<td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+					<xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_OnlyEmission_96812d61-0274-47fe-a9d8-5d50de9087d9"></xbrl:campo-captura>
+				</td>
+			</tr>
+			<tr ng-if="documentoInstancia.ParametrosConfiguracion['tipoReporte'] == 'su'">
+				<td style="text-align:left; width:50%;"><b>     
+					<xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_Supplement" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                </b></td>
+				<td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+					<xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_Supplement_b6c084ac-16af-4245-adce-50ea5f36fc7e"></xbrl:campo-captura>
+				</td>
+			</tr>
+			<tr ng-if="documentoInstancia.ParametrosConfiguracion['tipoReporte'] == 'su'">
+				<td colspan="2">
+					<div class="etiquetaConceptoTitulo"><label><b>
+						<xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_SupplementLegend" xbrl:nivel-indentacion="2"></xbrl:etiqueta-concepto>
+                    </b></label><b>:</b></div>
+					<div class="bloqueTexto" style="width:100%">
+						<xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_SupplementLegend_982d502c-c882-4c39-8d08-bb16d65b4f67"></xbrl:campo-captura>
+					</div>
+				</td>
+			</tr>
+			<tr ng-if="documentoInstancia.ParametrosConfiguracion['tipoReporte'] == 'fo'">
+				<td style="text-align:left; width:50%;"><b>     
+					<xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_Brochure" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                </b></td>
+				<td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+					<xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_Brochure_2e5e2f4f-0979-4c75-a7d8-1080472d2f4f"></xbrl:campo-captura>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<div class="etiquetaConceptoTitulo"><label><b>
+						<xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_RecentEvents" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b></label><b>:</b></div>
+					<div class="bloqueTexto">
+						<xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_RecentEvents_63fb3597-ff3d-4e0c-8344-5df5104e7126"></xbrl:campo-captura>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td style="text-align:left; width:50%;"><b>     
+					<xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_IssuanceUnderArt13OfTheCUE" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                </b></td>
+				<td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+					<xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_IssuanceUnderArt13OfTheCUE_270808be-b188-4763-8259-9166b702c9cb"></xbrl:campo-captura>
+				</td>
+			</tr>
+			<tr>
+				<td style="text-align:left; width:50%;"><b>     
+					<xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_LimitedPublicOffering" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                </b></td>
+				<td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+					<xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_LimitedPublicOffering_b13ce18d-b760-472a-a9aa-7988c2d8f88c"></xbrl:campo-captura>
+				</td>
+			</tr>
+			<tr>
+				<td style="text-align:left; width:50%;"><b>     
+					<xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_TypeOfInstrument" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                </b></td>
+				<td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+					<xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_TypeOfInstrumentDescription-0000-0000-0000-0000000000"></xbrl:campo-captura>
+				</td>
+			</tr>
+			<tr>
+				<td style="text-align:left; width:50%;"><b>     
+					<xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ForeingIssuer" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                </b></td>
+				<td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+					<xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_ForeingIssuer_1f171e20-dd3e-4d79-9dac-7274a21bb546"></xbrl:campo-captura>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<div class="etiquetaConceptoTitulo"><label><b>
+						<xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_MentioningwhetherOrNotHaveCollateral" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                    </b></label><b>:</b></div>
+					<div class="bloqueTexto" style="width:100%">
+						<xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_MentioningwhetherOrNotHaveCollateral_dba06db9-480f-4b6f-9f97-1e9281722d50"></xbrl:campo-captura>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td style="text-align:left; width:50%;"><b>     
+					<xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_MentioningPartialOrTotalDependencePros" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                </b></td>
+				<td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+					<xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_MentioningPartialOrTotalDependencePros_f17e3800-f807-44e9-8677-d5ccbc82beb8"></xbrl:campo-captura>
+				</td>
+			</tr>
+			<tr>
+				<td style="text-align:left; width:50%;"><b>     
+					<xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_IssuewithCapitalCalls" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto>
+                </b></td>
+				<td style="text-align:left; width:50%; height:40px;" class="celdaVacia">
+					<xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_IssuewithCapitalCalls_45f09801-13da-42dc-8b34-303b1d4a8c40" xbrl:ultimo="true"></xbrl:campo-captura>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</xbrl-contenedor-formato>

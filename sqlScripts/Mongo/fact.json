@@ -1,0 +1,128 @@
+mongoexport --db jbrl --collection fact --out C:/2HSoftware/Proyectos/AbaxXBRL/AbaxXBRL/sqlScripts/Mongo/export/fact.json
+mongoexport --db jbrl --collection fs.chunks --out C:/2HSoftware/Proyectos/AbaxXBRL/AbaxXBRL/sqlScripts/Mongo/export/fs.chunks.json
+mongoexport --db jbrl --collection fs.files --out C:/2HSoftware/Proyectos/AbaxXBRL/AbaxXBRL/sqlScripts/Mongo/export/fs.files.json
+
+
+%26oscar.loyola.2h
+oscar.loyola.2h
+
+>cd C:\Program Files\MongoDB\Server\3.6\bin
+
+mongo "mongodb+srv://abaxxbrl-dk4sr.azure.mongodb.net/test" --username oscarloyola
+
+
+mongoimport --uri "mongodb+srv://oscarloyola:oscar.loyola.2h@abaxxbrl-dk4sr.azure.mongodb.net/xbrl" --collection fact --file ./fact.json
+mongoimport --uri "mongodb+srv://oscarloyola:oscar.loyola.2h@abaxxbrl-dk4sr.azure.mongodb.net/xbrl" --collection fact --file C:/2HSoftware/Proyectos/AbaxXBRL/AbaxXBRL/sqlScripts/Mongo/export/fact.json
+
+db.getCollection('fact').getIndexes();
+db.getCollection('fact').count({});
+db.getCollection('report').count({});
+
+db.getCollection('report').count({"taxonomyId":/rel_news_/});
+db.getCollection('report').count({"taxonomyId":/rel_news_/});
+use xbrlcellstore;
+db.getCollection('fact').count({"isReplaced" : false,"isChunk" : true,"dimensionMap.taxonomyId":{"$in":["http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news_common_representative_view_entry_point", "http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news_rating_agency_view_entry_point","http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news_issuer_view_entry_point","http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news_investment_funds_view_entry_point", "http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news_trust_issuer_view_entry_point"]}});
+db.getCollection('report').count({"isReplaced" : false,"taxonomyId":{"$in":["http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news_common_representative_view_entry_point", "http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news_rating_agency_view_entry_point","http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news_issuer_view_entry_point","http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news_investment_funds_view_entry_point", "http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news_trust_issuer_view_entry_point"]}});
+
+db.getCollection('report').count({"isReplaced" : false, "taxonomyId":/rel_news/})
+db.getCollection('report').count({"isReplaced" : false,"taxonomyId":{"$in":[
+"http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news_common_representative_view_entry_point", 
+"http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news_rating_agency_view_entry_point",
+"http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news_issuer_view_entry_point",
+"http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news_investment_funds_view_entry_point", 
+"http://www.cnbv.gob.mx/2017-08-01/relevant_events/rel_news_trust_issuer_view_entry_point"]}});
+
+use xbrlcellstore;
+
+db.getCollection('report').aggregate([{ "$match" : { "isReplaced" : false } }, { "$group" : { "_id" : { "trustNumber" : "$params.trustNumber" } } }, { "$project" : { "_id" : 0, "trustNumber" : "$_id.trustNumber" } }])
+
+db.createCollection("fact");
+db.createCollection("concept");
+db.createCollection("report");
+
+use xbrlcellstore;
+db.getCollection('report').count({"reportRecordId":"2AAD08270D66520F6B4F8A019A142E0F"});
+db.getCollection('fact').find({"isReplaced" : false,"reportRecordId" : "6DB92406A8C3D6C5036D3D173781DAB6", "isChunk" : true})
+
+use xbrlcellstore;
+
+db.getCollection('fact').find({"urlBlobValue":/^https\:\/\/xbrlbotblobdata\.blob\.core\.windows\.net\/xbrlfactblobvalue/ }).forEach(function(e,i){e["urlBlobValue"] = e["urlBlobValue"].replace("https://xbrlbotblobdata.blob.core.windows.net/xbrlfactblobvalue","https://abaxxbrldata.blob.core.windows.net/bot-data"); db.getCollection("fact").save(e);});
+
+use xbrlcellstore;
+db.getCollection('fact').aggregate([{"$match":{"dataType":/64/}},{"$group":{"_id":"$dataType"}}]);
+
+http://www.xbrl.org/2003/instance:base64BinaryItemType
+
+db.getCollection('fact').createIndex({"isReplaced":1, "conceptId":1});
+db.getCollection('fact').createIndex({"isReplaced":1, "dimensionMap.taxonomyId":1});
+db.getCollection('fact').createIndex({"isReplaced":1, "dimensionMap.entity":1});
+db.getCollection('fact').createIndex({"isReplaced":1, "dimensionMap.instanceDocmentEntity":1});
+db.getCollection('fact').createIndex({"isReplaced":1, "dimensionMap.instanceDocmentReportedDate":1});
+db.getCollection('fact').createIndex({"isReplaced":1, "dimensionMap.isDimensional":1});
+db.getCollection('fact').createIndex({"isReplaced":1, "dimensionMap.periodMainDate":1});
+db.getCollection('fact').createIndex({"isReplaced":1, "dimensionMap.periodStartDate":1, "dimensionMap.periodEndDate":1});
+db.getCollection('fact').createIndex({"isReplaced":1, "dimensionMap.taxonomyId":1, "dimensionMap.entity":1, "dimensionMap.instanceDocmentEntity":1, "conceptId":1});
+db.getCollection('fact').createIndex({"isReplaced":1, "reportId":1});
+db.getCollection('fact').createIndex({"isReplaced":1, "registrationDate":1});
+db.getCollection('fact').createIndex({"isReplaced":1, "reportRecordId":1});
+db.getCollection('fact').createIndex({"isReplaced":1, "factId":1});
+db.getCollection('fact').createIndex({"isReplaced":1, "dimensionMap.xbrlDim_ar_pros_TypeOfCompanyAdministratorsAxis":1});
+db.getCollection('fact').createIndex({"isReplaced":1, "dimensionMap.entity":1,"dimensionMap.periodMainDate":1,"dimensionMap.xbrlDim_ar_pros_TypeOfCompanyAdministratorsAxis":1},{"name":"administradores"});
+db.getCollection('fact').createIndex({"isReplaced":1, "dataType":1});
+db.getCollection('fact').createIndex({"isReplaced":1, "isChunk":1});
+db.getCollection('fact').createIndex({"isReplaced":1, "dimensionMap.requireEncodeEn":1});
+db.getCollection('fact').createIndex({"isReplaced":1, "dimensionMap.taxonomyId":1, "dimensionMap.entity":1});
+db.getCollection('fact').createIndex({"isReplaced":1, "dimensionMap.taxonomyId":1, "dimensionMap.entity":1, "dimensionMap.trustNumber":1});
+db.getCollection('fact').createIndex({"isReplaced":1, "dimensionMap.taxonomyId":1, "dimensionMap.entity":1, "conceptId":1});
+db.getCollection('fact').createIndex({"isReplaced":1, "dimensionMap.taxonomyId":1, "dimensionMap.entity":1, "dimensionMap.trustNumber":1, "conceptId":1});
+
+
+
+
+db.getCollection('concept').createIndex({"taxonomyId":1, "language":1});
+db.getCollection('concept').createIndex({"taxonomyId":1, "conceptId":1});
+db.getCollection('concept').createIndex({"conceptId":1, "language":1, "role":1});
+db.getCollection('concept').createIndex({"taxonomyId":1, "conceptId":1, "language":1, "role":1});
+db.getCollection('concept').createIndex({"taxonomyId":1, "conceptId":1, "isAbstract":1});
+db.getCollection('concept').createIndex({"taxonomyId":1, "conceptId":1, "isHipercube": 1});
+db.getCollection('concept').createIndex({"taxonomyId":1, "conceptId":1, "isDimensionMember": 1});
+db.getCollection('concept').createIndex({"taxonomyId":1, "conceptId":1, "isAbstract":1, "isHipercube": 1, "isDimensionMember": 1});
+
+
+
+db.getCollection('report').createIndex({"isReplaced":1, "taxonomyId":1});
+db.getCollection('report').createIndex({"isReplaced":1, "entity":1});
+db.getCollection('report').createIndex({"isReplaced":1, "reportId":1});
+db.getCollection('report').createIndex({"isReplaced":1, "taxonomyId":1, "reportedDate":1});
+db.getCollection('report').createIndex({"isReplaced":1, "entity":1, "reportedDate":1});
+db.getCollection('report').createIndex({"isReplaced":1, "registrationDate":1});
+db.getCollection('report').createIndex({"isReplaced":1, "reportRecordId":1});
+db.getCollection('report').createIndex({"isReplaced":1, "reportId":1, "reportRecordId":1});
+db.getCollection('report').createIndex({"isReplaced":1, "replacementId":1});
+db.getCollection('report').createIndex({"isReplaced":1, "parameters.trustNumber":1});
+db.getCollection('report').createIndex({"isReplaced":1, "taxonomyId":1, "entity":1});
+db.getCollection('report').createIndex({"isReplaced":1, "taxonomyId":1, "entity":1, "parameters.trustNumber":1});
+
+
+
+
+db.getCollection('report').aggregate([{"$group":{"_id": "$taxonomyId","downloaId":{"$first":"$downloadId"}}}]);
+
+
+
+
+
+
+
+
+var ENCODE_AUXILIAR = {"\+AKA\-":"Â","Â¡":"¡","Â¢":"¢","Â£":"£","Â¤":"¤","Â¥":"¥","Â¦":"¦","Â§":"§","Â¨":"¨","Â©":"©","Âª":"ª","Â«":"«","\+AKw\-":"Â","¢í":"­","Â®":"®","Â¯":"¯","Â°":"°","Â±":"±","Â²":"²","Â³":"³","Â´":"´","Âµ":"µ","\+ALY\-":"Â","Â·":"·","Â¸":"¸","Â¹":"¹","Âº":"º","Â»":"»","Â¼":"¼","Â½":"½","Â¾":"¾","Â¿":"¿","Ã€":"À","Ã":"Á","Ã‚":"Â","Ã„":"Ä","Ã…":"Å","Ã†":"Æ","Ã‡":"Ç","Ãˆ":"È","Ã‰":"É","ÃŠ":"Ê","Ã‹":"Ë","ÃŒ":"Ì","Ã":"Í","ÃŽ":"Î","Ã":"Ï","Ã":"Ð","Ã‘":"Ñ","Ã’":"Ò","Ã“":"Ó","Ã”":"Ô","Ã•":"Õ","Ã–":"Ö","Ã—":"×","Ã˜":"Ø","Ã™":"Ù","Ãš":"Ú","Ã›":"Û","Ãœ":"Ü","Ã":"Ý","Ãž":"Þ","ÃŸ":"ß","Ã¡":"á","Ã¢":"â","Ã¤":"ä","Ã¥":"å","Ã¦":"æ","Ã§":"ç","Ã¨":"è","Ã©":"é","Ãª":"ê","Ã«":"ë","Ã­":"í","Ã®":"î","Ã¯":"ï","Ã°":"ð","Ã±":"ñ","Ã²":"ò","Ã³":"ó","Ã´":"ô","Ãµ":"õ","Ã·":"÷","Ã¸":"ø","Ã¹":"ù","Ãº":"ú","Ã»":"û","Ã¼":"ü","Ã½":"ý","Ã¾":"þ","Ã¿":"ÿ","Ã£":"ã","Ãƒ":"Ã","Ã":"í"};
+var ENCODE_REGEXAUXILIAR = {"\+AKA\-":/\+AKA\-/g,"Â¡":/Â¡/g,"Â¢":/Â¢/g,"Â£":/Â£/g,"Â¤":/Â¤/g,"Â¥":/Â¥/g,"Â¦":/Â¦/g,"Â§":/Â§/g,"Â¨":/Â¨/g,"Â©":/Â©/g,"Âª":/Âª/g,"Â«":/Â«/g,"\+AKw\-":/\+AKw\-/g,"¢í":/¢í/g,"Â®":/Â®/g,"Â¯":/Â¯/g,"Â°":/Â°/g,"Â±":/Â±/g,"Â²":/Â²/g,"Â³":/Â³/g,"Â´":/Â´/g,"Âµ":/Âµ/g,"\+ALY\-":/\+ALY\-/g,"Â·":/Â·/g,"Â¸":/Â¸/g,"Â¹":/Â¹/g,"Âº":/Âº/g,"Â»":/Â»/g,"Â¼":/Â¼/g,"Â½":/Â½/g,"Â¾":/Â¾/g,"Â¿":/Â¿/g,"Ã€":/Ã€/g,"Ã":/Ã/g,"Ã‚":/Ã‚/g,"Ãƒ":/Ãƒ/g,"Ã„":/Ã„/g,"Ã…":/Ã…/g,"Ã†":/Ã†/g,"Ã‡":/Ã‡/g,"Ãˆ":/Ãˆ/g,"Ã‰":/Ã‰/g,"ÃŠ":/ÃŠ/g,"Ã‹":/Ã‹/g,"ÃŒ":/ÃŒ/g,"Ã":/Ã/g,"ÃŽ":/ÃŽ/g,"Ã":/Ã/g,"Ã":/Ã/g,"Ã‘":/Ã‘/g,"Ã’":/Ã’/g,"Ã“":/Ã“/g,"Ã”":/Ã”/g,"Ã•":/Ã•/g,"Ã–":/Ã–/g,"Ã—":/Ã—/g,"Ã˜":/Ã˜/g,"Ã™":/Ã™/g,"Ãš":/Ãš/g,"Ã›":/Ã›/g,"Ãœ":/Ãœ/g,"Ã":/Ã/g,"Ãž":/Ãž/g,"ÃŸ":/ÃŸ/g,"Ã¡":/Ã¡/g,"Ã¢":/Ã¢/g,"Ã£":/Ã£/g,"Ã¤":/Ã¤/g,"Ã¥":/Ã¥/g,"Ã¦":/Ã¦/g,"Ã§":/Ã§/g,"Ã¨":/Ã¨/g,"Ã©":/Ã©/g,"Ãª":/Ãª/g,"Ã«":/Ã«/g,"Ã":/Ã/g,"Ã­":/Ã­/g,"Ã®":/Ã®/g,"Ã¯":/Ã¯/g,"Ã°":/Ã°/g,"Ã±":/Ã±/g,"Ã²":/Ã²/g,"Ã³":/Ã³/g,"Ã´":/Ã´/g,"Ãµ":/Ãµ/g,"Ã·":/Ã·/g,"Ã¸":/Ã¸/g,"Ã¹":/Ã¹/g,"Ãº":/Ãº/g,"Ã»":/Ã»/g,"Ã¼":/Ã¼/g,"Ã½":/Ã½/g,"Ã¾":/Ã¾/g,"Ã¿":/Ã¿/g};
+function encodeAuxiliar(originSoruce){ var strigEvalued = originSoruce;  for(var utf8Key in  ENCODE_AUXILIAR) { strigEvalued = strigEvalued.replace(ENCODE_REGEXAUXILIAR[utf8Key], ENCODE_AUXILIAR[utf8Key]);  } return strigEvalued; };
+function requireEncode(originSoruce){ var isEncoding = false;  for(var utf8Key in  ENCODE_AUXILIAR) { if(originSoruce.indexOf(utf8Key) != -1) { isEncoding = true; break;}  } return isEncoding; };
+
+
+db.getCollection('fact').find({"isReplaced":false, "dataType":/text|string/}).forEach(function(e,i){if(e["value"].length > 0){e["value"] = encodeAuxiliar(e["value"]);} if(e["dimensionMap"]["textEs"]){e["dimensionMap"]["textEs"] = encodeAuxiliar(e["dimensionMap"]["textEs"]); e["dimensionMap"]["requireEncodeEn"] = requireEncode(e["dimensionMap"]["textEn"]); db.getCollection("fact").save(e);}});
+db.getCollection('concept').find({"language" : "es"}).forEach(function(e,i){e["conceptLabel"] = encodeAuxiliar(e["conceptLabel"]); db.getCollection("concept").save(e);});
+
+
+//db.getCollection('fact').find({"factId" : "8FDDD13D1E895BBB100926EF51C7BB81"}).forEach(function(e,i){if(e["value"].length > 0){e["value"] = encodeAuxiliar(e["value"]);} if(e["dimensionMap"]["textEs"]){e["dimensionMap"]["textEs"] = encodeAuxiliar(e["dimensionMap"]["textEs"]); e["dimensionMap"]["requireEncodeEn"] = requireEncode(e["dimensionMap"]["textEn"]); db.getCollection("fact").save(e);}});

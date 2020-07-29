@@ -1,0 +1,68 @@
+{
+  "IdConceptos": [
+    "ar_pros_DebtSeries",
+    "ar_pros_DebtIssuanceDate",
+    "ar_pros_DebtSerieSettlementDate",
+    "ar_pros_DebtSerieTermOfTheIssuance",
+    "ar_pros_DebtInterestPerformanceAndCalculationProcedure",
+    "ar_pros_DebtPaymentFrequencyOfInterest",
+    "ar_pros_DebtLocationAndPaymentOfInterestAndPrincipal",
+    "ar_pros_DebtSubordinationOfTitlesIfAny",
+    "ar_pros_DebtAmortizationAndEarlyAmortizationEarlyMaturityIfApplicable",
+    "ar_pros_DebtGuaranteeIfAny",
+    "ar_pros_DebtTrustIfAny",
+    "ar_pros_DebtCommonRepresentative",
+    "ar_pros_DebtDepositary",
+    "ar_pros_DebtTaxRegime",
+    "ar_pros_DebtGuaranteedCapital",
+    "ar_pros_DebtUnderlyingAsset",
+    "ar_pros_DebtCalculationAgentIfAny",
+    "ar_pros_DebtMultiplierIfApplicable",
+    "ar_pros_DebtSerieObservations",
+    "ar_pros_Rating",
+    "ar_pros_RatingMeaning",
+    "ar_pros_SecuritiesRatingOherName"
+  ],
+  "PlantillasContextos": {
+    "DEFAULT": {
+      "Periodo": {
+        "VariableFechaInstante": "fecha_2017_12_31",
+        "Tipo": 1
+      },
+      "ContieneInformacionDimensional": true,
+      "ValoresDimension": [
+        {
+          "Explicita": true,
+          "IdDimension": "ar_pros_SecuritiesRatingAxis",
+          "IdItemMiembro": "ar_pros_FitchMexicoSADeCVMember",
+          "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:SecuritiesRatingAxis",
+          "QNameItemMiembro": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:FitchMexicoSADeCVMember"
+        }
+      ]
+    }
+  },
+  "PlantillaDimensiones": {
+    "ar_pros_DebtSeriesTypedAxis": {
+      "PrefijoValor": "<ar_pros:SerieDomain xmlns:ar_pros=\"http://www.cnbv.gob.mx/2016-08-22/ar_prospectus\">",
+      "SubfijoValor": "</ar_pros:SerieDomain>",
+      "EtiquetaNuevoElemento": "serie",
+      "Explicita": false,
+      "IdDimension": "ar_pros_DebtSeriesTypedAxis",
+      "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:DebtSeriesTypedAxis"
+    },
+    "ar_pros_SecuritiesRatingAxis": {
+      "PrefijoValor": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:",
+      "SubfijoValor": "",
+      "EtiquetaNuevoElemento": "FitchMexicoSADeCVMember",
+      "Explicita": true,
+      "IdDimension": "ar_pros_SecuritiesRatingAxis",
+      "QNameDimension": "http://www.cnbv.gob.mx/2016-08-22/ar_prospectus:SecuritiesRatingAxis"
+    }
+  },
+  "DimensionesDinamicas": [
+    "ar_pros_DebtSeriesTypedAxis"
+  ],
+  "MaxColumnasVertical": 6,
+  "MaxColumnasHorizontal": 0,
+  "TamanoHoja": "Letter"
+}

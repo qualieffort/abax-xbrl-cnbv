@@ -1,0 +1,172 @@
+{
+	"ContextosPlantillaPorId" : {
+  "ctx_2014": {
+    "Id": "ctx_2014",
+    "Periodo": {
+      "Tipo": 1,
+      "FechaInstante": "#fecha_2014_12_31",
+      "FechaInicio": "",
+      "FechaFin": ""
+    },
+    "Entidad": {
+      "Id": "#nombreEntidad",
+      "EsquemaId": "#esquemaEntidad",
+      "ContieneInformacionDimensional": false,
+      "Segmento": null,
+      "ValoresDimension": []
+    },
+    "ContieneInformacionDimensional": false,
+    "Escenario": null,
+    "ValoresDimension": []
+  }
+},
+	
+	"UnidadesPlantillaPorId" : {},
+            
+	"HechosPlantillaPorId" : {
+  "ar_pros_ReferenceIncorporationFinancialInformationOfTheTrust_287ffe85-28f6-4b16-8fef-c05c796a712d": {
+    "Id": "ar_pros_ReferenceIncorporationFinancialInformationOfTheTrust_287ffe85-28f6-4b16-8fef-c05c796a712d",
+    "IdConcepto": "ar_pros_ReferenceIncorporationFinancialInformationOfTheTrust",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_SelectedFinancialInformationOfTheTrust_65996a5e-6ec4-4398-997a-4fc7005f07ea": {
+    "Id": "ar_pros_SelectedFinancialInformationOfTheTrust_65996a5e-6ec4-4398-997a-4fc7005f07ea",
+    "IdConcepto": "ar_pros_SelectedFinancialInformationOfTheTrust",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_BalanceAndTrustResults_4c4f63c1-4825-41bd-9739-a5f2b0b46913": {
+    "Id": "ar_pros_BalanceAndTrustResults_4c4f63c1-4825-41bd-9739-a5f2b0b46913",
+    "IdConcepto": "ar_pros_BalanceAndTrustResults",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_SourceAndApplicationOfResources_f47c0d5d-d0ef-4fb6-8e80-67d0bbd94e7e": {
+    "Id": "ar_pros_SourceAndApplicationOfResources_f47c0d5d-d0ef-4fb6-8e80-67d0bbd94e7e",
+    "IdConcepto": "ar_pros_SourceAndApplicationOfResources",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_MovementsInTheAccountsForCashManagement_8cbc456c-e240-4e53-9935-941230a58b24": {
+    "Id": "ar_pros_MovementsInTheAccountsForCashManagement_8cbc456c-e240-4e53-9935-941230a58b24",
+    "IdConcepto": "ar_pros_MovementsInTheAccountsForCashManagement",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_IndexesAndFinancialRatios_e4ffa673-d62a-4f5f-b884-e68722ebd91f": {
+    "Id": "ar_pros_IndexesAndFinancialRatios_e4ffa673-d62a-4f5f-b884-e68722ebd91f",
+    "IdConcepto": "ar_pros_IndexesAndFinancialRatios",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_SelectedFinancialInformationOfTheCompaniesForWhichTheTrustInvests_d57b0a3c-e194-42d1-b683-514b3fa59e91": {
+    "Id": "ar_pros_SelectedFinancialInformationOfTheCompaniesForWhichTheTrustInvests_d57b0a3c-e194-42d1-b683-514b3fa59e91",
+    "IdConcepto": "ar_pros_SelectedFinancialInformationOfTheCompaniesForWhichTheTrustInvests",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_RelevantCreditReportTrust_e810d12d-efe5-4265-8b47-f73557e2f976": {
+    "Id": "ar_pros_RelevantCreditReportTrust_e810d12d-efe5-4265-8b47-f73557e2f976",
+    "IdConcepto": "ar_pros_RelevantCreditReportTrust",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_CommentsAndManagementAnalysisOnTrustOperatingResults_150ecfea-3044-4386-9326-17ec45d1fc93": {
+    "Id": "ar_pros_CommentsAndManagementAnalysisOnTrustOperatingResults_150ecfea-3044-4386-9326-17ec45d1fc93",
+    "IdConcepto": "ar_pros_CommentsAndManagementAnalysisOnTrustOperatingResults",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_OperationResultsTrust_d4ccb96b-33a4-49ec-ade0-b5523c32c540": {
+    "Id": "ar_pros_OperationResultsTrust_d4ccb96b-33a4-49ec-ade0-b5523c32c540",
+    "IdConcepto": "ar_pros_OperationResultsTrust",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_FinancialPositionLiquidityAndCapitalResourcesTrust_19f6021a-8db1-4b08-8c90-4408a96e23dd": {
+    "Id": "ar_pros_FinancialPositionLiquidityAndCapitalResourcesTrust_19f6021a-8db1-4b08-8c90-4408a96e23dd",
+    "IdConcepto": "ar_pros_FinancialPositionLiquidityAndCapitalResourcesTrust",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_InternalControlTrust_92d8d49d-72e4-4d44-9caf-134c8c97d2f4": {
+    "Id": "ar_pros_InternalControlTrust_92d8d49d-72e4-4d44-9caf-134c8c97d2f4",
+    "IdConcepto": "ar_pros_InternalControlTrust",
+    "IdContextoPlantilla": "ctx_2014",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  }
+}
+}

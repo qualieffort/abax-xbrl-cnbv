@@ -1,0 +1,86 @@
+﻿<div>
+    <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true" ng-click="cerrarDialogo()">&times;</button>
+        <div class="row m-t-sm">
+            <div class="col-sm-8 m-b-xs">
+                <h4 class="modal-title">Registro</h4>
+            </div>
+            <div class="col-sm-2 m-b-xs">
+                &nbsp;&nbsp;&nbsp;
+            </div>
+            <div class="col-sm-2 m-b-xs">
+            </div>
+        </div>
+    </div>
+    <div class="modal-body">
+
+        <!--Para definicion de operaciones de calculo-->
+        <div>
+            <div style="height:500px; overflow-y: auto;">
+                <table class="table table-striped b-t b-light overflow-y">
+                    <thead>
+                        <tr>
+                            <th>Concepto</th>
+                            <th style="min-width:200px; width:200px;" translate="ETIQUETA_VALOR"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr><td>NUM. CONS.</td>									<td><input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[0].hecho.ValorHecho" xbrl:auto-numeric="" opciones-auto-numeric="{ vMin: '1', vMax: '99999', mDec: '0', aPad: false }"></td></tr>
+                        <tr>
+                            <td>TIPO DE INVERSI&Oacute;N</td>
+                            <td>
+                                <select name="valor" ng-model="renglonTabla.camposRenglon[1].hecho.ValorHecho" class="form-control" ng-options="tipoInversion.clave as tipoInversion.descripcion  for tipoInversion  in catalogoTipoInversion ">
+                                    <option value="">{{'ETIQUETA_SELECCIONAR_OPCION' | translate}}</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr><td>EMISORA</td>									<td><input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[2].hecho.ValorHecho"></td></tr>
+                        <tr><td>SERIE</td>										<td><input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[3].hecho.ValorHecho"></td></tr>
+                        <tr><td>CUPON</td>										<td><input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[4].hecho.ValorHecho"></td></tr>
+                        <tr><td>TIPO DE VALOR</td>								<td><input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[5].hecho.ValorHecho"></td></tr>
+                        <tr><td>C&Oacute;DIGO DE IDENTIFICACI&Oacute;N</td>		<td><input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[6].hecho.ValorHecho"></td></tr>
+                        <tr><td>TASA AL VALUAR</td>								<td><input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[7].hecho.ValorHecho" xbrl:auto-numeric="" opciones-auto-numeric="{ vMin: '-99999999999999', vMax: '999999999999', mDec: '15', aPad: false }"></td></tr>
+                        <tr>
+                            <td>TIPO DE TASA</td>
+                            <td>
+                                <select name="valor" ng-model="renglonTabla.camposRenglon[8].hecho.ValorHecho" class="form-control" ng-options="tipoTasa.clave as tipoTasa.descripcion  for tipoTasa  in catalogoTipoTasa ">
+                                    <option value="">{{'ETIQUETA_SELECCIONAR_OPCION' | translate}}</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr><td>AGRUPACI&Oacute;N</td>							<td><input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[9].hecho.ValorHecho"></td></tr>
+                        <tr>
+                            <td>CALIF. &Oacute; BURSATILIDAD</td>
+                            <td>
+                                <select name="valor" ng-model="renglonTabla.camposRenglon[10].hecho.ValorHecho" class="form-control" ng-options="bursatilidad.clave as bursatilidad.descripcion  for bursatilidad  in catalogoBursatilidad ">
+                                    <option value="">{{'ETIQUETA_SELECCIONAR_OPCION' | translate}}</option>
+                                </select>
+                            </td>
+                        <tr><td>CANTIDAD DE TITULOS OPERADOS</td>				<td><input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[11].hecho.ValorHecho" xbrl:auto-numeric="" opciones-auto-numeric="{ vMin: '-99999999999999', vMax: '999999999999', mDec: '15', aPad: false }"></td></tr>
+                        <tr><td>CANTIDAD DE TITULOS LIQUIDADOS</td>				<td><input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[12].hecho.ValorHecho" xbrl:auto-numeric="" opciones-auto-numeric="{ vMin: '-99999999999999', vMax: '999999999999', mDec: '15', aPad: false }"></td></tr>
+                        <tr><td>TOTAL TITULOS EMISI&Oacute;N</td>				<td><input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[13].hecho.ValorHecho" xbrl:auto-numeric="" opciones-auto-numeric="{ vMin: '-99999999999999', vMax: '999999999999', mDec: '15', aPad: false }"></td></tr>
+                        <tr><td>COSTO PROM. UNIT. DE ADQ.</td>					<td><input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[14].hecho.ValorHecho" xbrl:auto-numeric="" opciones-auto-numeric="{ vMin: '-99999999999999', vMax: '999999999999', mDec: '15', aPad: false }"></td></tr>
+                        <tr><td>COSTO TOTAL ADQUISICI&Oacute;</td>				<td><input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[15].hecho.ValorHecho" xbrl:auto-numeric="" opciones-auto-numeric="{ vMin: '-99999999999999', vMax: '999999999999', mDec: '15', aPad: false }"></td></tr>
+                        <tr><td>VALOR RAZONABLE &Oacute; CONTABLE UNITARIO</td>	<td><input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[16].hecho.ValorHecho" xbrl:auto-numeric="" opciones-auto-numeric="{ vMin: '-99999999999999', vMax: '999999999999', mDec: '15', aPad: false }"></td></tr>
+                        <tr><td>VALOR RAZONABLE &Oacute; CONTABLE TOTAL</td>	<td><input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[17].hecho.ValorHecho" xbrl:auto-numeric="" opciones-auto-numeric="{ vMin: '-99999999999999', vMax: '999999999999', mDec: '15', aPad: false }"></td></tr>
+                        <tr><td>D&Iacute;S POR VENCER</td>						<td><input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[18].hecho.ValorHecho" xbrl:auto-numeric="" opciones-auto-numeric="{ vMin: '0', vMax: '99999', mDec: '0', aPad: false }"></td>
+                        <tr><td>VAR</td>										<td><input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[19].hecho.ValorHecho"></td></tr>
+                        <tr><td>CONTRAPARTE REPORTO PRESTAMO DERIVADO</td>		<td><input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[20].hecho.ValorHecho"></td></tr>
+                        <tr>
+                            <td>TIPO DE CONTRATO (COMPRA-VENTA)</td>
+                            <td>
+                                <select name="valor" ng-model="renglonTabla.camposRenglon[21].hecho.ValorHecho" class="form-control" ng-options="contrato.clave as contrato.descripcion  for contrato  in catalogoTipoContrato ">
+                                    <option value="">{{'ETIQUETA_SELECCIONAR_OPCION' | translate}}</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr><td>PAIS DONDE SE ADQUIRIERON LOS VALORES</td>		<td><input type="text" class="form-control" ng-model="renglonTabla.camposRenglon[22].hecho.ValorHecho"></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" ng-click="cerrarDialogo()" translate="ETIQUETA_BOTON_CERRAR"></button>
+        </div>
+    </div>

@@ -1,0 +1,38 @@
+<xbrl-contenedor-formato xbrl:rol-uri="{{xbrlRol.Uri}}" orientacion="landscape" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+<div id="contenedorTablaExcel" class="table-responsive">
+    <table xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" class="table table-striped b-t b-light" xbrl:tabla-excel xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" selector="td:not(:first-child)" selector-contenedor-x="#contenedorTablaExcel" selector-contenedor-y="#contenedorFormatos" tab-index="1" on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)" on-after-paste="onAfterPaste(valorPegado, x, y)" on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)">
+        <thead>
+            <tr>
+                <th class="th-sortable" data-toggle="class"> {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Concepto' : 'Concept' }} </th>
+                <th style="min-width: 230px; width: 230px;">
+                    {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'A&ntilde;o actual' : 'Actual year' }}<br />
+                    {{ ::definicionPlantilla.obtenerVariablePorId("medida_MXN_sin_contexto")}}<br />
+                    {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2014_10_01")}} - {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2015_09_30")}}
+                </th>
+                <th style="min-width: 230px; width: 230px;" ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'">
+                    {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'A&ntilde;o anterior' : 'Last year' }}<br />
+                    {{ ::definicionPlantilla.obtenerVariablePorId("medida_MXN_sin_contexto")}}<br />
+                    {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2013_10_01")}} - {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2014_09_30")}}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                            xbrl:id-concepto="ifrs_mx-cor_20141205_DatosInformativosDelEstadoDeResultadosSinopsis" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;"></td>
+                <td></td>
+                <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"></td>
+               
+            </tr>
+
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"><td><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs-full_Revenue" xbrl:nivel-indentacion="1"></td>										    <td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A82d1a6e3-405f-4bc5-914f-4f1e5bdf8fa7"></xbrl:campo-captura></td> <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A7e9ee5e9-7189-4093-b913-098fb862bc58"></xbrl:campo-captura></td>                   </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"><td><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs-full_ProfitLossFromOperatingActivities" xbrl:nivel-indentacion="1"></td>				<td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A101c90a5-1429-4367-b5db-6f42bf8d55ee"></xbrl:campo-captura></td> <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Af4d07cbf-7006-460d-83ca-f8eec771e215"></xbrl:campo-captura></td>                   </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"><td><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs-full_ProfitLoss" xbrl:nivel-indentacion="1"></td>									    <td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ab6e4f3be-6798-4993-9754-aed7950b209a"></xbrl:campo-captura></td> <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A62136776-c1a5-4fef-b1ba-7537fc51a783"></xbrl:campo-captura></td>                   </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"><td><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs-full_ProfitLossAttributableToOwnersOfParent" xbrl:nivel-indentacion="1"></td>		    <td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ad40c7a09-6e9c-4bd3-b91b-1fdcb6e506cf"></xbrl:campo-captura></td> <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A75e0267e-1393-42a1-b4ad-e3e35e6ca299"></xbrl:campo-captura></td>                   </tr>
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"><td><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_DepreciacionYAmortizacionOperativa" xbrl:nivel-indentacion="1"></td>	<td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="Ae32b7e84-4b54-4170-8bf8-8cbb5a5cb156" xbrl:ultimo="true"></xbrl:campo-captura></td> <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A7324d08c-4de7-4eff-97af-87d505c133a7" ></xbrl:campo-captura></td></tr>
+        </tbody>
+    </table>
+</div>
+</xbrl-contenedor-formato>

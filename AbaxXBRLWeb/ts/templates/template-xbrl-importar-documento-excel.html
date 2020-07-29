@@ -1,0 +1,122 @@
+﻿<form name="formaImportarExcel" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true" ng-click="cerrarDialogo()">&times;</button>
+        <div class="row m-t-sm">
+            <div class="col-sm-10 m-b-xs">
+                <h4 class="modal-title"> {{'EDITOR_XBRL_IMPORTAR_NOTAS_EXCEL_DOC_INSTANCIA' | translate}} </h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-body">
+        <div id="div_excel_seleccionar" ng-style="{ display: mostrarResumenCarga ? 'none' : 'inline' }">
+            <p>{{'EDITOR_XBRL_INFORMAR_NOTAS_DOC_INSTANCIA' | translate}}</p>
+            <p><a id="btnDescargarPlantillaExcel" href="javascript:void(0);" class="btn btn-default" ng-click="obtenerPlantillaExcel()"><i class="i i-file-excel"></i> {{'EDITOR_XBRL_DESCARGAR_PLANTILLA_EXCEL'|translate}}</a><br /><br /></p>
+            <div class="form-group">
+                <label>{{'EDITOR_XBRL_SELECCIONAR_ARCHIVO_IMPORTAR' | translate}}:</label>
+
+                <input id="archivoExcel" type="file" ng-model="archivoXLS" ng-file-select="mostrarNombreInput($files)" ng-multiple="false" accept="{{extensionesPermitidas}}" class="filestyle" data-icon="false" data-classbutton="btn btn-default" data-classinput="form-control inline v-middle input-s" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);">
+
+                <div class="bootstrap-filestyle input-group">
+                    <input type="text" class="form-control " disabled value="{{nombreArchivoSeleccionado}}">
+                    <span class="group-span-filestyle input-group-btn" tabindex="0">
+                        <label for="archivoExcel" class="btn btn-default ">{{'ETIQUETA_SELECCIONE'|translate}}</label>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+            <div ng-if="mostrarResumenCarga">
+                <div>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="panel b-a">
+                                <div class="panel-heading no-border bg-success lt text-center">
+                                    <a href="#">
+                                        <i class="fa fa-check fa fa-3x m-t m-b text-white"></i>
+                                    </a>
+                                </div>
+                                <div class="padder-v text-center clearfix">
+                                    <div class="col-xs-12 b-r">
+                                        <div class="h3 font-bold">{{::resumenProcesoImportacion.TotalHechosImportados}}</div>
+                                        <small class="text-muted">{{'EDITOR_XBRL_IMPORTAR_EXCEL_ETIQUETA_HECHOS_CORRECTOS'|translate}}</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="panel b-a">
+                                <div class="panel-heading no-border bg-warning lt text-center">
+                                    <a href="#">
+                                        <i class="fa fa-warning fa fa-3x m-t m-b text-white"></i>
+                                    </a>
+                                </div>
+                                <div class="padder-v text-center clearfix">
+                                    <div class="col-xs-12 b-r">
+                                        <div class="h3 font-bold">{{::resumenProcesoImportacion.HechosSobreescritos.length}}</div>
+                                        <small class="text-muted">{{'EDITOR_XBRL_IMPORTAR_EXCEL_ETIQUETA_HECHOS_CONFLICTO'|translate}}</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="panel b-a">
+                                <div class="panel-heading no-border bg-danger lt text-center">
+                                    <a href="#">
+                                        <i class="fa fa-close fa fa-3x m-t m-b text-white"></i>
+                                    </a>
+                                </div>
+                                <div class="padder-v text-center clearfix">
+                                    <div class="col-xs-12 b-r">
+                                        <div class="h3 font-bold">{{::resumenProcesoImportacion.InformeErrores.length}}</div>
+                                        <small class="text-muted">{{'EDITOR_XBRL_IMPORTAR_EXCEL_ETIQUETA_HECHOS_ERROR'|translate}}</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="listaMensajesImportacionExcel" class="col-md-12" slimscroll="{size: '10px', height: '250px', railVisible: true, alwaysVisible: true, distance: '0px', railOpacity: 0.2}" slimscrolllistento="resize::resize">
+                        <ul class="list-group no-radius">
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <p class="col-xs-9 b-r" style="text-align:justify;">
+                                        <span class="label bg-primary"></span>
+                                        <i class="fa fa-check text-success"></i>&nbsp;{{'EDITOR_XBRL_IMPORTAR_EXCEL_ETIQUETA_DESCRIPCION_HECHOS_CORRECTOS'|translate}}
+                                    </p>
+                                    <p class="col-xs-3 b-r">{{::resumenProcesoImportacion.TotalHechosImportados}}</p>
+                                </div>
+                            </li>
+                            <li class="list-group-item" ng-repeat="conflicto in resumenProcesoImportacion.HechosSobreescritos">
+                                <div class="row">
+                                    <p class="col-xs-9 b-r" style="text-align:justify;">
+                                        <span class="label bg-primary"></span>
+                                        <i class="fa fa-warning text-warning"></i>&nbsp;{{::conflicto.Mensaje}}
+                                    </p>
+                                    <p class="col-xs-3 b-r">{{::conflicto.ValorFinal}}</p>
+                                </div>
+                            </li>
+                            <li class="list-group-item" ng-repeat="error in resumenProcesoImportacion.InformeErrores">
+                                <div class="row">
+                                    <p class="col-xs-9 b-r" style="text-align:justify;">
+                                        <span class="label bg-primary"></span>
+                                        <i class="fa fa-close text-danger"></i>&nbsp;{{::error.Mensaje}}
+                                    </p>
+                                    <p class="col-xs-3 b-r">{{::error.ValorLeido}}</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>  
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <div>
+                <button type="button" class="btn btn-default" ng-click="cerrarDialogo()">{{'ETIQUETA_BOTON_CERRAR'|translate}}</button>
+                <button type="button" class="btn btn-s-md btn-warning" ng-click="importarDocumentoExcel()" ng-hide="mostrarResumenCarga">{{'ETIQUETA_IMPORTAR' | translate}}</button>
+            </div>
+        </div>
+    
+</form>

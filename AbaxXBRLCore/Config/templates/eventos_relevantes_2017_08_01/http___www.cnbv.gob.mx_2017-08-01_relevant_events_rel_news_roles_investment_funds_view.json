@@ -1,0 +1,135 @@
+﻿{
+  "ContextosPlantillaPorId": {
+    "Ctx2017": {
+      "Id": "Ctx2017",
+      "Periodo": {
+        "Tipo": 1,
+        "FechaInstante": "#fecha_2017_12_31",
+        "FechaInicio": "",
+        "FechaFin": ""
+      },
+      "Entidad": {
+        "Id": "#nombreEntidad",
+        "EsquemaId": "#esquemaEntidad",
+        "ContieneInformacionDimensional": false,
+        "Segmento": null,
+        "ValoresDimension": []
+      },
+      "ContieneInformacionDimensional": false,
+      "Escenario": null,
+      "ValoresDimension": []
+    }
+  },
+  "UnidadesPlantillaPorId": {},
+  "HechosPlantillaPorId" : {
+    "rel_news_Ticker_46bb3c6e-6648-415d-a390-790f2abbc73c": {
+      "Id": "rel_news_Ticker_46bb3c6e-6648-415d-a390-790f2abbc73c",
+      "IdConcepto": "rel_news_Ticker",
+      "IdContextoPlantilla": "Ctx2017",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "rel_news_ParticipantShortName_bf041438-4a5c-44d0-afd2-fd59ed9731b2": {
+      "Id": "rel_news_ParticipantShortName_bf041438-4a5c-44d0-afd2-fd59ed9731b2",
+      "IdConcepto": "rel_news_ParticipantShortName",
+      "IdContextoPlantilla": "Ctx2017",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "rel_news_Date_ef2e2235-04ab-4758-bb75-56e38bb5d0a6": {
+      "Id": "rel_news_Date_ef2e2235-04ab-4758-bb75-56e38bb5d0a6",
+      "IdConcepto": "rel_news_Date",
+      "IdContextoPlantilla": "Ctx2017",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "rel_news_BusinessName_fc83813e-6b9a-4547-bd87-1c2b593fa580": {
+      "Id": "rel_news_BusinessName_fc83813e-6b9a-4547-bd87-1c2b593fa580",
+      "IdConcepto": "rel_news_BusinessName",
+      "IdContextoPlantilla": "Ctx2017",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "rel_news_Place_90dec5fa-2cb2-4fea-a77a-bb81e1c5f91f": {
+      "Id": "rel_news_Place_90dec5fa-2cb2-4fea-a77a-bb81e1c5f91f",
+      "IdConcepto": "rel_news_Place",
+      "IdContextoPlantilla": "Ctx2017",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "rel_news_Subject_b5cfc929-eb3a-4828-8b95-890d524de10b": {
+      "Id": "rel_news_Subject_b5cfc929-eb3a-4828-8b95-890d524de10b",
+      "IdConcepto": "rel_news_Subject",
+      "IdContextoPlantilla": "Ctx2017",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "rel_news_ForeignMarket_d0a35792-b9d2-4794-9a59-c6ab359e190a": {
+      "Id": "rel_news_ForeignMarket_d0a35792-b9d2-4794-9a59-c6ab359e190a",
+      "IdConcepto": "rel_news_ForeignMarket",
+      "IdContextoPlantilla": "Ctx2017",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "rel_news_AttachedDocumentPdf_2e4d8f9c-9d3a-4e15-86a1-e3c91539b2c2": {
+      "Id": "rel_news_AttachedDocumentPdf_2e4d8f9c-9d3a-4e15-86a1-e3c91539b2c2",
+      "IdConcepto": "rel_news_AttachedDocumentPdf",
+      "IdContextoPlantilla": "Ctx2017",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "rel_news_RelevantEventContent_d89d89aa-9d2a-4d10-a24b-1164a82d8bde": {
+      "Id": "rel_news_RelevantEventContent_d89d89aa-9d2a-4d10-a24b-1164a82d8bde",
+      "IdConcepto": "rel_news_RelevantEventContent",
+      "IdContextoPlantilla": "Ctx2017",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    }
+  }
+
+}

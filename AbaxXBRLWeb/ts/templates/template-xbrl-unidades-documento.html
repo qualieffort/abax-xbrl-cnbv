@@ -1,0 +1,58 @@
+﻿<div>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="cerrarDialogo()">&times;</button>
+        <h4> {{'EDITOR_GENERICO_TITULO_UNIDADES_DOC_INSTANCIA' | translate}}</h4>
+    </div>
+    <div class="modal-body">
+        <header class="header bg-white b-b clearfix">
+            <div class="btn-toolbar" style="text-align:right">
+                <input type="button" value="{{'EDITOR_GENERICO_REGISTRAR_UNIDAD_DOC_INSTANCIA' | translate}}" ng-click="registrarUnidadDocumento()" class="btn btn-default">
+            </div>
+        </header>
+
+        <section id="contenedorFormatos" class="scrollable wrapper w-f">
+
+            <table class="table table-striped b-t b-light overflow-y">
+                <thead>
+                    <tr>
+                        <th style="width:350px">{{'EDITOR_GENERICO_ID_UNIDAD'| translate}}</th>
+                        <th>{{'EDITOR_GENERICO_TIPO_UNIDAD' | translate }}</th>
+                        <th>{{'EDITOR_GENERICO_MEDIDAS_UNIDAD' | translate}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-if="!UnidadesDocumentoInstancia || (UnidadesDocumentoInstancia && UnidadesDocumentoInstancia.length==0)">
+                        <td colspan="3">{{'EDITOR_GENERICO_SIN_UNIDADES' | translate}}</td>
+                    </tr>
+                    <tr ng-repeat="unidad in UnidadesDocumentoInstancia">
+
+                        <td>
+                            <span class="text-default">{{unidad.Id}}</span>
+                        </td>
+                        <td>
+                            <span class="text-default">{{ObtenerEtiquetaTipo(unidad.Tipo)}}</span>
+                        </td>
+                        <td>
+                            <a class="btn btn-rounded btn-icon btn-danger" style="float:right;margin-left:15px;" href="#" ng-click="EliminarUnidadDocumento(unidad.Id)">
+                                <i class="fa fa-trash-o" style="cursor:pointer;"></i>
+                            </a>
+
+                            <a href="#" ng-click="EditarUnidadDocumento(unidad.Id)" style="float:right;padding-right:20px;" class="btn btn-rounded btn-icon btn-default auto">
+                                <i class="fa fa-pencil" style="cursor:pointer;"></i>
+                            </a>
+
+                            <span class="text-default">{{GenerarEtiquetaMedidaUnidad(unidad)}}</span>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </section>
+
+    </div>
+    <div class="modal-footer">
+        <input type="button" value="{{'ETIQUETA_BOTON_CERRAR'|translate}}" ng-click="cerrarDialogo()" class="btn btn-default">
+    </div>
+</div>

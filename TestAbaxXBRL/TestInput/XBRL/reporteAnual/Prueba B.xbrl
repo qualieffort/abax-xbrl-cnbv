@@ -1,0 +1,912 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--Documento XBRL generado por AbaxXBRL 2.1n - 2H Software-->
+<xbrl xmlns="http://www.xbrl.org/2003/instance"
+    xmlns:ar_pros="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus"
+    xmlns:ifrs-full="http://xbrl.ifrs.org/taxonomy/2014-03-05/ifrs-full"
+    xmlns:ifrs_mx-cor_20141205="http://bmv.com.mx/ifrs_mx-cor_20141205/full_ifrs_mx-cor_2014-12-05"
+    xmlns:iso4217="http://www.xbrl.org/2003/iso4217"
+    xmlns:link="http://www.xbrl.org/2003/linkbase"
+    xmlns:pros_H_entry_point="http://www.cnbv.gob.mx/2016-08-22/ar_prospectus/pros_H_entry_point_2016-08-22"
+    xmlns:xbrldi="http://xbrl.org/2006/xbrldi"
+    xmlns:xbrli="http://www.xbrl.org/2003/instance"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xbrl.org/2006/xbrldi http://www.xbrl.org/2006/xbrldi-2006.xsd">
+    <link:schemaRef
+        xlink:href="https://taxonomiasxbrl.cnbv.gob.mx/taxonomy/ra-prospecto-2016-08-22/pros_H_entry_point_2016-08-22.xsd" xlink:type="simple"/>
+    <context id="C2dac97a3-ae90-40ca-aa71-5266daa2e472">
+        <entity>
+            <identifier scheme="http://www.bmv.com.mx/id">2HSOFT</identifier>
+        </entity>
+        <period>
+            <instant>2018-06-11</instant>
+        </period>
+    </context>
+    <context id="C4c66beb3-7401-4688-ca4f-5f2c59037d64">
+        <entity>
+            <identifier scheme="http://www.bmv.com.mx/id">2HSOFT</identifier>
+        </entity>
+        <period>
+            <startDate>2018-01-01</startDate>
+            <endDate>2018-06-11</endDate>
+        </period>
+    </context>
+    <context id="C7124aada-9ffd-4cf9-d9fe-5452c6b41fdd">
+        <entity>
+            <identifier scheme="http://www.bmv.com.mx/id">2HSOFT</identifier>
+        </entity>
+        <period>
+            <startDate>2017-01-01</startDate>
+            <endDate>2017-12-31</endDate>
+        </period>
+    </context>
+    <context id="C09aaa4cf-9415-431a-e8b5-d1adad884d40">
+        <entity>
+            <identifier scheme="http://www.bmv.com.mx/id">2HSOFT</identifier>
+        </entity>
+        <period>
+            <startDate>2016-01-01</startDate>
+            <endDate>2016-12-31</endDate>
+        </period>
+    </context>
+    <context id="Ccfddc0df-e0f1-4ca8-9f58-2aa79578a355">
+        <entity>
+            <identifier scheme="http://www.bmv.com.mx/id">2HSOFT</identifier>
+        </entity>
+        <period>
+            <instant>2017-12-31</instant>
+        </period>
+    </context>
+    <context id="C2f98d28e-7697-4585-ac99-5fa434834691">
+        <entity>
+            <identifier scheme="http://www.bmv.com.mx/id">2HSOFT</identifier>
+        </entity>
+        <period>
+            <instant>2016-12-31</instant>
+        </period>
+    </context>
+    <context id="P0912b3adb-02f5-47e8-bf1f-bbfb62036844">
+        <entity>
+            <identifier scheme="http://www.bmv.com.mx/id">2HSOFT</identifier>
+        </entity>
+        <period>
+            <instant>2018-06-11</instant>
+        </period>
+        <scenario>
+            <xbrldi:typedMember dimension="ar_pros:DebtSeriesTypedAxis">
+                <ar_pros:SerieDomain>serie</ar_pros:SerieDomain>
+            </xbrldi:typedMember>
+        </scenario>
+    </context>
+    <context id="FitchMexicoSADeCVMember2c62cab6-8f91-4c48-bbee-a01770251d10">
+        <entity>
+            <identifier scheme="http://www.bmv.com.mx/id">2HSOFT</identifier>
+        </entity>
+        <period>
+            <instant>2018-06-11</instant>
+        </period>
+        <scenario>
+            <xbrldi:explicitMember dimension="ar_pros:SecuritiesRatingAxis">ar_pros:FitchMexicoSADeCVMember</xbrldi:explicitMember>
+            <xbrldi:typedMember dimension="ar_pros:DebtSeriesTypedAxis">
+                <ar_pros:SerieDomain>serie</ar_pros:SerieDomain>
+            </xbrldi:typedMember>
+        </scenario>
+    </context>
+    <context id="HRRatingsDeMexicoSADeCVMember02f1d7b5-ce58-49c7-c260-73df4db55178">
+        <entity>
+            <identifier scheme="http://www.bmv.com.mx/id">2HSOFT</identifier>
+        </entity>
+        <period>
+            <instant>2018-06-11</instant>
+        </period>
+        <scenario>
+            <xbrldi:explicitMember dimension="ar_pros:SecuritiesRatingAxis">ar_pros:HRRatingsDeMexicoSADeCVMember</xbrldi:explicitMember>
+            <xbrldi:typedMember dimension="ar_pros:DebtSeriesTypedAxis">
+                <ar_pros:SerieDomain>serie</ar_pros:SerieDomain>
+            </xbrldi:typedMember>
+        </scenario>
+    </context>
+    <context id="MoodysDeMexicoSADeCVMember88db528c-9a0a-4e9e-8a16-b23bd71108a1">
+        <entity>
+            <identifier scheme="http://www.bmv.com.mx/id">2HSOFT</identifier>
+        </entity>
+        <period>
+            <instant>2018-06-11</instant>
+        </period>
+        <scenario>
+            <xbrldi:explicitMember dimension="ar_pros:SecuritiesRatingAxis">ar_pros:MoodysDeMexicoSADeCVMember</xbrldi:explicitMember>
+            <xbrldi:typedMember dimension="ar_pros:DebtSeriesTypedAxis">
+                <ar_pros:SerieDomain>serie</ar_pros:SerieDomain>
+            </xbrldi:typedMember>
+        </scenario>
+    </context>
+    <context id="StandardAndPoorsSADeCVMember8b77d3f7-4492-49a2-a744-ce4484c86d14">
+        <entity>
+            <identifier scheme="http://www.bmv.com.mx/id">2HSOFT</identifier>
+        </entity>
+        <period>
+            <instant>2018-06-11</instant>
+        </period>
+        <scenario>
+            <xbrldi:explicitMember dimension="ar_pros:SecuritiesRatingAxis">ar_pros:StandardAndPoorsSADeCVMember</xbrldi:explicitMember>
+            <xbrldi:typedMember dimension="ar_pros:DebtSeriesTypedAxis">
+                <ar_pros:SerieDomain>serie</ar_pros:SerieDomain>
+            </xbrldi:typedMember>
+        </scenario>
+    </context>
+    <context id="VerumCalificadoraDeValoresSAPIDeCVMember426c2d5e-5094-4fc4-b076-8d94ecf94f59">
+        <entity>
+            <identifier scheme="http://www.bmv.com.mx/id">2HSOFT</identifier>
+        </entity>
+        <period>
+            <instant>2018-06-11</instant>
+        </period>
+        <scenario>
+            <xbrldi:explicitMember dimension="ar_pros:SecuritiesRatingAxis">ar_pros:VerumCalificadoraDeValoresSAPIDeCVMember</xbrldi:explicitMember>
+            <xbrldi:typedMember dimension="ar_pros:DebtSeriesTypedAxis">
+                <ar_pros:SerieDomain>serie</ar_pros:SerieDomain>
+            </xbrldi:typedMember>
+        </scenario>
+    </context>
+    <context id="AMBestAmericaLatinaSADeCVMember8b68676a-65c5-42dd-a149-3df4b833e4c8">
+        <entity>
+            <identifier scheme="http://www.bmv.com.mx/id">2HSOFT</identifier>
+        </entity>
+        <period>
+            <instant>2018-06-11</instant>
+        </period>
+        <scenario>
+            <xbrldi:explicitMember dimension="ar_pros:SecuritiesRatingAxis">ar_pros:AMBestAmericaLatinaSADeCVMember</xbrldi:explicitMember>
+            <xbrldi:typedMember dimension="ar_pros:DebtSeriesTypedAxis">
+                <ar_pros:SerieDomain>serie</ar_pros:SerieDomain>
+            </xbrldi:typedMember>
+        </scenario>
+    </context>
+    <context id="DBRSRatingsMexicoSAdeCVMembere96034ca-9204-4a88-f75a-38d9fecfaf6e">
+        <entity>
+            <identifier scheme="http://www.bmv.com.mx/id">2HSOFT</identifier>
+        </entity>
+        <period>
+            <instant>2018-06-11</instant>
+        </period>
+        <scenario>
+            <xbrldi:explicitMember dimension="ar_pros:SecuritiesRatingAxis">ar_pros:DBRSRatingsMexicoSAdeCVMember</xbrldi:explicitMember>
+            <xbrldi:typedMember dimension="ar_pros:DebtSeriesTypedAxis">
+                <ar_pros:SerieDomain>serie</ar_pros:SerieDomain>
+            </xbrldi:typedMember>
+        </scenario>
+    </context>
+    <context id="SecuritiesRatingOtherMember910f02ad-9465-4486-b338-d66bd7f1fdc4">
+        <entity>
+            <identifier scheme="http://www.bmv.com.mx/id">2HSOFT</identifier>
+        </entity>
+        <period>
+            <instant>2018-06-11</instant>
+        </period>
+        <scenario>
+            <xbrldi:explicitMember dimension="ar_pros:SecuritiesRatingAxis">ar_pros:SecuritiesRatingOtherMember</xbrldi:explicitMember>
+            <xbrldi:typedMember dimension="ar_pros:DebtSeriesTypedAxis">
+                <ar_pros:SerieDomain>serie</ar_pros:SerieDomain>
+            </xbrldi:typedMember>
+        </scenario>
+    </context>
+    <context id="P0b01521e9-eaf5-429e-e150-f6557032d7b3">
+        <entity>
+            <identifier scheme="http://www.bmv.com.mx/id">2HSOFT</identifier>
+        </entity>
+        <period>
+            <instant>2018-06-11</instant>
+        </period>
+        <scenario>
+            <xbrldi:typedMember dimension="ar_pros:DebtSeriesTypedAxis">
+                <ar_pros:SerieDomain>serie2</ar_pros:SerieDomain>
+            </xbrldi:typedMember>
+        </scenario>
+    </context>
+    <context id="FitchMexicoSADeCVMemberef5e2e12-3eb2-4974-9d83-4c801d6f0b46">
+        <entity>
+            <identifier scheme="http://www.bmv.com.mx/id">2HSOFT</identifier>
+        </entity>
+        <period>
+            <instant>2018-06-11</instant>
+        </period>
+        <scenario>
+            <xbrldi:explicitMember dimension="ar_pros:SecuritiesRatingAxis">ar_pros:FitchMexicoSADeCVMember</xbrldi:explicitMember>
+            <xbrldi:typedMember dimension="ar_pros:DebtSeriesTypedAxis">
+                <ar_pros:SerieDomain>serie2</ar_pros:SerieDomain>
+            </xbrldi:typedMember>
+        </scenario>
+    </context>
+    <context id="HRRatingsDeMexicoSADeCVMember0057642f-fac2-480d-be4f-0516d16a48dd">
+        <entity>
+            <identifier scheme="http://www.bmv.com.mx/id">2HSOFT</identifier>
+        </entity>
+        <period>
+            <instant>2018-06-11</instant>
+        </period>
+        <scenario>
+            <xbrldi:explicitMember dimension="ar_pros:SecuritiesRatingAxis">ar_pros:HRRatingsDeMexicoSADeCVMember</xbrldi:explicitMember>
+            <xbrldi:typedMember dimension="ar_pros:DebtSeriesTypedAxis">
+                <ar_pros:SerieDomain>serie2</ar_pros:SerieDomain>
+            </xbrldi:typedMember>
+        </scenario>
+    </context>
+    <context id="MoodysDeMexicoSADeCVMember7fab5c7c-32ae-4b94-8454-f6383bf8eb32">
+        <entity>
+            <identifier scheme="http://www.bmv.com.mx/id">2HSOFT</identifier>
+        </entity>
+        <period>
+            <instant>2018-06-11</instant>
+        </period>
+        <scenario>
+            <xbrldi:explicitMember dimension="ar_pros:SecuritiesRatingAxis">ar_pros:MoodysDeMexicoSADeCVMember</xbrldi:explicitMember>
+            <xbrldi:typedMember dimension="ar_pros:DebtSeriesTypedAxis">
+                <ar_pros:SerieDomain>serie2</ar_pros:SerieDomain>
+            </xbrldi:typedMember>
+        </scenario>
+    </context>
+    <context id="StandardAndPoorsSADeCVMember8a283649-3718-490d-def7-5f5f02026d42">
+        <entity>
+            <identifier scheme="http://www.bmv.com.mx/id">2HSOFT</identifier>
+        </entity>
+        <period>
+            <instant>2018-06-11</instant>
+        </period>
+        <scenario>
+            <xbrldi:explicitMember dimension="ar_pros:SecuritiesRatingAxis">ar_pros:StandardAndPoorsSADeCVMember</xbrldi:explicitMember>
+            <xbrldi:typedMember dimension="ar_pros:DebtSeriesTypedAxis">
+                <ar_pros:SerieDomain>serie2</ar_pros:SerieDomain>
+            </xbrldi:typedMember>
+        </scenario>
+    </context>
+    <context id="VerumCalificadoraDeValoresSAPIDeCVMember68967254-1948-4e39-9fba-9c62af74c908">
+        <entity>
+            <identifier scheme="http://www.bmv.com.mx/id">2HSOFT</identifier>
+        </entity>
+        <period>
+            <instant>2018-06-11</instant>
+        </period>
+        <scenario>
+            <xbrldi:explicitMember dimension="ar_pros:SecuritiesRatingAxis">ar_pros:VerumCalificadoraDeValoresSAPIDeCVMember</xbrldi:explicitMember>
+            <xbrldi:typedMember dimension="ar_pros:DebtSeriesTypedAxis">
+                <ar_pros:SerieDomain>serie2</ar_pros:SerieDomain>
+            </xbrldi:typedMember>
+        </scenario>
+    </context>
+    <context id="AMBestAmericaLatinaSADeCVMemberedc7c64d-35b4-42a8-c6db-b0d3395777e9">
+        <entity>
+            <identifier scheme="http://www.bmv.com.mx/id">2HSOFT</identifier>
+        </entity>
+        <period>
+            <instant>2018-06-11</instant>
+        </period>
+        <scenario>
+            <xbrldi:explicitMember dimension="ar_pros:SecuritiesRatingAxis">ar_pros:AMBestAmericaLatinaSADeCVMember</xbrldi:explicitMember>
+            <xbrldi:typedMember dimension="ar_pros:DebtSeriesTypedAxis">
+                <ar_pros:SerieDomain>serie2</ar_pros:SerieDomain>
+            </xbrldi:typedMember>
+        </scenario>
+    </context>
+    <context id="DBRSRatingsMexicoSAdeCVMember589d79b2-1b20-4ad2-d209-59e67be638ca">
+        <entity>
+            <identifier scheme="http://www.bmv.com.mx/id">2HSOFT</identifier>
+        </entity>
+        <period>
+            <instant>2018-06-11</instant>
+        </period>
+        <scenario>
+            <xbrldi:explicitMember dimension="ar_pros:SecuritiesRatingAxis">ar_pros:DBRSRatingsMexicoSAdeCVMember</xbrldi:explicitMember>
+            <xbrldi:typedMember dimension="ar_pros:DebtSeriesTypedAxis">
+                <ar_pros:SerieDomain>serie2</ar_pros:SerieDomain>
+            </xbrldi:typedMember>
+        </scenario>
+    </context>
+    <context id="SecuritiesRatingOtherMember25b7e924-1a80-4805-cd73-d343bbd6f78c">
+        <entity>
+            <identifier scheme="http://www.bmv.com.mx/id">2HSOFT</identifier>
+        </entity>
+        <period>
+            <instant>2018-06-11</instant>
+        </period>
+        <scenario>
+            <xbrldi:explicitMember dimension="ar_pros:SecuritiesRatingAxis">ar_pros:SecuritiesRatingOtherMember</xbrldi:explicitMember>
+            <xbrldi:typedMember dimension="ar_pros:DebtSeriesTypedAxis">
+                <ar_pros:SerieDomain>serie2</ar_pros:SerieDomain>
+            </xbrldi:typedMember>
+        </scenario>
+    </context>
+    <context id="P053d624fe-973b-4ae3-9509-4f1cd0725f0c">
+        <entity>
+            <identifier scheme="http://www.bmv.com.mx/id">2HSOFT</identifier>
+        </entity>
+        <period>
+            <instant>2018-06-11</instant>
+        </period>
+        <scenario>
+            <xbrldi:typedMember dimension="ar_pros:StructuredSeriesTypedAxis">
+                <ar_pros:SerieDomain>serie</ar_pros:SerieDomain>
+            </xbrldi:typedMember>
+        </scenario>
+    </context>
+    <unit id="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">
+        <measure>iso4217:MXN</measure>
+    </unit>
+    <unit id="U4bb290ed-9921-403a-8d28-4bcc45e90f7c">
+        <measure>xbrli:pure</measure>
+    </unit>
+    <ar_pros:StructuredSerieObservations
+        contextRef="P053d624fe-973b-4ae3-9509-4f1cd0725f0c" id="F6a634732-b8d9-4073-a1e5-14aeb4e253f8"/>
+    <ar_pros:StructuredSeriesDepositary
+        contextRef="P053d624fe-973b-4ae3-9509-4f1cd0725f0c" id="F35c64de4-1649-4e30-de57-0defa3c8215c"/>
+    <ar_pros:ParticipantName
+        contextRef="P053d624fe-973b-4ae3-9509-4f1cd0725f0c" id="Fdabf1f17-b832-4b4a-c70c-835808e4b414"/>
+    <ar_pros:StructuredSerieValuatoryOpinion
+        contextRef="P053d624fe-973b-4ae3-9509-4f1cd0725f0c" id="F4571497b-ae68-49e9-fc18-10a703e619ce"/>
+    <ar_pros:StructuredSeriesLocationAndPaymentOfInterestAndPrincipal
+        contextRef="P053d624fe-973b-4ae3-9509-4f1cd0725f0c" id="F4cd662f1-f1b2-4614-8a3b-ca5d778194de"/>
+
+    <ar_pros:StructuredSeriesAmortizationAndEarlyAmortizationEarlyMaturityIfApplicable
+        contextRef="P053d624fe-973b-4ae3-9509-4f1cd0725f0c" id="Fc8cffbe9-e924-4542-cc85-81ea6735b0ae"/>
+    <ar_pros:StructuredSeriesPaymentFrequencyOfInterest
+        contextRef="P053d624fe-973b-4ae3-9509-4f1cd0725f0c" id="F87ca207c-f65d-4c74-e2c3-843c5a3e5ea3"/>
+    <ar_pros:StructuredSeriesPositioningMechanism
+        contextRef="P053d624fe-973b-4ae3-9509-4f1cd0725f0c" id="F51fb58dc-6558-4365-fb5d-03cb9f6019e6">Cierre de libro</ar_pros:StructuredSeriesPositioningMechanism>
+    <ar_pros:StructuredSerieMinimumPerformance
+        contextRef="P053d624fe-973b-4ae3-9509-4f1cd0725f0c" id="Fab17b9f4-aa7e-4014-f462-e4e0351e5328"/>
+    <ar_pros:StructuredSeriesInterestPerformanceAndCalculationProcedure
+        contextRef="P053d624fe-973b-4ae3-9509-4f1cd0725f0c" id="Fe93bd9f3-c876-4e69-e1ec-0af286b58325"/>
+    <ar_pros:StructuredSerieMultiplier
+        contextRef="P053d624fe-973b-4ae3-9509-4f1cd0725f0c" id="Fa7fdcecf-5f00-49db-f152-96175d59068a"/>
+    <ar_pros:StructuredSerieCalculationAgent
+        contextRef="P053d624fe-973b-4ae3-9509-4f1cd0725f0c" id="Fed251fab-70b0-4bf1-e4c8-6c82eac5b36b"/>
+    <ar_pros:StructuredSerieGuaranteedCapital
+        contextRef="P053d624fe-973b-4ae3-9509-4f1cd0725f0c" id="F68c4682e-a292-42ba-8231-f369d9b5279c"/>
+    <ar_pros:StructuredSerieHistoricalPerformanceOfTheUnderlyingAsset
+        contextRef="P053d624fe-973b-4ae3-9509-4f1cd0725f0c" id="F042fdc81-5595-4ddc-b876-1fed1bdc8fa9"/>
+    <ar_pros:StructuredSerieGeneralCharacteristicsOfTheUnderlyingAssets
+        contextRef="P053d624fe-973b-4ae3-9509-4f1cd0725f0c" id="F9c29d8cb-2aca-4a12-e25f-773ffde0bacf"/>
+    <ar_pros:StructuredSeriesEffectOfEmissionsUnderAProgram
+        contextRef="P053d624fe-973b-4ae3-9509-4f1cd0725f0c" id="F869dc48e-48a1-4320-931a-5a8012fe48eb"/>
+    <ar_pros:StructuredSerieNumberOfStocks
+        contextRef="P053d624fe-973b-4ae3-9509-4f1cd0725f0c" decimals="0"
+        id="F8fe0f16b-7796-4943-abee-ef5f78256b48" unitRef="U4bb290ed-9921-403a-8d28-4bcc45e90f7c">0</ar_pros:StructuredSerieNumberOfStocks>
+    <ar_pros:StructuredSerieObservationsOnNominalValuePlacementPrice
+        contextRef="P053d624fe-973b-4ae3-9509-4f1cd0725f0c" id="F33b31397-3620-448c-dcf3-e95bd1b850de"/>
+    <ar_pros:StructuredSeriesNominalValueString
+        contextRef="P053d624fe-973b-4ae3-9509-4f1cd0725f0c" id="Fdf98d555-8e15-4850-d430-531d16cb666d"/>
+    <ar_pros:StructuredSerieObservationsOnTheAmountOfTheOffer
+        contextRef="P053d624fe-973b-4ae3-9509-4f1cd0725f0c" id="F8bfe8077-1b76-43e3-c71e-f3ff071ea684"/>
+
+    <ar_pros:StructuredSerieTotalAmountOfTheIssueInMexicoAndAbroadIfNecessary
+        contextRef="P053d624fe-973b-4ae3-9509-4f1cd0725f0c" decimals="0"
+        id="F78fa3ec9-0a3f-4730-eae0-d9abd1261af4" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ar_pros:StructuredSerieTotalAmountOfTheIssueInMexicoAndAbroadIfNecessary>
+    <ar_pros:StructuredSerieLimitedPublicOffering
+        contextRef="P053d624fe-973b-4ae3-9509-4f1cd0725f0c" id="F6e058e90-188a-4b98-92e5-5c59b4450d7d">NO</ar_pros:StructuredSerieLimitedPublicOffering>
+    <ar_pros:StructuredSerieIssuanceUnderArt13OfTheCUE
+        contextRef="P053d624fe-973b-4ae3-9509-4f1cd0725f0c" id="Fdd8582b7-9083-427f-a185-005b3ffd5a81">NO</ar_pros:StructuredSerieIssuanceUnderArt13OfTheCUE>
+    <ar_pros:StructuredTypeOfInstrumentIssuers
+        contextRef="P053d624fe-973b-4ae3-9509-4f1cd0725f0c" id="F222daa8e-b6ba-4fb1-def2-3ccb04215806">Valores estructurados de corto plazo</ar_pros:StructuredTypeOfInstrumentIssuers>
+    <ar_pros:StructuredSerieOfferType
+        contextRef="P053d624fe-973b-4ae3-9509-4f1cd0725f0c" id="F079545f6-7944-406c-d175-f218df956c65">Primaria, Nacional</ar_pros:StructuredSerieOfferType>
+    <ar_pros:StructuredSeries
+        contextRef="P053d624fe-973b-4ae3-9509-4f1cd0725f0c" id="Fd42cfdf9-f11c-42db-f332-1c98817e139e"/>
+    <ar_pros:DebtSerieObservations
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="Fe1bf3c04-5090-46ac-b87a-bfdba00c9e8f"/>
+    <ar_pros:DebtSubordinationOfTitlesIfAny
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="F97aadbd9-ca9c-4726-a19e-2f8a5c7fcce4"/>
+    <ar_pros:DebtSerieSerieDepositary
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="F129d6be1-7164-4820-cafd-c9992897ebb2"/>
+    <ar_pros:ParticipantName
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="F682b88ae-6633-4129-f255-ab34cd829043"/>
+    <ar_pros:RatingMeaning
+        contextRef="SecuritiesRatingOtherMember25b7e924-1a80-4805-cd73-d343bbd6f78c" id="F1c497e4f-06e5-4239-b89b-5ba10417f45c"/>
+    <ar_pros:Rating
+        contextRef="SecuritiesRatingOtherMember25b7e924-1a80-4805-cd73-d343bbd6f78c" id="F78cdabfb-a4a9-4254-e5df-a6e1a543c62d"/>
+    <ar_pros:SecuritiesRatingOherName
+        contextRef="SecuritiesRatingOtherMember25b7e924-1a80-4805-cd73-d343bbd6f78c" id="Fa01aefd8-a1fb-4980-a0fd-408c2736348d"/>
+    <ar_pros:RatingMeaning
+        contextRef="DBRSRatingsMexicoSAdeCVMember589d79b2-1b20-4ad2-d209-59e67be638ca" id="F8cac7db3-3eb8-45c7-e8df-630f9adbf19d"/>
+    <ar_pros:Rating
+        contextRef="DBRSRatingsMexicoSAdeCVMember589d79b2-1b20-4ad2-d209-59e67be638ca" id="F9b5883eb-4577-4d92-da75-a1799cfbfd58"/>
+    <ar_pros:RatingMeaning
+        contextRef="AMBestAmericaLatinaSADeCVMemberedc7c64d-35b4-42a8-c6db-b0d3395777e9" id="F516b5e09-98bc-4a1f-8da3-f9c9d30474bb"/>
+    <ar_pros:Rating
+        contextRef="AMBestAmericaLatinaSADeCVMemberedc7c64d-35b4-42a8-c6db-b0d3395777e9" id="F9600aad1-3c9f-4f3a-bc7d-f2bbd3fbeff4"/>
+    <ar_pros:RatingMeaning
+        contextRef="VerumCalificadoraDeValoresSAPIDeCVMember68967254-1948-4e39-9fba-9c62af74c908" id="F24a77627-eb43-449e-daac-ef00916d0545"/>
+    <ar_pros:Rating
+        contextRef="VerumCalificadoraDeValoresSAPIDeCVMember68967254-1948-4e39-9fba-9c62af74c908" id="Fa0be106c-1bb6-4b04-c807-a15caa576d96"/>
+    <ar_pros:RatingMeaning
+        contextRef="StandardAndPoorsSADeCVMember8a283649-3718-490d-def7-5f5f02026d42" id="Ff56c0a1b-fe80-4e5d-ed5a-a7fdf69480f3"/>
+    <ar_pros:Rating
+        contextRef="StandardAndPoorsSADeCVMember8a283649-3718-490d-def7-5f5f02026d42" id="Feaa1cf24-d8a2-4851-b850-c6e14817bc6f"/>
+    <ar_pros:RatingMeaning
+        contextRef="MoodysDeMexicoSADeCVMember7fab5c7c-32ae-4b94-8454-f6383bf8eb32" id="F1b8d7e1c-bfab-4b9b-cc9a-b643b20a6ff7"/>
+    <ar_pros:Rating
+        contextRef="MoodysDeMexicoSADeCVMember7fab5c7c-32ae-4b94-8454-f6383bf8eb32" id="F4625e408-96f5-47d6-925a-2e58b5b63883"/>
+    <ar_pros:RatingMeaning
+        contextRef="HRRatingsDeMexicoSADeCVMember0057642f-fac2-480d-be4f-0516d16a48dd" id="F525469f2-9ea1-4038-d48d-33e67eebb858"/>
+    <ar_pros:Rating
+        contextRef="HRRatingsDeMexicoSADeCVMember0057642f-fac2-480d-be4f-0516d16a48dd" id="Fdbe115af-04d9-4ca5-bf12-2ff9dda16003"/>
+    <ar_pros:RatingMeaning
+        contextRef="FitchMexicoSADeCVMemberef5e2e12-3eb2-4974-9d83-4c801d6f0b46" id="Fef992ce6-7f90-4aeb-e6cc-326e735cc210"/>
+    <ar_pros:Rating
+        contextRef="FitchMexicoSADeCVMemberef5e2e12-3eb2-4974-9d83-4c801d6f0b46" id="F9821b8b1-412d-4b2e-d028-8a6f9aeb1a22"/>
+    <ar_pros:DebtSeriesTypeOfGuaranteeOther
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="F5381112c-9984-4cfc-dcfb-6aa7a3840291"/>
+    <ar_pros:DebtSeriesTypeOfGuaranteeChirographic
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="F523d38ac-993c-43a9-cdef-784790f32e0e">NO</ar_pros:DebtSeriesTypeOfGuaranteeChirographic>
+    <ar_pros:DebtSeriesTypeOfGuaranteePledge
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="F097f6434-aebc-4cda-965b-4377d8561a16">NO</ar_pros:DebtSeriesTypeOfGuaranteePledge>
+    <ar_pros:DebtSeriesTypeOfGuaranteeMortgage
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="F83eaa6b2-3f0a-4290-c644-f69f2f7f9334">NO</ar_pros:DebtSeriesTypeOfGuaranteeMortgage>
+    <ar_pros:DebtSeriesTypeOfGuaranteeGovernment
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="F05596e0a-6edb-4b36-8d9d-417c66deb663">NO</ar_pros:DebtSeriesTypeOfGuaranteeGovernment>
+    <ar_pros:DebtSeriesTypeOfGuaranteeTrust
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="F50edca05-e211-4a24-a489-35318af4e287">NO</ar_pros:DebtSeriesTypeOfGuaranteeTrust>
+    <ar_pros:DebtSeriesTypeOfGuaranteeWarranty
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="F54214e06-b23e-41cb-c313-36adcd9dd46c">NO</ar_pros:DebtSeriesTypeOfGuaranteeWarranty>
+    <ar_pros:DebtSeriesMoratoriumInterests
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="Ff2855beb-7a04-4e45-d9c3-7b4ab6191b5e"/>
+    <ar_pros:DebtLocationAndPaymentOfInterestAndPrincipal
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="Fe6c5e970-f714-4d84-b11a-32b6829f3807"/>
+
+    <ar_pros:DebtAmortizationAndEarlyAmortizationEarlyMaturityIfApplicable
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="F91fecb33-2117-4e0b-80dc-877053cebf08"/>
+    <ar_pros:DebtPaymentFrequencyOfInterest
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="F29c54f28-c761-4f2f-b0c2-da91f43e0562"/>
+    <ar_pros:DebtInterestPerformanceAndCalculationProcedure
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="Fda034052-5306-41f3-903d-f0b0c868ce90"/>
+    <ar_pros:DebtSeriesBasisForDeterminingThePerformance
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="F9ae27265-9d1c-47de-c763-00d609ad4dee"/>
+    <ar_pros:DebtSeriesDiscountOrYieldInterestRateVariablePerformance
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="Fd7866a54-539f-46a4-a19f-f6bda566bda0">NO</ar_pros:DebtSeriesDiscountOrYieldInterestRateVariablePerformance>
+    <ar_pros:DebtSeriesDiscountOrYieldInterestRateFixedPerformance
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="F9a0cc415-cf54-41f3-e01c-13818070a0e2">NO</ar_pros:DebtSeriesDiscountOrYieldInterestRateFixedPerformance>
+    <ar_pros:DebtSeriesDiscountOrYieldInterestRateDiscount
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="F20b214fd-5407-40b6-ee06-a5518bab3631">NO</ar_pros:DebtSeriesDiscountOrYieldInterestRateDiscount>
+    <ar_pros:DebtSeriesPositioningMechanism
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="F994f393b-0001-4903-9e2f-6d0fce90844e">Cierre de libro</ar_pros:DebtSeriesPositioningMechanism>
+    <ar_pros:DebtSeriesEffectOfEmissionsUnderAProgram
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="Fe6303418-c005-423c-d883-ad73eb631742"/>
+    <ar_pros:DebtSerieMexicoPrimaryNumberOfStocks
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" decimals="0"
+        id="F918674da-a13a-4e4c-e567-98ea14cc1cc3" unitRef="U4bb290ed-9921-403a-8d28-4bcc45e90f7c">0</ar_pros:DebtSerieMexicoPrimaryNumberOfStocks>
+    <ar_pros:DebtSerieNumberOfStocks
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" decimals="0"
+        id="Faf418970-afe7-44ac-bcca-c259df5c8492" unitRef="U4bb290ed-9921-403a-8d28-4bcc45e90f7c">0</ar_pros:DebtSerieNumberOfStocks>
+    <ar_pros:DebtSerieObservationsOnNominalValuePlacementPrice
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="F728b93c8-c121-4847-b9e6-9a02c2257f0e"/>
+    <ar_pros:DebtSeriesNominalValueString
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="Ffb51b1da-84bb-4174-8cb6-132ceb2e2456"/>
+    <ar_pros:DebtSerieObservationsOnTheAmountOfTheOffer
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="F3be782d0-0dca-4bee-f142-923ae0c7fcff"/>
+    <ar_pros:DebtSerieLimitedPublicOffering
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="Fe2153b9a-9310-47c2-94d0-ab8cc87940c2">NO</ar_pros:DebtSerieLimitedPublicOffering>
+    <ar_pros:DebtSerieIssuanceUnderArt13OfTheCUE
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="F2b66c94c-3306-4314-e1bb-45db007fd0f2">NO</ar_pros:DebtSerieIssuanceUnderArt13OfTheCUE>
+    <ar_pros:DebtTypeOfInstrumentIssuers
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="F5d3b7774-6dc5-4ac6-d01a-d9ae37f3a3b4">Certificados bursátiles de largo plazo</ar_pros:DebtTypeOfInstrumentIssuers>
+    <ar_pros:DebtSerieOfferType
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="Ff3533e90-8dda-4437-83f3-fa3e8d000e61">Primaria, Nacional</ar_pros:DebtSerieOfferType>
+    <ar_pros:DebtSeries
+        contextRef="P0b01521e9-eaf5-429e-e150-f6557032d7b3" id="F3563427e-55fd-42f5-f92a-13a82c29a9d3"/>
+    <ar_pros:DebtSerieObservations
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="F0d80736b-7027-4c62-8975-eb759d935123"/>
+    <ar_pros:DebtSubordinationOfTitlesIfAny
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="Fd9951417-e945-40aa-f3a3-0f34baee88bb"/>
+    <ar_pros:DebtSerieSerieDepositary
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="F188b16bc-ac60-4e37-8d11-ed1374f9f1bb"/>
+    <ar_pros:ParticipantName
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="Fe746db15-5677-403f-b0e7-2156c405a9a4"/>
+    <ar_pros:RatingMeaning
+        contextRef="SecuritiesRatingOtherMember910f02ad-9465-4486-b338-d66bd7f1fdc4" id="F4a44bf06-4f15-4f33-f058-f101496bd488"/>
+    <ar_pros:Rating
+        contextRef="SecuritiesRatingOtherMember910f02ad-9465-4486-b338-d66bd7f1fdc4" id="F11971d3b-c555-4572-99d1-51d92295439c"/>
+    <ar_pros:SecuritiesRatingOherName
+        contextRef="SecuritiesRatingOtherMember910f02ad-9465-4486-b338-d66bd7f1fdc4" id="F52e517f6-25c2-431e-a038-0258a929d644"/>
+    <ar_pros:RatingMeaning
+        contextRef="DBRSRatingsMexicoSAdeCVMembere96034ca-9204-4a88-f75a-38d9fecfaf6e" id="F0e28fb6f-2a34-424e-d920-82536055c1bc"/>
+    <ar_pros:Rating
+        contextRef="DBRSRatingsMexicoSAdeCVMembere96034ca-9204-4a88-f75a-38d9fecfaf6e" id="F2b086696-ecb8-4b31-ea2b-aa79384bd41d"/>
+    <ar_pros:RatingMeaning
+        contextRef="AMBestAmericaLatinaSADeCVMember8b68676a-65c5-42dd-a149-3df4b833e4c8" id="Fe592d7fb-84ab-4221-e601-ebe2f1f62b69"/>
+    <ar_pros:Rating
+        contextRef="AMBestAmericaLatinaSADeCVMember8b68676a-65c5-42dd-a149-3df4b833e4c8" id="Fe3cb0b4e-21c9-4bc0-9d55-e22bab32c3a7"/>
+    <ar_pros:RatingMeaning
+        contextRef="VerumCalificadoraDeValoresSAPIDeCVMember426c2d5e-5094-4fc4-b076-8d94ecf94f59" id="F95cccbf4-9871-4de0-a465-4e127f0bda6d"/>
+    <ar_pros:Rating
+        contextRef="VerumCalificadoraDeValoresSAPIDeCVMember426c2d5e-5094-4fc4-b076-8d94ecf94f59" id="F38d6afb6-960c-4c83-8fec-1e45864e0ac4"/>
+    <ar_pros:RatingMeaning
+        contextRef="StandardAndPoorsSADeCVMember8b77d3f7-4492-49a2-a744-ce4484c86d14" id="F8817ba21-9827-4672-86fb-3fa0e78c0270"/>
+    <ar_pros:Rating
+        contextRef="StandardAndPoorsSADeCVMember8b77d3f7-4492-49a2-a744-ce4484c86d14" id="Fc0e8e728-d607-4754-da74-66095a487227"/>
+    <ar_pros:RatingMeaning
+        contextRef="MoodysDeMexicoSADeCVMember88db528c-9a0a-4e9e-8a16-b23bd71108a1" id="Fa459665e-e08e-4e61-bf16-9a89b3b3eb35"/>
+    <ar_pros:Rating
+        contextRef="MoodysDeMexicoSADeCVMember88db528c-9a0a-4e9e-8a16-b23bd71108a1" id="F2aecdd96-8bc4-4055-c38a-c669c42c9111"/>
+    <ar_pros:RatingMeaning
+        contextRef="HRRatingsDeMexicoSADeCVMember02f1d7b5-ce58-49c7-c260-73df4db55178" id="Fc5ec9a23-b3df-49ff-8bdf-652ad9e14e27"/>
+    <ar_pros:Rating
+        contextRef="HRRatingsDeMexicoSADeCVMember02f1d7b5-ce58-49c7-c260-73df4db55178" id="F8b925fd1-3ba3-47e2-8d9f-77947069803f"/>
+    <ar_pros:RatingMeaning
+        contextRef="FitchMexicoSADeCVMember2c62cab6-8f91-4c48-bbee-a01770251d10" id="Fd3a11348-9514-4861-fa38-3803b3f680d8"/>
+    <ar_pros:Rating
+        contextRef="FitchMexicoSADeCVMember2c62cab6-8f91-4c48-bbee-a01770251d10" id="F6a91cfb2-cde8-4077-e40b-edb2829b7de2"/>
+    <ar_pros:DebtSeriesTypeOfGuaranteeOther
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="F79ca0070-dd41-45db-c44a-1626e94a4ac3"/>
+    <ar_pros:DebtSeriesTypeOfGuaranteeChirographic
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="F4ea40dc5-1d06-472a-8761-56ff7ba37850">NO</ar_pros:DebtSeriesTypeOfGuaranteeChirographic>
+    <ar_pros:DebtSeriesTypeOfGuaranteePledge
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="Fe495b090-ce52-4d0e-f044-73a1ac170829">NO</ar_pros:DebtSeriesTypeOfGuaranteePledge>
+    <ar_pros:DebtSeriesTypeOfGuaranteeMortgage
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="Fd61e9268-48b1-474c-aab6-45aaeace158e">NO</ar_pros:DebtSeriesTypeOfGuaranteeMortgage>
+    <ar_pros:DebtSeriesTypeOfGuaranteeGovernment
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="F37203235-641c-49e3-a147-e5bd56d40442">NO</ar_pros:DebtSeriesTypeOfGuaranteeGovernment>
+    <ar_pros:DebtSeriesTypeOfGuaranteeTrust
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="F73045c83-c1e2-402b-cd5b-90d389396e2b">NO</ar_pros:DebtSeriesTypeOfGuaranteeTrust>
+    <ar_pros:DebtSeriesTypeOfGuaranteeWarranty
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="F37e70765-e23a-415e-f3c8-48cc451d1a4d">NO</ar_pros:DebtSeriesTypeOfGuaranteeWarranty>
+    <ar_pros:DebtSeriesMoratoriumInterests
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="Fd529cf21-f7c1-4f6f-ded4-94055fff7891"/>
+    <ar_pros:DebtLocationAndPaymentOfInterestAndPrincipal
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="F72bcec75-923a-41b1-c0e1-7e53e4a2f403"/>
+
+    <ar_pros:DebtAmortizationAndEarlyAmortizationEarlyMaturityIfApplicable
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="Ff324800f-a7c0-4835-8cd5-7ff52eac3a0a"/>
+    <ar_pros:DebtPaymentFrequencyOfInterest
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="Fa7bfc1e9-d382-4ade-e7f5-3a2f8f52e9b5"/>
+    <ar_pros:DebtInterestPerformanceAndCalculationProcedure
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="F94eedce6-beb1-4cbe-b698-fd1a4c662f22"/>
+    <ar_pros:DebtSeriesBasisForDeterminingThePerformance
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="Fca417961-12fe-4b21-90f6-9dd0aac7dcca"/>
+    <ar_pros:DebtSeriesDiscountOrYieldInterestRateVariablePerformance
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="F8d65bdcf-0fdb-4c5d-e442-e8a1be95fccf">NO</ar_pros:DebtSeriesDiscountOrYieldInterestRateVariablePerformance>
+    <ar_pros:DebtSeriesDiscountOrYieldInterestRateFixedPerformance
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="F042d2e25-d7b0-4584-b8b9-32f37c6fbee7">NO</ar_pros:DebtSeriesDiscountOrYieldInterestRateFixedPerformance>
+    <ar_pros:DebtSeriesDiscountOrYieldInterestRateDiscount
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="F41eaa16e-644f-4b6d-9f36-06b7ce14c55e">NO</ar_pros:DebtSeriesDiscountOrYieldInterestRateDiscount>
+    <ar_pros:DebtSeriesPositioningMechanism
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="Fb75b89c4-4459-46f7-8d1b-4335b91af8c2">Cierre de libro</ar_pros:DebtSeriesPositioningMechanism>
+    <ar_pros:DebtSeriesEffectOfEmissionsUnderAProgram
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="Fdd07f706-1d11-43a9-a322-b9b4dab14d9e"/>
+    <ar_pros:DebtSerieMexicoPrimaryNumberOfStocks
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" decimals="0"
+        id="F1a7dd65c-61ef-421f-c712-6ba8f027deb0" unitRef="U4bb290ed-9921-403a-8d28-4bcc45e90f7c">0</ar_pros:DebtSerieMexicoPrimaryNumberOfStocks>
+    <ar_pros:DebtSerieNumberOfStocks
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" decimals="0"
+        id="F6ba0cf4b-1fc0-4af9-b1b5-0e9513fc74c1" unitRef="U4bb290ed-9921-403a-8d28-4bcc45e90f7c">0</ar_pros:DebtSerieNumberOfStocks>
+    <ar_pros:DebtSerieObservationsOnNominalValuePlacementPrice
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="Ff973a4c1-c9b4-444c-ff41-56e278e82171"/>
+    <ar_pros:DebtSeriesNominalValueString
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="Fbf7f21c6-81ff-46b5-d884-70b9b198afd7"/>
+    <ar_pros:DebtSerieObservationsOnTheAmountOfTheOffer
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="F5fca115f-38c0-4c13-95c7-28cfd30fbb9e"/>
+    <ar_pros:DebtSerieLimitedPublicOffering
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="Fa3c98271-e4d8-4760-9f1e-b5e7e8192d31">NO</ar_pros:DebtSerieLimitedPublicOffering>
+    <ar_pros:DebtSerieIssuanceUnderArt13OfTheCUE
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="F19d56e83-6479-4722-f1e9-c94b6fc04afd">NO</ar_pros:DebtSerieIssuanceUnderArt13OfTheCUE>
+    <ar_pros:DebtTypeOfInstrumentIssuers
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="F4d0ec171-fd1d-4dcd-dcf1-ae709bedbd66">Certificados bursátiles de largo plazo</ar_pros:DebtTypeOfInstrumentIssuers>
+    <ar_pros:DebtSerieOfferType
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="F5b6fb1e9-8a39-49ca-b833-2ebfd2f8b23d">Primaria, Nacional</ar_pros:DebtSerieOfferType>
+    <ar_pros:DebtSeries
+        contextRef="P0912b3adb-02f5-47e8-bf1f-bbfb62036844" id="F7594afe0-1797-49f1-f788-26396bd88fa3"/>
+    <ar_pros:NameAndPositionsOfResponsiblePersonsPdf
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F09997043-381a-4634-ccfe-b0996a8af272"/>
+    <ar_pros:RecentEvents
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fce32471b-ca01-4c6d-bb8d-429e8f434607"/>
+    <ar_pros:OtherInformation
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F5692a24e-c6d1-43e3-98cc-d04d9d6ead0a"/>
+    <ar_pros:ExercisesToIdentifyThePossibleReturns
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fef1250d8-65be-4bac-f8b6-f8648878b4e7"/>
+    <ar_pros:HistoricalPerformanceOfTheUnderlyingAssets
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F0d3c4400-9e69-48c7-abb8-6a32659688ee"/>
+    <ar_pros:DescriptionOfTheUnderlyingAssets
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fb190f378-9449-44e8-ac2a-91a9086e9d8d"/>
+    <ar_pros:ReferenceIncorporationUnderlyingAssets
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F8ea0f6a9-9d30-4f97-ced8-fa415ec8dfad">NO</ar_pros:ReferenceIncorporationUnderlyingAssets>
+    <ar_pros:DescriptionOfThePolicyOrProgramOfLaborInclusion
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fab8f5d63-c39d-44ca-ec89-bb73f159c859"/>
+    <ar_pros:HasAPolicyOrProgramOfLaborInclusion
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F9116d613-8348-460c-b031-0f081b65ec5c">NO</ar_pros:HasAPolicyOrProgramOfLaborInclusion>
+    <ar_pros:TotalPercentageOfWomenAsCounselors
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" decimals="2"
+        id="F36812a2e-de1d-4b2f-a10c-833eec91c835" unitRef="U4bb290ed-9921-403a-8d28-4bcc45e90f7c">0</ar_pros:TotalPercentageOfWomenAsCounselors>
+    <ar_pros:TotalPercentageOfMenAsCounselors
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" decimals="2"
+        id="Fda9c6df5-d1ca-47be-e3d8-26c73c0a3fa6" unitRef="U4bb290ed-9921-403a-8d28-4bcc45e90f7c">0</ar_pros:TotalPercentageOfMenAsCounselors>
+    <ar_pros:TotalPercentageOfWomenAsRelevantDirectors
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" decimals="2"
+        id="Fed97f275-1b1e-4dfa-cdeb-898a8c070598" unitRef="U4bb290ed-9921-403a-8d28-4bcc45e90f7c">0</ar_pros:TotalPercentageOfWomenAsRelevantDirectors>
+    <ar_pros:TotalPercentageOfMenAsRelevantDirectors
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" decimals="2"
+        id="F841dd264-188d-4b48-9b4a-feef0b932d8c" unitRef="U4bb290ed-9921-403a-8d28-4bcc45e90f7c">0</ar_pros:TotalPercentageOfMenAsRelevantDirectors>
+    <ar_pros:OtherCorporateGovernancePractices
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fe204f312-9151-41d7-9b68-c213af1ad08e"/>
+    <ar_pros:AssociationAndOtherAgreements
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F25ad4d99-9b39-4ce0-ce3e-e0ab17fa66e5"/>
+    <ar_pros:AdministratorsAndShareholders
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F948a2032-a481-49a2-acc6-b1f917392abf"/>
+    <ar_pros:TransactionsWithRelatedParties
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fd14f09f9-1c9b-45b1-b30f-ef5b5b2888a4"/>
+    <ar_pros:ExternalAuditors
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Ff829588f-447e-47c2-8e15-6f5f25696715"/>
+    <ar_pros:ReferenceIncorporationAdministration
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fcef49416-03b7-4f46-d9a3-9c0dcb337ca4">NO</ar_pros:ReferenceIncorporationAdministration>
+    <ar_pros:EstimatesCriticalAccountingProvisionsOrReserves
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F8e9732fc-a3c5-423f-b632-55ddf0b23c03"/>
+    <ar_pros:InternalControl
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fe756d616-5142-416c-f935-6d32129cfbfe"/>
+    <ar_pros:FinancialPositionLiquidityAndCapitalResources
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F0ea0030b-5000-4046-9c92-e8e1dbe6ba12"/>
+    <ar_pros:OperationResults
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F396e09f0-752a-42f8-afa1-bd79408fe9ed"/>
+    <ar_pros:CommentsAndManagementAnalysisOnOperatingResults
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fc71d3484-8fe0-4632-b817-94540024e640"/>
+    <ar_pros:RelevantCreditReport
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F2a7845e4-601c-41e5-c582-a22bee6ea462"/>
+    <ar_pros:FinancialInformationByBusinessLine
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F1bdf7bdf-6c07-4e80-dbb0-0234cb995e24"/>
+
+    <ar_pros:InformationInCaseOfIssuesGuaranteedBySubsidiariesOfTheIssuer
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F7d018ca3-acee-4f46-fa55-ba1ebc322619"/>
+    <ar_pros:SelectedQuarterlyFinancialInformation
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F03c01957-0943-41bb-ef49-807c3781138c"/>
+    <ar_pros:SelectedFinancialInformationDisclosure
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F8bade492-8381-4319-fe7b-2f2488363119"/>
+    <ifrs_mx-cor_20141205:CashDividendsDeclaredPerShare
+        contextRef="C09aaa4cf-9415-431a-e8b5-d1adad884d40" decimals="0"
+        id="F82365fce-b518-4ac7-b78e-72c56d896cbf" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs_mx-cor_20141205:CashDividendsDeclaredPerShare>
+    <ifrs_mx-cor_20141205:CashDividendsDeclaredPerShare
+        contextRef="C7124aada-9ffd-4cf9-d9fe-5452c6b41fdd" decimals="0"
+        id="F6cf733a7-f2e3-4b70-fd72-aebe15e87bd1" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs_mx-cor_20141205:CashDividendsDeclaredPerShare>
+    <ifrs_mx-cor_20141205:CashDividendsDeclaredPerShare
+        contextRef="C4c66beb3-7401-4688-ca4f-5f2c59037d64" decimals="0"
+        id="F05194f14-4773-4c2d-c173-9f04ae1cddbc" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs_mx-cor_20141205:CashDividendsDeclaredPerShare>
+    <ifrs-full:Equity contextRef="C2f98d28e-7697-4585-ac99-5fa434834691"
+        decimals="0" id="Fd5f4bf9f-8039-4ed1-e232-eaf19c1cc463" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs-full:Equity>
+    <ifrs-full:Equity contextRef="Ccfddc0df-e0f1-4ca8-9f58-2aa79578a355"
+        decimals="0" id="F67ece4d3-f4a8-4bfb-d136-3e5837d9e0ed" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs-full:Equity>
+    <ifrs-full:Equity contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472"
+        decimals="0" id="F35b1f422-985b-4c65-af17-247bee51451d" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs-full:Equity>
+    <ifrs_mx-cor_20141205:InventoryTurnoverDecimal
+        contextRef="C09aaa4cf-9415-431a-e8b5-d1adad884d40" decimals="0"
+        id="F8e27ee76-ff5a-4191-ddef-1b04acf15645" unitRef="U4bb290ed-9921-403a-8d28-4bcc45e90f7c">0</ifrs_mx-cor_20141205:InventoryTurnoverDecimal>
+    <ifrs_mx-cor_20141205:InventoryTurnoverDecimal
+        contextRef="C7124aada-9ffd-4cf9-d9fe-5452c6b41fdd" decimals="0"
+        id="F3ebe7a6f-e14b-49eb-fccd-dde400f123c0" unitRef="U4bb290ed-9921-403a-8d28-4bcc45e90f7c">0</ifrs_mx-cor_20141205:InventoryTurnoverDecimal>
+    <ifrs_mx-cor_20141205:InventoryTurnoverDecimal
+        contextRef="C4c66beb3-7401-4688-ca4f-5f2c59037d64" decimals="0"
+        id="F2cbba6e4-e6f2-4232-fde3-79bdee96a7be" unitRef="U4bb290ed-9921-403a-8d28-4bcc45e90f7c">0</ifrs_mx-cor_20141205:InventoryTurnoverDecimal>
+    <ifrs_mx-cor_20141205:AccountsPayableTurnoverDecimal
+        contextRef="C09aaa4cf-9415-431a-e8b5-d1adad884d40" decimals="0"
+        id="Fd08703e7-4759-49a9-f63d-f91cee070211" unitRef="U4bb290ed-9921-403a-8d28-4bcc45e90f7c">0</ifrs_mx-cor_20141205:AccountsPayableTurnoverDecimal>
+    <ifrs_mx-cor_20141205:AccountsPayableTurnoverDecimal
+        contextRef="C7124aada-9ffd-4cf9-d9fe-5452c6b41fdd" decimals="0"
+        id="F86f372c4-9e40-4caf-8215-f52d6ae40d5b" unitRef="U4bb290ed-9921-403a-8d28-4bcc45e90f7c">0</ifrs_mx-cor_20141205:AccountsPayableTurnoverDecimal>
+    <ifrs_mx-cor_20141205:AccountsPayableTurnoverDecimal
+        contextRef="C4c66beb3-7401-4688-ca4f-5f2c59037d64" decimals="0"
+        id="F0f6c977c-863f-42d5-d8f1-10255debc1cc" unitRef="U4bb290ed-9921-403a-8d28-4bcc45e90f7c">0</ifrs_mx-cor_20141205:AccountsPayableTurnoverDecimal>
+    <ifrs_mx-cor_20141205:AccountsReceivableTurnoverDecimal
+        contextRef="C09aaa4cf-9415-431a-e8b5-d1adad884d40" decimals="0"
+        id="F27eab388-ea81-44d5-c565-8e161024c1a4" unitRef="U4bb290ed-9921-403a-8d28-4bcc45e90f7c">0</ifrs_mx-cor_20141205:AccountsReceivableTurnoverDecimal>
+    <ifrs_mx-cor_20141205:AccountsReceivableTurnoverDecimal
+        contextRef="C7124aada-9ffd-4cf9-d9fe-5452c6b41fdd" decimals="0"
+        id="Fa0dca490-288f-42fd-bbcb-1d33cb934c0f" unitRef="U4bb290ed-9921-403a-8d28-4bcc45e90f7c">0</ifrs_mx-cor_20141205:AccountsReceivableTurnoverDecimal>
+    <ifrs_mx-cor_20141205:AccountsReceivableTurnoverDecimal
+        contextRef="C4c66beb3-7401-4688-ca4f-5f2c59037d64" decimals="0"
+        id="Fede179fd-41ad-42ee-a3a1-62e7a76ec241" unitRef="U4bb290ed-9921-403a-8d28-4bcc45e90f7c">0</ifrs_mx-cor_20141205:AccountsReceivableTurnoverDecimal>
+    <ifrs-full:NoncurrentLiabilities
+        contextRef="C2f98d28e-7697-4585-ac99-5fa434834691" decimals="0"
+        id="Fff8cede9-efb6-4921-fbd8-f81e7096bd11" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs-full:NoncurrentLiabilities>
+    <ifrs-full:NoncurrentLiabilities
+        contextRef="Ccfddc0df-e0f1-4ca8-9f58-2aa79578a355" decimals="0"
+        id="Fb7038970-733e-4887-c8ac-9f18ee881f34" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs-full:NoncurrentLiabilities>
+    <ifrs-full:NoncurrentLiabilities
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" decimals="0"
+        id="F0ab486db-b751-4d84-b77f-62256a606188" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs-full:NoncurrentLiabilities>
+    <ifrs-full:Assets contextRef="C2f98d28e-7697-4585-ac99-5fa434834691"
+        decimals="0" id="Ffb13ce7e-ac58-42c9-eaff-8debcd48c47a" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs-full:Assets>
+    <ifrs-full:Assets contextRef="Ccfddc0df-e0f1-4ca8-9f58-2aa79578a355"
+        decimals="0" id="F49cbbf59-3d13-4530-8529-27b2552b029b" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs-full:Assets>
+    <ifrs-full:Assets contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472"
+        decimals="0" id="Fb8ca248f-d9d3-456b-81c8-6820e4c82ca2" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs-full:Assets>
+    <ifrs_mx-cor_20141205:DepreciacionYAmortizacionOperativa
+        contextRef="C09aaa4cf-9415-431a-e8b5-d1adad884d40" decimals="0"
+        id="F809402cf-41cd-43ea-b78a-87e04c289834" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs_mx-cor_20141205:DepreciacionYAmortizacionOperativa>
+    <ifrs_mx-cor_20141205:DepreciacionYAmortizacionOperativa
+        contextRef="C7124aada-9ffd-4cf9-d9fe-5452c6b41fdd" decimals="0"
+        id="F37481350-166f-4b32-c873-953f330cb01c" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs_mx-cor_20141205:DepreciacionYAmortizacionOperativa>
+    <ifrs_mx-cor_20141205:DepreciacionYAmortizacionOperativa
+        contextRef="C4c66beb3-7401-4688-ca4f-5f2c59037d64" decimals="0"
+        id="Fc83f23c2-fabc-499e-e755-7e4fa9b68c9a" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs_mx-cor_20141205:DepreciacionYAmortizacionOperativa>
+    <ifrs_mx-cor_20141205:AcquisitionOfPropertyAndEquipment
+        contextRef="C09aaa4cf-9415-431a-e8b5-d1adad884d40" decimals="0"
+        id="F57a959f4-12fe-4c95-fbbe-213c230f59e2" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs_mx-cor_20141205:AcquisitionOfPropertyAndEquipment>
+    <ifrs_mx-cor_20141205:AcquisitionOfPropertyAndEquipment
+        contextRef="C7124aada-9ffd-4cf9-d9fe-5452c6b41fdd" decimals="0"
+        id="F3cc32320-3ff0-475d-8840-713a3e9dcc66" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs_mx-cor_20141205:AcquisitionOfPropertyAndEquipment>
+    <ifrs_mx-cor_20141205:AcquisitionOfPropertyAndEquipment
+        contextRef="C4c66beb3-7401-4688-ca4f-5f2c59037d64" decimals="0"
+        id="F2cf7c3d3-2e6e-4f7f-ffec-f0d6a1429d00" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs_mx-cor_20141205:AcquisitionOfPropertyAndEquipment>
+    <ifrs-full:BasicEarningsLossPerShare
+        contextRef="C09aaa4cf-9415-431a-e8b5-d1adad884d40" decimals="0"
+        id="F4228b689-eea0-4c05-c11e-fa3aa6d56db1" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs-full:BasicEarningsLossPerShare>
+    <ifrs-full:BasicEarningsLossPerShare
+        contextRef="C7124aada-9ffd-4cf9-d9fe-5452c6b41fdd" decimals="0"
+        id="F7263d9a2-6a1f-4dfa-922e-00655b6367d9" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs-full:BasicEarningsLossPerShare>
+    <ifrs-full:BasicEarningsLossPerShare
+        contextRef="C4c66beb3-7401-4688-ca4f-5f2c59037d64" decimals="0"
+        id="Faf91be2a-4afc-4de7-d612-868db77d1572" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs-full:BasicEarningsLossPerShare>
+    <ifrs-full:ProfitLoss
+        contextRef="C09aaa4cf-9415-431a-e8b5-d1adad884d40" decimals="0"
+        id="F8ab648b9-4954-44c6-d1cc-07a6a9b5f5c7" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs-full:ProfitLoss>
+    <ifrs-full:ProfitLoss
+        contextRef="C7124aada-9ffd-4cf9-d9fe-5452c6b41fdd" decimals="0"
+        id="Fffe466f4-757f-4be4-98fd-eac89062e9ac" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs-full:ProfitLoss>
+    <ifrs-full:ProfitLoss
+        contextRef="C4c66beb3-7401-4688-ca4f-5f2c59037d64" decimals="0"
+        id="F2570cbdb-b0c4-4006-86f2-1401afc9534c" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs-full:ProfitLoss>
+    <ifrs-full:ProfitLossFromOperatingActivities
+        contextRef="C09aaa4cf-9415-431a-e8b5-d1adad884d40" decimals="0"
+        id="F679f10c6-e233-45a5-88b4-a6a143eb2e88" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs-full:ProfitLossFromOperatingActivities>
+    <ifrs-full:ProfitLossFromOperatingActivities
+        contextRef="C7124aada-9ffd-4cf9-d9fe-5452c6b41fdd" decimals="0"
+        id="Fe76ce3b0-3120-49d9-a176-4bfa05ea1c9e" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs-full:ProfitLossFromOperatingActivities>
+    <ifrs-full:ProfitLossFromOperatingActivities
+        contextRef="C4c66beb3-7401-4688-ca4f-5f2c59037d64" decimals="0"
+        id="F970dc1d2-8e87-465a-9094-ff50d13e0f89" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs-full:ProfitLossFromOperatingActivities>
+    <ifrs-full:GrossProfit
+        contextRef="C09aaa4cf-9415-431a-e8b5-d1adad884d40" decimals="0"
+        id="Fbfe012b1-dccf-44aa-e29d-c5df8df36f94" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs-full:GrossProfit>
+    <ifrs-full:GrossProfit
+        contextRef="C7124aada-9ffd-4cf9-d9fe-5452c6b41fdd" decimals="0"
+        id="Ff7c0ecab-a1dc-45a4-a5cb-37af481a5dca" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs-full:GrossProfit>
+    <ifrs-full:GrossProfit
+        contextRef="C4c66beb3-7401-4688-ca4f-5f2c59037d64" decimals="0"
+        id="F84b6183e-e000-4bb1-ca05-2d24a00a97c3" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs-full:GrossProfit>
+    <ifrs-full:Revenue
+        contextRef="C09aaa4cf-9415-431a-e8b5-d1adad884d40" decimals="0"
+        id="Fe0c7d655-60a3-41f3-f231-26ef91210b01" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs-full:Revenue>
+    <ifrs-full:Revenue
+        contextRef="C7124aada-9ffd-4cf9-d9fe-5452c6b41fdd" decimals="0"
+        id="Fa50df7b4-1489-49ab-ce3f-7820ffdd88cd" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs-full:Revenue>
+    <ifrs-full:Revenue
+        contextRef="C4c66beb3-7401-4688-ca4f-5f2c59037d64" decimals="0"
+        id="Ffc2dd021-ef1f-48c1-f888-82173a725c0f" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ifrs-full:Revenue>
+    <ar_pros:ReferenceIncorporationFinancialInformation
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F14dd5bd8-56bf-4251-a9d3-9cf807db886c">NO</ar_pros:ReferenceIncorporationFinancialInformation>
+    <ar_pros:JudicialAdministrativeOrArbitrationProceedings
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F8d480f7d-b6f1-4150-9e49-8069f2d11553"/>
+    <ar_pros:DescriptionOfKeyAssets
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fc707661d-59ab-47a2-cee2-a580d6e2beb7"/>
+    <ar_pros:CorporateStructure
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F9be034f1-6993-4b95-b020-cf65beb6655d"/>
+    <ar_pros:IssuerMarketInformation
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F8f9853a3-40c4-4f8e-88c5-ee3155914494"/>
+    <ar_pros:EnvironmentalPerformance
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F6a213244-9ad8-49ff-c93b-88075d59cbfb"/>
+    <ar_pros:HumanResources
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F12dd52ab-2f55-4563-defe-5a1991bb113a"/>
+    <ar_pros:ApplicableLawAndTaxSituation
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fd9288319-5f80-4671-a79d-e168707aef24"/>
+    <ar_pros:MainCustomers
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fa67acf1b-f12d-4330-81e4-6b1018076480"/>
+    <ar_pros:PatentsLicensesTrademarksAndOtherContracts
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fe148ba2d-0e97-4e6c-d485-85e5a1b3c6ee"/>
+    <ar_pros:DistributionChannels
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fdaa78bc4-fc05-48be-ba9a-961706db52d2"/>
+    <ar_pros:MainActivity
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F9e5678a3-9ad1-485b-8b38-647d8f58596b"/>
+    <ar_pros:BusinessOverview
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fb1502931-65a0-450c-8941-7e9d2492de73"/>
+    <ar_pros:HistoryAndDevelopmentOfTheIssuer
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F95696639-7e2f-4b84-ca0a-7a5f3840cbf4"/>
+    <ar_pros:ReferenceIncorporationTheIssuer
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fc9410736-f1cf-4328-ce31-845d53972be9">NO</ar_pros:ReferenceIncorporationTheIssuer>
+    <ar_pros:DistributionPlan
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F427c7965-41da-40af-82cd-9609ea18dddd"/>
+    <ar_pros:SummaryOfTheIndenture
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F74859ab7-945a-4a4b-e31a-2c5ef24b2b9d"/>
+    <ar_pros:InsertACopyOfTheResultOfTheOpinionOfNacionalFinancieraSnc
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F7865d8bb-0730-4e83-953b-a15cc8729bf5"/>
+    <ar_pros:TranscriptOfOtherRelevantTermsTitle
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fb499e7bb-3694-4d56-a73c-2173c136a6d3"/>
+    <ar_pros:DiscloseTheTermsOfAnyClause
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fceefa002-3af9-4da7-ea5e-1759013f3894"/>
+    <ar_pros:BasisForDeterminingThePerformance
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fb46b8a48-0982-4599-c77c-5bb1c0b80e86"/>
+    <ar_pros:IfTheTitlesHaveFiduciaryGuarantee
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F7ae9b7ca-7acb-4851-aa4d-95bf880aa59a"/>
+    <ar_pros:MentionIfTheCollateralAreInsured
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Feea67c64-84dc-4dc5-98ad-434d21afecd2"/>
+
+    <ar_pros:InTheCaseOfMortgageBackedSecuritiesSpecifyTheValueOfTheCollateral
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F58df9f70-d9dc-474a-df35-2540af7ba02f"/>
+    <ar_pros:MentioningPartialOrTotalDependence
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F150cb795-df45-4eef-d981-c5e7730ce7ac">NO</ar_pros:MentioningPartialOrTotalDependence>
+
+    <ar_pros:MentioningTheQualificationOfTheCreditRiskOfTheIssueOrProgram
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F87007d93-3830-437f-abba-61d0f74c5dab"/>
+    <ar_pros:DescriptiveAndSchematicExplanationOfTheOperation
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F421884c1-e0e4-4549-9a35-9f3aad6c7b4c"/>
+
+    <ar_pros:MentionTheMinutesOfTheExtraordinaryGeneralMeetingOfShareholders
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F4e4e14a9-cf66-4cdb-98a5-3f4ea8650d57"/>
+    <ar_pros:OfferCharacteristics
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fbced7d42-fb8b-4ac9-c702-3a5007d645f8"/>
+    <ar_pros:PublicDocuments
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fb552656b-897d-4770-9994-aed2f9d0f2bd"/>
+    <ar_pros:OtherValues
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fd8e6f084-3e29-46af-a7d8-08af80eedd27"/>
+    <ar_pros:RiskFactors
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F81a00995-7318-4475-9b73-d32b82340881"/>
+    <ar_pros:ExecutiveSummary
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F48a6d06c-c761-4ca8-c340-9b14d3a30dcf"/>
+    <ar_pros:GlossaryOfTermsAndDefinitions
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F90e8a941-bc23-4a60-ca90-25df39ccae49"/>
+    <ar_pros:ReferenceIncorporationGeneralInformation
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fc3c58e06-fa2a-4845-adc7-673d18508e92">NO</ar_pros:ReferenceIncorporationGeneralInformation>
+    <ar_pros:IssuanceUnderArt13OfTheCUELegend
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F011dac9e-37f6-4e3f-8a07-674e93c33f33"/>
+    <ar_pros:LegendProspectusSupplementBrochure
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F88a93657-9660-4731-e10b-536d03eec2bb"/>
+    <ar_pros:ProspectusSupplementBrochure
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F6b0c6a02-0963-4902-d170-1b75f7083a69">Preeliminar</ar_pros:ProspectusSupplementBrochure>
+    <ar_pros:LegendDocumentAvailableWithTheUnderwriter
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F04af154a-bb6e-4346-9118-3ce5d5b17110"/>
+    <ar_pros:OfficeNumberAndDateOfAuthorizationOfTheCommission
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F041c91a2-54e9-4c6f-e002-8115b5a856db"/>
+
+    <ar_pros:PlaceAndDateOfPublicationOfTheProspectusSupplementProspectus
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F1579662a-9399-48a2-94d4-130cc8034649"/>
+    <ar_pros:NumberOfRegister
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F9a41260d-8cc2-4b5f-d09d-2a4e76967c06"/>
+    <ar_pros:LegendArticle86OfTheLMV
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F945abfdd-b2d5-4b37-cf61-b42e7a680964"/>
+    <ar_pros:MentionThatTitlesAreListed
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F4f36debe-9bc6-4004-9412-c95dc628f164"/>
+    <ar_pros:TheMentionOfTheSecuritiesAreRegisteredInTheRNV
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Ff6be3433-68c8-4520-ffcf-c687c6cf6102">Los títulos se encuentran inscritos en el Registro Nacional de Valores y son objeto de cotización o inscripción en el listado correspondiente</ar_pros:TheMentionOfTheSecuritiesAreRegisteredInTheRNV>
+    <ar_pros:MentionOfAnyRiskAssociatedWithTheOperationInQuestion
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fc9fc2bf1-f1b2-4fa1-fb88-179a11a12660"/>
+    <ar_pros:NamesOfTheParticipantsInTheSyndicateIntermediaries
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F88ee0922-b8e0-46d0-b2df-441e45b55484"/>
+    <ar_pros:PotentialAcquirers
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F5276cec9-4e59-4f9e-eb1a-f03ded371d7c"/>
+    <ar_pros:ExistTotalOrPartialDependenceOnAnyThirdParty
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fd93f527d-c7d6-495c-9aa1-651f3b1060e4">NO</ar_pros:ExistTotalOrPartialDependenceOnAnyThirdParty>
+    <ar_pros:MentioningwhetherOrNotHaveCollateral
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F4218bb50-dbc1-4b38-e107-56523b79f176"/>
+    <ar_pros:TypeOfInstrumentDescription
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Ff324c19e-694b-4dd8-ada0-edc0a4011e9c">Certificados bursátiles de corto plazo,Valores estructurados de corto plazo</ar_pros:TypeOfInstrumentDescription>
+    <ar_pros:TypeOfInstrument
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F513bcada-1158-4f51-ce18-b83476957ff0">Acciones</ar_pros:TypeOfInstrument>
+    <ar_pros:LifeOfTheProgram
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fdb04fb29-ba16-4b10-e596-d8cfd8699be4"/>
+    <ar_pros:RevolvingCharacterProgram
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F4f043667-c427-4a94-98a9-2216b821b8a0">NO</ar_pros:RevolvingCharacterProgram>
+    <ar_pros:ObservationsOnTheAuthorizedAmountOfTheProgramRegistration
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F2a2db280-ef70-4f6d-ff8c-dc8e3bdebb7c"/>
+
+    <ar_pros:DesignationOfTheReferenceCurrencyInWhichTheProgramIsAuthorized
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F89b0a119-8d8e-4670-d1d9-8bba991041c6">PESOS</ar_pros:DesignationOfTheReferenceCurrencyInWhichTheProgramIsAuthorized>
+    <ar_pros:TotalAmountProgramRegistration
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" decimals="0"
+        id="Fcdbaed0e-ea9e-4791-fc8b-5a29f0e62939" unitRef="U2f0d97f0-2d04-4eca-c9c5-5658c294e7af">0</ar_pros:TotalAmountProgramRegistration>
+    <ar_pros:IssuanceUnderArt13OfTheCUE
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Ff139440d-4080-4501-bccd-dc23513d2527">NO</ar_pros:IssuanceUnderArt13OfTheCUE>
+    <ar_pros:TheMentionOfBeingPublicOffering
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fe5ea2ac3-fa6e-42a4-e5bf-4efa8486d500"/>
+    <ar_pros:ForeingIssuer
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fb55b417b-cdf6-4762-ff56-ae6df5de349e">NO</ar_pros:ForeingIssuer>
+    <ar_pros:Ticker contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fd27f2c51-7c5a-46b2-ac6b-ed11da0d939e">2HSOFT</ar_pros:Ticker>
+    <ar_pros:DenominationOfTheIssuer
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Fc7a759d1-26af-46f8-c53c-e19af0302428"/>
+    <ar_pros:OnlyEmission
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F0bc0ff79-afbb-45a2-ad94-7fa50175c90f">NO</ar_pros:OnlyEmission>
+    <ar_pros:ProspectusLegend
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="Ffa7d13d1-e9ea-4dfa-cfe3-55d355928387"/>
+    <ar_pros:PlacementProspectus
+        contextRef="C2dac97a3-ae90-40ca-aa71-5266daa2e472" id="F9c36cbda-618b-42f9-fed4-b5099f06fd80">Anexo H</ar_pros:PlacementProspectus>
+</xbrl>

@@ -1,0 +1,53 @@
+<xbrl-contenedor-formato xbrl:rol-uri="{{xbrlRol.Uri}}" orientacion="landscape" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+<div id="contenedorTablaExcel" class="table-responsive">
+    <table class="table table-striped b-t b-light" xbrl:tabla-excel xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" selector="td:not(:first-child)" selector-contenedor-x="#contenedorTablaExcel" selector-contenedor-y="#contenedorFormatos" tab-index="1" on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)" on-after-paste="onAfterPaste(valorPegado, x, y)" on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)">
+        <thead>
+            <tr>
+                <th class="th-sortable" data-toggle="class">
+                    {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Concepto' : 'Concept' }}
+                </th>
+                <th style="min-width: 230px; width: 230px;">
+                    {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Trimestre A&ntilde;o Actual' : 'Quarter Current Year' }} <br /> 
+                    {{ ::definicionPlantilla.obtenerVariablePorId("medida_MXN_sin_contexto")}}<br />
+                    {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2015_07_01")}} - {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2015_09_30")}}
+                </th>
+                <th style="min-width: 230px; width: 230px;">
+                    {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Acumulado A&ntilde;o Actual' : 'Accumulated Current Year' }} <br /> 
+                    {{ ::definicionPlantilla.obtenerVariablePorId("medida_MXN_sin_contexto")}}<br />
+                    {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2015_01_01")}} - {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2015_09_30")}}
+                </th>
+                <th style="min-width: 230px; width: 230px;" ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'">
+                    {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Trimestre A&ntilde;o Anterior' : 'Previous Quarter Year' }} <br />
+                    {{ ::definicionPlantilla.obtenerVariablePorId("medida_MXN_sin_contexto")}}<br />
+                    {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2014_07_01")}} - {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2014_09_30")}}
+                </th>
+                <th style="min-width: 230px; width: 230px;" ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'">
+                    {{documentoInstancia.xbrlIdioma.ClaveIdioma == 'es' ? 'Acumulado A&ntilde;o Anterior' : 'Accumulated Previous Year' }} <br />
+                    {{ ::definicionPlantilla.obtenerVariablePorId("medida_MXN_sin_contexto")}}<br />
+                    {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2014_01_01")}} - {{ ::definicionPlantilla.obtenerVariablePorId("fecha_2014_09_30")}}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <td>
+                    <xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}"
+                                            xbrl:id-concepto="ifrs_mx-cor_20141205_DatosInformativosDelEstadoDeResultadosSinopsis" xbrl:nivel-indentacion="0" xbrl:style="font-weight:800;"></td>
+                <td></td>
+                <td></td>
+                <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"></td>
+                <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"></td>
+            </tr>
+
+            <tr xbrl:filtro-busqueda xbrl:filtro="xbrlRol.FiltroBusqueda" xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}">
+                <td><xbrl:etiqueta-concepto xbrl:idioma="{{documentoInstancia.xbrlIdioma.ClaveIdioma}}" xbrl:id-concepto="ifrs_mx-cor_20141205_DepreciacionYAmortizacionOperativa" xbrl:nivel-indentacion="1"></td>
+                <td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A08621a50-f933-4d3a-ad45-ec27dfc4e93f"></xbrl:campo-captura></td>
+                <td><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A398d4fa6-5cdd-4edf-9b01-ad78d00fd35d" xbrl:ultimo="true"></xbrl:campo-captura></td>
+                <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A0b43f9d2-812f-40e1-810c-38a9e47e6b5c"></xbrl:campo-captura></td>
+                <td ng-if="definicionPlantilla.ParametrosConfiguracion['tieneComparativo']=='true'"><xbrl:campo-captura xbrl:solo-lectura="documentoInstancia.BloquearCamposCaptura" xbrl:id-hecho-plantilla="A0ca30a97-16a4-468e-b440-090eaedb8c8e" xbrl:ultimo="true"></xbrl:campo-captura></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</xbrl-contenedor-formato>

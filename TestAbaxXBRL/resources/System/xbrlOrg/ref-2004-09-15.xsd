@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:link="http://www.xbrl.org/2003/linkbase" 
+        xmlns:ref="http://www.xbrl.org/2004/ref" 
+        targetNamespace="http://www.xbrl.org/2004/ref" 
+        elementFormDefault="qualified" 
+        attributeFormDefault="unqualified">
+
+  <import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>
+
+  <element name="Name" type="string" substitutionGroup="link:part" id="ref_Name">
+    <annotation>
+      <documentation xml:lang="en">Name refers to the specific publication.  For example, "Statement of Financial Standards", "Statement of Position" or "IFRS".  It does not include the number.</documentation>
+    </annotation>
+  </element>
+  <element name="Number" type="string" substitutionGroup="link:part" id="ref_Number">
+    <annotation>
+      <documentation xml:lang="en">Number is used to record the actual number of the specific publication.  For example, the number for FAS 133 would be 133.</documentation>
+    </annotation>
+  </element>
+  <element name="Paragraph" type="string" substitutionGroup="link:part" id="ref_Paragraph">
+    <annotation>
+      <documentation xml:lang="en">Paragraph is used to refer to specific paragraphs in a document.</documentation>
+    </annotation>
+  </element>
+  <element name="Subparagraph" type="string" substitutionGroup="link:part" id="ref_Subparagraph">
+    <annotation>
+      <documentation xml:lang="en">Subparagraph of a paragraph.</documentation>
+    </annotation>
+  </element>
+  <element name="Clause" type="string" substitutionGroup="link:part" id="ref_Clause">
+    <annotation>
+      <documentation xml:lang="en">Sub component of a sub paragraph.</documentation>
+    </annotation>
+  </element>
+  <element name="Subclause" type="string" substitutionGroup="link:part" id="ref_Subclause">
+    <annotation>
+      <documentation xml:lang="en">Subcomponent of a clause in a paragraph.</documentation>
+    </annotation>
+  </element>
+</schema>

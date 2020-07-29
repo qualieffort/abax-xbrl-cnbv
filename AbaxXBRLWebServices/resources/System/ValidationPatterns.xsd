@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Project: Xbrl Processing Engine
+Version: 4
+
+Copyright (c) 2011  EDGAR(r) Online, Inc.
+
+EDGAR(r) is a federally registered trademark of the U.S. Securities and Exchange Commission. EDGAR 
+Online is not affiliated with or approved by the U.S. Securities and Exchange Commission.
+-->
+
+<xs:schema elementFormDefault="unqualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:simpleType name="patternMethodEnumeration">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="DtsXPath"/>
+			<xs:enumeration value="runOnce"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="actionMethodEnumeration">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="CreateErrorMemo"/>
+			<xs:enumeration value="ThrowException"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="selectorTypeEnumeration">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="ValueObject"/>
+			<xs:enumeration value="From"/>
+			<xs:enumeration value="To"/>
+			<xs:enumeration value="Prefix"/>
+			<xs:enumeration value="Namespace"/>
+			<xs:enumeration value="IgnoreWhenProcessing"/>
+			<xs:enumeration value="LogicalUri"/>
+			<xs:enumeration value="XmlBase"/>
+			<xs:enumeration value="SchemaLocationPairs"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="queryPartMethodEnumeration">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="XPath"/>
+			<xs:enumeration value="Constant"/>
+			<xs:enumeration value="NamespaceNode"/>
+			<xs:enumeration value="Object"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="severityEnumeration">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="fatalerror"/>
+			<xs:enumeration value="error"/>
+			<xs:enumeration value="warning"/>
+			<xs:enumeration value="info"/>
+			<xs:enumeration value="inconsistent"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="selectorMethodEnumeration">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="Constant"/>
+			<xs:enumeration value="XPath"/>
+			<xs:enumeration value="DomainObject"/>
+			<xs:enumeration value="DtsXPath"/>
+			<xs:enumeration value="DtsXPath-ResolveNamespace"/>
+			<xs:enumeration value="DtsFindSchemaDomainObject"/>
+			<xs:enumeration value="DtsConstant"/>
+			<xs:enumeration value="NamespaceNode"/>
+			<xs:enumeration value="DtsXPathWithLogicalUriTranslateToPhysicalUri"/>
+			<xs:enumeration value="DomainObjectFromValueObjectXPath"/>
+			<xs:enumeration value="XPathWithTruncating"/>
+			<xs:enumeration value="ReferencedDomainObject"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ComplexSelectorPartMethodEnumeration">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="XPath"/>
+			<xs:enumeration value="Constant"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:attributeGroup name="SelectorAttributeGroup">
+		<xs:attribute name="method" type="selectorMethodEnumeration" use="required"/>
+		<xs:attribute name="value" type="xs:token" use="required"/>
+	</xs:attributeGroup>
+	<xs:complexType name="SelectorType">
+		<xs:attribute name="type" type="selectorTypeEnumeration" use="required"/>
+		<xs:attribute name="method" type="selectorMethodEnumeration" use="required"/>
+		<xs:attribute name="value" type="xs:token" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="ComplexSelectorType">
+		<xs:sequence>
+			<xs:element name="SelectorPart" minOccurs="2" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:attribute name="method" type="ComplexSelectorPartMethodEnumeration" use="required"/>
+					<xs:attribute name="value" type="xs:token" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="type" type="selectorTypeEnumeration" use="required"/>
+		<xs:attribute name="method" type="selectorMethodEnumeration" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="FailureSelectorType">
+		<xs:attribute name="method" type="selectorMethodEnumeration" use="required"/>
+		<xs:attribute name="value" type="xs:token" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="FailureType">
+		<xs:sequence>
+			<xs:element name="Action" type="ActionType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="severity" type="severityEnumeration"/>
+	</xs:complexType>
+	<xs:complexType name="ActionType">
+		<xs:sequence>
+			<xs:element name="DtsQueryPredicate" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="QueryPart" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:attribute name="method" type="queryPartMethodEnumeration" use="required"/>
+								<xs:attribute name="value" type="xs:token" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="dtsRecursion" type="xs:boolean" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Selector" type="SelectorType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="ComplexSelector" type="ComplexSelectorType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Failure" type="FailureType" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:token" use="optional"/>
+		<xs:attribute name="saveDO" type="xs:token" use="optional"/>
+		<xs:attribute name="uri" type="xs:token" use="required"/>
+		<xs:attribute name="method" type="xs:string" use="required"/>
+		<xs:attribute name="indexByValueObject" type="xs:boolean" use="optional" default="false"/>
+	</xs:complexType>
+	<xs:complexType name="PatternType">
+		<xs:sequence>
+			<xs:element name="Failure" type="FailureType" minOccurs="0"/>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="Action" type="ActionType"/>
+				<xs:element name="Pattern" type="PatternType"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID"/>
+		<xs:attribute name="name" type="xs:token" use="required"/>
+		<xs:attribute name="method" type="patternMethodEnumeration" use="required"/>
+		<xs:attribute name="value" type="xs:token" use="required"/>
+		<xs:attribute name="processOverrides" type="xs:boolean" />
+		<xs:attribute name="enable" type="xs:boolean" />
+	</xs:complexType>
+	<xs:element name="PatternSet">
+		<xs:annotation>
+			<xs:documentation>The Patterns for Validations</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Pattern" type="PatternType" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:token" use="required"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
+
+<!--
+The contents of this file are subject to the End-User Software License Agreement (the "License"). You may not use this 
+file except in compliance with the License. A current copy of the License is available by contacting product support.
+
+Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights and limitations under the License.
+-->

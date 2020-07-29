@@ -1,0 +1,14 @@
+﻿<div style="text-align:right; padding-right:20px; min-height:25px;"  class="div-default" ng-if="!editando">
+    <span class="xbrl-visor">{{campoTextoDto.valor}}</span>
+</div>
+<div style="text-align:right; ng-if="editando">
+    <div class="input-group" style="width:90%" >
+        <span class="input-group-btn">
+            <input type="text"
+                   class="form-control xbrl-editor"
+                   ng-model="campoTextoDto.valor"
+                   ng-blur="manejarBlur()"
+                   ng-keydown="manejarKeyDown($event)" />
+        </span>
+    </div>
+</div>

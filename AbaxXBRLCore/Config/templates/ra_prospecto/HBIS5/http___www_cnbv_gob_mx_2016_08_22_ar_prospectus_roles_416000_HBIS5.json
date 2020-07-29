@@ -1,0 +1,232 @@
+{
+	"ContextosPlantillaPorId" : {
+  "cxt": {
+    "Id": "cxt",
+    "Periodo": {
+      "Tipo": 1,
+      "FechaInstante": "#fecha_2014_12_31",
+      "FechaInicio": "",
+      "FechaFin": ""
+    },
+    "Entidad": {
+      "Id": "#nombreEntidad",
+      "EsquemaId": "#esquemaEntidad",
+      "ContieneInformacionDimensional": false,
+      "Segmento": null,
+      "ValoresDimension": []
+    },
+    "ContieneInformacionDimensional": false,
+    "Escenario": null,
+    "ValoresDimension": []
+  }
+},
+	
+	"UnidadesPlantillaPorId" : {},
+            
+	"HechosPlantillaPorId" : {
+  "ar_pros_ReferenceIncorporationOperationStructure_6bd99004-c93f-407c-938f-10f06b2ca393": {
+    "Id": "ar_pros_ReferenceIncorporationOperationStructure_6bd99004-c93f-407c-938f-10f06b2ca393",
+    "IdConcepto": "ar_pros_ReferenceIncorporationOperationStructure",
+    "IdContextoPlantilla": "cxt",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_GeneralDescription_a68f213f-456d-4e60-8ee4-c5efa869d103": {
+    "Id": "ar_pros_GeneralDescription_a68f213f-456d-4e60-8ee4-c5efa869d103",
+    "IdConcepto": "ar_pros_GeneralDescription",
+    "IdContextoPlantilla": "cxt",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_TrustEstate_f0d651d7-4d0e-428e-9936-48a7475144b0": {
+    "Id": "ar_pros_TrustEstate_f0d651d7-4d0e-428e-9936-48a7475144b0",
+    "IdConcepto": "ar_pros_TrustEstate",
+    "IdContextoPlantilla": "cxt",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_DescriptionOfTheAssetsInTrust_55ffb08e-4c41-469c-8653-0ec2e2b128d4": {
+    "Id": "ar_pros_DescriptionOfTheAssetsInTrust_55ffb08e-4c41-469c-8653-0ec2e2b128d4",
+    "IdConcepto": "ar_pros_DescriptionOfTheAssetsInTrust",
+    "IdContextoPlantilla": "cxt",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_EvolutionOfTheAssetsInTrust_63c428ff-65a4-4be8-8e4f-e36d591af1b3": {
+    "Id": "ar_pros_EvolutionOfTheAssetsInTrust_63c428ff-65a4-4be8-8e4f-e36d591af1b3",
+    "IdConcepto": "ar_pros_EvolutionOfTheAssetsInTrust",
+    "IdContextoPlantilla": "cxt",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_ContractsAndAgreements_ce77082b-c04d-431d-94db-d96999506f93": {
+    "Id": "ar_pros_ContractsAndAgreements_ce77082b-c04d-431d-94db-d96999506f93",
+    "IdConcepto": "ar_pros_ContractsAndAgreements",
+    "IdContextoPlantilla": "cxt",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_JudicialAdministrativeOrArbitrationProceedings_162af476-f446-4b40-b0b8-69abd2f5a460": {
+    "Id": "ar_pros_JudicialAdministrativeOrArbitrationProceedings_162af476-f446-4b40-b0b8-69abd2f5a460",
+    "IdConcepto": "ar_pros_JudicialAdministrativeOrArbitrationProceedings",
+    "IdContextoPlantilla": "cxt",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_BusinessPlanAnalysisAndInvestmentSchedule_784f2149-1302-4391-9107-6ac34921fd9d": {
+    "Id": "ar_pros_BusinessPlanAnalysisAndInvestmentSchedule_784f2149-1302-4391-9107-6ac34921fd9d",
+    "IdConcepto": "ar_pros_BusinessPlanAnalysisAndInvestmentSchedule",
+    "IdContextoPlantilla": "cxt",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_GeneralPoliciesOfTheIssue_c87617ba-7c80-4568-a094-d5e83b78559e": {
+    "Id": "ar_pros_GeneralPoliciesOfTheIssue_c87617ba-7c80-4568-a094-d5e83b78559e",
+    "IdConcepto": "ar_pros_GeneralPoliciesOfTheIssue",
+    "IdContextoPlantilla": "cxt",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_Valuation_659f99d8-3309-4857-989f-75aab2adbfcd": {
+    "Id": "ar_pros_Valuation_659f99d8-3309-4857-989f-75aab2adbfcd",
+    "IdConcepto": "ar_pros_Valuation",
+    "IdContextoPlantilla": "cxt",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_Settlors_bbb049f2-3fb3-43e5-a958-ec321a85c849": {
+    "Id": "ar_pros_Settlors_bbb049f2-3fb3-43e5-a958-ec321a85c849",
+    "IdConcepto": "ar_pros_Settlors",
+    "IdContextoPlantilla": "cxt",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_RelevantDebtors_f4c89752-5bf5-43bd-b11b-71f701b50411": {
+    "Id": "ar_pros_RelevantDebtors_f4c89752-5bf5-43bd-b11b-71f701b50411",
+    "IdConcepto": "ar_pros_RelevantDebtors",
+    "IdContextoPlantilla": "cxt",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_TrustAssetsAdministrators_67672f69-1916-48c0-aa32-d06634f1f443": {
+    "Id": "ar_pros_TrustAssetsAdministrators_67672f69-1916-48c0-aa32-d06634f1f443",
+    "IdConcepto": "ar_pros_TrustAssetsAdministrators",
+    "IdContextoPlantilla": "cxt",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_ParallelInvestmentVehiclesAndInvestors_04618f42-b1a0-478b-8e5e-f9181a7a1c9c": {
+    "Id": "ar_pros_ParallelInvestmentVehiclesAndInvestors_04618f42-b1a0-478b-8e5e-f9181a7a1c9c",
+    "IdConcepto": "ar_pros_ParallelInvestmentVehiclesAndInvestors",
+    "IdContextoPlantilla": "cxt",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_FeesCostsAndExpensesOfTheAdministratorOfTheEstate_b0cfe108-2967-4bbd-935c-c231685dc53d": {
+    "Id": "ar_pros_FeesCostsAndExpensesOfTheAdministratorOfTheEstate_b0cfe108-2967-4bbd-935c-c231685dc53d",
+    "IdConcepto": "ar_pros_FeesCostsAndExpensesOfTheAdministratorOfTheEstate",
+    "IdContextoPlantilla": "cxt",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_OtherThirdPartiesObligatedWithTheTrust_0d9d5e0c-8956-447a-bf36-8f3b214eb46c": {
+    "Id": "ar_pros_OtherThirdPartiesObligatedWithTheTrust_0d9d5e0c-8956-447a-bf36-8f3b214eb46c",
+    "IdConcepto": "ar_pros_OtherThirdPartiesObligatedWithTheTrust",
+    "IdContextoPlantilla": "cxt",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_TransactionsWithRelatedPartiesAndConflictsOfInterest_d7208ed1-0249-49a9-9d53-883f8ccd2a12": {
+    "Id": "ar_pros_TransactionsWithRelatedPartiesAndConflictsOfInterest_d7208ed1-0249-49a9-9d53-883f8ccd2a12",
+    "IdConcepto": "ar_pros_TransactionsWithRelatedPartiesAndConflictsOfInterest",
+    "IdContextoPlantilla": "cxt",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  }
+}
+}

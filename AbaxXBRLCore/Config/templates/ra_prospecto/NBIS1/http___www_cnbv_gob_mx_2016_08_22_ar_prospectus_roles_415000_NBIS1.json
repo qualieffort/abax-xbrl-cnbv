@@ -1,0 +1,184 @@
+{
+	"ContextosPlantillaPorId" : {
+  "ctx": {
+    "Id": "ctx",
+    "Periodo": {
+      "Tipo": 1,
+      "FechaInstante": "#fecha_2014_12_31",
+      "FechaInicio": "",
+      "FechaFin": ""
+    },
+    "Entidad": {
+      "Id": "#nombreEntidad",
+      "EsquemaId": "#esquemaEntidad",
+      "ContieneInformacionDimensional": false,
+      "Segmento": null,
+      "ValoresDimension": []
+    },
+    "ContieneInformacionDimensional": false,
+    "Escenario": null,
+    "ValoresDimension": []
+  }
+},
+	
+	"UnidadesPlantillaPorId" : {},
+            
+	"HechosPlantillaPorId" : {
+  "ar_pros_ReferenceIncorporationSecuritizationTransaction_1e2aed94-754b-4789-8f6b-0f35a63d2b48": {
+    "Id": "ar_pros_ReferenceIncorporationSecuritizationTransaction_1e2aed94-754b-4789-8f6b-0f35a63d2b48",
+    "IdConcepto": "ar_pros_ReferenceIncorporationSecuritizationTransaction",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_TechnicalCommittee_03afc2a5-cf83-4f57-8027-15c179442dd5": {
+    "Id": "ar_pros_TechnicalCommittee_03afc2a5-cf83-4f57-8027-15c179442dd5",
+    "IdConcepto": "ar_pros_TechnicalCommittee",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_TrustEstate_bded1c30-d38d-4d6e-a644-13c35d87d61e": {
+    "Id": "ar_pros_TrustEstate_bded1c30-d38d-4d6e-a644-13c35d87d61e",
+    "IdConcepto": "ar_pros_TrustEstate",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_EvolutionOfTheAssetsInTrust_3c8da682-dbc4-4152-9bec-0128c77813ad": {
+    "Id": "ar_pros_EvolutionOfTheAssetsInTrust_3c8da682-dbc4-4152-9bec-0128c77813ad",
+    "IdConcepto": "ar_pros_EvolutionOfTheAssetsInTrust",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_AssetPerformance_4c2a8d4a-5537-48d9-8a5f-becc7ea8b28d": {
+    "Id": "ar_pros_AssetPerformance_4c2a8d4a-5537-48d9-8a5f-becc7ea8b28d",
+    "IdConcepto": "ar_pros_AssetPerformance",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_CompositionOfTotalAssets_ada1900a-0796-4638-90e8-6bef55349474": {
+    "Id": "ar_pros_CompositionOfTotalAssets_ada1900a-0796-4638-90e8-6bef55349474",
+    "IdConcepto": "ar_pros_CompositionOfTotalAssets",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_VariationInBalanceAndNumberOfAssets_76143c2e-9739-4329-8c89-7add30ad7330": {
+    "Id": "ar_pros_VariationInBalanceAndNumberOfAssets_76143c2e-9739-4329-8c89-7add30ad7330",
+    "IdConcepto": "ar_pros_VariationInBalanceAndNumberOfAssets",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_AssetsStatusByGradeOrLevelOfCompliance_c4ec75d1-cfc7-4cdb-9afe-e71a92c976f8": {
+    "Id": "ar_pros_AssetsStatusByGradeOrLevelOfCompliance_c4ec75d1-cfc7-4cdb-9afe-e71a92c976f8",
+    "IdConcepto": "ar_pros_AssetsStatusByGradeOrLevelOfCompliance",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_GuaranteesOnAssets_b38a0e32-c7ce-4e1a-a6a8-89f21f2d7cda": {
+    "Id": "ar_pros_GuaranteesOnAssets_b38a0e32-c7ce-4e1a-a6a8-89f21f2d7cda",
+    "IdConcepto": "ar_pros_GuaranteesOnAssets",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_IssuingOfValues_0a9dc20c-323b-4295-b3a7-3a89a7a2c076": {
+    "Id": "ar_pros_IssuingOfValues_0a9dc20c-323b-4295-b3a7-3a89a7a2c076",
+    "IdConcepto": "ar_pros_IssuingOfValues",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_PerformanceOfSecuritiesIssued_aaed5d9c-b9d9-4464-b267-7698d84dbdaf": {
+    "Id": "ar_pros_PerformanceOfSecuritiesIssued_aaed5d9c-b9d9-4464-b267-7698d84dbdaf",
+    "IdConcepto": "ar_pros_PerformanceOfSecuritiesIssued",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_RelevantInformationOfThePeriod_84528df6-5ad2-4920-acfb-45d9a57146cc": {
+    "Id": "ar_pros_RelevantInformationOfThePeriod_84528df6-5ad2-4920-acfb-45d9a57146cc",
+    "IdConcepto": "ar_pros_RelevantInformationOfThePeriod",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  },
+  "ar_pros_OtherThirdPartiesObligatedWithTheTrust_1862f38e-bc6a-4146-bf3e-4b99f2f94822": {
+    "Id": "ar_pros_OtherThirdPartiesObligatedWithTheTrust_1862f38e-bc6a-4146-bf3e-4b99f2f94822",
+    "IdConcepto": "ar_pros_OtherThirdPartiesObligatedWithTheTrust",
+    "IdContextoPlantilla": "ctx",
+    "Hechos": [],
+    "IdUnidadPlantilla": null,
+    "ValorNumerador": null,
+    "ValorDenominador": null,
+    "Precision": null,
+    "Decimales": null,
+    "Valor": "#valorDefaultNoNumerico"
+  }
+}
+}

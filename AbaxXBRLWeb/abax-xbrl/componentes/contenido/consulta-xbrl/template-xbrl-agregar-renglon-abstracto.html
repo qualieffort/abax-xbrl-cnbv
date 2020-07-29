@@ -1,0 +1,23 @@
+﻿<form name="agregarRenglonAbstractoForm" ng-submit="agregarRenglonAbstracto(agregarRenglonAbstractoForm.$valid)" novalidate>
+    <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true" ng-click="cerrarDialogo()">&times;</button>
+        <div class="row m-t-sm">
+            <div class="col-sm-10 m-b-xs">
+                <h4 class="modal-title"> {{'CONSULTA_XBRL_AGREGAR_RENGLON_ABSTRACTO'|translate}} </h4>
+            </div>
+        </div>
+    </div>
+    <div class="modal-body">
+        <div class="form-group" ng-class="{ 'has-error' : agregarRenglonAbstractoForm.textTitulo.$invalid && !agregarRenglonAbstractoForm.textTitulo.$pristine }">
+            <label>{{ 'ETIQUETA_TITULO' | translate }}</label>
+            <input name="textTitulo" type="text" class="form-control rounded" ng-model="TituloElementoAbstracto" required ng-minlength="3" ng-maxlength="250">
+            <p ng-show="agregarRenglonAbstractoForm.textTitulo.$invalid && !agregarRenglonAbstractoForm.textTitulo.$pristine" class="help-block">{{'CONSULTA_XBRL_TITULO_RENGLON_REQUERIDO' | translate}}</p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div ng-if="!guardado">
+            <button type="button" class="btn btn-default" ng-click="cerrarDialogo()">{{'ETIQUETA_BOTON_CANCELAR'|translate}}</button>
+            <button type="submit" class="btn btn-s-md btn-warning" ng-disabled="agregarRenglonAbstractoForm.$invalid">{{'CONSULTA_XBRL_AGREGAR_RENGLON'|translate}}</button>
+        </div>
+    </div>
+</form>

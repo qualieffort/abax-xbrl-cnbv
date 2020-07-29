@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<!--
+Project: Xbrl Processing Engine
+Copyright (c) 2011  EDGAR(r) Online, Inc.
+
+EDGAR(r) is a federally registered trademark of the U.S. Securities and Exchange Commission. EDGAR 
+Online is not affiliated with or approved by the U.S. Securities and Exchange Commission.
+-->
+
+
+<!-- Formula Linkbase validation patterns --> 
+<PatternSet
+    name="Formula Linkbase 2007 Validation Patterns"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ValidationPatterns.xsd" >
+
+	<!-- memos are produced in XPE implementation of XBRL Formula 2008 -->
+	<Pattern id="placeholder"
+			 name="placehlder"
+			 method="DtsXPath"
+			 value="/'placeholder'">
+		<Failure severity="error" />
+	</Pattern>
+
+</PatternSet>
+
+
+<!--
+The contents of this file are subject to the End-User Software License Agreement (the "License"). You may not use this 
+file except in compliance with the License. A current copy of the License is available by contacting product support.
+
+Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights and limitations under the License.
+-->

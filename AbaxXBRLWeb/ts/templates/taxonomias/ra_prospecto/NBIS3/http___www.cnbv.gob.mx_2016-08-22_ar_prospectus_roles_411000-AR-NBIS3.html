@@ -1,0 +1,52 @@
+<xbrl-contenedor-formato xbrl:rol-uri="{{xbrlRol.Uri}}" orientacion="landscape" modo-vista-formato="{{documentoInstancia.modoVistaFormato}}">
+    <!--<div id="contenedorTablaExcel" class="table-responsive">
+    <table class="table table-striped b-t b-light" xbrl:tabla-excel selector="td:not(:first-child)" selector-contenedor-x="#contenedorFormatos" selector-contenedor-y="#contenedorFormatos" tab-index="1" on-space-or-enter-key="onSpaceOrEnterKey(evento, x, y)" on-after-paste="onAfterPaste(valorPegado, x, y)" on-after-range-paste="onAfterRangePaste(valorPegado, x, y, ancho, alto)">
+        <thead>
+            <tr>
+                <th class="th-sortable" data-toggle="class">{{'EDITOR_XBRL_TITULO_CONCEPTO' | translate}}</th>
+                <th style="min-width: 230px; width: 230px;">
+                {{'EDITOR_XBRL_TITULO' | translate}}<br />
+                {{ definicionPlantilla.obtenerVariablePorId("medida_MXN")}}<br />
+                {{::definicionPlantilla.obtenerVariablePorId("fecha_2014_12_31")}}
+                </th>
+            </tr>
+        </thead>
+        <tbody>-->
+    <table class="tablaAnchoFijo" cellspacing="5">
+        <tbody>
+            <tr>
+                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_GeneralDataAbstract" xbrl:nivel-indentacion="0"></b></td>
+                <td style="text-align:left; width:50%; height:40px;">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_AnnualReport" xbrl:nivel-indentacion="1"></b></td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_AnnualReport_d92b499a-530e-477e-a9b0-4da9e6a932d4"></xbrl:campo-captura></td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_LimitedPublicOffering" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></b></td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_LimitedPublicOffering_bdd18179-65ce-4636-be3e-4f976c3c3f78"></xbrl:campo-captura></td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_TypeOfInstrument" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></b></td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_TypeOfInstrument_a7423397-b3a8-4376-a0e5-252c24531663"></xbrl:campo-captura></td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_ForeingIssuer" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></b></td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_ForeingIssuer_d268b172-8631-476d-b31f-0f64d7268355"></xbrl:campo-captura></td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_MentioningwhetherOrNotHaveCollateral" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></b></td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_MentioningwhetherOrNotHaveCollateral_235cd753-1851-4322-805e-18781a628875"></xbrl:campo-captura></td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_MentioningPartialOrTotalDependence" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></b></td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_MentioningPartialOrTotalDependence_5bd36a0d-2b74-471b-8427-54fdc0db61e6"></xbrl:campo-captura></td>
+            </tr>
+            <tr>
+                <td style="text-align:left; width:50%;"><b><xbrl:etiqueta-concepto xbrl:id-concepto="ar_pros_CompanyIncorporatedSoThatTheTrustMeetsItsPurpose" xbrl:nivel-indentacion="1"></xbrl:etiqueta-concepto></b></td>
+                <td style="text-align:left; width:50%; height:40px;" class="celdaVacia"><xbrl:campo-captura xbrl:id-hecho-plantilla="ar_pros_CompanyIncorporatedSoThatTheTrustMeetsItsPurpose_1ded68e6-865a-4a87-b11a-6eb145aaae10" xbrl:ultimo="true"></xbrl:campo-captura></td>
+            </tr>
+         </tbody>
+    </table>
+
+</xbrl-contenedor-formato>

@@ -1,0 +1,186 @@
+{
+	"ContextosPlantillaPorId" : {
+  "ctx_2014": {
+    "Id": "ctx_2014",
+    "Periodo": {
+      "Tipo": 1,
+      "FechaInstante": "#fecha_2014_12_31",
+      "FechaInicio": "",
+      "FechaFin": ""
+    },
+    "Entidad": {
+      "Id": "#nombreEntidad",
+      "EsquemaId": "#esquemaEntidad",
+      "ContieneInformacionDimensional": false,
+      "Segmento": null,
+      "ValoresDimension": []
+    },
+    "ContieneInformacionDimensional": false,
+    "Escenario": null,
+    "ValoresDimension": []
+  }
+},
+
+  "UnidadesPlantillaPorId": {
+
+    "PURE": {
+      "Id": "PURE",
+      "Tipo": 1,
+      "Medidas": [
+        {
+          "Nombre": "#medida_pure",
+          "EspacioNombres": "#medida_http___www_xbrl_org_2003_instance"
+        }
+      ],
+      "MedidasDenominador": [],
+      "MedidasNumerador": []
+    }
+  },
+
+  "HechosPlantillaPorId": {
+    "ar_pros_ReferenceIncorporationAdministration_2b39479b-3795-4b0b-bace-24c845d9a591": {
+      "Id": "ar_pros_ReferenceIncorporationAdministration_2b39479b-3795-4b0b-bace-24c845d9a591",
+      "IdConcepto": "ar_pros_ReferenceIncorporationAdministration",
+      "IdContextoPlantilla": "ctx_2014",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "ar_pros_ExternalAuditors_9c9da18a-f62c-48a8-a6a9-c3bc9616b4c0": {
+      "Id": "ar_pros_ExternalAuditors_9c9da18a-f62c-48a8-a6a9-c3bc9616b4c0",
+      "IdConcepto": "ar_pros_ExternalAuditors",
+      "IdContextoPlantilla": "ctx_2014",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "ar_pros_TransactionsWithRelatedParties_690d35c3-ff0c-48a3-bd67-dd3d0da19037": {
+      "Id": "ar_pros_TransactionsWithRelatedParties_690d35c3-ff0c-48a3-bd67-dd3d0da19037",
+      "IdConcepto": "ar_pros_TransactionsWithRelatedParties",
+      "IdContextoPlantilla": "ctx_2014",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "ar_pros_AdministratorsAndShareholders_e6cd04d1-1157-42e6-bb01-9efcd0fd258b": {
+      "Id": "ar_pros_AdministratorsAndShareholders_e6cd04d1-1157-42e6-bb01-9efcd0fd258b",
+      "IdConcepto": "ar_pros_AdministratorsAndShareholders",
+      "IdContextoPlantilla": "ctx_2014",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "ar_pros_AssociationAndOtherAgreements_d4b1549f-10b1-43cc-b9be-bdd023d92c1e": {
+      "Id": "ar_pros_AssociationAndOtherAgreements_d4b1549f-10b1-43cc-b9be-bdd023d92c1e",
+      "IdConcepto": "ar_pros_AssociationAndOtherAgreements",
+      "IdContextoPlantilla": "ctx_2014",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "ar_pros_OtherCorporateGovernancePractices_b603fc3b-c32c-44fa-a14d-091bccb67ca0": {
+      "Id": "ar_pros_OtherCorporateGovernancePractices_b603fc3b-c32c-44fa-a14d-091bccb67ca0",
+      "IdConcepto": "ar_pros_OtherCorporateGovernancePractices",
+      "IdContextoPlantilla": "ctx_2014",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    },
+    "TotalPercentageOfMenAsRelevantDirectors_0000-0000-0000-0000-20180116": {
+      "Id": "TotalPercentageOfMenAsRelevantDirectors_0000-0000-0000-0000-20180116",
+      "IdConcepto": "ar_pros_TotalPercentageOfMenAsRelevantDirectors",
+      "IdContextoPlantilla": "ctx_2014",
+      "Hechos": [],
+      "IdUnidadPlantilla": "PURE",
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": "2",
+      "Valor": "#valorDefaultNumerico"
+    },
+    "TotalPercentageOfWomenAsRelevantDirectors_0000-0000-0000-0000-20180116": {
+      "Id": "TotalPercentageOfWomenAsRelevantDirectors_0000-0000-0000-0000-20180116",
+      "IdConcepto": "ar_pros_TotalPercentageOfWomenAsRelevantDirectors",
+      "IdContextoPlantilla": "ctx_2014",
+      "Hechos": [],
+      "IdUnidadPlantilla": "PURE",
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": "2",
+      "Valor": "#valorDefaultNumerico"
+    },
+    "TotalPercentageOfMenAsCounselors_0000-0000-0000-0000-20180116": {
+      "Id": "TotalPercentageOfMenAsCounselors_0000-0000-0000-0000-20180116",
+      "IdConcepto": "ar_pros_TotalPercentageOfMenAsCounselors",
+      "IdContextoPlantilla": "ctx_2014",
+      "Hechos": [],
+      "IdUnidadPlantilla": "PURE",
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": "2",
+      "Valor": "#valorDefaultNumerico"
+    },
+    "TotalPercentageOfWomenAsCounselors_0000-0000-0000-0000-20180116": {
+      "Id": "TotalPercentageOfWomenAsCounselors_0000-0000-0000-0000-20180116",
+      "IdConcepto": "ar_pros_TotalPercentageOfWomenAsCounselors",
+      "IdContextoPlantilla": "ctx_2014",
+      "Hechos": [],
+      "IdUnidadPlantilla": "PURE",
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": "2",
+      "Valor": "#valorDefaultNumerico"
+    },
+    "HasAPolicyOrProgramOfLaborInclusion_0000-0000-0000-0000-20180116": {
+      "Id": "HasAPolicyOrProgramOfLaborInclusion_0000-0000-0000-0000-20180116",
+      "IdConcepto": "ar_pros_HasAPolicyOrProgramOfLaborInclusion",
+      "IdContextoPlantilla": "ctx_2014",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultHasAPolicyOrProgramOfLaborInclusion"
+    },
+    "DescriptionOfThePolicyOrProgramOfLaborInclusion_0000-0000-0000-0000-20180116": {
+      "Id": "DescriptionOfThePolicyOrProgramOfLaborInclusion_0000-0000-0000-0000-20180116",
+      "IdConcepto": "ar_pros_DescriptionOfThePolicyOrProgramOfLaborInclusion",
+      "IdContextoPlantilla": "ctx_2014",
+      "Hechos": [],
+      "IdUnidadPlantilla": null,
+      "ValorNumerador": null,
+      "ValorDenominador": null,
+      "Precision": null,
+      "Decimales": null,
+      "Valor": "#valorDefaultNoNumerico"
+    }
+  }
+}
